@@ -1,0 +1,15 @@
+﻿ShuttleSet_column,ShuttleSet22_column,reference_data_xlsx_column,meaning,raw_unit,conversion_needed
+id,id,match_no,match identifier,integer,prefix dataset to avoid collision
+rally,rally,rally_no,rally number within set,integer,combine with match and set
+ball_round,ball_round,stroke_no,stroke order within rally,integer,rename
+time,time,time_s,video timestamp,hh:mm:ss,parse to seconds
+frame_num,frame_num,delta_time_s,video frame index,frame,difference / 30 fps
+player,player,hitter,raw winner/loser-coded actor,A/B,remap to canonical player A/B
+type,type,shot_type,shot label,Chinese categorical,explicit 10-type mapping; preserve raw
+landing_area,landing_area,shot_target_zone,landing grid,area id,outside/unknown -> UNK
+player_location_x/y,player_location_x/y,player_x/player_y,hitter position,video pixels,homography then metres
+opponent_location_x/y,opponent_location_x/y,opponent_x/opponent_y,receiver position,video pixels,homography then metres
+getpoint_player,getpoint_player,actual_rally_winner,point winner,A/B,target only; never input
+lose_reason,lose_reason,lose_reason_raw,terminal reason,text,analysis only; never input
+backhand,backhand,,backhand indicator,binary,"preserved for analysis, excluded v1 input"
+aroundhead,aroundhead,,around-head indicator,binary,"preserved for analysis, excluded v1 input"

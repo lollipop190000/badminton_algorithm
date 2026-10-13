@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "hidden_size": 64,
+  "num_layers": 1,
+  "bidirectional": false,
+  "shot_embedding_dim": 12,
+  "zone_embedding_dim": 6,
+  "hitter_embedding_dim": 2,
+  "dropout": 0.20,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 64,
+  "max_epochs": 50,
+  "early_stopping_patience": 8,
+  "early_stopping_metric": "validation_loss",
+  "num_workers": 0
+}

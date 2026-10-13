@@ -1,0 +1,29 @@
+{
+  "network": "107 -> [128, 128] -> 84",
+  "parameters": 41172,
+  "alpha_candidates": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "selected_cql_alpha": 0.5,
+  "epochs_trained_selected_alpha": 18,
+  "best_epoch": 5,
+  "best_validation_total_loss": 1.5300212506575155,
+  "best_validation_td_loss": 0.1264448046302009,
+  "best_validation_actual_action_rank": 6.395556574833267,
+  "best_validation_push_action_rank": 10.165829145728644,
+  "best_validation_top3_rate": 0.4396472744203411,
+  "validation_policy_shot_distribution_tv": 0.1445258818140174,
+  "epoch_selection": "rank sum of validation total loss, TD loss, and push action rank",
+  "alpha_selection": "rank sum of validation TD loss, actual-action rank, push rank, top-3 rate, and logged-vs-recommended shot-distribution distance",
+  "action_balanced_sampling": true,
+  "balanced_sampling_power": 0.5,
+  "reward_mode": "terminal_outcome_only",
+  "gamma": 0.99,
+  "actions": 84,
+  "train_transitions_used": 36842,
+  "validation_transitions_used": 8732,
+  "device": "cuda",
+  "cuda_device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+}

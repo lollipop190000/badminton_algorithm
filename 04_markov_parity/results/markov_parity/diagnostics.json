@@ -1,0 +1,308 @@
+{
+  "definition": {
+    "reference_player": "canonical player_A (name-order assignment, not winner assignment)",
+    "parity_0": "A-B-A (reference-opponent-reference)",
+    "parity_1": "B-A-B (opponent-reference-opponent)",
+    "parity_transition": "r' = 1-r",
+    "value": "probability that fixed reference player_A eventually wins the rally"
+  },
+  "state_space": {
+    "court_patterns": 4096,
+    "parities": 2,
+    "augmented_states": 8192
+  },
+  "energy_model": {
+    "coefficient_j_per_kg_m": 19.985,
+    "distance_semantics": "straight-line displacement between consecutive annotated stroke positions",
+    "interpretation": "energy-equivalent movement proxy, not measured metabolic energy",
+    "distance_prior": "parity-shot-next-zone mean, backed off to parity-shot then parity global mean",
+    "selected_tau": 1.0
+  },
+  "fit_protocol": {
+    "development_fit": "train",
+    "selection": "validation",
+    "held_out_evaluation": "test",
+    "final_export_fit": "train+validation",
+    "test_used_for_fit_or_tuning": false
+  },
+  "selected_alphas": {
+    "alpha1": 50.0,
+    "alpha2": 50.0,
+    "alpha3": 50.0
+  },
+  "alpha_on_grid_boundary": true,
+  "tau_on_grid_boundary": false,
+  "input_sha256": {
+    "train": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+    "validation": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3",
+    "test": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+  },
+  "preprocessing": {
+    "train": {
+      "input_rows": 43089,
+      "input_rallies": 4035,
+      "excluded_nonterminal_z0_rallies": 80,
+      "excluded_nonterminal_z0_rows": 1392,
+      "clean_rows": 41697,
+      "eligible_events": 30116,
+      "eligible_terminal_events": 3419,
+      "eligible_continuing_events": 26697,
+      "observed_states": 3169,
+      "observed_state_shot_pairs": 8351,
+      "excluded_nonalternating_rallies": 0,
+      "eligible_events_after_parity": 30116,
+      "parity0_events": 15062,
+      "parity1_events": 15054,
+      "continuing_cost_events": 26697
+    },
+    "validation": {
+      "input_rows": 10142,
+      "input_rallies": 876,
+      "excluded_nonterminal_z0_rallies": 8,
+      "excluded_nonterminal_z0_rows": 144,
+      "clean_rows": 9998,
+      "eligible_events": 7459,
+      "eligible_terminal_events": 757,
+      "eligible_continuing_events": 6702,
+      "observed_states": 2167,
+      "observed_state_shot_pairs": 4072,
+      "excluded_nonalternating_rallies": 0,
+      "eligible_events_after_parity": 7459,
+      "parity0_events": 3737,
+      "parity1_events": 3722,
+      "continuing_cost_events": 6702
+    },
+    "test": {
+      "input_rows": 10033,
+      "input_rallies": 966,
+      "excluded_nonterminal_z0_rallies": 16,
+      "excluded_nonterminal_z0_rows": 286,
+      "clean_rows": 9747,
+      "eligible_events": 6975,
+      "eligible_terminal_events": 819,
+      "eligible_continuing_events": 6156,
+      "observed_states": 2036,
+      "observed_state_shot_pairs": 3739,
+      "excluded_nonalternating_rallies": 1,
+      "eligible_events_after_parity": 6967,
+      "parity0_events": 3472,
+      "parity1_events": 3495,
+      "continuing_cost_events": 6149
+    }
+  },
+  "validation_q_metrics": {
+    "events": 7459,
+    "event_log_loss": 3.426932657592535,
+    "multiclass_brier_score": 0.9450135519265667,
+    "event_top1_accuracy": 0.12977610939804263,
+    "terminal_continuation_brier_score": 0.09110375620892001,
+    "state_parity_row_coverage": 0.9541493497787907,
+    "state_parity_shot_row_coverage": 0.7950127362917281
+  },
+  "test_q_metrics": {
+    "events": 6967,
+    "event_log_loss": 3.41459172977605,
+    "multiclass_brier_score": 0.9427152295927993,
+    "event_top1_accuracy": 0.14080665996842257,
+    "terminal_continuation_brier_score": 0.10316197717787771,
+    "state_parity_row_coverage": 0.9608152719965551,
+    "state_parity_shot_row_coverage": 0.8062293670159323
+  },
+  "validation_distance_metrics": {
+    "events": 6702,
+    "combined_rmse_m": 0.6599667522471289,
+    "combined_mae_m": 0.5011367218176309,
+    "self_rmse_m": 0.6645661864087943,
+    "self_mae_m": 0.5040450579036971,
+    "opp_rmse_m": 0.6553350379960757,
+    "opp_mae_m": 0.4982283857315647
+  },
+  "test_distance_metrics": {
+    "events": 6149,
+    "combined_rmse_m": 0.671191596662967,
+    "combined_mae_m": 0.5075648824938815,
+    "self_rmse_m": 0.6673019264513944,
+    "self_mae_m": 0.5044514324049317,
+    "opp_rmse_m": 0.6750588550757807,
+    "opp_mae_m": 0.5106783325828311
+  },
+  "probability_checks": {
+    "observed_state_parities": 5756,
+    "unobserved_state_parities": 2436,
+    "raw_max_probability_mass_error": 2.220446049250313e-16,
+    "smoothed_max_probability_mass_error": 2.220446049250313e-16,
+    "all_transitions_flip_parity": true,
+    "q_shot_rows": 1048576,
+    "terminal_rows": 65536,
+    "aggregate_q_max_identity_error": 0.0,
+    "baseline_kernel_equals_q_max_error": 1.1102230246251565e-16,
+    "all_costs_finite_nonnegative": true
+  },
+  "scenarios": [
+    {
+      "scenario_id": 0,
+      "p_per_j_per_kg": 0.0,
+      "q_per_j_per_kg": 0.0,
+      "iterations": 217,
+      "max_fixed_point_residual": 9.730549699327184e-13,
+      "value_min": 0.42580121292739914,
+      "value_max": 0.6021454410793221,
+      "interpretation": "baseline EPV"
+    },
+    {
+      "scenario_id": 1,
+      "p_per_j_per_kg": 0.0,
+      "q_per_j_per_kg": 0.005,
+      "iterations": 93,
+      "max_fixed_point_residual": 8.553158181712206e-13,
+      "value_min": 0.15903294047911676,
+      "value_max": 0.35928104704565056,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 2,
+      "p_per_j_per_kg": 0.0,
+      "q_per_j_per_kg": 0.01,
+      "iterations": 60,
+      "max_fixed_point_residual": 8.87151463402347e-13,
+      "value_min": 0.08775201659906498,
+      "value_max": 0.2952522085220316,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 3,
+      "p_per_j_per_kg": 0.0,
+      "q_per_j_per_kg": 0.02,
+      "iterations": 36,
+      "max_fixed_point_residual": 9.616196727790793e-13,
+      "value_min": 0.03899165280480872,
+      "value_max": 0.2506969339142655,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 4,
+      "p_per_j_per_kg": 0.005,
+      "q_per_j_per_kg": 0.0,
+      "iterations": 93,
+      "max_fixed_point_residual": 8.398282069776997e-13,
+      "value_min": 0.181946018401492,
+      "value_max": 0.34345330459744566,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 5,
+      "p_per_j_per_kg": 0.005,
+      "q_per_j_per_kg": 0.005,
+      "iterations": 60,
+      "max_fixed_point_residual": 7.328582185550658e-13,
+      "value_min": 0.0990982672138165,
+      "value_max": 0.28634957125820865,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 6,
+      "p_per_j_per_kg": 0.005,
+      "q_per_j_per_kg": 0.01,
+      "iterations": 45,
+      "max_fixed_point_residual": 6.34492458573277e-13,
+      "value_min": 0.06387323492736746,
+      "value_max": 0.2613979650333804,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 7,
+      "p_per_j_per_kg": 0.005,
+      "q_per_j_per_kg": 0.02,
+      "iterations": 30,
+      "max_fixed_point_residual": 9.813261314661759e-13,
+      "value_min": 0.031746642829367455,
+      "value_max": 0.2385928329849847,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 8,
+      "p_per_j_per_kg": 0.01,
+      "q_per_j_per_kg": 0.0,
+      "iterations": 60,
+      "max_fixed_point_residual": 8.845701948700935e-13,
+      "value_min": 0.10726238257223297,
+      "value_max": 0.2816137913850603,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 9,
+      "p_per_j_per_kg": 0.01,
+      "q_per_j_per_kg": 0.005,
+      "iterations": 45,
+      "max_fixed_point_residual": 6.289274656623434e-13,
+      "value_min": 0.07224537184402208,
+      "value_max": 0.25785646029541276,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 10,
+      "p_per_j_per_kg": 0.01,
+      "q_per_j_per_kg": 0.01,
+      "iterations": 36,
+      "max_fixed_point_residual": 6.621925230376746e-13,
+      "value_min": 0.04996246962941495,
+      "value_max": 0.2446396124554239,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 11,
+      "p_per_j_per_kg": 0.01,
+      "q_per_j_per_kg": 0.02,
+      "iterations": 26,
+      "max_fixed_point_residual": 9.076905893579124e-13,
+      "value_min": 0.026801365611543945,
+      "value_max": 0.23077578855805042,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 12,
+      "p_per_j_per_kg": 0.02,
+      "q_per_j_per_kg": 0.0,
+      "iterations": 37,
+      "max_fixed_point_residual": 5.112577028398846e-13,
+      "value_min": 0.05626557125161813,
+      "value_max": 0.24040052817246327,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 13,
+      "p_per_j_per_kg": 0.02,
+      "q_per_j_per_kg": 0.005,
+      "iterations": 31,
+      "max_fixed_point_residual": 4.578004642041833e-13,
+      "value_min": 0.04620682421022365,
+      "value_max": 0.2328583746941579,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 14,
+      "p_per_j_per_kg": 0.02,
+      "q_per_j_per_kg": 0.01,
+      "iterations": 26,
+      "max_fixed_point_residual": 9.705292125516962e-13,
+      "value_min": 0.03442944578922364,
+      "value_max": 0.22784318235480694,
+      "interpretation": "energy-discounted sensitivity value"
+    },
+    {
+      "scenario_id": 15,
+      "p_per_j_per_kg": 0.02,
+      "q_per_j_per_kg": 0.02,
+      "iterations": 21,
+      "max_fixed_point_residual": 7.753520048225937e-13,
+      "value_min": 0.020501989612265327,
+      "value_max": 0.22176753727010418,
+      "interpretation": "energy-discounted sensitivity value"
+    }
+  ],
+  "baseline_value_range": {
+    "min": 0.42580121292739914,
+    "max": 0.6021454410793221
+  },
+  "positive_pq_value_interpretation": "Energy-discounted sensitivity value using baseline immediate-win source. It is not an inverse-Laplace stamina probability until w(F_self,F_opp) and inversion are specified."
+}

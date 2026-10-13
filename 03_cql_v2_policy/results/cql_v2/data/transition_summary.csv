@@ -1,0 +1,4 @@
+split,total_transitions,terminal_transitions,non_terminal_transitions,supported_action_transitions,context_supported_action_transitions,valid_learning_transitions,timestamp_invalid,same_player_t_plus_2_mismatch,matches,rallies,mean_transitions_per_rally
+train,43089,8036,35053,39438,36842,36842,1,0,62,4035,10.678810408921933
+validation,10142,1742,8400,9429,8732,8732,0,0,14,876,11.577625570776256
+test,10033,1921,8112,9295,8696,8694,2,2,15,966,10.386128364389235

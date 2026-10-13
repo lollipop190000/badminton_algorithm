@@ -1,0 +1,7 @@
+# Preserve audited data/code/checkpoint byte hashes across operating systems.
+* -text
+*.parquet binary
+*.npz binary
+*.pt binary
+*.png binary
+*.xlsx binary

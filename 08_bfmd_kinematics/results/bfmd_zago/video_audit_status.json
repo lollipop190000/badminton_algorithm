@@ -1,0 +1,6 @@
+{
+  "status": "rendered_actual_source_frames",
+  "frames": 6,
+  "all_decode_frame_indices_match": true,
+  "caveat": "decoder index verifies file frame numbering only; does not independently prove inferred-hit detection accuracy"
+}

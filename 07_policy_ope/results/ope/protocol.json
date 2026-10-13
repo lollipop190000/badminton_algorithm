@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-13",
+  "policy": "outputs\\cql_v2\\model\\best_cql_model.pt",
+  "hashes": {
+    "policy": "bd79e6b7640f2f954a5e28635fd532a83b51be4a53516a1ca4883646701f0eb7",
+    "source": "ced7f32aa0d7a7c83d351e0c246e966504ca457b6acec9dda5a6c9dea3afa394",
+    "frame_audit": "7a757183f88780b42ce4108184746f57c72069625aa5bb136e525d5106242e88",
+    "train": "10be3f84c1a80d685f1b9a3b0184f06ecb49fce77441c063668d6fefd178c2c2",
+    "validation": "4f50780e167bde4b195c2ff51bdcd1616ee1b29b2df389a6386d782131d6938c",
+    "test": "92a2409ba73211460262dc63705c0af5ec40ce8acc0ee0c6f150e8ddc1bda376"
+  },
+  "device": "cuda",
+  "scope": "CQL v2 shot-only projection, not shot-zone policy or fatigue-budget policy",
+  "policies": {
+    "behavior_clone": 0.0,
+    "cql_shot_mix_50": 0.5,
+    "cql_shot": 1.0
+  },
+  "gamma": 1.0,
+  "reward": "terminal win=1, loss=0; no energy penalty",
+  "behavior_fit": "train only, ordinary cross entropy, no class balancing",
+  "fqe_fit": "train only, separate networks per policy",
+  "validation_use": "diagnostics only, fixed iteration count",
+  "test_use": "frozen policy evaluation, no tuning",
+  "initial_population": "first recorded decision of each player per rally; receiver conditional on observed serve",
+  "opponent": "logged opponent response, not simultaneous replacement or adaptive opponent",
+  "uncertainty": "train-match resampling with behavior and FQE refits; independent test-match resampling; fixed CQL and state encoder",
+  "bootstrap_replicates": 100,
+  "fqe_iterations": 100,
+  "behavior_epochs": 25,
+  "frame_audit_applied": true,
+  "shots": [
+    "defensive_shot",
+    "drive",
+    "drop",
+    "hairpin",
+    "high_clear",
+    "long_service",
+    "push",
+    "short_service",
+    "smash",
+    "under_clear"
+  ],
+  "audit": {
+    "train": {
+      "rows_before": 43089,
+      "rows": 42690,
+      "matches": 62,
+      "rallies": 4008,
+      "episodes": 7982,
+      "excluded_rallies": [
+        "ShuttleSet:16:1:11",
+        "ShuttleSet:16:1:29",
+        "ShuttleSet:16:1:33",
+        "ShuttleSet:16:2:17",
+        "ShuttleSet:16:2:20",
+        "ShuttleSet:17:1:12",
+        "ShuttleSet:17:1:23",
+        "ShuttleSet:17:1:27",
+        "ShuttleSet:17:1:34",
+        "ShuttleSet:17:1:9",
+        "ShuttleSet:17:2:18",
+        "ShuttleSet:17:2:5",
+        "ShuttleSet:17:3:10",
+        "ShuttleSet:17:3:19",
+        "ShuttleSet:17:3:20",
+        "ShuttleSet:17:3:21",
+        "ShuttleSet:17:3:38",
+        "ShuttleSet:17:3:6",
+        "ShuttleSet:24:1:21",
+        "ShuttleSet:24:3:2",
+        "ShuttleSet:38:1:22",
+        "ShuttleSet:38:1:29",
+        "ShuttleSet:39:1:15",
+        "ShuttleSet:39:1:9",
+        "ShuttleSet:39:2:21",
+        "ShuttleSet:39:2:23",
+        "ShuttleSet:39:2:4"
+      ],
+      "retained_z0": 3129,
+      "retained_cql_excluded_rows": 6199
+    },
+    "validation": {
+      "rows_before": 10142,
+      "rows": 10054,
+      "matches": 14,
+      "rallies": 872,
+      "episodes": 1734,
+      "excluded_rallies": [
+        "ShuttleSet22:38:1:5",
+        "ShuttleSet:35:1:26",
+        "ShuttleSet:35:1:3",
+        "ShuttleSet:5:1:13"
+      ],
+      "retained_z0": 618,
+      "retained_cql_excluded_rows": 1394
+    },
+    "test": {
+      "rows_before": 10033,
+      "rows": 10009,
+      "matches": 15,
+      "rallies": 963,
+      "episodes": 1915,
+      "excluded_rallies": [
+        "ShuttleSet:3:2:15",
+        "ShuttleSet:44:1:36",
+        "ShuttleSet:44:2:22"
+      ],
+      "retained_z0": 639,
+      "retained_cql_excluded_rows": 1332
+    }
+  },
+  "seed": 20261013,
+  "limits": [
+    "historically inspected test, not pristine prospective validation",
+    "conditional on frozen encoder, mask and selected policy",
+    "unobserved confounding and distribution shift remain",
+    "no claim about intended landing-zone control or hard fatigue cutoff",
+    "finite neural FQE optimization and 15 test matches limit inference"
+  ],
+  "original_source_hash": "40471713cb4318cfb5b134f5576a45737715240497584d21278c01a8aa270777"
+}

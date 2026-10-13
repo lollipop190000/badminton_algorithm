@@ -1,0 +1,22 @@
+{
+  "unchanged": true,
+  "files": {
+    "src\\estimate_markov_q.py": "a67abb264412de34aa388e0b248d904abf06e0ea03ca04cd5c0db2f50daba0d2",
+    "src\\estimate_parity_markov.py": "d12aaa466c38e903fd861e02a071be58e33519978d2fa81b8b6d7677ed8849a8",
+    "src\\fatigue_baseline.py": "209a80428ae8bbad53230f029023a2e95c1514c911f5087208fe044121e9afd1",
+    "src\\fit_fatigue_terminal.py": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e",
+    "src\\build_fatigue_transition.py": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b",
+    "src\\solve_stamina_value.py": "a69d87d2d32f0eade73b79ade0a1d7175407e6c6eb13029cd8749aa1871ea4fb",
+    "outputs\\markov_parity\\kernel_aggregate.parquet": "861ccad2f675ee7e371da0b1e893ca039c2bf7048aa62541510e4aeeeb9de630",
+    "outputs\\markov_parity\\kernel_components.parquet": "cfc9a1f56a07a18959ea5d2176cc9c0c84ef341a94859ec15636a65404b4519e",
+    "outputs\\markov_parity\\q_aggregate_parity.parquet": "2d68b562b93c0d142129407c1bd8a47a7c73e6727443e8953c5205715762e537",
+    "outputs\\markov_parity\\q_shot_parity.parquet": "439cac7ee9fe0792c9befcc24d08ebbbaeb5423173c3f6e58eb7baf1918b8859",
+    "outputs\\markov_parity\\state_parity_index.parquet": "4a2a0721cf01a21077e463b754b09919c7f562ced46123af56c91779e5691d75",
+    "outputs\\markov_parity\\state_values.parquet": "aa5b62db564c86dd79faf24cf3708b82ac5be387e163875bcea53de2370e011d",
+    "outputs\\markov_parity\\terminal_probabilities_parity.parquet": "7dd8fef415ab57e57316fdf5939f04f30afeb204cc58720993a3ce99c64229c5",
+    "outputs\\markov_parity\\transition_costs.parquet": "048d535d4225c5df3042740cfb362dfb0a195f1d1ab812893b98f4935017ff0b",
+    "outputs\\fatigue_terminal\\stamina\\scenario_p50.npz": "d03b56b8838e9469a3943e505aa2c5950fa1b4552a7aa6edcedb4649b6b106b0",
+    "outputs\\fatigue_terminal\\stamina\\scenario_p75.npz": "7a867619af88e57884f8dc4102b49ff55147356f15519f4357550eee81c26fcd",
+    "outputs\\fatigue_terminal\\stamina\\scenario_p95.npz": "23d86d45ad92d33443d3e1c948993b3808afe1170a7b64d2d3e1f77bdfa6f019"
+  }
+}

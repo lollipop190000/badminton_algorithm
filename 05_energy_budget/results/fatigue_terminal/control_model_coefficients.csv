@@ -1,0 +1,188 @@
+model,endpoint,family,term,coefficient,selected,constrained,ridge,knot
+controlled_e,e,M1,intercept,0.0005012613894147455,False,False,0.01,0.0
+controlled_e,e,M1,shot_intercept:1,0.0026166768035871444,False,False,0.01,0.0
+controlled_e,e,M1,shot_intercept:2,-0.012253514995447452,False,False,0.01,0.0
+controlled_e,e,M1,shot_intercept:3,0.006575020781719212,False,False,0.01,0.0
+controlled_e,e,M1,shot_intercept:4,-0.013822109864625544,False,False,0.01,0.0
+controlled_e,e,M1,shot_intercept:5,-0.011813114040560773,False,False,0.01,0.0
+controlled_e,e,M1,shot_intercept:6,-0.010076752737924508,False,False,0.01,0.0
+controlled_e,e,M1,shot_intercept:7,-0.002391802037836928,False,False,0.01,0.0
+controlled_e,e,M1,beta:common,0.056642913605778715,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Akane YAMAGUCHI,-0.017975461854535628,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:An Se Young,-0.04506245922252606,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Anders ANTONSEN,0.01383722567131164,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Anthony Sinisuka GINTING,0.01439400439130944,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Busanan ONGBAMRUNGPHAN,-0.007991806276852626,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:CHEN Long,-0.024077158966682412,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:CHEN Yufei,0.011668321571013485,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:CHOU Tien Chen,-0.03801521952958,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Carolina MARIN,0.0486279813692245,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Chico Aura DWI WARDOYO,-0.014310589610928105,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Evgeniya KOSETSKAYA,0.0017345892397686987,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Gregoria Mariska TUNJUNG,0.03539815528443193,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:HE Bingjiao,-0.006970790630133273,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Hans-Kristian Solberg VITTINGHUS,0.00064973503159272,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Jonatan CHRISTIE,0.04483464580038979,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:KIDAMBI Srikanth,0.029499623824900987,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Kenta NISHIMOTO,-0.019042953014732866,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Kento MOMOTA,-0.10315921592633344,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Kodai NARAOKA,-0.030935772016780667,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Kunlavut VITIDSARN,-0.005611198809530603,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:LEE Cheuk Yiu,-0.01992595728005535,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:LEE Zii Jia,0.10170438571430315,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:LI Shi Feng,-0.017095989899798957,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:LIEW Daren,0.0301372895345828,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:LOH Kean Yew,0.0013222745065468787,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:LU Guang Zu,-0.02222391137555466,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Lakshya SEN,-0.029610128261105158,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Mia BLICHFELDT,0.010060877383243221,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Michelle LI,0.03193447912000954,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:NG Ka Long Angus,0.016786708706087974,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:PRANNOY H. S.,0.027722012847608283,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:PUSARLA V. Sindhu,0.014057701296968027,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Pornpawee CHOCHUWONG,0.013150200539665051,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Rasmus GEMKE,-0.017624166774805074,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Ratchanok INTANON,0.04487363261664707,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:SHI Yuqi,0.02154274367942491,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Supanida KATETHONG,0.037180026111867354,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:Viktor AXELSEN,-0.1138836555045471,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:WANG Zhi Yi,-0.023487353168278425,False,False,0.01,0.0
+controlled_e,e,M1,control:hitter_id:ZHAO Jun Peng,-0.010219823531362221,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Akane YAMAGUCHI,0.00500392927664212,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:An Se Young,0.060453471651571306,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Anders ANTONSEN,-0.049331056188312,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Anthony Sinisuka GINTING,0.056413566341691035,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Busanan ONGBAMRUNGPHAN,0.05496751902090845,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:CHEN Long,0.029863781837021736,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:CHEN Yufei,0.02838105454627539,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:CHOU Tien Chen,-0.07462785290582777,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Carolina MARIN,0.02035678518540007,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Chico Aura DWI WARDOYO,-0.011856192748041417,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Evgeniya KOSETSKAYA,0.03193447912000954,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Gregoria Mariska TUNJUNG,-0.014816527695250721,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:HE Bingjiao,-0.007657577145737196,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Hans-Kristian Solberg VITTINGHUS,-0.038330155217868075,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Jonatan CHRISTIE,0.017679945723876538,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:KIDAMBI Srikanth,0.00656946994413138,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Kenta NISHIMOTO,-0.011198717750515811,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Kento MOMOTA,-0.01816350176411683,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Kodai NARAOKA,-0.050784960944033196,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Kunlavut VITIDSARN,-0.04631523377272094,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:LEE Cheuk Yiu,-0.015315808438199647,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:LEE Zii Jia,0.03304528396755843,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:LI Shi Feng,-0.012644593200646075,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:LIEW Daren,0.02472537379868251,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:LOH Kean Yew,-0.029610128261105158,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:LU Guang Zu,-0.0042373436098350585,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Lakshya SEN,0.0013222745065468787,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Mia BLICHFELDT,0.010886649084600927,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Michelle LI,0.0017345892397686987,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:NG Ka Long Angus,0.00961938436119431,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:PRANNOY H. S.,-0.022969536576433983,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:PUSARLA V. Sindhu,-0.016062421240852578,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Pornpawee CHOCHUWONG,-0.013824268633102994,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Rasmus GEMKE,-0.011258089095319697,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Ratchanok INTANON,0.00955138205697379,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:SHI Yuqi,0.04542709013924886,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Supanida KATETHONG,-0.0034642196077089345,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:Viktor AXELSEN,0.01544433737705961,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:WANG Zhi Yi,0.003299858150082293,False,False,0.01,0.0
+controlled_e,e,M1,control:receiver_id:ZHAO Jun Peng,-0.006772428317773572,False,False,0.01,0.0
+controlled_e,e,M1,control:dataset:ShuttleSet22,-0.05268415206156757,False,False,0.01,0.0
+controlled_e,e,M1,control:round_standardized:QF,0.09465701777351544,False,False,0.01,0.0
+controlled_e,e,M1,control:round_standardized:SF,0.03142463327785059,False,False,0.01,0.0
+controlled_e,e,M1,control:past_stroke_count,0.0743339073042339,False,False,0.01,0.0
+controlled_u,u,M1,intercept,-0.048187882761198696,False,False,0.001,0.0
+controlled_u,u,M1,shot_intercept:1,0.0025049950660952377,False,False,0.001,0.0
+controlled_u,u,M1,shot_intercept:2,-0.0408238191327227,False,False,0.001,0.0
+controlled_u,u,M1,shot_intercept:3,-0.028204462156941498,False,False,0.001,0.0
+controlled_u,u,M1,shot_intercept:4,-0.030229233284174754,False,False,0.001,0.0
+controlled_u,u,M1,shot_intercept:5,-0.020463478918395946,False,False,0.001,0.0
+controlled_u,u,M1,shot_intercept:6,0.025406252882908906,False,False,0.001,0.0
+controlled_u,u,M1,shot_intercept:7,-0.03026466600829628,False,False,0.001,0.0
+controlled_u,u,M1,gamma:common,0.07358486648707258,False,False,0.001,0.0
+controlled_u,u,M1,eta:common,-0.10950889558715088,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Akane YAMAGUCHI,0.04829349659518413,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:An Se Young,-0.07100702897211963,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Anders ANTONSEN,-0.16089403800630084,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Anthony Sinisuka GINTING,0.18647178647297152,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Busanan ONGBAMRUNGPHAN,0.0722535414790665,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:CHEN Long,0.007964930492368096,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:CHEN Yufei,0.04888577171486897,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:CHOU Tien Chen,-0.05932435774133232,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Carolina MARIN,0.06855735413647883,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Chico Aura DWI WARDOYO,0.07315072080147865,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Evgeniya KOSETSKAYA,0.09459003886906446,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Gregoria Mariska TUNJUNG,0.013883653443825788,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:HE Bingjiao,-0.026231439542561734,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Hans-Kristian Solberg VITTINGHUS,0.04229014205499241,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Jonatan CHRISTIE,-0.024344030694448224,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:KIDAMBI Srikanth,-0.03450954479437484,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Kenta NISHIMOTO,-0.15045553022989883,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Kento MOMOTA,-0.13957847433062306,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Kodai NARAOKA,0.004212173316746861,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Kunlavut VITIDSARN,-0.15145436639644252,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:LEE Cheuk Yiu,-0.030454488183868984,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:LEE Zii Jia,0.21799976761639572,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:LI Shi Feng,-0.2194255515052742,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:LIEW Daren,0.36283043845447815,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:LOH Kean Yew,-0.10462517867740527,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:LU Guang Zu,0.03789932082458402,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Lakshya SEN,-0.10136175493988235,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Mia BLICHFELDT,-0.006572673173534806,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Michelle LI,0.13674938597755437,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:NG Ka Long Angus,-0.0837674492359481,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:PRANNOY H. S.,0.044336322301408146,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:PUSARLA V. Sindhu,0.06192302175604096,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Pornpawee CHOCHUWONG,-0.045518327454913535,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Rasmus GEMKE,0.016258974620085225,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Ratchanok INTANON,0.0511460057858449,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:SHI Yuqi,-0.07385532871673701,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Supanida KATETHONG,0.28421628168096585,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:Viktor AXELSEN,-0.015786111444393534,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:WANG Zhi Yi,-0.11004473091788886,False,False,0.001,0.0
+controlled_u,u,M1,control:hitter_id:ZHAO Jun Peng,-0.24663598181922183,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Akane YAMAGUCHI,-0.1017869916508301,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:An Se Young,0.1040654196274487,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Anders ANTONSEN,-0.1094623347289377,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Anthony Sinisuka GINTING,0.03068838772880763,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Busanan ONGBAMRUNGPHAN,0.10703199611613397,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:CHEN Long,0.0835733412725557,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:CHEN Yufei,0.02704353270318844,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:CHOU Tien Chen,-0.18520561953515402,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Carolina MARIN,-0.05508246006395816,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Chico Aura DWI WARDOYO,0.051018088367830706,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Evgeniya KOSETSKAYA,0.13674938597755437,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Gregoria Mariska TUNJUNG,-0.023075878849273826,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:HE Bingjiao,-0.06650076745238233,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Hans-Kristian Solberg VITTINGHUS,-0.14914150042136182,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Jonatan CHRISTIE,0.014931156517108277,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:KIDAMBI Srikanth,-0.08439361936350265,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Kenta NISHIMOTO,-0.0879043697233514,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Kento MOMOTA,-0.05325882432641966,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Kodai NARAOKA,0.0025318770096534084,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Kunlavut VITIDSARN,-0.18524440471198195,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:LEE Cheuk Yiu,0.13286384782784447,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:LEE Zii Jia,-0.06976224685823791,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:LI Shi Feng,0.09581263406548825,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:LIEW Daren,0.20939181769058435,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:LOH Kean Yew,-0.10136175493988235,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:LU Guang Zu,0.10835412221588278,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Lakshya SEN,-0.10462517867740527,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Mia BLICHFELDT,0.023500020396033158,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Michelle LI,0.09459003886906446,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:NG Ka Long Angus,0.013215025396460717,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:PRANNOY H. S.,0.022007326575442,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:PUSARLA V. Sindhu,0.18482227801657014,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Pornpawee CHOCHUWONG,0.21283874575730366,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Rasmus GEMKE,0.07130344186047549,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Ratchanok INTANON,0.0934156452832543,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:SHI Yuqi,-0.10338005452112704,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Supanida KATETHONG,-0.05427413313515223,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:Viktor AXELSEN,-0.24400951183054354,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:WANG Zhi Yi,-0.14304126747441717,False,False,0.001,0.0
+controlled_u,u,M1,control:receiver_id:ZHAO Jun Peng,0.03900074334912836,False,False,0.001,0.0
+controlled_u,u,M1,control:dataset:ShuttleSet22,-0.029102069753480064,False,False,0.001,0.0
+controlled_u,u,M1,control:round_standardized:QF,0.11288822827374169,False,False,0.001,0.0
+controlled_u,u,M1,control:round_standardized:SF,0.10403963085873404,False,False,0.001,0.0
+controlled_u,u,M1,control:past_stroke_count,0.061266630791303435,False,False,0.001,0.0

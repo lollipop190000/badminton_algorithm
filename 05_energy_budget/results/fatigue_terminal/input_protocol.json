@@ -1,0 +1,11 @@
+{
+  "input_sha256": {
+    "train": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+    "validation": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3",
+    "test": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+  },
+  "bootstrap_repeats": 200,
+  "seed": 42,
+  "chronology_policy": "exclude_uncertain_frame_rallies_from_hazard_and_cost_fits",
+  "fit_protocol": "train fit; validation selection; frozen test; train+validation export"
+}

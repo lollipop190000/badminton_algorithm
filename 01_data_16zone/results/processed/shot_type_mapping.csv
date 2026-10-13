@@ -1,0 +1,21 @@
+﻿shot_type_raw,shot_type_fine,shot_type_standardized,merge_rationale
+切球,drop,drop,No merge; label is retained as its own action family.
+勾球,cross_court_net_shot,hairpin,Merged with net shot in the established 10-action schema as a front-court net action.
+小平球,driven_flight,drive,Merged with drive in the established 10-action schema as a flat trajectory exchange.
+平球,drive,drive,No merge; label is retained as its own action family.
+後場抽平球,back_court_drive,drive,Merged with drive in the established 10-action schema as a flat trajectory exchange.
+挑球,lob,under_clear,No merge; label is retained as its own action family.
+推球,push,push,No merge; label is retained as its own action family.
+撲球,rush,push,Merged with push in the established schema as an attacking forecourt push/rush family.
+擋小球,return_net,defensive_shot,Merged into defensive shot in the established schema.
+放小球,net_shot,hairpin,No merge; label is retained as its own action family.
+未知球種,unknown,EXCLUDED_RALLY,Unknown shot labels are not silently assigned to a tactical action.
+殺球,smash,smash,No merge; label is retained as its own action family.
+發短球,short_service,short_service,No merge; label is retained as its own action family.
+發長球,long_service,long_service,No merge; label is retained as its own action family.
+過度切球,passive_drop,drop,Merged with drop in the established 10-action schema as a downward soft rear-court shot.
+過渡切球,passive_drop,drop,Merged with drop in the established 10-action schema as a downward soft rear-court shot.
+長球,clear,high_clear,No merge; label is retained as its own action family.
+防守回抽,defensive_return_drive,defensive_shot,Merged into defensive shot in the established schema.
+防守回挑,defensive_return_lob,defensive_shot,Merged into defensive shot in the established schema.
+點扣,wrist_smash,smash,Wrist smash and smash share the same attacking overhead family in the established 10-action research schema.

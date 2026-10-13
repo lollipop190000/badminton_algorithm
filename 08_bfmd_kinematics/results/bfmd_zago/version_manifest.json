@@ -1,0 +1,685 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "pyarrow": "25.0.1",
+    "opencv-python-headless": "5.0.0.93",
+    "ijson": "3.6.0",
+    "matplotlib": "3.11.1",
+    "gdown": "6.4.2"
+  },
+  "code_sha256": {
+    "bfmd_zago\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bfmd_zago\\bfmd_zago_config.yaml": "a0c374bcc64dcde9ee9d077f876815a977650b6939ea461c40b5063f24938239",
+    "bfmd_zago\\bfmd_zago_pipeline.py": "21a5324a0d01c0b2b59ddf49849ab9ffd4453cd17920fef3397f9ce67960d7a4",
+    "bfmd_zago\\calibration_motion_labels.csv": "d757b3b926a770c77bc67d1fdc72889aff95eb47f8ccc63450fd515d2bbb1d4d",
+    "bfmd_zago\\data_bfmd.py": "5adb20d7e0fb86ced743f24a78999685f9e266605446b56c20c6e696dc7c3594",
+    "bfmd_zago\\download_bfmd.py": "5d0b1ce6cd4ec59683ac7ee35b118567a14429f3244a3e7b515b6f3a3f9fc2b5",
+    "bfmd_zago\\hypothesis_grid.json": "d2589f66b2e0cf1b2861dd2ddfcddb21f5c291d93168fed51f3c9c5268c14bbf",
+    "bfmd_zago\\kinematics.py": "b96d2e4272291b2440ae07378abe699ecf92c73b6da79d6ea724386ad0c06ad0",
+    "bfmd_zago\\lookup.py": "d3945d42a1310ef7a13206afec04c4765d8995917ac5b04785ac3f05d4c08ff8",
+    "bfmd_zago\\README.md": "aa381185ad74b06cdda33ad3113519c9f59096fcd40247837dc69568abde22ab",
+    "bfmd_zago\\reporting.py": "c478d32cd6583471f8891a9bd5dcff42bde09bbbe616ecea5133aac849241c94",
+    "bfmd_zago\\requirements_status.csv": "8617ca0f86282ed1acbfebbc9e526f4e96d1158dde93643f44bb75caf786603d",
+    "bfmd_zago\\research_handoff.md": "f88eef841b9804fe0d32e8d2c6c9059948cb52dd123f2ca799e4a5da8509638b",
+    "bfmd_zago\\source_access_audit.json": "21a5ce86683c428aeef31f8690fa421deb83b072c96bfe61b1e069fe43e76af2",
+    "bfmd_zago\\video_audit.py": "5ded0bb03a8215425402aeb2597335f51c561d047b379435f4d34853cd9a56aa",
+    "bfmd_zago/bfmd_zago_config.yaml": "a0c374bcc64dcde9ee9d077f876815a977650b6939ea461c40b5063f24938239",
+    "bfmd_zago/bfmd_zago_pipeline.py": "21a5324a0d01c0b2b59ddf49849ab9ffd4453cd17920fef3397f9ce67960d7a4",
+    "bfmd_zago/calibration_motion_labels.csv": "d757b3b926a770c77bc67d1fdc72889aff95eb47f8ccc63450fd515d2bbb1d4d",
+    "bfmd_zago/data_bfmd.py": "5adb20d7e0fb86ced743f24a78999685f9e266605446b56c20c6e696dc7c3594",
+    "bfmd_zago/download_bfmd.py": "5d0b1ce6cd4ec59683ac7ee35b118567a14429f3244a3e7b515b6f3a3f9fc2b5",
+    "bfmd_zago/hypothesis_grid.json": "d2589f66b2e0cf1b2861dd2ddfcddb21f5c291d93168fed51f3c9c5268c14bbf",
+    "bfmd_zago/kinematics.py": "b96d2e4272291b2440ae07378abe699ecf92c73b6da79d6ea724386ad0c06ad0",
+    "bfmd_zago/lookup.py": "d3945d42a1310ef7a13206afec04c4765d8995917ac5b04785ac3f05d4c08ff8",
+    "bfmd_zago/README.md": "aa381185ad74b06cdda33ad3113519c9f59096fcd40247837dc69568abde22ab",
+    "bfmd_zago/reporting.py": "c478d32cd6583471f8891a9bd5dcff42bde09bbbe616ecea5133aac849241c94",
+    "bfmd_zago/requirements_bfmd.txt": "dc695b3f8ef51acc4a7e29906478343f6f99c9f99ab82a4abe7d145e9cbf8e0f",
+    "bfmd_zago/requirements_status.csv": "8617ca0f86282ed1acbfebbc9e526f4e96d1158dde93643f44bb75caf786603d",
+    "bfmd_zago/research_handoff.md": "f88eef841b9804fe0d32e8d2c6c9059948cb52dd123f2ca799e4a5da8509638b",
+    "bfmd_zago/source_access_audit.json": "21a5ce86683c428aeef31f8690fa421deb83b072c96bfe61b1e069fe43e76af2",
+    "bfmd_zago/video_audit.py": "5ded0bb03a8215425402aeb2597335f51c561d047b379435f4d34853cd9a56aa",
+    "bfmd_zago/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_bfmd_zago.py": "a83698566724712beef649ac0cee2aadcb8bef741827ee1b73020313a1e0988b"
+  },
+  "raw_annotation_sha256": {
+    "files": [
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+        "bytes": 25072,
+        "sha256": "ecde039e00df6979b0b1074a04d315d11d186026a71cd066402fecc9b48bbc92",
+        "drive_id": "1ytl40IGn2X2PQts84Jnv_sTDcjgOwGwK"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+        "bytes": 23496,
+        "sha256": "c0001cdc120254a6aebab4f321813025c68de44ca3ee3e0a30ca96333396718a",
+        "drive_id": "1f42PInq3sF4ZtBamAPw7-Wf4CZIa_7if"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+        "bytes": 31851,
+        "sha256": "48ef6159093a839b7ceb5f7aa5a8191e3a0f956640e99b3eada0b74e7b114698",
+        "drive_id": "1FbQ-jLat3u8Dw9dLwAgAr4-I61Q6VyZc"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 20376,
+        "sha256": "c96a89f19a0f2c43c76dd4d43f26ceb9d676bb907db3adf5ddf9e723449620d7",
+        "drive_id": "1hyS5jmIl3saX4iyLyTNla2T4OlPfY_rk"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+        "bytes": 18940,
+        "sha256": "234376b012c418043629caccb046b790616f24312460c8770f8c3d75aded8823",
+        "drive_id": "16qpdT1QeJOs11Yx7HYcczB-c19wc7NGe"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+        "bytes": 28215,
+        "sha256": "fe0974c56dfe0ef366e32f7b2d93caf36bee160d655493633742f3da32f195bf",
+        "drive_id": "1YHlTpVRYbqgBX-gIDB6A6LdaYKoj2aYN"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+        "bytes": 31015,
+        "sha256": "d1790c8bf52877da2235858001277e8b1d78edbb01214c99f649871fed24fd90",
+        "drive_id": "10gyatc26rb6xtzzkioqtgdGWQ2Gr1kSn"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+        "bytes": 21974,
+        "sha256": "e6a174243dc8a10ab8db9fbe4c05c3d38aad2db15b378cb74b16db931a11bd5f",
+        "drive_id": "1OoITZO1-uVoD8WNbM4RuoTU_873daF72"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 21740,
+        "sha256": "506d776f43c4455e818ebbd713b03717159404653bc3d0121e23e05ca85c2f83",
+        "drive_id": "1F0iUd_SkGBnqwu5jIyQkVK6KXE-p3ALe"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F_court.json",
+        "bytes": 740,
+        "sha256": "227337a52a39d0468fd000bb82bab4b09281a9cff243eced571bd5563baa29b5",
+        "drive_id": "1iBDOxf8V-4qzyLrJBGTXIzFqprTeSV3F"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+        "bytes": 22613,
+        "sha256": "97024d4264416112679f3ed8f6deac78d282d8250182fd7fe6a65b82a06f3390",
+        "drive_id": "14NcmhdG7zmz1zbckeP5CfrY0SOET1l1T"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+        "bytes": 32753,
+        "sha256": "2001cc260a32a2f6b467d6a6beb98c99d8b704181c0a453d6883d17d5d16f3ad",
+        "drive_id": "1pFHW7ZI3MMZEbsjB563BxJYbiPHMQwrm"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\metadata\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+        "bytes": 32728,
+        "sha256": "63c1bb94ebbebbd436b5b3ae0453aac4e5dc7996bd07e3930d8eedc1326dfbe9",
+        "drive_id": "1G6w2NLJz7N46ftiDjhzRJQxvRp__w84a"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF_court.json",
+        "bytes": 748,
+        "sha256": "eca10398a99b77a3bb230e4c09341a433217821a797e2aec57481047d4789030",
+        "drive_id": "1X9UfSGIeCz5Rpuz6QDrgZDTq7YrZfk8s"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF_court.json",
+        "bytes": 732,
+        "sha256": "2b05074a0170693ab083113df8a791a60d6a02368d80b020c2304386168ffec1",
+        "drive_id": "1r6jGNB2P9MkIUB1kiYISOXJS_bUKM1TJ"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF_court.json",
+        "bytes": 735,
+        "sha256": "6a62e0e7bb3d59fac803741f5b2c52170d7fa1d2e57450541100973af9060149",
+        "drive_id": "1aLfkyWrAHplR6SWdSton7PqDUnrrzlaj"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F_court.json",
+        "bytes": 727,
+        "sha256": "679e8e953004e292e2cdcae18318736dccf54b4e7badce7c169b9f24344b43dd",
+        "drive_id": "1PsdoA_iQgb1b7lvDvDTM_vstYL0fAgo5"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF_court.json",
+        "bytes": 721,
+        "sha256": "a40e0941bfcf428c9363b10dfc5ed5255a8844193ac6ffaeca8ac68458d0847d",
+        "drive_id": "1Z9LipCfe_fS2fEdyE46nv5APFEUShBmy"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF_court.json",
+        "bytes": 717,
+        "sha256": "9ee25bc44b8ff573fb3a8a2fed2651cfa437caedebf62aabbfa81ce139ae8cce",
+        "drive_id": "1ln6NwxL2Q4fXd7Xfwcu7l7pcotR6wyRI"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF_court.json",
+        "bytes": 719,
+        "sha256": "b1495dd03082dab939ce93859ea810fbfbe8266c4503225482050b1dbb2fc20d",
+        "drive_id": "19xCqW7d0pOdTMTye3XuXHmAL5TETDRSh"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F_court.json",
+        "bytes": 717,
+        "sha256": "5c29b1e1f059559e8a321966944f4274b5ea48d46b42a88c9550155b68266184",
+        "drive_id": "1XAJ_VfuwCauj-1K0Ts1Td924jTLOOWqo"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F_court.json",
+        "bytes": 713,
+        "sha256": "8574070275b60f111c6885c079a67026bb32db8d7587f0349c2589cb18d2010d",
+        "drive_id": "1enBs5wDL9iKpN_LFKQCAlfcq-JEk0lLb"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF_court.json",
+        "bytes": 727,
+        "sha256": "867574c0fc6b9ba70959b076f267746c37d04e657d263607cfc0e8785c4be3ed",
+        "drive_id": "1jnO5aeZnRUc8vNQbs3c95fS7lT7lnOiG"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF_court.json",
+        "bytes": 721,
+        "sha256": "cbc93be905c8dd11e206280ca40b68c232ec230b9aa8a599de87574de9e0b76b",
+        "drive_id": "1qIDgjqL4t5zlayFLSYc7s0h77e30gheb"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+        "bytes": 622958,
+        "sha256": "133a78a6e6df43d88d87b98b6e37f77bf1d01e223e84f1eba9a677dc340a5b0a",
+        "drive_id": "1eKWW46HLl29FwSXwGKEW5EdPd0-7isP4"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 623973,
+        "sha256": "9b4d0596df851a7cccc1487765c59aec87885ef2be4a038ba645bb470d070688",
+        "drive_id": "1ARYpYok-aO5s3dD3G1fvrx63xyusF66w"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+        "bytes": 705772,
+        "sha256": "5514c9beb6a75b84976aad6b0193ca2aacf177ee09d7ec680057cfc9903dd1ab",
+        "drive_id": "1zo0LSSb2PiwaC_SHHYg4YpeLEGgCW-um"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+        "bytes": 731999,
+        "sha256": "2e865a2270ebdfbea37ca9a3f7697053387a93a213de08631faac4d9d247a497",
+        "drive_id": "1AAWejLFDgsGwj7U5ebNxYqUTDWya5pLX"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+        "bytes": 485831,
+        "sha256": "f09aaf2b4cb37961e0466b47a5cfdee4bfb6e44f13711eb88963948e37f955e5",
+        "drive_id": "1ad4ygmseNCRwRDpKYcrMSburTrhAg1wL"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+        "bytes": 518666,
+        "sha256": "e858f7c0caccdf966272800598ac0a5f1976eae92e2f62275ccf4795cd7d6a68",
+        "drive_id": "1frk5JE8Tl_2Gl3CpLvkXyy6hH_OwKrt6"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+        "bytes": 680462,
+        "sha256": "9ae341aa52e0358e19461f60a7be8b5237f3fcde4f13f81558d9a391e37827c9",
+        "drive_id": "1h-RAJ1Ip3_YDn2aSOmEfx1Hnb0oWZ1jP"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+        "bytes": 672016,
+        "sha256": "e8860a07361ffdc6c77061565d26e9a24b863f597045c773aba7f5c934f21a81",
+        "drive_id": "10U1E2fMeu8KAizh69Fn3y5mctkWLF6_F"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 556270,
+        "sha256": "7cccd7c2dd83c1dad8bd6715567ed80a20bfbd32b35ef304cfeafc94dd2317a3",
+        "drive_id": "1oFE5mtMz2OZ-7UmszsvPkVtwTyco9QXX"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+        "bytes": 806435,
+        "sha256": "971e535d2f26d33c34b924d6f5256f6d5dfc09b29bb292370f74412052db7daf",
+        "drive_id": "1mzDIEY_26RuwZS_dptb4kI_FYhNVbeBg"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+        "bytes": 755480,
+        "sha256": "9e1b2a3955aeb7c43b247183b6b31bd46e7520bb77905049cb934f3de030c050",
+        "drive_id": "1JTnt1CjPBgZakLyEley9nhuP574absA9"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\court_perframe\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+        "bytes": 728462,
+        "sha256": "c05e6efe4a9f02af2a7f72a7243281a4be19c04c9bf1161b7d0e42727640bd05",
+        "drive_id": "1h6suMU4dyIhpywh7AI6pbS668ErHdsYf"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+        "bytes": 9169249,
+        "sha256": "2a70dff042601883d030e52d989ad60ab05139547b8c88f99243525b504ef166",
+        "drive_id": "19mMu3s55asjXzJrg-MAkhDWg24vMOAae"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+        "bytes": 9217038,
+        "sha256": "72802644392be1435e17202b8b294ccee2c1f6572ef480ff187178020fbe8f26",
+        "drive_id": "1RhuZqmFC0bq46YA3VH9DRA9r8MqgPipN"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 12738817,
+        "sha256": "49b7dfb84260b6d81a63a9171e4c5a00b61159ee25838adc7b0332c8501c4e8b",
+        "drive_id": "100v4gznBeBvHLU0hiig4x1c-KKBUk6ot"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+        "bytes": 10388251,
+        "sha256": "16402232e3e3016b29b9ae518070e5eafeb568e0ecea0bf3ef4136be9129eb29",
+        "drive_id": "1Ir9KuGu9H1K_nkWbCXrhAnCYmOr2uwbb"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+        "bytes": 7505705,
+        "sha256": "2292f55cf1ddd6a39bc19e928e521d85e51b9a4caf0340ff2b46696293f4d6d9",
+        "drive_id": "1GOxfy_oVrRu7K1eZOM1X0MFLbpBNHDYC"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+        "bytes": 5978322,
+        "sha256": "d4a3d05f1bc2c073c1dd2a3c64c2ff78bbf070ebda460f3a5d85f9e563c50ddb",
+        "drive_id": "1Q-p41JvDBj_A32bcMK5E1HHZw8aFUF45"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+        "bytes": 11349086,
+        "sha256": "5cd1ce76a9d3547650653250e5efe1ca5230a4602784a0b2afde338f5c71246d",
+        "drive_id": "14ZTa4lKcMKzHt4B9Adf0Mi_SzVM1ObHV"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 6248488,
+        "sha256": "ca476ca0b16600fee7c5e6e7b657cad54d73a15ad714d9c29a01eabb6bdfe02e",
+        "drive_id": "1A3-6BmaIuRyceRTPAVKsjicuW8RQkeTM"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+        "bytes": 8950549,
+        "sha256": "8cd90cddccffe448c1558fad3f7afae5841e432489203ac2685b0c20ea52d102",
+        "drive_id": "1qI3Xiknk1sRZ6lNSGtvieJU_hqD3U5UY"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+        "bytes": 8826727,
+        "sha256": "a16b23dae5496ceecadb7350f6b947d052209fae952f45c9687498cc45d4ff4d",
+        "drive_id": "16KwUx8-1jB-t_wp3KFziOCOZ62tqWyFG"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+        "bytes": 7864665,
+        "sha256": "5fcffd4bbc901c03e118342ebe2db583c6271b7ed5d96eab7d36bf06d86ba2e9",
+        "drive_id": "1EEgrza7vIP2QmUhkl_WEsh8OQqC5RxqJ"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\player_bbox\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+        "bytes": 12875378,
+        "sha256": "984aac041c5e7699a93a7cde7f8001add1b58b7f5568eb0f331239858ba5c7cd",
+        "drive_id": "1vDvkAb04jcgq6xM46Q5kCNHjv-t09urv"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+        "bytes": 134669950,
+        "sha256": "4e40a7cfe03b522a7752d6c82bfbb450809128109cda8a94855575fcddfcce21",
+        "drive_id": "1dyo-2A8aFIII44Kb7JDqPUxFc7mVX4Jr"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+        "bytes": 132110709,
+        "sha256": "9af31ea316e42d36ed369bd947bd6fcdb6a235723e070601a040f05509dd0957",
+        "drive_id": "1pEeLleHWV8Qc9EVffwUvV6bTaBW4fNyH"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+        "bytes": 149511741,
+        "sha256": "06f86035228d5c62592af56dd441e15ebd4882100667f9e49393ef2bcd9b46f8",
+        "drive_id": "1oNI8N1BINhpHlLchY9kzCD9igvClVO_S"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 193481043,
+        "sha256": "635deb793642d00bdfe2c6f4cf2628663bf17e42f3ce5557651fe3d54546dfe4",
+        "drive_id": "11alosIr7znUiPOfw53wlPNZD-neTaYc_"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+        "bytes": 114490434,
+        "sha256": "39856fe90303551a2e481abd0994afb7526e5b86f6289ec9a0d1d96da9125dca",
+        "drive_id": "1xJAG1qlA44K1Vi2w4EozKvEEbSpVbtZS"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+        "bytes": 88279053,
+        "sha256": "f4959207bc154e53cbdef3f80836a40918923ecafd23a5c2df37be9cd0db0f6b",
+        "drive_id": "1qzVs84h_p4Xq_rywOE_dDi3ycGKx72HC"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 92771557,
+        "sha256": "a171422df3615fa0fe4da2e429097716a04fc5f3e38b6aa6b06ff72044afa0e0",
+        "drive_id": "1CSEqT-UUJ45wZmfZSBHPhBa4oPZzMgG2"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+        "bytes": 168861010,
+        "sha256": "385290878220065db01230a68e95e3bd3a4ddc3701d2a3a4d815247ee195a5db",
+        "drive_id": "1auBCop_BFCM2WpCDzw4j04uELdjVa8jO"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+        "bytes": 131792543,
+        "sha256": "9bdfb8af6eb2bf56f5f3b2892a4f34b4896bb2f15a095a698a3101c8024e403e",
+        "drive_id": "1Tghx-nzDaUDaVfYRZ3niod90q3hejOT-"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+        "bytes": 130786,
+        "sha256": "2dbd6187ed9974a345dfdea4060e70358bc6215b3c86ce5fcb8c124f3fa401e9",
+        "drive_id": "124fOTx6MsyXVAVqJ5jbF52M_LjMaa4h8"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+        "bytes": 135341,
+        "sha256": "8577bfc094d3dacff152e3e74540793633ac85a40560a018719e925e02430935",
+        "drive_id": "1-kgEYup-amNieztybgMD1_OSmjxgvwH9"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+        "bytes": 140421,
+        "sha256": "5d19ca191d85359bbe9feef966da817a11d61ebee1603f53f7fae3943a4b5984",
+        "drive_id": "1ymBj5b77MfMPwyNY3XrMMzIXOVhsbx3z"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 152966,
+        "sha256": "f22fc3bb3e5309cae851511426990cb0d8c6718c6b6c9b4e25aa142a1772cd8d",
+        "drive_id": "1Cof3XgHU7W14YjCewdRlYILU_PNZJPPQ"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+        "bytes": 129881172,
+        "sha256": "e6d14b084a497b056b36ab23000447c059fc18e31b115a6380cab4a56da30a17",
+        "drive_id": "16qaHf56aoXHvpoL7KfjbFXqHHZU9EYge"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+        "bytes": 115513801,
+        "sha256": "6278f5fffaa83eab091f77c64bad12b8b8ebc6d532ecbe09a5cdbc0639c4c3a8",
+        "drive_id": "1stJRjbZAtYaOu-EZypLY8CH_VkKBOdqa"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+        "bytes": 81360,
+        "sha256": "52d9f68a6ea60b58d412d06de1f1a726589c99a1f1ca0abc8d9ce4f7f54200c6",
+        "drive_id": "10LRu9KhNWViOjbuuEn1ZF18iqBkU1hFT"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\pose\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+        "bytes": 185316375,
+        "sha256": "8e46ff27809f0cddb0216d4b8e481126e0cbfb4f26efa61a7b76ee99902bcaee",
+        "drive_id": "1ZErggVu24ZI3VJsgoKJun00lgsUJTOvP"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+        "bytes": 146593,
+        "sha256": "cfa87c2de76417cdce102daed1c938c84ab30b6d094728d9e4756f8c0f776d76",
+        "drive_id": "1NSdnxpek_tNUreiCTvLX8TRyfDS-eLqI"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 91131,
+        "sha256": "124397493ff86cef5056dfbc5cd0875b11c864da9a29705c33820d2141b53c03",
+        "drive_id": "1exDIhGSdAumJuW_RhXK7VbR61ir5XlSV"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+        "bytes": 121917,
+        "sha256": "b649d442db24a744c2c331bc0dac5817b2e45df9042480545bc498e047337f18",
+        "drive_id": "1u6DA8ibpk4R5Fr30mjjT_ZelRbPYVhqG"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+        "bytes": 93960,
+        "sha256": "55653d52d055c7a11918f72e29aa4091042b3154e97c6ecd2ff7e23b01210fc6",
+        "drive_id": "1QlaCwOZGzhDlfHku7KvuCepL4Gq6kj1h"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+        "bytes": 905698,
+        "sha256": "b39b48252d8892df6825d46f525fbab5e6ddfce4e254d5c0f01842bfe25eacf3",
+        "drive_id": "1JJ96p0Opw59cYfsFgtpSFHDRvO4IE3bv"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+        "bytes": 101568,
+        "sha256": "f366b49a2dfcc808bd312db0b78ed11c263289135e79d652f24b7ec72da40bad",
+        "drive_id": "1c_IQ9pVw9zcoVaYThB3W9rhuEmNaDYQY"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+        "bytes": 120229,
+        "sha256": "f139951be789c6386dbb3301ac8d44f4ec96c302d2836673aa538fbb6ac83529",
+        "drive_id": "1RpjTz6hCQLJHvQAZd-JoqM8SpJ9cC9kE"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\hit_inferred\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+        "bytes": 168194,
+        "sha256": "e2faae6f8dc9f7af82cca363e5e4316bef07fd8364a00693b44b368fb42cfd17",
+        "drive_id": "1gt_qq6DRCFaz8U-AhNGimHkGwJ8asr1G"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+        "bytes": 935683,
+        "sha256": "8cd997e16ab1a2487e67fcc1bfceb552c381f0732003ef8ffbb8e613280ea584",
+        "drive_id": "1VP_DmGPSeYbl2ZjvuiSNwEJdjvxpkXw8"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 1056869,
+        "sha256": "c22ca7698c500976fa9589038c2d101eb7927be2a95250d0f54b073fee94ebbd",
+        "drive_id": "1jvcUGjoFtnbPD6JV41P5BqeAvrVFVr8x"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+        "bytes": 1021982,
+        "sha256": "5fbdb2f034bf0424aef52ec1b8e8d8796aa01f45b1b717ad154f174460efaf0b",
+        "drive_id": "16uSt2vo-FE_cqDBOWDq9OWAdsMcQfkW8"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+        "bytes": 679282,
+        "sha256": "7a96ddebc69765148fccfbaeb52e59afc01bcdefcb5b26eeb5d3aff92e27d679",
+        "drive_id": "1DV-Bep8I9oqkImowrWdjXKoX43R5jfVx"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+        "bytes": 1067290,
+        "sha256": "b4e087283b631e6ff4cba43f874d8212998248d1f42152c19c6f12f97655dea5",
+        "drive_id": "1PKoeR7LKDF4GwB6AHupBH3OV1jZ4TXBc"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+        "bytes": 1090453,
+        "sha256": "e5ff7c26a4aee4d28b2ee64555c776df14f6d291296db791f6e2dcad90572fc1",
+        "drive_id": "1bqnk6du7DomSnaMr72vSbSiiF4Qy9JBw"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+        "bytes": 601171,
+        "sha256": "c435ae98c35c06bfae39d60be99fab9b0007cbc171713c2c9b807850dfef9052",
+        "drive_id": "1HK1aoAtm-jMkp_lrOG7ib3N8XgUVU0XD"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 652663,
+        "sha256": "49841dd0da04d13a55733208b1ff5d9841943ed34397ccce8fb5dd44b326b465",
+        "drive_id": "1XV3s-ArpujoQ_bnROWkkJSipOL0YepVt"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+        "bytes": 3505511,
+        "sha256": "7e8c9491892067a508ef19f81bbd7dc1c75912c8b03142cb934cedb0d676cf48",
+        "drive_id": "1JdcBAyo5f3kUFnXMB41oLJiw36QfBbd9"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+        "bytes": 895354,
+        "sha256": "928d06986999ab69246d7c4bad5fd38886278796456a2ce81e7cb6d603703274",
+        "drive_id": "1pOA8b0odATwxgvkBz2D47ruJ7krrHzaH"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+        "bytes": 748991,
+        "sha256": "5fb81ed3e486e514dd59eb2d481af5666c6474c03f9d59d494d88e2b2984cfae",
+        "drive_id": "1dGIBIEgr6Y6TYPndOxDrx0VQ06azgPoS"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shot_type\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+        "bytes": 1217557,
+        "sha256": "a46c95378ee15ecf70d9c710d24efcc7caaefe39bb23f31194cc35143bf158d2",
+        "drive_id": "1MWQl7ZGmI5sEWLfzNyMYOeuuKoGlvEOE"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+        "bytes": 3533277,
+        "sha256": "95aab648a532ebe53d223ab24f92a94104177738510d71fde01cd6fa8c1e0642",
+        "drive_id": "1KHFwrKREJQVQ3liK43ExfCYMDnxvlO36"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 4860930,
+        "sha256": "4e66a575687bb4a6d2a8c9f37e837226551d9980e7d8ed7e25b208bda80e4026",
+        "drive_id": "1N_dmk0iStuoX0hElU8jSXGp_QL5s7znU"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+        "bytes": 3948936,
+        "sha256": "c9839ecdf54e42c73fe86d23839e72bf955e8dc5e246244c5ff2d82b772b42e1",
+        "drive_id": "1YPS4cVRkCDx67VB4L2-vTyPKBIGjlWX6"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+        "bytes": 2824767,
+        "sha256": "fd67eee36f86c999d1d78b2326014ae8e82fa7dab9c68da74073de72a2856185",
+        "drive_id": "1f5uJb8_yyhIogmj8MU5DoN28T3ja8Py7"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+        "bytes": 4309541,
+        "sha256": "264f259f4b3f064c464d386308220d95183bdee074f581d13ae0e400ef5b86f9",
+        "drive_id": "13xI-IK-xr3izMuKMp1iWaqjZLFFkI05t"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+        "bytes": 2302922,
+        "sha256": "c2c073984ffc638727f2a7e42a5a97519efa8395df32a2df785c955c8d323b30",
+        "drive_id": "1XVZBtreyiFcePX4Ljs7T7oVX8VhQtRPh"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+        "bytes": 3436018,
+        "sha256": "d374d508fdb82bff92bac87fd6f1105c46fe19107517b5c3066799c75cc88c1c",
+        "drive_id": "1H-pQw9DU2ArQvMf45jfVywJQl9BfKr4W"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+        "bytes": 2441901,
+        "sha256": "a099d5d7f19182dcd97946740a2b42f757014106f9f50d6a289da860ecdfe3b4",
+        "drive_id": "13KBluJTUFJnE8TZya68et3GXKGgRQah6"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+        "bytes": 3307069,
+        "sha256": "3d3da299b10e940382bfa2c668988baad63da365ae5b3c0b2322d8bfc3ffa49b",
+        "drive_id": "1EI-tgoJwXySx795_DUtqD704Nuql8kw8"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+        "bytes": 4895784,
+        "sha256": "283895fbcd30b0888aba7ec0f3c3fc68faf6b5a453c84dbf6c7eeb7c964d42bd",
+        "drive_id": "1wzl0M8bKdHwbHqLneRZn4VRUOlqyvkv8"
+      },
+      {
+        "path": "raw\\BFMD\\annotations\\shuttle\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+        "bytes": 2978350,
+        "sha256": "0cad372bd369873c55ddd3b1ae289b7f0690c8dd58ac5cf2b70864c835577241",
+        "drive_id": "1UaO-2ZIV39pRgq0KXVnLmU0ddBiU3rvF"
+      }
+    ],
+    "failures": []
+  },
+  "output_sha256": {
+    "bfmd_kinematics_lookup.csv": "dc2e469b7d49b197033ba271f26c2d30869c513f219a128579b5e78748c7ea4f",
+    "bfmd_kinematics_lookup.parquet": "c399b99ba8e3b927bd482b90b19b3a7bc9627958131508c873be4c67f6d94389",
+    "bfmd_schema_audit.json": "7f81f13b768ec26fab73a903000e4e22fc6f5fa33d407dbf8b162970740e8a57",
+    "bfmd_shuttleset_categorical_comparison.csv": "1642ade04ea80e21abebd0cb6448bc46cdbbfee25f54dc81c3cb00b10eab19b2",
+    "bfmd_shuttleset_distribution_comparison.csv": "837461d55bb81e5780acf9bb1d515cd3d3c83848fb5d1c4465d48c29adcf4093",
+    "bfmd_T_lookup.csv": "ef3e26c8dcc48b60aaa73a4a18164de296e6fdbfbfd67d1153088698b45da0e3",
+    "bfmd_T_lookup.parquet": "14c7f62cd2b09f4856bc5b6ff9e282592a6296e32123fd53b36761ec26e2cd31",
+    "bfmd_zago_diagnostics.csv": "030e2ef4432bb939252e425f8b41472a4fbe3bcbd7da25474ed54e0d658c0e3b",
+    "bfmd_zago_lookup.csv": "32f96cfeea9f6c7564e0d2cabcfe90f0b328ccee74fb31413231c9c1eea59d96",
+    "bfmd_zago_lookup.parquet": "c8944618e8d83b9e342f3cec9b34926139d250ec2bb7b577b27a777abf43753a",
+    "bfmd_zago_observations.csv": "104ca9d777ee2893e4bef5242bcc09014944e7b7cbdc3d7fe502f6abc2a3dd6c",
+    "bfmd_zago_validation.md": "53a9f16f4b40eb3f01e53ca27d61dba05804df5f95893e609578ffe448a6324b",
+    "conditional_means_distance.csv": "e2247df4a6b5f79ee6da3b6b79f7f4cb3ddceb1f4a79487663bd47dfc81cf1af",
+    "conditional_means_distance_direction_role_shot.csv": "74356ac9811a170d15762c145fa2ae8ddc5228528d773e31e764933bed0050fa",
+    "conditional_means_distance_role.csv": "168ef6c54b34d279e9bb9dc7afec56ae76f2f5cb6bc41555f4e007b96f7070d3",
+    "conditional_means_distance_role_shot.csv": "15e24196e36c566e1cea08940e0cd0b31f7472b366b8984025518da4601529cf",
+    "conditional_means_exact_state.csv": "8c2e9b7ebc155dc2f5c5b899c6b6e89f61b587e003a8e796efced6ed2c5a2aa7",
+    "conditional_means_global.csv": "27cc922392d205a09ff64ade9e797f2cf7cdcc55cf5f5549373e06bf0b8c74db",
+    "conditional_means_start_end_zone_role_shot.csv": "656d47b3f00acaed6a3221d3c1642a93f3acdbe8a20ffa204a3fc9f55bfdd09b",
+    "filter_threshold_sensitivity.parquet": "c3f9a4522407d26496d29ae16fef23cc4fba2b5247aced48a660bc8c62fdeb72",
+    "filter_threshold_sensitivity_summary.csv": "37264444a2d4251f76a0247a8d5cf0331086c908fa27408cb5f5ba703c3462fc",
+    "hit_alignment_sensitivity.parquet": "705dc73c5fc89ba9358368c31fca9819ac084aaf390344e3a9175855f2e246f9",
+    "hit_alignment_sensitivity_summary.csv": "f027a593a69526dc6a8d7af84e821d8782c88413ede5949654475aa20ed5f151",
+    "hypothesis_costs.csv": "141234e3f679176ea105a1cf1765e0fda9b999cf87123478514710a113f73fbf",
+    "interval_additivity.csv": "1c470ec5214b12ad84822f76d2e513897eb3c71fae33f82f560bcfd504b2393f",
+    "lookup_export_audit.json": "a1c1d81324acb8a68c45306dba970fb19a37b1a8d5260f1d696696467a46bd4b",
+    "lookup_parameter_groups.csv": "93d778f5bf50c0006d439799605f998d2c91c43b9098cc10644fd7e2e05cfaad",
+    "low_speed_orientation_sensitivity.csv": "a8944c75abfc3efc98572ecbd77bb58d0b1b79bc72fa1870b31ca1c50aa54f89",
+    "match_split_manifest.csv": "b583d9a722f4023d830a9fca015b48fec4e43ce4724f1c8abf03df4e34e57bc3",
+    "metadata_player_side_audit.csv": "7b490e46235149f01582b700669b7199e9351f0d99996d7f889858ea5c79c268",
+    "model_assumption_sensitivity.csv": "0dd9f77a358110d3b0431253806722a27cc1f34f1ad62157b0867ea3e9afd941",
+    "motion_features.csv": "a15c4c773d6ba5c0d8f48d3571368b3b87eb691455bfbc4467b3b61255ec0560",
+    "motion_features.parquet": "870175c133c48762b6e6c020c0388b255f52d7f9a3aafd378ec2f10969ab880f",
+    "normalization.json": "dacd270949a0adf2e914505eaff5f71f30117efc6ee0f5195f5582acd12d3fc7",
+    "one_rally_alignment_audit.csv": "b6ce3e9c49b2e26af26fdbe4ccdb29120cf7926bbc5dc6e8956b5fa7aa7fd7b2",
+    "player_overlap_audit.csv": "1f6e151c997a626ea54d12d0bc8e5c2c25955813ffbbbda626016bdbbf1ff022",
+    "protected_files_before.json": "eae3f9a9de76c9cc60dfab39357ada9bf4e6e9f95c4d24791d3130c892a356bc",
+    "protected_files_unchanged.json": "6e192034700f8be071728b39771c48cf3b4740d5f9735a93351455613748f307",
+    "proxy_outlier_thresholds.json": "f41c7c978ab660f5e93d97c39dec2449854682f6e695609e01ae8fde38bb54f5",
+    "pugliese_crossref_metadata.json": "9ba8e59656cd562a008f92ba8b572f82fe567b976abcd75f748b2679ce031703",
+    "quality_group_summary.csv": "b3258dff5260b8d7ca93032c9ed076f058c796de41cf301380df3768e544259c",
+    "rally_integrity_audit.csv": "26b160c6b5223c3ea1b0a694177dc87de221ca8ff1084f56bf53e046bf3e3db8",
+    "requirement_completion.csv": "67b1d387f35d2813b633444b6fa9e16eff81e3e6d4cc243970ecedd0f70406c0",
+    "selected_lookup_model.json": "3069c059c71756020591a39a1f2587af640e7c8fd0604ef80af5ff18b6778943",
+    "source_access_audit.json": "21a5ce86683c428aeef31f8690fa421deb83b072c96bfe61b1e069fe43e76af2",
+    "test_error_breakdowns.csv": "2259cba503720bd7b4126589797227fc08392dc6ce6bb6b2c168afe52cd44ba4",
+    "test_model_comparison.csv": "a82792400c30dd93ffb2c6ce63013399f06106271862cca5ef8a0c0edee70ff0",
+    "test_predictions.csv": "1e2b3750a1672f938d78e3c41da48642d038839857d8dd3aa737db48e85b9ebe",
+    "test_result.json": "b921f4fd2e4a56e0c7bbbc074df3671b693e229e9d83646f3b7ad56f29ea320c",
+    "transition_index.parquet": "92ed084ef6590ce2653c271322889dd60afd937423c58e22ff3fd6ebb2e61970",
+    "validation_model_grid.csv": "3ab57273e04ae58b6b27c1066c4abb63b84c29ef96274162eb848eb7104230a5",
+    "video_audit_status.json": "28d52874efc7f1f9a86f1b4936ea382a8bd6130872f0db991de22403ac4a1dec",
+    "video_decode_frame_audit.csv": "c7d7d4a9dc11d62ec10f709291a909b1b691439a7403ac6f31aec8fc2c6e8162"
+  },
+  "date_context": "2026-10-13 Asia/Seoul"
+}

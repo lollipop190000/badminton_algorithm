@@ -1,0 +1,8 @@
+{
+  "player_keys": 2097152,
+  "energy_model_rows": 10485760,
+  "n_exact_supported": 0,
+  "all_rows_imputed": true,
+  "valid_sliding_state_keys": true,
+  "hypothetical_models": "independent model_id rows and parameter groups; no fitted interpretation"
+}

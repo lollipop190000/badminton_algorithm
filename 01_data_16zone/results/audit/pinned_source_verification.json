@@ -1,0 +1,21 @@
+{
+  "tree_truncated": false,
+  "datasets": [
+    {
+      "name": "ShuttleSet",
+      "prefix": "ShuttleSet/"
+    },
+    {
+      "name": "ShuttleSet22",
+      "prefix": "CoachAI-Challenge-IJCAI2023/ShuttleSet22/"
+    }
+  ],
+  "tree_sha": "45517f7d4cb936b03f3eabf939cc7959d39226fe",
+  "commit": "45517f7d4cb936b03f3eabf939cc7959d39226fe",
+  "verified_matching_local_git_blobs": {
+    "ShuttleSet": 107,
+    "ShuttleSet22": 144
+  },
+  "missing_local_files": 0,
+  "mismatching_local_git_blobs": 0
+}

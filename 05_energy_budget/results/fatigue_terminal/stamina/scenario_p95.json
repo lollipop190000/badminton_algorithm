@@ -1,0 +1,25 @@
+{
+  "percentile": 95,
+  "initial_budget_A": 850.4351587506309,
+  "initial_budget_B": 850.4351587506309,
+  "grid_intervals": 160,
+  "requested_grid_intervals": 40,
+  "max_bellman_residual": 5.551115123125783e-17,
+  "max_cell_iterations": 3,
+  "refined": true,
+  "refinement_history": [
+    {
+      "intervals": 80,
+      "max_refinement_difference": 0.0224344232127175,
+      "max_mc_excess_95ci": 0.0169021076733662
+    }
+  ],
+  "max_refinement_difference": 0.010556754429319803,
+  "max_mc_difference_beyond_95ci": 0.00639336625654183,
+  "numerical_validation_passed": true,
+  "initial_midpoint_mean": 0.5,
+  "initial_lower_mean": 0.49700582938721943,
+  "initial_upper_mean": 0.5029941706127807,
+  "initial_ambiguity_mean": 0.0059883412255613,
+  "initial_parity_complement_max_error": 1.3322676295501878e-15
+}

@@ -1,0 +1,15 @@
+{
+  "BFMD": "96 actual singles annotation files downloaded; raw/download audit available",
+  "Pugliese_reference_abstract": "Publisher-deposited Crossref abstract verified actual 19.59 and 20.38; metadata JSON saved",
+  "Pugliese_fulltext": "Publisher and institutional page fetch HTTP403; trial data not acquired",
+  "Zago_text": "Cached browser accepted-manuscript text Methods 2.3/2.4 read",
+  "Zago_equation_images": "PDF screenshots and local download returned HTTP403; graphics and efficiencies unverified",
+  "metabolic_trial_labels": "absent",
+  "human_motion_time_labels": "absent; 6 assistant-reviewed activity windows only",
+  "optional_sensor_datasets": "reference-only; not downloaded",
+  "official_primary_links": [
+    "https://api.crossref.org/works/10.1123/ijspp.2024-0267",
+    "https://github.com/Ning-D/BFMD",
+    "https://air.unimi.it/retrieve/dfa8b99b-83a2-748b-e053-3a05fe0a3a96/zago_Jbiomec_2018_VO2.pdf"
+  ]
+}

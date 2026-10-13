@@ -1,0 +1,11 @@
+{
+  "all_augmented_states": 8192,
+  "random_asymmetric_energy_queries": 65536,
+  "seed": 472,
+  "probability_mass_max_error": 4.440892098500626e-16,
+  "nonnegative": true,
+  "consumption_range": [
+    0,
+    1677.7556829125833
+  ]
+}

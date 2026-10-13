@@ -1,0 +1,13 @@
+{
+  "v0_mps": 3.04928968294089,
+  "v0_definition": "train mid-rally fully observed distance-weighted speed convention; not Pugliese reference speed",
+  "mu_train": [
+    1.0,
+    0.7394879392598689,
+    0.7091954250915616,
+    0.32265237492028337
+  ],
+  "g_mps2": 9.80665,
+  "orientation_floor_mps": 0.05,
+  "coefficients_fitted": false
+}

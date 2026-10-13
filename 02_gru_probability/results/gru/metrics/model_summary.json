@@ -1,0 +1,13 @@
+{
+  "parameters": 18571,
+  "hidden_size": 64,
+  "gru_layers": 1,
+  "bidirectional": false,
+  "epochs_trained": 39,
+  "best_epoch": 31,
+  "best_validation_loss": 0.6159565633834769,
+  "device": "cuda",
+  "cuda_device": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "torch_version": "2.13.0+cu126",
+  "early_stopping_metric": "validation_loss"
+}

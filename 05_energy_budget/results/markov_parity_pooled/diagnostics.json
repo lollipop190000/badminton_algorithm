@@ -1,0 +1,34 @@
+{
+  "selection": {
+    "history_order": 3,
+    "alphas": [
+      50.0,
+      200.0,
+      1000.0
+    ],
+    "tau": 1.0,
+    "validation": {
+      "events": 7459,
+      "event_log_loss": 3.335723730059288,
+      "multiclass_brier": 0.9413110500574595
+    },
+    "alpha_on_grid_boundary": false
+  },
+  "input_sha256": {
+    "train": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+    "validation": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3",
+    "test": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+  },
+  "fit_protocol": "train selection using validation; final export train+validation; test never used for tuning",
+  "fit_scope": "train_validation",
+  "selected_history_order": 3,
+  "selected_alphas": [
+    50.0,
+    200.0,
+    1000.0
+  ],
+  "selected_tau": 1.0,
+  "baseline_complement_max_error": 1.2182921338421693e-11,
+  "probability_mass_max_error": 2.220446049250313e-16,
+  "positive_pq_interpretation": "Win-weighted Laplace transform of deterministic mean proxy costs; complement is valid only at p=q=0."
+}

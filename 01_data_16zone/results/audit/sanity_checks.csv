@@ -1,0 +1,10 @@
+﻿check,count,handling
+negative_delta_time,17,set dt/speeds missing; row retained
+zero_delta_time_nonfirst,18,speed becomes missing; retained
+coordinates_outside_court,190,flagged; retained for transparent QA
+missing_rally_winner,146,excluded before modeling
+duplicate_stroke_number,0,flagged; retained unless ambiguous
+unordered_timestamp,17,flagged; retained unless ambiguous
+confirmed_duplicate_match,8,ShuttleSet copy kept; ShuttleSet22 copy removed
+rally_with_one_stroke,60,retained; valid point can end on serve
+unknown_shot_rally_raw,2125,whole rally excluded by existing preprocessing rule

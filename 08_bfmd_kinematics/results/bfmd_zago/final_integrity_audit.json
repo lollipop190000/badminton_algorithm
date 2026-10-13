@@ -1,0 +1,13 @@
+{
+  "bfmd_T_lookup_rows": 2097152,
+  "bfmd_kinematics_lookup_rows": 2097152,
+  "bfmd_zago_lookup_rows": 10485760,
+  "first_rows_csv_parquet_agree": true,
+  "original_pre_cancel_Markov_C_V_hashes_unchanged": true,
+  "old_pipeline_removed_from_active_paths": true,
+  "actual_interval_additivity_max_error": 2.8421709430404014e-14,
+  "all_11301_hit_player_metadata_mappings_agree": true,
+  "recorded_output_hashes_verified": true,
+  "code_compiles": true,
+  "recorded_code_hashes_verified": true
+}

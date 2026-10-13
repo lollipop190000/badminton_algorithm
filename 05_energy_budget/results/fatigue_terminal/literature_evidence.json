@@ -1,0 +1,50 @@
+[
+  {
+    "key": "Pugliese2025",
+    "title": "Energy Cost of Badminton Footwork: A Novel Experimental Approach",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40716493/",
+    "access": "PubMed abstract",
+    "supports": "Side-step/running-step net costs 19.59/20.38 J/kg/m; speed association.",
+    "does_not_support": "Straight-line annotated displacement is not a measured full trajectory or metabolic expenditure; no F_max."
+  },
+  {
+    "key": "LeMansec2020",
+    "title": "Impaired Performance of the Smash Stroke in Badminton Induced by Muscle Fatigue",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30958057/",
+    "access": "PubMed abstract",
+    "supports": "Experimental muscle fatigue impaired smash precision and increased faults; rationale for testing e slopes.",
+    "does_not_support": "Precision decrease is not the same as an error-probability multiplier; no rally J/kg calibration."
+  },
+  {
+    "key": "Wang2026",
+    "title": "Synergistic effects of physical-mental mixed fatigue on badminton forehand smash performance",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0337467",
+    "access": "Publisher full text",
+    "supports": "24 athletes, graded combined physical/mental fatigue; speed and accuracy deteriorated; nonlinear candidates worth testing.",
+    "does_not_support": "Combined fatigue does not identify pure physical causation or any threshold in this movement-proxy energy scale."
+  },
+  {
+    "key": "Cheng2024Online2025Issue",
+    "title": "Fatigue Affects Body Acceleration During Vertical Jumping and Agility Tasks in Elite Young Badminton Players",
+    "url": "https://journals.sagepub.com/doi/10.1177/19417381241245908",
+    "access": "Publisher article/abstract",
+    "supports": "Pre/post fatigue differences in jumping and agility; indirect mechanism for receiver capability changes.",
+    "does_not_support": "Does not measure No Return probability or gamma/eta; online 2024, print volume 2025."
+  },
+  {
+    "key": "Lin2023",
+    "title": "Neuromuscular fatigue and muscle damage following a simulated singles badminton match",
+    "url": "https://link.springer.com/article/10.1007/s00421-023-05148-w",
+    "access": "Publisher full text",
+    "supports": "Post-match neuromuscular fatigue associated with lunge count; movement load is relevant.",
+    "does_not_support": "One-hour simulated matches/post-match measurements do not calibrate within-rally hazards or recovery here."
+  },
+  {
+    "key": "BarreiraChiminazzo2020",
+    "title": "Who, how and when to perform winner points and unforced errors in badminton matches?",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/24748668.2020.1766838",
+    "access": "Publisher abstract; full text inaccessible",
+    "supports": "Winner points and unforced errors are distinct performance indicators in 57 Olympic singles matches.",
+    "does_not_support": "Abstract alone does not establish operational labels for these CSVs; does not identify forced errors or no contact."
+  }
+]

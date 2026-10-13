@@ -1,0 +1,10 @@
+player,n_matches,n_splits,splits
+Alex Lanier,1,1,train
+Anders Antonsen,5,3,"test,train,validation"
+Chou Tien Chen,3,2,"test,train"
+Kodai Naraok,1,1,train
+Kunlavut Vitidsarn,1,1,test
+Lee Chia Hao,2,1,train
+Li Shi Feng,2,1,train
+Shi Yu Qi,7,2,"train,validation"
+Wang Zheng Xing,2,2,"test,train"

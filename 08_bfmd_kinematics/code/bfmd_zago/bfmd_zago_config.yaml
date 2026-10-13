@@ -1,0 +1,55 @@
+schema_version: 1
+seed: 20261013
+bfmd_root: raw/BFMD
+markov_repo: .
+output_root: outputs/bfmd_zago
+fps_expected: 30
+tracking:
+  ground_proxy: bbox_bottom_center
+  independent_pose_presence_gate: true
+  ankle_min_score: 0.5
+  pose_bbox_association_max_px: 40
+  no_court_policy: missing
+  geometry_interpolation: only_two_valid_bracketing_samples_with_corner_drift_below_30px
+  max_gap_frames: 0
+  confidence_semantics: keypoint_model_score_not_probability_of_correct_tracking
+filter:
+  candidates: [raw, sg5, sg9, sg13, bw3, bw5, bw8]
+  selection: qualitative_train_video_activity_review
+  selected_method: null # execution writes calibration/selected.json
+  cutoff_hz: null
+kinematics:
+  low_speed_orientation_floor_mps: 0.05
+  units: meters_seconds
+  integration: trapezoidal_edge_origins_half_open_hit_k_to_hit_k_plus_1
+models:
+  M0_distance:
+    C_ref_J_per_kg_m: 19.985
+    status: external_protocol_benchmark
+  M1_speed:
+    a: null
+    b: null
+    status: unavailable_no_metabolic_trial_labels
+  M2_zago_2d:
+    eta_positive: null
+    eta_negative: null
+    ground_contact_status: unverified
+    status: unavailable
+  M3_planar:
+    v0_mps: null # train-only convention, actual value in normalization.json
+    beta_v: null
+    beta_plus: null
+    beta_minus: null
+    beta_curve: null
+    calibration_status: uncalibrated
+    optional_hypothesis_grid: bfmd_zago/hypothesis_grid.json
+    normalization: train_only_BFMD_distance_weighted
+validation:
+  group: match
+  train_matches: 8
+  validation_matches: 2
+  test_matches: 2
+  min_samples: null
+  tau: null
+  bootstrap_match_refits: 100
+  missing_exact_states: explicit_fallback

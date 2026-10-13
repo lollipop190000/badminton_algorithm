@@ -1,0 +1,5 @@
+[
+  {"id":"speed_only_1","beta":[1,0,0,0],"status":"illustrative_sensitivity_not_fitted"},
+  {"id":"curve_only_1","beta":[0,0,0,1],"status":"illustrative_sensitivity_not_fitted"},
+  {"id":"balanced_025","beta":[0.25,0.25,0.25,0.25],"status":"illustrative_sensitivity_not_fitted"}
+]

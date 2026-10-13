@@ -1,0 +1,702 @@
+{
+  "matches": [
+    {
+      "match_name": "KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F",
+      "metadata_rallies": 77,
+      "hit_events": 978,
+      "court_flags": {
+        "valid": 1967,
+        "no_court": 2896,
+        "refit": 2
+      },
+      "fps": 30.0,
+      "players": [
+        "Anders Antonsen",
+        "Chou Tien Chen"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+          "bytes": 25072
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F_court.json",
+          "bytes": 740
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+          "bytes": 731999
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+          "bytes": 9217038
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+          "bytes": 132110709
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+          "bytes": 130786
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+          "bytes": 905698
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F.json",
+          "bytes": 3505511
+        }
+      }
+    },
+    {
+      "match_name": "KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF",
+      "metadata_rallies": 81,
+      "hit_events": 1001,
+      "court_flags": {
+        "valid": 1992,
+        "no_court": 2163
+      },
+      "fps": 30.0,
+      "players": [
+        "Chou Tien Chen",
+        "Kunlavut Vitidsarn"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+          "bytes": 23496
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF_court.json",
+          "bytes": 748
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+          "bytes": 622958
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+          "bytes": 9169249
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+          "bytes": 134669950
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+          "bytes": 135341
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+          "bytes": 935683
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\KAPAL-API-Indonesia-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Kunlavut-Vitidsarn-THA-2-SF.json",
+          "bytes": 3533277
+        }
+      }
+    },
+    {
+      "match_name": "KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF",
+      "metadata_rallies": 109,
+      "hit_events": 1070,
+      "court_flags": {
+        "valid": 1829,
+        "no_court": 2861
+      },
+      "fps": 30.0,
+      "players": [
+        "Shi Yu Qi",
+        "Anders Antonsen"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+          "bytes": 31851
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF_court.json",
+          "bytes": 732
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+          "bytes": 705772
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+          "bytes": 10388251
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+          "bytes": 149511741
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+          "bytes": 140421
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+          "bytes": 1021982
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\KAPAL-API-Indonesia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-3-SF.json",
+          "bytes": 3948936
+        }
+      }
+    },
+    {
+      "match_name": "PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF",
+      "metadata_rallies": 70,
+      "hit_events": 1158,
+      "court_flags": {
+        "valid": 2112,
+        "no_court": 2023
+      },
+      "fps": 30.0,
+      "players": [
+        "Kodai Naraok",
+        "Anders Antonsen"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 20376
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF_court.json",
+          "bytes": 735
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 623973
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 12738817
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 193481043
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 152966
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 1056869
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 4860930
+        }
+      }
+    },
+    {
+      "match_name": "PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F",
+      "metadata_rallies": 65,
+      "hit_events": 718,
+      "court_flags": {
+        "valid": 1301,
+        "no_court": 1914
+      },
+      "fps": 30.0,
+      "players": [
+        "Shi Yu Qi",
+        "Anders Antonsen"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+          "bytes": 18940
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F_court.json",
+          "bytes": 727
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+          "bytes": 485831
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+          "bytes": 7505705
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+          "bytes": 114490434
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+          "bytes": 93960
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+          "bytes": 679282
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Anders-Antonsen-DEN-2-F.json",
+          "bytes": 2824767
+        }
+      }
+    },
+    {
+      "match_name": "PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF",
+      "metadata_rallies": 96,
+      "hit_events": 1137,
+      "court_flags": {
+        "valid": 1771,
+        "no_court": 2712,
+        "refit": 7
+      },
+      "fps": 30.0,
+      "players": [
+        "Shi Yu Qi",
+        "Li Shi Feng"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+          "bytes": 28215
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF_court.json",
+          "bytes": 721
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+          "bytes": 680462
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+          "bytes": 11349086
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+          "bytes": 168861010
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+          "bytes": 146593
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+          "bytes": 1067290
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF.json",
+          "bytes": 4309541
+        }
+      }
+    },
+    {
+      "match_name": "VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF",
+      "metadata_rallies": 76,
+      "hit_events": 624,
+      "court_flags": {
+        "no_court": 2345,
+        "valid": 1075
+      },
+      "fps": 30.0,
+      "players": [
+        "Chou Tien Chen",
+        "Shi Yu Qi"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+          "bytes": 21974
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF_court.json",
+          "bytes": 717
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+          "bytes": 518666
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+          "bytes": 5978322
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+          "bytes": 88279053
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+          "bytes": 81360
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+          "bytes": 601171
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF.json",
+          "bytes": 2302922
+        }
+      }
+    },
+    {
+      "match_name": "VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F",
+      "metadata_rallies": 106,
+      "hit_events": 928,
+      "court_flags": {
+        "valid": 1410,
+        "no_court": 3554,
+        "refit": 1
+      },
+      "fps": 30.0,
+      "players": [
+        "Shi Yu Qi",
+        "Wang Zheng Xing"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+          "bytes": 31015
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F_court.json",
+          "bytes": 713
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+          "bytes": 755480
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+          "bytes": 8950549
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+          "bytes": 131792543
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+          "bytes": 121917
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+          "bytes": 1090453
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F.json",
+          "bytes": 3436018
+        }
+      }
+    },
+    {
+      "match_name": "VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF",
+      "metadata_rallies": 75,
+      "hit_events": 680,
+      "court_flags": {
+        "no_court": 2559,
+        "valid": 1106
+      },
+      "fps": 30.0,
+      "players": [
+        "Wang Zheng Xing",
+        "Anders Antonsen"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 21740
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF_court.json",
+          "bytes": 727
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 556270
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 6248488
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 92771557
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 91131
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 652663
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\VICTOR-China-Open-2025-Wang-Zheng-Xing-CHN-vs.-Anders-Antonsen-DEN-2-SF.json",
+          "bytes": 2441901
+        }
+      }
+    },
+    {
+      "match_name": "YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF",
+      "metadata_rallies": 113,
+      "hit_events": 920,
+      "court_flags": {
+        "valid": 1706,
+        "no_court": 3037,
+        "refit": 62
+      },
+      "fps": 30.0,
+      "players": [
+        "Lee Chia Hao",
+        "Alex Lanier"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+          "bytes": 32753
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF_court.json",
+          "bytes": 719
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+          "bytes": 728462
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+          "bytes": 8826727
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+          "bytes": 129881172
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+          "bytes": 120229
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+          "bytes": 895354
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF.json",
+          "bytes": 3307069
+        }
+      }
+    },
+    {
+      "match_name": "YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F",
+      "metadata_rallies": 78,
+      "hit_events": 785,
+      "court_flags": {
+        "valid": 1415,
+        "no_court": 2970,
+        "refit": 45
+      },
+      "fps": 30.0,
+      "players": [
+        "Shi Yu Qi",
+        "Lee Chia Hao"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+          "bytes": 22613
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F_court.json",
+          "bytes": 717
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+          "bytes": 672016
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+          "bytes": 7864665
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+          "bytes": 115513801
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+          "bytes": 101568
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+          "bytes": 748991
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F.json",
+          "bytes": 2978350
+        }
+      }
+    },
+    {
+      "match_name": "YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF",
+      "metadata_rallies": 112,
+      "hit_events": 1302,
+      "court_flags": {
+        "valid": 1913,
+        "no_court": 3270,
+        "refit": 137
+      },
+      "fps": 30.0,
+      "players": [
+        "Shi Yu Qi",
+        "Li Shi Feng"
+      ],
+      "hit_keys": [
+        "frame",
+        "game",
+        "player",
+        "rally",
+        "shot_type",
+        "side"
+      ],
+      "files": {
+        "metadata": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\metadata\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+          "bytes": 32728
+        },
+        "court": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF_court.json",
+          "bytes": 721
+        },
+        "court_perframe": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\court_perframe\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+          "bytes": 806435
+        },
+        "player_bbox": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\player_bbox\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+          "bytes": 12875378
+        },
+        "pose": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\pose\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+          "bytes": 185316375
+        },
+        "hit_inferred": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\hit_inferred\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+          "bytes": 168194
+        },
+        "shot_type": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shot_type\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+          "bytes": 1217557
+        },
+        "shuttle": {
+          "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\raw\\BFMD\\annotations\\shuttle\\YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF.json",
+          "bytes": 4895784
+        }
+      }
+    }
+  ],
+  "singles": 12,
+  "excluded_doubles": 7,
+  "shot_counts": {
+    "serve": 833,
+    "push": 510,
+    "smash": 1354,
+    "block": 919,
+    "net_shot": 2875,
+    "drive": 868,
+    "press": 155,
+    "lift": 2098,
+    "net_kill": 93,
+    "flick_serve": 85,
+    "clear": 606,
+    "drop": 905
+  },
+  "landing_zone_field_present": false,
+  "confidence_contract": "court fit_score/flag and pose keypoint scores exist; bbox keyframe/interpolation confidence and inferred-hit probabilities do not",
+  "coordinate_contract": "bbox percent 0..100; pose keypoints 0..1; pose bbox/court pixels; full-video frame indices; court outer width 6.1m, singles width 5.18m",
+  "compatibility": "Exact landing-zone states unavailable; read-only existing Markov-key export uses explicit distance/role/shot backoff."
+}

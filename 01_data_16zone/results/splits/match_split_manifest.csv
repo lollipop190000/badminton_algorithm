@@ -1,0 +1,92 @@
+﻿dataset,match_id,source_match_id,video,tournament,round,round_standardized,year,player_A,player_B,split
+ShuttleSet22,ShuttleSet22:10,10,Akane_YAMAGUCHI_AN_Seyoung_YONEX_All_England_Open_Badminton_Championships_2022_Finals,YONEX All England Open Badminton Championships 2022,Finals,F,2022.0,Akane YAMAGUCHI,An Se Young,train
+ShuttleSet22,ShuttleSet22:11,11,Viktor_AXELSEN_Lakshya_SEN_YONEX_All_England_Open_2022_Finals,YONEX All England Open Badminton Championships 2022,Finals,F,2022.0,Lakshya SEN,Viktor AXELSEN,validation
+ShuttleSet22,ShuttleSet22:12,12,AN_Seyoung_PUSARLA_V._Sindhu_Korea_Open_Badminton_Championships_2022_Semi_Final,Korea Open Badminton Championships 2022,Semi-finals,SF,2022.0,An Se Young,PUSARLA V. Sindhu,train
+ShuttleSet22,ShuttleSet22:13,13,He_Bing_Jiao_Chen_Yu_Fei_GWANGJU_YONEX_Korea_Masters_2022_Final,GWANGJU YONEX Korea Masters 2022,Finals,F,2022.0,CHEN Yufei,HE Bingjiao,train
+ShuttleSet22,ShuttleSet22:15,15,AN_Se_Young_Akane_YAMAGUCHI_TotalEnergies_BWF_Thomas_and_Uber_Cup_Finals_2022_Semifinals,TotalEnergies BWF Thomas and Uber Cup Finals 2022,Semi-finals,SF,2022.0,Akane YAMAGUCHI,An Se Young,validation
+ShuttleSet22,ShuttleSet22:16,16,Viktor_AXELSEN_Anthony_Sinisuka_GINTING_DAIHATSU_INDONESIA_MASTERS_2022_Semifinals,DAIHATSU INDONESIA MASTERS 2022,Semi-finals,SF,2022.0,Anthony Sinisuka GINTING,Viktor AXELSEN,test
+ShuttleSet22,ShuttleSet22:17,17,CHEN_Yu_Fei_HE_Bing_Jiao_DAIHATSU_Indonesia_Masters_2022_Semifinals,DAIHATSU INDONESIA MASTERS 2022,Semi-finals,SF,2022.0,CHEN Yufei,HE Bingjiao,train
+ShuttleSet22,ShuttleSet22:18,18,Wang_Zhi_Yi_He_Bing_Jiao_Indonesia_Open_2022_Semi_finals,INDONESIA OPEN 2022,Semi-finals,SF,2022.0,HE Bingjiao,WANG Zhi Yi,train
+ShuttleSet22,ShuttleSet22:19,19,Viktor_AXELSEN_LEE_Zii_Jia_EAST_VENTURES_Indonesia_Open_2022_Semifinals,INDONESIA OPEN 2022,Semi-finals,SF,2022.0,LEE Zii Jia,Viktor AXELSEN,train
+ShuttleSet22,ShuttleSet22:20,20,Kento_MOMOTA_Kunlavut_VITIDSARN_Malaysia_Open_2022_ Semi_finals,Malaysia Open 2022,Semi-finals,SF,2022.0,Kento MOMOTA,Kunlavut VITIDSARN,train
+ShuttleSet22,ShuttleSet22:21,21,Viktor_AXELSEN_Jonatan_CHRISTIE_Malaysia_Open_2022_SemiFinals,Malaysia Open 2022,Semi-finals,SF,2022.0,Jonatan CHRISTIE,Viktor AXELSEN,validation
+ShuttleSet22,ShuttleSet22:22,22,Viktor_AXELSEN_Kento_MOMOTA_PETRONAS_Malaysia_Open_2022_Finals,Malaysia Open 2022,Finals,F,2022.0,Kento MOMOTA,Viktor AXELSEN,test
+ShuttleSet22,ShuttleSet22:23,23,Ratchanok_INTANON_CHEN_Yu_Fei_PETRONAS_Malaysia_Open_2022_Finals,Malaysia Open 2022,Finals,F,2022.0,CHEN Yufei,Ratchanok INTANON,validation
+ShuttleSet22,ShuttleSet22:24,24,Ratchanok_INTANON_WANG_Zhi_Yi_Malaysia_Open_2022_SemiFinals,Malaysia Open 2022,Semi-finals,SF,2022.0,Ratchanok INTANON,WANG Zhi Yi,train
+ShuttleSet22,ShuttleSet22:25,25,Chico_Aura_DWI_WARDOYO_LU_Guang_Zu_PERODUA_Malaysia_Masters_2022_Semifinals,Malaysia Open 2022,Semi-finals,SF,2022.0,Chico Aura DWI WARDOYO,LU Guang Zu,train
+ShuttleSet22,ShuttleSet22:26,26,Chico_Aura_DWI_WARDOYO_NG_Ka_Long_Angus_Malaysia_Masters_2022_Finals,Malaysia Masters 2022,Finals,F,2022.0,Chico Aura DWI WARDOYO,NG Ka Long Angus,train
+ShuttleSet22,ShuttleSet22:27,27,An_Se_Young_Chen_Yu_Fei_PERODUA_Malaysia_Masters_2022_Finals,Malaysia Masters 2022,Finals,F,2022.0,An Se Young,CHEN Yufei,train
+ShuttleSet22,ShuttleSet22:28,28,AN_Se_Young_Gregoria_Mariska_TUNJUNG_Malaysia_Masters_2022_SemiFinals,Malaysia Masters 2022,Semi-finals,SF,2022.0,An Se Young,Gregoria Mariska TUNJUNG,train
+ShuttleSet22,ShuttleSet22:29,29,EAST_VENTURES_Indonesia_Open_2022_Zhao_Jun_Peng_PRANNOY_H._S._Semifinals,INDONESIA OPEN 2022,Semi-finals,SF,2022.0,PRANNOY H. S.,ZHAO Jun Peng,train
+ShuttleSet22,ShuttleSet22:30,30,Kunlavut_VITIDSARN_ZHAO_Jun_ Peng_BWF_World_Championships_2022_SemiFinals,BWF World Championships 2022,Semi-finals,SF,2022.0,Kunlavut VITIDSARN,ZHAO Jun Peng,train
+ShuttleSet22,ShuttleSet22:31,31,Akane_YAMAGUCHI_AN_Se_Young_BWF_World_Championships_2022_Semi_finals,BWF World Championships 2022,Semi-finals,SF,2022.0,Akane YAMAGUCHI,An Se Young,validation
+ShuttleSet22,ShuttleSet22:32,32,Viktor_Axelsen_Kunlavut_Vitidsarn_BWF_World_Championships_2022_Finals,BWF World Championships 2022,Finals,F,2022.0,Kunlavut VITIDSARN,Viktor AXELSEN,train
+ShuttleSet22,ShuttleSet22:33,33,Akane_YAMAGUCHI_CHEN_Yu_Fei_BWF_World_Championships_2022_Finals,BWF World Championships 2022,Finals,F,2022.0,Akane YAMAGUCHI,CHEN Yufei,train
+ShuttleSet22,ShuttleSet22:34,34,Kenta_NISHIMOTO_Anders_ANTONSEN_Japan_Open_2022_SemiFinals,Japan Open 2022,Semi-finals,SF,2022.0,Anders ANTONSEN,Kenta NISHIMOTO,train
+ShuttleSet22,ShuttleSet22:35,35,Akane_YAMAGUCHI_AN_Se_Young_DAIHATSU_YONEX_Japan_Open_2022_Finals,Japan Open 2022,Finals,F,2022.0,Akane YAMAGUCHI,An Se Young,train
+ShuttleSet22,ShuttleSet22:36,36,Akane_YAMAGUCHI_CHEN_Yu_Fei_England_Open_2022_Semi_finals,YONEX All England Open Badminton Championships 2022,Semi-finals,SF,2022.0,Akane YAMAGUCHI,CHEN Yufei,train
+ShuttleSet22,ShuttleSet22:37,37,Busanan_ONGBAMRUNGPHAN_Supanida_KATETHONG_India_Open_2022_Finals,YONEX-SUNRISE India Open 2022,Finals,F,2022.0,Busanan ONGBAMRUNGPHAN,Supanida KATETHONG,train
+ShuttleSet22,ShuttleSet22:38,38,Lakshya_SEN_LEE_Zii_Jia_All_England_Open_2022_SemiFinals,YONEX All England Open Badminton Championships 2022,Semi-finals,SF,2022.0,Lakshya SEN,LEE Zii Jia,validation
+ShuttleSet22,ShuttleSet22:39,39,Jonatan_CHRISTIE_KIDAMBI_Srikanth_Korea_Open_Badminton_Championships_2022_SemiFinals,Korea Open Badminton Championships 2022,Semi-finals,SF,2022.0,Jonatan CHRISTIE,KIDAMBI Srikanth,train
+ShuttleSet22,ShuttleSet22:40,40,Supanida_KATETHONG_PUSARLA_V._Sindhu_India_Open_2022_SemiFinals,YONEX-SUNRISE India Open 2022,Semi-finals,SF,2022.0,PUSARLA V. Sindhu,Supanida KATETHONG,train
+ShuttleSet22,ShuttleSet22:41,41,Busanan_ONGBAMRUNGPHAN_Aakarshi_KASHYAP_YONEX_SUNRISE_India_Open_2022_Semifinals,YONEX-SUNRISE India Open 2022,Semi-finals,SF,2022.0,Aakarshi KASHYAP,Busanan ONGBAMRUNGPHAN,train
+ShuttleSet22,ShuttleSet22:42,42,Lee_Zii_Jia_Li_Shi_Feng_GR_TOYOTA_GAZOO_RACING_Thailand_Open_2022_Finals,Thailand Open 2022,Finals,F,2022.0,LEE Zii Jia,LI Shi Feng,train
+ShuttleSet22,ShuttleSet22:43,43,LI_Shi_Feng_Kodai_NARAOKAGR_Thailand_Open_2022_Semi_finals,Thailand Open 2022,Semi-finals,SF,2022.0,Kodai NARAOKA,LI Shi Feng,train
+ShuttleSet22,ShuttleSet22:44,44,SHI_Yu Qi_LEE_Zii_Jia_Denmark_Open_2022_Final,Denmark Open 2022,Finals,F,2022.0,LEE Zii Jia,SHI Yuqi,train
+ShuttleSet22,ShuttleSet22:45,45,LEE_Zii_Jia_LIEW_Daren_Thailand_Open_2022_SemiFinals_Trim,Thailand Open 2022,Semi-finals,SF,2022.0,LEE Zii Jia,LIEW Daren,train
+ShuttleSet22,ShuttleSet22:46,46,Lee_Zii_Jia_Loh_Kean_Yew_Denmark_Open_2022_Semifinals,Denmark Open 2022,Semi-finals,SF,2022.0,LEE Zii Jia,LOH Kean Yew,test
+ShuttleSet22,ShuttleSet22:47,47,HE_Bing_Jiao_CHEN_Yu_Fei_Denmark_Open_2022_Final,Denmark Open 2022,Finals,F,2022.0,CHEN Yufei,HE Bingjiao,train
+ShuttleSet22,ShuttleSet22:48,48,CHEN_Yu_Fei_Ratchanok_INTANON_Denmark_Open_2022_SemiFinals,Denmark Open 2022,Semi-finals,SF,2022.0,CHEN Yufei,Ratchanok INTANON,train
+ShuttleSet22,ShuttleSet22:49,49,HE_Bing_Jiao_Carolina_MARIN_French_Open_2022_Final,French Open 2022,Finals,F,2022.0,Carolina MARIN,HE Bingjiao,train
+ShuttleSet22,ShuttleSet22:50,50,Viktor_AXELSEN_Rasmus_GEMKE_French_Open_2022 _Finals,French Open 2022,Finals,F,2022.0,Rasmus GEMKE,Viktor AXELSEN,test
+ShuttleSet22,ShuttleSet22:51,51,Viktor_AXELSEN_Kodai_NARAOKA_YONEX_French_Open_2022_Semifinals,French Open 2022,Semi-finals,SF,2022.0,Kodai NARAOKA,Viktor AXELSEN,train
+ShuttleSet22,ShuttleSet22:52,52,SHI_Yu_Qi_Kodai_NARAOKA_Denmark_Open_2022_SemiFinals,Denmark Open 2022,Semi-finals,SF,2022.0,Kodai NARAOKA,SHI Yuqi,test
+ShuttleSet22,ShuttleSet22:53,53,AN_Se_Young_Pornpawee_CHOCHUWONG_Korea_Open_Badminton_Championships_2022_Finals,Korea Open Badminton Championships 2022,Finals,F,2022.0,An Se Young,Pornpawee CHOCHUWONG,validation
+ShuttleSet22,ShuttleSet22:54,54,Carolina_MARIN_Akane_YAMAGUCHI_French_Open_2022_SemiFinals,French Open 2022,Semi-finals,SF,2022.0,Akane YAMAGUCHI,Carolina MARIN,test
+ShuttleSet22,ShuttleSet22:55,55,Viktor_AXELSEN_ZHAO_Jun_Peng_Indonesia_Open_2022_Final,INDONESIA OPEN 2022,Finals,F,2022.0,Viktor AXELSEN,ZHAO Jun Peng,train
+ShuttleSet22,ShuttleSet22:56,56,Rasmus_GEMKE_LEE_Cheuk_Yiu_French_Open_2022_SemiFinals,French Open 2022,Semi-finals,SF,2022.0,LEE Cheuk Yiu,Rasmus GEMKE,train
+ShuttleSet22,ShuttleSet22:57,57,CHEN_Yu_Fei_PUSARLA_V._Sindhu_Thailand_Open_2022_SemiFinals,Thailand Open 2022,Semi-finals,SF,2022.0,CHEN Yufei,PUSARLA V. Sindhu,train
+ShuttleSet22,ShuttleSet22:8,8,Lakshya_SEN_LOH_Kean_Yew_YONEX_SUNRISE_India_Open_2022_ Finals,YONEX-SUNRISE India Open 2022,Finals,F,2022.0,Lakshya SEN,LOH Kean Yew,train
+ShuttleSet22,ShuttleSet22:9,9,Kunlavut_VITIDSARN_LEE_Zii_Jia_YONEX_GAINWARD_German_Open_2022_SemiFinals,YONEX GAINWARD German Open 2022,Semi-finals,SF,2022.0,Kunlavut VITIDSARN,LEE Zii Jia,validation
+ShuttleSet,ShuttleSet:1,1,Kento_MOMOTA_CHOU_Tien_Chen_Fuzhou_Open_2019_Finals,Fuzhou Open 2019,Finals,F,2019.0,CHOU Tien Chen,Kento MOMOTA,train
+ShuttleSet,ShuttleSet:11,11,CHOU_Tien_Chen_Jonatan_CHRISTIE_Indonesia_Open_2019_Quarter-finals,Indonesia Open 2019,Quarter-finals,QF,2019.0,CHOU Tien Chen,Jonatan CHRISTIE,test
+ShuttleSet,ShuttleSet:12,12,NG_Ka_Long_Angus_SHI_Yu_Qi_Thailand_Masters_2020_SemiFinals,Thailand Masters 2020,Semi-finals,SF,2020.0,NG Ka Long Angus,SHI Yuqi,test
+ShuttleSet,ShuttleSet:13,13,Kento_MOMOTA_Viktor_AXELSEN_Malaysia_Masters_2020_Finals,Malaysia Masters 2020,Finals,F,2020.0,Kento MOMOTA,Viktor AXELSEN,test
+ShuttleSet,ShuttleSet:14,14,Anders_ANTONSEN_Jonatan_CHRISTIE Indonesia_Masters_2020_QuarterFinals,Indonesia Masters 2020,Quarter-finals,QF,2020.0,Anders ANTONSEN,Jonatan CHRISTIE,train
+ShuttleSet,ShuttleSet:15,15,Anthony_Sinisuka_GINTING_Anders_ANTONSEN_Indonesia_Masters_2020_Final,Indonesia Masters 2020,Finals,F,2020.0,Anders ANTONSEN,Anthony Sinisuka GINTING,train
+ShuttleSet,ShuttleSet:16,16,Anthony_Sinisuka_GINTING_Viktor_AXELSEN _Indonesia_Masters_2020_SemiFinals,Indonesia Masters 2020,Semi-finals,SF,2020.0,Anthony Sinisuka GINTING,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:17,17,NG_Ka_Long_Angus_Jonatan_CHRISTIE_Malaysia_Masters_2020_QuarterFinals,Malaysia Masters 2020,Quarter-finals,QF,2020.0,Jonatan CHRISTIE,NG Ka Long Angus,train
+ShuttleSet,ShuttleSet:18,18,Viktor_AXELSEN _SHI_Yu_Qi_All_England_Open_2020_QuarterFinals,All England Open 2020,Quarter-finals,QF,2020.0,SHI Yuqi,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:19,19,Viktor_AXELSEN_CHEN_Long_Malaysia_Masters_2020_QuarterFinals,Malaysia Masters 2020,Quarter-finals,QF,2020.0,CHEN Long,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:20,20,Viktor_AXELSEN_NG_Ka_Long_Angus_Malaysia_Masters_2020_SemiFinals,Malaysia Masters 2020,Semi-finals,SF,2020.0,NG Ka Long Angus,Viktor AXELSEN,test
+ShuttleSet,ShuttleSet:21,21,An_Se_Young_Ratchanok_Intanon_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,QF,2021.0,An Se Young,Ratchanok INTANON,train
+ShuttleSet,ShuttleSet:22,22,Mia_Blichfeldt_Busanan_Ongbamrungphan_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,QF,2021.0,Busanan ONGBAMRUNGPHAN,Mia BLICHFELDT,train
+ShuttleSet,ShuttleSet:23,23,Ng_Ka_Long_Angus_Lee_Cheuk_Yiu_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,QF,2021.0,LEE Cheuk Yiu,NG Ka Long Angus,train
+ShuttleSet,ShuttleSet:24,24,Anthony_Sinisuka_Ginting_Rasmus_Gemke_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,QF,2021.0,Anthony Sinisuka GINTING,Rasmus GEMKE,train
+ShuttleSet,ShuttleSet:25,25,Carolina_Marin_Supanida_Katethong_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,QF,2021.0,Carolina MARIN,Supanida KATETHONG,validation
+ShuttleSet,ShuttleSet:26,26,Viktor_Axelsen_Jonatan_Christie_YONEX_Thailand_Open_2021_QuarterFinals,YONEX THAILAND OPEN 2021,Quarter-finals,QF,2021.0,Jonatan CHRISTIE,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:27,27,Viktor_Axelsen_Anthony_Sinisuka_Ginting_YONEX_Thailand_Open_2021_SemiFinals,YONEX THAILAND OPEN 2021,Semi-finals,SF,2021.0,Anthony Sinisuka GINTING,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:28,28,Viktor_Axelsen_Ng_Ka_Long_Angus_YONEX_Thailand_Open_2021_Finals,YONEX THAILAND OPEN 2021,Finals,F,2021.0,NG Ka Long Angus,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:29,29,An_Se_Young_Pornpawee_Chochuwong_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,QF,2021.0,An Se Young,Pornpawee CHOCHUWONG,validation
+ShuttleSet,ShuttleSet:3,3,Kento_MOMOTA_CHOU_Tien_Chen_KOREA_OPEN_2019_Final,KOREA OPEN 2019,Finals,F,2019.0,CHOU Tien Chen,Kento MOMOTA,test
+ShuttleSet,ShuttleSet:30,30,Anders_Antonsen_Sameer_Verma_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,QF,2021.0,Anders ANTONSEN,Sameer VERMA,test
+ShuttleSet,ShuttleSet:31,31,Carolina_Marin_Neslihan_Yigit_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,QF,2021.0,Carolina MARIN,Neslihan YIGIT,validation
+ShuttleSet,ShuttleSet:32,32,Hans-Kristian_Solberg_Vittinghus_Lee_Cheuk_Yu_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,QF,2021.0,Hans-Kristian Solberg VITTINGHUS,LEE Cheuk Yiu,train
+ShuttleSet,ShuttleSet:33,33,Viktor_Axelsen_Liew_Daren_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,QF,2021.0,LIEW Daren,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:34,34,Ratchanok_Intanon_Pusarla_V._Sindhu_TOYOTA_THAILAND_OPEN_2021_QuarterFinals,TOYOTA THAILAND OPEN 2021,Quarter-finals,QF,2021.0,PUSARLA V. Sindhu,Ratchanok INTANON,validation
+ShuttleSet,ShuttleSet:35,35,Carolina_Marin_An_Se_Young_TOYOTA_THAILAND_OPEN_2021_SemiFinals,TOYOTA THAILAND OPEN 2021,Semi-finals,SF,2021.0,An Se Young,Carolina MARIN,validation
+ShuttleSet,ShuttleSet:36,36,Hans-Kristian_Solberg_Vittinghus_Anders_Antonsen_TOYOTA_THAILAND_OPEN_2021_SemiFinals,TOYOTA THAILAND OPEN 2021,Semi-finals,SF,2021.0,Anders ANTONSEN,Hans-Kristian Solberg VITTINGHUS,train
+ShuttleSet,ShuttleSet:37,37,Viktor_Axelsen_Hans-Kristian_Solberg_VIittinghus_TOYOTA_THAILAND_OPEN_2021_Finals,TOYOTA THAILAND OPEN 2021,Finals,F,2021.0,Hans-Kristian Solberg VITTINGHUS,Viktor AXELSEN,train
+ShuttleSet,ShuttleSet:38,38,Carolina_Marin_An_Se_Young_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,QF,2021.0,An Se Young,Carolina MARIN,train
+ShuttleSet,ShuttleSet:39,39,Anthony_Sinisuka_Ginting_Lee_Zii_Jia_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,QF,2021.0,Anthony Sinisuka GINTING,LEE Zii Jia,train
+ShuttleSet,ShuttleSet:4,4,CHEN_Long_CHOU_Tien_Chen_Denmark_Open_2019_QuarterFinal,Denmark Open 2019,Quarter-finals,QF,2019.0,CHEN Long,CHOU Tien Chen,train
+ShuttleSet,ShuttleSet:40,40,Evgeniya_Kosetskaya_Michelle_Li_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,QF,2021.0,Evgeniya KOSETSKAYA,Michelle LI,train
+ShuttleSet,ShuttleSet:41,41,Ng_Ka_Long_Angus_Kidambi_Srikanth_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,QF,2021.0,KIDAMBI Srikanth,NG Ka Long Angus,test
+ShuttleSet,ShuttleSet:42,42,Pusarla_V._Sindhu_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_QuarterFinals,HSBC BWF WORLD TOUR FINALS 2020,Quarter-finals,QF,2021.0,Pornpawee CHOCHUWONG,PUSARLA V. Sindhu,train
+ShuttleSet,ShuttleSet:43,43,Carolina_Marin_Pornpawee_Chochuwong_HSBC_BWF_WORLD_TOUR_FINALS_2020_SemiFinals,HSBC BWF WORLD TOUR FINALS 2020,Semi-finals,SF,2021.0,Carolina MARIN,Pornpawee CHOCHUWONG,train
+ShuttleSet,ShuttleSet:44,44,Anders_Antonsen_Viktor_Axelsen_HSBC_BWF_WORLD_TOUR_FINALS_2020_Finals,HSBC BWF WORLD TOUR FINALS 2020,Finals,F,2021.0,Anders ANTONSEN,Viktor AXELSEN,test
+ShuttleSet,ShuttleSet:5,5,Kento_MOMOTA_CHOU_Tien_Chen_Fuzhou_Open_2018_Finals,Fuzhou Open 2018,Finals,F,2018.0,CHOU Tien Chen,Kento MOMOTA,validation
+ShuttleSet,ShuttleSet:6,6,Kento_MOMOTA_CHOU_Tien_Chen_Denmark_Open_2018_Finals,Denmark Open 2018,Finals,F,2018.0,CHOU Tien Chen,Kento MOMOTA,train
+ShuttleSet,ShuttleSet:7,7,Kento_MOMOTA_CHOU_Tien_Chen_Malaysia_Open_2018_QuarterFinals,Malaysia Open 2018,Quarter-finals,QF,2018.0,CHOU Tien Chen,Kento MOMOTA,train
+ShuttleSet,ShuttleSet:8,8,CHOU_Tien_Chen_Anders_ANTONSEN_Fuzhou_Open_2019_Semi-finals,Fuzhou Open 2019,Semi-finals,SF,2019.0,Anders ANTONSEN,CHOU Tien Chen,train
+ShuttleSet,ShuttleSet:9,9,CHOU_Tien_Chen_Jonatan_CHRISTIE_Sudirman_Cup_2019_Quarter-finals,Sudirman Cup 2019,Quarter-finals,QF,2019.0,CHOU Tien Chen,Jonatan CHRISTIE,test

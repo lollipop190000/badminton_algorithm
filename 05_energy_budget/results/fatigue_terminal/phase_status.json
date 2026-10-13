@@ -1,0 +1,350 @@
+{
+  "1": {
+    "message": "Raw/terminal/split audit completed",
+    "statistics": {
+      "split_overlap_checks": [
+        {
+          "left": "train",
+          "right": "validation",
+          "key": "match_id",
+          "intersection": 0
+        },
+        {
+          "left": "train",
+          "right": "validation",
+          "key": "rally_id",
+          "intersection": 0
+        },
+        {
+          "left": "train",
+          "right": "validation",
+          "key": "video",
+          "intersection": 0
+        },
+        {
+          "left": "train",
+          "right": "test",
+          "key": "match_id",
+          "intersection": 0
+        },
+        {
+          "left": "train",
+          "right": "test",
+          "key": "rally_id",
+          "intersection": 0
+        },
+        {
+          "left": "train",
+          "right": "test",
+          "key": "video",
+          "intersection": 0
+        },
+        {
+          "left": "validation",
+          "right": "test",
+          "key": "match_id",
+          "intersection": 0
+        },
+        {
+          "left": "validation",
+          "right": "test",
+          "key": "rally_id",
+          "intersection": 0
+        },
+        {
+          "left": "validation",
+          "right": "test",
+          "key": "video",
+          "intersection": 0
+        }
+      ],
+      "raw_strokes_checked": 63264,
+      "raw_mapping_discrepancies": 0,
+      "raw_key_definition": "dataset/video/set/rally_local/ball_round; source_rally_id is generated",
+      "duplicate_raw_rows_in_already_excluded_rallies": 4,
+      "raw_csv_files_available": 244,
+      "summaries": [
+        {
+          "split": "train",
+          "rows": 43089,
+          "rallies": 4035,
+          "strict_fit_events": 28908,
+          "proxy_fit_events": 29697,
+          "conflicts": 16,
+          "proxy_terminals": 134,
+          "nonincreasing_frame_intervals": 27,
+          "excluded_frame_chronology_rallies": 27,
+          "imputed_A_intervals": 27,
+          "imputed_B_intervals": 29
+        },
+        {
+          "split": "validation",
+          "rows": 10142,
+          "rallies": 876,
+          "strict_fit_events": 7158,
+          "proxy_fit_events": 7378,
+          "conflicts": 2,
+          "proxy_terminals": 26,
+          "nonincreasing_frame_intervals": 5,
+          "excluded_frame_chronology_rallies": 4,
+          "imputed_A_intervals": 5,
+          "imputed_B_intervals": 5
+        },
+        {
+          "split": "test",
+          "rows": 10033,
+          "rallies": 966,
+          "strict_fit_events": 6770,
+          "proxy_fit_events": 6950,
+          "conflicts": 3,
+          "proxy_terminals": 24,
+          "nonincreasing_frame_intervals": 2,
+          "excluded_frame_chronology_rallies": 2,
+          "imputed_A_intervals": 2,
+          "imputed_B_intervals": 2
+        }
+      ],
+      "observed_distance_reconstruction_max_error_m": {
+        "train_player": 2.220446049250313e-15,
+        "train_opponent": 5.329070518200751e-15,
+        "validation_player": 2.220446049250313e-15,
+        "validation_opponent": 4.884981308350689e-15,
+        "test_player": 1.7763568394002505e-15,
+        "test_opponent": 5.329070518200751e-15
+      },
+      "energy_unit": "J/kg movement-energy proxy",
+      "coefficient": 19.985,
+      "cumulative_convention": "D(t)=19.985*sum(incoming distance rows 2..t), first annotation anchored at zero",
+      "frame_chronology_policy": "nonincreasing/missing frame intervals are not observed movement; affected rallies excluded from hazards and distance fitting",
+      "continuation_definition": "next recorded stroke attempt, not necessarily a valid return",
+      "forced_unforced_and_no_contact": "not identifiable; fields are null"
+    },
+    "implementation_files": [
+      "src/reconstruct_rally_energy.py"
+    ],
+    "artifacts": [
+      "terminal_event_audit.csv",
+      "energy_audit.json"
+    ]
+  },
+  "2": {
+    "message": "Pre-shot energy reconstructed; observed/imputed intervals labeled",
+    "statistics": {
+      "summaries": [
+        {
+          "split": "train",
+          "rows": 43089,
+          "rallies": 4035,
+          "strict_fit_events": 28908,
+          "proxy_fit_events": 29697,
+          "conflicts": 16,
+          "proxy_terminals": 134,
+          "nonincreasing_frame_intervals": 27,
+          "excluded_frame_chronology_rallies": 27,
+          "imputed_A_intervals": 27,
+          "imputed_B_intervals": 29
+        },
+        {
+          "split": "validation",
+          "rows": 10142,
+          "rallies": 876,
+          "strict_fit_events": 7158,
+          "proxy_fit_events": 7378,
+          "conflicts": 2,
+          "proxy_terminals": 26,
+          "nonincreasing_frame_intervals": 5,
+          "excluded_frame_chronology_rallies": 4,
+          "imputed_A_intervals": 5,
+          "imputed_B_intervals": 5
+        },
+        {
+          "split": "test",
+          "rows": 10033,
+          "rallies": 966,
+          "strict_fit_events": 6770,
+          "proxy_fit_events": 6950,
+          "conflicts": 3,
+          "proxy_terminals": 24,
+          "nonincreasing_frame_intervals": 2,
+          "excluded_frame_chronology_rallies": 2,
+          "imputed_A_intervals": 2,
+          "imputed_B_intervals": 2
+        }
+      ]
+    },
+    "implementation_files": [
+      "src/reconstruct_rally_energy.py"
+    ],
+    "artifacts": [
+      "event_energy_table.parquet"
+    ]
+  },
+  "3": {
+    "message": "M0/M1/M2 models fitted and validation selection frozen",
+    "statistics": {
+      "strict": {
+        "e": {
+          "endpoint": "e",
+          "family": "M0",
+          "slope_mode": "common",
+          "constrained": false,
+          "receiver_only": false,
+          "ridge": 1.0,
+          "knot": 0.0,
+          "eligible_shots": []
+        },
+        "u": {
+          "endpoint": "u",
+          "family": "M0",
+          "slope_mode": "common",
+          "constrained": false,
+          "receiver_only": false,
+          "ridge": 1.0,
+          "knot": 0.0,
+          "eligible_shots": []
+        }
+      },
+      "proxy": {
+        "e": {
+          "endpoint": "e",
+          "family": "M0",
+          "slope_mode": "common",
+          "constrained": false,
+          "receiver_only": false,
+          "ridge": 1.0,
+          "knot": 0.0,
+          "eligible_shots": []
+        },
+        "u": {
+          "endpoint": "u",
+          "family": "M0",
+          "slope_mode": "common",
+          "constrained": false,
+          "receiver_only": false,
+          "ridge": 1.0,
+          "knot": 0.0,
+          "eligible_shots": []
+        }
+      }
+    },
+    "implementation_files": [
+      "src/fit_fatigue_terminal.py",
+      "src/fatigue_baseline.py"
+    ],
+    "artifacts": [
+      "model_selection.csv",
+      "shot_support.csv",
+      "models"
+    ]
+  },
+  "4": {
+    "message": "Match bootstrap and nuisance-control sensitivity completed",
+    "statistics": {
+      "bootstrap_repeats": 200
+    },
+    "implementation_files": [
+      "src/fit_fatigue_terminal.py"
+    ],
+    "artifacts": [
+      "bootstrap_coefficients.parquet",
+      "bootstrap_summary.csv",
+      "control_model_coefficients.csv"
+    ]
+  },
+  "5": {
+    "message": "Fatigue-dependent w/l/Q exported; probability and static reconstruction checked",
+    "statistics": {
+      "probability_mass_max_error": 4.440892098500626e-16,
+      "static_reconstruction_max_error": 8.326672684688674e-17,
+      "all_transitions_flip_parity": true,
+      "structurally_valid_destinations_per_state": 16,
+      "shot_policy_fixed": true,
+      "conditional_destination_distribution_fixed": true
+    },
+    "implementation_files": [
+      "src/build_fatigue_transition.py"
+    ],
+    "artifacts": [
+      "fatigue_terminal_samples.parquet",
+      "fatigue_q_samples.parquet"
+    ]
+  },
+  "6": {
+    "message": "All stamina scenarios completed",
+    "statistics": {
+      "scenarios": [
+        {
+          "percentile": 50,
+          "initial_budget_A": 218.60109972813666,
+          "initial_budget_B": 218.60109972813666,
+          "grid_intervals": 40,
+          "requested_grid_intervals": 40,
+          "max_bellman_residual": 5.551115123125783e-17,
+          "max_cell_iterations": 3,
+          "refined": false,
+          "max_refinement_difference": 0.009199001751682534,
+          "max_mc_difference_beyond_95ci": 0.009478439470092137,
+          "numerical_validation_passed": true,
+          "initial_midpoint_mean": 0.5,
+          "initial_lower_mean": 0.4483898752514757,
+          "initial_upper_mean": 0.5516101247485243,
+          "initial_ambiguity_mean": 0.10322024949704856,
+          "initial_parity_complement_max_error": 1.3322676295501878e-15
+        },
+        {
+          "percentile": 75,
+          "initial_budget_A": 402.5504868127432,
+          "initial_budget_B": 402.5504868127432,
+          "grid_intervals": 40,
+          "requested_grid_intervals": 40,
+          "max_bellman_residual": 1.1102230246251565e-16,
+          "max_cell_iterations": 4,
+          "refined": false,
+          "max_refinement_difference": 0.009070269528151376,
+          "max_mc_difference_beyond_95ci": 0.005710151878370072,
+          "numerical_validation_passed": true,
+          "initial_midpoint_mean": 0.5,
+          "initial_lower_mean": 0.4825890734923626,
+          "initial_upper_mean": 0.5174109265076374,
+          "initial_ambiguity_mean": 0.03482185301527482,
+          "initial_parity_complement_max_error": 8.881784197001252e-16
+        },
+        {
+          "percentile": 95,
+          "initial_budget_A": 850.4351587506309,
+          "initial_budget_B": 850.4351587506309,
+          "grid_intervals": 160,
+          "requested_grid_intervals": 40,
+          "max_bellman_residual": 5.551115123125783e-17,
+          "max_cell_iterations": 3,
+          "refined": true,
+          "refinement_history": [
+            {
+              "intervals": 80,
+              "max_refinement_difference": 0.0224344232127175,
+              "max_mc_excess_95ci": 0.0169021076733662
+            }
+          ],
+          "max_refinement_difference": 0.010556754429319803,
+          "max_mc_difference_beyond_95ci": 0.00639336625654183,
+          "numerical_validation_passed": true,
+          "initial_midpoint_mean": 0.5,
+          "initial_lower_mean": 0.49700582938721943,
+          "initial_upper_mean": 0.5029941706127807,
+          "initial_ambiguity_mean": 0.0059883412255613,
+          "initial_parity_complement_max_error": 1.3322676295501878e-15
+        }
+      ],
+      "all_numerical_checks_passed": true
+    },
+    "implementation_files": [
+      "src/solve_stamina_value.py",
+      "scripts/run_fatigue_pipeline.py"
+    ],
+    "artifacts": [
+      "stamina",
+      "stamina_value_summary.parquet",
+      "stamina_numerical_validation.csv"
+    ]
+  }
+}

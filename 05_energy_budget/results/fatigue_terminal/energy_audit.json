@@ -1,0 +1,118 @@
+{
+  "split_overlap_checks": [
+    {
+      "left": "train",
+      "right": "validation",
+      "key": "match_id",
+      "intersection": 0
+    },
+    {
+      "left": "train",
+      "right": "validation",
+      "key": "rally_id",
+      "intersection": 0
+    },
+    {
+      "left": "train",
+      "right": "validation",
+      "key": "video",
+      "intersection": 0
+    },
+    {
+      "left": "train",
+      "right": "test",
+      "key": "match_id",
+      "intersection": 0
+    },
+    {
+      "left": "train",
+      "right": "test",
+      "key": "rally_id",
+      "intersection": 0
+    },
+    {
+      "left": "train",
+      "right": "test",
+      "key": "video",
+      "intersection": 0
+    },
+    {
+      "left": "validation",
+      "right": "test",
+      "key": "match_id",
+      "intersection": 0
+    },
+    {
+      "left": "validation",
+      "right": "test",
+      "key": "rally_id",
+      "intersection": 0
+    },
+    {
+      "left": "validation",
+      "right": "test",
+      "key": "video",
+      "intersection": 0
+    }
+  ],
+  "raw_strokes_checked": 63264,
+  "raw_mapping_discrepancies": 0,
+  "raw_key_definition": "dataset/video/set/rally_local/ball_round; source_rally_id is generated",
+  "duplicate_raw_rows_in_already_excluded_rallies": 4,
+  "raw_csv_files_available": 244,
+  "summaries": [
+    {
+      "split": "train",
+      "rows": 43089,
+      "rallies": 4035,
+      "strict_fit_events": 28908,
+      "proxy_fit_events": 29697,
+      "conflicts": 16,
+      "proxy_terminals": 134,
+      "nonincreasing_frame_intervals": 27,
+      "excluded_frame_chronology_rallies": 27,
+      "imputed_A_intervals": 27,
+      "imputed_B_intervals": 29
+    },
+    {
+      "split": "validation",
+      "rows": 10142,
+      "rallies": 876,
+      "strict_fit_events": 7158,
+      "proxy_fit_events": 7378,
+      "conflicts": 2,
+      "proxy_terminals": 26,
+      "nonincreasing_frame_intervals": 5,
+      "excluded_frame_chronology_rallies": 4,
+      "imputed_A_intervals": 5,
+      "imputed_B_intervals": 5
+    },
+    {
+      "split": "test",
+      "rows": 10033,
+      "rallies": 966,
+      "strict_fit_events": 6770,
+      "proxy_fit_events": 6950,
+      "conflicts": 3,
+      "proxy_terminals": 24,
+      "nonincreasing_frame_intervals": 2,
+      "excluded_frame_chronology_rallies": 2,
+      "imputed_A_intervals": 2,
+      "imputed_B_intervals": 2
+    }
+  ],
+  "observed_distance_reconstruction_max_error_m": {
+    "train_player": 2.220446049250313e-15,
+    "train_opponent": 5.329070518200751e-15,
+    "validation_player": 2.220446049250313e-15,
+    "validation_opponent": 4.884981308350689e-15,
+    "test_player": 1.7763568394002505e-15,
+    "test_opponent": 5.329070518200751e-15
+  },
+  "energy_unit": "J/kg movement-energy proxy",
+  "coefficient": 19.985,
+  "cumulative_convention": "D(t)=19.985*sum(incoming distance rows 2..t), first annotation anchored at zero",
+  "frame_chronology_policy": "nonincreasing/missing frame intervals are not observed movement; affected rallies excluded from hazards and distance fitting",
+  "continuation_definition": "next recorded stroke attempt, not necessarily a valid return",
+  "forced_unforced_and_no_contact": "not identifiable; fields are null"
+}

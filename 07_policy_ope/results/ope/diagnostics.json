@@ -1,0 +1,72 @@
+{
+  "behavior_clone": {
+    "fqe": 0.4952442944049835,
+    "dr": 0.49388665259662556,
+    "ess": 1915.0,
+    "nonzero_weight_episodes": 1915,
+    "wis": 0.49921671018276764,
+    "held_out_bellman_mse": 0.04796275869011879
+  },
+  "cql_shot_mix_50": {
+    "fqe": 0.5191752910614014,
+    "dr": 0.5219862464598828,
+    "ess": 321.7338278635456,
+    "nonzero_weight_episodes": 1915,
+    "wis": 0.5251449626434173,
+    "held_out_bellman_mse": 0.048394255340099335
+  },
+  "cql_shot": {
+    "fqe": 0.5403408408164978,
+    "dr": 0.5723535293152264,
+    "ess": 37.348488459793586,
+    "nonzero_weight_episodes": 302,
+    "wis": 0.5956268631640645,
+    "held_out_bellman_mse": 0.049213606864213943
+  },
+  "behavior_model": {
+    "logged_shot_nll": 0.9542158246040344
+  },
+  "overlap": {
+    "recommendation_propensity_below_0_05": 0.006494155260265761,
+    "context_count_below_20": 0.002397841942251973,
+    "recommendation_propensity_quantiles": [
+      0.0011890075402334332,
+      0.1629437565803528,
+      0.498460054397583,
+      0.9549585580825806,
+      0.9944013953208923
+    ]
+  },
+  "validation": {
+    "behavior_clone": {
+      "fqe": 0.4935942590236664,
+      "dr": 0.4948329801790442,
+      "ess": 1734.0,
+      "nonzero_weight_episodes": 1734,
+      "wis": 0.49769319492502884,
+      "held_out_bellman_mse": 0.04337998852133751
+    },
+    "cql_shot_mix_50": {
+      "fqe": 0.5185177326202393,
+      "dr": 0.50064986794667,
+      "ess": 264.4782528256354,
+      "nonzero_weight_episodes": 1734,
+      "wis": 0.5065286541109826,
+      "held_out_bellman_mse": 0.04380519315600395
+    },
+    "cql_shot": {
+      "fqe": 0.5407614707946777,
+      "dr": 0.5954749063953997,
+      "ess": 26.444301709391233,
+      "nonzero_weight_episodes": 192,
+      "wis": 0.6808962623875356,
+      "held_out_bellman_mse": 0.04462786018848419
+    },
+    "behavior_model": {
+      "logged_shot_nll": 0.9675329327583313
+    }
+  },
+  "observed_initial_win_rate": 0.49921671018276764,
+  "behavior_fqe_calibration_gap": -0.003972415777784122,
+  "policy_hash_unchanged": true
+}

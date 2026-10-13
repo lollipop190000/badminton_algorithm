@@ -1,0 +1,10 @@
+.runtime/
+.venv*/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+runtime_omitted_artifacts.json

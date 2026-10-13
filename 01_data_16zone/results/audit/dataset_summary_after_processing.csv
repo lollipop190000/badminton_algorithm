@@ -1,0 +1,5 @@
+﻿dataset,matches,rallies,strokes,unique_players,QF_matches,SF_matches,F_matches,unknown_round_matches
+ShuttleSet_processed,44,2411,24958,27,25,8,9,2
+ShuttleSet22_processed_before_dedup,58,4055,43994,35,6,31,20,1
+merged_after_dedup,94,6044,65133,43,25,38,28,3
+merged_elite_QF_SF_F,91,5888,63410,43,25,38,28,0

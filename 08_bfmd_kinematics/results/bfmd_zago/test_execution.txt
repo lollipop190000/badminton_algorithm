@@ -1,0 +1,19 @@
+test_all_filters_preserve_uniform_motion_and_missingness (tests.test_bfmd_zago.KinematicTests.test_all_filters_preserve_uniform_motion_and_missingness) ... ok
+test_beta_zero_identity_and_normalization_is_algebra_only (tests.test_bfmd_zago.KinematicTests.test_beta_zero_identity_and_normalization_is_algebra_only) ... ok
+test_conditional_inverse_is_mean_of_inverse_not_inverse_of_mean (tests.test_bfmd_zago.KinematicTests.test_conditional_inverse_is_mean_of_inverse_not_inverse_of_mean) ... ok
+test_constant_speed_circle_has_normal_acceleration_without_kinetic_work (tests.test_bfmd_zago.KinematicTests.test_constant_speed_circle_has_normal_acceleration_without_kinetic_work) ... ok
+test_constant_speed_line (tests.test_bfmd_zago.KinematicTests.test_constant_speed_line) ... ok
+test_existing_zone_geometry (tests.test_bfmd_zago.KinematicTests.test_existing_zone_geometry) ... ok
+test_feature_independent_match_support (tests.test_bfmd_zago.KinematicTests.test_feature_independent_match_support) ... ok
+test_missing_camera_or_pose_never_stationary (tests.test_bfmd_zago.KinematicTests.test_missing_camera_or_pose_never_stationary) ... ok
+test_no_court_cannot_use_far_valid_homography (tests.test_bfmd_zago.KinematicTests.test_no_court_cannot_use_far_valid_homography) ... ok
+test_partial_tracking_peaks_are_not_aggregated_as_complete_intervals (tests.test_bfmd_zago.KinematicTests.test_partial_tracking_peaks_are_not_aggregated_as_complete_intervals) ... ok
+test_sampling_curve_30_15_10fps (tests.test_bfmd_zago.KinematicTests.test_sampling_curve_30_15_10fps) ... ok
+test_stationary_has_undefined_orientation_and_inverse (tests.test_bfmd_zago.KinematicTests.test_stationary_has_undefined_orientation_and_inverse) ... ok
+test_stop_go_positive_work_and_boundary_additivity (tests.test_bfmd_zago.KinematicTests.test_stop_go_positive_work_and_boundary_additivity) ... ok
+test_unobserved_exact_state_falls_back_honestly (tests.test_bfmd_zago.KinematicTests.test_unobserved_exact_state_falls_back_honestly) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.314s
+
+OK

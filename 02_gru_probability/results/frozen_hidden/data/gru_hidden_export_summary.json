@@ -1,0 +1,11 @@
+{
+  "checkpoint": "C:\\Users\\lolli\\Documents\\R&E\\Code\\outputs\\gru\\model\\best_gru.pt",
+  "checkpoint_sha256_before": "672187a66c545d635ba81788d267c0e741270ee62848f65a5b89175ff5bdce8e",
+  "checkpoint_sha256_after": "672187a66c545d635ba81788d267c0e741270ee62848f65a5b89175ff5bdce8e",
+  "hidden_size": 64,
+  "parameters_frozen": 18571,
+  "requires_grad_parameters": 0,
+  "device": "cuda",
+  "rows": 63264,
+  "leakage_test": "passed: perturbing current shot/zone does not change h_(t-1)"
+}

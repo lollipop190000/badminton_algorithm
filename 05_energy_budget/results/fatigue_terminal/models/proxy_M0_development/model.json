@@ -1,0 +1,65 @@
+{
+  "history_order": 3,
+  "alphas": [
+    50.0,
+    200.0,
+    1000.0
+  ],
+  "d_star": 838.8778414562917,
+  "energy_max_h": 1832.725461389524,
+  "energy_max_r": 1865.1265525430856,
+  "energy_min_h": 11.900231261780586,
+  "energy_min_r": 7.015538418413859,
+  "fit_scope": "train",
+  "cohort": "proxy",
+  "e": {
+    "spec": {
+      "endpoint": "e",
+      "family": "M0",
+      "slope_mode": "common",
+      "constrained": false,
+      "receiver_only": false,
+      "ridge": 0.001,
+      "knot": 0.0,
+      "eligible_shots": []
+    },
+    "names": [
+      "intercept",
+      "shot_intercept:1",
+      "shot_intercept:2",
+      "shot_intercept:3",
+      "shot_intercept:4",
+      "shot_intercept:5",
+      "shot_intercept:6",
+      "shot_intercept:7"
+    ],
+    "converged": true,
+    "iterations": 10,
+    "calibration_shift": 0.0
+  },
+  "u": {
+    "spec": {
+      "endpoint": "u",
+      "family": "M0",
+      "slope_mode": "common",
+      "constrained": false,
+      "receiver_only": false,
+      "ridge": 1.0,
+      "knot": 0.0,
+      "eligible_shots": []
+    },
+    "names": [
+      "intercept",
+      "shot_intercept:1",
+      "shot_intercept:2",
+      "shot_intercept:3",
+      "shot_intercept:4",
+      "shot_intercept:5",
+      "shot_intercept:6",
+      "shot_intercept:7"
+    ],
+    "converged": true,
+    "iterations": 6,
+    "calibration_shift": 0.0
+  }
+}

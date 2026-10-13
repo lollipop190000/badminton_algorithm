@@ -1,0 +1,13 @@
+{
+  "model_sha256": "a66316a90702da3d97db0da1489358d36a869d24e0ca1d01f69703956c4e10f8",
+  "d_star": 838.8778414562917,
+  "requested_grid_intervals": 40,
+  "mc_samples": 20000,
+  "terminal_costs": {},
+  "initial_budgets": [
+    218.60109972813666,
+    402.5504868127432,
+    850.4351587506309
+  ],
+  "solver": "bilinear_cell_fixed_point_v1"
+}

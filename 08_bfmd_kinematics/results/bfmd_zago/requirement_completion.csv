@@ -1,0 +1,15 @@
+requirement,status,evidence_or_limit
+original_replacement,complete,Old code/tests/preliminary results moved to archive; fresh raw extraction in bfmd_zago
+source_schema,complete,96 annotation files; 12 singles; actual JSON schemas audited
+markov_adapter,complete,Existing 16-zone/8-shot/sliding state/parity read-only contracts
+manual_video_calibration,limited_complete,6 short assistant-reviewed train windows; independent human labels still absent
+tangential_normal_features,complete,"Whole-rally derivatives, edge integrals, low-speed/missing policy"
+state_exact_landing_history,unavailable_in_release,No verified target-landing zones; all exact n=0 and explicit backoff
+M0_reference,benchmark_only,"19.985 external-protocol distance benchmark, no game calibration"
+M1_regression,unavailable,No speed-cost slope or trial-level labels
+M2_Zago,unavailable,PDF formula image fetch 403; no verified ground contact; eta null
+M3_features_beta0,complete_uncalibrated,Features and beta0 algebra; illustrative grid explicitly tagged
+match_split_shrink_bootstrap,complete,8/2/2 group split; validation selection; 100 match refits
+new_policy_or_metabolic_accuracy,not_claimed,No new policy execution or metabolic ground truth
+original_solver_C_V,protected,Before/after SHA256 audit; no writes
+external_sensor_datasets,reference_only,No claim that optional sensor/metabolic archives were downloaded

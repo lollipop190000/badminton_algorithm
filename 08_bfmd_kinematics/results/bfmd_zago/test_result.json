@@ -1,0 +1,5 @@
+{
+  "command": "python -m unittest tests.test_bfmd_zago -v",
+  "tests": 14,
+  "exit_code": 0
+}

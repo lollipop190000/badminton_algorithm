@@ -1,0 +1,9 @@
+metric,value,denominator_states
+shot_type_agreement_all,0.540615967307884,10033
+exact_action_agreement_all,0.20611980464467258,10033
+top3_agreement_all,0.3898136150702681,10033
+shot_type_agreement_supported,0.5645124195032198,8696
+exact_action_agreement_supported,0.23781048758049678,8696
+top3_agreement_supported,0.4497470101195952,8696
+mean_actual_action_q_rank_supported,6.272769089236431,8696
+mean_target_zone_distance_m_same_shot,1.412090436684234,5110

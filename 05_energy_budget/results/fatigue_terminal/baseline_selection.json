@@ -1,0 +1,15 @@
+{
+  "history_order": 3,
+  "alphas": [
+    50.0,
+    200.0,
+    1000.0
+  ],
+  "tau": 1.0,
+  "validation": {
+    "events": 7459,
+    "event_log_loss": 3.335723730059288,
+    "multiclass_brier": 0.9413110500574595
+  },
+  "alpha_on_grid_boundary": false
+}

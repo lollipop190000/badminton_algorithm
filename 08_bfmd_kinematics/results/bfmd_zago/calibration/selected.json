@@ -1,0 +1,9 @@
+{
+  "method": "bw3",
+  "threshold": 0.15,
+  "windows": 6,
+  "activity_error": 0.0,
+  "reviewer": "assistant_visual_review_of_actual_video",
+  "independent_human_ground_truth": false,
+  "tie_rule": "prespecified short smoothing preference sg5, then threshold ascending"
+}

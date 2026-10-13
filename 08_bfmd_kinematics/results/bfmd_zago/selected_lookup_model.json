@@ -1,0 +1,18 @@
+{
+  "level": 3,
+  "minimum": 1,
+  "tau": 0.0,
+  "bin_edges": [
+    0.0,
+    0.4393602060779745,
+    0.7636193391136101,
+    1.2760584747958748,
+    1.9376643083388776,
+    "inf"
+  ],
+  "fitting_matches": "train plus validation; test excluded",
+  "selection": "validation T_move RMSE, distance/role/shot available in existing Markov adapter",
+  "exact_state_support": false,
+  "uncertainty": "100 match bootstrap refits, fixed calibration/filter/bins/hyperparameters",
+  "energy_calibration_status": "not_game_calibrated_no_metabolic_labels"
+}

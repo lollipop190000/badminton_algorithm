@@ -1,0 +1,5 @@
+{
+  "threshold_basis": "train fully observed 99.5th percentile, statistical flags only; not physiological limits",
+  "speed_peak_train_q995": 11.3405664392009,
+  "normal_acceleration_peak_train_q995": 81.69783308925776
+}

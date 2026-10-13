@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="코트를 클릭해 GRU 승리확률과 CQL 전술 추천을 비교하는 로컬 연구 도구" />
+    <title>GRU·CQL 랠리 시뮬레이터</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">BADMINTON DECISION LAB</p>
+        <h1>GRU·CQL 랠리 시뮬레이터</h1>
+      </div>
+      <div id="model-status" class="status" role="status"><span></span> 모델 확인 중</div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel setup-panel" aria-labelledby="builder-title">
+        <div class="panel-heading">
+          <div><span class="step-no">01</span><h2 id="builder-title">랠리 구성</h2></div>
+          <button id="new-rally" class="button ghost" type="button">새 랠리</button>
+        </div>
+        <div class="example-row">
+          <label for="example-select">기록 랠리 불러오기</label>
+          <input id="example-search" type="search" placeholder="선수·대회·랠리 검색" aria-label="기록 랠리 검색" />
+          <div class="inline-control">
+            <select id="example-select"><option value="">선수 또는 경기를 선택하세요</option></select>
+            <button id="load-example" class="button secondary" type="button">불러오기</button>
+          </div>
+        </div>
+        <div class="player-strip">
+          <div class="player a"><span>A</span><input id="player-a-name" value="Player A" aria-label="선수 A 이름" /></div>
+          <div class="versus">VS</div>
+          <div class="player b"><span>B</span><input id="player-b-name" value="Player B" aria-label="선수 B 이름" /></div>
+        </div>
+        <div class="selection-tabs" role="group" aria-label="코트 선택 대상">
+          <button type="button" class="selection-tab active" data-target="a">A 위치</button>
+          <button type="button" class="selection-tab" data-target="b">B 위치</button>
+          <button type="button" class="selection-tab" data-target="target">셔틀 착지</button>
+        </div>
+        <div class="court-shell">
+          <div class="court-label north">PLAYER B</div>
+          <div id="court" class="court" aria-label="양쪽 16구역 배드민턴 코트"></div>
+          <div class="court-label south">PLAYER A</div>
+          <div class="court-legend"><span class="dot a"></span>A 위치 <span class="dot b"></span>B 위치 <span class="dot shuttle"></span>착지 <span class="rank-swatch">1</span>CQL 추천</div>
+        </div>
+      </section>
+
+      <section class="panel control-panel" aria-labelledby="stroke-title">
+        <div class="panel-heading"><div><span class="step-no">02</span><h2 id="stroke-title">현재 타구</h2></div><span id="mode-badge" class="badge">새 랠리</span></div>
+        <div class="hitter-card"><span>타구자</span><strong id="hitter-value">A</strong><small>입력 후 자동 교대</small></div>
+        <div class="form-grid">
+          <label>타구 종류<select id="shot-type"></select></label>
+          <label>경과 시간 <span>(초)</span><input id="delta-time" type="number" min="0" max="5" step="0.1" value="0" /></label>
+        </div>
+        <div class="selection-summary">
+          <div><span>A 위치</span><strong id="a-position">선택 필요</strong></div>
+          <div><span>B 위치</span><strong id="b-position">선택 필요</strong></div>
+          <div><span>착지</span><strong id="target-zone">선택 필요</strong></div>
+        </div>
+        <button id="out-net" class="button danger-outline" type="button">아웃/네트 (Z0)</button>
+        <button id="add-stroke" class="button primary wide" type="button">타구 추가하고 분석</button>
+        <div class="edit-actions">
+          <button id="undo-stroke" class="button ghost" type="button">마지막 타구 취소</button>
+          <span id="stroke-count">0타구</span>
+        </div>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+
+        <aside class="interpretation">
+          <h3>결과를 읽는 법</h3>
+          <p><strong>GRU</strong>는 방금 타구까지 반영한 Player A의 랠리 승리확률입니다.</p>
+          <p><strong>CQL Q값</strong>은 확률이 아니며 같은 상황 안의 행동끼리만 비교합니다.</p>
+          <p>새 랠리의 선수 위치는 선택한 구역 중심점으로 근사됩니다.</p>
+        </aside>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-title">
+        <div class="panel-heading"><div><span class="step-no">03</span><h2 id="result-title">모델 결과</h2></div><span id="result-stroke" class="badge muted">입력 대기</span></div>
+        <div id="empty-result" class="empty-result"><div class="shuttle-mark">◌</div><strong>첫 타구를 구성해 보세요</strong><p>CQL 추천 3개와 GRU 확률 추이가 여기에 나타납니다.</p></div>
+        <div id="result-content" hidden>
+          <div class="probability-card">
+            <div><span>GRU · Player A 승리확률</span><strong id="probability-value">–</strong></div>
+            <span id="probability-delta" class="delta">첫 예측</span>
+          </div>
+          <div id="probability-chart" class="chart" aria-label="타구별 Player A 승리확률 그래프"></div>
+          <div class="recommendation-heading"><h3>CQL 추천 행동</h3><span>현재 타구 직전 상태 기준</span></div>
+          <div id="recommendations" class="recommendations"></div>
+          <div id="actual-comparison" class="actual-comparison"></div>
+          <div id="result-warnings" class="warnings"></div>
+        </div>
+      </section>
+
+      <section class="panel timeline-panel" aria-labelledby="timeline-title">
+        <div class="panel-heading"><div><span class="step-no">04</span><h2 id="timeline-title">랠리 타임라인</h2></div><span>행을 누르면 당시 결과 표시</span></div>
+        <div id="timeline" class="timeline"><p class="timeline-empty">아직 추가된 타구가 없습니다.</p></div>
+      </section>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

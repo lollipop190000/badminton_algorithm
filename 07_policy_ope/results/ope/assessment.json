@@ -1,0 +1,12 @@
+{
+  "conclusion": "현재 평가만으로 실제 승률 향상을 확정할 수 없음",
+  "diagnostic_gates": {
+    "behavior_mean_calibration_within_3pp": true,
+    "last_10_iteration_validation_change_within_2pp": true,
+    "pure_policy_trajectory_ess_at_least_10pct_or_30": false,
+    "fqe_improvement_lower_bound_positive": true,
+    "dr_improvement_lower_bound_positive": false
+  },
+  "threshold_note": "reporting heuristics, not preregistered tests or formal statistical guarantees",
+  "tests": "python -m unittest tests.test_ope tests.test_cql_v2_pipeline -v (12 passed)"
+}
