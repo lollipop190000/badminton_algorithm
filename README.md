@@ -2,7 +2,7 @@
 
 팀 공동 작업은 [기여 규칙](CONTRIBUTING.md)을 먼저 확인하세요. 개인 브랜치에서 PR을 만들고, 다른 팀원 1명 승인과 자동 검사 통과 후 Squash merge합니다. [연구 보고서 양식](docs/templates/REPORT.md) · [실험 기록 양식](docs/templates/RUN.json) · [Issue 만들기](https://github.com/lollipop190000/badminton_algorithm/issues/new/choose)
 
-연구 요청을 관련 주제별 **8개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
+연구 요청을 관련 주제별 **9개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
 
 | 폴더 | 원인·과정·결과 |
 |---|---|
@@ -14,6 +14,7 @@
 | 06_rally_simulator | [팀원이 사용하는 GRU·CQL v2 랠리 시뮬레이터](06_rally_simulator/REPORT.md) |
 | 07_policy_ope | [실제 정책을 실행하지 않고 평가하는 OPE](07_policy_ope/REPORT.md) |
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
+| 09_cost_transfer_method | [Markov 이동비용 C_ij 전달 추정 방법(BFMD → ShuttleSet 사건별 적용)](09_cost_transfer_method/REPORT.md) |
 
 ## 실행
 

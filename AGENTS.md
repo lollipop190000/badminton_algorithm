@@ -11,7 +11,7 @@
 7. 이 프로젝트의 GitHub 저장소는 `https://github.com/lollipop190000/badminton_algorithm.git`다. 사용자가 다른 대상을 지정하면 최신 지시를 따른다. Git 명령은 `github_publish/`의 독립 저장소 안에서만 실행하며 `git rev-parse --show-toplevel`로 확인한다. 사용자 홈의 상위 Git 저장소에 프로젝트 외 파일을 add/commit하지 않는다. 기존 원격 커밋을 강제로 덮지 않는다.
 8. 전체 소스 문법·필요한 현행 테스트·경로/모델/결과 로딩과 게시 대상 파일을 점검한 후 커밋·push한다. 학습을 불필요하게 재실행하지 않는다. 실제 경기 승률·대사비용·피로 인과효과를 검증하지 않은 결과는 보고서에서 구별한다.
 
-현재 주제: 데이터/16구획, GRU, CQL v2, Markov Q/C/K/V, 누적에너지/예산, 랠리 시뮬레이터, OPE, BFMD 운동학.
+현재 주제: 데이터/16구획, GRU, CQL v2, Markov Q/C/K/V, 누적에너지/예산, 랠리 시뮬레이터, OPE, BFMD 운동학, 이동비용 C 전달 추정 방법.
 
 정리된 GitHub 저장소를 clone해서 작업할 때는 각 주제의 `code/`가 소스 원본이다. 루트 `run.py prepare`가 `.runtime/`에 실행 환경을 조립한다. `.runtime/` 코드를 직접 수정하지 말고 해당 주제의 code를 수정한다. 실행·검증 후 `python run.py sync-results`로 결과를 해당 주제에 모으고 REPORT.md/목차/manifest를 갱신한다. 대체된 파일은 제거하되 다른 주제가 의존하는 파일인지 먼저 확인한다. `scripts/build_github_export.py`는 원래 작업 폴더에서 정리본을 만드는 도구이므로 clone한 저장소 안에서 요구하지 않는다. 감사된 입력·checkpoint의 해시를 보존하도록 `.gitattributes`에서 자동 줄바꿈 변환을 막는다.
 
