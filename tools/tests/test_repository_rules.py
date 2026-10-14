@@ -6,11 +6,16 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from check_repository import LIMIT, changed_report_errors, path_errors, report_errors, run_errors
+from check_repository import LIMIT, changed_report_errors, path_errors, report_errors, run_errors, topic_number_errors
 from update_manifest import digest, refresh
 
 
 class RepositoryRulesTests(unittest.TestCase):
+    def test_duplicate_topic_numbers_cannot_merge(self):
+        self.assertTrue(topic_number_errors(["09_new_ope", "09_new_tracking"]))
+        self.assertTrue(topic_number_errors(["9_inconsistent_name"]))
+        self.assertFalse(topic_number_errors(["09_new_ope", "10_new_tracking"]))
+
     def test_rejects_private_generated_and_oversized_files(self):
         for name in (".runtime/src/model.py", ".env", "x/.venv/bin/python", "raw/video.mp4", "x/key.pem"):
             with self.subTest(name=name):

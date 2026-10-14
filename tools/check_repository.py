@@ -97,10 +97,24 @@ def changed_report_errors(names):
     return errors
 
 
+def topic_number_errors(names):
+    used = {}
+    errors = []
+    for name in names:
+        if not TOPIC.fullmatch(name):
+            errors.append(f"Invalid topic folder name (use NN_topic): {name}")
+        elif name[:2] in used:
+            errors.append(f"Topic number collision: {used[name[:2]]}, {name}")
+        else:
+            used[name[:2]] = name
+    return errors
+
+
 def validate(root=ROOT, base=None):
     files = repository_files(root)
     errors = []
     owners = {}
+    errors.extend(topic_number_errors(p.name for p in root.iterdir() if p.is_dir() and re.match(r"^\d", p.name)))
     topics = sorted(p for p in root.iterdir() if p.is_dir() and TOPIC.fullmatch(p.name))
     manifest = json.loads((root / "PUBLICATION_MANIFEST.json").read_text(encoding="utf-8"))
     declared = set(manifest["modules"])

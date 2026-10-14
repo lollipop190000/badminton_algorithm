@@ -2069,13 +2069,13 @@
     },
     {
       "path": "tools/check_repository.py",
-      "bytes": 8161,
-      "sha256": "f3eea0c0f97d2949ab949559bd64d68d8e62f9888ea6bf42e5885d73d2f2fc54"
+      "bytes": 8655,
+      "sha256": "14eee1bda5ba1f93cc9366871de8e3d2a7972b3a530523917f83fafc2d118f8a"
     },
     {
       "path": "tools/tests/test_repository_rules.py",
-      "bytes": 4164,
-      "sha256": "7b05c5537df86c5c4bda3bf1e4557d247480bbf04be46b2333bdd514049bee0e"
+      "bytes": 4474,
+      "sha256": "1c87679e5c1ef005e3c0e7274b1381018935b6dcd4ecf3ec8e3050f5abed4c0f"
     },
     {
       "path": "tools/update_manifest.py",
@@ -2083,7 +2083,7 @@
       "sha256": "144fb63b32d6d3e2025332102908612b8e7e0cb48b23dbeb2befefe60df04910"
     }
   ],
-  "uploaded_content_bytes": 483402659,
+  "uploaded_content_bytes": 483403463,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,
