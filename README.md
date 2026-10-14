@@ -10,8 +10,8 @@
 | 02_gru_probability | [GRU 랠리 승리확률 기준모형](02_gru_probability/REPORT.md) |
 | 03_cql_v2_policy | [CQL v2: 문맥과 support를 고려한 전술 추천](03_cql_v2_policy/REPORT.md) |
 | 04_markov_parity | [3타구 패턴 Markov Q·C·K·V](04_markov_parity/REPORT.md) |
-| 05_energy_budget | [누적 이동에너지·E/U 종료확률·잔여 예산 V](05_energy_budget/REPORT.md) |
-| 06_rally_simulator | [팀원이 사용하는 GRU·CQL v2 랠리 시뮬레이터](06_rally_simulator/REPORT.md) |
+| 05_energy_budget | [누적 이동에너지·잔여 예산 V·타구와 목표 구획 전략](05_energy_budget/REPORT.md) |
+| 06_rally_simulator | [GRU·CQL v2·에너지 전략 히트맵 시뮬레이터](06_rally_simulator/REPORT.md) |
 | 07_policy_ope | [실제 정책을 실행하지 않고 평가하는 OPE](07_policy_ope/REPORT.md) |
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
 
@@ -32,6 +32,8 @@ Linux/macOS에서는 `.venv/bin/python`을 사용한다. `run.py`는 주제별 �
 
 전체학습·bootstrap·BFMD 원자료 다운로드·대용량 예산 격자를 불필요하게 재실행하지 않아도 저장된 결과와 모델을 읽고 테스트/시뮬레이터를 사용할 수 있다. 원자료부터 재생성하는 명령은 각 REPORT의 과정에 있다. 데이터 출처·검증된 Git commit과 다운로드 감사는 01/08에 기록했다.
 
+에너지 전략은 `python run.py energy-strategy --run-id <고유 ID>`로 기존 모델·비용표에서 계산한다. 학습과 BFMD 추출은 재실행하지 않는다. 전체 행동 점수·히트맵·비교 표는 05의 독립 실행 폴더에 보존한다. 대용량 전략 격자는 일반 Git 파일에서 제외하므로 새 clone에서는 이 명령으로 격자를 재생성한 후 시뮬레이터의 **에너지 전략** 탭을 사용한다. 예산과 타구를 바꾸며 16구획 히트맵을 조회하고 BFMD 비용 가정별 추천을 비교할 수 있다. 목표대로 도착한다는 조건부 모형이며 목표 정확도와 실제 경기 효과를 검증한 결과는 아니다.
+
 ## 결과 해석
 
 GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률이 아니고 offline 할인 return이다. OPE의 FQE 개선만으로 실제 정책 승률 개선을 확정할 수 없다. 누적에너지 모형의 선택된 strict 모델은 에너지 비의존 M0이므로 피로 인과효과를 입증하지 않았다. BFMD 표는 지면 위치 대리변수이며 착지 history가 없어 정확한 상태 관측이 아닌 fallback이다. 외부 대사자료 없는 β/η는 미확정이다. 각 REPORT는 실제 관측·통계 추정·가설·수치 검증을 구별한다.
@@ -39,3 +41,6 @@ GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률�
 ## 앞으로의 GitHub 업로드 규칙
 
 이 구조를 계속 유지한다. 새로운 요청은 관련 주제에 통합하거나 다음 번호의 새 폴더를 만든다. 각 폴더의 원인·과정·결과와 실제 표·실행 방법을 갱신하고, 대체된 버전은 현행 게시 대상에서 제외한다. 구체적인 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 포함·제외 내역은 [PUBLICATION_MANIFEST.json](PUBLICATION_MANIFEST.json)에 있다. 큰 CSV와 같은 내용을 보존하는 완전 Parquet는 남겼으며 전체 결과 대신 작은 표본만 저장한 것으로 설명하지 않는다.
+
+<!-- energy-strategy-index -->
+에너지 전략 확장은 [05 연구 보고서](05_energy_budget/REPORT.md)와 [06 히트맵 시뮬레이터](06_rally_simulator/REPORT.md)에 통합했다. `python run.py energy-strategy --run-id <고유 ID>`로 기존 모델·비용표에서 큰 격자를 재생성한 후 에너지 전략 탭을 사용한다.

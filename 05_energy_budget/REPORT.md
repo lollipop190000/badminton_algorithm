@@ -35,3 +35,36 @@ python run.py fatigue
 최종 strict E=M0, U=M0가 선택되었다. 따라서 에너지 의존성을 입증했다고 말하지 않는다. [연구 결과](results/fatigue_terminal/research_report.md), [격자·MC 질의표](results/fatigue_terminal/stamina_numerical_validation.csv), [시나리오 protocol](results/fatigue_terminal/stamina/protocol.json)을 포함한다. 양 선수 동시 소진의 순서를 알 수 없어 하한/중앙/상한을 구분했다. 169MB–2.70GB 전체 격자 npz는 일반 Git 파일에서 제외하고 질의표·protocol·SHA256 및 생성 코드를 남겼다. 이는 과거 대체 결과가 아니라 재생성 가능한 큰 중간 배열의 제외다.
 
 결과를 다시 만들면 `.runtime/outputs` 또는 `.runtime/data`에 저장된다. 검토 후 `python run.py sync-results`로 주제별 `results/`를 갱신한다. 대용량 원자료·예산 격자 제외 기준과 완전한 Parquet 보존 여부는 루트 [PUBLICATION_MANIFEST.json](../PUBLICATION_MANIFEST.json)에 기록했다.
+
+<!-- energy-strategy-result -->
+### 타구·목표 구획 에너지 전략 확장
+
+최근 3타구와 양 선수 잔여 예산에서 내 차례마다 지원되는 타구·구획을 최적화하고 상대는 경험 정책으로 대응한다. 계속되는 타구가 목표 구획에 도착한다는 조건이며 목표 정확도·구획별 종료확률·피로 인과효과는 추정하지 않았다. 기존 거리와 BFMD 경로·속력·방향전환·균형 가설 비용을 같은 예산에서 비교했다. BFMD의 직접 상태 관측은 0이며 fallback 지원을 표시한다.
+
+```powershell
+python run.py energy-strategy --run-id <고유 ID>
+```
+
+| model_id | policy | midpoint | delta_vs_behavior | expected_energy_A | expected_energy_B | exhaustion_A | exhaustion_B |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| M0_distance_reference | behavior | 0.517197 | 0.000000 | 203.576931 | 204.704588 | 0.238375 | 0.241888 |
+| M0_distance_reference | energy | 0.701669 | 0.184472 | 206.281508 | 207.464211 | 0.226431 | 0.226819 |
+| M0_distance_reference | no_energy | 0.574100 | 0.056903 | 178.143726 | 180.078347 | 0.160406 | 0.158506 |
+| M3_hypothesis_balanced_025 | behavior | 0.520819 | 0.000000 | 204.494597 | 205.334804 | 0.235525 | 0.237894 |
+| M3_hypothesis_balanced_025 | energy | 0.702575 | 0.181756 | 208.350464 | 207.574029 | 0.237437 | 0.235994 |
+| M3_hypothesis_balanced_025 | no_energy | 0.570469 | 0.049650 | 179.271403 | 181.685711 | 0.161112 | 0.161581 |
+| M3_hypothesis_curve_only_1 | behavior | 0.521350 | 0.000000 | 205.228127 | 205.983917 | 0.239650 | 0.242325 |
+| M3_hypothesis_curve_only_1 | energy | 0.701353 | 0.180003 | 209.470069 | 208.836952 | 0.233625 | 0.233356 |
+| M3_hypothesis_curve_only_1 | no_energy | 0.573163 | 0.051812 | 180.379433 | 182.087834 | 0.164525 | 0.163013 |
+| M3_hypothesis_speed_only_1 | behavior | 0.522784 | 0.000000 | 205.936181 | 206.960735 | 0.237769 | 0.241650 |
+| M3_hypothesis_speed_only_1 | energy | 0.705300 | 0.182516 | 209.267566 | 208.219318 | 0.243575 | 0.240856 |
+| M3_hypothesis_speed_only_1 | no_energy | 0.566781 | 0.043997 | 180.804736 | 183.474632 | 0.162075 | 0.164500 |
+| distance | behavior | 0.505525 | 0.000000 | 178.463636 | 178.463063 | 0.178956 | 0.178200 |
+| distance | energy | 0.699550 | 0.194025 | 176.442557 | 176.494775 | 0.183225 | 0.184281 |
+| distance | no_energy | 0.590594 | 0.085069 | 153.759749 | 153.785567 | 0.110569 | 0.111662 |
+
+실행 `20261014-energy-strategy-v1`의 40개 고정 질의, 최대 Bellman 잔차 9.99e-12, 최대 격자 차이 0.019922, 최대 MC 95% 구간 밖 오차 0.000977. 모형 rollout 대표 상태 평균이며 실제 경기 효과가 아니다.
+
+[실행 보고서](results/runs/20261014-energy-strategy-v1/REPORT.md) · [재현 기록](results/runs/20261014-energy-strategy-v1/RUN.json) · [전체 행동 점수](results/runs/20261014-energy-strategy-v1/action_scores) · [수치 검증](results/runs/20261014-energy-strategy-v1/numerical_validation.csv) · [추천 변화율](results/runs/20261014-energy-strategy-v1/recommendation_change_rates.csv) · [CQL 비교](results/runs/20261014-energy-strategy-v1/cql_comparison_summary.csv) · [비용별 예산](results/runs/20261014-energy-strategy-v1/normalized_budget_comparison.csv) · [대용량 격자 해시](results/runs/20261014-energy-strategy-v1/large_artifacts.json) · 
+
+큰 격자는 로컬에 보관하고 위 명령으로 재생성한다. 기존 감사·학습·비용 결과를 대체하거나 다시 감사했다고 표현하지 않는다.

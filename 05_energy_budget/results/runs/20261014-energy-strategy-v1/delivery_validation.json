@@ -1,0 +1,19 @@
+{
+  "root_research_tests": 86,
+  "publication_research_tests": 80,
+  "repository_rule_tests": 6,
+  "repository_validation": "passed",
+  "export_cli_smoke": "passed; isolated 4-interval/2-sample runtime run excluded from publication",
+  "local_runtime_grids": "hardlinked full validated grids; excluded from Git",
+  "browser_checks": [
+    "manual history to heatmap",
+    "shot filter and unsupported gray cells",
+    "budget change changes recommendation",
+    "recorded rally pre-action energy",
+    "B-side mirror",
+    "five cost models",
+    "per-zone cost-model shot differences"
+  ],
+  "legacy_gru_max_absolute_probability_error": 5.96046447754e-08,
+  "github_upload": "not performed"
+}

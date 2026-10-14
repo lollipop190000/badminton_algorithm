@@ -1,0 +1,157 @@
+Runtime: C:\Users\lolli\Documents\R&E\Code\github_publish\.runtime
+../.venv-gru/Scripts/python.exe : test_all_filters_preserve_uniform_motion_and_missingness (test_bfmd_zago.KinematicTes
+ts.test_all_filters_preserve_uniform_motion_and_missingness) ... ok
+위치 줄:2 문자:729
++ ... ishing');"; ../.venv-gru/Scripts/python.exe run.py test *> ../outputs ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_all_filter...ingness) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_beta_zero_identity_and_normalization_is_algebra_only (test_bfmd_zago.KinematicTests.test_beta_zero_identity_and_no
+rmalization_is_algebra_only) ... ok
+test_conditional_inverse_is_mean_of_inverse_not_inverse_of_mean (test_bfmd_zago.KinematicTests.test_conditional_inverse
+_is_mean_of_inverse_not_inverse_of_mean) ... ok
+test_constant_speed_circle_has_normal_acceleration_without_kinetic_work (test_bfmd_zago.KinematicTests.test_constant_sp
+eed_circle_has_normal_acceleration_without_kinetic_work) ... ok
+test_constant_speed_line (test_bfmd_zago.KinematicTests.test_constant_speed_line) ... ok
+test_existing_zone_geometry (test_bfmd_zago.KinematicTests.test_existing_zone_geometry) ... ok
+test_feature_independent_match_support (test_bfmd_zago.KinematicTests.test_feature_independent_match_support) ... ok
+test_missing_camera_or_pose_never_stationary (test_bfmd_zago.KinematicTests.test_missing_camera_or_pose_never_stationar
+y) ... ok
+test_no_court_cannot_use_far_valid_homography (test_bfmd_zago.KinematicTests.test_no_court_cannot_use_far_valid_homogra
+phy) ... ok
+test_partial_tracking_peaks_are_not_aggregated_as_complete_intervals (test_bfmd_zago.KinematicTests.test_partial_tracki
+ng_peaks_are_not_aggregated_as_complete_intervals) ... ok
+test_sampling_curve_30_15_10fps (test_bfmd_zago.KinematicTests.test_sampling_curve_30_15_10fps) ... ok
+test_stationary_has_undefined_orientation_and_inverse (test_bfmd_zago.KinematicTests.test_stationary_has_undefined_orie
+ntation_and_inverse) ... ok
+test_stop_go_positive_work_and_boundary_additivity (test_bfmd_zago.KinematicTests.test_stop_go_positive_work_and_bounda
+ry_additivity) ... ok
+test_unobserved_exact_state_falls_back_honestly (test_bfmd_zago.KinematicTests.test_unobserved_exact_state_falls_back_h
+onestly) ... ok
+test_alpha_sweep_balancing_and_push_selection_are_recorded (test_cql_v2_pipeline.CQLV2PipelineIntegrityTests.test_alpha
+_sweep_balancing_and_push_selection_are_recorded) ... ok
+test_explicit_context_state_is_pre_action (test_cql_v2_pipeline.CQLV2PipelineIntegrityTests.test_explicit_context_state
+_is_pre_action) ... ok
+test_logged_training_actions_and_recommendations_obey_context_mask (test_cql_v2_pipeline.CQLV2PipelineIntegrityTests.te
+st_logged_training_actions_and_recommendations_obey_context_mask) ... ok
+test_network_and_q_values_are_finite (test_cql_v2_pipeline.CQLV2PipelineIntegrityTests.test_network_and_q_values_are_fi
+nite) ... ok
+test_reward_has_no_unvalidated_workload_model (test_cql_v2_pipeline.CQLV2PipelineIntegrityTests.test_reward_has_no_unva
+lidated_workload_model) ... ok
+test_api_all_cells_and_b_side_mirror (test_energy_api.EnergyApiTests.test_api_all_cells_and_b_side_mirror) ... ok
+test_bad_budgets_missing_history_and_exhaustion (test_energy_api.EnergyApiTests.test_bad_budgets_missing_history_and_ex
+haustion) ... ok
+test_changed_model_cannot_be_mixed_with_saved_grid (test_energy_api.EnergyApiTests.test_changed_model_cannot_be_mixed_w
+ith_saved_grid) ... ok
+test_rally_energy_is_pre_action_and_includes_early_motion (test_energy_api.EnergyApiTests.test_rally_energy_is_pre_acti
+on_and_includes_early_motion) ... ok
+test_actual_full_lookup_beta_zero_identity_and_structural_keys (test_energy_bfmd.BFMDStrategyAdapterTests.test_actual_f
+ull_lookup_beta_zero_identity_and_structural_keys) ... ok
+test_focal_b_and_save_reload (test_energy_strategy.StrategyTests.test_focal_b_and_save_reload) ... ok
+test_rare_supported_action_is_not_discounted_by_behavior_frequency (test_energy_strategy.StrategyTests.test_rare_suppor
+ted_action_is_not_discounted_by_behavior_frequency) ... ok
+test_single_exhaustion_and_double_exhaustion (test_energy_strategy.StrategyTests.test_single_exhaustion_and_double_exha
+ustion) ... ok
+test_tie_break_and_action_frequency_removed (test_energy_strategy.StrategyTests.test_tie_break_and_action_frequency_rem
+oved) ... ok
+test_train_support_backoff_and_valid_cost_gate (test_energy_strategy.StrategyTests.test_train_support_backoff_and_valid
+_cost_gate) ... ok
+test_zero_cost_cycle_matches_analytic_solution_and_fallback (test_energy_strategy.StrategyTests.test_zero_cost_cycle_ma
+tches_analytic_solution_and_fallback) ... ok
+test_conflict_excludes_entire_rally (test_fatigue_terminal.EnergyTests.test_conflict_excludes_entire_rally) ... ok
+test_incoming_interval_is_included_and_future_does_not_leak (test_fatigue_terminal.EnergyTests.test_incoming_interval_i
+s_included_and_future_does_not_leak) ... ok
+test_missing_first_strokes_do_not_get_a_silent_zero_anchor (test_fatigue_terminal.EnergyTests.test_missing_first_stroke
+s_do_not_get_a_silent_zero_anchor) ... ok
+test_missing_zero_is_imputed_and_explicitly_flagged (test_fatigue_terminal.EnergyTests.test_missing_zero_is_imputed_and
+_explicitly_flagged) ... ok
+test_nonincreasing_frames_exclude_rally_and_not_used_as_observed_cost (test_fatigue_terminal.EnergyTests.test_nonincrea
+sing_frames_exclude_rally_and_not_used_as_observed_cost) ... ok
+test_rally_reset (test_fatigue_terminal.EnergyTests.test_rally_reset) ... ok
+test_train_validation_imputation_model_is_rejected (test_fatigue_terminal.EnergyTests.test_train_validation_imputation_
+model_is_rejected) ... ok
+test_fast_prediction_matches_fitting_design_for_nonlinear_shot_slopes (test_fatigue_terminal.ProbabilityTests.test_fast
+_prediction_matches_fitting_design_for_nonlinear_shot_slopes) ... ok
+test_fatigue_inputs_and_short_history (test_fatigue_terminal.ProbabilityTests.test_fatigue_inputs_and_short_history) ..
+. ok
+test_pooled_name_exchange_preserves_actor_predictions_and_costs (test_fatigue_terminal.ProbabilityTests.test_pooled_nam
+e_exchange_preserves_actor_predictions_and_costs) ... ok
+test_role_mapping_mass_and_roundtrip (test_fatigue_terminal.ProbabilityTests.test_role_mapping_mass_and_roundtrip) ... 
+ok
+test_u_fits_valid_events_only (test_fatigue_terminal.ProbabilityTests.test_u_fits_valid_events_only) ... ok
+test_zero_continuation_falls_back_without_impossible_edges (test_fatigue_terminal.ProbabilityTests.test_zero_continuati
+on_falls_back_without_impossible_edges) ... ok
+test_interrupted_grid_save_preserves_completed_checkpoint (test_fatigue_terminal.StaminaTests.test_interrupted_grid_sav
+e_preserves_completed_checkpoint) ... ok
+test_invalid_budget_and_cost (test_fatigue_terminal.StaminaTests.test_invalid_budget_and_cost) ... ok
+test_simultaneous_exhaustion_bounds (test_fatigue_terminal.StaminaTests.test_simultaneous_exhaustion_bounds) ... ok
+test_single_and_exact_exhaustion (test_fatigue_terminal.StaminaTests.test_single_and_exact_exhaustion) ... ok
+test_sparse_compressed_rows_preserve_cross_state_transitions (test_fatigue_terminal.StaminaTests.test_sparse_compressed
+_rows_preserve_cross_state_transitions) ... ok
+test_sparse_static_solver_equals_general_edge_solver (test_fatigue_terminal.StaminaTests.test_sparse_static_solver_equa
+ls_general_edge_solver) ... ok
+test_terminal_costs_are_separate (test_fatigue_terminal.StaminaTests.test_terminal_costs_are_separate) ... ok
+test_zero_cost_matches_analytic_alternating_chain (test_fatigue_terminal.StaminaTests.test_zero_cost_matches_analytic_a
+lternating_chain) ... ok
+test_current_split_event_counts_match_audited_dataset (test_markov_q.MarkovQDataIntegrationTests.test_current_split_eve
+nt_counts_match_audited_dataset) ... ok
+test_alpha_selection_uses_train_counts_and_validation_events (test_markov_q.MarkovQUnitTests.test_alpha_selection_uses_
+train_counts_and_validation_events) ... ok
+test_backoff_is_finite_normalized_and_aggregates_exactly (test_markov_q.MarkovQUnitTests.test_backoff_is_finite_normali
+zed_and_aggregates_exactly) ... ok
+test_known_counts_and_actor_centric_terminal_outcomes (test_markov_q.MarkovQUnitTests.test_known_counts_and_actor_centr
+ic_terminal_outcomes) ... ok
+test_nonterminal_z0_excludes_whole_rally_and_first_three_are_omitted (test_markov_q.MarkovQUnitTests.test_nonterminal_z
+0_excludes_whole_rally_and_first_three_are_omitted) ... ok
+test_bad_transition_excludes_whole_rally (test_ope.OPETests.test_bad_transition_excludes_whole_rally) ... ok
+test_failed_actions_remain_and_complete_chain_is_preserved (test_ope.OPETests.test_failed_actions_remain_and_complete_c
+hain_is_preserved) ... ok
+test_frame_audit_excludes_rally_even_if_macro_timestamps_pass (test_ope.OPETests.test_frame_audit_excludes_rally_even_i
+f_macro_timestamps_pass) ... ok
+test_missing_first_stroke_is_not_treated_as_start (test_ope.OPETests.test_missing_first_stroke_is_not_treated_as_start)
+ ... ok
+test_mixture_is_normalized_and_endpoints_are_correct (test_ope.OPETests.test_mixture_is_normalized_and_endpoints_are_co
+rrect) ... ok
+test_sequential_dr_uses_product_of_ratios (test_ope.OPETests.test_sequential_dr_uses_product_of_ratios) ... ok
+test_terminal_does_not_bootstrap_and_loss_is_zero (test_ope.OPETests.test_terminal_does_not_bootstrap_and_loss_is_zero)
+ ... ok
+test_real_splits_have_valid_parity_and_movement (test_parity_markov.ParityMarkovDataIntegrationTests.test_real_splits_h
+ave_valid_parity_and_movement) ... ok
+test_block_value_solver_matches_two_equation_solution (test_parity_markov.ParityMarkovUnitTests.test_block_value_solver
+_matches_two_equation_solution) ... ok
+test_nonalternating_hitter_excludes_entire_rally (test_parity_markov.ParityMarkovUnitTests.test_nonalternating_hitter_e
+xcludes_entire_rally) ... ok
+test_parity_labels_flip_and_terminal_outcomes_use_fixed_player_a (test_parity_markov.ParityMarkovUnitTests.test_parity_
+labels_flip_and_terminal_outcomes_use_fixed_player_a) ... ok
+test_probability_mass_cost_counts_and_energy_conversion (test_parity_markov.ParityMarkovUnitTests.test_probability_mass
+_cost_counts_and_energy_conversion) ... ok
+test_forbidden_columns_are_not_model_features (test_pipeline.PipelineIntegrityTests.test_forbidden_columns_are_not_mode
+l_features) ... ok
+test_gru_uses_z0_plus_all_sixteen_court_zones (test_pipeline.PipelineIntegrityTests.test_gru_uses_z0_plus_all_sixteen_c
+ourt_zones) ... ok
+test_match_and_rally_splits_are_disjoint (test_pipeline.PipelineIntegrityTests.test_match_and_rally_splits_are_disjoint
+) ... ok
+test_model_is_single_layer_causal_gru (test_pipeline.PipelineIntegrityTests.test_model_is_single_layer_causal_gru) ... 
+ok
+test_prediction_export_is_complete_and_bounded (test_pipeline.PipelineIntegrityTests.test_prediction_export_is_complete
+_and_bounded) ... ok
+test_preprocessing_was_fit_on_train (test_pipeline.PipelineIntegrityTests.test_preprocessing_was_fit_on_train) ... ok
+test_targets_are_constant_within_each_rally (test_pipeline.PipelineIntegrityTests.test_targets_are_constant_within_each
+_rally) ... ok
+test_all_32_centers_are_unique_and_inside_their_half (test_simulator_app.CourtGeometryTests.test_all_32_centers_are_uni
+que_and_inside_their_half) ... ok
+test_zone_mapping_round_trips_with_b_side_horizontal_mirror (test_simulator_app.CourtGeometryTests.test_zone_mapping_ro
+und_trips_with_b_side_horizontal_mirror) ... ok
+test_current_action_does_not_change_same_state_cql_recommendation (test_simulator_app.SimulatorIntegrationTests.test_cu
+rrent_action_does_not_change_same_state_cql_recommendation) ... ok
+test_health_examples_analysis_and_korean_validation_error (test_simulator_app.SimulatorIntegrationTests.test_health_exa
+mples_analysis_and_korean_validation_error) ... ok
+test_recorded_examples_reproduce_gru_and_cql_exports (test_simulator_app.SimulatorIntegrationTests.test_recorded_exampl
+es_reproduce_gru_and_cql_exports) ... ok
+
+----------------------------------------------------------------------
+Ran 80 tests in 16.338s
+
+OK
+Inference reproducibility: n=16, max_abs_probability_error=5.96046447754e-08

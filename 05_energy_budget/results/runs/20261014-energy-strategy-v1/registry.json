@@ -1,0 +1,117 @@
+{
+  "run_id": "20261014-energy-strategy-v1",
+  "entries": [
+    {
+      "model_id": "distance",
+      "focal": "A",
+      "grid": "grids/distance_A",
+      "domain": 850.5310573195494,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_distance.npz",
+      "behavior_grid": "grids/distance_A_behavior"
+    },
+    {
+      "model_id": "distance",
+      "focal": "B",
+      "grid": "grids/distance_B",
+      "domain": 850.5310573195494,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_distance.npz",
+      "behavior_grid": "grids/distance_B_behavior"
+    },
+    {
+      "model_id": "M0_distance_reference",
+      "focal": "A",
+      "grid": "grids/M0_distance_reference_A",
+      "domain": 1042.1555662780718,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_M0_distance_reference.npz",
+      "behavior_grid": "grids/M0_distance_reference_A_behavior"
+    },
+    {
+      "model_id": "M0_distance_reference",
+      "focal": "B",
+      "grid": "grids/M0_distance_reference_B",
+      "domain": 1042.1555662780718,
+      "grid_intervals": 160,
+      "numerical_validation_passed": true,
+      "costs": "costs_M0_distance_reference.npz",
+      "behavior_grid": "grids/M0_distance_reference_B_behavior"
+    },
+    {
+      "model_id": "M3_hypothesis_speed_only_1",
+      "focal": "A",
+      "grid": "grids/M3_hypothesis_speed_only_1_A",
+      "domain": 1067.9773659820203,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_M3_hypothesis_speed_only_1.npz",
+      "behavior_grid": "grids/M3_hypothesis_speed_only_1_A_behavior"
+    },
+    {
+      "model_id": "M3_hypothesis_speed_only_1",
+      "focal": "B",
+      "grid": "grids/M3_hypothesis_speed_only_1_B",
+      "domain": 1067.9773659820203,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_M3_hypothesis_speed_only_1.npz",
+      "behavior_grid": "grids/M3_hypothesis_speed_only_1_B_behavior"
+    },
+    {
+      "model_id": "M3_hypothesis_curve_only_1",
+      "focal": "A",
+      "grid": "grids/M3_hypothesis_curve_only_1_A",
+      "domain": 1056.4315353474158,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_M3_hypothesis_curve_only_1.npz",
+      "behavior_grid": "grids/M3_hypothesis_curve_only_1_A_behavior"
+    },
+    {
+      "model_id": "M3_hypothesis_curve_only_1",
+      "focal": "B",
+      "grid": "grids/M3_hypothesis_curve_only_1_B",
+      "domain": 1056.4315353474158,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_M3_hypothesis_curve_only_1.npz",
+      "behavior_grid": "grids/M3_hypothesis_curve_only_1_B_behavior"
+    },
+    {
+      "model_id": "M3_hypothesis_balanced_025",
+      "focal": "A",
+      "grid": "grids/M3_hypothesis_balanced_025_A",
+      "domain": 1053.6577856475167,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_M3_hypothesis_balanced_025.npz",
+      "behavior_grid": "grids/M3_hypothesis_balanced_025_A_behavior"
+    },
+    {
+      "model_id": "M3_hypothesis_balanced_025",
+      "focal": "B",
+      "grid": "grids/M3_hypothesis_balanced_025_B",
+      "domain": 1053.6577856475167,
+      "grid_intervals": 80,
+      "numerical_validation_passed": true,
+      "costs": "costs_M3_hypothesis_balanced_025.npz",
+      "behavior_grid": "grids/M3_hypothesis_balanced_025_B_behavior"
+    }
+  ],
+  "budgets": [
+    218.60109972813666,
+    402.5504868127432,
+    850.4351587506309
+  ],
+  "assumptions": [
+    "계속되는 타구가 선택한 구획에 도착한다고 가정합니다. 목표 정확도는 추정하지 않았습니다.",
+    "종료확률은 타구별이며 목표 구획별 성공·실수 효과는 추정하지 않았습니다.",
+    "상대는 기록된 대응 분포를 따릅니다. 예산은 생리학적 최대 체력이 아닌 시나리오입니다.",
+    "비용은 이동에너지 대리값이며 실제 경기 승률·대사 비용·피로 인과효과의 검증이 아닙니다.",
+    "BFMD 비용은 거리·역할·타구 fallback이며 가감속·방향전환 계수는 가설입니다."
+  ]
+}

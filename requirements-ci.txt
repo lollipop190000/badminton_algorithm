@@ -11,6 +11,7 @@ uvicorn==0.35.0
 pydantic==2.11.7
 httpx==0.28.1
 scipy==1.18.1
+numba==0.68.0
 opencv-python-headless==5.0.0.93
 ijson==3.6.0
 gdown==6.4.2

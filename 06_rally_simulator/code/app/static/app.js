@@ -151,7 +151,7 @@ function renderDraft() {
   add.textContent = state.mode === "example" ? "예시 탐색 중" : rallyEnded() ? "랠리가 종료되었습니다" : "타구 추가하고 분석";
   $("#out-net").disabled = state.mode === "example" || rallyEnded();
   $("#undo-stroke").disabled = state.strokes.length === 0;
-  $$(".selection-tab").forEach((button) => button.classList.toggle("active", button.dataset.target === state.activeTarget));
+  $$(".selection-tab[data-target]").forEach((button) => button.classList.toggle("active", button.dataset.target === state.activeTarget));
   renderShotOptions();
 }
 
@@ -216,7 +216,7 @@ function renderTimeline() {
   }));
 }
 
-function render() { renderDraft(); renderCourt(); renderResults(); renderTimeline(); }
+function render() { renderDraft(); renderCourt(); renderResults(); renderTimeline(); document.dispatchEvent(new Event('rallychange')); }
 function rallyEnded() { return state.strokes.length > 0 && state.strokes.at(-1).target_zone === 0; }
 function requestPayload(strokes = state.strokes) {
   return { player_a_name: $("#player-a-name").value.trim() || "Player A", player_b_name: $("#player-b-name").value.trim() || "Player B", strokes };
@@ -331,7 +331,7 @@ async function initialize() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  $$(".selection-tab").forEach((button) => button.addEventListener("click", () => { state.activeTarget = button.dataset.target; hideError(); render(); }));
+  $$(".selection-tab[data-target]").forEach((button) => button.addEventListener("click", () => { state.activeTarget = button.dataset.target; hideError(); render(); }));
   $("#shot-type").addEventListener("change", (event) => { state.draft.shot_type = event.target.value; });
   $("#delta-time").addEventListener("change", (event) => { state.draft.delta_time_s = Number(event.target.value); });
   $("#out-net").addEventListener("click", () => { state.draft.target_zone = state.draft.target_zone === 0 ? null : 0; render(); });

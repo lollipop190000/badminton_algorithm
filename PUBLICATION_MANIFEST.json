@@ -52,7 +52,7 @@
       ]
     },
     "05_energy_budget": {
-      "title": "누적 이동에너지·종료확률·잔여 예산",
+      "title": "누적 이동에너지·종료확률·잔여 예산·타구 구획 전략",
       "code": [
         "src/fatigue_baseline.py",
         "src/reconstruct_rally_energy.py",
@@ -60,19 +60,25 @@
         "src/build_fatigue_transition.py",
         "src/solve_stamina_value.py",
         "src/fatigue_reporting.py",
-        "scripts/run_fatigue_pipeline.py"
+        "src/energy_strategy.py",
+        "scripts/run_fatigue_pipeline.py",
+        "scripts/run_energy_strategy.py",
+        "scripts/finish_energy_strategy_delivery.py"
       ],
       "tests": [
-        "test_fatigue_terminal.py"
+        "test_fatigue_terminal.py",
+        "test_energy_strategy.py",
+        "test_energy_bfmd.py"
       ]
     },
     "06_rally_simulator": {
-      "title": "GRU·CQL v2 랠리 시뮬레이터",
+      "title": "GRU·CQL v2·에너지 전략 랠리 시뮬레이터",
       "code": [
         "scripts/run_rally_simulator.py"
       ],
       "tests": [
-        "test_simulator_app.py"
+        "test_simulator_app.py",
+        "test_energy_api.py"
       ]
     },
     "07_policy_ope": {
@@ -156,6 +162,126 @@
       "bytes": 972,
       "reason": "superseded_duplicate_intermediate_or_large_grid",
       "sha256": null
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/distance_A.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "f8063cb7aca35f31cb473284368faebb462988b59a291c7b41aaf20a1958f6d8"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/distance_A_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "97bb21d1600efbd6c6908f6fc38e18be55ec43a58342d2103282b6152a1ce642"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/distance_B.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "4be387d42ea332296702f9b2dece9344834e56244285e389c2336838aa39c023"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/distance_B_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "47ba3136618beae15dbd2eab50b15cc82a0e7b6f36a51fab8e90ce5eede59d62"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_A.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "f3d417b13f1c71453d7882de30060a63480a69fa706902570a437b337e66dddb"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_A_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "2fd17060be4460780eb236575e5d959f2c10863c9145016b42652519d1db6bda"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_B.npy",
+      "bytes": 3397517440,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "38c75f0c6cae7e6e2b509ed830e326b82750ec8445181ddb215e1b6c1f0070e8"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_B_behavior.npy",
+      "bytes": 3397517440,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "914e61a33edf4739dc55401b1f8d9433b1c4b61195950a69270fe4a316f9e7ee"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_A.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "7d4cb2b2ecebdf27c5c3921c18d42750e9785f47ef87fd56e66797083f4c11f4"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_A_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "27a90b0a2079feb845b5ab4b52c41e6517c3c05b02726eef92d30f14499dbabc"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_B.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "ee3d629fd18e91ab2182f83e145f83ff9954242564849960d5ee860f8d240c0b"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_B_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "c8bc62d7de762f250297067de8d348ace26dd7e16e7e2cd746162b95c1075a76"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_A.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "ea3471cba591b24043cbba6a2723109f542bae3f88624bd09b742d5e49ef7dbf"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_A_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "69dfb1029be489e8a8b77da824ca9ad97d2f1c1abc5789c35a06c1ed36b8febd"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_B.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "52dfa6e061b19df1849df4120e4ce7ec3b42f141d7319180ea68cc4ba416f77e"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_B_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "84534e2ab4a3da65a8b05cde4940039f7c0fe7793bdce6c1a70813a0369f25e7"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_A.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "fe507a61ee76fceec86972bdbd9254293bfdf255ae1619595e1aca31cccec7f5"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_A_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "6e5582dcdf8d813c577707a770aff60bdb33fc741ae1b6174574c190f6ada2fc"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_B.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "593eb85702b24d2c2ff199839fc4a2f0ac0394502dddd14794ab4d9d9d7f772b"
+    },
+    {
+      "source": "outputs/energy_strategy/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_B_behavior.npy",
+      "bytes": 859963520,
+      "reason": "superseded_duplicate_intermediate_or_large_grid",
+      "sha256": "ac5e4c05cbf7e728d40a3c612daf701e460fc57bdb56c5302b816546054ba91a"
     },
     {
       "source": "outputs/ope_cql_v2_frame_audited/bootstrap_replicates_shard0.csv",
@@ -300,6 +426,16 @@
     "source": "outputs/bfmd_zago/bfmd_zago_observations.csv",
     "target": "08_bfmd_kinematics/results/bfmd_zago/bfmd_zago_observations.parquet",
     "rows": 139454
+  },
+  "publication_validation": {
+    "active_tests": 69,
+    "passed": true,
+    "primary_links_valid": true,
+    "code_syntax_valid": true,
+    "large_file_limit_checked": true,
+    "raw_shuttle_source_git_blobs_verified": 251,
+    "bfmd_model_csv_parquet_rerun_smoke": "passed numerical equality with CSV empty/missing normalization",
+    "scope": "curated code/results; original numerical research reruns not performed"
   },
   "file_inventory": [
     {
@@ -988,6 +1124,21 @@
       "sha256": "12fe4f5c93e54b701f6ccc3a901dce30d5b8d3103b20b0292876292c5185c1da"
     },
     {
+      "path": "05_energy_budget/code/ENERGY_STRATEGY.md",
+      "bytes": 4465,
+      "sha256": "94b1b7208f978df6788af2edd778807a815f798e01600844a45c2e2de25428ae"
+    },
+    {
+      "path": "05_energy_budget/code/scripts/finish_energy_strategy_delivery.py",
+      "bytes": 10719,
+      "sha256": "629691dd97affa71af3c0289f085e6ec6568b4c6ea57bda766603aa176af68ad"
+    },
+    {
+      "path": "05_energy_budget/code/scripts/run_energy_strategy.py",
+      "bytes": 24813,
+      "sha256": "56b002b949daefef409efab50a98fb57d4348890a062feb516c0dd5149304ccc"
+    },
+    {
       "path": "05_energy_budget/code/scripts/run_fatigue_pipeline.py",
       "bytes": 30116,
       "sha256": "aaa1565c6a4f4b5fb4c1278c54487aba0fdc7e8ec091e82f3310c962d761e1ff"
@@ -996,6 +1147,11 @@
       "path": "05_energy_budget/code/src/build_fatigue_transition.py",
       "bytes": 8617,
       "sha256": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b"
+    },
+    {
+      "path": "05_energy_budget/code/src/energy_strategy.py",
+      "bytes": 20318,
+      "sha256": "9913e0ad0366a67c75d97acd92e7cded3ca0ad5ab745f240634f6958e6b07ef8"
     },
     {
       "path": "05_energy_budget/code/src/fatigue_baseline.py",
@@ -1023,14 +1179,29 @@
       "sha256": "a69d87d2d32f0eade73b79ade0a1d7175407e6c6eb13029cd8749aa1871ea4fb"
     },
     {
+      "path": "05_energy_budget/code/tests/test_energy_bfmd.py",
+      "bytes": 1501,
+      "sha256": "720d92e8e31750ddfef9a9919f496a4dd36de6a52c20d6a5c64f2eb3fd666608"
+    },
+    {
+      "path": "05_energy_budget/code/tests/test_energy_strategy.py",
+      "bytes": 4203,
+      "sha256": "406da7116d0b40b0ac588b34571d1a58a0da8f6b6040cc73456e1ed201790369"
+    },
+    {
       "path": "05_energy_budget/code/tests/test_fatigue_terminal.py",
       "bytes": 15235,
       "sha256": "f44d30a3e69e7ce836d29b6b827b931aba4fb45f4860e43688b3ac8cee7b357e"
     },
     {
       "path": "05_energy_budget/REPORT.md",
-      "bytes": 2947,
-      "sha256": "e68bfe76ce560af99f98274bbd8073c0986b33251ae4019bf8ff938a20afb6c1"
+      "bytes": 6515,
+      "sha256": "d753e9a2a82d758380033f200a8105cafff2d8c4e045fb6095dac110d72ed0d4"
+    },
+    {
+      "path": "05_energy_budget/results/energy_strategy/latest.json",
+      "bytes": 47,
+      "sha256": "da84119dd67f2f3cd387bdb0aba06cd6ca5482e2a845e233d61575cf569c7b91"
     },
     {
       "path": "05_energy_budget/results/fatigue_terminal/additional_probability_validation.json",
@@ -1433,9 +1604,659 @@
       "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
     },
     {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/distance_A_p50.parquet",
+      "bytes": 19343999,
+      "sha256": "1bdd2b91d0c656d9de486790bba7fe5716ab2929b36edc0326729f454c6067f7"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/distance_A_p75.parquet",
+      "bytes": 19240770,
+      "sha256": "b5b8e04acf7041109d9d846a108927b228dd1b44b8a7491a1f54688e8c8b2ec0"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/distance_A_p95.parquet",
+      "bytes": 19257430,
+      "sha256": "0538ee3563a11f94cc570fe5a89bcbf81126caf84e941c1cbec6c44e3289bc3c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/distance_B_p50.parquet",
+      "bytes": 19344171,
+      "sha256": "84077998d35cde9ef0f515150cc800734812b5ab78b3f0df2ca4c521b36108c5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/distance_B_p75.parquet",
+      "bytes": 19240637,
+      "sha256": "1d0bbe705bde79685296231bdfdafe58d1ed68f0b5326c044c44cb78b51bbfb2"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/distance_B_p95.parquet",
+      "bytes": 19257576,
+      "sha256": "e8889f610091eabea2dc779161342d71affb399489cf0dc4d831eea30a98768b"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M0_distance_reference_A_p50.parquet",
+      "bytes": 18889505,
+      "sha256": "f58d963053333638fbcc90ba15a70c957c248722a27e3a2c432253a5dac0a292"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M0_distance_reference_A_p75.parquet",
+      "bytes": 18760707,
+      "sha256": "27e135e65970bac67f762e2ee4c7742e18e68a4b5509def09829fe33e71c4760"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M0_distance_reference_A_p95.parquet",
+      "bytes": 18746198,
+      "sha256": "dafdb28321bd8474d7e7ebbde7f3ad39454dc574ce50bc4eb81abc93ddce5333"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M0_distance_reference_B_p50.parquet",
+      "bytes": 18909799,
+      "sha256": "10f230e1fbce408a4b4ca671ae8ccce534a9acfeb2e3a8c498dd825c6d17c683"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M0_distance_reference_B_p75.parquet",
+      "bytes": 18776821,
+      "sha256": "f2d545ae9d5e6b5601a76da6efbfc8aea81ddce5f117a7ed9caa54d7a2b750cb"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M0_distance_reference_B_p95.parquet",
+      "bytes": 18759630,
+      "sha256": "aa24bf05c586ffec813e076c1c9e48742998b30d35ba43feb60da8751142958d"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_balanced_025_A_p50.parquet",
+      "bytes": 18903255,
+      "sha256": "ef45536f21f56e472584b9906a6f8d744e2b95a30a2e44d509f5eb3ec36254f5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_balanced_025_A_p75.parquet",
+      "bytes": 18774625,
+      "sha256": "dccd36c3d5e5f25526dc954433834f6d3e537c45d51938e60e2ce977fb4bcf6a"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_balanced_025_A_p95.parquet",
+      "bytes": 18746581,
+      "sha256": "593f5c778788041ce532c793ee0712281b8e65335151de5ef02b9c40afd4f445"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_balanced_025_B_p50.parquet",
+      "bytes": 18932564,
+      "sha256": "cd4fb024f483766a1026bc8fda3f83d700cfee7763bfda1607fa812ad8fb29c5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_balanced_025_B_p75.parquet",
+      "bytes": 18797532,
+      "sha256": "98258b152d44ce9ad82dd37d732abc6b79a346018a5295b933ee0baa8b526e92"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_balanced_025_B_p95.parquet",
+      "bytes": 18762991,
+      "sha256": "6f4e7ddca91c27ea86ed3c40a0d9c29421222e300f9cca6b20880820d432e21b"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_curve_only_1_A_p50.parquet",
+      "bytes": 18902141,
+      "sha256": "5ef9e5a80fad5763ff9418a774dc462969839ac8c120e84e34894cf8805c928c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_curve_only_1_A_p75.parquet",
+      "bytes": 18767052,
+      "sha256": "f26b578c3d6372d0837f09020ff2472cd6f383709e4013643335a9b7503eee60"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_curve_only_1_A_p95.parquet",
+      "bytes": 18747199,
+      "sha256": "bec628c225556740fac488fa036bc931e1b054e445a7cd6ff4a9048bc1d33b5e"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_curve_only_1_B_p50.parquet",
+      "bytes": 18936349,
+      "sha256": "c57257abe7408e9d42c5858374e99e7dde7df71a66713740143d41d63c1292b1"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_curve_only_1_B_p75.parquet",
+      "bytes": 18790380,
+      "sha256": "ec31cbcb3360771cd69baa02de14ed35e6216835ee911c4eb67c0ffc0caa2654"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_curve_only_1_B_p95.parquet",
+      "bytes": 18761908,
+      "sha256": "da8071f77bb09c36b2e87be2394d5f366c46c9369eb7b003a3c50b068440f760"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_speed_only_1_A_p50.parquet",
+      "bytes": 18914865,
+      "sha256": "1436332ca77ad682bef5208fa1c11ef26bacaca2d487b0da25e15384b38545de"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_speed_only_1_A_p75.parquet",
+      "bytes": 18792737,
+      "sha256": "4acd93b62d49ec4b4f8c9c64df352b74d65e77921a62108772401461ebd30043"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_speed_only_1_A_p95.parquet",
+      "bytes": 18748358,
+      "sha256": "3d35d3db1be22a4c8056f7cac017f6cbdbafbe586d3dfdee7a3e8644ff172bfa"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_speed_only_1_B_p50.parquet",
+      "bytes": 18939521,
+      "sha256": "906cd981b3148b6240932c4ea848f198cbddbad200886fdafca5a7e1af7a4a00"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_speed_only_1_B_p75.parquet",
+      "bytes": 18808430,
+      "sha256": "3790fad236f9546f0c22d0991a928219948575ce88f612179151ace5bd93c8d5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/action_scores/M3_hypothesis_speed_only_1_B_p95.parquet",
+      "bytes": 18762784,
+      "sha256": "d48e221c566b2c0962c3288c9ab1ef4f2c0d9375354e0bec496baac1b87cd760"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/cost_specific_budgets.csv",
+      "bytes": 870,
+      "sha256": "4fde24a7f9c023d8c2faaca602455609cbccddd6e3d5e96b85502e770f07312c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/costs_distance.npz",
+      "bytes": 829386,
+      "sha256": "c69b94d0481a96ba64c15bb42a32d204c0c445ad42016e823228e60b43aa07a1"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/costs_M0_distance_reference.npz",
+      "bytes": 239220,
+      "sha256": "ba775d97c005bc6183dee02300edeb4149a90508934bc433d33ab058231ac4fe"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/costs_M3_hypothesis_balanced_025.npz",
+      "bytes": 239344,
+      "sha256": "96385ac62035d03dbbc61ca82f5aa7531591ef2d2dc55d51e55a1b151220701b"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/costs_M3_hypothesis_curve_only_1.npz",
+      "bytes": 239381,
+      "sha256": "a25dc1e2c1d5cdcd91bce22dcc635fd14e01a3f0edfb1bf9994f7c789b927e14"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/costs_M3_hypothesis_speed_only_1.npz",
+      "bytes": 239339,
+      "sha256": "59f7c705ec2cd37c51158d67ede1b72bb983b28d536fe083a218786cff65a2dc"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/cql_comparison.parquet",
+      "bytes": 322526,
+      "sha256": "0d4fb731a67418519a703866a05f8dbb73e730f57658157793e6e451cbb86618"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/cql_comparison_summary.csv",
+      "bytes": 363,
+      "sha256": "520059c2352342c19d7b5640148db04a4d66db8336336d2f6171d211f6bdcbbd"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/delivery_validation.json",
+      "bytes": 711,
+      "sha256": "748c680d4c1515ae5ce4317e4f2504f9a320d43f92e21cc633754af8f630d7e2"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/browser_heatmap.jpg",
+      "bytes": 46757,
+      "sha256": "e40a66b7101d8a9430892dba596adfdb2a88a0533de778549f2e66bb917166f5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_A_q0.png",
+      "bytes": 98162,
+      "sha256": "fe6adc6a5bfffc341d1e17763308a31da2edf91abd5c8d6f47a4491af423c2cc"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_A_q1.png",
+      "bytes": 92234,
+      "sha256": "6e043cce1d4d6425980c67d761e2645860658bdd86a7a69b5472716636a64f26"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_A_q2.png",
+      "bytes": 93342,
+      "sha256": "006ee2df96d7e8808c9033e762503752372b7ba5eb0b2523757f3ea8e78aa184"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_A_q3.png",
+      "bytes": 98391,
+      "sha256": "4108e82608d92cca731f62153cad6a4bbe5fa317f89845c61b7c14d6efad71e5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_B_q0.png",
+      "bytes": 98049,
+      "sha256": "9d45219f97bd4249f051b5e607a63b99ee7321076f4bab72a73883584f9de1d4"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_B_q1.png",
+      "bytes": 92134,
+      "sha256": "4ba98dcdcc0d2200d6574c6dabf1c120749427e1917d5596e1ee75580dbe3aec"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_B_q2.png",
+      "bytes": 98390,
+      "sha256": "293819024ff010414aa112a3ffab479f9c3329942156ebdc360d331532ca5eaf"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/distance_B_q3.png",
+      "bytes": 93155,
+      "sha256": "ef485f278b308bce44faf4f797b04f7a22d15246a80444ba754e58bc47a579d8"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_A_q0.png",
+      "bytes": 99818,
+      "sha256": "a369c79c5ef14bbc57b485fa38492fa86ba45b546c679ef2f13de934d74d3f8b"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_A_q1.png",
+      "bytes": 96874,
+      "sha256": "1a1331893c03c390325d09cc3528b209194dd697693fcce0e0a21909cfc64bc7"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_A_q2.png",
+      "bytes": 95841,
+      "sha256": "48f398a0c1a471064e4650becd870ddf467da3f6b094d46e6d7328fa5d2db5ce"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_A_q3.png",
+      "bytes": 102381,
+      "sha256": "7371c790974e6c111d8d1275927ed15e65b5f88e16d95f546472a7646e29ca14"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_B_q0.png",
+      "bytes": 99898,
+      "sha256": "18be5a8a7c4452773377ec40db65ed6035968bdb80de9c44594de9a1531567dc"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_B_q1.png",
+      "bytes": 98622,
+      "sha256": "2aee352de21327b51560e90d060ca25c704830f70f043c922a09ce769aa5a879"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_B_q2.png",
+      "bytes": 102474,
+      "sha256": "2adea953f5d3721cc94566e357ecc63a483372f39226165620a6aebea853055f"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M0_distance_reference_B_q3.png",
+      "bytes": 96840,
+      "sha256": "8b82e53eea77e400dbd90be09a47b4fd03ee1a215d408ffde6ec8fdbafd7c9bf"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_A_q0.png",
+      "bytes": 99703,
+      "sha256": "423c58b9a53ad7875159aa80f390250ee6a67244f347dedd6474f40416bbb5b4"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_A_q1.png",
+      "bytes": 96911,
+      "sha256": "e51149efb6d4739e78f8956120e350657745a40285c682b7b1f79acde9bf1c35"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_A_q2.png",
+      "bytes": 94295,
+      "sha256": "e8c8dbcb2ca86121d46281d1c27660b00d1ed09fc724662453d26f817d42200f"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_A_q3.png",
+      "bytes": 103994,
+      "sha256": "ea0fbc3cb1ad2fd0fd75b53bcd3859e129dda784bd21a4e4007bfc71a3cd623b"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_B_q0.png",
+      "bytes": 101982,
+      "sha256": "4cd63d65f9dc4b7052bf30c065f8ba9a0aa7b24460deb30432d9481ccfd406af"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_B_q1.png",
+      "bytes": 98703,
+      "sha256": "62d63bdb4489249de6d52b851e899f072a0323be2e8f1310aee8273a08acc5e1"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_B_q2.png",
+      "bytes": 102370,
+      "sha256": "5c687ecf800979db24b96403c848ff0af834d35c37ccf9846d201c6ac1b965b1"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_balanced_025_B_q3.png",
+      "bytes": 97306,
+      "sha256": "20f7d071d82f9c68a5b7eb8965d4f305cb73fb900431796d6d56744367639690"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_A_q0.png",
+      "bytes": 99346,
+      "sha256": "af1170e458feca6e6fc86a50a8ad56e7dbf8ab31bd7ab9569084feac32892d0f"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_A_q1.png",
+      "bytes": 96477,
+      "sha256": "8117f6818b7999ce91142c1702caede269c74950aac165bb1817187824ec7697"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_A_q2.png",
+      "bytes": 94253,
+      "sha256": "c7ffda01f80ee54be3d198e3d74f90da12834381a76503563d1f53a484f28b2f"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_A_q3.png",
+      "bytes": 102879,
+      "sha256": "18db4d58558d07449cf148c0e12497f48448ac776760c675049e92e335b62eab"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_B_q0.png",
+      "bytes": 100867,
+      "sha256": "5680fd1293d464bdf059c80a4886c661885292e3c6b7720e779f1c9c922e83b8"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_B_q1.png",
+      "bytes": 97268,
+      "sha256": "9079665185605cbf7adfd6e1c408fae796f1afd6fed1ee425121b5208320be1d"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_B_q2.png",
+      "bytes": 102198,
+      "sha256": "ec64ba58dff2e26925003fe781ac82b8a9c4693480b5f1dde08424d1828c0054"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_curve_only_1_B_q3.png",
+      "bytes": 95893,
+      "sha256": "86bdf5d233e694b8c05b16ed411adeeeb6d19b423c4774b0d82437b7a2436193"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_A_q0.png",
+      "bytes": 99032,
+      "sha256": "44abdc9852610638b10ddcf753465207521eaae7fa8e93e1733d5c7707462b94"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_A_q1.png",
+      "bytes": 98169,
+      "sha256": "8e7fc9516e64d7893ad1ffda2e9aa08f416ff9587cbe05ff4521aead2e47502b"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_A_q2.png",
+      "bytes": 93916,
+      "sha256": "687acc60047e45b96c688f24bef9e14a1f4a4e7153c484ffc44158faf6faf1d6"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_A_q3.png",
+      "bytes": 102533,
+      "sha256": "518a95a615c903e6075815ee3c8d218af77274528b2371dd02e38d13abcd9c86"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_B_q0.png",
+      "bytes": 100371,
+      "sha256": "af8ef82bcd78d2bf335f31d8b6377eb85775a49a4d9c653e2f8108ecbcfb477a"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_B_q1.png",
+      "bytes": 98063,
+      "sha256": "9b25459089d369897e9060bb7c646a2c079ff1169f1f5e93dff686e0f56bbc71"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_B_q2.png",
+      "bytes": 102559,
+      "sha256": "6ba9ae379ba772201d623eb294834e6e6382af8a4b32ae663289fe32da365765"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/figures/M3_hypothesis_speed_only_1_B_q3.png",
+      "bytes": 96268,
+      "sha256": "4c5cf2fa2aa1af08913e317ee68d24c33be27d71b0f30781990638a50ee39fba"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/distance_A.json",
+      "bytes": 132,
+      "sha256": "54daa579b95e0c3d5e2f29a9e44c192a0293aa4a24a954d735588ffdf6d710f3"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/distance_A_behavior.json",
+      "bytes": 135,
+      "sha256": "bb45db03efd8876279a0ea4c5c0d5dfcfdf923d8a1437c3e98e9d90e0de16800"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/distance_A_validation.json",
+      "bytes": 3502,
+      "sha256": "adeb9fa3b9272fa56d555c6255365581729f8b4c438c3aee3d1fa0bd6ed58f5c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/distance_B.json",
+      "bytes": 132,
+      "sha256": "d4bc26be32be001509696b852e8870a6fae9c0550327f2165a6ebe96233b4bc5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/distance_B_behavior.json",
+      "bytes": 135,
+      "sha256": "fced550940b63b8204d917082967591c33d78624028ce10f749332a589d5df55"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/distance_B_validation.json",
+      "bytes": 3507,
+      "sha256": "05069a99d1e783f2ead6d05d29ac9c7264bf2fd0a141f71b86c24fcf7917bf60"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_A.json",
+      "bytes": 135,
+      "sha256": "a4dc0a4b1ddb20edcaa0f1b8027c2bc81b6ae7a70114d1f0ca194e0fac9a2665"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_A_behavior.json",
+      "bytes": 137,
+      "sha256": "38f679a40d9110de1165eacbfefd6e55d736268b383634e5a138f87f39fc7936"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_A_validation.json",
+      "bytes": 3562,
+      "sha256": "6d421d45fe2e152f23a7f2cea7072f2c569cb379138ed0ac9b75a19de7fe6511"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_B.json",
+      "bytes": 135,
+      "sha256": "ea230597ed54c40c76b6055e6b5bce611d256952c0adc34ba168ce832ec8bf95"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_B_behavior.json",
+      "bytes": 137,
+      "sha256": "5c2276c17194d2fe24a63ac27445224a0d156aec77ff667586d22f215ad40ec6"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M0_distance_reference_B_validation.json",
+      "bytes": 3565,
+      "sha256": "19c0c6ffec1dff3ea730a66c0595183ee3c163ce9f8cbca16cac5fae1a1a9ff9"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_A.json",
+      "bytes": 135,
+      "sha256": "7e1897974a0628368bf3cf9005e8ccc68e88298c21118e5d0240c4e0fc1f9349"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_A_behavior.json",
+      "bytes": 137,
+      "sha256": "694c6954e54d2127eadec45b87f7de03658ed082c09d67eae40e9a1bf3045ae7"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_A_validation.json",
+      "bytes": 3584,
+      "sha256": "947231a53d1683dccf3a85ded37df8caf09969f49cdafd43237da1ddbd721b74"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_B.json",
+      "bytes": 135,
+      "sha256": "1cbdbbdcbd2668f510194093a12ad25d583a2f45f8eb726d3d377a39317b4114"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_B_behavior.json",
+      "bytes": 137,
+      "sha256": "fc6ac73703841fb57a07187e597da7cdfa19d06200f14f4ddb083e75a906833e"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_balanced_025_B_validation.json",
+      "bytes": 3584,
+      "sha256": "a4900a49352f3b96772320617445a7b6632af2a52fa7c0079dd0b97b8ee8cd26"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_A.json",
+      "bytes": 135,
+      "sha256": "42854dc2429232d29e66301ad5ad2dbf2ccd6dda4d536fec9d64b1d9e93a28be"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_A_behavior.json",
+      "bytes": 137,
+      "sha256": "615884820c84ea64e7a5015edf6361a4d99d72d7e2b54c29ba03e48239eb7476"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_A_validation.json",
+      "bytes": 3580,
+      "sha256": "41d891765fb706353f9c8afaa8bcdd3dfbd72f51da17a4d42c98ddebf1084159"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_B.json",
+      "bytes": 135,
+      "sha256": "d3c9d257b9990e6b740cd33cc2b0d922cea595ca2e0098e5121d294cc7368424"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_B_behavior.json",
+      "bytes": 137,
+      "sha256": "892460f3a29d721790f5d30f0101d35b336abf0e6bbe054a77e5e41057f6c26d"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_curve_only_1_B_validation.json",
+      "bytes": 3586,
+      "sha256": "afa292cff713f28a6bb153a328621c3c4e71cfff6276d57495fa06216e05753a"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_A.json",
+      "bytes": 135,
+      "sha256": "9de26412581a02e68ee04f5620060a30254ab58fb517ad261a9157bb4ea2a3a1"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_A_behavior.json",
+      "bytes": 136,
+      "sha256": "74db080a48577b8c9db54587deea6ba778cc5bd0e3a90b35350c5d8d4f839bb4"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_A_validation.json",
+      "bytes": 3590,
+      "sha256": "e4ca42fd15f0f497ffd0acb93cfbb2495fe152c87909d9f9c011bc62b006e4c3"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_B.json",
+      "bytes": 135,
+      "sha256": "c8882cce9d5d386e3935d95e378627d3e2d0212d828d783f71fe6b5e6cf69ea7"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_B_behavior.json",
+      "bytes": 136,
+      "sha256": "b148123a3b2d0127f3383cec824e612d54082053124d0b003f842237cf1c27c5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/grids/M3_hypothesis_speed_only_1_B_validation.json",
+      "bytes": 3589,
+      "sha256": "5e96589df955f8214d6f53bcd51296839a954e69195d52ff937998a4da959393"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/large_artifacts.json",
+      "bytes": 11983,
+      "sha256": "5a7c6ec04043d4b4d8346029e3e85bb3d270f8960b2038d28e4e8bc209ded5bc"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/normalized_budget_comparison.csv",
+      "bytes": 2478,
+      "sha256": "240dbaeadd144f605daa00b38657c3f9d2f9ce47f2200e7825266896b3d0e967"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/numerical_validation.csv",
+      "bytes": 12592,
+      "sha256": "a543afc8018f2a9eac7557bda7c1f2ff70e837229e1e52586ed4ce2c1aefb656"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/policy_comparison.csv",
+      "bytes": 29128,
+      "sha256": "d6aa57fb6e0844303e180153f177876c3f217ab5458f217d51bb38bd5a50680c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/protocol.json",
+      "bytes": 903,
+      "sha256": "568881e9aae7ecff0ceb59842aaa79ff62e11e628ee0566711d7dabbb948606a"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/publication_tests.txt",
+      "bytes": 12320,
+      "sha256": "a42fbd8a0929a9b0719ac2cadc78fa6613eefc165161c4a6982f1a098a5eb7d0"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/recommendation_change_rates.csv",
+      "bytes": 858,
+      "sha256": "0b094a130372540bb70c8f9bab923b9104982b98d5a79112131c045083b6f26a"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/recommendations.parquet",
+      "bytes": 87645,
+      "sha256": "8750c5cc17fe43b9381d4d748b3baac8782c3f83d557d4c68183fe0dda0fe4a2"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/registry.json",
+      "bytes": 4363,
+      "sha256": "4cb66a9e6f31bde0ff0600f207804175f7ba2ba056d3ca83472fc412c054d8f3"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/REPORT.md",
+      "bytes": 8329,
+      "sha256": "3791bd6cd854174fa39486aef567fb41d6e08ff5d57f248409e2669c9f2fad1d"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/root_tests.txt",
+      "bytes": 13215,
+      "sha256": "65a1942b1991d2806bec68f1e196acbe6ead73a646e57af59297a832c88e4d32"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/RUN.json",
+      "bytes": 26456,
+      "sha256": "18a3d493e0c6449da197721aa6a1b92ddc449d505062986edc27daaa36c096e1"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/source_snapshot/energy_strategy.py",
+      "bytes": 20098,
+      "sha256": "18aa5df01ac3de1fccd413037fe52d52395cea4859299c968700976587d219d0"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/source_snapshot/finish_energy_strategy_delivery.py",
+      "bytes": 10719,
+      "sha256": "629691dd97affa71af3c0289f085e6ec6568b4c6ea57bda766603aa176af68ad"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/source_snapshot/run_energy_strategy.py",
+      "bytes": 23640,
+      "sha256": "dfa10b04a55281d223af6b06807a580ddce65bc6ca23a9af218b838fca089ee2"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/strategy_examples.csv",
+      "bytes": 2389,
+      "sha256": "0aee2976c7d1424181cb8f74ca44eac9908e12af395889849549c7fc76041045"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/strategy_tradeoffs.csv",
+      "bytes": 1658,
+      "sha256": "45dbfbcf33a7524c8622624bb4f1feff2863bee7fff773bc0ba307fef98ba3be"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/summary.csv",
+      "bytes": 1834,
+      "sha256": "91fcd0f9c1417bc325070a14f1400a43f9ffa93c4635af83c59913be4451f5be"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-energy-strategy-v1/support.npz",
+      "bytes": 227217,
+      "sha256": "f2e330cd35844f38c999fe0062543a8f79a87aa393e6e88f1ad1be9493f830c5"
+    },
+    {
       "path": "06_rally_simulator/code/app/__init__.py",
       "bytes": 48,
       "sha256": "6630ef026d8ddc854e05723871dbaffaa7c9adf186485835234c073740f8de0d"
+    },
+    {
+      "path": "06_rally_simulator/code/app/energy.py",
+      "bytes": 9597,
+      "sha256": "a4ba9d4720ef427d950a08c35efeb9dc6a042848070a857f24bbc89ef74d1ed5"
     },
     {
       "path": "06_rally_simulator/code/app/geometry.py",
@@ -1444,13 +2265,13 @@
     },
     {
       "path": "06_rally_simulator/code/app/main.py",
-      "bytes": 3487,
-      "sha256": "0f00f7bb088f6bac82c72d13d5bb450d0d7d80427a868f359ac45bb3f40a57ad"
+      "bytes": 4720,
+      "sha256": "ee3f7a6211ef2afff6229c0b8e8ab2c4cf00cb071c18d9064981b06b4f5b427a"
     },
     {
       "path": "06_rally_simulator/code/app/schemas.py",
-      "bytes": 3782,
-      "sha256": "a05d374bd3f17050001db1dbca03925bd9efbe00e50d6490c7bcba88fb0c7ab7"
+      "bytes": 4821,
+      "sha256": "205807d05c0ee36a2c749ca794d5c9e7a9517eb4d08f3b09f55a5c1844b80f1c"
     },
     {
       "path": "06_rally_simulator/code/app/simulator.py",
@@ -1459,18 +2280,23 @@
     },
     {
       "path": "06_rally_simulator/code/app/static/app.js",
-      "bytes": 20168,
-      "sha256": "ac92c763a728a8c526ceb1c1c93fa9049d136640d33fac989f2b3c479cb1b70c"
+      "bytes": 20244,
+      "sha256": "6b726efb90474fa2bc1480ee414fad36155f2fb56d41be9ec17106f06b22f32b"
+    },
+    {
+      "path": "06_rally_simulator/code/app/static/energy.js",
+      "bytes": 11829,
+      "sha256": "ffc5e377fff8a941a961fec77294a68b9ae44d0d6083bb004faf723251cab4de"
     },
     {
       "path": "06_rally_simulator/code/app/static/index.html",
-      "bytes": 6339,
-      "sha256": "365faa98992c5ac63c9c016a88b0a120cf0d4d45cf371dfbd9a8b8914ca1e07a"
+      "bytes": 10121,
+      "sha256": "75635732075138e920fd3bb3c931f20a7e54494a69e0c03be9395bf00ee0f6db"
     },
     {
       "path": "06_rally_simulator/code/app/static/styles.css",
-      "bytes": 12875,
-      "sha256": "d8a85b85adcbd81fafeebe8f0df6dd87d2143687d36a47c034491deffd2f858d"
+      "bytes": 14657,
+      "sha256": "1b081374a250224d74c58b2771465baffbbb91e340d1214aaea2e5da1b3f1da4"
     },
     {
       "path": "06_rally_simulator/code/scripts/run_rally_simulator.py",
@@ -1478,14 +2304,19 @@
       "sha256": "6a03e45441418b86f356b4e1de50acb82fa1b510d41cbf3c9a15d1a69d81dd51"
     },
     {
+      "path": "06_rally_simulator/code/tests/test_energy_api.py",
+      "bytes": 4257,
+      "sha256": "e0ed1d5fb27bbe278fac74da1e96ec7468785d48cf9225dbafc3690bbe5083f3"
+    },
+    {
       "path": "06_rally_simulator/code/tests/test_simulator_app.py",
-      "bytes": 6142,
-      "sha256": "35dff133650f27083b7ce51863ea1e4a186d9b4406dadd36e6a863011a240450"
+      "bytes": 6269,
+      "sha256": "927d07e0121cd00972f1424f65106ada686142238066c3f5c9af6847122dd096"
     },
     {
       "path": "06_rally_simulator/REPORT.md",
-      "bytes": 2487,
-      "sha256": "a3da3537701ed9150ff5405fbfa00afe7b3725c3a26a8f78a5bcefe20a995b04"
+      "bytes": 3691,
+      "sha256": "09612913446c57f3ed562b6292018e3edf03ee5d94413048d459052377cc93a1"
     },
     {
       "path": "06_rally_simulator/results/README.md",
@@ -2044,23 +2875,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 4311,
-      "sha256": "babd8b32244a0d9017f579d3507d1715572eafe533acfbc70461caeb58ee1a92"
+      "bytes": 5376,
+      "sha256": "816361c1f88f83f8e7ff5a2b369930bfb2c1bbbcdb725da3c26b0b5940e18990"
     },
     {
       "path": "requirements-ci.txt",
-      "bytes": 376,
-      "sha256": "639a09da36fb6968c84900275dedf98236a595d93e4537e89611c1a9a58678db"
+      "bytes": 390,
+      "sha256": "7e4b3f2b69280e975e2931f9e7e399487b50517f23fa7ebc6344a787f115e304"
     },
     {
       "path": "requirements.txt",
-      "bytes": 233,
-      "sha256": "1b356fe0f3703f30a5cd1bf40605f6cd4a5bba78345e5abd488aac3ed673e022"
+      "bytes": 247,
+      "sha256": "032bf1f49d8762b3b1e9286b912f4bfbfd2a2bdcad99645d7bf3f3dfd52b22d2"
     },
     {
       "path": "run.py",
-      "bytes": 5490,
-      "sha256": "37b9e1f10cc2a543597ea7bfe4318d2eedb61fc1236d789ae7cf501d94740b3c"
+      "bytes": 5681,
+      "sha256": "6f83f3b6ba0c6c8590d1de38c77e24deedbb5f92c31ec0b86c024508b38340b5"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -2083,15 +2914,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 483404834,
-  "publication_validation": {
-    "active_tests": 69,
-    "passed": true,
-    "primary_links_valid": true,
-    "code_syntax_valid": true,
-    "large_file_limit_checked": true,
-    "raw_shuttle_source_git_blobs_verified": 251,
-    "bfmd_model_csv_parquet_rerun_smoke": "passed numerical equality with CSV empty/missing normalization",
-    "scope": "curated code/results; original numerical research reruns not performed"
-  }
+  "uploaded_content_bytes": 1057453233
 }
