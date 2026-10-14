@@ -64,15 +64,22 @@ class SimulatorIntegrationTests(unittest.TestCase):
         )
 
     def test_recorded_examples_reproduce_gru_and_cql_exports(self) -> None:
+        probability_errors = []
         for rally_id in self.simulator._example_ids[:3]:
             detail = self.simulator.get_example(rally_id)
             result = self.simulator.analyze(detail.request)
             for row in result.timeline:
                 expected_probability = float(self.gru_export.loc[(rally_id, row.stroke_no), "p_player_A_win_GRU"])
-                self.assertAlmostEqual(row.gru.player_a_win_probability, expected_probability, places=6)
+                probability_errors.append(abs(row.gru.player_a_win_probability - expected_probability))
                 expected_action = str(self.cql_export.loc[(rally_id, row.stroke_no), "recommended_action"])
                 recommended = row.cql.top_actions[0]
                 self.assertEqual(f"{recommended.shot_type}|Z{recommended.target_zone}", expected_action)
+        # Float32 CPU kernels differ slightly across Windows/Linux builds.
+        # Bound absolute probability error explicitly, retaining exact action checks.
+        self.assertTrue(probability_errors, "No exported predictions were compared")
+        max_error = max(probability_errors)
+        print(f"Inference reproducibility: n={len(probability_errors)}, max_abs_probability_error={max_error:.12g}")
+        self.assertLessEqual(max_error, 1e-6, "GRU export differs by more than one part per million")
 
     def test_current_action_does_not_change_same_state_cql_recommendation(self) -> None:
         detail = self.simulator.get_example(self.simulator._example_ids[0])

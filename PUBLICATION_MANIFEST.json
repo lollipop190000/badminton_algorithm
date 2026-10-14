@@ -345,7 +345,7 @@
     {
       "path": ".github/workflows/validate.yml",
       "bytes": 1663,
-      "sha256": "f9a3f3e1180e8fc51643924c2cf9ecdacbc46af2eea6ec4744969dcedc351a8b"
+      "sha256": "f436385d30c8372f6d097a08c1bcf3ef5793f12c65b0715cacb2d04002ab055f"
     },
     {
       "path": ".gitignore",
@@ -1479,13 +1479,13 @@
     },
     {
       "path": "06_rally_simulator/code/tests/test_simulator_app.py",
-      "bytes": 5602,
-      "sha256": "01cf0df4cefea8c0f5d040cb50049045014975ce62b16e4e4d4c0daa0111ab4e"
+      "bytes": 6142,
+      "sha256": "35dff133650f27083b7ce51863ea1e4a186d9b4406dadd36e6a863011a240450"
     },
     {
       "path": "06_rally_simulator/REPORT.md",
-      "bytes": 1798,
-      "sha256": "6d705bf02fd9f73e4c08f68e0d6d7059a4b6e9b132ce409a9d57b677c9d49473"
+      "bytes": 2487,
+      "sha256": "a3da3537701ed9150ff5405fbfa00afe7b3725c3a26a8f78a5bcefe20a995b04"
     },
     {
       "path": "06_rally_simulator/results/README.md",
@@ -2083,7 +2083,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 483403605,
+  "uploaded_content_bytes": 483404834,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,
