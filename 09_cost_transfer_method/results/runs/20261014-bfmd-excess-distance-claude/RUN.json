@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "20261014-bfmd-excess-distance-claude",
+  "status": "completed",
+  "code_commit": "d65d83adbe61b5fc89e402343a2d8a3124fde53a",
+  "command": "python run.py cost-transfer-summary --run-id 20261014-bfmd-excess-distance-claude",
+  "seed": 0,
+  "environment": {
+    "python": "3.13.16",
+    "dependencies": "pandas 3.0.5, numpy 2.5.3, pyarrow not installed; parquet reader mini_parquet.read_parquet_pure_python",
+    "device": "cpu",
+    "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39"
+  },
+  "inputs": [
+    {
+      "path_or_source": "outputs/bfmd_zago/motion_features.parquet (seeded by run.py from 08_bfmd_kinematics/results/bfmd_zago/motion_features.parquet)",
+      "sha256": "870175c133c48762b6e6c020c0388b255f52d7f9a3aafd378ec2f10969ab880f"
+    }
+  ],
+  "config": {
+    "path": "09_cost_transfer_method/code/configs/cost_transfer_summary.json",
+    "sha256": "e1f5fc29700a3139ae523a51a249472864919d122e0da479a2b58d391633f631"
+  },
+  "split": "No fitting. Descriptive summary pooled over all eligible BFMD transitions from the 08 match-level train/validation/test splits; counts per split are in metrics.json.",
+  "metrics": {
+    "sum_L_over_sum_d": "Total smoothed path length L divided by total straight hit-to-hit displacement d (unitless)",
+    "median_L_over_d": "Median per-transition L/d (unitless)",
+    "mean_excess_short_m": "Mean L - d (m) over transitions with d <= short_distance_threshold_m",
+    "energy_equivalent_of_short_excess_J_per_kg": "mean_excess_short_m x energy_coefficient_j_per_kg_m (J/kg); a scale illustration, not a metabolic estimate",
+    "excess_by_*.csv": "n, mean d, mean L, mean/median L - d and sum L / sum d per distance bin, role and shot"
+  },
+  "limitations": "Tracking-proxy kinematics from 08 (bbox ground proxy, 30 fps); the excess may include tracking noise. No uncertainty interval is computed. No metabolic, fatigue or win-probability validation. The transfer model, D_tp and new transition costs are not part of this run.",
+  "outputs": [
+    {
+      "path": "excess_by_distance_bin.csv",
+      "sha256": "e3ff6bd9c9e2a488df777deb5409407894579b43c984639d80bc98562784dff5"
+    },
+    {
+      "path": "excess_by_role.csv",
+      "sha256": "616ff4fbb61d53ea4ee71f67bbf49b61d40094db21940abdd1ccbc5bc7fba606"
+    },
+    {
+      "path": "excess_by_shot.csv",
+      "sha256": "87df8e3d7f23fb968cdcde0dd0becabfea7b1da7a25e9b2d5bdbb3f3ccecffd0"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "c325cb04f4b4f90dc9979f49471eea256bd05e7fbe4fd67ecf47126fabb3270c"
+    }
+  ]
+}
