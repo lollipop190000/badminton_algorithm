@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "run_id": "20261014-recovery-verification-kinggoddowon",
+  "status": "completed",
+  "code_commit": "c4647d91e3072da249a89702a404a85087ee9fa7",
+  "command": "python 10_transition_energy/code/scripts/verify_transition_energy.py --run 10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon --baseline 3c195ea5656c831492834bda626dc042968d388c --output 10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/audit.json",
+  "seed": 20261014,
+  "environment": {
+    "python": "3.12.14",
+    "device": "CPU"
+  },
+  "inputs": [
+    {
+      "path_or_source": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/RUN.json",
+      "sha256": "3523498dc1934cca6f767d072235b95017139bf94c497148349233bbb95675c2"
+    },
+    {
+      "path_or_source": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M0.parquet",
+      "sha256": "04d609ec843e74a29941fb99cd6a24a06fcc73a273c754d569998c374e5ede97"
+    },
+    {
+      "path_or_source": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M3.parquet",
+      "sha256": "75177201dd7e120fb620af991a09b1984fc52489705a05c074cc54bccf50fb5e"
+    }
+  ],
+  "config": {
+    "path": "verification_config.json",
+    "sha256": "e015fedc0e3ee9e1aadbe55949f1b0421c4c3959d1f5605c43b9b30705ad5ddc"
+  },
+  "split": "Read-only verification of existing frozen train8/validation2/test2 results; no refitting.",
+  "metrics": {
+    "research_tests": 89,
+    "collaboration_tests": 6,
+    "original_outputs_sha256_verified": 42,
+    "unchanged_existing_topic_files": 374,
+    "rows_per_model": 2097152
+  },
+  "outputs": [
+    {
+      "path": "RECOVERY.md",
+      "sha256": "1670d7d79e480348e4faf63e8cc3eb64fb307c1493c5d131e87eb049f3f10923",
+      "bytes": 2175
+    },
+    {
+      "path": "audit.json",
+      "sha256": "2760477bfa80249dbd3b12a11874a77ee8cfe523071dd670a6df9e0a847871cb",
+      "bytes": 66894
+    },
+    {
+      "path": "preserved_file_inventory.csv",
+      "sha256": "d8c0f6672702ea9cfefdd6a53654e22c7e7d1873d831b8a348dd8237462608a3",
+      "bytes": 9046
+    },
+    {
+      "path": "research-tests.log",
+      "sha256": "1b0431ce58cd303ea1465af243dddce02b5a1b263283320c9d2c31d9c9870026",
+      "bytes": 13021
+    },
+    {
+      "path": "verification_config.json",
+      "sha256": "e015fedc0e3ee9e1aadbe55949f1b0421c4c3959d1f5605c43b9b30705ad5ddc",
+      "bytes": 221
+    },
+    {
+      "path": "collaboration-tests.log",
+      "bytes": 1020,
+      "sha256": "76ec94f7c348943fd5a02a876ec6e058aebf76ad919f8fe16aa94d5f66aac4e3"
+    }
+  ],
+  "limitations": "Last interrupted command and disconnect root cause unavailable; no independent physical validation or experiment rerun."
+}

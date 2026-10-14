@@ -73,3 +73,7 @@ Terminal에는 j가 없다. `terminal_lookup.parquet`는 모든 `(i,r,s,player)`
 ## 05의 예산을 바꾸는 경우
 
 `D_p(k)=Σ[l<k] (movement_p(l)+1[p=hitter_l]*shot(l))`. 마지막 스윙은 `D_p(N)` 이후 한 번 부과한다. `pre_shot_consumption`이 이를 검증한다. 초기 service 비용은 이 8타구 모델 밖이므로 별도 모델이 필요하다. 기존 05의 거리 비용 예산에 새 C를 단순히 끼워 넣지 말고, 이벤트 누적량·훈련 label·예산 분위수·종료모형을 같은 convention으로 다시 산출해야 한다. `budget_recalibration.csv`의 평균 비율은 현 표본 비교이며 모든 랠리에 곱할 환산계수가 아니다. Q/K/V·전략 최적화는 이번 변경에서 재계산하지 않는다.
+
+## 보존 결과 복구 검사
+
+`code/scripts/verify_transition_energy.py`는 저장된 전체 비용표의 상태 키·중복·parity·비용 합산·타격자 비용·해시를 전수 검사한다. 기존 주제 파일이 지정 baseline과 같은지도 확인한다. 저장소 루트에서 `python 10_transition_energy/code/scripts/verify_transition_energy.py --run 10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon --baseline <main-commit>`로 실행한다. `--output <새-JSON-경로>`는 신규 파일만 생성하며 기존 파일을 덮어쓰지 않는다. 실제 착지나 대사 정확도의 독립 검증을 수행하는 코드는 아니다.

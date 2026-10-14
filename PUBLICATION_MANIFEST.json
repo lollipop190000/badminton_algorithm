@@ -2256,8 +2256,8 @@
     },
     {
       "path": "10_transition_energy/code/DETAILS.md",
-      "bytes": 8817,
-      "sha256": "3258b0964c79f7f57cdd3bb37fa083916a7a5701dde639636476a5ec9597ab73"
+      "bytes": 9491,
+      "sha256": "84eb95eaaa4a396d5dcc4aaaa7c05dd04ae899672eac8c909b7a9ce77c4ac9ce"
     },
     {
       "path": "10_transition_energy/code/scripts/verify_transition_energy.py",
@@ -2321,8 +2321,8 @@
     },
     {
       "path": "10_transition_energy/REPORT.md",
-      "bytes": 21452,
-      "sha256": "001d21b5f475c8d308776072545f9c44bc106c7785412e549df6231091de6798"
+      "bytes": 22757,
+      "sha256": "373fa2b3feadb21604c69a6979a81fbdcfbae0a71d3cf200ab4461ccf80edb22"
     },
     {
       "path": "10_transition_energy/results/README.md",
@@ -2545,6 +2545,31 @@
       "sha256": "59e29232791425dbcbdbc860316cdec0ae57e275f08db9e408370fe475ee034b"
     },
     {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/audit.json",
+      "bytes": 66894,
+      "sha256": "2760477bfa80249dbd3b12a11874a77ee8cfe523071dd670a6df9e0a847871cb"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/preserved_file_inventory.csv",
+      "bytes": 9046,
+      "sha256": "d8c0f6672702ea9cfefdd6a53654e22c7e7d1873d831b8a348dd8237462608a3"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/RECOVERY.md",
+      "bytes": 2175,
+      "sha256": "1670d7d79e480348e4faf63e8cc3eb64fb307c1493c5d131e87eb049f3f10923"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/RUN.json",
+      "bytes": 2723,
+      "sha256": "1bd270a26f9b1dec7bfebb5c435b93c87f5a368560c5d850cdaa47aa416147f8"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/verification_config.json",
+      "bytes": 221,
+      "sha256": "e015fedc0e3ee9e1aadbe55949f1b0421c4c3959d1f5605c43b9b30705ad5ddc"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4605,
       "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
@@ -2605,7 +2630,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 518412119,
+  "uploaded_content_bytes": 518495157,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

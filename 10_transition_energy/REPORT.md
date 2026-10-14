@@ -183,3 +183,11 @@ Validation으로 선정한 도착 구획 계층이 test에서 모든 후보보�
 ### 게시 전 검사
 
 최신 main의 09 주제를 보존한 상태에서 연구 테스트 **82개**, 협업 검사 **6개** 통과. 이전 01/04/05/08 파일 **226개**의 SHA256가 baseline과 모두 동일하다. [검사 실행 로그](results/runs/20261014-complete-c-v2-kinggoddowon/verification.txt) · [보호 입력·결과 해시 확인](results/runs/20261014-complete-c-v2-kinggoddowon/protected_inputs_unchanged.json). 파일당 50MiB 제한과 REPORT 상대 링크·문법·실행 ownership·manifest를 검사했다.
+
+### 중단 후 복구·게시 재개
+
+기존 계산 결과를 재생성하지 않고 최신 main `3c195ea5656c831492834bda626dc042968d388c`를 반영했다. 기존 결과 42개의 기록 SHA256가 모두 일치하며 비용표 전수 검사에서 M0/M3 각 2,097,152행, 중복·결측 없는 상태 키, 비음수 유한 비용, parity 및 타격자 비용 계약을 확인했다. 기존 01~09 주제 파일 **374개**가 최신 main과 동일하다. 연구 테스트 **89개**, 협업 검사 **6개** 통과. 기존 게시 전 검사 82개/226개는 이전 baseline에 대한 당시 기록으로 보존한다.
+
+[복구 경위·확인 불가 원인](results/runs/20261014-recovery-verification-kinggoddowon/RECOVERY.md) · [보존된 파일 전체 목록](results/runs/20261014-recovery-verification-kinggoddowon/preserved_file_inventory.csv) · [전수 검사](results/runs/20261014-recovery-verification-kinggoddowon/audit.json) · [복구 검증 RUN](results/runs/20261014-recovery-verification-kinggoddowon/RUN.json).
+
+재검사 명령: `python 10_transition_energy/code/scripts/verify_transition_energy.py --run 10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon --baseline 3c195ea5656c831492834bda626dc042968d388c`. 이 명령은 원 결과를 읽기 전용으로 검사한다.

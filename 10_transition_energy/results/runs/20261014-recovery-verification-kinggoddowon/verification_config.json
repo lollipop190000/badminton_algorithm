@@ -1,0 +1,7 @@
+{
+  "source_run": "20261014-complete-c-v2-kinggoddowon",
+  "baseline_commit": "3c195ea5656c831492834bda626dc042968d388c",
+  "expected_rows_per_model": 2097152,
+  "expected_terminal_rows": 131072,
+  "regeneration": false
+}
