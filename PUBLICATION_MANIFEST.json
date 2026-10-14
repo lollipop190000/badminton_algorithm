@@ -1064,8 +1064,8 @@
     },
     {
       "path": "05_energy_budget/REPORT.md",
-      "bytes": 6159,
-      "sha256": "6811ae4a59c82e17e695c68a253be1c1c502c29aeec9126c22ad8d120b5b9b70"
+      "bytes": 6203,
+      "sha256": "8b85326893d10d3e62a43e5fe00dca8357e7049b3897c5914ddd5bdf4c1288d5"
     },
     {
       "path": "05_energy_budget/results/fatigue_terminal/additional_probability_validation.json",
@@ -2293,7 +2293,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 489776430,
+  "uploaded_content_bytes": 489776474,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

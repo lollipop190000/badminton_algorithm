@@ -59,4 +59,4 @@ python run.py fatigue
 
 배포 적합 β_smash=1.315919, β_high_clear=0.292519이고 차이의 95% 구간은 [-0.337432, 2.150656]이다. 샷 간 순서·배수 제약 없이 얻은 값이며 스매시가 더 민감하다는 차이를 확정하지 않는다. 샷별 H/R 소모량 상관은 약 0.945–0.967로 높다. [전체 계수·구간](results/runs/20261014-fixed-q-shot-xpinion0415/coefficients.csv)과 [식별 진단](results/runs/20261014-fixed-q-shot-xpinion0415/identifiability.csv)을 함께 해석한다.
 
-확률 검사에서 Q 변경은 정확히 0, 전체 확률합 최대 오차는 2.22×10^-16이고 선수 교환·재로딩 오차는 0이었다. [예산별 승률 수치 검증](results/runs/20261014-fixed-q-shot-xpinion0415/stamina_validation.csv)은 새 종료확률을 사용한 결과이며 초기 예산과 소진 규칙은 시나리오 가정이다. 연구 테스트 76개가 통과했다.
+확률 검사에서 Q 변경은 정확히 0, 전체 확률합 최대 오차는 2.22×10^-16이고 선수 교환·재로딩 오차는 0이었다. [예산별 승률 수치 검증](results/runs/20261014-fixed-q-shot-xpinion0415/stamina_validation.csv)은 새 종료확률률을 사용한 결과이며 초기 예산과 소진 규칙은 시나리오 가정이다. 최신 main의 09 주제까지 통합한 연구 테스트 80개가 통과했다.
