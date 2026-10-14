@@ -2260,6 +2260,11 @@
       "sha256": "3258b0964c79f7f57cdd3bb37fa083916a7a5701dde639636476a5ec9597ab73"
     },
     {
+      "path": "10_transition_energy/code/scripts/verify_transition_energy.py",
+      "bytes": 5245,
+      "sha256": "17948959f396785f14f9b305e348418144a0cc9949fcba667cb8c4d9f8678bd1"
+    },
+    {
       "path": "10_transition_energy/code/SOURCES.md",
       "bytes": 5892,
       "sha256": "05fcedfedc3ee27aa9e70f6c702719f79f4c3c8bff7a119c510a7e1c89248969"
@@ -2600,7 +2605,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 518406874,
+  "uploaded_content_bytes": 518412119,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,
