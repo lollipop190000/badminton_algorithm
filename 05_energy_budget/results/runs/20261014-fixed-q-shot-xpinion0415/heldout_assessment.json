@@ -1,0 +1,10 @@
+{
+  "shot_minus_intercept_log_loss": 0.0025302428193624523,
+  "ci95": [
+    -0.0007386844438877969,
+    0.0063193823315441855
+  ],
+  "match_bootstrap_repeats": 2000,
+  "positive_delta_is_worse": true,
+  "causal_fatigue_claim": false
+}

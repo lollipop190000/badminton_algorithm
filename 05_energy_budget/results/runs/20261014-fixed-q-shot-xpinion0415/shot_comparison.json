@@ -1,0 +1,9 @@
+{
+  "beta_smash_minus_high_clear": 1.0234002503376591,
+  "difference_ci95": [
+    -0.3374319956826726,
+    2.150656380023986
+  ],
+  "bootstrap_smash_greater_fraction": 0.9,
+  "ratio_not_constrained": true
+}
