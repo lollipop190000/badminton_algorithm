@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "family": "fixed_q_shot_logistic",
+  "shots": [
+    "defensive_shot",
+    "drive",
+    "drop",
+    "hairpin",
+    "high_clear",
+    "push",
+    "smash",
+    "under_clear"
+  ],
+  "coefficients": [
+    [
+      0.07512332933273255,
+      0.0,
+      0.0
+    ],
+    [
+      0.015775931190947175,
+      0.0,
+      0.0
+    ],
+    [
+      0.020140078082775893,
+      0.0,
+      0.0
+    ],
+    [
+      0.005611600990618487,
+      0.0,
+      0.0
+    ],
+    [
+      0.0424958631589855,
+      0.0,
+      0.0
+    ],
+    [
+      -0.03047854096364238,
+      0.0,
+      0.0
+    ],
+    [
+      -0.0009209850860944774,
+      0.0,
+      0.0
+    ],
+    [
+      -0.03749666832054188,
+      0.0,
+      0.0
+    ]
+  ],
+  "d_star": 838.8778414562917,
+  "ridge": 0.0001,
+  "fit_scope": "train",
+  "max_h": 1744.8873598263701,
+  "max_r": 1865.1265525430856,
+  "constraints": {
+    "beta_nonnegative": true,
+    "gamma_nonnegative": true,
+    "cross_shot_ratio_or_order": false
+  }
+}

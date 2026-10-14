@@ -1,0 +1,53 @@
+{
+  "seed": 42,
+  "folds": 5,
+  "d_star": 838.8778414562917,
+  "ridge_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "selected_ridge": {
+    "intercept": 0.0001,
+    "common": 0.01,
+    "shot": 0.001
+  },
+  "fitting_target": "terminal hitter wins, independent of reason labels",
+  "cross_shot_order_or_ratio_constraint": false,
+  "test_used_for_selection": false,
+  "bootstrap_repeats": 200,
+  "cost_uncertainty_propagated": false,
+  "offset_crossfit": "match-level folds; fixed original history hyperparameters",
+  "audits": {
+    "train": {
+      "all_strokes": 43089,
+      "all_terminals": 4035,
+      "fitting_terminals": 3392,
+      "excluded_terminals": 643,
+      "uses_error_winner_reason_labels": false
+    },
+    "validation": {
+      "all_strokes": 10142,
+      "all_terminals": 876,
+      "fitting_terminals": 753,
+      "excluded_terminals": 123,
+      "uses_error_winner_reason_labels": false
+    },
+    "test": {
+      "all_strokes": 10033,
+      "all_terminals": 966,
+      "fitting_terminals": 816,
+      "excluded_terminals": 150,
+      "uses_error_winner_reason_labels": false
+    }
+  },
+  "original_baseline_history_order": 3,
+  "original_baseline_alphas": [
+    50.0,
+    200.0,
+    1000.0
+  ],
+  "original_costs_and_q": "unchanged; baseline_train for held-out, baseline_final for deployment"
+}

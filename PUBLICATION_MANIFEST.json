@@ -998,9 +998,24 @@
       "sha256": "12fe4f5c93e54b701f6ccc3a901dce30d5b8d3103b20b0292876292c5185c1da"
     },
     {
+      "path": "05_energy_budget/code/FIXED_Q_SHOT_MODEL.md",
+      "bytes": 5874,
+      "sha256": "d0c5c9c089c51acec3dd43047a8748c2730dcb8c15c81ac50fbcf1b971dc724a"
+    },
+    {
+      "path": "05_energy_budget/code/scripts/plot_fixed_q_results.py",
+      "bytes": 1444,
+      "sha256": "3d39c635ee447375a46b5d0d295d091d63c42df6682ab6536c6874ff1b2874ac"
+    },
+    {
       "path": "05_energy_budget/code/scripts/run_fatigue_pipeline.py",
       "bytes": 30116,
       "sha256": "aaa1565c6a4f4b5fb4c1278c54487aba0fdc7e8ec091e82f3310c962d761e1ff"
+    },
+    {
+      "path": "05_energy_budget/code/scripts/run_fixed_q_pipeline.py",
+      "bytes": 25582,
+      "sha256": "67fd107d04cbaba282cffd0cf2991453c57454c7558aad73164cbdc8f7b3711d"
     },
     {
       "path": "05_energy_budget/code/src/build_fatigue_transition.py",
@@ -1023,14 +1038,19 @@
       "sha256": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e"
     },
     {
+      "path": "05_energy_budget/code/src/fixed_q_terminal.py",
+      "bytes": 15002,
+      "sha256": "ff4b30c8d8f9e82167f5bda28e3954b5a961d0742cc11003d37c3c3413d909fd"
+    },
+    {
       "path": "05_energy_budget/code/src/reconstruct_rally_energy.py",
       "bytes": 17693,
       "sha256": "2b8f9f03356f0fe7862ae8657a17d78ee843db18cc2f73984ab8de298757c684"
     },
     {
       "path": "05_energy_budget/code/src/solve_stamina_value.py",
-      "bytes": 20221,
-      "sha256": "a69d87d2d32f0eade73b79ade0a1d7175407e6c6eb13029cd8749aa1871ea4fb"
+      "bytes": 20616,
+      "sha256": "7a85b830e510e9f504c14d5ed74b0382940fc42957c501c428444153ddde6e63"
     },
     {
       "path": "05_energy_budget/code/tests/test_fatigue_terminal.py",
@@ -1038,9 +1058,14 @@
       "sha256": "f44d30a3e69e7ce836d29b6b827b931aba4fb45f4860e43688b3ac8cee7b357e"
     },
     {
+      "path": "05_energy_budget/code/tests/test_fixed_q_terminal.py",
+      "bytes": 6122,
+      "sha256": "a0aa60363c447004475a4324e41887611311a67885a1dc7ec023a1ece829a533"
+    },
+    {
       "path": "05_energy_budget/REPORT.md",
-      "bytes": 2947,
-      "sha256": "e68bfe76ce560af99f98274bbd8073c0986b33251ae4019bf8ff938a20afb6c1"
+      "bytes": 6200,
+      "sha256": "cb1bd0f0b2f19607cbc555b82cd8878375bf6a461eaafdf20986f443c997474e"
     },
     {
       "path": "05_energy_budget/results/fatigue_terminal/additional_probability_validation.json",
@@ -1441,6 +1466,126 @@
       "path": "05_energy_budget/results/README.md",
       "bytes": 193,
       "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/bootstrap_coefficients.parquet",
+      "bytes": 47641,
+      "sha256": "659eb4259824a3047a6b7c00deb1d920da1cba269eac56eb7741077e88767a39"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/coefficient_intervals.png",
+      "bytes": 66245,
+      "sha256": "448d53571e3eb902cf1a05d5676ddb8d2f1e1454f28cca83211a0ac7c2f60451"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/coefficients.csv",
+      "bytes": 2524,
+      "sha256": "0441e49111dd8b494a4d25d1283ef5e4a825ff3d6279014c92b9c025f5808f1e"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/conditional_metrics.csv",
+      "bytes": 1202,
+      "sha256": "5c83a9cbe24fd1b285c9c9b957f7668f3ad69c33dcddfd8b99d8fca9d153c432"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/config.json",
+      "bytes": 234,
+      "sha256": "4a036fa3d0f67a33b1bf6c86480030b5bc3c5d98c1587c40329a604bf32813c0"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/execution_stages.json",
+      "bytes": 2139,
+      "sha256": "1117d7ae18d66d70878078bb3c8f92a93a65030032014e70c5b46eff18a1cdac"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/heldout_assessment.json",
+      "bytes": 245,
+      "sha256": "897d1258e8077acacf2f7b465138f0824d921e457dbc20a618303dd930378e31"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/identifiability.csv",
+      "bytes": 922,
+      "sha256": "0f8378e67b23287682b8487c9c686ca5169a2416b33f1a7c48adf4e97ce6a048"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/invariants.json",
+      "bytes": 298,
+      "sha256": "8b53bea87472dc26e8a72e2db168fb046c5238ab7010166f8d902b847776b3f6"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/local_grid_artifacts.json",
+      "bytes": 884,
+      "sha256": "af15653b79ddc95d17b75d31f94ad318f7b73d418ff96866622657878054980c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_common_development.json",
+      "bytes": 1279,
+      "sha256": "890f2cfbe5b2bea8713880807a8c2a764cd4be6eb92cc98e85fa880a8d346630"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_final.json",
+      "bytes": 1288,
+      "sha256": "0db34a49bdb75dc54245c5050b3937eac90493983153e90a50f3db3add9f5136"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_intercept_development.json",
+      "bytes": 1049,
+      "sha256": "7f6014ca915eeba7e06a4a0753713b4cfb23ff3db29d07956c531b2fc5a0237a"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_shot_development.json",
+      "bytes": 1282,
+      "sha256": "c10c4ed213c341d472145f2b22397e3e84caf633f13d761fe79968e31f62ee22"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/predictions.parquet",
+      "bytes": 480473,
+      "sha256": "8e42d40ac0848c36d96cbbff48b50add9241ac2b428cc0013311166a031f0c2c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/protocol.json",
+      "bytes": 1389,
+      "sha256": "71dcb75584dee07731d440f5b477db6f7e6f85cdac8897dbd64841f96f8d8cf8"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/research_report.md",
+      "bytes": 3239,
+      "sha256": "a95ce6cb383cbff404f7de17b53cde787dd5121437dad076e8dc0f26a1505bfe"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/RUN.json",
+      "bytes": 6588,
+      "sha256": "1623237c1cae91a860d16183a23299728f8fb6a0493123f25760a0ab983f73f5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/shot_comparison.json",
+      "bytes": 216,
+      "sha256": "c51d51df0ede7efd4c233eec226dbeac36f501eb2d0f6a8d741c2327ee584a9e"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/stamina_validation.csv",
+      "bytes": 15255,
+      "sha256": "f524b664a419fde27fce5037c386be919f598bee1aee7075abbb7f8487c0b715"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/terminal_probabilities.parquet",
+      "bytes": 5468565,
+      "sha256": "c9e0d861fc8dda0bdf19f7333926622f01fcbdef767827a94b23a62ffb242503"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/test_metrics_by_shot.csv",
+      "bytes": 3185,
+      "sha256": "7706ad562d2de92aca88c9e023d9dc4716513a36dd49e428a33b986ec5d26be0"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/training_rows.parquet",
+      "bytes": 153719,
+      "sha256": "bc65294ce1b277fd49b1ff14267531110b61c3dd6b66fe3f71ab62ad668a5ea7"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/validation_selection.csv",
+      "bytes": 2038,
+      "sha256": "eb52beb12286bf3c608c2ed1baec354cd1ed48b13cb522cee1d2575868c8b3c8"
     },
     {
       "path": "06_rally_simulator/code/app/__init__.py",
@@ -2109,8 +2254,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4463,
-      "sha256": "5ce500c18807d5854a952e295ce1186488716fd3f7bf631d60bb74e103cb80f7"
+      "bytes": 4543,
+      "sha256": "77f979f89fc54a5a17d3d4592d22c987ce8852c1e699e6e46e378763b8805a26"
     },
     {
       "path": "requirements-ci.txt",
@@ -2124,8 +2269,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 5622,
-      "sha256": "f0f6973536a657431bfab0a39590880a8aa60fdef18b80aca7e150b1d5e8f58a"
+      "bytes": 5670,
+      "sha256": "6fdcddef1ebde6b4971a82b0a6d2ffb022a2339aa8c3fc2d050fb90a64e07eaf"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -2148,7 +2293,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 483456772,
+  "uploaded_content_bytes": 489776471,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

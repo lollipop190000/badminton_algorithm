@@ -1,0 +1,10 @@
+{
+  "q_max_change": 0.0,
+  "probability_mass_max_error": 2.220446049250313e-16,
+  "terminal_mass_max_error": 1.3877787807814457e-17,
+  "player_exchange_max_error": 0.0,
+  "beta_nonnegative": true,
+  "gamma_nonnegative": true,
+  "cross_shot_constraint": false,
+  "reload_max_error": 0.0
+}

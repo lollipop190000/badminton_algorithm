@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "run_id": "20261014-fixed-q-shot-xpinion0415",
+  "status": "completed",
+  "code_commit": "1115240460523b8cd9fa52676764f272d0808ec0",
+  "command": "python run.py fixed-q --stage report --run-id 20261014-fixed-q-shot-xpinion0415 --bootstrap 200 --mc-samples 20000 --seed 42",
+  "reproduction_command": "python run.py fixed-q --run-id NEW_UNIQUE_RUN_ID --bootstrap 200 --mc-samples 20000 --seed 42",
+  "last_stage_command": "scripts/run_fixed_q_pipeline.py --stage report --run-id 20261014-fixed-q-shot-xpinion0415 --bootstrap 200 --mc-samples 20000 --seed 42",
+  "seed": 42,
+  "environment": {
+    "python": "3.13.9",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "device": "CPU",
+    "dependencies": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "pandas": "3.0.3",
+      "pyarrow": "26.0.0"
+    }
+  },
+  "inputs": [
+    {
+      "path_or_source": "C:\\Users\\xpini\\OneDrive\\문서\\ChatGPT\\배드민턴 전략 연구\\github_publish\\.runtime\\outputs\\fatigue_terminal\\event_energy_table.parquet",
+      "sha256": "7a757183f88780b42ce4108184746f57c72069625aa5bb136e525d5106242e88"
+    },
+    {
+      "path_or_source": "C:\\Users\\xpini\\OneDrive\\문서\\ChatGPT\\배드민턴 전략 연구\\github_publish\\.runtime\\outputs\\fatigue_terminal\\baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db"
+    },
+    {
+      "path_or_source": "C:\\Users\\xpini\\OneDrive\\문서\\ChatGPT\\배드민턴 전략 연구\\github_publish\\.runtime\\outputs\\fatigue_terminal\\baseline_final.npz",
+      "sha256": "89f02764a9fad8ef036624ea2bc251b1a554a972b42365b13d48c3bdaea675a0"
+    },
+    {
+      "path_or_source": "C:\\Users\\xpini\\OneDrive\\문서\\ChatGPT\\배드민턴 전략 연구\\github_publish\\.runtime\\outputs\\fatigue_terminal\\models\\strict_development\\model.json",
+      "sha256": "82ebc068cc299d9c52a66d659a8be6571e4ebfd833c21c75c4dbe43510e72d0a"
+    }
+  ],
+  "code_files": [
+    {
+      "path": "05_energy_budget\\code\\src\\fixed_q_terminal.py",
+      "sha256": "ff4b30c8d8f9e82167f5bda28e3954b5a961d0742cc11003d37c3c3413d909fd"
+    },
+    {
+      "path": "05_energy_budget\\code\\scripts\\run_fixed_q_pipeline.py",
+      "sha256": "67fd107d04cbaba282cffd0cf2991453c57454c7558aad73164cbdc8f7b3711d"
+    },
+    {
+      "path": "05_energy_budget\\code\\src\\solve_stamina_value.py",
+      "sha256": "7a85b830e510e9f504c14d5ed74b0382940fc42957c501c428444153ddde6e63"
+    },
+    {
+      "path": "05_energy_budget\\code\\scripts\\plot_fixed_q_results.py",
+      "sha256": "3d39c635ee447375a46b5d0d295d091d63c42df6682ab6536c6874ff1b2874ac"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "4a036fa3d0f67a33b1bf6c86480030b5bc3c5d98c1587c40329a604bf32813c0"
+  },
+  "split": "existing match-separated train/validation/test; train crossfit; train+validation deployment refit",
+  "metrics": {
+    "conditional_log_loss": "terminal hitter binary outcome; lower is better",
+    "conditional_brier": "mean squared conditional probability error",
+    "uncertainty": "match bootstrap; fixed model-selection/cost/energy settings"
+  },
+  "outputs": [
+    {
+      "path": "bootstrap_coefficients.parquet",
+      "sha256": "659eb4259824a3047a6b7c00deb1d920da1cba269eac56eb7741077e88767a39"
+    },
+    {
+      "path": "coefficient_intervals.png",
+      "sha256": "448d53571e3eb902cf1a05d5676ddb8d2f1e1454f28cca83211a0ac7c2f60451"
+    },
+    {
+      "path": "coefficients.csv",
+      "sha256": "0441e49111dd8b494a4d25d1283ef5e4a825ff3d6279014c92b9c025f5808f1e"
+    },
+    {
+      "path": "conditional_metrics.csv",
+      "sha256": "5c83a9cbe24fd1b285c9c9b957f7668f3ad69c33dcddfd8b99d8fca9d153c432"
+    },
+    {
+      "path": "config.json",
+      "sha256": "4a036fa3d0f67a33b1bf6c86480030b5bc3c5d98c1587c40329a604bf32813c0"
+    },
+    {
+      "path": "execution_stages.json",
+      "sha256": "1117d7ae18d66d70878078bb3c8f92a93a65030032014e70c5b46eff18a1cdac"
+    },
+    {
+      "path": "heldout_assessment.json",
+      "sha256": "897d1258e8077acacf2f7b465138f0824d921e457dbc20a618303dd930378e31"
+    },
+    {
+      "path": "identifiability.csv",
+      "sha256": "0f8378e67b23287682b8487c9c686ca5169a2416b33f1a7c48adf4e97ce6a048"
+    },
+    {
+      "path": "invariants.json",
+      "sha256": "8b53bea87472dc26e8a72e2db168fb046c5238ab7010166f8d902b847776b3f6"
+    },
+    {
+      "path": "local_grid_artifacts.json",
+      "sha256": "af15653b79ddc95d17b75d31f94ad318f7b73d418ff96866622657878054980c"
+    },
+    {
+      "path": "model_common_development.json",
+      "sha256": "890f2cfbe5b2bea8713880807a8c2a764cd4be6eb92cc98e85fa880a8d346630"
+    },
+    {
+      "path": "model_final.json",
+      "sha256": "0db34a49bdb75dc54245c5050b3937eac90493983153e90a50f3db3add9f5136"
+    },
+    {
+      "path": "model_intercept_development.json",
+      "sha256": "7f6014ca915eeba7e06a4a0753713b4cfb23ff3db29d07956c531b2fc5a0237a"
+    },
+    {
+      "path": "model_shot_development.json",
+      "sha256": "c10c4ed213c341d472145f2b22397e3e84caf633f13d761fe79968e31f62ee22"
+    },
+    {
+      "path": "predictions.parquet",
+      "sha256": "8e42d40ac0848c36d96cbbff48b50add9241ac2b428cc0013311166a031f0c2c"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "71dcb75584dee07731d440f5b477db6f7e6f85cdac8897dbd64841f96f8d8cf8"
+    },
+    {
+      "path": "research_report.md",
+      "sha256": "a95ce6cb383cbff404f7de17b53cde787dd5121437dad076e8dc0f26a1505bfe"
+    },
+    {
+      "path": "shot_comparison.json",
+      "sha256": "c51d51df0ede7efd4c233eec226dbeac36f501eb2d0f6a8d741c2327ee584a9e"
+    },
+    {
+      "path": "stamina_validation.csv",
+      "sha256": "f524b664a419fde27fce5037c386be919f598bee1aee7075abbb7f8487c0b715"
+    },
+    {
+      "path": "terminal_probabilities.parquet",
+      "sha256": "c9e0d861fc8dda0bdf19f7333926622f01fcbdef767827a94b23a62ffb242503"
+    },
+    {
+      "path": "test_metrics_by_shot.csv",
+      "sha256": "7706ad562d2de92aca88c9e023d9dc4716513a36dd49e428a33b986ec5d26be0"
+    },
+    {
+      "path": "training_rows.parquet",
+      "sha256": "bc65294ce1b277fd49b1ff14267531110b61c3dd6b66fe3f71ab62ad668a5ea7"
+    },
+    {
+      "path": "validation_selection.csv",
+      "sha256": "eb52beb12286bf3c608c2ed1baec354cd1ed48b13cb522cee1d2575868c8b3c8"
+    }
+  ],
+  "limitations": "movement proxy, not physiological fatigue or causal effect; conditional bootstrap; budget/exhaustion boundary assumptions"
+}
