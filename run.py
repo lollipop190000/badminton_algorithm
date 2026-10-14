@@ -21,6 +21,7 @@ SEEDS={
  '08_bfmd_kinematics/results/bfmd_zago':'outputs/bfmd_zago',
  '08_bfmd_kinematics/results/source_audit':'raw/BFMD',
  '10_transition_energy/results/runs':'outputs/transition_energy/runs',
+ '09_cost_transfer_method/results':'outputs/cost_transfer',
 }
 COMMANDS={
  'download-data':['scripts/download_research_data.py'],
@@ -43,6 +44,7 @@ COMMANDS={
  'transition-energy':['-m','src.transition_energy.pipeline'],
  'bfmd-download':['-m','bfmd_zago.download_bfmd'],
  'bfmd':['-m','bfmd_zago.bfmd_zago_pipeline'],
+ 'cost-transfer-summary':['scripts/summarize_bfmd_excess_distance.py'],
  'test':['-m','unittest','discover','-s','tests','-v'],
 }
 

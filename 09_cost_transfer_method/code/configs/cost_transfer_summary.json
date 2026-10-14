@@ -1,0 +1,11 @@
+{
+  "input": "outputs/bfmd_zago/motion_features.parquet",
+  "input_source": "08_bfmd_kinematics/results/bfmd_zago/motion_features.parquet",
+  "output_root": "outputs/cost_transfer/runs",
+  "columns": ["role", "shot_type", "split", "delta_t_s", "L_m", "straight_displacement_m", "feature_valid", "compatible_mid_rally_event"],
+  "eligibility": "feature_valid and compatible_mid_rally_event are true, and L_m and straight_displacement_m are present",
+  "distance_edges_m": [0.0, 0.25, 0.5, 1.0, 1.5, 2.0, 3.0, null],
+  "short_distance_threshold_m": 0.25,
+  "quantiles": [0.1, 0.25, 0.5, 0.75, 0.9],
+  "energy_coefficient_j_per_kg_m": 19.985
+}

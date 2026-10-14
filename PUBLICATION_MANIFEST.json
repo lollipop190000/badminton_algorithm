@@ -92,6 +92,16 @@
         "test_bfmd_zago.py"
       ]
     },
+    "09_cost_transfer_method": {
+      "title": "이동비용 C_ij 전달 추정 방법",
+      "code": [
+        "configs/cost_transfer_summary.json",
+        "scripts/summarize_bfmd_excess_distance.py"
+      ],
+      "tests": [
+        "test_cost_transfer_summary.py"
+      ]
+    },
     "10_transition_energy": {
       "title": "셔틀 상태 복원·전체 전이별 에너지 C",
       "code": [
@@ -2040,6 +2050,61 @@
       "sha256": "dfa6ae87f2fed48ebe81951466a5a8574b4d27588a59be41e480690ce9a0bbbc"
     },
     {
+      "path": "09_cost_transfer_method/code/configs/cost_transfer_summary.json",
+      "bytes": 641,
+      "sha256": "e1f5fc29700a3139ae523a51a249472864919d122e0da479a2b58d391633f631"
+    },
+    {
+      "path": "09_cost_transfer_method/code/DETAILS.md",
+      "bytes": 27716,
+      "sha256": "fb0f6592fccc914ef95b567fc491f0e68e0711ad83aa7879d5d91941a59d42b7"
+    },
+    {
+      "path": "09_cost_transfer_method/code/scripts/summarize_bfmd_excess_distance.py",
+      "bytes": 8720,
+      "sha256": "8eeab5d9d322ce757b156b2d388643fa34cb84385571e74cb4de15413c112bef"
+    },
+    {
+      "path": "09_cost_transfer_method/code/tests/test_cost_transfer_summary.py",
+      "bytes": 3158,
+      "sha256": "e14044663c3fab47829349b4c70e0d1092ad433edd54dd25804a248624fd3a00"
+    },
+    {
+      "path": "09_cost_transfer_method/REPORT.md",
+      "bytes": 6742,
+      "sha256": "d7a5f2a7f156681f83de5506ee2b552429fcd0aad4fd4472cc490036d8eefd55"
+    },
+    {
+      "path": "09_cost_transfer_method/results/README.md",
+      "bytes": 193,
+      "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_distance_bin.csv",
+      "bytes": 448,
+      "sha256": "e3ff6bd9c9e2a488df777deb5409407894579b43c984639d80bc98562784dff5"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_role.csv",
+      "bytes": 166,
+      "sha256": "616ff4fbb61d53ea4ee71f67bbf49b61d40094db21940abdd1ccbc5bc7fba606"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_shot.csv",
+      "bytes": 454,
+      "sha256": "87df8e3d7f23fb968cdcde0dd0becabfea7b1da7a25e9b2d5bdbb3f3ccecffd0"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/metrics.json",
+      "bytes": 809,
+      "sha256": "c325cb04f4b4f90dc9979f49471eea256bd05e7fbe4fd67ecf47126fabb3270c"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/RUN.json",
+      "bytes": 2570,
+      "sha256": "f60bb01f91dcfe2e9869bd9a2a3d84b8094c7df238b8f24842a8177dd405e08a"
+    },
+    {
       "path": "10_transition_energy/code/configs/transition_energy.json",
       "bytes": 1671,
       "sha256": "3eb52b5adc41aed9f61f8f539cc4de00cb4fc9de2905e3de7ac12d2958ab6c25"
@@ -2106,8 +2171,8 @@
     },
     {
       "path": "10_transition_energy/REPORT.md",
-      "bytes": 20515,
-      "sha256": "dc4bbb2f98c500937840210e4d83f7288fe786022affcd8f93f73e248470e1e6"
+      "bytes": 20743,
+      "sha256": "3079001e75aaa1f8a9bddde553db7f11f007b172564e92366a6a4b26899b8c93"
     },
     {
       "path": "10_transition_energy/results/README.md",
@@ -2321,8 +2386,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 4568,
-      "sha256": "1029a92f5f8cd96a8106f8f57b51bfc76cb7ec1b106c4a537b64fc8b428771b7"
+      "bytes": 4605,
+      "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -2341,8 +2406,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4570,
-      "sha256": "087252627a08bd273efa42aa0aae29f3ab2cf857632d83af0df5cf184f676cc1"
+      "bytes": 4674,
+      "sha256": "9e1305160f617d65d7834b695118ecb219ea6cc7ce3753bf0b6cf537fe5fc094"
     },
     {
       "path": "requirements-ci.txt",
@@ -2356,8 +2421,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 5623,
-      "sha256": "9a3289bd24d07799f13253a69685c1a46f527c61814a0f5234534859ca4ef6dd"
+      "bytes": 5755,
+      "sha256": "eb15c1f3267be4ee0f87e469617c21ac21e16ef1da586e7293dc4daa92c9aff3"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -2380,7 +2445,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 511972423,
+  "uploaded_content_bytes": 512024541,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

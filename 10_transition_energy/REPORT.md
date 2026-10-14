@@ -57,7 +57,7 @@ Phomsoupha Table 1의 drop/clear/smash head speed 6.3/20.9/34.6m/s를 그 3종�
 
 ### D. 추정·검증·호환성
 
-08의 경기 단위 train8/validation2/test2를 유지했다. train에서 role/shot/거리/현재·다음 도착 구획/부분 history/exact 계층을 비교하고 validation의 M0/M3 train-SD 정규화 RMSE 평균으로 선택했다. 선택된 계층은 `global → role → role+shot → z3+role+shot → z3+next_zone+role+shot → exact`이며 tau=5다. 작은 exact 표본을 local 평균으로 확정하지 않는다. 최종 그룹 평균은 train+validation만 사용한다. Test의 591개 완전 운동학·복원 구간은 최종 fit에서 제외됐다.
+08의 경기 단위 train8/validation2/test2를 유지했다. 새 main의 [09 전달 추정 방법](../09_cost_transfer_method/REPORT.md)은 별도 방법론으로 보존했으며, 이 주제는 요청한 셔틀 상태 복원과 완전 C 산출을 담당한다. train에서 role/shot/거리/현재·다음 도착 구획/부분 history/exact 계층을 비교하고 validation의 M0/M3 train-SD 정규화 RMSE 평균으로 선택했다. 선택된 계층은 `global → role → role+shot → z3+role+shot → z3+next_zone+role+shot → exact`이며 tau=5다. 작은 exact 표본을 local 평균으로 확정하지 않는다. 최종 그룹 평균은 train+validation만 사용한다. Test의 591개 완전 운동학·복원 구간은 최종 fit에서 제외됐다.
 
 [선택 grid](results/runs/20261014-complete-c-v2-kinggoddowon/validation_grid.csv) · [exact 수축 추가 검증](results/runs/20261014-complete-c-v2-kinggoddowon/exact_augmentation_validation.csv) · [선택된 추정기](results/runs/20261014-complete-c-v2-kinggoddowon/selected_estimator.json) · [held-out 오차](results/runs/20261014-complete-c-v2-kinggoddowon/test_comparison.csv) · [최종 선택 모형의 전체 test 예측](results/runs/20261014-complete-c-v2-kinggoddowon/test_predictions.parquet).
 
@@ -79,7 +79,7 @@ Phomsoupha Table 1의 drop/clear/smash head speed 6.3/20.9/34.6m/s를 그 3종�
 |---|---:|
 | 단식 경기 / 원본 주석 파일 | 12 / 96 |
 | 타구 이벤트 / terminal | 11,301 / 1,053 |
-| Continuing 타구 / 8타구 mid-rally 후보 | 10,248 / 7,257 |
+| Continuing 타구 / 8타구 mid-rally 후보 | 10,248 / 7,257（랠리 QC 통과 7,044） |
 | 관측 / 보간 / 미확보 좌표 이벤트 | 10,311 / 373 / 617 |
 | 높이 시나리오로 i,j를 구성한 8타구 전이 | 3,276 |
 | 위 history의 픽셀 모두 관측 / 일부 보간 | 2,949 / 327 |
