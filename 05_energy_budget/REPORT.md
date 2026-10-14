@@ -4,11 +4,15 @@
 
 단순 거리 비용에서 더 나아가, 이미 소비한 이동부하와 종료 사건의 관계를 검토하고 잔여 예산에서의 모형 V를 계산하기 위해 확장했다. 체력 자원의 생리학적 실측치나 피로의 인과효과를 추정하는 과제와는 구별한다.
 
+고정 Q 확장에서는 종료 타구의 실제 타구자 승패만으로 샷별 a,β,γ를 피팅한다. 성공·실패 모두 두 선수의 누적 소모량에 의존하며 샷별 종료질량과 기존 Q를 보존한다. β,γ 비음수 조건 외에 샷 사이의 배수·순서 제약은 적용하지 않는다. 기존 E/U 모형은 별도로 보존한다.
+
 ## 2. 과정
 
 원본 타구자·득점·종료 원인을 대조해 E(오류), U(winner), C(다음 기록 타구 시도)를 만들었다. strict/proxy를 분리하고 프레임 비증가 랠리를 제외했다. D(t)는 현재까지 incoming 변위의 누적으로 미래 타구를 사용하지 않는다. M0/M1/M2 후보를 validation과 경기 bootstrap 200회로 비교했다. 역할 통합 Q/C와 별도 E/U 함수를 결합했고 예산 p50/p75/p95 시나리오에서 Bellman 격자·세분화·query당 Monte Carlo 20,000회를 검사했다.
 
 의존 단계: 01 데이터 + 04 Markov 및 역할 통합 기준모형. `code/`에는 이 주제가 소유하는 실행 코드·설정·테스트가 있다. 다른 단계의 공통 코드를 중복 복사하지 않으며 루트 `run.py`가 실행 환경을 조립한다.
+
+[고정 Q 샷별 체력 모형](code/FIXED_Q_SHOT_MODEL.md)은 변수·샷별 수식·경기 교차 적합·ridge 수축·검증 방법을 설명한다. 01/04와 기존 05 비용 정의에 의존한다. `python run.py fixed-q`로 별도 실행하며 아래 `fatigue` 명령은 기존 E/U 파이프라인이다. 연구별 결과는 고유 run 폴더에 저장한다.
 
 저장소 루트에서 실행한다:
 
@@ -68,3 +72,24 @@ python run.py energy-strategy --run-id <고유 ID>
 [실행 보고서](results/runs/20261014-energy-strategy-v1/REPORT.md) · [재현 기록](results/runs/20261014-energy-strategy-v1/RUN.json) · [전체 행동 점수](results/runs/20261014-energy-strategy-v1/action_scores) · [수치 검증](results/runs/20261014-energy-strategy-v1/numerical_validation.csv) · [추천 변화율](results/runs/20261014-energy-strategy-v1/recommendation_change_rates.csv) · [CQL 비교](results/runs/20261014-energy-strategy-v1/cql_comparison_summary.csv) · [비용별 예산](results/runs/20261014-energy-strategy-v1/normalized_budget_comparison.csv) · [대용량 격자 해시](results/runs/20261014-energy-strategy-v1/large_artifacts.json) · 
 
 큰 격자는 로컬에 보관하고 위 명령으로 재생성한다. 기존 감사·학습·비용 결과를 대체하거나 다시 감사했다고 표현하지 않는다.
+
+| 설계 보충 항목 | 이번 결과 | 상태 / 산출물 |
+|---|---|---|
+| 고정 Q 샷별 체력 모형 | 별도 run으로 실행·보고 | [모형·재현 방법](code/FIXED_Q_SHOT_MODEL.md) |
+| 스매시/하이클리어 민감도 | 순서·배수 제약 없이 추정 | 샷별 계수와 경기 bootstrap 차이 구간으로 판단 |
+
+새 모형 결과는 기존 위 표와 별도로 보고한다. 기존 모델·비용표·결과를 보존하며 새 예측 관계를 생리적 피로 효과의 입증으로 표현하지 않는다.
+
+새 [실행 보고서](results/runs/20261014-fixed-q-shot-xpinion0415/research_report.md)와 [RUN.json](results/runs/20261014-fixed-q-shot-xpinion0415/RUN.json)에 실제 피팅·검증 결과를 기록했다. 학습/검증/시험 종료 타구는 각각 3,392/753/816개이며 E/U 원인 라벨은 피팅 표본 선택과 정답에 사용하지 않았다. train 경기 5-fold 기준 odds, validation ridge 선택과 동결 test 평가, train+validation 배포 재적합 및 경기 bootstrap 200회를 수행했다.
+
+| 고정 Q 시험 모형 | 종료 표본 | 조건부 log loss | 조건부 Brier |
+|---|---:|---:|---:|
+| 기존 odds | 816 | 0.561456 | 0.186083 |
+| 샷별 절편 보정 | 816 | 0.561224 | 0.186045 |
+| 샷별 체력 민감도 | 816 | 0.563754 | 0.186953 |
+
+새 모형은 시험 오차가 조금 더 컸으며, 절편 모형 대비 log loss 차이의 경기 bootstrap 95% 구간은 [-0.000739, 0.006319]로 0을 포함한다. 현재 자료에서 예측 개선이 확인됐다고 결론 내리지 않는다.
+
+배포 적합 β_smash=1.315919, β_high_clear=0.292519이고 차이의 95% 구간은 [-0.337432, 2.150656]이다. 샷 간 순서·배수 제약 없이 얻은 값이며 스매시가 더 민감하다는 차이를 확정하지 않는다. 샷별 H/R 소모량 상관은 약 0.945–0.967로 높다. [전체 계수·구간](results/runs/20261014-fixed-q-shot-xpinion0415/coefficients.csv)과 [식별 진단](results/runs/20261014-fixed-q-shot-xpinion0415/identifiability.csv)을 함께 해석한다.
+
+확률 검사에서 Q 변경은 정확히 0, 전체 확률합 최대 오차는 2.22×10^-16이고 선수 교환·재로딩 오차는 0이었다. [예산별 승률 수치 검증](results/runs/20261014-fixed-q-shot-xpinion0415/stamina_validation.csv)은 새 종료확률을 사용한 결과이며 초기 예산과 소진 규칙은 시나리오 가정이다. 최신 main의 09 주제까지 통합한 연구 테스트 80개가 통과했다.

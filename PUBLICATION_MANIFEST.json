@@ -1,7 +1,20 @@
 {
-  "repository": "https://github.com/lollipop190000/badminton_algorithm",
-  "schema_version": 1,
+  "csv_to_parquet": {
+    "source": "outputs/bfmd_zago/bfmd_zago_observations.csv",
+    "target": "08_bfmd_kinematics/results/bfmd_zago/bfmd_zago_observations.parquet",
+    "rows": 139454
+  },
   "modules": {
+    "07_policy_ope": {
+      "title": "CQL 정책의 Off-policy Evaluation",
+      "code": [
+        "src/evaluate_ope.py",
+        "scripts/report_ope.py"
+      ],
+      "tests": [
+        "test_ope.py"
+      ]
+    },
     "01_data_16zone": {
       "title": "데이터 감사·전처리·16구획",
       "code": [
@@ -13,42 +26,14 @@
       ],
       "tests": []
     },
-    "02_gru_probability": {
-      "title": "GRU 랠리 승리확률",
+    "09_cost_transfer_method": {
+      "title": "이동비용 C_ij 전달 추정 방법",
       "code": [
-        "src/preprocess_gru.py",
-        "src/gru_model.py",
-        "src/train_gru.py",
-        "src/evaluate_gru.py",
-        "src/export_gru_hidden.py",
-        "configs/gru_config.yaml"
+        "configs/cost_transfer_summary.json",
+        "scripts/summarize_bfmd_excess_distance.py"
       ],
       "tests": [
-        "test_pipeline.py"
-      ]
-    },
-    "03_cql_v2_policy": {
-      "title": "CQL v2 전술 추천",
-      "code": [
-        "src/cql_model.py",
-        "src/build_cql_dataset.py",
-        "src/train_cql.py",
-        "src/evaluate_cql.py",
-        "configs/cql_config_v2.yaml"
-      ],
-      "tests": [
-        "test_cql_v2_pipeline.py"
-      ]
-    },
-    "04_markov_parity": {
-      "title": "Markov Q·C·K·V 및 타구 교대",
-      "code": [
-        "src/estimate_markov_q.py",
-        "src/estimate_parity_markov.py"
-      ],
-      "tests": [
-        "test_markov_q.py",
-        "test_parity_markov.py"
+        "test_cost_transfer_summary.py"
       ]
     },
     "05_energy_budget": {
@@ -71,6 +56,61 @@
         "test_energy_bfmd.py"
       ]
     },
+    "02_gru_probability": {
+      "title": "GRU 랠리 승리확률",
+      "code": [
+        "src/preprocess_gru.py",
+        "src/gru_model.py",
+        "src/train_gru.py",
+        "src/evaluate_gru.py",
+        "src/export_gru_hidden.py",
+        "configs/gru_config.yaml"
+      ],
+      "tests": [
+        "test_pipeline.py"
+      ]
+    },
+    "04_markov_parity": {
+      "title": "Markov Q·C·K·V 및 타구 교대",
+      "code": [
+        "src/estimate_markov_q.py",
+        "src/estimate_parity_markov.py"
+      ],
+      "tests": [
+        "test_markov_q.py",
+        "test_parity_markov.py"
+      ]
+    },
+    "10_transition_energy": {
+      "title": "셔틀 상태 복원·전체 전이별 에너지 C",
+      "code": [
+        "src/transition_energy/__init__.py",
+        "src/transition_energy/adapter.py",
+        "src/transition_energy/data.py",
+        "src/transition_energy/estimation.py",
+        "src/transition_energy/export.py",
+        "src/transition_energy/pipeline.py",
+        "src/transition_energy/reconstruction.py",
+        "src/transition_energy/reporting.py",
+        "src/transition_energy/shot.py"
+      ],
+      "tests": [
+        "test_transition_energy.py"
+      ]
+    },
+    "03_cql_v2_policy": {
+      "title": "CQL v2 전술 추천",
+      "code": [
+        "src/cql_model.py",
+        "src/build_cql_dataset.py",
+        "src/train_cql.py",
+        "src/evaluate_cql.py",
+        "configs/cql_config_v2.yaml"
+      ],
+      "tests": [
+        "test_cql_v2_pipeline.py"
+      ]
+    },
     "06_rally_simulator": {
       "title": "GRU·CQL v2·에너지 전략 랠리 시뮬레이터",
       "code": [
@@ -81,16 +121,6 @@
         "test_energy_api.py"
       ]
     },
-    "07_policy_ope": {
-      "title": "CQL 정책의 Off-policy Evaluation",
-      "code": [
-        "src/evaluate_ope.py",
-        "scripts/report_ope.py"
-      ],
-      "tests": [
-        "test_ope.py"
-      ]
-    },
     "08_bfmd_kinematics": {
       "title": "BFMD 이동시간·접선/법선 운동학",
       "code": [],
@@ -99,6 +129,7 @@
       ]
     }
   },
+  "schema_version": 1,
   "excluded_categories": [
     "Z9/12-zone superseded artifacts",
     "outputs/cql v1 models/recommendations (only GRU hidden files are retained as dependency)",
@@ -416,17 +447,7 @@
       "sha256": null
     }
   ],
-  "publication_only_path_adaptations": [
-    "03_cql_v2_policy/code/src/build_cql_dataset.py",
-    "03_cql_v2_policy/code/src/train_cql.py",
-    "03_cql_v2_policy/code/src/evaluate_cql.py",
-    "08_bfmd_kinematics/code/bfmd_zago/bfmd_zago_pipeline.py: also writes complete compressed model observations on rerun"
-  ],
-  "csv_to_parquet": {
-    "source": "outputs/bfmd_zago/bfmd_zago_observations.csv",
-    "target": "08_bfmd_kinematics/results/bfmd_zago/bfmd_zago_observations.parquet",
-    "rows": 139454
-  },
+  "repository": "https://github.com/lollipop190000/badminton_algorithm",
   "publication_validation": {
     "active_tests": 69,
     "passed": true,
@@ -437,6 +458,12 @@
     "bfmd_model_csv_parquet_rerun_smoke": "passed numerical equality with CSV empty/missing normalization",
     "scope": "curated code/results; original numerical research reruns not performed"
   },
+  "publication_only_path_adaptations": [
+    "03_cql_v2_policy/code/src/build_cql_dataset.py",
+    "03_cql_v2_policy/code/src/train_cql.py",
+    "03_cql_v2_policy/code/src/evaluate_cql.py",
+    "08_bfmd_kinematics/code/bfmd_zago/bfmd_zago_pipeline.py: also writes complete compressed model observations on rerun"
+  ],
   "file_inventory": [
     {
       "path": ".gitattributes",
@@ -1129,9 +1156,19 @@
       "sha256": "94b1b7208f978df6788af2edd778807a815f798e01600844a45c2e2de25428ae"
     },
     {
+      "path": "05_energy_budget/code/FIXED_Q_SHOT_MODEL.md",
+      "bytes": 5874,
+      "sha256": "d0c5c9c089c51acec3dd43047a8748c2730dcb8c15c81ac50fbcf1b971dc724a"
+    },
+    {
       "path": "05_energy_budget/code/scripts/finish_energy_strategy_delivery.py",
       "bytes": 10719,
       "sha256": "629691dd97affa71af3c0289f085e6ec6568b4c6ea57bda766603aa176af68ad"
+    },
+    {
+      "path": "05_energy_budget/code/scripts/plot_fixed_q_results.py",
+      "bytes": 1444,
+      "sha256": "3d39c635ee447375a46b5d0d295d091d63c42df6682ab6536c6874ff1b2874ac"
     },
     {
       "path": "05_energy_budget/code/scripts/run_energy_strategy.py",
@@ -1142,6 +1179,11 @@
       "path": "05_energy_budget/code/scripts/run_fatigue_pipeline.py",
       "bytes": 30116,
       "sha256": "aaa1565c6a4f4b5fb4c1278c54487aba0fdc7e8ec091e82f3310c962d761e1ff"
+    },
+    {
+      "path": "05_energy_budget/code/scripts/run_fixed_q_pipeline.py",
+      "bytes": 25582,
+      "sha256": "67fd107d04cbaba282cffd0cf2991453c57454c7558aad73164cbdc8f7b3711d"
     },
     {
       "path": "05_energy_budget/code/src/build_fatigue_transition.py",
@@ -1169,14 +1211,19 @@
       "sha256": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e"
     },
     {
+      "path": "05_energy_budget/code/src/fixed_q_terminal.py",
+      "bytes": 15002,
+      "sha256": "ff4b30c8d8f9e82167f5bda28e3954b5a961d0742cc11003d37c3c3413d909fd"
+    },
+    {
       "path": "05_energy_budget/code/src/reconstruct_rally_energy.py",
       "bytes": 17693,
       "sha256": "2b8f9f03356f0fe7862ae8657a17d78ee843db18cc2f73984ab8de298757c684"
     },
     {
       "path": "05_energy_budget/code/src/solve_stamina_value.py",
-      "bytes": 20221,
-      "sha256": "a69d87d2d32f0eade73b79ade0a1d7175407e6c6eb13029cd8749aa1871ea4fb"
+      "bytes": 20616,
+      "sha256": "7a85b830e510e9f504c14d5ed74b0382940fc42957c501c428444153ddde6e63"
     },
     {
       "path": "05_energy_budget/code/tests/test_energy_bfmd.py",
@@ -1194,9 +1241,14 @@
       "sha256": "f44d30a3e69e7ce836d29b6b827b931aba4fb45f4860e43688b3ac8cee7b357e"
     },
     {
+      "path": "05_energy_budget/code/tests/test_fixed_q_terminal.py",
+      "bytes": 6122,
+      "sha256": "a0aa60363c447004475a4324e41887611311a67885a1dc7ec023a1ece829a533"
+    },
+    {
       "path": "05_energy_budget/REPORT.md",
-      "bytes": 6515,
-      "sha256": "d753e9a2a82d758380033f200a8105cafff2d8c4e045fb6095dac110d72ed0d4"
+      "bytes": 9768,
+      "sha256": "b7a28b7ad2d6a8637ed8eefb972f6979ef3ebefe1b4622ae794bab72b09a1479"
     },
     {
       "path": "05_energy_budget/results/energy_strategy/latest.json",
@@ -2249,6 +2301,126 @@
       "sha256": "f2e330cd35844f38c999fe0062543a8f79a87aa393e6e88f1ad1be9493f830c5"
     },
     {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/bootstrap_coefficients.parquet",
+      "bytes": 47641,
+      "sha256": "659eb4259824a3047a6b7c00deb1d920da1cba269eac56eb7741077e88767a39"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/coefficient_intervals.png",
+      "bytes": 66245,
+      "sha256": "448d53571e3eb902cf1a05d5676ddb8d2f1e1454f28cca83211a0ac7c2f60451"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/coefficients.csv",
+      "bytes": 2524,
+      "sha256": "0441e49111dd8b494a4d25d1283ef5e4a825ff3d6279014c92b9c025f5808f1e"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/conditional_metrics.csv",
+      "bytes": 1202,
+      "sha256": "5c83a9cbe24fd1b285c9c9b957f7668f3ad69c33dcddfd8b99d8fca9d153c432"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/config.json",
+      "bytes": 234,
+      "sha256": "4a036fa3d0f67a33b1bf6c86480030b5bc3c5d98c1587c40329a604bf32813c0"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/execution_stages.json",
+      "bytes": 2139,
+      "sha256": "1117d7ae18d66d70878078bb3c8f92a93a65030032014e70c5b46eff18a1cdac"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/heldout_assessment.json",
+      "bytes": 245,
+      "sha256": "897d1258e8077acacf2f7b465138f0824d921e457dbc20a618303dd930378e31"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/identifiability.csv",
+      "bytes": 922,
+      "sha256": "0f8378e67b23287682b8487c9c686ca5169a2416b33f1a7c48adf4e97ce6a048"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/invariants.json",
+      "bytes": 298,
+      "sha256": "8b53bea87472dc26e8a72e2db168fb046c5238ab7010166f8d902b847776b3f6"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/local_grid_artifacts.json",
+      "bytes": 884,
+      "sha256": "af15653b79ddc95d17b75d31f94ad318f7b73d418ff96866622657878054980c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_common_development.json",
+      "bytes": 1279,
+      "sha256": "890f2cfbe5b2bea8713880807a8c2a764cd4be6eb92cc98e85fa880a8d346630"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_final.json",
+      "bytes": 1288,
+      "sha256": "0db34a49bdb75dc54245c5050b3937eac90493983153e90a50f3db3add9f5136"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_intercept_development.json",
+      "bytes": 1049,
+      "sha256": "7f6014ca915eeba7e06a4a0753713b4cfb23ff3db29d07956c531b2fc5a0237a"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/model_shot_development.json",
+      "bytes": 1282,
+      "sha256": "c10c4ed213c341d472145f2b22397e3e84caf633f13d761fe79968e31f62ee22"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/predictions.parquet",
+      "bytes": 480473,
+      "sha256": "8e42d40ac0848c36d96cbbff48b50add9241ac2b428cc0013311166a031f0c2c"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/protocol.json",
+      "bytes": 1389,
+      "sha256": "71dcb75584dee07731d440f5b477db6f7e6f85cdac8897dbd64841f96f8d8cf8"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/research_report.md",
+      "bytes": 3239,
+      "sha256": "a95ce6cb383cbff404f7de17b53cde787dd5121437dad076e8dc0f26a1505bfe"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/RUN.json",
+      "bytes": 6588,
+      "sha256": "1623237c1cae91a860d16183a23299728f8fb6a0493123f25760a0ab983f73f5"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/shot_comparison.json",
+      "bytes": 216,
+      "sha256": "c51d51df0ede7efd4c233eec226dbeac36f501eb2d0f6a8d741c2327ee584a9e"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/stamina_validation.csv",
+      "bytes": 15255,
+      "sha256": "f524b664a419fde27fce5037c386be919f598bee1aee7075abbb7f8487c0b715"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/terminal_probabilities.parquet",
+      "bytes": 5468565,
+      "sha256": "c9e0d861fc8dda0bdf19f7333926622f01fcbdef767827a94b23a62ffb242503"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/test_metrics_by_shot.csv",
+      "bytes": 3185,
+      "sha256": "7706ad562d2de92aca88c9e023d9dc4716513a36dd49e428a33b986ec5d26be0"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/training_rows.parquet",
+      "bytes": 153719,
+      "sha256": "bc65294ce1b277fd49b1ff14267531110b61c3dd6b66fe3f71ab62ad668a5ea7"
+    },
+    {
+      "path": "05_energy_budget/results/runs/20261014-fixed-q-shot-xpinion0415/validation_selection.csv",
+      "bytes": 2038,
+      "sha256": "eb52beb12286bf3c608c2ed1baec354cd1ed48b13cb522cee1d2575868c8b3c8"
+    },
+    {
       "path": "06_rally_simulator/code/app/__init__.py",
       "bytes": 48,
       "sha256": "6630ef026d8ddc854e05723871dbaffaa7c9adf186485835234c073740f8de0d"
@@ -2854,9 +3026,394 @@
       "sha256": "dfa6ae87f2fed48ebe81951466a5a8574b4d27588a59be41e480690ce9a0bbbc"
     },
     {
+      "path": "09_cost_transfer_method/code/configs/cost_transfer_summary.json",
+      "bytes": 641,
+      "sha256": "e1f5fc29700a3139ae523a51a249472864919d122e0da479a2b58d391633f631"
+    },
+    {
+      "path": "09_cost_transfer_method/code/DETAILS.md",
+      "bytes": 27716,
+      "sha256": "fb0f6592fccc914ef95b567fc491f0e68e0711ad83aa7879d5d91941a59d42b7"
+    },
+    {
+      "path": "09_cost_transfer_method/code/scripts/summarize_bfmd_excess_distance.py",
+      "bytes": 8720,
+      "sha256": "8eeab5d9d322ce757b156b2d388643fa34cb84385571e74cb4de15413c112bef"
+    },
+    {
+      "path": "09_cost_transfer_method/code/tests/test_cost_transfer_summary.py",
+      "bytes": 3158,
+      "sha256": "e14044663c3fab47829349b4c70e0d1092ad433edd54dd25804a248624fd3a00"
+    },
+    {
+      "path": "09_cost_transfer_method/REPORT.md",
+      "bytes": 6742,
+      "sha256": "d7a5f2a7f156681f83de5506ee2b552429fcd0aad4fd4472cc490036d8eefd55"
+    },
+    {
+      "path": "09_cost_transfer_method/results/README.md",
+      "bytes": 193,
+      "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_distance_bin.csv",
+      "bytes": 448,
+      "sha256": "e3ff6bd9c9e2a488df777deb5409407894579b43c984639d80bc98562784dff5"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_role.csv",
+      "bytes": 166,
+      "sha256": "616ff4fbb61d53ea4ee71f67bbf49b61d40094db21940abdd1ccbc5bc7fba606"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_shot.csv",
+      "bytes": 454,
+      "sha256": "87df8e3d7f23fb968cdcde0dd0becabfea7b1da7a25e9b2d5bdbb3f3ccecffd0"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/metrics.json",
+      "bytes": 809,
+      "sha256": "c325cb04f4b4f90dc9979f49471eea256bd05e7fbe4fd67ecf47126fabb3270c"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/RUN.json",
+      "bytes": 2570,
+      "sha256": "f60bb01f91dcfe2e9869bd9a2a3d84b8094c7df238b8f24842a8177dd405e08a"
+    },
+    {
+      "path": "10_transition_energy/code/configs/transition_energy.json",
+      "bytes": 1671,
+      "sha256": "3eb52b5adc41aed9f61f8f539cc4de00cb4fc9de2905e3de7ac12d2958ab6c25"
+    },
+    {
+      "path": "10_transition_energy/code/DETAILS.md",
+      "bytes": 9491,
+      "sha256": "84eb95eaaa4a396d5dcc4aaaa7c05dd04ae899672eac8c909b7a9ce77c4ac9ce"
+    },
+    {
+      "path": "10_transition_energy/code/scripts/verify_transition_energy.py",
+      "bytes": 5245,
+      "sha256": "17948959f396785f14f9b305e348418144a0cc9949fcba667cb8c4d9f8678bd1"
+    },
+    {
+      "path": "10_transition_energy/code/SOURCES.md",
+      "bytes": 5892,
+      "sha256": "05fcedfedc3ee27aa9e70f6c702719f79f4c3c8bff7a119c510a7e1c89248969"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/__init__.py",
+      "bytes": 70,
+      "sha256": "e74a2f325c225211229108dbffddb69d45ec7dd74968d600c28e7cf6e30bc274"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/adapter.py",
+      "bytes": 2113,
+      "sha256": "85a69ae0926ad1c9166dd24b77a896d064fc5024ec9a4d21284cb58dca4f0af4"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/data.py",
+      "bytes": 8735,
+      "sha256": "dbd07b916428b20746b411ce0e65c37caaf60a98143c0a9d295c164635c43c0a"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/estimation.py",
+      "bytes": 13723,
+      "sha256": "1194dcd46f5a0644594853933be4d92a4e7ab7d5e816f08c5bb8fdd9da76aa77"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/export.py",
+      "bytes": 10086,
+      "sha256": "2b8d439321c0188248f1c7d695d6414ddff9800ced7a9980cf89112a8a13166d"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/pipeline.py",
+      "bytes": 12432,
+      "sha256": "f837a571c78ec28cb908ad1693feaae45152ac9ff25b0b6befc4bdd368290285"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/reconstruction.py",
+      "bytes": 15189,
+      "sha256": "a1e8da925ca6e23aea2b21e3c6d2146b601eab3d29b6d00bda400b476c5e547b"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/reporting.py",
+      "bytes": 3380,
+      "sha256": "b644e52b14d75a8e6c4c1c72ab0dc92340a002b1d9b6e3b46b091b15c5998d2f"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/shot.py",
+      "bytes": 5703,
+      "sha256": "cd160940da6dd15f33bdbbf58935fe449a402a504f86362d538d895f71161d79"
+    },
+    {
+      "path": "10_transition_energy/code/tests/test_transition_energy.py",
+      "bytes": 7212,
+      "sha256": "d6346c8759eca1851050d3a08d9491245e4c90b68771a4ed635bc24438e8beb3"
+    },
+    {
+      "path": "10_transition_energy/REPORT.md",
+      "bytes": 22757,
+      "sha256": "373fa2b3feadb21604c69a6979a81fbdcfbae0a71d3cf200ab4461ccf80edb22"
+    },
+    {
+      "path": "10_transition_energy/results/README.md",
+      "bytes": 583,
+      "sha256": "eb9c3cf3b5eb171811072a13c089ad7e95fef6c3f4368763ff13bbec8bbb3af1"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/beta_sensitivity.csv",
+      "bytes": 1636,
+      "sha256": "5ca3b5146f01031bb5973e2de590caf48da32d73ecd356d723d965072475ae7b"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/budget_recalibration.csv",
+      "bytes": 734,
+      "sha256": "c8170e84f26f1b94295dbe0ba8662967a4c290adcdce0a0db97fea297f8b6a8a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M0.parquet",
+      "bytes": 9688439,
+      "sha256": "04d609ec843e74a29941fb99cd6a24a06fcc73a273c754d569998c374e5ede97"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M3.parquet",
+      "bytes": 9700663,
+      "sha256": "75177201dd7e120fb620af991a09b1984fc52489705a05c074cc54bccf50fb5e"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/complete_cost_summary.csv",
+      "bytes": 541,
+      "sha256": "e3ae1e88096ac77ebe3eb1fc79eba77e3e616a579635070e1d49343f8767625c"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/complete_table_audit.json",
+      "bytes": 270,
+      "sha256": "171da2bfd1b36487f33a1272b97e173a9582db3319111e1b2b93c2108c792e94"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/diagnostics.png",
+      "bytes": 110527,
+      "sha256": "d8b590f7bd9dc4d471eb35e0b35346d81b27911062a899d480ae5e68eca5d440"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/estimation_method_counts.csv",
+      "bytes": 194,
+      "sha256": "ddd441d9e0d6e3f6ebf0927313281e4064644c4e05f53d2d86fc423a8dd5ba50"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/exact_augmentation_validation.csv",
+      "bytes": 138,
+      "sha256": "decad4006b5ff02aa9176968ebf99715f057b05fe97433f0d51da38d7bbfe64a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/exact_conditional_means.parquet",
+      "bytes": 83363,
+      "sha256": "62cfbf214532517c560f0a91ba3197a2bb9eccfe714c6500f81aca36c89df6f8"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/exact_state_evidence.parquet",
+      "bytes": 22630,
+      "sha256": "5f8b69475f536ea736c0a1df0eac97d72a54e2ba34f008b5b8b2afa4b552e86d"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/executed_config.json",
+      "bytes": 1671,
+      "sha256": "3eb52b5adc41aed9f61f8f539cc4de00cb4fc9de2905e3de7ac12d2958ab6c25"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/fresh_vs_08_kinematics.csv",
+      "bytes": 268,
+      "sha256": "ffd4ed28c3f76c574713d1e62ad36955cf0abadd3a384494db80244453f104a7"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/height_projection_sensitivity.csv",
+      "bytes": 292,
+      "sha256": "458c13ed27499bdeb026cea0eb88a9382b7549d1b9596c1ca667a04c04d9906f"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/input_bfmd_hashes.json",
+      "bytes": 26738,
+      "sha256": "933888eb277a54a6885dea8779fd6686e2467b98aa81307f9d471927d2494a9a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/input_ShuttleSet22_hashes.json",
+      "bytes": 46317,
+      "sha256": "574f97251fe9aff0a13a977c318eb8eef9057c11e7246a435c1e0a2883999f04"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/input_ShuttleSet_hashes.json",
+      "bytes": 34717,
+      "sha256": "7f1c79d60de672cb92468973b54b51895a06a060d0dd664e6d2a73266ceefced"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/masked_state_validation.csv",
+      "bytes": 188,
+      "sha256": "5dcfedc0675b7509a0176c2a31a7de1754d48abaf2a99599594253d88381dfb4"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/match_split_manifest.csv",
+      "bytes": 3011,
+      "sha256": "b12e8a5d039e98ea364b3193eb4a6c141f9da5ac543366cfc4fb885cb81702ad"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/metrics.json",
+      "bytes": 1773,
+      "sha256": "a19417a8060582f2f1fa9fa7a356c7e20b7141007a39b8ef7bed205e10b4ec78"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/movement_observations.parquet",
+      "bytes": 3832543,
+      "sha256": "d20748781ff563a13e53f72d204037c9a64c09d63d83207e4563a01ac9c39d13"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/normalization.json",
+      "bytes": 251,
+      "sha256": "e6c1b9a9db3e27c5e0135ce8b8076aa91857c1ef31576ab5842f2ab25342ae93"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/observed_cost_summary.csv",
+      "bytes": 4762,
+      "sha256": "a2baea6a0540835f7ad61006687eab69adb9f513ab921fa2fea626852a5a2ff4"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/prediction_parameters.parquet",
+      "bytes": 364266,
+      "sha256": "7ebe318c0857e0241a56245c8e08536b942367308acea5fc4cf7c83cbdde7021"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/protected_inputs_unchanged.json",
+      "bytes": 45612,
+      "sha256": "d3fd475e7b25e3394daf3ac1fc4087f20ec817da8b15dd2d35b46c658e659af3"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/rally_cost_sensitivity.parquet",
+      "bytes": 27635,
+      "sha256": "bc7fb573bc57d3b4053271e28934124d23dcdc9468eea76ec8d0b9a2819404be"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/reconstructed_events.parquet",
+      "bytes": 1101142,
+      "sha256": "6c455ce5e93645dce329da8af7feb9cb908d2fab106e640b2e53434a1d1d0722"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/RUN.json",
+      "bytes": 35313,
+      "sha256": "3523498dc1934cca6f767d072235b95017139bf94c497148349233bbb95675c2"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/selected_estimator.json",
+      "bytes": 754,
+      "sha256": "ad363c3779ff2311a08f37387c387b4c31673459b62bd2ff38865ff2cedff430"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shot_costs.csv",
+      "bytes": 2111,
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shot_inclusion_decision.csv",
+      "bytes": 318,
+      "sha256": "c4fc85c6d2a4689eef0b7d1b458b68de688d34517b58b9b67cb1a2939068a475"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shot_movement_scale.csv",
+      "bytes": 2957,
+      "sha256": "33121dea62d6f0e67e1b39561123d24ab60b23b171cc7ac17d372735b1068eab"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttle_schema_audit.json",
+      "bytes": 12593,
+      "sha256": "e5cc34324869660c7fa8708eaa45b79d9b137d04478f5c9f67c4792fbf09e0a9"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttleset_correspondence.csv",
+      "bytes": 711,
+      "sha256": "5d3a4386b8648728c6ba4d09875a5ac1b698ba5ac6d35db6d280e459f689af31"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttleset_landing_contact_pairs.parquet",
+      "bytes": 3150342,
+      "sha256": "23816d88a3a6f486a012a60ad495283126684a2f892a2c0caddd5e3e383177a6"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttleset_zone_confusion.csv",
+      "bytes": 715,
+      "sha256": "451c551e9d854ba4d3c0073f73008798926390799072e63e8cbde1e4125b421a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/state_uncertainty.json",
+      "bytes": 453,
+      "sha256": "86178f72569678e7a42fc2a353a1a81fb14c4fee44ca775e7e3a4ac1459c8a0a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/terminal_costs.parquet",
+      "bytes": 32282,
+      "sha256": "fc1d250e083cd37830a03f55982d5b6848c019403976cf1dd3475b12eb828fce"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/terminal_lookup.parquet",
+      "bytes": 84746,
+      "sha256": "8455f44436e46d6b38407dac9094571ca2e1621a6b46484f66276d751c64c427"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/test_comparison.csv",
+      "bytes": 2458,
+      "sha256": "7f1413357da07644ba074301583def90188ea85f0dce24bd8cb151829c636442"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/test_predictions.parquet",
+      "bytes": 56377,
+      "sha256": "a8ca37982d4ee13531dfe4cc123568a6677d71a6ee900bd3f53d2d6d56ad4744"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/validation_grid.csv",
+      "bytes": 17182,
+      "sha256": "e0f8cb96f50c226cb7762107aa0d0775882af7490157bc8c666e497020a09894"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/verification.txt",
+      "bytes": 13170,
+      "sha256": "59e29232791425dbcbdbc860316cdec0ae57e275f08db9e408370fe475ee034b"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/audit.json",
+      "bytes": 66894,
+      "sha256": "2760477bfa80249dbd3b12a11874a77ee8cfe523071dd670a6df9e0a847871cb"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/collaboration-tests.txt",
+      "bytes": 1020,
+      "sha256": "76ec94f7c348943fd5a02a876ec6e058aebf76ad919f8fe16aa94d5f66aac4e3"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/preserved_file_inventory.csv",
+      "bytes": 9046,
+      "sha256": "d8c0f6672702ea9cfefdd6a53654e22c7e7d1873d831b8a348dd8237462608a3"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/RECOVERY.md",
+      "bytes": 2175,
+      "sha256": "1670d7d79e480348e4faf63e8cc3eb64fb307c1493c5d131e87eb049f3f10923"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/research-tests.txt",
+      "bytes": 13021,
+      "sha256": "1b0431ce58cd303ea1465af243dddce02b5a1b263283320c9d2c31d9c9870026"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/RUN.json",
+      "bytes": 2723,
+      "sha256": "a60a122a42ee81033a67e56878dbe85282f6af96a1791389c5a77ba2e08c473b"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/verification_config.json",
+      "bytes": 221,
+      "sha256": "e015fedc0e3ee9e1aadbe55949f1b0421c4c3959d1f5605c43b9b30705ad5ddc"
+    },
+    {
       "path": "AGENTS.md",
-      "bytes": 4568,
-      "sha256": "1029a92f5f8cd96a8106f8f57b51bfc76cb7ec1b106c4a537b64fc8b428771b7"
+      "bytes": 4605,
+      "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -2875,8 +3432,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5376,
-      "sha256": "816361c1f88f83f8e7ff5a2b369930bfb2c1bbbcdb725da3c26b0b5940e18990"
+      "bytes": 6017,
+      "sha256": "eb5915bcaf116878719ac7bc80a4a389efeea9248f3d43475d4b1dbb1b973fd1"
     },
     {
       "path": "requirements-ci.txt",
@@ -2890,8 +3447,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 5681,
-      "sha256": "6f83f3b6ba0c6c8590d1de38c77e24deedbb5f92c31ec0b86c024508b38340b5"
+      "bytes": 6119,
+      "sha256": "88b99e70f6af9041b32ceafcd485b4b8194e813554e1837ec2884d659b70170f"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -2914,5 +3471,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1057453233
+  "uploaded_content_bytes": 1092557722
 }

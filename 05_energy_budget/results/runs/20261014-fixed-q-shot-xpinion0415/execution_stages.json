@@ -1,0 +1,59 @@
+[
+  {
+    "stage": "fit",
+    "status": "numerical_fit_and_200_bootstrap_completed",
+    "code_commit": "31a73dc10d9d02e1746851494a1dd85e16ec0f80",
+    "code_files": [
+      {
+        "path": "05_energy_budget/code/src/fixed_q_terminal.py",
+        "sha256": "ff4b30c8d8f9e82167f5bda28e3954b5a961d0742cc11003d37c3c3413d909fd"
+      },
+      {
+        "path": "05_energy_budget/code/scripts/run_fixed_q_pipeline.py",
+        "sha256": "2a131a4a2bc60736a41156ed1be9f46b3ee3027909ccecde99f9c89ddd65019e"
+      },
+      {
+        "path": "05_energy_budget/code/src/solve_stamina_value.py",
+        "sha256": "7a85b830e510e9f504c14d5ed74b0382940fc42957c501c428444153ddde6e63"
+      }
+    ]
+  },
+  {
+    "stage": "export",
+    "status": "completed_with_train_validation_scope_label",
+    "code_commit": "3b7f030db033a35c63cd4c3827784d1c2bba199a",
+    "code_files": [
+      {
+        "path": "05_energy_budget/code/src/fixed_q_terminal.py",
+        "sha256": "ff4b30c8d8f9e82167f5bda28e3954b5a961d0742cc11003d37c3c3413d909fd"
+      },
+      {
+        "path": "05_energy_budget/code/scripts/run_fixed_q_pipeline.py",
+        "sha256": "419ca19aae596a51266a86aff240f0d635f1d5d7524991a85609cddf0abdf15c"
+      },
+      {
+        "path": "05_energy_budget/code/src/solve_stamina_value.py",
+        "sha256": "7a85b830e510e9f504c14d5ed74b0382940fc42957c501c428444153ddde6e63"
+      }
+    ]
+  },
+  {
+    "stage": "value",
+    "status": "completed_three_budget_scenarios_and_54_queries",
+    "code_commit": "3b7f030db033a35c63cd4c3827784d1c2bba199a",
+    "code_files": [
+      {
+        "path": "05_energy_budget/code/src/fixed_q_terminal.py",
+        "sha256": "ff4b30c8d8f9e82167f5bda28e3954b5a961d0742cc11003d37c3c3413d909fd"
+      },
+      {
+        "path": "05_energy_budget/code/scripts/run_fixed_q_pipeline.py",
+        "sha256": "419ca19aae596a51266a86aff240f0d635f1d5d7524991a85609cddf0abdf15c"
+      },
+      {
+        "path": "05_energy_budget/code/src/solve_stamina_value.py",
+        "sha256": "7a85b830e510e9f504c14d5ed74b0382940fc42957c501c428444153ddde6e63"
+      }
+    ]
+  }
+]

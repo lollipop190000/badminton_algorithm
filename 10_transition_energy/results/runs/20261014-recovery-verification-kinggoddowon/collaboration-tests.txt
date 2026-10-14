@@ -1,0 +1,11 @@
+test_duplicate_topic_numbers_cannot_merge (test_repository_rules.RepositoryRulesTests.test_duplicate_topic_numbers_cannot_merge) ... ok
+test_inventory_detects_changed_bytes_without_losing_provenance (test_repository_rules.RepositoryRulesTests.test_inventory_detects_changed_bytes_without_losing_provenance) ... ok
+test_new_run_cannot_use_placeholder_hashes (test_repository_rules.RepositoryRulesTests.test_new_run_cannot_use_placeholder_hashes) ... ok
+test_rejects_private_generated_and_oversized_files (test_repository_rules.RepositoryRulesTests.test_rejects_private_generated_and_oversized_files) ... ok
+test_reports_require_ordered_sections_and_existing_local_links (test_repository_rules.RepositoryRulesTests.test_reports_require_ordered_sections_and_existing_local_links) ... ok
+test_research_needs_report_but_docs_do_not (test_repository_rules.RepositoryRulesTests.test_research_needs_report_but_docs_do_not) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.005s
+
+OK

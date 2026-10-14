@@ -2,7 +2,7 @@
 
 팀 공동 작업은 [기여 규칙](CONTRIBUTING.md)을 먼저 확인하세요. 개인 브랜치에서 PR을 만들고, 다른 팀원 1명 승인과 자동 검사 통과 후 Squash merge합니다. [연구 보고서 양식](docs/templates/REPORT.md) · [실험 기록 양식](docs/templates/RUN.json) · [Issue 만들기](https://github.com/lollipop190000/badminton_algorithm/issues/new/choose)
 
-연구 요청을 관련 주제별 **8개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
+연구 요청을 관련 주제별 **10개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
 
 | 폴더 | 원인·과정·결과 |
 |---|---|
@@ -10,10 +10,12 @@
 | 02_gru_probability | [GRU 랠리 승리확률 기준모형](02_gru_probability/REPORT.md) |
 | 03_cql_v2_policy | [CQL v2: 문맥과 support를 고려한 전술 추천](03_cql_v2_policy/REPORT.md) |
 | 04_markov_parity | [3타구 패턴 Markov Q·C·K·V](04_markov_parity/REPORT.md) |
-| 05_energy_budget | [누적 이동에너지·잔여 예산 V·타구와 목표 구획 전략](05_energy_budget/REPORT.md) |
+| 05_energy_budget | [누적 이동에너지·잔여 예산 V·타구와 목표 구획 전략](05_energy_budget/REPORT.md) · [고정 Q 샷별 체력 모형](05_energy_budget/code/FIXED_Q_SHOT_MODEL.md) |
 | 06_rally_simulator | [GRU·CQL v2·에너지 전략 히트맵 시뮬레이터](06_rally_simulator/REPORT.md) |
 | 07_policy_ope | [실제 정책을 실행하지 않고 평가하는 OPE](07_policy_ope/REPORT.md) |
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
+| 09_cost_transfer_method | [Markov 이동비용 C_ij 전달 추정 방법(BFMD → ShuttleSet 사건별 적용)](09_cost_transfer_method/REPORT.md) |
+| 10_transition_energy | [셔틀 상태 복원·전체 전이별 양 선수 C](10_transition_energy/REPORT.md) |
 
 ## 실행
 
@@ -44,3 +46,5 @@ GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률�
 
 <!-- energy-strategy-index -->
 에너지 전략 확장은 [05 연구 보고서](05_energy_budget/REPORT.md)와 [06 히트맵 시뮬레이터](06_rally_simulator/REPORT.md)에 통합했다. `python run.py energy-strategy --run-id <고유 ID>`로 기존 모델·비용표에서 큰 격자를 재생성한 후 에너지 전략 탭을 사용한다.
+
+전체 전이 비용 재현: `python run.py transition-energy --download-missing --run-id <새로운-run-id>`. M0·M3 각 2,097,152행을 제공하며, 셔틀 높이·착지 상태와 타구 대사비용의 추정 한계는 [10번 보고서](10_transition_energy/REPORT.md)에 기록했다.

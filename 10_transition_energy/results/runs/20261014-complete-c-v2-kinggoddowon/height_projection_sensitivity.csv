@@ -1,0 +1,3 @@
+receiver_side,n_continuing,raw_plane_valid,corrected_valid,stable_at_height_plus_minus_045m,height_median_m,height_p05_m,height_p95_m
+bottom,5131,181,4118,0,2.2076439380785944,1.4267449286483775,3.246333475281118
+top,5117,1175,3848,10,1.4332810963441682,0.19493181527885742,2.515783134260302

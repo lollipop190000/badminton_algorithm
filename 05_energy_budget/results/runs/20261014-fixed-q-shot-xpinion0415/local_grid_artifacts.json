@@ -1,0 +1,20 @@
+[
+  {
+    "path": "outputs\\fixed_q_grids\\20261014-fixed-q-shot-xpinion0415\\p50.npz",
+    "bytes": 167378572,
+    "sha256": "9707fbf473bb37d6c7ab7ad4c29adb953a863c3829530f3d62bf1bc549e6b2e0",
+    "reason": "full grid retained locally; summary queries and generation code published"
+  },
+  {
+    "path": "outputs\\fixed_q_grids\\20261014-fixed-q-shot-xpinion0415\\p75.npz",
+    "bytes": 168661478,
+    "sha256": "3c6a002cb026195dfcdbdac14d2e543a9166780de928e5360122018bc9664009",
+    "reason": "full grid retained locally; summary queries and generation code published"
+  },
+  {
+    "path": "outputs\\fixed_q_grids\\20261014-fixed-q-shot-xpinion0415\\p95.npz",
+    "bytes": 169138142,
+    "sha256": "10ae0948bbe0c2c5718363c98b0ea2e28bf043b0a05238d6ac4a7aed7d5bbe61",
+    "reason": "full grid retained locally; summary queries and generation code published"
+  }
+]
