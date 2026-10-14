@@ -14,7 +14,7 @@ def repository_files(root=ROOT):
         ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
         cwd=root, check=True, capture_output=True,
     )
-    return sorted(set(p.decode("utf-8") for p in result.stdout.split(b"\0") if p))
+    return sorted(set(p.decode("utf-8") for p in result.stdout.split(b"\0") if p), key=str.casefold)
 
 
 def digest(path):
@@ -50,7 +50,8 @@ def refresh(root=ROOT, check=False):
     else:
         data["file_inventory"] = rows
         data["uploaded_content_bytes"] = total
-        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+        # Preserve the original inventory's CRLF style consistently on every OS.
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\r\n")
     return len(rows), total
 
 
