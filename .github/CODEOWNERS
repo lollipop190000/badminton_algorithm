@@ -1,0 +1,9 @@
+# Shared infrastructure: any one of the current collaborators may review.
+# Topic ownership can be assigned later after the team agrees on responsibilities.
+/.github/ @lollipop190000 @xpinion0415 @kinggoddowon @stkdk247
+/tools/ @lollipop190000 @xpinion0415 @kinggoddowon @stkdk247
+/run.py @lollipop190000 @xpinion0415 @kinggoddowon @stkdk247
+/requirements*.txt @lollipop190000 @xpinion0415 @kinggoddowon @stkdk247
+/AGENTS.md @lollipop190000 @xpinion0415 @kinggoddowon @stkdk247
+/CONTRIBUTING.md @lollipop190000 @xpinion0415 @kinggoddowon @stkdk247
+/.gitattributes @lollipop190000 @xpinion0415 @kinggoddowon @stkdk247

@@ -14,3 +14,7 @@
 현재 주제: 데이터/16구획, GRU, CQL v2, Markov Q/C/K/V, 누적에너지/예산, 랠리 시뮬레이터, OPE, BFMD 운동학.
 
 정리된 GitHub 저장소를 clone해서 작업할 때는 각 주제의 `code/`가 소스 원본이다. 루트 `run.py prepare`가 `.runtime/`에 실행 환경을 조립한다. `.runtime/` 코드를 직접 수정하지 말고 해당 주제의 code를 수정한다. 실행·검증 후 `python run.py sync-results`로 결과를 해당 주제에 모으고 REPORT.md/목차/manifest를 갱신한다. 대체된 파일은 제거하되 다른 주제가 의존하는 파일인지 먼저 확인한다. `scripts/build_github_export.py`는 원래 작업 폴더에서 정리본을 만드는 도구이므로 clone한 저장소 안에서 요구하지 않는다. 감사된 입력·checkpoint의 해시를 보존하도록 `.gitattributes`에서 자동 줄바꿈 변환을 막는다.
+
+## 팀 협업·PR 규칙 (2026-10-14)
+
+이 저장소의 팀 기여는 CONTRIBUTING.md와 .github 양식을 따른다. main에 직접 push하지 않고 개인 브랜치에서 PR을 만든다. 작성자 외 팀원 1명 이상 승인, Repository validation/Research tests 통과, 최신 main 반영과 리뷰 대화 해결 후 squash merge한다. 공통 파일은 CODEOWNERS 검토를 받는다. 관리자도 보호 규칙을 우회하지 않는다. 연구 코드·결과를 바꾸면 해당 REPORT를 갱신한다. 새 실험은 고유 results/runs/<run_id>/와 RUN.json으로 기록하고 기존 결과를 무단 덮어쓰지 않는다. python tools/update_manifest.py로 파일 목록·해시를 갱신하고 python tools/check_repository.py로 검증한다. 기존 과학적 감사 기록을 임의로 다시 썼다고 표현하지 않는다. 협업 정책 파일·자동 검사를 후속 export 과정에서 삭제하거나 누락하지 않는다.

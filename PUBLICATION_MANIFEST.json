@@ -308,6 +308,46 @@
       "sha256": "42effeb0bf5486b5d96e85fc8e919fa85bc64b61dc65f6271d9dc052e514efea"
     },
     {
+      "path": ".github/CODEOWNERS",
+      "bytes": 617,
+      "sha256": "6b81b99635fd78b7cabf454fa90751ccb3a653640001f3f2148424ac375d4866"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "bytes": 681,
+      "sha256": "f3cb042baa66986718fa328034faec83181bd99125d4227d35f747a3bf0a69c7"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "bytes": 28,
+      "sha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/research.yml",
+      "bytes": 905,
+      "sha256": "b917ecdfa5aca44182cf83c596ab8db8aee52fe356d863299705c487c3e2ee4d"
+    },
+    {
+      "path": ".github/main-protection.json",
+      "bytes": 663,
+      "sha256": "5340231791ff61a1b3620034e4aa4e3eca13e4c8d13975e954590dc536eda9b9"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 1205,
+      "sha256": "e14859be3e760f4b43615a485c2437a42a35da777570efdd478598343a1f7f0d"
+    },
+    {
+      "path": ".github/repository-settings.json",
+      "bytes": 247,
+      "sha256": "ec1964212f81fd76c1df2cabf827fc4552f1b812ce11095a177280ac1fa459cc"
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "bytes": 1663,
+      "sha256": "f436385d30c8372f6d097a08c1bcf3ef5793f12c65b0715cacb2d04002ab055f"
+    },
+    {
       "path": ".gitignore",
       "bytes": 110,
       "sha256": "13910ecb19ce67e54cb2723873db1d85b5100eff8c031f75079f87db1e04be2b"
@@ -1439,13 +1479,13 @@
     },
     {
       "path": "06_rally_simulator/code/tests/test_simulator_app.py",
-      "bytes": 5602,
-      "sha256": "01cf0df4cefea8c0f5d040cb50049045014975ce62b16e4e4d4c0daa0111ab4e"
+      "bytes": 6142,
+      "sha256": "35dff133650f27083b7ce51863ea1e4a186d9b4406dadd36e6a863011a240450"
     },
     {
       "path": "06_rally_simulator/REPORT.md",
-      "bytes": 1798,
-      "sha256": "6d705bf02fd9f73e4c08f68e0d6d7059a4b6e9b132ce409a9d57b677c9d49473"
+      "bytes": 2487,
+      "sha256": "a3da3537701ed9150ff5405fbfa00afe7b3725c3a26a8f78a5bcefe20a995b04"
     },
     {
       "path": "06_rally_simulator/results/README.md",
@@ -1984,13 +2024,33 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 3617,
-      "sha256": "59069530aaf7462d5f59b8d68b9f192d521a8d940b9a6fd37dd1b9dca7abe96d"
+      "bytes": 4568,
+      "sha256": "1029a92f5f8cd96a8106f8f57b51bfc76cb7ec1b106c4a537b64fc8b428771b7"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 8429,
+      "sha256": "4a3f5227a2bde389a5269e42aed04620f4e0322f0bc7ef5fff851f4289599821"
+    },
+    {
+      "path": "docs/templates/REPORT.md",
+      "bytes": 958,
+      "sha256": "04a6c5633a2c5f72266a7dfbead92bd228e0e5d4c57beb4a49ae3cc0a26e6a9a"
+    },
+    {
+      "path": "docs/templates/RUN.json",
+      "bytes": 824,
+      "sha256": "0d5510fab737e8e1c7b0190a49a3d772b88158a7f825a8d2a8ab36e068d2dd84"
     },
     {
       "path": "README.md",
-      "bytes": 3913,
-      "sha256": "307ba14e9c2c6187793590ff4698ebca25d2cabad7ac3aecbde9ba1e881cc151"
+      "bytes": 4311,
+      "sha256": "babd8b32244a0d9017f579d3507d1715572eafe533acfbc70461caeb58ee1a92"
+    },
+    {
+      "path": "requirements-ci.txt",
+      "bytes": 376,
+      "sha256": "639a09da36fb6968c84900275dedf98236a595d93e4537e89611c1a9a58678db"
     },
     {
       "path": "requirements.txt",
@@ -2001,9 +2061,29 @@
       "path": "run.py",
       "bytes": 5490,
       "sha256": "37b9e1f10cc2a543597ea7bfe4318d2eedb61fc1236d789ae7cf501d94740b3c"
+    },
+    {
+      "path": "tools/check_github_settings.py",
+      "bytes": 2711,
+      "sha256": "9b0e4899e14db9134a0295027878d3d3b315617512ee2974310ff6a710a47a37"
+    },
+    {
+      "path": "tools/check_repository.py",
+      "bytes": 8655,
+      "sha256": "14eee1bda5ba1f93cc9366871de8e3d2a7972b3a530523917f83fafc2d118f8a"
+    },
+    {
+      "path": "tools/tests/test_repository_rules.py",
+      "bytes": 4474,
+      "sha256": "1c87679e5c1ef005e3c0e7274b1381018935b6dcd4ecf3ec8e3050f5abed4c0f"
+    },
+    {
+      "path": "tools/update_manifest.py",
+      "bytes": 2442,
+      "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 483367378,
+  "uploaded_content_bytes": 483404834,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

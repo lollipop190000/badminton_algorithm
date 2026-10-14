@@ -1,0 +1,58 @@
+name: Team validation
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repository:
+    name: Repository validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Test collaboration validator
+        run: python -m unittest discover -s tools/tests -v
+      - name: Validate layout, Python syntax, report links and artifact hashes
+        run: python tools/check_repository.py
+      - name: Require REPORT updates for research changes
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python tools/check_repository.py --base "$BASE_SHA"
+  research:
+    name: Research tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+      - name: Install CPU verification dependencies
+        run: python -m pip install -r requirements-ci.txt
+      - name: Assemble runtime and test retained code and models
+        env:
+          MPLBACKEND: Agg
+          OMP_NUM_THREADS: '2'
+        run: python run.py test

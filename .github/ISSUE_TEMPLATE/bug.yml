@@ -1,0 +1,18 @@
+name: 오류·재현 문제
+description: 코드·데이터·결과의 문제를 재현 정보와 함께 기록합니다.
+title: "[오류] "
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 재현 명령과 환경
+      description: commit, Python/의존성/장치, 주제, 입력/설정·seed, 실행 명령을 적어 주세요. 토큰이나 개인 정보는 제외하세요.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 기대 결과·실제 결과
+      description: 오류 로그, 산출물 경로, 영향 범위와 기존 정상 기준을 적어 주세요.
+    validations:
+      required: true
