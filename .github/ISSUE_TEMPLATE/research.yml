@@ -1,0 +1,25 @@
+name: 연구·기능 작업
+description: 목적과 담당 범위를 합의하고 중복 작업을 예방합니다.
+title: "[연구] "
+body:
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 목적과 완료 조건
+      description: 검증할 가설, 기존 기준과 완료를 판단할 결과를 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 담당자·주제·수정 범위
+      description: 담당자, 기존 주제 번호 또는 새 번호 제안, 수정할 파일, 다른 주제 의존관계를 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 실행·평가 계획
+      description: 입력/분할, 방법·seed, 결과 경로, 지표와 한계, 동시 작업과의 조정 사항을 적어 주세요.
+    validations:
+      required: true

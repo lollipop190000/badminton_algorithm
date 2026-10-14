@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "run_id": "YYYYMMDD-description-author",
+  "status": "not_run",
+  "code_commit": "REPLACE_WITH_40_CHARACTER_COMMIT_OF_EXECUTED_CODE",
+  "command": "REPLACE_WITH_EXACT_COMMAND_FROM_REPOSITORY_ROOT",
+  "seed": 0,
+  "environment": {"python": "REPLACE", "dependencies": "requirements-ci.txt or recorded environment file", "device": "REPLACE"},
+  "inputs": [{"path_or_source": "REPLACE", "sha256": "REPLACE_WITH_64_CHARACTER_SHA256"}],
+  "config": {"path": "REPLACE", "sha256": "REPLACE_WITH_64_CHARACTER_SHA256"},
+  "split": "REPLACE_WITH_TRAIN_VALIDATION_TEST_DEFINITION",
+  "metrics": {"name": "REPLACE_WITH_DEFINITION_UNIT_AND_UNCERTAINTY"},
+  "outputs": [{"path": "metrics.json", "sha256": "REPLACE_WITH_64_CHARACTER_SHA256"}],
+  "limitations": "REPLACE_WITH_ASSUMPTIONS_AND_UNVALIDATED_CLAIMS"
+}
