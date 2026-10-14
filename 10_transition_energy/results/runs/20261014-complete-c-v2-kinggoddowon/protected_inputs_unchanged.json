@@ -1,0 +1,1137 @@
+{
+  "baseline_commit": "3bd88836c3afa2db7b229ba7784cefede2407ff2",
+  "checked_files": 226,
+  "all_unchanged": true,
+  "files": [
+    {
+      "path": "01_data_16zone/code/DETAILS.md",
+      "sha256": "64af342e0dbbb4c2c188c7f0a8262d957b21b7e3c5abbec0fe21baf55fde3d6d",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/code/scripts/build_processed_dataset.py",
+      "sha256": "fb14fb3602883454327bdfc1507d1aea49236dcba9b3bcda1648788324343fd1",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/code/scripts/download_research_data.py",
+      "sha256": "fd4da0d85aa6c98d5e9dec24a32b573cf75392eedbee1eda8f93a3017c748c42",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/code/src/download_shuttleset22.py",
+      "sha256": "a993042f189c97280b5434eaacd862c06ec4435a15eea988654b268219f01126",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/code/src/inspect_datasets.py",
+      "sha256": "19e8cf9420c0df555ae3e063c4458eda247e43d81162893956f61991332f20eb",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/code/src/merge_datasets.py",
+      "sha256": "200c9631fc7add644056f8fd59ee31a0f8f02fe3c1f4d1132ea66266523a7493",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/code/src/split_matches.py",
+      "sha256": "25339d47c503ccfa49694249af87d4910951a37d2c8884bd3d07ec181612907f",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/REPORT.md",
+      "sha256": "be89323cdc2016056e8e7eb0a15e5bb77a5ba0beb1a704aebd105ce51026e8a8",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/dataset_file_validation.csv",
+      "sha256": "c36888061450b9d2546ece817da003c210c3a54ddc29123c987ad3ee4a519ade",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/dataset_summary_after_processing.csv",
+      "sha256": "adeec99b6f1c9f3c04e4059d14f21664708caf34270b5d2a87c8624c0aa57588",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/dataset_summary_before_processing.csv",
+      "sha256": "ca87238744873ad6a796bd8fbf9cb76b9da1d501b0f642a9358a1d230f095a03",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/elite_player_statistics.csv",
+      "sha256": "86eda11aba31be68385574e5ad8d66392c50ca9f723f6ad21f2f2e9bf92a1a24",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/invalid_rallies_summary.csv",
+      "sha256": "145b840b57ef51f759b99bb05c93cc7bd66fd473d571e9b45701162da1562100",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/pinned_source_verification.json",
+      "sha256": "9c99f4aecbd940eb17fad140438a20fc56557db7021b549578233fc3bf58ff81",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/possible_duplicate_matches.csv",
+      "sha256": "9c25dceff9e6add2429a206802009d9b799aa4e039c89b6a49090bc113528846",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/sanity_checks.csv",
+      "sha256": "10e4565a961c5bee79890b3dc4fa1926b0983f8b662720c3c31135c0fd048d29",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/schema_mapping.csv",
+      "sha256": "48c4616c0c40530089652bfb580925488e12a1e486eb19cff6e92026a00d242f",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/speed_distribution.csv",
+      "sha256": "17cf0f1e48d278de5449fad17ad72f08e840d29069e7875f72fd6a248f583f6a",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/split_exclusions.csv",
+      "sha256": "a857541804e532a5e4784b1493c17ea2df241178d3c0097384e0b2caa1eccca6",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/split_summary.csv",
+      "sha256": "adbcde9a107caa7829b6d8b34d59630d67112e6d6e729620f24ae7da57f8ffc3",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/audit/upstream_tree_reference.json",
+      "sha256": "76808ead35b372d621e135dc7c1c581c28f9abf0555c4d1cc761475c964a8dd7",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/markov_16zone/final_markov_16zone.xlsx",
+      "sha256": "0feccb05999470466f64b16c945f4a260b1822d0bf1e336ec9d7fe7bc4f0cd6f",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/markov_16zone/rallies.csv",
+      "sha256": "827ef6c4dcdfb868d45adbfb68dca09457cbf670a1f2d53e5fe220d8b78d5b23",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/markov_16zone/strokes_clean.csv",
+      "sha256": "d8539d00df14191eacb4f14e96605d1689db3d65fc7c63e005fd8f7c91ea910d",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/markov_16zone/transitions.csv",
+      "sha256": "12b1d22b8bd57878162a33bd856c6dc641d64dbb5767699114f8addca2f05d1a",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/markov_16zone/zone16_layout.png",
+      "sha256": "7b63b08f644477bfc0cef8efb5d1f3292cbbadd7d8e1a545ccc284a62a6887a3",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/processed/merged_elite_QF_SF_F.csv",
+      "sha256": "abc0129e17a1b8520aec6184b9f499bfed2a1750492f6b5e8ed86251157653e9",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/processed/shot_type_mapping.csv",
+      "sha256": "6fc0b9f63f147f05fb120c05bba127fe876a04387b1edfe9b1bd2411051f178b",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/README.md",
+      "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/splits/match_split_manifest.csv",
+      "sha256": "792fe54f6ff757494d99041977d751cb8dd25f37fcef2e916d627425456eeb68",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/splits/test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+      "unchanged": true
+    },
+    {
+      "path": "01_data_16zone/results/splits/validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/code/DETAILS.md",
+      "sha256": "06b5e037b7143365b5d9fee73904f5c2b93109858384e90dd34f41dd811b66b3",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/code/notebooks/zone_markov_strategy.ipynb",
+      "sha256": "0cb5e3a89093d64ddd06516cee7688e913eb94ce923aa5139f2025df2c8bc0a0",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/code/src/estimate_markov_q.py",
+      "sha256": "a67abb264412de34aa388e0b248d904abf06e0ea03ca04cd5c0db2f50daba0d2",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/code/src/estimate_parity_markov.py",
+      "sha256": "d12aaa466c38e903fd861e02a071be58e33519978d2fa81b8b6d7677ed8849a8",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/code/tests/test_markov_q.py",
+      "sha256": "f602a8cc1bcec15d25def3460e52c471ca3ad612e8110e3f3a3f43e82c581ba4",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/code/tests/test_parity_markov.py",
+      "sha256": "a35360be3c87e5eb6f8c2eb33adb344c3ec8d685119fe2739e7d340a5756e9aa",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/REPORT.md",
+      "sha256": "df0695197c388f0b01862612006f6fe5fca58e48adc0187dafe0a282499ec83f",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/diagnostics.json",
+      "sha256": "7da0f4c0eb6f5f8676a995726f0cf31284a239366e11c53829868dc12ee569ba",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/excluded_rallies.csv",
+      "sha256": "39f8c276c3394c0dc8f4cb85c47cf7fbe3d09bcde8eb547d7ec24a280bb38ad4",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/kernel_aggregate.parquet",
+      "sha256": "861ccad2f675ee7e371da0b1e893ca039c2bf7048aa62541510e4aeeeb9de630",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/kernel_components.parquet",
+      "sha256": "cfc9a1f56a07a18959ea5d2176cc9c0c84ef341a94859ec15636a65404b4519e",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/q_aggregate_parity.parquet",
+      "sha256": "2d68b562b93c0d142129407c1bd8a47a7c73e6727443e8953c5205715762e537",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/q_shot_parity.parquet",
+      "sha256": "439cac7ee9fe0792c9befcc24d08ebbbaeb5423173c3f6e58eb7baf1918b8859",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/state_parity_index.parquet",
+      "sha256": "4a2a0721cf01a21077e463b754b09919c7f562ced46123af56c91779e5691d75",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/state_values.parquet",
+      "sha256": "aa5b62db564c86dd79faf24cf3708b82ac5be387e163875bcea53de2370e011d",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/terminal_probabilities_parity.parquet",
+      "sha256": "7dd8fef415ab57e57316fdf5939f04f30afeb204cc58720993a3ce99c64229c5",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/transition_costs.parquet",
+      "sha256": "048d535d4225c5df3042740cfb362dfb0a195f1d1ab812893b98f4935017ff0b",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/validation_alpha_grid.csv",
+      "sha256": "7cceedd8f42b0816faedd97694fa96fc0247e355db48719cd7cdaf90262dfa48",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/validation_tau_grid.csv",
+      "sha256": "a961915cddff4b6e408066104afcc095d87dadb3027376f34d70d15fe5a2b1f8",
+      "unchanged": true
+    },
+    {
+      "path": "04_markov_parity/results/README.md",
+      "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/DETAILS.md",
+      "sha256": "12fe4f5c93e54b701f6ccc3a901dce30d5b8d3103b20b0292876292c5185c1da",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/scripts/run_fatigue_pipeline.py",
+      "sha256": "aaa1565c6a4f4b5fb4c1278c54487aba0fdc7e8ec091e82f3310c962d761e1ff",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/src/build_fatigue_transition.py",
+      "sha256": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/src/fatigue_baseline.py",
+      "sha256": "209a80428ae8bbad53230f029023a2e95c1514c911f5087208fe044121e9afd1",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/src/fatigue_reporting.py",
+      "sha256": "0068082aa099cd239394c7e7103085125ef6aef9086fc3ff2963038e0781d722",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/src/fit_fatigue_terminal.py",
+      "sha256": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/src/reconstruct_rally_energy.py",
+      "sha256": "2b8f9f03356f0fe7862ae8657a17d78ee843db18cc2f73984ab8de298757c684",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/src/solve_stamina_value.py",
+      "sha256": "a69d87d2d32f0eade73b79ade0a1d7175407e6c6eb13029cd8749aa1871ea4fb",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/code/tests/test_fatigue_terminal.py",
+      "sha256": "f44d30a3e69e7ce836d29b6b827b931aba4fb45f4860e43688b3ac8cee7b357e",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/REPORT.md",
+      "sha256": "e68bfe76ce560af99f98274bbd8073c0986b33251ae4019bf8ff938a20afb6c1",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/additional_probability_validation.json",
+      "sha256": "f33547749b378d2c6925daf919bcdb30e7d4a3347890a7e9f6ddbeee77a2f562",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/baseline_final.npz",
+      "sha256": "89f02764a9fad8ef036624ea2bc251b1a554a972b42365b13d48c3bdaea675a0",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/baseline_selection.json",
+      "sha256": "af960c36454fadc63bba82abf6a10efc434cbc8ca72e766d3a014e1d28b43716",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/bootstrap_coefficients.parquet",
+      "sha256": "946a9912ad8c7044c7dcb02d88ebd4d773055f8eac9be856a796ade33855dc1b",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/bootstrap_summary.csv",
+      "sha256": "983690e698ac94f302e51cacc5208ca7753e762fcb2e06fa5ea341552f1f27e6",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/calibration_bins.csv",
+      "sha256": "8435c39e2d91804928db86045fab5167395d419630d6f50e6a78d1dc9ce21725",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/control_model_coefficients.csv",
+      "sha256": "bc0c71c673666fc45d59ee8d84462cca4b32a92b3973cf5302b3a3323e30a27c",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/energy_audit.json",
+      "sha256": "f2ba12ce7a9fe37f98b08385a5f15922bb7fbde63caa1d619c9b49b2f1db4fa4",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/energy_quantile_rates.csv",
+      "sha256": "91b1397ccc3feec7439172be0e148392fd4472f35fd49ab99decdbca44ed7da5",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/event_energy_table.parquet",
+      "sha256": "7a757183f88780b42ce4108184746f57c72069625aa5bb136e525d5106242e88",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/fatigue_fit_diagnostics.json",
+      "sha256": "67f5c6b4bffd78c4a01d48699960df650b0c08dee26da5901851b7b68a9e59de",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/fatigue_model_coefficients.csv",
+      "sha256": "1f3ad6c5fc142a80a36e945c23a8487356fe6220c57cf3087283eb26b111a8a6",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/fatigue_model_predictions.parquet",
+      "sha256": "db18f35ac136eafe7c5d68fb82b214815e09e503ac012131c1a4a7a706504b17",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/fatigue_q_samples.parquet",
+      "sha256": "b507d3ff7c36b13870b459bbe527fc44816831a4a8ca478f1c24387e386b7414",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/fatigue_terminal_samples.parquet",
+      "sha256": "6ffee9f48826e8f2081f6dba694e6274738309e1e6b5227680514d0f7845add8",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/figures/calibration.png",
+      "sha256": "3db363b08460ae42218b920f4f7bcbf2ac409c7c89e616a5dceeea992f97ce3c",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/figures/energy_stratified_rates.png",
+      "sha256": "732c42079952a2803d2c8e62e8d5bef6819049aaa5dff06e9b27ce082799a9c4",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/figures/fatigue_coefficient_intervals.png",
+      "sha256": "2a1fdb6372a4da0f9c226059ffecb933e8ddd261dd1f2e07ef741ca5a533a983",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/figures/shot_hazard_curves.png",
+      "sha256": "bf984d61840d78aca6240603cbffd938504d31fe3d0f26881643d6257cbc3c35",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/held_out_evaluation.json",
+      "sha256": "31fcf4d0041959ef34fea6265f56681dad5f4636b5762e0e3c21b4c222278c86",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/held_out_metrics.csv",
+      "sha256": "0e355b1b20a808c6d2a85e118cbbf6264333182c03a0f52952f8b2eb3c3de8a5",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/history_comparison.csv",
+      "sha256": "02ea2d3cde14ab0ded6903dad7a6ad3ba7c0ed3164bd40f5bb1849ce0b097f94",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/input_protocol.json",
+      "sha256": "1e152c807d571a8859644d65fb2db41165d95fcd7dfdf836d347bde23f63ed11",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/literature_evidence.json",
+      "sha256": "ac34231abe15c5e0a91b032214f69ab9dd13cc0712348bb5377abd38b0000738",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/marginal_terminal_comparison.csv",
+      "sha256": "be34dd38d151c9c7efb4dd56f08d05d165c229e4e02ffeccecb12f10939c08cb",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/model_selection.csv",
+      "sha256": "20050af27458af1d2d813910f858df30353cd7cc466aeaabbbf1e5ad43aef7b1",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_development/model.json",
+      "sha256": "00c284f7e21512a081e193c6817a3e2a0eb2d54f366521b8e03bcc393f2febb8",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_development/parameters.npz",
+      "sha256": "7f2f01a588f7ddea0f345ecb7156c2d0faa55f0c0e958912c9f8e0a0e7f55f2f",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_diagnostic_development/model.json",
+      "sha256": "bff396518bbc9ca1c3df11a46e901a45e242e9e7614de393c32bd67c047832d9",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_diagnostic_development/parameters.npz",
+      "sha256": "864d923c6bc1dd0204dc4e74d51bbdc3a9127ff23ad30adabbbf73e34e7ae308",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_final/model.json",
+      "sha256": "aed1ec4bb4dce0dafba7d46b700e20fa64727935a19d7a0dd4fdaea93044e7f0",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_final/parameters.npz",
+      "sha256": "ad05e2beba5d08c94467e530f49af872bc6beb0e83f8ce2ec9d463cd6434bd18",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_M0_development/model.json",
+      "sha256": "c38bde4e8d6e4799d1f4f409f10eee8e9cfb0cd62c5d6fadababb1c638c249a5",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_M0_development/parameters.npz",
+      "sha256": "3430743a910a9014ad834bde2968f6a3ee49189e2217fb0c777089fee628285a",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_M1_development/model.json",
+      "sha256": "35e398665f5504934487af81a8b53ed4ef563527c56f34785f268d6c7084a617",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_M1_development/parameters.npz",
+      "sha256": "21687288c1723d61b0391deebe8d69ef12dca999cde0b9f50d01bd781c766445",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_M2_development/model.json",
+      "sha256": "989f77f4981c80dec424262f03fc89eb63eb819ea24e7c6165854c9b7f9934c7",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/proxy_M2_development/parameters.npz",
+      "sha256": "e5de3d0858b80618bc2d4b7aba69b7a7738abc505c5f4985f4def367e56667a5",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_development/model.json",
+      "sha256": "82ebc068cc299d9c52a66d659a8be6571e4ebfd833c21c75c4dbe43510e72d0a",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_development/parameters.npz",
+      "sha256": "f4e62e1365423b87454cbb8801bdf643b7627c8a2cd071fd2973e5f9fd50085c",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_diagnostic_development/model.json",
+      "sha256": "1e9f7b78c903243b5e60f4e6f33b378ab9ff26b06ea73665d2cc514007a98972",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_diagnostic_development/parameters.npz",
+      "sha256": "408f5eba4b945fd6d81103a955ea26b2983aea30f84e83bbfc82cc4f31bfe0d5",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_final/model.json",
+      "sha256": "67e84836cdcf3cfbe25dc5a02f56e66e902becd6c9255439aa87518bcc29bc52",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_final/parameters.npz",
+      "sha256": "249fa61b9d0cda9eac81c2c5f73dddce65fca87954f6a7fbd16694c7700c08b1",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_M0_development/model.json",
+      "sha256": "8e478baa712297d4edfd0022eeb4224e0766b7cc179f546e92b8a450e05e3fbe",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_M0_development/parameters.npz",
+      "sha256": "65d4f6dcc1d95aee2bfc281872b3b225b2627292c5f15c4633a7aba77787c379",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_M1_development/model.json",
+      "sha256": "4792a1376417830c736051cc20c28835e5c3357aa0f9b2a5358f29392daa96ee",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_M1_development/parameters.npz",
+      "sha256": "8cde0e7e92018c167fddb027421617b9cddb39c4e0b0c63a93e9bc7ece8856e2",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_M2_development/model.json",
+      "sha256": "3f1535881aff4f87d032760111389f66151a2bbfb0c7702178b21002c232f62c",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/models/strict_M2_development/parameters.npz",
+      "sha256": "27fa54544b7b4db2b2259c6a6494f9fdf7fe9704a249978bc379e5d6535e3635",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/phase_status.json",
+      "sha256": "e493aa31ee113118acad354c9d5039ac88096ee39aef536440f3ff5bc83f81d3",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/research_report.md",
+      "sha256": "7b60212deac2b4a7a24e0951e67673e326eab8a50f7704cf3b32361614454db8",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/shot_support.csv",
+      "sha256": "fe8b987a2653cc197bc8a795de6296e0695206f4825e691cfabcd3975448b65e",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/initial_p50.parquet",
+      "sha256": "f662101a24e5c8893508046d8e290a2f4559dc8eb6c129c700b4e4f65804ebd2",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/initial_p75.parquet",
+      "sha256": "d02a75ecad54849598c3cf727716968278538b7c4490fc5f8dcad77c2b2eaadb",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/initial_p95.parquet",
+      "sha256": "f87385d33bec35f023516c5cfd9059cfd04a1cb4e394f24a89234237ac7524bb",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/protocol.json",
+      "sha256": "4d6b05e934ab36f11e09966d69dfff4d16eab9a2a9c5b8a7f01b45b6a4d2fab5",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/scenario_p50.json",
+      "sha256": "a71522ef8a3b2d3118e5a0769a938ed51e1377c012707135308abefc62de8c19",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/scenario_p75.json",
+      "sha256": "ed98340ce1d3a9f002b8716c81d55b20957ef4fe52c31088024a282ebc073232",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/scenario_p95.json",
+      "sha256": "775090f9879e85887332483f9b5e11ccfddf6451ee32025c183927bc5e4b0b26",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/validation_p50.csv",
+      "sha256": "175179c9fa2ab7d0cb55306782334b0d150935b0353b0c4993515c83bb274375",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/validation_p75.csv",
+      "sha256": "1bcc9379ba4272e067be1b86b1823f22707160ab1221906014dec231e1dd3816",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina/validation_p95.csv",
+      "sha256": "8c3e651323d7923b0c3fe4a173f227716b3d9882122c614e85048a3668a84a52",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina_numerical_validation.csv",
+      "sha256": "23ea8913a94f9460ddefefd0b1ca49918485851507bb076b7965484369dbf90c",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/stamina_value_summary.parquet",
+      "sha256": "fc6d38f1d27f70fcadaef28e129edeeb4f2a47b4b66cc9444b0abc059dfcf27e",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/terminal_event_audit.csv",
+      "sha256": "2b0bcf72a622452c30bf842ef23720bcf9f592ffc49cf9266a0c6b324714402f",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/validation_alpha_grid.csv",
+      "sha256": "86913333515b2dfd2cfc13755be3a71892b59fd5ff9ae29da00d324a9d762854",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/validation_tau_grid.csv",
+      "sha256": "246104f3d54e5cb13bd1779e6d82562778ce5d17332931e2ba4d1036311a91ad",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/baseline_model.npz",
+      "sha256": "89f02764a9fad8ef036624ea2bc251b1a554a972b42365b13d48c3bdaea675a0",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/diagnostics.json",
+      "sha256": "4d3b3c5f038c4ca54281affbc086d48d5be36d7aed55aa21ff899415b5f234e6",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/kernel_aggregate.parquet",
+      "sha256": "803421725836a9062d68837a3a3033700f9f842871c0c3a93fc1b9083f4b40a0",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/kernel_components.parquet",
+      "sha256": "36afc8a177ed58940fa3ac2956eae9ba4ac311e322595f37ef125c1f7a04afaf",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/q_aggregate_parity.parquet",
+      "sha256": "1db4ec93b3652b94ac0bc2fc3059d52cd60be78a689bf1a4ddb254fa57e25d19",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/q_shot_parity.parquet",
+      "sha256": "05baad2c8d05092d811b5c7ec2e83740fba46303fbd0a8d2fe3878b864cc41c9",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/state_parity_index.parquet",
+      "sha256": "ab77c560a8d4481a4f4cbba1cf4f93ff3569d12fbe622169cef7ad1dc11fa610",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/state_values.parquet",
+      "sha256": "bb5e1d054cfc991f32d231ecf59840bfe14c0cb35fe29079a6a5b4e2e17711dc",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/terminal_probabilities_parity.parquet",
+      "sha256": "2fbc809c719ccdf789b5d6bf26cbfb82c0f45f70dece2ecc95b9b027adf77a38",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/markov_parity_pooled/transition_costs.parquet",
+      "sha256": "55c510e2071047bc41fd36647298d60e2e67139b98e4d18507738fdd3092018c",
+      "unchanged": true
+    },
+    {
+      "path": "05_energy_budget/results/README.md",
+      "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/bfmd_zago_config.yaml",
+      "sha256": "a0c374bcc64dcde9ee9d077f876815a977650b6939ea461c40b5063f24938239",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/bfmd_zago_pipeline.py",
+      "sha256": "6806b7090ac8d5a1bae1352ba78ebe45ece4427ccaccc899adae83e82c03b9cf",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/calibration_motion_labels.csv",
+      "sha256": "d757b3b926a770c77bc67d1fdc72889aff95eb47f8ccc63450fd515d2bbb1d4d",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/data_bfmd.py",
+      "sha256": "5adb20d7e0fb86ced743f24a78999685f9e266605446b56c20c6e696dc7c3594",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/download_bfmd.py",
+      "sha256": "5d0b1ce6cd4ec59683ac7ee35b118567a14429f3244a3e7b515b6f3a3f9fc2b5",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/hypothesis_grid.json",
+      "sha256": "d2589f66b2e0cf1b2861dd2ddfcddb21f5c291d93168fed51f3c9c5268c14bbf",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/kinematics.py",
+      "sha256": "b96d2e4272291b2440ae07378abe699ecf92c73b6da79d6ea724386ad0c06ad0",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/lookup.py",
+      "sha256": "d3945d42a1310ef7a13206afec04c4765d8995917ac5b04785ac3f05d4c08ff8",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/README.md",
+      "sha256": "aa381185ad74b06cdda33ad3113519c9f59096fcd40247837dc69568abde22ab",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/references/pugliese_crossref_metadata.json",
+      "sha256": "9ba8e59656cd562a008f92ba8b572f82fe567b976abcd75f748b2679ce031703",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/reporting.py",
+      "sha256": "c478d32cd6583471f8891a9bd5dcff42bde09bbbe616ecea5133aac849241c94",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/requirements_bfmd.txt",
+      "sha256": "dc695b3f8ef51acc4a7e29906478343f6f99c9f99ab82a4abe7d145e9cbf8e0f",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/requirements_status.csv",
+      "sha256": "8617ca0f86282ed1acbfebbc9e526f4e96d1158dde93643f44bb75caf786603d",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/source_access_audit.json",
+      "sha256": "21a5ce86683c428aeef31f8690fa421deb83b072c96bfe61b1e069fe43e76af2",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/bfmd_zago/video_audit.py",
+      "sha256": "5ded0bb03a8215425402aeb2597335f51c561d047b379435f4d34853cd9a56aa",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/code/tests/test_bfmd_zago.py",
+      "sha256": "a83698566724712beef649ac0cee2aadcb8bef741827ee1b73020313a1e0988b",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/REPORT.md",
+      "sha256": "d5cf36501cc263fc8742980523dd77c09bee65aefc854470e158ca7a09007389",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_kinematics_lookup.parquet",
+      "sha256": "c399b99ba8e3b927bd482b90b19b3a7bc9627958131508c873be4c67f6d94389",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_schema_audit.json",
+      "sha256": "7f81f13b768ec26fab73a903000e4e22fc6f5fa33d407dbf8b162970740e8a57",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_shuttleset_categorical_comparison.csv",
+      "sha256": "1642ade04ea80e21abebd0cb6448bc46cdbbfee25f54dc81c3cb00b10eab19b2",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_shuttleset_distribution_comparison.csv",
+      "sha256": "837461d55bb81e5780acf9bb1d515cd3d3c83848fb5d1c4465d48c29adcf4093",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_T_lookup.parquet",
+      "sha256": "14c7f62cd2b09f4856bc5b6ff9e282592a6296e32123fd53b36761ec26e2cd31",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_zago_diagnostics.csv",
+      "sha256": "030e2ef4432bb939252e425f8b41472a4fbe3bcbd7da25474ed54e0d658c0e3b",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_zago_lookup.parquet",
+      "sha256": "c8944618e8d83b9e342f3cec9b34926139d250ec2bb7b577b27a777abf43753a",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_zago_observations.parquet",
+      "sha256": "b2d8d452a472bc1d3847d1fb7c6f6f855310ebfacbd4cbca5c6295fc7383d606",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/bfmd_zago_validation.md",
+      "sha256": "53a9f16f4b40eb3f01e53ca27d61dba05804df5f95893e609578ffe448a6324b",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/calibration/hit_alignment_overlay.png",
+      "sha256": "cd9031b477f88d7eeab21138c8332dd35c13aa67e80dd2907593ceea5439c4e1",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/calibration/manual_motion_labels.csv",
+      "sha256": "d757b3b926a770c77bc67d1fdc72889aff95eb47f8ccc63450fd515d2bbb1d4d",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/calibration/predictions.csv",
+      "sha256": "57f9f2c4f4912be8fa54403099064d93029f2fc3987656ed3cce414ed20287e0",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/calibration/rally_0_review.png",
+      "sha256": "2144420d8c11e636fd912228b2b2201a704cac05b1537b9e4d8f752941762a70",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/calibration/reviewed_video_windows.png",
+      "sha256": "2d1d185a765297e3d9bbd911215b7eab9d02d8b1758b75ec42320b8a86ebd7cf",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/calibration/selected.json",
+      "sha256": "28a3697bfd82b3587b8476ff68708cc8f40ae5cb5936c29ae6175ef074bbf136",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/calibration/selection_grid.csv",
+      "sha256": "31a83d7b2726bc9392be33de99d2f94379953b5eaeb39f204714884ecc7ddd54",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/conditional_means_distance.csv",
+      "sha256": "e2247df4a6b5f79ee6da3b6b79f7f4cb3ddceb1f4a79487663bd47dfc81cf1af",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/conditional_means_distance_direction_role_shot.csv",
+      "sha256": "74356ac9811a170d15762c145fa2ae8ddc5228528d773e31e764933bed0050fa",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/conditional_means_distance_role.csv",
+      "sha256": "168ef6c54b34d279e9bb9dc7afec56ae76f2f5cb6bc41555f4e007b96f7070d3",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/conditional_means_distance_role_shot.csv",
+      "sha256": "15e24196e36c566e1cea08940e0cd0b31f7472b366b8984025518da4601529cf",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/conditional_means_exact_state.csv",
+      "sha256": "8c2e9b7ebc155dc2f5c5b899c6b6e89f61b587e003a8e796efced6ed2c5a2aa7",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/conditional_means_global.csv",
+      "sha256": "27cc922392d205a09ff64ade9e797f2cf7cdcc55cf5f5549373e06bf0b8c74db",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/conditional_means_start_end_zone_role_shot.csv",
+      "sha256": "656d47b3f00acaed6a3221d3c1642a93f3acdbe8a20ffa204a3fc9f55bfdd09b",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/filter_threshold_sensitivity.parquet",
+      "sha256": "c3f9a4522407d26496d29ae16fef23cc4fba2b5247aced48a660bc8c62fdeb72",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/filter_threshold_sensitivity_summary.csv",
+      "sha256": "37264444a2d4251f76a0247a8d5cf0331086c908fa27408cb5f5ba703c3462fc",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/final_integrity_audit.json",
+      "sha256": "fd5f346ca3ee3318fa56332d87c0740ae6817650c476723d73f58c30796b9e55",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/hit_alignment_sensitivity.parquet",
+      "sha256": "705dc73c5fc89ba9358368c31fca9819ac084aaf390344e3a9175855f2e246f9",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/hit_alignment_sensitivity_summary.csv",
+      "sha256": "f027a593a69526dc6a8d7af84e821d8782c88413ede5949654475aa20ed5f151",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/hypothesis_costs.csv",
+      "sha256": "141234e3f679176ea105a1cf1765e0fda9b999cf87123478514710a113f73fbf",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/interval_additivity.csv",
+      "sha256": "1c470ec5214b12ad84822f76d2e513897eb3c71fae33f82f560bcfd504b2393f",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/lookup_export_audit.json",
+      "sha256": "a1c1d81324acb8a68c45306dba970fb19a37b1a8d5260f1d696696467a46bd4b",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/lookup_parameter_groups.csv",
+      "sha256": "93d778f5bf50c0006d439799605f998d2c91c43b9098cc10644fd7e2e05cfaad",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/low_speed_orientation_sensitivity.csv",
+      "sha256": "a8944c75abfc3efc98572ecbd77bb58d0b1b79bc72fa1870b31ca1c50aa54f89",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/match_split_manifest.csv",
+      "sha256": "b583d9a722f4023d830a9fca015b48fec4e43ce4724f1c8abf03df4e34e57bc3",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/metadata_player_side_audit.csv",
+      "sha256": "7b490e46235149f01582b700669b7199e9351f0d99996d7f889858ea5c79c268",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/model_assumption_sensitivity.csv",
+      "sha256": "0dd9f77a358110d3b0431253806722a27cc1f34f1ad62157b0867ea3e9afd941",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/motion_features.parquet",
+      "sha256": "870175c133c48762b6e6c020c0388b255f52d7f9a3aafd378ec2f10969ab880f",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/normalization.json",
+      "sha256": "dacd270949a0adf2e914505eaff5f71f30117efc6ee0f5195f5582acd12d3fc7",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/one_rally_alignment_audit.csv",
+      "sha256": "b6ce3e9c49b2e26af26fdbe4ccdb29120cf7926bbc5dc6e8956b5fa7aa7fd7b2",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/player_overlap_audit.csv",
+      "sha256": "1f6e151c997a626ea54d12d0bc8e5c2c25955813ffbbbda626016bdbbf1ff022",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/plots/filter_threshold_sensitivity.png",
+      "sha256": "a3f97d1143e4506f6c2bf43ad3eed22412662bb0fead0f1000b093bc75df5883",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/plots/kinematic_quality.png",
+      "sha256": "1be593227ba1cc997e6425a1e11ae53342ee59067cc546889ca8685dca4fcf63",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/protected_files_before.json",
+      "sha256": "eae3f9a9de76c9cc60dfab39357ada9bf4e6e9f95c4d24791d3130c892a356bc",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/protected_files_unchanged.json",
+      "sha256": "6e192034700f8be071728b39771c48cf3b4740d5f9735a93351455613748f307",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/proxy_outlier_thresholds.json",
+      "sha256": "f41c7c978ab660f5e93d97c39dec2449854682f6e695609e01ae8fde38bb54f5",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/pugliese_crossref_metadata.json",
+      "sha256": "9ba8e59656cd562a008f92ba8b572f82fe567b976abcd75f748b2679ce031703",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/quality_group_summary.csv",
+      "sha256": "b3258dff5260b8d7ca93032c9ed076f058c796de41cf301380df3768e544259c",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/rally_integrity_audit.csv",
+      "sha256": "26b160c6b5223c3ea1b0a694177dc87de221ca8ff1084f56bf53e046bf3e3db8",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/requirement_completion.csv",
+      "sha256": "67b1d387f35d2813b633444b6fa9e16eff81e3e6d4cc243970ecedd0f70406c0",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/selected_lookup_model.json",
+      "sha256": "3069c059c71756020591a39a1f2587af640e7c8fd0604ef80af5ff18b6778943",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/source_access_audit.json",
+      "sha256": "21a5ce86683c428aeef31f8690fa421deb83b072c96bfe61b1e069fe43e76af2",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/test_error_breakdowns.csv",
+      "sha256": "2259cba503720bd7b4126589797227fc08392dc6ce6bb6b2c168afe52cd44ba4",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/test_execution.txt",
+      "sha256": "a65bd1dde30e1fdb3ce943999e8e58f1fc1b04a570658815d04a383ff46c3eb9",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/test_model_comparison.csv",
+      "sha256": "a82792400c30dd93ffb2c6ce63013399f06106271862cca5ef8a0c0edee70ff0",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/test_predictions.csv",
+      "sha256": "1e2b3750a1672f938d78e3c41da48642d038839857d8dd3aa737db48e85b9ebe",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/test_result.json",
+      "sha256": "b921f4fd2e4a56e0c7bbbc074df3671b693e229e9d83646f3b7ad56f29ea320c",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/validation_model_grid.csv",
+      "sha256": "3ab57273e04ae58b6b27c1066c4abb63b84c29ef96274162eb848eb7104230a5",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/version_manifest.json",
+      "sha256": "3b956e6d08a9395d39cacf54a2a18b0fb26b22eca4616249585e08690c606cb6",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/video_audit_status.json",
+      "sha256": "28d52874efc7f1f9a86f1b4936ea382a8bd6130872f0db991de22403ac4a1dec",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/video_decode_frame_audit.csv",
+      "sha256": "c7d7d4a9dc11d62ec10f709291a909b1b691439a7403ac6f31aec8fc2c6e8162",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/README.md",
+      "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/source_audit/Badminton_video_list.csv",
+      "sha256": "af0d3ab37965759af62ea7fbf64fa35638e4251d6464e37ae0e086834df61398",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/source_audit/download_audit.json",
+      "sha256": "fdd61b31e1e6c1084f25065436735918fe595da66100ed181f492cb7e8194546",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/source_audit/download_manifest.json",
+      "sha256": "967296cd0463bec8befd3a92f0b20b632ac89008b37c46220fbc7e3861eaa3cb",
+      "unchanged": true
+    },
+    {
+      "path": "08_bfmd_kinematics/results/source_audit/official_README.md",
+      "sha256": "dfa6ae87f2fed48ebe81951466a5a8574b4d27588a59be41e480690ce9a0bbbc",
+      "unchanged": true
+    }
+  ]
+}

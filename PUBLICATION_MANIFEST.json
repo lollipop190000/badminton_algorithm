@@ -2171,8 +2171,8 @@
     },
     {
       "path": "10_transition_energy/REPORT.md",
-      "bytes": 20743,
-      "sha256": "3079001e75aaa1f8a9bddde553db7f11f007b172564e92366a6a4b26899b8c93"
+      "bytes": 21452,
+      "sha256": "001d21b5f475c8d308776072545f9c44bc106c7785412e549df6231091de6798"
     },
     {
       "path": "10_transition_energy/results/README.md",
@@ -2300,6 +2300,11 @@
       "sha256": "7ebe318c0857e0241a56245c8e08536b942367308acea5fc4cf7c83cbdde7021"
     },
     {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/protected_inputs_unchanged.json",
+      "bytes": 45612,
+      "sha256": "d3fd475e7b25e3394daf3ac1fc4087f20ec817da8b15dd2d35b46c658e659af3"
+    },
+    {
       "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/rally_cost_sensitivity.parquet",
       "bytes": 27635,
       "sha256": "bc7fb573bc57d3b4053271e28934124d23dcdc9468eea76ec8d0b9a2819404be"
@@ -2311,8 +2316,8 @@
     },
     {
       "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/RUN.json",
-      "bytes": 32368,
-      "sha256": "eab7ac64308b54ae3a1d13ffe891b274f908bc5aa9a3827307f70b40aa34a81c"
+      "bytes": 35313,
+      "sha256": "3523498dc1934cca6f767d072235b95017139bf94c497148349233bbb95675c2"
     },
     {
       "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/selected_estimator.json",
@@ -2385,6 +2390,11 @@
       "sha256": "e0f8cb96f50c226cb7762107aa0d0775882af7490157bc8c666e497020a09894"
     },
     {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/verification.txt",
+      "bytes": 13170,
+      "sha256": "59e29232791425dbcbdbc860316cdec0ae57e275f08db9e408370fe475ee034b"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4605,
       "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
@@ -2445,7 +2455,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 512024541,
+  "uploaded_content_bytes": 512086977,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

@@ -14,7 +14,7 @@
 
 BFMD 단식 12경기의 96개 실제 JSON을 08의 고정 source ID/SHA256와 모두 대조했다. 셔틀·hit·court·프레임 court·bbox·pose·shot timeline·metadata를 읽었다. ShuttleSet/22의 pinned 원본 CSV도 01의 기록과 검증했다. 04 `transition_costs.parquet`의 전체 구조 키를 read-only 참조한다. 원자료·원영상·cache는 게시하지 않는다.
 
-원본 code 버전은 `89d47d7f99d976b7ec1623575a325fcf99eaac76`이며 실행 ID는 `20261014-complete-c-v2-kinggoddowon`이다. 실행 환경·seed·입력/설정/출력 해시는 [실행 기록](results/runs/20261014-complete-c-v2-kinggoddowon/RUN.json)에 있다. 최종 실행은 추출 재사용 없이 원 셔틀과 양 선수 궤적을 다시 계산했다.
+실행한 로컬 code 버전은 `89d47d7f99d976b7ec1623575a325fcf99eaac76`이고, 동일 계산 코드의 GitHub 게시 commit은 `533672a45af9add2d507a6a954ace7b923460930`이다. 실행 코드·설정 bytes의 SHA256 일치를 RUN에 기록했다. 실행 ID는 `20261014-complete-c-v2-kinggoddowon`이다. 실행 환경·seed·입력/설정/출력 해시는 [실행 기록](results/runs/20261014-complete-c-v2-kinggoddowon/RUN.json)에 있다. 최종 실행은 추출 재사용 없이 원 셔틀과 양 선수 궤적을 다시 계산했다.
 
 ```bash
 python run.py transition-energy --download-missing --run-id 20261014-reproduction-yourname
@@ -179,3 +179,7 @@ Validation으로 선정한 도착 구획 계층이 test에서 모든 후보보�
 7. 실제 셔틀 픽셀·양 선수 운동학·문헌 기반 함수·경기 분리·마스킹·bootstrap·전체 키 검증과 재현 코드를 제공했다. 높이 보정의 독립 영상/3D 검증, 8종 타구 respirometry, 경기 비용 보정은 남아 있다. 요청의 정확한 직접 착지 복원 조건을 충족했다고 과장하지 않는다.
 
 저장소의 기존 과학적 감사 기록은 다시 작성하지 않았다. 새 코드/결과/설정/문서는 이 주제와 root 목차·실행 연결·manifest에만 추가한다. main 직접 push/자동 병합은 하지 않고 개인 브랜치 PR로 제출한다.
+
+### 게시 전 검사
+
+최신 main의 09 주제를 보존한 상태에서 연구 테스트 **82개**, 협업 검사 **6개** 통과. 이전 01/04/05/08 파일 **226개**의 SHA256가 baseline과 모두 동일하다. [검사 실행 로그](results/runs/20261014-complete-c-v2-kinggoddowon/verification.txt) · [보호 입력·결과 해시 확인](results/runs/20261014-complete-c-v2-kinggoddowon/protected_inputs_unchanged.json). 파일당 50MiB 제한과 REPORT 상대 링크·문법·실행 ownership·manifest를 검사했다.

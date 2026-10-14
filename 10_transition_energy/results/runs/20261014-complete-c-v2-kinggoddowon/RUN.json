@@ -2,7 +2,7 @@
   "schema_version": 1,
   "run_id": "20261014-complete-c-v2-kinggoddowon",
   "status": "completed",
-  "code_commit": "89d47d7f99d976b7ec1623575a325fcf99eaac76",
+  "code_commit": "533672a45af9add2d507a6a954ace7b923460930",
   "command": "python run.py transition-energy --download-missing --run-id 20261014-complete-c-v2-kinggoddowon",
   "actual_command": "/workspace/scratch/3c5190df1fa1/github_publish/.runtime/src/transition_energy/pipeline.py --download-missing --run-id 20261014-complete-c-v2-kinggoddowon",
   "seed": 20261014,
@@ -689,7 +689,74 @@
       "path": "validation_grid.csv",
       "bytes": 17182,
       "sha256": "e0f8cb96f50c226cb7762107aa0d0775882af7490157bc8c666e497020a09894"
+    },
+    {
+      "path": "verification.txt",
+      "bytes": 13170,
+      "sha256": "59e29232791425dbcbdbc860316cdec0ae57e275f08db9e408370fe475ee034b"
+    },
+    {
+      "path": "protected_inputs_unchanged.json",
+      "bytes": 45612,
+      "sha256": "d3fd475e7b25e3394daf3ac1fc4087f20ec817da8b15dd2d35b46c658e659af3"
     }
   ],
-  "limitations": "arrival/contact court-plane proxies, not verified landing labels; no metabolic labels; M3 beta and eight stroke work scenarios uncalibrated; CI fixed-model match sampling only; no policy optimization"
+  "limitations": "arrival/contact court-plane proxies, not verified landing labels; no metabolic labels; M3 beta and eight stroke work scenarios uncalibrated; CI fixed-model match sampling only; no policy optimization",
+  "executed_local_code_commit": "89d47d7f99d976b7ec1623575a325fcf99eaac76",
+  "code_publication_provenance": {
+    "published_equivalent_source_commit": "533672a45af9add2d507a6a954ace7b923460930",
+    "executed_source_sha256": [
+      {
+        "path": "10_transition_energy/code/configs/transition_energy.json",
+        "sha256": "3eb52b5adc41aed9f61f8f539cc4de00cb4fc9de2905e3de7ac12d2958ab6c25"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/__init__.py",
+        "sha256": "e74a2f325c225211229108dbffddb69d45ec7dd74968d600c28e7cf6e30bc274"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/adapter.py",
+        "sha256": "85a69ae0926ad1c9166dd24b77a896d064fc5024ec9a4d21284cb58dca4f0af4"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/data.py",
+        "sha256": "dbd07b916428b20746b411ce0e65c37caaf60a98143c0a9d295c164635c43c0a"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/estimation.py",
+        "sha256": "1194dcd46f5a0644594853933be4d92a4e7ab7d5e816f08c5bb8fdd9da76aa77"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/export.py",
+        "sha256": "2b8d439321c0188248f1c7d695d6414ddff9800ced7a9980cf89112a8a13166d"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/pipeline.py",
+        "sha256": "f837a571c78ec28cb908ad1693feaae45152ac9ff25b0b6befc4bdd368290285"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/reconstruction.py",
+        "sha256": "a1e8da925ca6e23aea2b21e3c6d2146b601eab3d29b6d00bda400b476c5e547b"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/reporting.py",
+        "sha256": "b644e52b14d75a8e6c4c1c72ab0dc92340a002b1d9b6e3b46b091b15c5998d2f"
+      },
+      {
+        "path": "10_transition_energy/code/src/transition_energy/shot.py",
+        "sha256": "cd160940da6dd15f33bdbbf58935fe449a402a504f86362d538d895f71161d79"
+      },
+      {
+        "path": "10_transition_energy/code/tests/test_transition_energy.py",
+        "sha256": "d6346c8759eca1851050d3a08d9491245e4c90b68771a4ed635bc24438e8beb3"
+      }
+    ],
+    "verification": "All executed calculation/test/config bytes identical to published source; topic folder renamed 09 to 10; root runner additionally preserves latest main topic 09. Publication via GitHub API gives a different commit object identity."
+  },
+  "post_run_verification": {
+    "research_tests": 82,
+    "collaboration_tests": 6,
+    "protected_files_checked": 226,
+    "all_passed": true
+  }
 }
