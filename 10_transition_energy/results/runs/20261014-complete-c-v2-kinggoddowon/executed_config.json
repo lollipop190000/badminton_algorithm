@@ -1,0 +1,39 @@
+{
+  "seed": 20261014,
+  "bootstrap_replicates": 100,
+  "frame_interpolation_radius": 2,
+  "max_shuttle_step_px": 80.0,
+  "contact_height_correction": true,
+  "nominal_player_height_m": 1.8,
+  "contact_height_uncertainty_m": 0.45,
+  "max_net_reprojection_error_px": 5.0,
+  "energy_per_meter": 19.985,
+  "filter_method": "bw3",
+  "motion_threshold_mps": 0.15,
+  "beta_config_id": "M3_unit_accel_curve_hypothesis",
+  "beta": [0.0, 1.0, 0.25, 0.6234],
+  "beta_sensitivity": {
+    "beta0": [0.0, 0.0, 0.0, 0.0],
+    "acceleration_only": [0.0, 1.0, 0.25, 0.0],
+    "curve_only": [0.0, 0.0, 0.0, 0.6234],
+    "prior_example": [0.0, 1.96, 0.41, 0.6234],
+    "half": [0.0, 0.5, 0.125, 0.3117],
+    "double": [0.0, 2.0, 0.5, 1.2468]
+  },
+  "shot_cost_config_id": "racket_work_measured3_pooled5_scenario_v1",
+  "shot": {
+    "inertia_kg_m2": 0.00955,
+    "lever_m": 0.5,
+    "head_speed_mps": 31.94675257361817,
+    "body_mass_kg": 68.6,
+    "positive_efficiency": 0.25,
+    "negative_efficiency_magnitude": 1.2,
+    "unmeasured_upper_body_multiplier": 1.0,
+    "lower": {"inertia_kg_m2": 0.0085, "lever_m": 0.6, "head_speed_mps": 10.0, "body_mass_kg": 85.8, "positive_efficiency": 0.3, "negative_efficiency_magnitude": 1.5, "unmeasured_upper_body_multiplier": 1.0},
+    "upper": {"inertia_kg_m2": 0.0106, "lever_m": 0.4, "head_speed_mps": 63.3, "body_mass_kg": 51.4, "positive_efficiency": 0.2, "negative_efficiency_magnitude": 0.8, "unmeasured_upper_body_multiplier": 3.0}
+  },
+  "negligibility": {"overall_fraction": 0.01, "rally_fraction": 0.05, "required_rally_share": 0.95},
+  "minimum_grid": [1, 3, 5, 10],
+  "tau_grid": [0.0, 1.0, 5.0, 20.0, 100.0],
+  "direct_minimum": 5
+}

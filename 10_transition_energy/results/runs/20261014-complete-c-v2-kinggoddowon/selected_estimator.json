@@ -1,0 +1,45 @@
+{
+  "chain": "arrival_pair_plus_exact",
+  "minimum": 1,
+  "tau": 5.0,
+  "edges": [
+    0.0,
+    0.6776858313223593,
+    0.8326902341016033,
+    1.2444936365279398,
+    2.001373933361978,
+    "inf"
+  ],
+  "selection": "mean validation RMSE standardized by train SD for M0 and M3; match-disjoint reconstructed states",
+  "final_fit": "train+validation; test excluded",
+  "direct_minimum": 5,
+  "base_chain": "arrival_pair",
+  "keys": [
+    [],
+    [
+      "role"
+    ],
+    [
+      "role",
+      "shot_type"
+    ],
+    [
+      "z3",
+      "role",
+      "shot_type"
+    ],
+    [
+      "z3",
+      "shot_target_zone",
+      "role",
+      "shot_type"
+    ],
+    [
+      "state_i",
+      "state_j",
+      "parity",
+      "player",
+      "shot_type"
+    ]
+  ]
+}

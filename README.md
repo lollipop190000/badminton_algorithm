@@ -14,7 +14,7 @@
 | 06_rally_simulator | [팀원이 사용하는 GRU·CQL v2 랠리 시뮬레이터](06_rally_simulator/REPORT.md) |
 | 07_policy_ope | [실제 정책을 실행하지 않고 평가하는 OPE](07_policy_ope/REPORT.md) |
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
-| 09_transition_energy | [셔틀 상태 복원·전체 전이별 양 선수 C](09_transition_energy/REPORT.md) |
+| 10_transition_energy | [셔틀 상태 복원·전체 전이별 양 선수 C](10_transition_energy/REPORT.md) |
 
 ## 실행
 

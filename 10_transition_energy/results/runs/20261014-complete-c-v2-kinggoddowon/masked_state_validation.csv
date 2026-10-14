@@ -1,0 +1,3 @@
+chain,model,masked_exact_groups,n,mae,rmse
+arrival_pair_plus_exact,M0,433,451,10.247756555723038,13.51521213192809
+arrival_pair_plus_exact,M3,433,451,12.684642622014756,18.073204130691117

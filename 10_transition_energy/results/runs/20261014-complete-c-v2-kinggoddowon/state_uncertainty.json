@@ -1,0 +1,9 @@
+{
+  "raw_plane_reconstructed_continuing_events": 1,
+  "nominal_height_reconstructed_continuing_events": 3276,
+  "stable_full_histories_under_height_band": 0,
+  "height_interval_m": 0.45,
+  "interval_is_statistical_CI": false,
+  "independent_landing_zone_accuracy": "unavailable",
+  "decision": "preserve inferred states and observed kinematic conditional means; all state_reconstruction_imputed_flag=true; do not certify exact physical landing labels"
+}

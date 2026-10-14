@@ -1,0 +1,11 @@
+{
+  "v0_train_mps": 3.0492896829408895,
+  "mu_train": [
+    0.9999999999999998,
+    0.739487939259869,
+    0.7091954250915617,
+    0.3226523749202833
+  ],
+  "n_train": 5035,
+  "normalization_population": "fully_observed_mid_rally_train_players_only"
+}
