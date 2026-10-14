@@ -101,6 +101,23 @@
       "tests": [
         "test_cost_transfer_summary.py"
       ]
+    },
+    "10_transition_energy": {
+      "title": "셔틀 상태 복원·전체 전이별 에너지 C",
+      "code": [
+        "src/transition_energy/__init__.py",
+        "src/transition_energy/adapter.py",
+        "src/transition_energy/data.py",
+        "src/transition_energy/estimation.py",
+        "src/transition_energy/export.py",
+        "src/transition_energy/pipeline.py",
+        "src/transition_energy/reconstruction.py",
+        "src/transition_energy/reporting.py",
+        "src/transition_energy/shot.py"
+      ],
+      "tests": [
+        "test_transition_energy.py"
+      ]
     }
   },
   "excluded_categories": [
@@ -2233,6 +2250,336 @@
       "sha256": "f60bb01f91dcfe2e9869bd9a2a3d84b8094c7df238b8f24842a8177dd405e08a"
     },
     {
+      "path": "10_transition_energy/code/configs/transition_energy.json",
+      "bytes": 1671,
+      "sha256": "3eb52b5adc41aed9f61f8f539cc4de00cb4fc9de2905e3de7ac12d2958ab6c25"
+    },
+    {
+      "path": "10_transition_energy/code/DETAILS.md",
+      "bytes": 9491,
+      "sha256": "84eb95eaaa4a396d5dcc4aaaa7c05dd04ae899672eac8c909b7a9ce77c4ac9ce"
+    },
+    {
+      "path": "10_transition_energy/code/scripts/verify_transition_energy.py",
+      "bytes": 5245,
+      "sha256": "17948959f396785f14f9b305e348418144a0cc9949fcba667cb8c4d9f8678bd1"
+    },
+    {
+      "path": "10_transition_energy/code/SOURCES.md",
+      "bytes": 5892,
+      "sha256": "05fcedfedc3ee27aa9e70f6c702719f79f4c3c8bff7a119c510a7e1c89248969"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/__init__.py",
+      "bytes": 70,
+      "sha256": "e74a2f325c225211229108dbffddb69d45ec7dd74968d600c28e7cf6e30bc274"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/adapter.py",
+      "bytes": 2113,
+      "sha256": "85a69ae0926ad1c9166dd24b77a896d064fc5024ec9a4d21284cb58dca4f0af4"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/data.py",
+      "bytes": 8735,
+      "sha256": "dbd07b916428b20746b411ce0e65c37caaf60a98143c0a9d295c164635c43c0a"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/estimation.py",
+      "bytes": 13723,
+      "sha256": "1194dcd46f5a0644594853933be4d92a4e7ab7d5e816f08c5bb8fdd9da76aa77"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/export.py",
+      "bytes": 10086,
+      "sha256": "2b8d439321c0188248f1c7d695d6414ddff9800ced7a9980cf89112a8a13166d"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/pipeline.py",
+      "bytes": 12432,
+      "sha256": "f837a571c78ec28cb908ad1693feaae45152ac9ff25b0b6befc4bdd368290285"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/reconstruction.py",
+      "bytes": 15189,
+      "sha256": "a1e8da925ca6e23aea2b21e3c6d2146b601eab3d29b6d00bda400b476c5e547b"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/reporting.py",
+      "bytes": 3380,
+      "sha256": "b644e52b14d75a8e6c4c1c72ab0dc92340a002b1d9b6e3b46b091b15c5998d2f"
+    },
+    {
+      "path": "10_transition_energy/code/src/transition_energy/shot.py",
+      "bytes": 5703,
+      "sha256": "cd160940da6dd15f33bdbbf58935fe449a402a504f86362d538d895f71161d79"
+    },
+    {
+      "path": "10_transition_energy/code/tests/test_transition_energy.py",
+      "bytes": 7212,
+      "sha256": "d6346c8759eca1851050d3a08d9491245e4c90b68771a4ed635bc24438e8beb3"
+    },
+    {
+      "path": "10_transition_energy/REPORT.md",
+      "bytes": 22757,
+      "sha256": "373fa2b3feadb21604c69a6979a81fbdcfbae0a71d3cf200ab4461ccf80edb22"
+    },
+    {
+      "path": "10_transition_energy/results/README.md",
+      "bytes": 583,
+      "sha256": "eb9c3cf3b5eb171811072a13c089ad7e95fef6c3f4368763ff13bbec8bbb3af1"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/beta_sensitivity.csv",
+      "bytes": 1636,
+      "sha256": "5ca3b5146f01031bb5973e2de590caf48da32d73ecd356d723d965072475ae7b"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/budget_recalibration.csv",
+      "bytes": 734,
+      "sha256": "c8170e84f26f1b94295dbe0ba8662967a4c290adcdce0a0db97fea297f8b6a8a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M0.parquet",
+      "bytes": 9688439,
+      "sha256": "04d609ec843e74a29941fb99cd6a24a06fcc73a273c754d569998c374e5ede97"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M3.parquet",
+      "bytes": 9700663,
+      "sha256": "75177201dd7e120fb620af991a09b1984fc52489705a05c074cc54bccf50fb5e"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/complete_cost_summary.csv",
+      "bytes": 541,
+      "sha256": "e3ae1e88096ac77ebe3eb1fc79eba77e3e616a579635070e1d49343f8767625c"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/complete_table_audit.json",
+      "bytes": 270,
+      "sha256": "171da2bfd1b36487f33a1272b97e173a9582db3319111e1b2b93c2108c792e94"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/diagnostics.png",
+      "bytes": 110527,
+      "sha256": "d8b590f7bd9dc4d471eb35e0b35346d81b27911062a899d480ae5e68eca5d440"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/estimation_method_counts.csv",
+      "bytes": 194,
+      "sha256": "ddd441d9e0d6e3f6ebf0927313281e4064644c4e05f53d2d86fc423a8dd5ba50"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/exact_augmentation_validation.csv",
+      "bytes": 138,
+      "sha256": "decad4006b5ff02aa9176968ebf99715f057b05fe97433f0d51da38d7bbfe64a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/exact_conditional_means.parquet",
+      "bytes": 83363,
+      "sha256": "62cfbf214532517c560f0a91ba3197a2bb9eccfe714c6500f81aca36c89df6f8"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/exact_state_evidence.parquet",
+      "bytes": 22630,
+      "sha256": "5f8b69475f536ea736c0a1df0eac97d72a54e2ba34f008b5b8b2afa4b552e86d"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/executed_config.json",
+      "bytes": 1671,
+      "sha256": "3eb52b5adc41aed9f61f8f539cc4de00cb4fc9de2905e3de7ac12d2958ab6c25"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/fresh_vs_08_kinematics.csv",
+      "bytes": 268,
+      "sha256": "ffd4ed28c3f76c574713d1e62ad36955cf0abadd3a384494db80244453f104a7"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/height_projection_sensitivity.csv",
+      "bytes": 292,
+      "sha256": "458c13ed27499bdeb026cea0eb88a9382b7549d1b9596c1ca667a04c04d9906f"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/input_bfmd_hashes.json",
+      "bytes": 26738,
+      "sha256": "933888eb277a54a6885dea8779fd6686e2467b98aa81307f9d471927d2494a9a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/input_ShuttleSet22_hashes.json",
+      "bytes": 46317,
+      "sha256": "574f97251fe9aff0a13a977c318eb8eef9057c11e7246a435c1e0a2883999f04"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/input_ShuttleSet_hashes.json",
+      "bytes": 34717,
+      "sha256": "7f1c79d60de672cb92468973b54b51895a06a060d0dd664e6d2a73266ceefced"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/masked_state_validation.csv",
+      "bytes": 188,
+      "sha256": "5dcfedc0675b7509a0176c2a31a7de1754d48abaf2a99599594253d88381dfb4"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/match_split_manifest.csv",
+      "bytes": 3011,
+      "sha256": "b12e8a5d039e98ea364b3193eb4a6c141f9da5ac543366cfc4fb885cb81702ad"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/metrics.json",
+      "bytes": 1773,
+      "sha256": "a19417a8060582f2f1fa9fa7a356c7e20b7141007a39b8ef7bed205e10b4ec78"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/movement_observations.parquet",
+      "bytes": 3832543,
+      "sha256": "d20748781ff563a13e53f72d204037c9a64c09d63d83207e4563a01ac9c39d13"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/normalization.json",
+      "bytes": 251,
+      "sha256": "e6c1b9a9db3e27c5e0135ce8b8076aa91857c1ef31576ab5842f2ab25342ae93"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/observed_cost_summary.csv",
+      "bytes": 4762,
+      "sha256": "a2baea6a0540835f7ad61006687eab69adb9f513ab921fa2fea626852a5a2ff4"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/prediction_parameters.parquet",
+      "bytes": 364266,
+      "sha256": "7ebe318c0857e0241a56245c8e08536b942367308acea5fc4cf7c83cbdde7021"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/protected_inputs_unchanged.json",
+      "bytes": 45612,
+      "sha256": "d3fd475e7b25e3394daf3ac1fc4087f20ec817da8b15dd2d35b46c658e659af3"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/rally_cost_sensitivity.parquet",
+      "bytes": 27635,
+      "sha256": "bc7fb573bc57d3b4053271e28934124d23dcdc9468eea76ec8d0b9a2819404be"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/reconstructed_events.parquet",
+      "bytes": 1101142,
+      "sha256": "6c455ce5e93645dce329da8af7feb9cb908d2fab106e640b2e53434a1d1d0722"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/RUN.json",
+      "bytes": 35313,
+      "sha256": "3523498dc1934cca6f767d072235b95017139bf94c497148349233bbb95675c2"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/selected_estimator.json",
+      "bytes": 754,
+      "sha256": "ad363c3779ff2311a08f37387c387b4c31673459b62bd2ff38865ff2cedff430"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shot_costs.csv",
+      "bytes": 2111,
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shot_inclusion_decision.csv",
+      "bytes": 318,
+      "sha256": "c4fc85c6d2a4689eef0b7d1b458b68de688d34517b58b9b67cb1a2939068a475"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shot_movement_scale.csv",
+      "bytes": 2957,
+      "sha256": "33121dea62d6f0e67e1b39561123d24ab60b23b171cc7ac17d372735b1068eab"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttle_schema_audit.json",
+      "bytes": 12593,
+      "sha256": "e5cc34324869660c7fa8708eaa45b79d9b137d04478f5c9f67c4792fbf09e0a9"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttleset_correspondence.csv",
+      "bytes": 711,
+      "sha256": "5d3a4386b8648728c6ba4d09875a5ac1b698ba5ac6d35db6d280e459f689af31"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttleset_landing_contact_pairs.parquet",
+      "bytes": 3150342,
+      "sha256": "23816d88a3a6f486a012a60ad495283126684a2f892a2c0caddd5e3e383177a6"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shuttleset_zone_confusion.csv",
+      "bytes": 715,
+      "sha256": "451c551e9d854ba4d3c0073f73008798926390799072e63e8cbde1e4125b421a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/state_uncertainty.json",
+      "bytes": 453,
+      "sha256": "86178f72569678e7a42fc2a353a1a81fb14c4fee44ca775e7e3a4ac1459c8a0a"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/terminal_costs.parquet",
+      "bytes": 32282,
+      "sha256": "fc1d250e083cd37830a03f55982d5b6848c019403976cf1dd3475b12eb828fce"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/terminal_lookup.parquet",
+      "bytes": 84746,
+      "sha256": "8455f44436e46d6b38407dac9094571ca2e1621a6b46484f66276d751c64c427"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/test_comparison.csv",
+      "bytes": 2458,
+      "sha256": "7f1413357da07644ba074301583def90188ea85f0dce24bd8cb151829c636442"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/test_predictions.parquet",
+      "bytes": 56377,
+      "sha256": "a8ca37982d4ee13531dfe4cc123568a6677d71a6ee900bd3f53d2d6d56ad4744"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/validation_grid.csv",
+      "bytes": 17182,
+      "sha256": "e0f8cb96f50c226cb7762107aa0d0775882af7490157bc8c666e497020a09894"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/verification.txt",
+      "bytes": 13170,
+      "sha256": "59e29232791425dbcbdbc860316cdec0ae57e275f08db9e408370fe475ee034b"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/audit.json",
+      "bytes": 66894,
+      "sha256": "2760477bfa80249dbd3b12a11874a77ee8cfe523071dd670a6df9e0a847871cb"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/collaboration-tests.txt",
+      "bytes": 1020,
+      "sha256": "76ec94f7c348943fd5a02a876ec6e058aebf76ad919f8fe16aa94d5f66aac4e3"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/preserved_file_inventory.csv",
+      "bytes": 9046,
+      "sha256": "d8c0f6672702ea9cfefdd6a53654e22c7e7d1873d831b8a348dd8237462608a3"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/RECOVERY.md",
+      "bytes": 2175,
+      "sha256": "1670d7d79e480348e4faf63e8cc3eb64fb307c1493c5d131e87eb049f3f10923"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/research-tests.txt",
+      "bytes": 13021,
+      "sha256": "1b0431ce58cd303ea1465af243dddce02b5a1b263283320c9d2c31d9c9870026"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/RUN.json",
+      "bytes": 2723,
+      "sha256": "a60a122a42ee81033a67e56878dbe85282f6af96a1791389c5a77ba2e08c473b"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-recovery-verification-kinggoddowon/verification_config.json",
+      "bytes": 221,
+      "sha256": "e015fedc0e3ee9e1aadbe55949f1b0421c4c3959d1f5605c43b9b30705ad5ddc"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4605,
       "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
@@ -2254,8 +2601,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4543,
-      "sha256": "77f979f89fc54a5a17d3d4592d22c987ce8852c1e699e6e46e378763b8805a26"
+      "bytes": 4952,
+      "sha256": "9f8c6f39013ecb748d3c8ac51ac8b933b0cddfa077cc63a72e651af9d30dd4d4"
     },
     {
       "path": "requirements-ci.txt",
@@ -2269,8 +2616,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 5670,
-      "sha256": "6fdcddef1ebde6b4971a82b0a6d2ffb022a2339aa8c3fc2d050fb90a64e07eaf"
+      "bytes": 5803,
+      "sha256": "b4555be6ff6925b5eb78ccbf436a07da0ed03f8645658b26725f03328b468d5b"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -2293,7 +2640,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 489776471,
+  "uploaded_content_bytes": 518509198,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

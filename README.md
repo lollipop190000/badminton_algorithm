@@ -2,7 +2,7 @@
 
 팀 공동 작업은 [기여 규칙](CONTRIBUTING.md)을 먼저 확인하세요. 개인 브랜치에서 PR을 만들고, 다른 팀원 1명 승인과 자동 검사 통과 후 Squash merge합니다. [연구 보고서 양식](docs/templates/REPORT.md) · [실험 기록 양식](docs/templates/RUN.json) · [Issue 만들기](https://github.com/lollipop190000/badminton_algorithm/issues/new/choose)
 
-연구 요청을 관련 주제별 **9개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
+연구 요청을 관련 주제별 **10개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
 
 | 폴더 | 원인·과정·결과 |
 |---|---|
@@ -15,6 +15,7 @@
 | 07_policy_ope | [실제 정책을 실행하지 않고 평가하는 OPE](07_policy_ope/REPORT.md) |
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
 | 09_cost_transfer_method | [Markov 이동비용 C_ij 전달 추정 방법(BFMD → ShuttleSet 사건별 적용)](09_cost_transfer_method/REPORT.md) |
+| 10_transition_energy | [셔틀 상태 복원·전체 전이별 양 선수 C](10_transition_energy/REPORT.md) |
 
 ## 실행
 
@@ -40,3 +41,5 @@ GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률�
 ## 앞으로의 GitHub 업로드 규칙
 
 이 구조를 계속 유지한다. 새로운 요청은 관련 주제에 통합하거나 다음 번호의 새 폴더를 만든다. 각 폴더의 원인·과정·결과와 실제 표·실행 방법을 갱신하고, 대체된 버전은 현행 게시 대상에서 제외한다. 구체적인 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 포함·제외 내역은 [PUBLICATION_MANIFEST.json](PUBLICATION_MANIFEST.json)에 있다. 큰 CSV와 같은 내용을 보존하는 완전 Parquet는 남겼으며 전체 결과 대신 작은 표본만 저장한 것으로 설명하지 않는다.
+
+전체 전이 비용 재현: `python run.py transition-energy --download-missing --run-id <새로운-run-id>`. M0·M3 각 2,097,152행을 제공하며, 셔틀 높이·착지 상태와 타구 대사비용의 추정 한계는 [10번 보고서](10_transition_energy/REPORT.md)에 기록했다.

@@ -1,0 +1,3 @@
+model,n_complete_player_rallies,upper_overall_fraction,share_below_5_percent,negligible_under_declared_scenario,final_decision
+M0,197,0.42456279019842297,0.14720812182741116,False,included_as_explicit_uncalibrated_scenario
+M3,190,0.4244187901500694,0.14736842105263157,False,included_as_explicit_uncalibrated_scenario

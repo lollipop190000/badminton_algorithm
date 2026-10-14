@@ -1,0 +1,12 @@
+{
+  "structural_transitions": 1048576,
+  "rows_per_model": {
+    "M0": 2097152,
+    "M3": 2097152
+  },
+  "missing_or_duplicate_keys": 0,
+  "valid_sliding_states": true,
+  "parity_flip": true,
+  "all_costs_finite_nonnegative": true,
+  "full_population_not_sample": true
+}

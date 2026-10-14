@@ -1,0 +1,5 @@
+feature,joined_player_intervals,both_valid,missing_pattern_difference,max_absolute_difference
+L_m,19922,10056,0,3.6415315207705135e-14
+Xplus_m,19922,9813,0,1.8474111129762605e-13
+Xminus_m,19922,9813,0,1.412203687323199e-13
+Xcurve_m,19922,9813,0,1.3589129821411916e-13

@@ -1,0 +1,7 @@
+cohort,dataset,n_pairs,n_coordinate_pairs,n_both_valid_zones,zone_agreement,projection_distance_mean_m,projection_distance_median_m,projection_distance_p95_m,pixel_distance_median
+all_original,all,80204,78278,78013,0.9999743632471512,0.00043079450829616316,0.0,0.0,0.0
+all_original,ShuttleSet,32795,31690,31564,0.9999366366746927,0.0010641127333672156,0.0,0.0,0.0
+all_original,ShuttleSet22,47409,46588,46449,1.0,0.0,0.0,0.0,0.0
+selected_research_cohort,all,57521,57518,57421,0.9999651695372773,0.0005809798913080415,0.0,0.0,0.0
+selected_research_cohort,ShuttleSet,21452,21450,21409,0.9999065813442944,0.0015578928386133302,0.0,0.0,0.0
+selected_research_cohort,ShuttleSet22,36069,36068,36012,1.0,0.0,0.0,0.0,0.0
