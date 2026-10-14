@@ -17,6 +17,8 @@ from .reconstruction import reconstruct
 from .estimation import fit
 from .shot import scale_analysis
 from .export import export_all, terminal_costs
+from src.estimate_markov_q import MID_RALLY_ACTIONS
+from .reporting import diagnostics
 
 
 def ensure_inputs(root):
@@ -43,7 +45,7 @@ def ensure_inputs(root):
 
 
 def sensitivity(obs,norm,config,out):
-    d=obs[obs.feature_valid&obs.stroke_no.ge(4)].copy()
+    d=obs[obs.feature_valid&obs.stroke_no.ge(4)&obs.shot_type.isin(MID_RALLY_ACTIONS)].copy()
     x=d[['Xv_m','Xplus_m','Xminus_m','Xcurve_m']].to_numpy();mu=np.array(norm['mu_train'])
     rows=[]
     for name,beta in {config['beta_config_id']:config['beta'],**config['beta_sensitivity']}.items():
@@ -97,6 +99,21 @@ def validation(events,obs,retained,out):
     return metrics
 
 
+def budget_analysis(obs,legacy,out):
+    old=pd.read_parquet(legacy,columns=['parity','state_i','state_j','shot_type','cost_self_j_per_kg','cost_opp_j_per_kg'])
+    joined=obs.merge(old,on=['parity','state_i','state_j','shot_type'],how='left',validate='many_to_one')
+    joined['legacy_C']=np.where(joined.player.eq('A'),joined.cost_self_j_per_kg,joined.cost_opp_j_per_kg)
+    rows=[]
+    for model in ['M0','M3']:
+        d=joined[joined[model].notna()&joined.legacy_C.notna()]
+        for player,part in d.groupby('player'):
+            rows.append(dict(model=model,player=player,n_reconstructed_valid_intervals=len(part),
+                legacy_C_sum_J_per_kg=part.legacy_C.sum(),new_movement_sum_J_per_kg=part[model].sum(),
+                ratio_new_movement_to_legacy=part[model].sum()/part.legacy_C.sum(),
+                interpretation='matched_kinematic_events_vs_legacy_conditional_distance_prior_not_budget_multiplier'))
+    pd.DataFrame(rows).to_csv(out/'budget_recalibration.csv',index=False)
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--run-id',default='20261014-complete-c-kinggoddowon')
@@ -130,13 +147,16 @@ def main():
         obs,norm=movement(args.bfmd_root,events,config,out)
     m=validation(events,obs,ROOT/'outputs/bfmd_zago/motion_features.parquet',out)
     sensitivity(obs,norm,config,out)
+    budget_analysis(obs,legacy,out)
     if args.stage!='extract':
         print('Select fallback hierarchy and bootstrap development matches',flush=True)
         cfg,params,development=fit(obs,legacy,config,out)
         shot=scale_analysis(obs,events,config,out)
+        diagnostics(events,obs,out)
         print('Export full structural costs (4,194,304 rows total)',flush=True)
         m['complete_table']=export_all(legacy,cfg,params,shot,config,out)
         terminal_costs(events,shot,out)
+        m['terminal_lookup_rows']=131072
         for model in ['M0','M3']:
             exact=pd.read_parquet(out/'exact_conditional_means.parquet')
             m[model+'_exact_supported_player_keys']=int(exact[model+'_n'].gt(0).sum())

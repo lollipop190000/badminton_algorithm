@@ -20,6 +20,7 @@ SEEDS={
  '07_policy_ope/results/ope':'outputs/ope_cql_v2_frame_audited',
  '08_bfmd_kinematics/results/bfmd_zago':'outputs/bfmd_zago',
  '08_bfmd_kinematics/results/source_audit':'raw/BFMD',
+ '09_transition_energy/results/runs':'outputs/transition_energy/runs',
 }
 COMMANDS={
  'download-data':['scripts/download_research_data.py'],

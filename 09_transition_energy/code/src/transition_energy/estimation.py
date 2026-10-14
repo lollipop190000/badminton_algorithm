@@ -156,6 +156,28 @@ def fit(obs, legacy, config, out):
             rows.append(dict(chain=cfg['chain'],cohort='reconstructed',model=c,**metrics(t[c],pp)))
         pd.DataFrame(rows).to_csv(out/'test_comparison.csv',index=False)
     cfg['keys']=chain
+    # Persist predictions for the ACTUAL final selected/augmented estimator,
+    # including the all-QC population; do not leave base-chain predictions under
+    # a filename that could be mistaken for final-model evaluation.
+    final_train_model=Hierarchy(tr,chain)
+    rows=[row for row in rows if row['chain']!=cfg['chain']]
+    predictions=[]
+    for cohort,t in [('reconstructed',test[test.exact_state_available & test.feature_valid]),('all_valid_movement',test)]:
+        for c in ['M0','M3']:
+            q=t[t[c].notna()];pred,lev=final_train_model.predict(q,cfg['minimum'],cfg['tau'],c)
+            rows.append(dict(chain=cfg['chain'],cohort=cohort,model=c,**metrics(q[c],pred)))
+            p=q[['match_name','rally_id','stroke_no','player','shot_type','state_i','state_j','parity']].copy()
+            p['model']=c;p['cohort']=cohort;p['chain']=cfg['chain'];p['target']=q[c].to_numpy();p['prediction']=pred;p['level']=lev
+            predictions.append(p)
+    pd.DataFrame(rows).to_csv(out/'test_comparison.csv',index=False)
+    pd.concat(predictions,ignore_index=True).to_parquet(out/'test_predictions.parquet',index=False)
+    if len(exact_train):
+        masks=pd.MultiIndex.from_frame(tr[EXACT]).isin(pd.MultiIndex.from_frame(masked))
+        hm=Hierarchy(tr[~masks],chain);query=tr[masks];mm=[]
+        for c in ['M0','M3']:
+            q=query[query[c].notna()];pp,_=hm.predict(q,cfg['minimum'],cfg['tau'],c)
+            mm.append(dict(chain=cfg['chain'],model=c,masked_exact_groups=len(masked),**metrics(q[c],pp)))
+        pd.DataFrame(mm).to_csv(out/'masked_state_validation.csv',index=False)
     model=Hierarchy(final_data,chain)
     # Union of observed groups (not millions of unobserved transition keys).
     qs=[];level_slices=[];offset=0
@@ -190,5 +212,10 @@ def fit(obs, legacy, config, out):
     keep=sorted(set(sum(chain,[])))+['parameter_level']+[c+'_'+s for c in ['M0','M3'] for s in ['prediction','ci_low','ci_high','n','std','matches','mean']]
     params[keep].to_parquet(out/'prediction_parameters.parquet',index=False)
     model.tables[-1].reset_index().to_parquet(out/'exact_conditional_means.parquet',index=False)
+    evidence=final_data[final_data.exact_state_available].groupby(EXACT,observed=True).agg(
+        n_pixel_observed_history=('history_all_coordinate_observed','sum'),
+        n_height_stable_history=('history_height_zone_stable','sum'),
+        n_intervals=('match_name','size'),n_matches=('match_name','nunique')).reset_index()
+    evidence.to_parquet(out/'exact_state_evidence.parquet',index=False)
     (out/'selected_estimator.json').write_text(json.dumps(cfg,indent=2),encoding='utf-8')
     return cfg,params,final_data

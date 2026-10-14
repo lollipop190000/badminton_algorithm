@@ -133,4 +133,17 @@ def terminal_costs(events,shot,out):
                 accounting='no_outgoing_interval;incoming_move_charged_once_on_previous_continuing_transition',
                 terminal_quality='last_inferred_hit_not_independent_winner_error_ground_truth'))
     t=pd.DataFrame(rows);t.to_parquet(out/'terminal_costs.parquet',index=False)
+    lookup=[]
+    states=np.repeat(np.arange(4096,dtype='int16'),8)
+    actions=np.tile(np.array(MID_RALLY_ACTIONS),4096)
+    for r in [0,1]:
+        for player in ['A','B']:
+            values=charge_shot(np.repeat(r,len(states)),np.repeat(player,len(states)),table.loc[actions,'C_shot_J_per_kg'].to_numpy())
+            lookup.append(pd.DataFrame(dict(i=states,r=r,s=actions,player=player,
+                C_movement_J_per_kg=0.,C_shot_J_per_kg=values,C_total_J_per_kg=values,
+                accounting='outgoing_interval_absent;incoming_cost_already_on_previous_transition',
+                outcome_dependence='same_terminal_swing_cost_for_WIN_and_LOSS',
+                shot_cost_config_id=shot.shot_cost_config_id.iloc[0],
+                imputed_flag=True)))
+    pd.concat(lookup,ignore_index=True).to_parquet(out/'terminal_lookup.parquet',index=False)
     return t
