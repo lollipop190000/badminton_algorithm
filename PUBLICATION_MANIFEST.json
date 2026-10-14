@@ -2054,13 +2054,38 @@
     },
     {
       "path": "09_cost_transfer_method/REPORT.md",
-      "bytes": 3877,
-      "sha256": "b7ec9f2d27db14ccf5ab2847a39057f931fe7153c326d301c32fefc2cf38271d"
+      "bytes": 6742,
+      "sha256": "d7a5f2a7f156681f83de5506ee2b552429fcd0aad4fd4472cc490036d8eefd55"
     },
     {
       "path": "09_cost_transfer_method/results/README.md",
       "bytes": 193,
       "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_distance_bin.csv",
+      "bytes": 448,
+      "sha256": "e3ff6bd9c9e2a488df777deb5409407894579b43c984639d80bc98562784dff5"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_role.csv",
+      "bytes": 166,
+      "sha256": "616ff4fbb61d53ea4ee71f67bbf49b61d40094db21940abdd1ccbc5bc7fba606"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/excess_by_shot.csv",
+      "bytes": 454,
+      "sha256": "87df8e3d7f23fb968cdcde0dd0becabfea7b1da7a25e9b2d5bdbb3f3ccecffd0"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/metrics.json",
+      "bytes": 809,
+      "sha256": "c325cb04f4b4f90dc9979f49471eea256bd05e7fbe4fd67ecf47126fabb3270c"
+    },
+    {
+      "path": "09_cost_transfer_method/results/runs/20261014-bfmd-excess-distance-claude/RUN.json",
+      "bytes": 2570,
+      "sha256": "f60bb01f91dcfe2e9869bd9a2a3d84b8094c7df238b8f24842a8177dd405e08a"
     },
     {
       "path": "AGENTS.md",
@@ -2123,7 +2148,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 483449460,
+  "uploaded_content_bytes": 483456772,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

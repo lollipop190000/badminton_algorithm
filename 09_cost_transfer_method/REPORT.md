@@ -24,8 +24,22 @@ x = (직선 변위 d, 전이 시간 Δt, 직전 변위와의 각 ψ, 역할, 시
 
 ## 3. 결과
 
+실행 기록은 [RUN.json](results/runs/20261014-bfmd-excess-distance-claude/RUN.json)(코드 commit d65d83a, 입력·설정 SHA256, 출력 해시)이다. 04의 현재 C는 직선 변위 d를 그대로 쓰므로 기준선은 "L = d"(비 1, 초과분 0)로 둔다.
+
 | 지표 / 단위 | 기준선 | 이번 결과 | 표본 수 / 구간 | 실제 산출물 |
 |---|---:|---:|---|---|
-| 실행 전에는 미실행 | NA | NA | NA | 실행 후 링크 추가 |
+| ΣL / Σd (배) | 1 | 1.447 | 7,206 전이 (train 5,035 · validation 1,225 · test 946) | [metrics.json](results/runs/20261014-bfmd-excess-distance-claude/metrics.json) |
+| 전이별 L/d 중앙값 (배) | 1 | 1.381 | 7,206, 10–90% 분위 1.06–2.93 | [metrics.json](results/runs/20261014-bfmd-excess-distance-claude/metrics.json) |
+| d ≤ 0.25 m 전이의 평균 L − d (m) | 0 | 0.427 | 696 | [d 구간표](results/runs/20261014-bfmd-excess-distance-claude/excess_by_distance_bin.csv) |
+| 위 초과분 × 19.985 (J/kg) | 0 | 8.5 | 696 | [metrics.json](results/runs/20261014-bfmd-excess-distance-claude/metrics.json) |
+| d > 3 m 전이의 평균 L − d (m) | 0 | 0.619 | 262 | [d 구간표](results/runs/20261014-bfmd-excess-distance-claude/excess_by_distance_bin.csv) |
+| 역할별 평균 L − d (m) | 0 | 타구자 0.509 · 리시버 0.521 | 3,838 · 3,368 | [역할별](results/runs/20261014-bfmd-excess-distance-claude/excess_by_role.csv) |
+| L < d인 전이 비율 | 0 | 0.24% | 7,206 | [metrics.json](results/runs/20261014-bfmd-excess-distance-claude/metrics.json) |
 
-관측 결과, 모델 추정, 가정과 검증 한계를 구별한다. 이 주제는 기존 결과를 삭제·대체하지 않는다. 새 C 표를 만들면 04의 V·K와 그 결과를 쓰는 05·07이 영향을 받으므로, 그때 별도 run과 PR로 비교한다.
+관측 결과: 초과분 L − d는 d가 0.25 m 이하여도 0.43 m이고 d가 3 m를 넘어도 0.62 m 근처에 머문다. 비율(3.68배 → 1.18배)은 d에 따라 크게 변하지만 초과분은 거의 일정해서, 가설대로 전달 모델은 "현 거리 + 초과분" 형태가 맞다. 샷별 표는 [excess_by_shot.csv](results/runs/20261014-bfmd-excess-distance-claude/excess_by_shot.csv)에 있다.
+
+해석과 한계: 이 0.43 m가 실제 스플릿스텝인지 추적 잡음(08 보고서의 bbox–발목 중앙 차이 0.935 m)인지는 이 run으로 가릴 수 없다. 잡음이라면 19.985·L은 전이마다 약 8.5 J/kg를 일정하게 더하고, 이런 덧셈 항은 일정 배수와 달리 파레토 프런티어를 바꿀 수 있다. 그래서 D_tp 비교가 다음 run이다. L < d인 0.24%는 평활 궤적과 원 위치의 차이로 보인다. 이 표는 추적 대리변수의 기술 통계이며 실측 대사에너지·피로·정책 승률을 검증한 결과가 아니고, 불확실성 구간은 계산하지 않았다. Pugliese 실험의 거리 정의(코스 거리인지 측정 경로인지)도 아직 확인하지 못했다.
+
+실행 환경 제약: 이 run은 pyarrow를 설치할 수 없는 환경에서 실행되어 `pandas.read_parquet` 대신 저장소 밖의 순수 Python parquet 리더로 입력을 읽었다(RUN.json의 environment에 기록). 적격 전이 수 7,206은 08 보고서의 "전체 적분 특징 적격 7,206행"과 일치한다. requirements-ci 환경(pyarrow)에서 같은 명령을 새 run ID로 다시 실행해 출력 해시가 같은지 확인하는 것을 리뷰 항목으로 남긴다.
+
+이 주제는 기존 결과를 삭제·대체하지 않는다. 새 C 표를 만들면 04의 V·K와 그 결과를 쓰는 05·07이 영향을 받으므로, 그때 별도 run과 PR로 비교한다.
