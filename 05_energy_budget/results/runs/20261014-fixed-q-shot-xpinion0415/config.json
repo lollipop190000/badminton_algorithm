@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "folds": 5,
+  "bootstrap": 200,
+  "mc_samples": 20000,
+  "ridge_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "cross_shot_ratio_or_order": false,
+  "beta_gamma_nonnegative": true
+}

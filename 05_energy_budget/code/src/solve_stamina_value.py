@@ -82,7 +82,8 @@ class StaminaGrid:
                        float(f["max_residual"]), int(f["max_iterations"]), json.loads(str(f["terminal_costs_json"])))
 
 
-def _static_sparse_grid(system, F_A0, F_B0, intervals, terminal_costs, tolerance, max_iterations, progress):
+def _static_sparse_grid(system, F_A0, F_B0, intervals, terminal_costs, tolerance, max_iterations, progress,
+                        terminal_rewards=None):
     """Group fixed-cost interpolation edges into sparse shifted operators.
 
     This is algebraically identical to the dense edge gather, with exact
@@ -132,8 +133,8 @@ def _static_sparse_grid(system, F_A0, F_B0, intervals, terminal_costs, tolerance
                     target_rows,row_index=np.unique(row_ids,return_inverse=True)
                     matrix=csr_matrix((coefficient[take],(row_index,nxt[ids[take]])),shape=(len(target_rows),n))
                     operators.append((int(step_a),int(step_b),bool(exacta),bool(exactb),int(oa),int(ob),target_rows,matrix))
-    reward_e=system.pi*pred["E"]
-    reward_u=system.pi*pred["U"]
+    reward_e=system.pi*pred["E"] if terminal_rewards is None else None
+    reward_u=system.pi*pred["U"] if terminal_rewards is None else None
     e_cost=terminal_cost_array(terminal_costs,"E",system.pi.shape)
     u_cost=terminal_cost_array(terminal_costs,"U",system.pi.shape)
     parity=np.arange(2)[:,None,None]
@@ -143,11 +144,16 @@ def _static_sparse_grid(system, F_A0, F_B0, intervals, terminal_costs, tolerance
         for ib in range(1,intervals+1):
             fb=b_grid[ib]
             rhs=np.zeros((n,2))
-            for event,mass,cost in (("E",reward_e,e_cost),("U",reward_u,u_cost)):
-                payoff,amb,exhausted=exhaustion_payoff(fa-cost[...,0],fb-cost[...,1])
-                normal=parity==0 if event=="E" else parity==1
-                rhs[:,0]+=(mass*np.where(exhausted,payoff,normal)).sum(axis=-1).ravel()
-                rhs[:,1]+=(mass*amb).sum(axis=-1).ravel()
+            if terminal_rewards is not None:
+                if terminal_costs:
+                    raise ValueError('variable terminal rewards require zero terminal additional costs')
+                rhs[:,0]=terminal_rewards(fa,fb)
+            else:
+                for event,mass,cost in (("E",reward_e,e_cost),("U",reward_u,u_cost)):
+                    payoff,amb,exhausted=exhaustion_payoff(fa-cost[...,0],fb-cost[...,1])
+                    normal=parity==0 if event=="E" else parity==1
+                    rhs[:,0]+=(mass*np.where(exhausted,payoff,normal)).sum(axis=-1).ravel()
+                    rhs[:,1]+=(mass*amb).sum(axis=-1).ravel()
             payoff,amb,exhausted=exhaustion_payoff(fa-ca,fb-cb)
             rhs[:,0]+=(kernel*np.where(exhausted,payoff,0.)).sum(axis=1)
             rhs[:,1]+=(kernel*amb).sum(axis=1)

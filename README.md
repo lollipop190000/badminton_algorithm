@@ -10,7 +10,7 @@
 | 02_gru_probability | [GRU 랠리 승리확률 기준모형](02_gru_probability/REPORT.md) |
 | 03_cql_v2_policy | [CQL v2: 문맥과 support를 고려한 전술 추천](03_cql_v2_policy/REPORT.md) |
 | 04_markov_parity | [3타구 패턴 Markov Q·C·K·V](04_markov_parity/REPORT.md) |
-| 05_energy_budget | [누적 이동에너지·E/U 종료확률·잔여 예산 V](05_energy_budget/REPORT.md) |
+| 05_energy_budget | [누적 이동에너지·E/U 종료확률·잔여 예산 V](05_energy_budget/REPORT.md) · [고정 Q 샷별 체력 모형](05_energy_budget/code/FIXED_Q_SHOT_MODEL.md) |
 | 06_rally_simulator | [팀원이 사용하는 GRU·CQL v2 랠리 시뮬레이터](06_rally_simulator/REPORT.md) |
 | 07_policy_ope | [실제 정책을 실행하지 않고 평가하는 OPE](07_policy_ope/REPORT.md) |
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
@@ -36,8 +36,10 @@ Linux/macOS에서는 `.venv/bin/python`을 사용한다. `run.py`는 주제별 �
 
 ## 결과 해석
 
-GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률이 아니고 offline 할인 return이다. OPE의 FQE 개선만으로 실제 정책 승률 개선을 확정할 수 없다. 누적에너지 모형의 선택된 strict 모델은 에너지 비의존 M0이므로 피로 인과효과를 입증하지 않았다. 08의 BFMD 표는 지면 위치 대리변수와 전체 fallback이다. 10은 셔틀 관측과 추정 접촉 높이에 따른 상태별 비용 및 전체 전이표를 제공하며, 실제 착지 구획과 8타구 대사비용의 독립 검증은 미확보다. 외부 대사자료 없는 β/η는 미확정이다. 각 REPORT는 실제 관측·통계 추정·가설·수치 검증을 구별한다.
+GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률이 아니고 offline 할인 return이다. OPE의 FQE 개선만으로 실제 정책 승률 개선을 확정할 수 없다. 누적에너지 모형의 선택된 strict 모델은 에너지 비의존 M0이므로 피로 인과효과를 입증하지 않았다. BFMD 표는 지면 위치 대리변수이며 착지 history가 없어 정확한 상태 관측이 아닌 fallback이다. 외부 대사자료 없는 β/η는 미확정이다. 각 REPORT는 실제 관측·통계 추정·가설·수치 검증을 구별한다.
 
 ## 앞으로의 GitHub 업로드 규칙
 
 이 구조를 계속 유지한다. 새로운 요청은 관련 주제에 통합하거나 다음 번호의 새 폴더를 만든다. 각 폴더의 원인·과정·결과와 실제 표·실행 방법을 갱신하고, 대체된 버전은 현행 게시 대상에서 제외한다. 구체적인 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 포함·제외 내역은 [PUBLICATION_MANIFEST.json](PUBLICATION_MANIFEST.json)에 있다. 큰 CSV와 같은 내용을 보존하는 완전 Parquet는 남겼으며 전체 결과 대신 작은 표본만 저장한 것으로 설명하지 않는다.
+
+전체 전이 비용 재현: `python run.py transition-energy --download-missing --run-id <새로운-run-id>`. M0·M3 각 2,097,152행을 제공하며, 셔틀 높이·착지 상태와 타구 대사비용의 추정 한계는 [10번 보고서](10_transition_energy/REPORT.md)에 기록했다.
