@@ -10,6 +10,8 @@ from fastapi.staticfiles import StaticFiles
 
 from app.schemas import ExampleDetail, ExampleSummary, RallyRequest, RallyResponse
 from app.simulator import RallySimulator
+from app.schemas import EnergyStrategyRequest, EnergyRallyRequest
+from app.energy import EnergyStrategyService
 
 
 APP_ROOT = Path(__file__).resolve().parent
@@ -28,12 +30,41 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="GRU·CQL 배드민턴 랠리 시뮬레이터",
-    description="로컬 PyTorch 체크포인트를 사용하는 연구팀용 배드민턴 랠리 분석 도구",
-    version="1.0.0",
+    title="GRU·CQL·에너지 배드민턴 랠리 시뮬레이터",
+    description="기존 PyTorch 모델과 예산별 타구·구획 전략 히트맵을 사용하는 연구팀 분석 도구",
+    version="1.1.0",
     lifespan=lifespan,
 )
 app.mount("/static", StaticFiles(directory=STATIC_ROOT), name="static")
+energy_service = EnergyStrategyService()
+
+
+@app.get('/api/energy-strategy/metadata')
+async def energy_metadata():
+    try:
+        return energy_service.metadata()
+    except FileNotFoundError as exc:
+        raise HTTPException(503,'에너지 전략 실행 결과가 없습니다. energy-strategy 단계를 먼저 실행하세요.') from exc
+
+
+@app.post('/api/energy-strategy')
+async def energy_analyze(payload: EnergyStrategyRequest):
+    try:
+        return energy_service.analyze(payload)
+    except FileNotFoundError as exc:
+        raise HTTPException(503,'전략 격자가 없습니다. energy-strategy 단계를 실행하세요.') from exc
+    except ValueError as exc:
+        raise HTTPException(422,str(exc)) from exc
+
+
+@app.post('/api/energy-strategy/from-rally')
+async def energy_rally(payload: EnergyRallyRequest):
+    try:
+        return energy_service.from_rally(payload)
+    except FileNotFoundError as exc:
+        raise HTTPException(503,'에너지 전략 실행 결과가 없습니다.') from exc
+    except ValueError as exc:
+        raise HTTPException(422,str(exc)) from exc
 
 
 def get_simulator(request: Request) -> RallySimulator:

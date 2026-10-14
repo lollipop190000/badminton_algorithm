@@ -1,0 +1,639 @@
+{
+  "schema_version": 1,
+  "run_id": "20261014-energy-strategy-v1",
+  "created_at": "2026-10-14T16:39:38.382481+09:00",
+  "command": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+  "signature": {
+    "input_sha256": {
+      "data/splits/train.csv": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+      "data/splits/validation.csv": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3",
+      "data/splits/test.csv": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c",
+      "outputs/fatigue_terminal/baseline_final.npz": "89f02764a9fad8ef036624ea2bc251b1a554a972b42365b13d48c3bdaea675a0",
+      "outputs/fatigue_terminal/models/strict_final/parameters.npz": "249fa61b9d0cda9eac81c2c5f73dddce65fca87954f6a7fbd16694c7700c08b1",
+      "outputs/fatigue_terminal/models/strict_final/model.json": "67e84836cdcf3cfbe25dc5a02f56e66e902becd6c9255439aa87518bcc29bc52",
+      "outputs/bfmd_zago/bfmd_zago_lookup.parquet": "c8944618e8d83b9e342f3cec9b34926139d250ec2bb7b577b27a777abf43753a"
+    },
+    "code_sha256": {
+      "src/energy_strategy.py": "18aa5df01ac3de1fccd413037fe52d52395cea4859299c968700976587d219d0",
+      "scripts/run_energy_strategy.py": "dfa10b04a55281d223af6b06807a580ddce65bc6ca23a9af218b838fca089ee2"
+    },
+    "models": [
+      "distance",
+      "M0_distance_reference",
+      "M3_hypothesis_speed_only_1",
+      "M3_hypothesis_curve_only_1",
+      "M3_hypothesis_balanced_025"
+    ],
+    "grid_intervals": 40,
+    "max_grid_intervals": 160,
+    "mc_samples": 20000,
+    "seed": 20261014
+  },
+  "status": "completed",
+  "assumptions": [
+    "계속되는 타구가 선택한 구획에 도착한다고 가정합니다. 목표 정확도는 추정하지 않았습니다.",
+    "종료확률은 타구별이며 목표 구획별 성공·실수 효과는 추정하지 않았습니다.",
+    "상대는 기록된 대응 분포를 따릅니다. 예산은 생리학적 최대 체력이 아닌 시나리오입니다.",
+    "비용은 이동에너지 대리값이며 실제 경기 승률·대사 비용·피로 인과효과의 검증이 아닙니다.",
+    "BFMD 비용은 거리·역할·타구 fallback이며 가감속·방향전환 계수는 가설입니다."
+  ],
+  "scope": "conditional model study; not causal OPE",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "packages": {
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "pyarrow": "25.0.1",
+      "scipy": "1.18.1",
+      "numba": "0.68.0",
+      "llvmlite": "0.50.0",
+      "matplotlib": "3.11.1",
+      "torch": "2.13.0+cu126",
+      "fastapi": "0.116.1"
+    }
+  },
+  "code_commit": "d09435bd9ec9a37f5fb0ebe01a6afe0a9567f73b",
+  "code_state": "base commit plus uncommitted source; exact executed source SHA256 in signature",
+  "seed": 20261014,
+  "inputs": [
+    {
+      "path": "data/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path": "data/splits/validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3"
+    },
+    {
+      "path": "data/splits/test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+    },
+    {
+      "path": "outputs/fatigue_terminal/baseline_final.npz",
+      "sha256": "89f02764a9fad8ef036624ea2bc251b1a554a972b42365b13d48c3bdaea675a0"
+    },
+    {
+      "path": "outputs/fatigue_terminal/models/strict_final/parameters.npz",
+      "sha256": "249fa61b9d0cda9eac81c2c5f73dddce65fca87954f6a7fbd16694c7700c08b1"
+    },
+    {
+      "path": "outputs/fatigue_terminal/models/strict_final/model.json",
+      "sha256": "67e84836cdcf3cfbe25dc5a02f56e66e902becd6c9255439aa87518bcc29bc52"
+    },
+    {
+      "path": "outputs/bfmd_zago/bfmd_zago_lookup.parquet",
+      "sha256": "c8944618e8d83b9e342f3cec9b34926139d250ec2bb7b577b27a777abf43753a"
+    }
+  ],
+  "config": {
+    "path": "protocol.json",
+    "sha256": "568881e9aae7ecff0ceb59842aaa79ff62e11e628ee0566711d7dabbb948606a"
+  },
+  "split": "existing match-level train/validation/test; train-only support; frozen train+validation final hazards; BFMD frozen train+validation cost adapter",
+  "metrics": {
+    "numerical_queries": 40,
+    "all_numerical_checks_passed": true,
+    "full_action_rows": 15728640,
+    "max_bellman_residual": 9.994356869332796e-12,
+    "max_refinement_difference": 0.0199224090698003,
+    "max_mc_excess_95ci": 0.0009766497342284
+  },
+  "outputs": [
+    {
+      "path": "action_scores/distance_A_p50.parquet",
+      "sha256": "1bdd2b91d0c656d9de486790bba7fe5716ab2929b36edc0326729f454c6067f7"
+    },
+    {
+      "path": "action_scores/distance_A_p75.parquet",
+      "sha256": "b5b8e04acf7041109d9d846a108927b228dd1b44b8a7491a1f54688e8c8b2ec0"
+    },
+    {
+      "path": "action_scores/distance_A_p95.parquet",
+      "sha256": "0538ee3563a11f94cc570fe5a89bcbf81126caf84e941c1cbec6c44e3289bc3c"
+    },
+    {
+      "path": "action_scores/distance_B_p50.parquet",
+      "sha256": "84077998d35cde9ef0f515150cc800734812b5ab78b3f0df2ca4c521b36108c5"
+    },
+    {
+      "path": "action_scores/distance_B_p75.parquet",
+      "sha256": "1d0bbe705bde79685296231bdfdafe58d1ed68f0b5326c044c44cb78b51bbfb2"
+    },
+    {
+      "path": "action_scores/distance_B_p95.parquet",
+      "sha256": "e8889f610091eabea2dc779161342d71affb399489cf0dc4d831eea30a98768b"
+    },
+    {
+      "path": "action_scores/M0_distance_reference_A_p50.parquet",
+      "sha256": "f58d963053333638fbcc90ba15a70c957c248722a27e3a2c432253a5dac0a292"
+    },
+    {
+      "path": "action_scores/M0_distance_reference_A_p75.parquet",
+      "sha256": "27e135e65970bac67f762e2ee4c7742e18e68a4b5509def09829fe33e71c4760"
+    },
+    {
+      "path": "action_scores/M0_distance_reference_A_p95.parquet",
+      "sha256": "dafdb28321bd8474d7e7ebbde7f3ad39454dc574ce50bc4eb81abc93ddce5333"
+    },
+    {
+      "path": "action_scores/M0_distance_reference_B_p50.parquet",
+      "sha256": "10f230e1fbce408a4b4ca671ae8ccce534a9acfeb2e3a8c498dd825c6d17c683"
+    },
+    {
+      "path": "action_scores/M0_distance_reference_B_p75.parquet",
+      "sha256": "f2d545ae9d5e6b5601a76da6efbfc8aea81ddce5f117a7ed9caa54d7a2b750cb"
+    },
+    {
+      "path": "action_scores/M0_distance_reference_B_p95.parquet",
+      "sha256": "aa24bf05c586ffec813e076c1c9e48742998b30d35ba43feb60da8751142958d"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_balanced_025_A_p50.parquet",
+      "sha256": "ef45536f21f56e472584b9906a6f8d744e2b95a30a2e44d509f5eb3ec36254f5"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_balanced_025_A_p75.parquet",
+      "sha256": "dccd36c3d5e5f25526dc954433834f6d3e537c45d51938e60e2ce977fb4bcf6a"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_balanced_025_A_p95.parquet",
+      "sha256": "593f5c778788041ce532c793ee0712281b8e65335151de5ef02b9c40afd4f445"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_balanced_025_B_p50.parquet",
+      "sha256": "cd4fb024f483766a1026bc8fda3f83d700cfee7763bfda1607fa812ad8fb29c5"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_balanced_025_B_p75.parquet",
+      "sha256": "98258b152d44ce9ad82dd37d732abc6b79a346018a5295b933ee0baa8b526e92"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_balanced_025_B_p95.parquet",
+      "sha256": "6f4e7ddca91c27ea86ed3c40a0d9c29421222e300f9cca6b20880820d432e21b"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_curve_only_1_A_p50.parquet",
+      "sha256": "5ef9e5a80fad5763ff9418a774dc462969839ac8c120e84e34894cf8805c928c"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_curve_only_1_A_p75.parquet",
+      "sha256": "f26b578c3d6372d0837f09020ff2472cd6f383709e4013643335a9b7503eee60"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_curve_only_1_A_p95.parquet",
+      "sha256": "bec628c225556740fac488fa036bc931e1b054e445a7cd6ff4a9048bc1d33b5e"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_curve_only_1_B_p50.parquet",
+      "sha256": "c57257abe7408e9d42c5858374e99e7dde7df71a66713740143d41d63c1292b1"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_curve_only_1_B_p75.parquet",
+      "sha256": "ec31cbcb3360771cd69baa02de14ed35e6216835ee911c4eb67c0ffc0caa2654"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_curve_only_1_B_p95.parquet",
+      "sha256": "da8071f77bb09c36b2e87be2394d5f366c46c9369eb7b003a3c50b068440f760"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_speed_only_1_A_p50.parquet",
+      "sha256": "1436332ca77ad682bef5208fa1c11ef26bacaca2d487b0da25e15384b38545de"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_speed_only_1_A_p75.parquet",
+      "sha256": "4acd93b62d49ec4b4f8c9c64df352b74d65e77921a62108772401461ebd30043"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_speed_only_1_A_p95.parquet",
+      "sha256": "3d35d3db1be22a4c8056f7cac017f6cbdbafbe586d3dfdee7a3e8644ff172bfa"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_speed_only_1_B_p50.parquet",
+      "sha256": "906cd981b3148b6240932c4ea848f198cbddbad200886fdafca5a7e1af7a4a00"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_speed_only_1_B_p75.parquet",
+      "sha256": "3790fad236f9546f0c22d0991a928219948575ce88f612179151ace5bd93c8d5"
+    },
+    {
+      "path": "action_scores/M3_hypothesis_speed_only_1_B_p95.parquet",
+      "sha256": "d48e221c566b2c0962c3288c9ab1ef4f2c0d9375354e0bec496baac1b87cd760"
+    },
+    {
+      "path": "cost_specific_budgets.csv",
+      "sha256": "4fde24a7f9c023d8c2faaca602455609cbccddd6e3d5e96b85502e770f07312c"
+    },
+    {
+      "path": "costs_distance.npz",
+      "sha256": "c69b94d0481a96ba64c15bb42a32d204c0c445ad42016e823228e60b43aa07a1"
+    },
+    {
+      "path": "costs_M0_distance_reference.npz",
+      "sha256": "ba775d97c005bc6183dee02300edeb4149a90508934bc433d33ab058231ac4fe"
+    },
+    {
+      "path": "costs_M3_hypothesis_balanced_025.npz",
+      "sha256": "96385ac62035d03dbbc61ca82f5aa7531591ef2d2dc55d51e55a1b151220701b"
+    },
+    {
+      "path": "costs_M3_hypothesis_curve_only_1.npz",
+      "sha256": "a25dc1e2c1d5cdcd91bce22dcc635fd14e01a3f0edfb1bf9994f7c789b927e14"
+    },
+    {
+      "path": "costs_M3_hypothesis_speed_only_1.npz",
+      "sha256": "59f7c705ec2cd37c51158d67ede1b72bb983b28d536fe083a218786cff65a2dc"
+    },
+    {
+      "path": "cql_comparison.parquet",
+      "sha256": "0d4fb731a67418519a703866a05f8dbb73e730f57658157793e6e451cbb86618"
+    },
+    {
+      "path": "cql_comparison_summary.csv",
+      "sha256": "520059c2352342c19d7b5640148db04a4d66db8336336d2f6171d211f6bdcbbd"
+    },
+    {
+      "path": "delivery_validation.json",
+      "sha256": "748c680d4c1515ae5ce4317e4f2504f9a320d43f92e21cc633754af8f630d7e2"
+    },
+    {
+      "path": "figures/browser_heatmap.jpg",
+      "sha256": "e40a66b7101d8a9430892dba596adfdb2a88a0533de778549f2e66bb917166f5"
+    },
+    {
+      "path": "figures/distance_A_q0.png",
+      "sha256": "fe6adc6a5bfffc341d1e17763308a31da2edf91abd5c8d6f47a4491af423c2cc"
+    },
+    {
+      "path": "figures/distance_A_q1.png",
+      "sha256": "6e043cce1d4d6425980c67d761e2645860658bdd86a7a69b5472716636a64f26"
+    },
+    {
+      "path": "figures/distance_A_q2.png",
+      "sha256": "006ee2df96d7e8808c9033e762503752372b7ba5eb0b2523757f3ea8e78aa184"
+    },
+    {
+      "path": "figures/distance_A_q3.png",
+      "sha256": "4108e82608d92cca731f62153cad6a4bbe5fa317f89845c61b7c14d6efad71e5"
+    },
+    {
+      "path": "figures/distance_B_q0.png",
+      "sha256": "9d45219f97bd4249f051b5e607a63b99ee7321076f4bab72a73883584f9de1d4"
+    },
+    {
+      "path": "figures/distance_B_q1.png",
+      "sha256": "4ba98dcdcc0d2200d6574c6dabf1c120749427e1917d5596e1ee75580dbe3aec"
+    },
+    {
+      "path": "figures/distance_B_q2.png",
+      "sha256": "293819024ff010414aa112a3ffab479f9c3329942156ebdc360d331532ca5eaf"
+    },
+    {
+      "path": "figures/distance_B_q3.png",
+      "sha256": "ef485f278b308bce44faf4f797b04f7a22d15246a80444ba754e58bc47a579d8"
+    },
+    {
+      "path": "figures/M0_distance_reference_A_q0.png",
+      "sha256": "a369c79c5ef14bbc57b485fa38492fa86ba45b546c679ef2f13de934d74d3f8b"
+    },
+    {
+      "path": "figures/M0_distance_reference_A_q1.png",
+      "sha256": "1a1331893c03c390325d09cc3528b209194dd697693fcce0e0a21909cfc64bc7"
+    },
+    {
+      "path": "figures/M0_distance_reference_A_q2.png",
+      "sha256": "48f398a0c1a471064e4650becd870ddf467da3f6b094d46e6d7328fa5d2db5ce"
+    },
+    {
+      "path": "figures/M0_distance_reference_A_q3.png",
+      "sha256": "7371c790974e6c111d8d1275927ed15e65b5f88e16d95f546472a7646e29ca14"
+    },
+    {
+      "path": "figures/M0_distance_reference_B_q0.png",
+      "sha256": "18be5a8a7c4452773377ec40db65ed6035968bdb80de9c44594de9a1531567dc"
+    },
+    {
+      "path": "figures/M0_distance_reference_B_q1.png",
+      "sha256": "2aee352de21327b51560e90d060ca25c704830f70f043c922a09ce769aa5a879"
+    },
+    {
+      "path": "figures/M0_distance_reference_B_q2.png",
+      "sha256": "2adea953f5d3721cc94566e357ecc63a483372f39226165620a6aebea853055f"
+    },
+    {
+      "path": "figures/M0_distance_reference_B_q3.png",
+      "sha256": "8b82e53eea77e400dbd90be09a47b4fd03ee1a215d408ffde6ec8fdbafd7c9bf"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_A_q0.png",
+      "sha256": "423c58b9a53ad7875159aa80f390250ee6a67244f347dedd6474f40416bbb5b4"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_A_q1.png",
+      "sha256": "e51149efb6d4739e78f8956120e350657745a40285c682b7b1f79acde9bf1c35"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_A_q2.png",
+      "sha256": "e8c8dbcb2ca86121d46281d1c27660b00d1ed09fc724662453d26f817d42200f"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_A_q3.png",
+      "sha256": "ea0fbc3cb1ad2fd0fd75b53bcd3859e129dda784bd21a4e4007bfc71a3cd623b"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_B_q0.png",
+      "sha256": "4cd63d65f9dc4b7052bf30c065f8ba9a0aa7b24460deb30432d9481ccfd406af"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_B_q1.png",
+      "sha256": "62d63bdb4489249de6d52b851e899f072a0323be2e8f1310aee8273a08acc5e1"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_B_q2.png",
+      "sha256": "5c687ecf800979db24b96403c848ff0af834d35c37ccf9846d201c6ac1b965b1"
+    },
+    {
+      "path": "figures/M3_hypothesis_balanced_025_B_q3.png",
+      "sha256": "20f7d071d82f9c68a5b7eb8965d4f305cb73fb900431796d6d56744367639690"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_A_q0.png",
+      "sha256": "af1170e458feca6e6fc86a50a8ad56e7dbf8ab31bd7ab9569084feac32892d0f"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_A_q1.png",
+      "sha256": "8117f6818b7999ce91142c1702caede269c74950aac165bb1817187824ec7697"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_A_q2.png",
+      "sha256": "c7ffda01f80ee54be3d198e3d74f90da12834381a76503563d1f53a484f28b2f"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_A_q3.png",
+      "sha256": "18db4d58558d07449cf148c0e12497f48448ac776760c675049e92e335b62eab"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_B_q0.png",
+      "sha256": "5680fd1293d464bdf059c80a4886c661885292e3c6b7720e779f1c9c922e83b8"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_B_q1.png",
+      "sha256": "9079665185605cbf7adfd6e1c408fae796f1afd6fed1ee425121b5208320be1d"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_B_q2.png",
+      "sha256": "ec64ba58dff2e26925003fe781ac82b8a9c4693480b5f1dde08424d1828c0054"
+    },
+    {
+      "path": "figures/M3_hypothesis_curve_only_1_B_q3.png",
+      "sha256": "86bdf5d233e694b8c05b16ed411adeeeb6d19b423c4774b0d82437b7a2436193"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_A_q0.png",
+      "sha256": "44abdc9852610638b10ddcf753465207521eaae7fa8e93e1733d5c7707462b94"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_A_q1.png",
+      "sha256": "8e7fc9516e64d7893ad1ffda2e9aa08f416ff9587cbe05ff4521aead2e47502b"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_A_q2.png",
+      "sha256": "687acc60047e45b96c688f24bef9e14a1f4a4e7153c484ffc44158faf6faf1d6"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_A_q3.png",
+      "sha256": "518a95a615c903e6075815ee3c8d218af77274528b2371dd02e38d13abcd9c86"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_B_q0.png",
+      "sha256": "af8ef82bcd78d2bf335f31d8b6377eb85775a49a4d9c653e2f8108ecbcfb477a"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_B_q1.png",
+      "sha256": "9b25459089d369897e9060bb7c646a2c079ff1169f1f5e93dff686e0f56bbc71"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_B_q2.png",
+      "sha256": "6ba9ae379ba772201d623eb294834e6e6382af8a4b32ae663289fe32da365765"
+    },
+    {
+      "path": "figures/M3_hypothesis_speed_only_1_B_q3.png",
+      "sha256": "4c5cf2fa2aa1af08913e317ee68d24c33be27d71b0f30781990638a50ee39fba"
+    },
+    {
+      "path": "grids/distance_A.json",
+      "sha256": "54daa579b95e0c3d5e2f29a9e44c192a0293aa4a24a954d735588ffdf6d710f3"
+    },
+    {
+      "path": "grids/distance_A_behavior.json",
+      "sha256": "bb45db03efd8876279a0ea4c5c0d5dfcfdf923d8a1437c3e98e9d90e0de16800"
+    },
+    {
+      "path": "grids/distance_A_validation.json",
+      "sha256": "adeb9fa3b9272fa56d555c6255365581729f8b4c438c3aee3d1fa0bd6ed58f5c"
+    },
+    {
+      "path": "grids/distance_B.json",
+      "sha256": "d4bc26be32be001509696b852e8870a6fae9c0550327f2165a6ebe96233b4bc5"
+    },
+    {
+      "path": "grids/distance_B_behavior.json",
+      "sha256": "fced550940b63b8204d917082967591c33d78624028ce10f749332a589d5df55"
+    },
+    {
+      "path": "grids/distance_B_validation.json",
+      "sha256": "05069a99d1e783f2ead6d05d29ac9c7264bf2fd0a141f71b86c24fcf7917bf60"
+    },
+    {
+      "path": "grids/M0_distance_reference_A.json",
+      "sha256": "a4dc0a4b1ddb20edcaa0f1b8027c2bc81b6ae7a70114d1f0ca194e0fac9a2665"
+    },
+    {
+      "path": "grids/M0_distance_reference_A_behavior.json",
+      "sha256": "38f679a40d9110de1165eacbfefd6e55d736268b383634e5a138f87f39fc7936"
+    },
+    {
+      "path": "grids/M0_distance_reference_A_validation.json",
+      "sha256": "6d421d45fe2e152f23a7f2cea7072f2c569cb379138ed0ac9b75a19de7fe6511"
+    },
+    {
+      "path": "grids/M0_distance_reference_B.json",
+      "sha256": "ea230597ed54c40c76b6055e6b5bce611d256952c0adc34ba168ce832ec8bf95"
+    },
+    {
+      "path": "grids/M0_distance_reference_B_behavior.json",
+      "sha256": "5c2276c17194d2fe24a63ac27445224a0d156aec77ff667586d22f215ad40ec6"
+    },
+    {
+      "path": "grids/M0_distance_reference_B_validation.json",
+      "sha256": "19c0c6ffec1dff3ea730a66c0595183ee3c163ce9f8cbca16cac5fae1a1a9ff9"
+    },
+    {
+      "path": "grids/M3_hypothesis_balanced_025_A.json",
+      "sha256": "7e1897974a0628368bf3cf9005e8ccc68e88298c21118e5d0240c4e0fc1f9349"
+    },
+    {
+      "path": "grids/M3_hypothesis_balanced_025_A_behavior.json",
+      "sha256": "694c6954e54d2127eadec45b87f7de03658ed082c09d67eae40e9a1bf3045ae7"
+    },
+    {
+      "path": "grids/M3_hypothesis_balanced_025_A_validation.json",
+      "sha256": "947231a53d1683dccf3a85ded37df8caf09969f49cdafd43237da1ddbd721b74"
+    },
+    {
+      "path": "grids/M3_hypothesis_balanced_025_B.json",
+      "sha256": "1cbdbbdcbd2668f510194093a12ad25d583a2f45f8eb726d3d377a39317b4114"
+    },
+    {
+      "path": "grids/M3_hypothesis_balanced_025_B_behavior.json",
+      "sha256": "fc6ac73703841fb57a07187e597da7cdfa19d06200f14f4ddb083e75a906833e"
+    },
+    {
+      "path": "grids/M3_hypothesis_balanced_025_B_validation.json",
+      "sha256": "a4900a49352f3b96772320617445a7b6632af2a52fa7c0079dd0b97b8ee8cd26"
+    },
+    {
+      "path": "grids/M3_hypothesis_curve_only_1_A.json",
+      "sha256": "42854dc2429232d29e66301ad5ad2dbf2ccd6dda4d536fec9d64b1d9e93a28be"
+    },
+    {
+      "path": "grids/M3_hypothesis_curve_only_1_A_behavior.json",
+      "sha256": "615884820c84ea64e7a5015edf6361a4d99d72d7e2b54c29ba03e48239eb7476"
+    },
+    {
+      "path": "grids/M3_hypothesis_curve_only_1_A_validation.json",
+      "sha256": "41d891765fb706353f9c8afaa8bcdd3dfbd72f51da17a4d42c98ddebf1084159"
+    },
+    {
+      "path": "grids/M3_hypothesis_curve_only_1_B.json",
+      "sha256": "d3c9d257b9990e6b740cd33cc2b0d922cea595ca2e0098e5121d294cc7368424"
+    },
+    {
+      "path": "grids/M3_hypothesis_curve_only_1_B_behavior.json",
+      "sha256": "892460f3a29d721790f5d30f0101d35b336abf0e6bbe054a77e5e41057f6c26d"
+    },
+    {
+      "path": "grids/M3_hypothesis_curve_only_1_B_validation.json",
+      "sha256": "afa292cff713f28a6bb153a328621c3c4e71cfff6276d57495fa06216e05753a"
+    },
+    {
+      "path": "grids/M3_hypothesis_speed_only_1_A.json",
+      "sha256": "9de26412581a02e68ee04f5620060a30254ab58fb517ad261a9157bb4ea2a3a1"
+    },
+    {
+      "path": "grids/M3_hypothesis_speed_only_1_A_behavior.json",
+      "sha256": "74db080a48577b8c9db54587deea6ba778cc5bd0e3a90b35350c5d8d4f839bb4"
+    },
+    {
+      "path": "grids/M3_hypothesis_speed_only_1_A_validation.json",
+      "sha256": "e4ca42fd15f0f497ffd0acb93cfbb2495fe152c87909d9f9c011bc62b006e4c3"
+    },
+    {
+      "path": "grids/M3_hypothesis_speed_only_1_B.json",
+      "sha256": "c8882cce9d5d386e3935d95e378627d3e2d0212d828d783f71fe6b5e6cf69ea7"
+    },
+    {
+      "path": "grids/M3_hypothesis_speed_only_1_B_behavior.json",
+      "sha256": "b148123a3b2d0127f3383cec824e612d54082053124d0b003f842237cf1c27c5"
+    },
+    {
+      "path": "grids/M3_hypothesis_speed_only_1_B_validation.json",
+      "sha256": "5e96589df955f8214d6f53bcd51296839a954e69195d52ff937998a4da959393"
+    },
+    {
+      "path": "large_artifacts.json",
+      "sha256": "5a7c6ec04043d4b4d8346029e3e85bb3d270f8960b2038d28e4e8bc209ded5bc"
+    },
+    {
+      "path": "normalized_budget_comparison.csv",
+      "sha256": "240dbaeadd144f605daa00b38657c3f9d2f9ce47f2200e7825266896b3d0e967"
+    },
+    {
+      "path": "numerical_validation.csv",
+      "sha256": "a543afc8018f2a9eac7557bda7c1f2ff70e837229e1e52586ed4ce2c1aefb656"
+    },
+    {
+      "path": "policy_comparison.csv",
+      "sha256": "d6aa57fb6e0844303e180153f177876c3f217ab5458f217d51bb38bd5a50680c"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "568881e9aae7ecff0ceb59842aaa79ff62e11e628ee0566711d7dabbb948606a"
+    },
+    {
+      "path": "publication_tests.txt",
+      "sha256": "a42fbd8a0929a9b0719ac2cadc78fa6613eefc165161c4a6982f1a098a5eb7d0"
+    },
+    {
+      "path": "recommendation_change_rates.csv",
+      "sha256": "0b094a130372540bb70c8f9bab923b9104982b98d5a79112131c045083b6f26a"
+    },
+    {
+      "path": "recommendations.parquet",
+      "sha256": "8750c5cc17fe43b9381d4d748b3baac8782c3f83d557d4c68183fe0dda0fe4a2"
+    },
+    {
+      "path": "registry.json",
+      "sha256": "4cb66a9e6f31bde0ff0600f207804175f7ba2ba056d3ca83472fc412c054d8f3"
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "3791bd6cd854174fa39486aef567fb41d6e08ff5d57f248409e2669c9f2fad1d"
+    },
+    {
+      "path": "root_tests.txt",
+      "sha256": "65a1942b1991d2806bec68f1e196acbe6ead73a646e57af59297a832c88e4d32"
+    },
+    {
+      "path": "source_snapshot/energy_strategy.py",
+      "sha256": "18aa5df01ac3de1fccd413037fe52d52395cea4859299c968700976587d219d0"
+    },
+    {
+      "path": "source_snapshot/finish_energy_strategy_delivery.py",
+      "sha256": "629691dd97affa71af3c0289f085e6ec6568b4c6ea57bda766603aa176af68ad"
+    },
+    {
+      "path": "source_snapshot/run_energy_strategy.py",
+      "sha256": "dfa10b04a55281d223af6b06807a580ddce65bc6ca23a9af218b838fca089ee2"
+    },
+    {
+      "path": "strategy_examples.csv",
+      "sha256": "0aee2976c7d1424181cb8f74ca44eac9908e12af395889849549c7fc76041045"
+    },
+    {
+      "path": "strategy_tradeoffs.csv",
+      "sha256": "45dbfbcf33a7524c8622624bb4f1feff2863bee7fff773bc0ba307fef98ba3be"
+    },
+    {
+      "path": "summary.csv",
+      "sha256": "91fcd0f9c1417bc325070a14f1400a43f9ffa93c4635af83c59913be4451f5be"
+    },
+    {
+      "path": "support.npz",
+      "sha256": "f2e330cd35844f38c999fe0062543a8f79a87aa393e6e88f1ad1be9493f830c5"
+    }
+  ],
+  "limitations": [
+    "계속되는 타구가 선택한 구획에 도착한다고 가정합니다. 목표 정확도는 추정하지 않았습니다.",
+    "종료확률은 타구별이며 목표 구획별 성공·실수 효과는 추정하지 않았습니다.",
+    "상대는 기록된 대응 분포를 따릅니다. 예산은 생리학적 최대 체력이 아닌 시나리오입니다.",
+    "비용은 이동에너지 대리값이며 실제 경기 승률·대사 비용·피로 인과효과의 검증이 아닙니다.",
+    "BFMD 비용은 거리·역할·타구 fallback이며 가감속·방향전환 계수는 가설입니다."
+  ],
+  "all_numerical_checks_passed": true,
+  "finished_at": "2026-10-14T17:38:09.801074+09:00",
+  "delivery_input_hashes_verified": true,
+  "supplemental_input_sha256": {
+    "outputs/fatigue_terminal/event_energy_table.parquet": "7a757183f88780b42ce4108184746f57c72069625aa5bb136e525d5106242e88",
+    "outputs/fatigue_terminal/stamina/protocol.json": "4d6b05e934ab36f11e09966d69dfff4d16eab9a2a9c5b8a7f01b45b6a4d2fab5",
+    "outputs/cql_v2/predictions/cql_test_recommendations.csv": "9a215a8cebe12f9a9a39976ff20bce4112721302b40d9cf55d79b063502dc9e9"
+  },
+  "delivery_analysis_code_sha256": "629691dd97affa71af3c0289f085e6ec6568b4c6ea57bda766603aa176af68ad",
+  "metric_definitions": {
+    "midpoint": "conditional model win value 0..1; equal-weight representative query mean",
+    "energy": "J/kg movement proxy; complete continuation interval cost including exhaustion overshoot",
+    "exhaustion": "simulated probability 0..1 under assumed budget-loss rule",
+    "structural_bounds": "same policy; simultaneous exhaustion assigned all loss/all win; not statistical CI"
+  }
+}

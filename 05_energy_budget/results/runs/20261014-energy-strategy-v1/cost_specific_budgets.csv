@@ -1,0 +1,6 @@
+model_id,p50,p75,p95,early_interval_policy,replaced_intervals
+distance,218.7071282213993,402.68485599137523,850.5310573195494,original audited incoming energy,0
+M0_distance_reference,259.2329442317566,488.091059154351,1042.1555662780718,audited distance for unmodelable early/service intervals; BFMD for eligible continuation,26406
+M3_hypothesis_speed_only_1,263.0079995462595,499.62560265055737,1067.9773659820203,audited distance for unmodelable early/service intervals; BFMD for eligible continuation,26406
+M3_hypothesis_curve_only_1,261.3820353027198,494.0058528803907,1056.4315353474158,audited distance for unmodelable early/service intervals; BFMD for eligible continuation,26406
+M3_hypothesis_balanced_025,261.5821352450142,493.4059673129579,1053.6577856475167,audited distance for unmodelable early/service intervals; BFMD for eligible continuation,26406

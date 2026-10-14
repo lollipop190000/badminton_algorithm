@@ -1,0 +1,48 @@
+{
+  "budgets": [
+    218.60109972813666,
+    402.5504868127432,
+    850.4351587506309
+  ],
+  "representative_states": [
+    843,
+    376,
+    587
+  ],
+  "queries": [
+    [
+      843,
+      402.5504868127432,
+      402.5504868127432
+    ],
+    [
+      376,
+      425.21757937531544,
+      425.21757937531544
+    ],
+    [
+      587,
+      218.60109972813666,
+      850.4351587506309
+    ],
+    [
+      587,
+      850.4351587506309,
+      218.60109972813666
+    ]
+  ],
+  "support_thresholds": {
+    "global_action": 50,
+    "transition": 5,
+    "valid_cost": 5
+  },
+  "comparison": "identical absolute budgets",
+  "target_semantics": "deterministic destination conditional on continuation; shot-only hazards",
+  "opponent": "pi*T",
+  "fixed_policy_bounds": true,
+  "acceptance": {
+    "bellman": 1e-10,
+    "refinement": 0.02,
+    "mc_excess_95ci": 0.02
+  }
+}

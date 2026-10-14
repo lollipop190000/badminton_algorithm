@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="코트를 클릭해 GRU 승리확률과 CQL 전술 추천을 비교하는 로컬 연구 도구" />
-    <title>GRU·CQL 랠리 시뮬레이터</title>
+    <title>GRU·CQL·에너지 랠리 시뮬레이터</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
     <header class="topbar">
       <div>
         <p class="eyebrow">BADMINTON DECISION LAB</p>
-        <h1>GRU·CQL 랠리 시뮬레이터</h1>
+        <h1>GRU·CQL·에너지 랠리 시뮬레이터</h1>
       </div>
       <div id="model-status" class="status" role="status"><span></span> 모델 확인 중</div>
     </header>
@@ -78,6 +78,11 @@
 
       <section class="panel result-panel" aria-labelledby="result-title">
         <div class="panel-heading"><div><span class="step-no">03</span><h2 id="result-title">모델 결과</h2></div><span id="result-stroke" class="badge muted">입력 대기</span></div>
+        <div class="selection-tabs" role="tablist" aria-label="분석 종류">
+          <button id="prediction-tab" class="selection-tab active" role="tab" aria-selected="true" aria-controls="prediction-view" type="button">GRU · CQL</button>
+          <button id="energy-tab" class="selection-tab" role="tab" aria-selected="false" aria-controls="energy-view" type="button">에너지 전략</button>
+        </div>
+        <div id="prediction-view" role="tabpanel" aria-labelledby="prediction-tab">
         <div id="empty-result" class="empty-result"><div class="shuttle-mark">◌</div><strong>첫 타구를 구성해 보세요</strong><p>CQL 추천 3개와 GRU 확률 추이가 여기에 나타납니다.</p></div>
         <div id="result-content" hidden>
           <div class="probability-card">
@@ -90,6 +95,34 @@
           <div id="actual-comparison" class="actual-comparison"></div>
           <div id="result-warnings" class="warnings"></div>
         </div>
+        </div>
+        <div id="energy-view" role="tabpanel" aria-labelledby="energy-tab" hidden>
+          <p class="energy-intro">들어온 구획 → 보낼 구획 · 타구별 전략. 선택한 타구 <strong>직전</strong> 이력을 적용하거나 직접 입력하세요.</p>
+          <div class="form-grid">
+            <label>전략 선수<select id="energy-player"><option>A</option><option>B</option></select></label>
+            <label>현재 타구자<select id="energy-hitter"><option>A</option><option>B</option></select></label>
+            <label>에너지 비용<select id="energy-model"><option value="distance">기존 거리 비용</option></select></label>
+            <label>예산 시나리오<select id="energy-scenario"><option value="50">p50 · 낮음</option><option value="75" selected>p75 · 중간</option><option value="95">p95 · 높음</option></select></label>
+          </div>
+          <div class="energy-history"><span>최근 3타구 구획</span><input id="energy-z1" type="number" min="0" max="16" value="1" aria-label="3타구 전 구획" /><span>→</span><input id="energy-z2" type="number" min="0" max="16" value="1" aria-label="2타구 전 구획" /><span>→</span><input id="energy-z3" type="number" min="0" max="16" value="1" aria-label="들어온 구획" /></div>
+          <div class="form-grid">
+            <label>A 초기 예산 (J/kg)<input id="energy-initial-a" type="number" min="0.01" step="0.1" value="402.5505" /></label>
+            <label>B 초기 예산 (J/kg)<input id="energy-initial-b" type="number" min="0.01" step="0.1" value="402.5505" /></label>
+            <label>A 잔여 예산<input id="energy-remaining-a" type="number" min="0" step="0.1" value="402.5505" /></label>
+            <label>B 잔여 예산<input id="energy-remaining-b" type="number" min="0" step="0.1" value="402.5505" /></label>
+          </div>
+          <div class="inline-control"><button id="energy-from-rally" class="button secondary" type="button">선택 타구 직전 이력·소비량 적용</button><button id="energy-calculate" class="button primary" type="button">전략 계산</button></div>
+          <p id="energy-status" role="status" class="energy-status">전략 자료 확인 중</p>
+          <div id="energy-summary"></div>
+          <label>타구별 히트맵<select id="energy-shot"><option value="">구획별 최선의 타구</option></select></label>
+          <div class="energy-legend">색: 전략 선수의 모형 승리 가치 · 0% <span></span> 100% · 회색: 지원 부족</div>
+          <div id="energy-heatmap" class="energy-heatmap" aria-label="목표 구획별 에너지 전략 히트맵"></div>
+          <p id="energy-cell-detail" class="energy-cell-detail">구획을 선택하면 예상 이동비용과 지원 표본을 확인할 수 있습니다.</p>
+          <div id="energy-top"></div>
+          <button id="energy-compare" class="button secondary" type="button">동일 예산으로 비용 모형 비교</button>
+          <div id="energy-comparison"></div>
+          <details class="energy-assumptions"><summary>추천의 조건과 에너지 비용 정의</summary><div id="energy-assumptions"></div></details>
+        </div>
       </section>
 
       <section class="panel timeline-panel" aria-labelledby="timeline-title">
@@ -98,5 +131,6 @@
       </section>
     </main>
     <script src="/static/app.js" defer></script>
+    <script src="/static/energy.js" defer></script>
   </body>
 </html>

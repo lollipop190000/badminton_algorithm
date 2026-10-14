@@ -17,6 +17,8 @@ SEEDS={
  '04_markov_parity/results/markov_parity':'outputs/markov_parity',
  '05_energy_budget/results/fatigue_terminal':'outputs/fatigue_terminal',
  '05_energy_budget/results/markov_parity_pooled':'outputs/markov_parity_pooled',
+ '05_energy_budget/results/energy_strategy':'outputs/energy_strategy',
+ '05_energy_budget/results/runs':'outputs/energy_strategy/runs',
  '07_policy_ope/results/ope':'outputs/ope_cql_v2_frame_audited',
  '08_bfmd_kinematics/results/bfmd_zago':'outputs/bfmd_zago',
  '08_bfmd_kinematics/results/source_audit':'raw/BFMD',
@@ -38,6 +40,8 @@ COMMANDS={
  'cql-evaluate':['-m','src.evaluate_cql'],
  'markov':['-m','src.estimate_parity_markov'],
  'fatigue':['scripts/run_fatigue_pipeline.py'],
+ 'energy-strategy':['scripts/run_energy_strategy.py'],
+
  'fixed-q':['scripts/run_fixed_q_pipeline.py'],
  'simulator':['scripts/run_rally_simulator.py'],
  'ope':['-m','src.evaluate_ope'],

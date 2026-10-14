@@ -128,3 +128,30 @@ class ExampleDetail(BaseModel):
     rally_id: str
     request: RallyRequest
 
+
+class EnergyStrategyRequest(BaseModel):
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
+    history: list[int] = Field(max_length=3)
+    current_hitter: Literal['A','B']
+    strategy_player: Literal['A','B'] = 'A'
+    cost_model: str = 'distance'
+    initial_a: float = Field(gt=0)
+    initial_b: float = Field(gt=0)
+    remaining_a: float = Field(ge=0)
+    remaining_b: float = Field(ge=0)
+
+    @model_validator(mode='after')
+    def check_energy(self):
+        if any(z<0 or z>16 for z in self.history):raise ValueError('구획은 Z0..Z16이어야 합니다.')
+        if self.remaining_a>self.initial_a or self.remaining_b>self.initial_b:raise ValueError('잔여 예산이 초기 예산을 넘습니다.')
+        return self
+
+
+class EnergyRallyRequest(BaseModel):
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
+    rally: RallyRequest
+    stroke_index: int | None = Field(default=None,ge=0)
+    cost_model: str = 'distance'
+    initial_a: float = Field(gt=0)
+    initial_b: float = Field(gt=0)
+

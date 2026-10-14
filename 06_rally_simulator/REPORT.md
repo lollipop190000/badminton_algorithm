@@ -23,3 +23,12 @@ python run.py simulator
 실행 후 `http://127.0.0.1:8000`에서 사용할 수 있다. 입력 창·API·구획 도식의 실행 코드는 [code/app](code/app)에 있다. 별도로 학습된 모델을 복제하지 않고 02/03 결과를 사용한다. 게시 시 실행 검증과 모델 로딩 요약은 [results](results)에 저장한다. 상대의 반응을 생성하는 경기 rollout simulator가 아니며, 입력한 상태의 확률·추천을 검토하는 UI다.
 
 결과를 다시 만들면 `.runtime/outputs` 또는 `.runtime/data`에 저장된다. 검토 후 `python run.py sync-results`로 주제별 `results/`를 갱신한다. 대용량 원자료·예산 격자 제외 기준과 완전한 Parquet 보존 여부는 루트 [PUBLICATION_MANIFEST.json](../PUBLICATION_MANIFEST.json)에 기록했다.
+
+<!-- energy-strategy-result -->
+### 에너지 전략 히트맵
+
+에너지 전략 탭에서 최근 3타구·타구자·전략 선수·초기와 잔여 예산을 입력하면 상대 코트 16구획의 최선 타구, 타구별 히트맵, 지원 표본·예상 비용·경험 정책 대비 차이와 비용 모형 비교를 확인한다. 선택한 타구 직전 이력·소비량 자동 적용과 A/B 코트 반전을 검증했다. 기존 GRU/CQL API·출력은 유지한다. 이력 부족·Z0·소진·상대 차례·지원 부족을 명시하고 수치 검증 미완료 결과는 그대로 표시한다.
+
+`POST /api/energy-strategy`, `POST /api/energy-strategy/from-rally`, `GET /api/energy-strategy/metadata`를 추가했다. clone에서는 `python run.py energy-strategy --run-id <고유 ID>`로 제외된 큰 격자를 재생성하고 `python run.py simulator`를 실행한다. 학습이나 BFMD 추출은 재실행하지 않는다.
+
+[전략 실행 결과](../05_energy_budget/results/runs/20261014-energy-strategy-v1/REPORT.md), [전체 히트맵](../05_energy_budget/results/runs/20261014-energy-strategy-v1/figures), [입출력·비용 정의](../05_energy_budget/code/ENERGY_STRATEGY.md).

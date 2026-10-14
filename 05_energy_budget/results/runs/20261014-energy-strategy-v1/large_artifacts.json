@@ -1,0 +1,162 @@
+[
+  {
+    "path": "grids/distance_A.npy",
+    "bytes": 859963520,
+    "sha256": "f8063cb7aca35f31cb473284368faebb462988b59a291c7b41aaf20a1958f6d8",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/distance_A_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "97bb21d1600efbd6c6908f6fc38e18be55ec43a58342d2103282b6152a1ce642",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/distance_B.npy",
+    "bytes": 859963520,
+    "sha256": "4be387d42ea332296702f9b2dece9344834e56244285e389c2336838aa39c023",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/distance_B_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "47ba3136618beae15dbd2eab50b15cc82a0e7b6f36a51fab8e90ce5eede59d62",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M0_distance_reference_A.npy",
+    "bytes": 859963520,
+    "sha256": "f3d417b13f1c71453d7882de30060a63480a69fa706902570a437b337e66dddb",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M0_distance_reference_A_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "2fd17060be4460780eb236575e5d959f2c10863c9145016b42652519d1db6bda",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M0_distance_reference_B.npy",
+    "bytes": 3397517440,
+    "sha256": "38c75f0c6cae7e6e2b509ed830e326b82750ec8445181ddb215e1b6c1f0070e8",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M0_distance_reference_B_behavior.npy",
+    "bytes": 3397517440,
+    "sha256": "914e61a33edf4739dc55401b1f8d9433b1c4b61195950a69270fe4a316f9e7ee",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_balanced_025_A.npy",
+    "bytes": 859963520,
+    "sha256": "7d4cb2b2ecebdf27c5c3921c18d42750e9785f47ef87fd56e66797083f4c11f4",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_balanced_025_A_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "27a90b0a2079feb845b5ab4b52c41e6517c3c05b02726eef92d30f14499dbabc",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_balanced_025_B.npy",
+    "bytes": 859963520,
+    "sha256": "ee3d629fd18e91ab2182f83e145f83ff9954242564849960d5ee860f8d240c0b",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_balanced_025_B_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "c8bc62d7de762f250297067de8d348ace26dd7e16e7e2cd746162b95c1075a76",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_curve_only_1_A.npy",
+    "bytes": 859963520,
+    "sha256": "ea3471cba591b24043cbba6a2723109f542bae3f88624bd09b742d5e49ef7dbf",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_curve_only_1_A_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "69dfb1029be489e8a8b77da824ca9ad97d2f1c1abc5789c35a06c1ed36b8febd",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_curve_only_1_B.npy",
+    "bytes": 859963520,
+    "sha256": "52dfa6e061b19df1849df4120e4ce7ec3b42f141d7319180ea68cc4ba416f77e",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_curve_only_1_B_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "84534e2ab4a3da65a8b05cde4940039f7c0fe7793bdce6c1a70813a0369f25e7",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_speed_only_1_A.npy",
+    "bytes": 859963520,
+    "sha256": "fe507a61ee76fceec86972bdbd9254293bfdf255ae1619595e1aca31cccec7f5",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_speed_only_1_A_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "6e5582dcdf8d813c577707a770aff60bdb33fc741ae1b6174574c190f6ada2fc",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_speed_only_1_B.npy",
+    "bytes": 859963520,
+    "sha256": "593eb85702b24d2c2ff199839fc4a2f0ac0394502dddd14794ab4d9d9d7f772b",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  },
+  {
+    "path": "grids/M3_hypothesis_speed_only_1_B_behavior.npy",
+    "bytes": 859963520,
+    "sha256": "ac5e4c05cbf7e728d40a3c612daf701e460fc57bdb56c5302b816546054ba91a",
+    "recreate": "scripts/run_energy_strategy.py --run-id 20261014-energy-strategy-v1",
+    "portable_recreation_command": "python run.py energy-strategy --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000",
+    "working_folder_recreation_command": "python scripts/run_energy_strategy.py --run-id <NEW_UNIQUE_RUN_ID> --grid-intervals 40 --max-grid-intervals 160 --mc-samples 20000"
+  }
+]
