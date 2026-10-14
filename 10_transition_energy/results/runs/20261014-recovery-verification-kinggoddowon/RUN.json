@@ -52,7 +52,7 @@
       "bytes": 9046
     },
     {
-      "path": "research-tests.log",
+      "path": "research-tests.txt",
       "sha256": "1b0431ce58cd303ea1465af243dddce02b5a1b263283320c9d2c31d9c9870026",
       "bytes": 13021
     },
@@ -62,7 +62,7 @@
       "bytes": 221
     },
     {
-      "path": "collaboration-tests.log",
+      "path": "collaboration-tests.txt",
       "bytes": 1020,
       "sha256": "76ec94f7c348943fd5a02a876ec6e058aebf76ad919f8fe16aa94d5f66aac4e3"
     }
