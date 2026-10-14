@@ -91,6 +91,22 @@
       "tests": [
         "test_bfmd_zago.py"
       ]
+    },
+    "09_transition_energy": {
+      "title": "셔틀 상태 복원·전체 전이별 에너지 C",
+      "code": [
+        "src/transition_energy/__init__.py",
+        "src/transition_energy/adapter.py",
+        "src/transition_energy/data.py",
+        "src/transition_energy/estimation.py",
+        "src/transition_energy/export.py",
+        "src/transition_energy/pipeline.py",
+        "src/transition_energy/reconstruction.py",
+        "src/transition_energy/shot.py"
+      ],
+      "tests": [
+        "test_transition_energy.py"
+      ]
     }
   },
   "excluded_categories": [
@@ -2023,6 +2039,66 @@
       "sha256": "dfa6ae87f2fed48ebe81951466a5a8574b4d27588a59be41e480690ce9a0bbbc"
     },
     {
+      "path": "09_transition_energy/code/configs/transition_energy.json",
+      "bytes": 1671,
+      "sha256": "3eb52b5adc41aed9f61f8f539cc4de00cb4fc9de2905e3de7ac12d2958ab6c25"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/__init__.py",
+      "bytes": 70,
+      "sha256": "e74a2f325c225211229108dbffddb69d45ec7dd74968d600c28e7cf6e30bc274"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/adapter.py",
+      "bytes": 2113,
+      "sha256": "85a69ae0926ad1c9166dd24b77a896d064fc5024ec9a4d21284cb58dca4f0af4"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/data.py",
+      "bytes": 8735,
+      "sha256": "dbd07b916428b20746b411ce0e65c37caaf60a98143c0a9d295c164635c43c0a"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/estimation.py",
+      "bytes": 11708,
+      "sha256": "811817794ff5c4bbbe285b977252328d7db4cedc60a97d7ada6fab75f9efd89d"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/export.py",
+      "bytes": 9226,
+      "sha256": "cd324a2bde41140b723083cf7d85c4a8d9bb4a12921d20ffa26d46ea47a7adf2"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/pipeline.py",
+      "bytes": 11187,
+      "sha256": "86194ecbcd26b2319d8db24cc7fa7bf3b70f10681b818ba2e098105d6a07464b"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/reconstruction.py",
+      "bytes": 15189,
+      "sha256": "a1e8da925ca6e23aea2b21e3c6d2146b601eab3d29b6d00bda400b476c5e547b"
+    },
+    {
+      "path": "09_transition_energy/code/src/transition_energy/shot.py",
+      "bytes": 5703,
+      "sha256": "cd160940da6dd15f33bdbbf58935fe449a402a504f86362d538d895f71161d79"
+    },
+    {
+      "path": "09_transition_energy/code/tests/test_transition_energy.py",
+      "bytes": 7212,
+      "sha256": "d6346c8759eca1851050d3a08d9491245e4c90b68771a4ed635bc24438e8beb3"
+    },
+    {
+      "path": "09_transition_energy/REPORT.md",
+      "bytes": 1169,
+      "sha256": "86d463f20812efd78ee8061f8f6e3a06a36d991130b4682a3fc13cd762a89a5d"
+    },
+    {
+      "path": "09_transition_energy/results/README.md",
+      "bytes": 583,
+      "sha256": "eb9c3cf3b5eb171811072a13c089ad7e95fef6c3f4368763ff13bbec8bbb3af1"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4568,
       "sha256": "1029a92f5f8cd96a8106f8f57b51bfc76cb7ec1b106c4a537b64fc8b428771b7"
@@ -2044,8 +2120,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4311,
-      "sha256": "babd8b32244a0d9017f579d3507d1715572eafe533acfbc70461caeb58ee1a92"
+      "bytes": 4570,
+      "sha256": "af11b5b0e1dee2b3c21a4ca32f9eabc4f069f8a7794a1cd7ca29332b349751ed"
     },
     {
       "path": "requirements-ci.txt",
@@ -2059,8 +2135,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 5490,
-      "sha256": "37b9e1f10cc2a543597ea7bfe4318d2eedb61fc1236d789ae7cf501d94740b3c"
+      "bytes": 5552,
+      "sha256": "9a7a3775ee66387d5f10d780eeb4842cc2f9b6f45355d451967768219fe5b7ab"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -2083,7 +2159,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 483404834,
+  "uploaded_content_bytes": 483479721,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,

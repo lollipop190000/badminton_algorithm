@@ -39,6 +39,7 @@ COMMANDS={
  'simulator':['scripts/run_rally_simulator.py'],
  'ope':['-m','src.evaluate_ope'],
  'ope-report':['scripts/report_ope.py'],
+ 'transition-energy':['-m','src.transition_energy.pipeline'],
  'bfmd-download':['-m','bfmd_zago.download_bfmd'],
  'bfmd':['-m','bfmd_zago.bfmd_zago_pipeline'],
  'test':['-m','unittest','discover','-s','tests','-v'],
