@@ -36,6 +36,7 @@ COMMANDS={
  'cql-evaluate':['-m','src.evaluate_cql'],
  'markov':['-m','src.estimate_parity_markov'],
  'fatigue':['scripts/run_fatigue_pipeline.py'],
+ 'fixed-q':['scripts/run_fixed_q_pipeline.py'],
  'simulator':['scripts/run_rally_simulator.py'],
  'ope':['-m','src.evaluate_ope'],
  'ope-report':['scripts/report_ope.py'],

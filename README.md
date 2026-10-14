@@ -10,7 +10,7 @@
 | 02_gru_probability | [GRU 랠리 승리확률 기준모형](02_gru_probability/REPORT.md) |
 | 03_cql_v2_policy | [CQL v2: 문맥과 support를 고려한 전술 추천](03_cql_v2_policy/REPORT.md) |
 | 04_markov_parity | [3타구 패턴 Markov Q·C·K·V](04_markov_parity/REPORT.md) |
-| 05_energy_budget | [누적 이동에너지·E/U 종료확률·잔여 예산 V](05_energy_budget/REPORT.md) |
+| 05_energy_budget | [누적 이동에너지·E/U 종료확률·잔여 예산 V](05_energy_budget/REPORT.md) · [고정 Q 샷별 체력 모형](05_energy_budget/code/FIXED_Q_SHOT_MODEL.md) |
 | 06_rally_simulator | [팀원이 사용하는 GRU·CQL v2 랠리 시뮬레이터](06_rally_simulator/REPORT.md) |
 | 07_policy_ope | [실제 정책을 실행하지 않고 평가하는 OPE](07_policy_ope/REPORT.md) |
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
