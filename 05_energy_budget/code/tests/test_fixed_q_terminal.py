@@ -81,5 +81,27 @@ class FixedQTests(unittest.TestCase):
         self.assertLess(abs(mc['V_midpoint']-.55),.015)
         self.assertEqual(mc['censored'],0)
 
+    def test_variable_reward_grid_zero_cost_matches_alternating_equations(self):
+        from scipy.special import expit
+        base=baseline(); base.cost_a.fill(0.); base.cost_b.fill(0.)
+        coef=np.tile([0.,1.,.2],(8,1))
+        system=FixedQTransition(base,FixedQTerminalModel(coef,1.,.01,max_h=1.,max_r=1.))
+        grid=solve_fixed_q_value(system,1.,1.,4)
+        w_a=.3*expit(np.log(2.)-.5)
+        w_b=.3*(1-expit(np.log(2.)+.1))
+        expected=(w_a+.7*w_b)/(1-.7**2)
+        self.assertAlmostEqual(float(grid.query(4096,.5,1.)['V_midpoint']),expected,places=8)
+
+    def test_crossfit_offset_excludes_held_match_outcome(self):
+        from scripts.run_fixed_q_pipeline import crossfit_offsets
+        rows=pd.DataFrame(dict(match_id=np.arange(10),state_id=np.zeros(10,int),action_index=np.full(10,6)))
+        events=pd.DataFrame(dict(match_id=np.arange(10),state_i=np.zeros(10,int),parity=np.ones(10,int),
+                                 event_index=np.full(10,6*18+16)))
+        first,fold=crossfit_offsets(rows,events,baseline(),seed=7,folds=2)
+        held=fold==fold[0]
+        events.loc[held,'event_index']=6*18+17
+        changed,_=crossfit_offsets(rows,events,baseline(),seed=7,folds=2)
+        np.testing.assert_array_equal(first[held],changed[held])
+
 
 if __name__=='__main__':unittest.main()

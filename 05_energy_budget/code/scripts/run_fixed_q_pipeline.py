@@ -263,6 +263,8 @@ def value_stage(args,out,base_final,event_table):
 
 
 def report(out):
+    from scripts.plot_fixed_q_results import plot
+    plot(out)
     metrics=pd.read_csv(out/'conditional_metrics.csv'); coeff=pd.read_csv(out/'coefficients.csv')
     assessment=json.loads((out/'heldout_assessment.json').read_text()); comparison=json.loads((out/'shot_comparison.json').read_text())
     text=['# 고정 Q 샷별 체력 민감도: 실행 결과','',
@@ -282,6 +284,8 @@ def report(out):
         text.append(f'| {shot} | {v.a:.6f} | {v.beta:.6f} | {v.gamma:.6f} |')
     text+=['',f"β_smash−β_high_clear={comparison['beta_smash_minus_high_clear']:.6f}; bootstrap 95% 구간 {comparison['difference_ci95']}. 두 샷의 순서를 강제하지 않은 결과다.",'',
            'H/R 소모량이 함께 증가하면 두 민감도를 분리하기 어렵다. 샷별 상관·조건수와 경계 계수 비율을 같이 보고, 음이 아닌 제약의 경계에 걸린 값을 효과 부재의 확정 증거로 해석하지 않는다.','']
+    if (out/'coefficient_intervals.png').exists():
+        text+=['![샷별 체력 민감도와 경기 bootstrap 구간](coefficient_intervals.png)','']
     if (out/'stamina_validation.csv').exists():
         v=pd.read_csv(out/'stamina_validation.csv')
         text+=['[예산 격자와 Monte Carlo](stamina_validation.csv)는 평균 전이 비용과 제로 종료 추가비용을 사용한 수치 검증이다. 동시 소진 순서가 미관측이므로 하한·중앙·상한을 구분한다. 초기 예산은 train 종료 소비량의 분위수 시나리오이며 최대체력 추정값이 아니다.',
@@ -324,9 +328,10 @@ def main():
     command=' '.join(sys.argv)
     code_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,encoding='utf-8').strip()
     code_files=[repo/'05_energy_budget/code/src/fixed_q_terminal.py',repo/'05_energy_budget/code/scripts/run_fixed_q_pipeline.py',
-                repo/'05_energy_budget/code/src/solve_stamina_value.py']
+                repo/'05_energy_budget/code/src/solve_stamina_value.py',repo/'05_energy_budget/code/scripts/plot_fixed_q_results.py']
     run=dict(schema_version=1,run_id=out.name,status='completed',code_commit=code_commit,
-             command=f'python run.py fixed-q --run-id {out.name} --bootstrap {args.bootstrap} --mc-samples {args.mc_samples} --seed {args.seed}',
+             command=f'python run.py fixed-q --stage {args.stage} --run-id {out.name} --bootstrap {args.bootstrap} --mc-samples {args.mc_samples} --seed {args.seed}',
+             reproduction_command=f'python run.py fixed-q --run-id NEW_UNIQUE_RUN_ID --bootstrap {args.bootstrap} --mc-samples {args.mc_samples} --seed {args.seed}',
              last_stage_command=command,seed=args.seed,
              environment=dict(python=platform.python_version(),platform=platform.platform(),device='CPU',
                  dependencies={name:version(name) for name in ('numpy','scipy','pandas','pyarrow')}),
