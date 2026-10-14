@@ -91,6 +91,16 @@
       "tests": [
         "test_bfmd_zago.py"
       ]
+    },
+    "09_cost_transfer_method": {
+      "title": "이동비용 C_ij 전달 추정 방법",
+      "code": [
+        "configs/cost_transfer_summary.json",
+        "scripts/summarize_bfmd_excess_distance.py"
+      ],
+      "tests": [
+        "test_cost_transfer_summary.py"
+      ]
     }
   },
   "excluded_categories": [
@@ -2023,9 +2033,39 @@
       "sha256": "dfa6ae87f2fed48ebe81951466a5a8574b4d27588a59be41e480690ce9a0bbbc"
     },
     {
+      "path": "09_cost_transfer_method/code/configs/cost_transfer_summary.json",
+      "bytes": 641,
+      "sha256": "e1f5fc29700a3139ae523a51a249472864919d122e0da479a2b58d391633f631"
+    },
+    {
+      "path": "09_cost_transfer_method/code/DETAILS.md",
+      "bytes": 27716,
+      "sha256": "fb0f6592fccc914ef95b567fc491f0e68e0711ad83aa7879d5d91941a59d42b7"
+    },
+    {
+      "path": "09_cost_transfer_method/code/scripts/summarize_bfmd_excess_distance.py",
+      "bytes": 8720,
+      "sha256": "8eeab5d9d322ce757b156b2d388643fa34cb84385571e74cb4de15413c112bef"
+    },
+    {
+      "path": "09_cost_transfer_method/code/tests/test_cost_transfer_summary.py",
+      "bytes": 3158,
+      "sha256": "e14044663c3fab47829349b4c70e0d1092ad433edd54dd25804a248624fd3a00"
+    },
+    {
+      "path": "09_cost_transfer_method/REPORT.md",
+      "bytes": 3877,
+      "sha256": "b7ec9f2d27db14ccf5ab2847a39057f931fe7153c326d301c32fefc2cf38271d"
+    },
+    {
+      "path": "09_cost_transfer_method/results/README.md",
+      "bytes": 193,
+      "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
+    },
+    {
       "path": "AGENTS.md",
-      "bytes": 4568,
-      "sha256": "1029a92f5f8cd96a8106f8f57b51bfc76cb7ec1b106c4a537b64fc8b428771b7"
+      "bytes": 4605,
+      "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -2044,8 +2084,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4311,
-      "sha256": "babd8b32244a0d9017f579d3507d1715572eafe533acfbc70461caeb58ee1a92"
+      "bytes": 4463,
+      "sha256": "5ce500c18807d5854a952e295ce1186488716fd3f7bf631d60bb74e103cb80f7"
     },
     {
       "path": "requirements-ci.txt",
@@ -2059,8 +2099,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 5490,
-      "sha256": "37b9e1f10cc2a543597ea7bfe4318d2eedb61fc1236d789ae7cf501d94740b3c"
+      "bytes": 5622,
+      "sha256": "f0f6973536a657431bfab0a39590880a8aa60fdef18b80aca7e150b1d5e8f58a"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -2083,7 +2123,7 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 483404834,
+  "uploaded_content_bytes": 483449460,
   "publication_validation": {
     "active_tests": 69,
     "passed": true,
