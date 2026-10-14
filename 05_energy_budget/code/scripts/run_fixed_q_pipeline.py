@@ -154,7 +154,7 @@ def fit_stage(args,out,base_train,base_final,event_table):
     combined_source=pd.concat([source['train'],source['validation']],ignore_index=True)
     final_offset,final_fold=crossfit_offsets(combined,combined_source,base_final,args.seed,args.folds)
     coeff,diagnostic=fit_coefficients(combined,final_offset,d_star,selected['shot'])
-    final=model_from(coeff,combined,d_star,selected['shot'],'train+validation')
+    final=model_from(coeff,combined,d_star,selected['shot'],base_final.fit_scope)
     final.save(out/'model_final.json')
     samples=[]
     matches=sorted(combined.match_id.unique()); rng=np.random.default_rng(args.seed+100)
@@ -201,19 +201,29 @@ def fit_stage(args,out,base_train,base_final,event_table):
     write_json(out/'heldout_assessment.json',dict(shot_minus_intercept_log_loss=float((logloss(test.y,p)-logloss(test.y,control)).mean()),
         ci95=[float(np.quantile(delta,.025)),float(np.quantile(delta,.975))],match_bootstrap_repeats=2000,
         positive_delta_is_worse=True,causal_fatigue_claim=False))
+    export_stage(out,base_final)
+    log(f'fit complete: {audits}; ridge {selected}; D_*={d_star:.6f}')
+
+
+def export_stage(out,base_final):
+    final=FixedQTerminalModel.load(out/'model_final.json')
+    # A previously interrupted export may use the equivalent descriptive name.
+    if final.fit_scope=='train+validation' and base_final.fit_scope=='train_validation':
+        final.fit_scope=base_final.fit_scope
+        final.save(out/'model_final.json')
     checks=invariants(FixedQTransition(base_final,final))
     reloaded=FixedQTerminalModel.load(out/'model_final.json')
     checks['reload_max_error']=float(np.max(np.abs(reloaded.coefficients-final.coefficients)))
     write_json(out/'invariants.json',checks)
     # Complete terminal table, not a sample, at declared consumption scenarios.
     tables=[]; system=FixedQTransition(base_final,final)
+    d_star=final.d_star
     for scenario,(da,db) in enumerate(((0.,0.),(d_star,0.),(0.,d_star),(d_star,d_star))):
         w,l,c,pred=system.all_components(da,db)
         tables.append(pd.DataFrame(dict(scenario=scenario,D_A=da,D_B=db,parity=np.repeat(np.arange(2),N_STATES*8),
             state_id=np.tile(np.repeat(np.arange(N_STATES),8),2),shot_type=np.tile(MID_RALLY_ACTIONS,2*N_STATES),
             w=w.ravel(),l=l.ravel(),terminal_mass=system.terminal_mass.ravel(),continuation_mass=c.ravel(),rho=pred['rho'].ravel())))
     pd.concat(tables,ignore_index=True).to_parquet(out/'terminal_probabilities.parquet',index=False)
-    log(f'fit complete: {audits}; ridge {selected}; D_*={d_star:.6f}')
 
 
 def value_stage(args,out,base_final,event_table):
@@ -285,7 +295,7 @@ def main():
     parser.add_argument('--inputs',type=Path,default=Path('outputs/fatigue_terminal'))
     parser.add_argument('--run-id',default='20261014-fixed-q-shot-xpinion0415')
     parser.add_argument('--output-root',type=Path)
-    parser.add_argument('--stage',choices=('fit','value','all','report'),default='all')
+    parser.add_argument('--stage',choices=('fit','value','all','report','export'),default='all')
     parser.add_argument('--bootstrap',type=int,default=200)
     parser.add_argument('--mc-samples',type=int,default=20000)
     parser.add_argument('--folds',type=int,default=5)
@@ -308,6 +318,7 @@ def main():
     if args.stage in ('fit','all'):
         if (out/'conditional_metrics.csv').exists():raise ValueError('held-out evaluation already recorded; use value/report stage or a new run id')
         fit_stage(args,out,base_train,base_final,events)
+    if args.stage=='export':export_stage(out,base_final)
     if args.stage in ('value','all'):value_stage(args,out,base_final,events)
     report(out)
     command=' '.join(sys.argv)
