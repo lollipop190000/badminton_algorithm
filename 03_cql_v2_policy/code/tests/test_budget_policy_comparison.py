@@ -11,6 +11,16 @@ from src.budget_policy_comparison import Kernel, paired_difference, rollout,Ener
 
 
 class CommonEnvironmentTests(unittest.TestCase):
+    def test_comparison_summary_rejects_mislabeled_cost_model_or_fingerprint(self):
+        from scripts.summarize_integrated_comparison import validate_model_identity
+        contract={'cost_model':'topic11-integrated-M0-v2','cost_fingerprint':'m0'}
+        summary={'costs':'topic11-integrated-M0-v2'}
+        config={'cost_fingerprint':'m0'}
+        validate_model_identity('M0_v2',contract,summary,config)
+        with self.assertRaises(ValueError):validate_model_identity('M3_v2',contract,summary,config)
+        with self.assertRaises(ValueError):validate_model_identity('M0_v2',contract,{'costs':'other'},config)
+        with self.assertRaises(ValueError):validate_model_identity('M0_v2',contract,summary,{'cost_fingerprint':'m3'})
+
     def test_refinement_reuses_only_matching_coarse_grid_dependencies(self):
         from scripts.compare_integrated_cql import load_coarse_grid
         from src.energy_strategy import StrategyGrid

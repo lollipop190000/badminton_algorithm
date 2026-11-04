@@ -19,6 +19,13 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def validate_model_identity(model,contract,summary,config):
+    expected={'M0_v2':'topic11-integrated-M0-v2','M3_v2':'topic11-integrated-M3-v2'}[model]
+    if (contract['cost_model']!=expected or summary['costs']!=expected or
+        config['cost_fingerprint']!=contract['cost_fingerprint']):
+        raise ValueError('Summary label, dataset cost model and comparison fingerprint must agree')
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--m0',type=Path,required=True)
@@ -31,6 +38,8 @@ def main():
     for model,run in [('M0_v2',args.m0),('M3_v2',args.m3)]:
         directory=run/'comparison'/args.comparison_id
         summary=json.loads((directory/'comparison_summary.json').read_text())
+        validate_model_identity(model,json.loads((run/'dataset_contract.json').read_text()),summary,
+                                json.loads((directory/'config.json').read_text()))
         if not summary['all_numerical_checks_passed']:
             raise ValueError(f'{model}: numerical validation must pass before publication')
         metrics=pd.read_csv(directory/'metrics.csv')
@@ -78,13 +87,27 @@ def main():
             run/'training/20261104-full-5seeds/training_summary.json',
             run/'diagnostics/20261104-full-fqe/diagnostics.json'])
     args.out.mkdir(parents=True)
+    configuration=dict(m0=str(args.m0),m3=str(args.m3),comparison_id=args.comparison_id,
+        condition_weighting='equal',cql_seeds=list(range(42,47)),draw_value=.5,
+        nominal_conditions=32,sensitivity_conditions_per_perturbation=6,
+        mc_interval='paired trial-wise CQL seed mean; sum independent condition variances',
+        training_variation='SD and range across the five seed-level condition means')
+    (args.out/'config.json').write_text(json.dumps(configuration,indent=2)+'\n',encoding='utf-8')
     metrics=pd.concat(frames,ignore_index=True);condition=pd.DataFrame(conditions)
     metrics.to_csv(args.out/'policy_metrics.csv',index=False)
     condition.to_csv(args.out/'condition_comparison.csv',index=False)
     pd.DataFrame(supports).to_csv(args.out/'recommendation_support.csv',index=False)
-    aggregate=[]
-    for (model,scenario),f in condition.groupby(['model','scenario'],sort=False):
-        m=metrics[metrics.model.eq(model)&metrics.scenario.eq(scenario)]
+    aggregate=[];matched=[]
+    for model in ('M0_v2','M3_v2'):
+        f=condition[condition.model.eq(model)]
+        keys=set(map(tuple,f[f.scenario.eq('opponent_T075')][['budget_A','budget_B','parity']].to_numpy()))
+        subset=f[f.scenario.eq('nominal')].copy()
+        subset=subset[[tuple(v) in keys for v in subset[['budget_A','budget_B','parity']].to_numpy()]]
+        if len(subset)!=6:raise ValueError('Sensitivity reference must match exactly six nominal conditions')
+        subset['scenario']='nominal_matched';matched.append(subset)
+    for (model,scenario),f in pd.concat([condition,*matched]).groupby(['model','scenario'],sort=False):
+        original='nominal' if scenario=='nominal_matched' else scenario
+        m=metrics[metrics.model.eq(model)&metrics.scenario.eq(original)&metrics.condition.isin(f.condition)]
         seed_means=m[m.policy.str.startswith('cql_seed')].groupby('policy').model_win_value.mean()
         mcse=np.sqrt(np.square(f.paired_mc_se).sum())/len(f)
         aggregate.append(dict(model=model,scenario=scenario,conditions=len(f),
@@ -127,10 +150,11 @@ def main():
         code_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=args.out.parents[2],text=True).strip(),
         inputs=[dict(path=str(f),sha256=sha(f)) for f in inputs],source_sha256=sha(Path(__file__)),
         methods={'aggregation':'equal weights across conditions; CQL average across 5 training seeds',
+                 'sensitivity_reference':'nominal_matched uses the same six budget/parity conditions as every perturbation; nominal uses all 32',
                  'mc_interval':'paired outcomes averaged across seeds per trial; independent condition variances summed',
                  'seed_variation':'SD and range of per-seed condition-mean values; separate from Monte Carlo interval',
                  'support':'weighted test-replay recommendation counts at the selected train backoff context; not rollout occupancy'},
-        config=dict(path='condition_comparison.csv',sha256=sha(args.out/'condition_comparison.csv')),
+        config=dict(path='config.json',sha256=sha(args.out/'config.json')),
         metrics=dict(cost_models=2,conditions_per_model=56,samples_per_policy_condition=20000),
         limitations=['same fitted model, no real match evaluation','MC intervals exclude fitted-model uncertainty',
                      'M0/M3 independently scaled budgets; quantile scenarios are compared, not identical physical budgets'],
