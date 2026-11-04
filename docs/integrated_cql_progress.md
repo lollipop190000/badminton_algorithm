@@ -1,0 +1,16 @@
+# Integrated-cost CQL and common-environment comparison
+
+Approved spec: conversation plan plus 2026-11-04 user instruction to inspect completed topic 11 and continue the planned work.
+
+- Base: origin/main 1213769 (topic11 PR12 and CQL PR11 both merged). New branch research/03-integrated-cql-comparison.
+- Topic11 RUN input/output hashes: 12 inputs and 37 outputs verified. User explicitly confirmed BOTH M0_v2 and M3_v2 formal comparisons. Each gets its own replay, alpha search, five independently trained seeds and recomputed mathematical strategy. M3 remains a different cost assumption, not a validated metabolic improvement.
+- Dataset 20261104-budget-cql-integrated-M0-codex built from the frozen topic11 M0/terminal tables. Table keys, components, shot accounting and completeness passed existing CostBundle validation. All train-only state/mask/budget rules preserved.
+- Full CQL training started with alpha .1/.25/.5, maximum60 epochs, patience12, seed42 selection, final seeds42..46. Do not restart or overwrite the active training run.
+- Ruling: validated cost status means the topic11 computational/transfer checks passed, not independently measured energy accuracy. Explicitly preserve that distinction in every report.
+- Ruling: primary comparison environment uses train-fitted strict M0 termination hazards and train-fitted opponent pi*T, plus the exact integrated costs. Both policies receive the same supported action mask and budgets; no test outcomes select the simulator or policies. Topic11's frozen aggregation refit uses train+validation features and no test records; record that development-data reuse.
+- Implementation: common vector step must reproduce scalar advance, account terminal swings, reject censored rollouts, share trial/step random numbers, and expose a frozen-policy adapter. Reuse existing Bellman solver with integrated cost tensors; verify successive grids and exact-cost Monte Carlo.
+- Primary conditions: both starting parities, 16 ordered budget pairs; initial states sampled from the TRAIN fourth-hit distribution conditional on parity; 20,000 paired trials per condition. Fixed opponent shared by behavior, no-energy, integrated energy and 5 CQL seeds.
+- Sensitivity conditions for EACH cost model: its frozen policies with opponent temperature .75/1.25 and cost multipliers .9/1.1; six budget/parity conditions per perturbation. Temperature acts on the full opponent joint shot/destination distribution. Main M0/M3 comparisons always use separately retrained CQLs and separately recomputed mathematical strategies.
+- Independent review: source/cache and train-input binding defects receive failing regression tests then fixes. Cached grid files and execution sources are hashed; current train input must match dataset provenance; a failed refinement gate stops before rollouts. Terminal and joint distributions also enter player-exchange checks. Batched energy actions match legacy recommend for both focal players.
+- Minor retained: --resume reuses verified grids but recomputes episode conditions; this is safe but can be expensive.
+- Pending: finish training, auxiliary FQE, implement/test common comparison, numeric convergence, nominal and sensitivity results, reports/manifest/Notion and new PR. Existing reference runs remain immutable.

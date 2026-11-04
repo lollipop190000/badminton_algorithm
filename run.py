@@ -42,6 +42,7 @@ COMMANDS={
  'budget-cql-build':['-m','src.build_budget_cql'],
  'budget-cql-train':['-m','src.train_budget_cql'],
  'budget-cql-evaluate':['-m','src.evaluate_budget_cql'],
+ 'budget-cql-compare':['scripts/compare_integrated_cql.py'],
  'markov':['-m','src.estimate_parity_markov'],
  'fatigue':['scripts/run_fatigue_pipeline.py'],
  'energy-strategy':['scripts/run_energy_strategy.py'],

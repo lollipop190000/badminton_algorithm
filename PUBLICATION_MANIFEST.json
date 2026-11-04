@@ -848,8 +848,8 @@
     },
     {
       "path": "03_cql_v2_policy/code/BUDGET_CQL_HANDOFF.md",
-      "bytes": 7029,
-      "sha256": "c4c80f9a8a7550fd2039088adabc01ac153a388efeb41377415dbfd01a6d9988"
+      "bytes": 9357,
+      "sha256": "0ce02323f6ee8f4f4d7d738806149e6a8834523540ddf3cb68c8abc49b82e5f8"
     },
     {
       "path": "03_cql_v2_policy/code/configs/budget_cql.json",
@@ -862,9 +862,19 @@
       "sha256": "5f375a1aca3e496cdb2966c644f7eff665888e2b420af958ccd519a118c3e9c8"
     },
     {
+      "path": "03_cql_v2_policy/code/scripts/compare_integrated_cql.py",
+      "bytes": 13647,
+      "sha256": "650dbdd9537d904493868f217e1b380d8475261e9c6208b9f6cf8124ab5f5225"
+    },
+    {
       "path": "03_cql_v2_policy/code/src/budget_cql_contract.py",
       "bytes": 11333,
       "sha256": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e"
+    },
+    {
+      "path": "03_cql_v2_policy/code/src/budget_policy_comparison.py",
+      "bytes": 11057,
+      "sha256": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4"
     },
     {
       "path": "03_cql_v2_policy/code/src/build_budget_cql.py",
@@ -907,14 +917,19 @@
       "sha256": "046a018898235a4b6bbc723f9e75cff00e2a3ae1bce9f88bf209ea8d70e4e1c6"
     },
     {
+      "path": "03_cql_v2_policy/code/tests/test_budget_policy_comparison.py",
+      "bytes": 6967,
+      "sha256": "7935597e358e03e3ba2e3d5a4cd565cbc60c4c0347f00ac3b6325e55c473c3e8"
+    },
+    {
       "path": "03_cql_v2_policy/code/tests/test_cql_v2_pipeline.py",
       "bytes": 4068,
       "sha256": "4e6e8d1784d13fb631af0c26e0e5eef0e55e5e8d6abb97ba36d07d3d35c4c9c5"
     },
     {
       "path": "03_cql_v2_policy/REPORT.md",
-      "bytes": 6439,
-      "sha256": "903afb31c7a5052e1d7c31ba8c5d136cd226b4adb70647eada71cf2c1152c579"
+      "bytes": 7131,
+      "sha256": "46ce3f9b566cc19e5bf290e5e2cb3a7ad4f66dc4e2232e9a6eb28f8c31844a93"
     },
     {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/common_mask.npy",
@@ -3987,6 +4002,11 @@
       "sha256": "23cc03f6672c30cdb0e7b666de0601b25c44779adeff04d29ab85ae0d2620e88"
     },
     {
+      "path": "docs/integrated_cql_progress.md",
+      "bytes": 3292,
+      "sha256": "8b820bfd4f89156b2f10a4bd4f03ab8912193c2fefeebfeceb517d7d51834609"
+    },
+    {
       "path": "docs/templates/REPORT.md",
       "bytes": 958,
       "sha256": "04a6c5633a2c5f72266a7dfbead92bd228e0e5d4c57beb4a49ae3cc0a26e6a9a"
@@ -4013,8 +4033,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 7421,
-      "sha256": "be1e56cee28b559981b54d647f964c67cfa8f5dbeac05f579cd5151fae0a2d8f"
+      "bytes": 7483,
+      "sha256": "01eb7fca1154a652d20dfef3232ed6572f44621871395ba3b084c2c490d386bd"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -4037,5 +4057,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1178638180
+  "uploaded_content_bytes": 1178676225
 }
