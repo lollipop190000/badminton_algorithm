@@ -1,0 +1,71 @@
+{
+  "train": {
+    "eligible_rallies": 3392,
+    "excluded_rallies": {
+      "uncertain_chronology": 27
+    },
+    "omitted": {
+      "unsupported_logged_action": 8027,
+      "terminal_no_compatible_target": 76
+    },
+    "terminal_unknown_zone_events": 1993,
+    "expanded_rows": 360170,
+    "terminal_marginalized_weight_fraction": 0.07379159768300002,
+    "effective_source_scenario_rows": 234959.0,
+    "end_reasons_weighted": {
+      "budget_A": 24860.0,
+      "budget_B": 24699.0,
+      "budget_both": 4509.0,
+      "continue": 136548.0,
+      "natural": 44343.0
+    },
+    "raw_rallies": 4035,
+    "raw_rallies_without_eligible_events": 616
+  },
+  "val": {
+    "eligible_rallies": 753,
+    "excluded_rallies": {
+      "uncertain_chronology": 4
+    },
+    "omitted": {
+      "unsupported_logged_action": 1761,
+      "terminal_no_compatible_target": 49
+    },
+    "terminal_unknown_zone_events": 470,
+    "expanded_rows": 80773,
+    "terminal_marginalized_weight_fraction": 0.0698444593287192,
+    "effective_source_scenario_rows": 53748.0,
+    "end_reasons_weighted": {
+      "budget_A": 6009.0,
+      "budget_B": 5800.0,
+      "budget_both": 1119.0,
+      "continue": 31527.0,
+      "natural": 9293.0
+    },
+    "raw_rallies": 876,
+    "raw_rallies_without_eligible_events": 119
+  },
+  "test": {
+    "eligible_rallies": 816,
+    "excluded_rallies": {
+      "uncertain_chronology": 2
+    },
+    "omitted": {
+      "unsupported_logged_action": 1891,
+      "terminal_no_compatible_target": 50
+    },
+    "terminal_unknown_zone_events": 468,
+    "expanded_rows": 86835,
+    "terminal_marginalized_weight_fraction": 0.07591417777460974,
+    "effective_source_scenario_rows": 56116.0,
+    "end_reasons_weighted": {
+      "budget_A": 5933.0,
+      "budget_B": 5673.0,
+      "budget_both": 1088.0,
+      "continue": 32408.0,
+      "natural": 11014.0
+    },
+    "raw_rallies": 966,
+    "raw_rallies_without_eligible_events": 148
+  }
+}

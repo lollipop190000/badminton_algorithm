@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104-fqe-connection",
+  "status": "completed",
+  "code_commit": "537ff7ddaf4d85e0bcb19b3298bae46f10ad75dd",
+  "command": "python run.py budget-cql-evaluate --run-id 20261104-budget-cql-reference-v3-codex --training-id 20261104-connection-5seeds --evaluation-id 20261104-fqe-connection --fqe-epochs 2",
+  "seed": 142,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "torch": "2.13.0+cu126",
+    "device": "cuda"
+  },
+  "inputs": [
+    {
+      "path": "replay_train.npz",
+      "sha256": "73c6e12639e1851335d5c4c6b6a01ea378ae669e8a22e0521935f37d5961323f"
+    },
+    {
+      "path": "replay_test.npz",
+      "sha256": "dd14f554fed9b0721e44173aef130486d27a433a2a21e62b4bf8014f0bf637d0"
+    },
+    {
+      "path": "rows_test.parquet",
+      "sha256": "5214696acea06a135aebe768d6883228529d03b46ff5e89e9d152c7adb22c922"
+    },
+    {
+      "path": "dataset_contract.json",
+      "sha256": "191683ac44e5e8c00c68f3ce24955e7f1fe0a226ba57ae255981fe1e1034b687"
+    },
+    {
+      "path": "common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "support.npz",
+      "sha256": "7a1e683b234340dd02ba08d2a517e98983a63c878c36cbfd535895d7062a18c9"
+    },
+    {
+      "path": "training\\20261104-connection-5seeds\\policy_seed42.pt",
+      "sha256": "ffa9cd4fd230e5746fe74f2e7b8ae00d29feacafc54bf4e2afe7d88c31bf960e"
+    },
+    {
+      "path": "training\\20261104-connection-5seeds\\policy_seed43.pt",
+      "sha256": "21e9e20970be24fcc679e5513ab4f55aea3d6cc8d5415628764542d9e78f2411"
+    },
+    {
+      "path": "training\\20261104-connection-5seeds\\policy_seed44.pt",
+      "sha256": "73c8982e67dc8b0efed8cf909c4def6aa4df84828ff3f36105a6fb9861747ec6"
+    },
+    {
+      "path": "training\\20261104-connection-5seeds\\policy_seed45.pt",
+      "sha256": "e02fb67f99afae60acfc2b5f03c210a7ef059af89852b106551c6ee3b8623efa"
+    },
+    {
+      "path": "training\\20261104-connection-5seeds\\policy_seed46.pt",
+      "sha256": "079e6531c795f41384780b0a2717fb64233a38c43dfaea7edaee62468dc71feb"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "1a03af579b170a85a994b647a0a14c9cee53dab7261b6623289aba5b5b903c3e"
+  },
+  "split": "train-only FQE fitting; frozen test diagnostics; no tuning from test",
+  "metrics": [
+    {
+      "seed": 42,
+      "expanded_rows": 86835,
+      "effective_rows": 56116.0,
+      "observed_zone_weight_fraction": 0.9240858222253903,
+      "observed_action_agreement": 0.10706572045664918,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.11573229730129242,
+        1.0421383380889893
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.2878276692742233,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -0.743095874786377,
+        0.9854596853256226
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 43,
+      "expanded_rows": 86835,
+      "effective_rows": 56116.0,
+      "observed_zone_weight_fraction": 0.9240858222253903,
+      "observed_action_agreement": 0.10477090404196236,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.11201796680688858,
+        1.1201330423355103
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.28532063464297946,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -0.6949118375778198,
+        0.9775323271751404
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 44,
+      "expanded_rows": 86835,
+      "effective_rows": 56116.0,
+      "observed_zone_weight_fraction": 0.9240858222253903,
+      "observed_action_agreement": 0.10342101203332305,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.0606185644865036,
+        1.051230549812317
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.2725108509098258,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -0.6439899802207947,
+        0.9724815487861633
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 45,
+      "expanded_rows": 86835,
+      "effective_rows": 56116.0,
+      "observed_zone_weight_fraction": 0.9240858222253903,
+      "observed_action_agreement": 0.09969916692378895,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.046901553869247437,
+        1.0943734645843506
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.2816917043253568,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -0.7331168055534363,
+        1.0057023763656616
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 46,
+      "expanded_rows": 86835,
+      "effective_rows": 56116.0,
+      "observed_zone_weight_fraction": 0.9240858222253903,
+      "observed_action_agreement": 0.09796359148410984,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        0.1329311728477478,
+        0.7476396560668945
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.2930920258090315,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -0.7868022918701172,
+        0.971332311630249
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    }
+  ],
+  "source_sha256": {
+    "src\\budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src\\build_budget_cql.py": "83932d4dfb203b5c1a09671fffbfe5ec4937bcac16ace55206988024a93fb5df",
+    "src\\evaluate_budget_cql.py": "b6d4f28fa03a3b08e89a594f23d4b32a82a972223ddcc8cd4767d6b9e11426c8",
+    "src\\train_budget_cql.py": "3c91aa0d6452e83cfe042366357cd33b53daaefde5903312db3b158e893a9eac"
+  },
+  "limitations": [
+    "No simulated or measured win comparison performed",
+    "FQE is auxiliary and does not solve causal/support limitations"
+  ],
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "1a03af579b170a85a994b647a0a14c9cee53dab7261b6623289aba5b5b903c3e"
+    },
+    {
+      "path": "diagnostics.json",
+      "sha256": "1846dd8e0d3a83172b60672e3a7bc9d1ea8014738f488777670ab19886ac6895"
+    },
+    {
+      "path": "fqe_history_seed42.csv",
+      "sha256": "20a9c98e3678b54a22955a90e9ac746e63082d73e8f1148e8b4eb23b822d5556"
+    },
+    {
+      "path": "fqe_history_seed43.csv",
+      "sha256": "310c47b6e8eeed74387136044dfbb8fc133f04bbce59e3ba24cce03953260670"
+    },
+    {
+      "path": "fqe_history_seed44.csv",
+      "sha256": "dfeae113cd02d9b220ac257d1872b2136c2ae7d8eb0937824cffbfa6f9f157d2"
+    },
+    {
+      "path": "fqe_history_seed45.csv",
+      "sha256": "2f7f05ca8d5fc957593367c78b9edf650d5ed8adaa8b60107886b0c42ac0e41d"
+    },
+    {
+      "path": "fqe_history_seed46.csv",
+      "sha256": "a7c1071c85c68e88237c50ddf7a466fe6f02967e107d3b5e13dc7b335b6db8b0"
+    },
+    {
+      "path": "fqe_seed42.pt",
+      "sha256": "9da41d496f171dffe7d0ebf33512ffd67589d26f4718075ec1cf5f5871090089"
+    },
+    {
+      "path": "fqe_seed43.pt",
+      "sha256": "32ebc7cb677ecbf2e9f5a565726400976a21ad082dc3e096dd22e393dcee93f4"
+    },
+    {
+      "path": "fqe_seed44.pt",
+      "sha256": "f7aa1fb4655cbcd269861fd51f7c7578b6936038611adb3c3f7bff887f8a8ca9"
+    },
+    {
+      "path": "fqe_seed45.pt",
+      "sha256": "1abb9860e0c223f86466421e21f715260c6b8adb4af82bcc811022608f02141b"
+    },
+    {
+      "path": "fqe_seed46.pt",
+      "sha256": "e064900ca31859c92e63b557bfbecbea5820baaa25953cd8deffc2e822b8f97b"
+    },
+    {
+      "path": "predictions_seed42.parquet",
+      "sha256": "7a631d6611c1d8fbaf1394369ec4280ecaf8b9febbd94b01310dbf2fe5b347ea"
+    },
+    {
+      "path": "predictions_seed43.parquet",
+      "sha256": "29dad05557286eaf97916ed1bf557e3be23abca58a8e26a47c498d40499e90a0"
+    },
+    {
+      "path": "predictions_seed44.parquet",
+      "sha256": "262addb5bb5477d7a3c90315f69407a1cb3b15dbcc381a9c00ec580168cb2871"
+    },
+    {
+      "path": "predictions_seed45.parquet",
+      "sha256": "a5681f5272c310b46caca76d5b996334364bbf0ded9e8c45a74ab11ff316401e"
+    },
+    {
+      "path": "predictions_seed46.parquet",
+      "sha256": "36358b660fbb3f0a6f1103c7f1a2eb8ec6c774e1d72e1f8161c674166f9c23f4"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "selected_alpha": 0.5,
+  "selection": "minimum weighted validation TD surrogate; not measured policy quality",
+  "alpha_trials": [
+    {
+      "seed": 42,
+      "alpha": 0.5,
+      "best_epoch": 2,
+      "epochs": 2,
+      "validation_td_loss": 0.41508550929988186,
+      "checkpoint": "candidate_seed42_alpha0p5.pt"
+    }
+  ],
+  "policies": [
+    {
+      "seed": 42,
+      "alpha": 0.5,
+      "best_epoch": 2,
+      "epochs": 2,
+      "validation_td_loss": 0.41508550929988186,
+      "checkpoint": "policy_seed42.pt"
+    },
+    {
+      "seed": 43,
+      "alpha": 0.5,
+      "best_epoch": 2,
+      "epochs": 2,
+      "validation_td_loss": 0.4095188863462179,
+      "checkpoint": "policy_seed43.pt"
+    },
+    {
+      "seed": 44,
+      "alpha": 0.5,
+      "best_epoch": 2,
+      "epochs": 2,
+      "validation_td_loss": 0.4172590255233323,
+      "checkpoint": "policy_seed44.pt"
+    },
+    {
+      "seed": 45,
+      "alpha": 0.5,
+      "best_epoch": 2,
+      "epochs": 2,
+      "validation_td_loss": 0.41498400938935076,
+      "checkpoint": "policy_seed45.pt"
+    },
+    {
+      "seed": 46,
+      "alpha": 0.5,
+      "best_epoch": 1,
+      "epochs": 2,
+      "validation_td_loss": 0.42124770297977726,
+      "checkpoint": "policy_seed46.pt"
+    }
+  ],
+  "cost_status": "provisional",
+  "profile": "provisional_cost_connection_test",
+  "train_expanded_rows": 360170,
+  "validation_expanded_rows": 80773,
+  "state_dimension": 51,
+  "actions": 128,
+  "masked_actions": 68,
+  "gamma": 1.0,
+  "test_data_used_in_selection": false,
+  "device": "cuda"
+}
