@@ -1,0 +1,14 @@
+{
+  "numerical_check": "failed",
+  "max_refinement_difference_reported": 0.020123,
+  "reported_precision": "six decimal digits from execution log",
+  "threshold": 0.02,
+  "grid_intervals": 320,
+  "storage_error": "OSError during numpy save",
+  "expected_npy_bytes": 13505790080,
+  "actual_partial_bytes": 2147483776,
+  "partial_original_sha256": "99d537903aa99abb373277d46bc14a9182a70d07a9130e47c5568945909884ec",
+  "archived_partial": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy.gz",
+  "partial_archive_sha256": "83d95e620fec6106682c56d7598e37832ab2e03739e4ea08b06b95dc58d00423",
+  "policy_conditions": 0
+}

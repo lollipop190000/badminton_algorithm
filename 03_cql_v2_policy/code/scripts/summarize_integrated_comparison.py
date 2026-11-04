@@ -32,11 +32,14 @@ def main():
     p.add_argument('--m3',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--comparison-id',default='20261104-common-model-comparison')
+    p.add_argument('--m0-comparison-id')
+    p.add_argument('--m3-comparison-id')
     args=p.parse_args()
     if args.out.exists():raise FileExistsError('Summary runs are immutable; choose a new ID')
     frames=[];conditions=[];supports=[];inputs=[]
     for model,run in [('M0_v2',args.m0),('M3_v2',args.m3)]:
-        directory=run/'comparison'/args.comparison_id
+        comparison_id=(args.m0_comparison_id if model=='M0_v2' else args.m3_comparison_id) or args.comparison_id
+        directory=run/'comparison'/comparison_id
         summary=json.loads((directory/'comparison_summary.json').read_text())
         validate_model_identity(model,json.loads((run/'dataset_contract.json').read_text()),summary,
                                 json.loads((directory/'config.json').read_text()))
@@ -88,6 +91,8 @@ def main():
             run/'diagnostics/20261104-full-fqe/diagnostics.json'])
     args.out.mkdir(parents=True)
     configuration=dict(m0=str(args.m0),m3=str(args.m3),comparison_id=args.comparison_id,
+        m0_comparison_id=args.m0_comparison_id or args.comparison_id,
+        m3_comparison_id=args.m3_comparison_id or args.comparison_id,
         condition_weighting='equal',cql_seeds=list(range(42,47)),draw_value=.5,
         nominal_conditions=32,sensitivity_conditions_per_perturbation=6,
         mc_interval='paired trial-wise CQL seed mean; sum independent condition variances',

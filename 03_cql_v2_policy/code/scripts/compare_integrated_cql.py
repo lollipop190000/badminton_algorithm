@@ -21,6 +21,7 @@ from src.budget_policy_comparison import (Kernel,BehaviorPolicy,CQLPolicy,NoEner
     SwappedGrid,player_symmetric,load_common_system,rollout,summarize,paired_difference,
     verify_grid_cache,require_numerical_grid)
 from src.energy_strategy import solve_strategy,solve_no_energy,StrategyGrid
+from src.budget_value_grid import solve_value_grid,ValueGrid,ensure_grid_space,required_grid_bytes
 
 
 def initial_distribution():
@@ -47,6 +48,11 @@ def grid_queries(grid,dist,budgets):
     return np.array(values)
 
 
+def load_grid(path):
+    meta=json.loads(path.with_suffix('.json').read_text())
+    return ValueGrid.load(path) if meta.get('grid_storage')=='mean_value_only_float64' else StrategyGrid.load(path)
+
+
 def load_coarse_grid(out,source_hashes,kernel_hashes,fingerprint,domain):
     """Reuse numeric work only when the solver, model, data and costs still match."""
     directory=out/'grids'
@@ -60,7 +66,7 @@ def load_coarse_grid(out,source_hashes,kernel_hashes,fingerprint,domain):
     if (dependencies(old_sources)!=dependencies(source_hashes) or
         config['kernel_input_sha256']!=kernel_hashes or status['cost_fingerprint']!=fingerprint):
         raise ValueError('Coarse grid dependencies changed')
-    grid=StrategyGrid.load(directory/'integrated_A')
+    grid=load_grid(directory/'integrated_A')
     if grid.budget_a!=domain or grid.budget_b!=domain or grid.focal!='A' or grid.mode!='energy':
         raise ValueError('Coarse grid domain or objective changed')
     return grid
@@ -73,9 +79,10 @@ def prepare_grids(system,kernel,contract,dist,out,args,source_hashes,kernel_hash
     directory=out/'grids';directory.mkdir(exist_ok=True)
     status=directory/'grid_status.json'
     if status.exists():
-        d=verify_grid_cache(directory,source_hashes);grid=StrategyGrid.load(directory/'integrated_A')
+        d=verify_grid_cache(directory,source_hashes);grid=load_grid(directory/'integrated_A')
         if d['cost_fingerprint']!=contract['cost_fingerprint']:raise ValueError('Grid cost version mismatch')
         return grid,SwappedGrid(grid),d
+    solve=solve_value_grid if args.mean_only_grid else solve_strategy
     if args.coarse_comparison_id:
         coarse=load_coarse_grid(out.parent/args.coarse_comparison_id,source_hashes,kernel_hashes,
                                contract['cost_fingerprint'],domain)
@@ -83,18 +90,36 @@ def prepare_grids(system,kernel,contract,dist,out,args,source_hashes,kernel_hash
         if n>=args.max_grid_intervals:raise ValueError('Refinement limit must exceed coarse grid')
     else:
         n=args.grid_intervals//2
-        coarse=solve_strategy(system,domain,domain,'A',intervals=n,progress=lambda s:print(s,flush=True))
+    states=2*system.transition.pi.shape[1]
+    level=n;retained_bytes=0
+    while min(level*2,args.max_grid_intervals)<args.max_grid_intervals:
+        level*=2
+        if args.mean_only_grid:retained_bytes+=required_grid_bytes(level,states)
+    ensure_grid_space(directory,args.max_grid_intervals,states,
+                      channels=1 if args.mean_only_grid else 2,additional_bytes=retained_bytes)
+    if not args.coarse_comparison_id:
+        coarse=solve(system,domain,domain,'A',intervals=n,progress=lambda s:print(s,flush=True))
+    previous_queries=grid_queries(coarse,dist,contract['budget_grid'])
+    del coarse
     while True:
+        coarse_n=n
         n=min(n*2,args.max_grid_intervals)
-        fine=solve_strategy(system,domain,domain,'A',intervals=n,progress=lambda s:print(s,flush=True))
-        difference=float(np.max(np.abs(grid_queries(fine,dist,contract['budget_grid'])-
-                                       grid_queries(coarse,dist,contract['budget_grid']))))
-        print(f'grid refinement {n//2}->{n}: max query difference={difference:.6f}',flush=True)
+        kwargs={'storage_path':directory/'integrated_A.npy.partial'} if args.mean_only_grid else {}
+        fine=solve(system,domain,domain,'A',intervals=n,progress=lambda s:print(s,flush=True),**kwargs)
+        current_queries=grid_queries(fine,dist,contract['budget_grid'])
+        difference=float(np.max(np.abs(current_queries-previous_queries)))
+        print(f'grid refinement {coarse_n}->{n}: max query difference={difference:.6f}',flush=True)
         passed=difference<=.02 and fine.max_residual<=1e-10
         if passed or n>=args.max_grid_intervals:break
-        coarse=fine
+        previous_queries=current_queries
+        if args.mean_only_grid:
+            fine.values.flush();fine.values._mmap.close()
+            # A completed intermediate grid is retained with an explicit level.
+            (directory/'integrated_A.npy.partial').rename(directory/f'intermediate_{n}.npy')
+        del fine
     fine.save(directory/'integrated_A')
     d=dict(grid_intervals=n,max_refinement_difference=difference,bellman_residual=fine.max_residual,
+           coarse_intervals=coarse_n,grid_storage='mean_value_only_float64' if args.mean_only_grid else 'legacy_value_and_ambiguity_float64',
            passed=passed,player_B='exact exchange of budgets and parity after tensor symmetry checks',
            cost_fingerprint=contract['cost_fingerprint'],execution_source_sha256=source_hashes,
            grid_file_sha256={n:digest(directory/n) for n in ('integrated_A.npy','integrated_A.json')})
@@ -122,6 +147,7 @@ def main():
     p.add_argument('--run-id',required=True);p.add_argument('--training-id',required=True)
     p.add_argument('--comparison-id',required=True);p.add_argument('--samples',type=int,default=20000)
     p.add_argument('--coarse-comparison-id',help='Reuse a verified grid from an earlier comparison as coarse grid')
+    p.add_argument('--mean-only-grid',action='store_true',help='Use a preallocated float64 win-value grid; omit the unused ambiguity channel')
     p.add_argument('--seed',type=int,default=20261104)
     p.add_argument('--grid-intervals',type=int,default=40);p.add_argument('--max-grid-intervals',type=int,default=160)
     p.add_argument('--resume',action='store_true');p.add_argument('--grids-only',action='store_true')
@@ -145,11 +171,12 @@ def main():
                   *(ROOT/'outputs/fatigue_terminal/models/strict_development').glob('*')]
     execution_files=[Path(__file__),ROOT/'src/budget_policy_comparison.py',ROOT/'src/energy_strategy.py',
                      ROOT/'src/budget_cql_contract.py',ROOT/'src/cql_model.py',ROOT/'src/fatigue_baseline.py',
-                     ROOT/'src/build_fatigue_transition.py',ROOT/'src/fit_fatigue_terminal.py']
+                     ROOT/'src/build_fatigue_transition.py',ROOT/'src/fit_fatigue_terminal.py',ROOT/'src/budget_value_grid.py']
     source_hashes={str(f.relative_to(ROOT)):digest(f) for f in execution_files}
     terminal_inputs=[p for p in contract['provenance_inputs'] if 'terminal' in p['path'].lower()]
     settings=dict(samples=args.samples,seed=args.seed,grid_intervals=args.grid_intervals,
         max_grid_intervals=args.max_grid_intervals,sensitivity=not args.no_sensitivity,
+        grid_storage='mean_value_only_float64' if args.mean_only_grid else 'legacy_value_and_ambiguity_float64',
         cost_fingerprint=contract['cost_fingerprint'],training_run_sha256=digest(training/'RUN.json'),
         terminal_cost_provenance=terminal_inputs,execution_source_sha256=source_hashes,
         kernel_input_sha256={str(f.relative_to(ROOT)):digest(f) for f in kernel_files if f.is_file()},

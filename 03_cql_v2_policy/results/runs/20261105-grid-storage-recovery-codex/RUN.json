@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "run_id": "20261105-grid-storage-recovery-codex",
+  "status": "completed",
+  "code_commit": "34ebba8bc156b21e924452f7b079ccd12afd0f2e",
+  "command": "python .runtime/archive_failed_grids.py",
+  "seed": 0,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "device": "cpu"
+  },
+  "inputs": [
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy",
+      "sha256": "99d537903aa99abb373277d46bc14a9182a70d07a9130e47c5568945909884ec"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-comparison\\grids\\integrated_A.npy",
+      "sha256": "2e49e6a417b04145ef9d39502000e0db66c1d493e337f5ce685f0d30d7eac52b"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-coarse160\\grids\\integrated_A.npy",
+      "sha256": "aaa0d6df7258d4c218c65832a13298972176a66cdf72d4616e643813896b93b5"
+    }
+  ],
+  "config": {
+    "path": "archive_script.py",
+    "sha256": "dc2938b974ff41b9f9a88a612ef9db7980e18dd729823927cb8f756c72d885c8"
+  },
+  "split": "Storage-only recovery; no fitting, policy changes or scientific output changes",
+  "metrics": {
+    "archives": 3,
+    "all_decompressed_hashes_verified": true,
+    "freed_bytes": 4724578251
+  },
+  "limitations": [
+    "Only failed coarse grids and an explicitly incomplete failed write are compressed; active/trained models and complete M0 fine grid remain unchanged."
+  ],
+  "outputs": [
+    {
+      "path": "archives.json",
+      "sha256": "613599d843617b034bc2b09aafd875f3b60dc2a88e0ac426b433d24795da7017"
+    },
+    {
+      "path": "archive_script.py",
+      "sha256": "dc2938b974ff41b9f9a88a612ef9db7980e18dd729823927cb8f756c72d885c8"
+    },
+    {
+      "path": "RESTORE.md",
+      "sha256": "5d65b8bc3e4f8693c149cec03480440cf32a60623b8e9afa28f3f248fe20ffd3"
+    }
+  ]
+}

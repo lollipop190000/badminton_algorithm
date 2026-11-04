@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104-common-model-refined",
+  "status": "failed",
+  "code_commit": "34ebba8bc156b21e924452f7b079ccd12afd0f2e",
+  "command": "python run.py budget-cql-compare --run-id 20261104-budget-cql-integrated-M3-codex --training-id 20261104-full-5seeds --comparison-id 20261104-common-model-refined --grid-intervals 320 --max-grid-intervals 320 --coarse-comparison-id 20261104-common-model-coarse160",
+  "seed": 20261104,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "device": "cpu"
+  },
+  "inputs": [
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\RUN.json",
+      "sha256": "a93c28f4a3c064e0d1b0175840473b8796a836b131a046335ff4a838af33e5b5"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\costs.npz",
+      "sha256": "bcfb856d5dc2406d249477e270d27fdf0c67a5e92f1055d7b61b3e228009626e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\training\\20261104-full-5seeds\\RUN.json",
+      "sha256": "a94c5b45f5a4a1179acc0da65d851d62c6ac5375ddb5d73683dcb72cccc30436"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "4f2a1ff6b7ce02bc1f5265ea36ee418f2257639a61e80ff95c3cf83bc0586b49"
+  },
+  "split": "Train-fitted environment; failed numerical and storage attempt; no policy rollout",
+  "metrics": {
+    "numerical_check": "failed",
+    "max_refinement_difference_reported": 0.020123,
+    "reported_precision": "six decimal digits from execution log",
+    "threshold": 0.02,
+    "grid_intervals": 320,
+    "storage_error": "OSError during numpy save",
+    "expected_npy_bytes": 13505790080,
+    "actual_partial_bytes": 2147483776,
+    "partial_original_sha256": "99d537903aa99abb373277d46bc14a9182a70d07a9130e47c5568945909884ec",
+    "archived_partial": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy.gz",
+    "partial_archive_sha256": "83d95e620fec6106682c56d7598e37832ab2e03739e4ea08b06b95dc58d00423",
+    "policy_conditions": 0
+  },
+  "limitations": [
+    "Partial array is not a usable grid; no policy values were evaluated."
+  ],
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "4f2a1ff6b7ce02bc1f5265ea36ee418f2257639a61e80ff95c3cf83bc0586b49"
+    },
+    {
+      "path": "failure.json",
+      "sha256": "2ac3b66c60f74334be43a1c80bec1a0ab99a8a7cf6bc698edef2cba0902a1ac1"
+    },
+    {
+      "path": "failure.log",
+      "sha256": "5ec860c7e95791b3d43ac058ccb7b050a766a20d31a0ec4be7151d33e3bf92e3"
+    },
+    {
+      "path": "initial_distribution.csv",
+      "sha256": "15c43d5472aef772547f0c77365efee3bb3998316977ddc506990f06e53e92c5"
+    }
+  ],
+  "omitted_large_artifacts": [
+    {
+      "original": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy",
+      "original_bytes": 2147483776,
+      "original_sha256": "99d537903aa99abb373277d46bc14a9182a70d07a9130e47c5568945909884ec",
+      "archive": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy.gz",
+      "archive_bytes": 846031130,
+      "archive_sha256": "83d95e620fec6106682c56d7598e37832ab2e03739e4ea08b06b95dc58d00423",
+      "complete_array": false,
+      "scientific_use": "incomplete failed write, not a usable grid"
+    }
+  ]
+}
