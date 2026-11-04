@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 import matplotlib
 matplotlib.use('Agg')
@@ -120,12 +121,17 @@ def main():
     fig.colorbar(im,ax=axes,label='Our strategy minus mean CQL (percentage points)',shrink=.9)
     fig.savefig(args.out/'budget_difference.png',dpi=180);plt.close(fig)
     record=dict(schema_version=1,run_id=args.out.name,status='completed',
+        seed=0,environment=dict(python=sys.version,numpy=np.__version__,pandas=pd.__version__,matplotlib=matplotlib.__version__,device='cpu'),
+        command='python summarize_integrated_comparison.py '+' '.join(sys.argv[1:]),
+        split='Summary of frozen train-fitted environment comparisons; diagnostic support on held-out test replay; no refitting',
         code_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=args.out.parents[2],text=True).strip(),
         inputs=[dict(path=str(f),sha256=sha(f)) for f in inputs],source_sha256=sha(Path(__file__)),
         methods={'aggregation':'equal weights across conditions; CQL average across 5 training seeds',
                  'mc_interval':'paired outcomes averaged across seeds per trial; independent condition variances summed',
                  'seed_variation':'SD and range of per-seed condition-mean values; separate from Monte Carlo interval',
                  'support':'weighted test-replay recommendation counts at the selected train backoff context; not rollout occupancy'},
+        config=dict(path='condition_comparison.csv',sha256=sha(args.out/'condition_comparison.csv')),
+        metrics=dict(cost_models=2,conditions_per_model=56,samples_per_policy_condition=20000),
         limitations=['same fitted model, no real match evaluation','MC intervals exclude fitted-model uncertainty',
                      'M0/M3 independently scaled budgets; quantile scenarios are compared, not identical physical budgets'],
         outputs=[dict(path=f.name,sha256=sha(f)) for f in sorted(args.out.iterdir())])

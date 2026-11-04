@@ -1,0 +1,7 @@
+model,stage,outputs_verified
+M0,dataset,12
+M0,training/20261104-full-5seeds,23
+M0,diagnostics/20261104-full-fqe,17
+M3,dataset,12
+M3,training/20261104-full-5seeds,23
+M3,diagnostics/20261104-full-fqe,17

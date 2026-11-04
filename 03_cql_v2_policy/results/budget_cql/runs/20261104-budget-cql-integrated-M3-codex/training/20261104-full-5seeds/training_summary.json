@@ -1,0 +1,82 @@
+{
+  "selected_alpha": 0.1,
+  "selection": "minimum weighted validation TD surrogate; not measured policy quality",
+  "alpha_trials": [
+    {
+      "seed": 42,
+      "alpha": 0.1,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.2985811551930759,
+      "checkpoint": "candidate_seed42_alpha0p1.pt"
+    },
+    {
+      "seed": 42,
+      "alpha": 0.25,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.31331823349010746,
+      "checkpoint": "candidate_seed42_alpha0p25.pt"
+    },
+    {
+      "seed": 42,
+      "alpha": 0.5,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.3684265710002868,
+      "checkpoint": "candidate_seed42_alpha0p5.pt"
+    }
+  ],
+  "policies": [
+    {
+      "seed": 42,
+      "alpha": 0.1,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.2985811551930759,
+      "checkpoint": "policy_seed42.pt"
+    },
+    {
+      "seed": 43,
+      "alpha": 0.1,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.29876497617027364,
+      "checkpoint": "policy_seed43.pt"
+    },
+    {
+      "seed": 44,
+      "alpha": 0.1,
+      "best_epoch": 4,
+      "epochs": 16,
+      "validation_td_loss": 0.29005776018233775,
+      "checkpoint": "policy_seed44.pt"
+    },
+    {
+      "seed": 45,
+      "alpha": 0.1,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.29775319595128674,
+      "checkpoint": "policy_seed45.pt"
+    },
+    {
+      "seed": 46,
+      "alpha": 0.1,
+      "best_epoch": 4,
+      "epochs": 16,
+      "validation_td_loss": 0.29826527503976363,
+      "checkpoint": "policy_seed46.pt"
+    }
+  ],
+  "cost_status": "validated",
+  "profile": "final_cost_training",
+  "train_expanded_rows": 358958,
+  "validation_expanded_rows": 80422,
+  "state_dimension": 51,
+  "actions": 128,
+  "masked_actions": 68,
+  "gamma": 1.0,
+  "test_data_used_in_selection": false,
+  "device": "cuda"
+}

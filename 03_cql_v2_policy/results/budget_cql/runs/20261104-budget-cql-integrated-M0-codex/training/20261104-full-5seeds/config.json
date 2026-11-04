@@ -1,0 +1,33 @@
+{
+  "selection_seed": 42,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "hidden_layers": [
+    128,
+    128
+  ],
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "gamma": 1.0,
+  "batch_size": 1024,
+  "max_epochs": 60,
+  "early_stopping_patience": 12,
+  "target_soft_update_tau": 0.005,
+  "gradient_clip_norm": 5.0,
+  "cql_alpha_candidates": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "action_balanced_sampling": true,
+  "balanced_sampling_power": 0.5,
+  "selection_metric": "validation_td_loss",
+  "fqe_epochs": 30,
+  "fqe_seed": 142,
+  "evaluation_samples": 20000
+}

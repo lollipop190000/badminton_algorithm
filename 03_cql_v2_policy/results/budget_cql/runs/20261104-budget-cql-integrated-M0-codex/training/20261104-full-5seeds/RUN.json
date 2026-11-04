@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104-full-5seeds",
+  "status": "completed",
+  "code_commit": "121376980d7b95f58e9fab9fb6e15f13c2b21d4f",
+  "command": "python run.py budget-cql-train --run-id 20261104-budget-cql-integrated-M0-codex --training-id 20261104-full-5seeds",
+  "seed": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "torch": "2.13.0+cu126",
+    "device": "cuda"
+  },
+  "inputs": [
+    {
+      "path": "dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path": "common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "replay_train.npz",
+      "sha256": "b602093e8eb51007d41bbf89e2d321910d1346eed8d6280a64795a03945013e4"
+    },
+    {
+      "path": "replay_val.npz",
+      "sha256": "b1d412cf87fc4e34eb95716bc52ab1dd76e99b2e0df95ce35d89dce92d4a9aa3"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "c6783b6b0cb29e5cb9909c97a0938ef220b69ac51cf4af2a33f395d33c64972e"
+  },
+  "split": "train gradient updates; validation epoch/alpha selection; test never loaded",
+  "metrics": {
+    "selected_alpha": 0.1,
+    "selection": "minimum weighted validation TD surrogate; not measured policy quality",
+    "alpha_trials": [
+      {
+        "seed": 42,
+        "alpha": 0.1,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.295045410020277,
+        "checkpoint": "candidate_seed42_alpha0p1.pt"
+      },
+      {
+        "seed": 42,
+        "alpha": 0.25,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.3106910681279279,
+        "checkpoint": "candidate_seed42_alpha0p25.pt"
+      },
+      {
+        "seed": 42,
+        "alpha": 0.5,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.3662028588363276,
+        "checkpoint": "candidate_seed42_alpha0p5.pt"
+      }
+    ],
+    "policies": [
+      {
+        "seed": 42,
+        "alpha": 0.1,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.295045410020277,
+        "checkpoint": "policy_seed42.pt"
+      },
+      {
+        "seed": 43,
+        "alpha": 0.1,
+        "best_epoch": 4,
+        "epochs": 16,
+        "validation_td_loss": 0.296179740779905,
+        "checkpoint": "policy_seed43.pt"
+      },
+      {
+        "seed": 44,
+        "alpha": 0.1,
+        "best_epoch": 4,
+        "epochs": 16,
+        "validation_td_loss": 0.28966161745390373,
+        "checkpoint": "policy_seed44.pt"
+      },
+      {
+        "seed": 45,
+        "alpha": 0.1,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.2949168136752295,
+        "checkpoint": "policy_seed45.pt"
+      },
+      {
+        "seed": 46,
+        "alpha": 0.1,
+        "best_epoch": 4,
+        "epochs": 16,
+        "validation_td_loss": 0.2961943178182671,
+        "checkpoint": "policy_seed46.pt"
+      }
+    ],
+    "cost_status": "validated",
+    "profile": "final_cost_training",
+    "train_expanded_rows": 359176,
+    "validation_expanded_rows": 80605,
+    "state_dimension": 51,
+    "actions": 128,
+    "masked_actions": 68,
+    "gamma": 1.0,
+    "test_data_used_in_selection": false,
+    "device": "cuda"
+  },
+  "source_sha256": {
+    "src\\budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src\\build_budget_cql.py": "83932d4dfb203b5c1a09671fffbfe5ec4937bcac16ace55206988024a93fb5df",
+    "src\\evaluate_budget_cql.py": "b6d4f28fa03a3b08e89a594f23d4b32a82a972223ddcc8cd4767d6b9e11426c8",
+    "src\\train_budget_cql.py": "3c91aa0d6452e83cfe042366357cd33b53daaefde5903312db3b158e893a9eac"
+  },
+  "limitations": [
+    "Validation TD is a surrogate, not evidence of superior strategy",
+    "fractional completion from train-only continuing-zone counts at one common backoff order per history/shot"
+  ],
+  "outputs": [
+    {
+      "path": "alpha_sweep.csv",
+      "sha256": "af756d69b05e527266eca6e763b6779fb92f36b1470c4f133f8d4e340b726866"
+    },
+    {
+      "path": "candidate_seed42_alpha0p1.csv",
+      "sha256": "e24554b9011f0239d0e20701e6be3f18bb2abc31a5c4b336bc90ec2e09568ccf"
+    },
+    {
+      "path": "candidate_seed42_alpha0p1.pt",
+      "sha256": "c6e0ef2b450a46e8a387b79693cfb2bb23254e3e10f43ace90ab538b4b0ace78"
+    },
+    {
+      "path": "candidate_seed42_alpha0p25.csv",
+      "sha256": "8ef4eae41a1b649ca67ccc13d126e3307a5f2792e728055798ce54e6453631a2"
+    },
+    {
+      "path": "candidate_seed42_alpha0p25.pt",
+      "sha256": "251e7aa3da79cd36c1c76d6cfe43885df0dc379361bff8759f797e08e737acd7"
+    },
+    {
+      "path": "candidate_seed42_alpha0p5.csv",
+      "sha256": "8454b6b4e42dff719f8e9b500900c7d5a90f488f07b759598d25363cb4417e68"
+    },
+    {
+      "path": "candidate_seed42_alpha0p5.pt",
+      "sha256": "0f668e1d77cf0183dce0f5b0c29d7dc8e62159217dd2e77f8521eed9b2663fa6"
+    },
+    {
+      "path": "candidate_seed43_alpha0p1.csv",
+      "sha256": "6a02e942c14822849f2a8094b8794d2ba03fd3082841afb3633d1c724df1b641"
+    },
+    {
+      "path": "candidate_seed43_alpha0p1.pt",
+      "sha256": "afcd64834c880df6f4dc7cfd2e5df02623ee33ffeb6436d092e3c51d48d18fa3"
+    },
+    {
+      "path": "candidate_seed44_alpha0p1.csv",
+      "sha256": "4d9e7860f7cd6307f76ffcf7a129223da0616afb74cd09521fe33d09ebe80ca8"
+    },
+    {
+      "path": "candidate_seed44_alpha0p1.pt",
+      "sha256": "61ed812dd2a7f5f266dd8775a65e8aacbf1a0cfa2dc103ec9cd198c61a1e1f4b"
+    },
+    {
+      "path": "candidate_seed45_alpha0p1.csv",
+      "sha256": "7b24b3ed91722ddfa0323122b945436f765698ba6c5e3e3bec100d9934b60c39"
+    },
+    {
+      "path": "candidate_seed45_alpha0p1.pt",
+      "sha256": "a46ac24da35a98963001a838771ae9c37110721a61b2719a21f1a9fa0dd0051e"
+    },
+    {
+      "path": "candidate_seed46_alpha0p1.csv",
+      "sha256": "21dc6bbee01b4424093d11849bb335f5e2844c23ad6990ae99cfac99ed2a2874"
+    },
+    {
+      "path": "candidate_seed46_alpha0p1.pt",
+      "sha256": "921a9aca2fc0b6f8c44dcee95b5a8ee221d4e8c5c373366f0f2dcdb01e2ab24b"
+    },
+    {
+      "path": "config.json",
+      "sha256": "c6783b6b0cb29e5cb9909c97a0938ef220b69ac51cf4af2a33f395d33c64972e"
+    },
+    {
+      "path": "policy_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path": "policy_seed42.pt",
+      "sha256": "3b27acf9d41ae0cf8a6857c6e6bb1a91ce5bb181fdbae0cd0902cc1e1af404d1"
+    },
+    {
+      "path": "policy_seed43.pt",
+      "sha256": "483067713b5c595db5124d7a3d37f2858129e0a31452c7331225d0700de27027"
+    },
+    {
+      "path": "policy_seed44.pt",
+      "sha256": "dbd667af1ee1c37b2e93636f39868b57694767861083716579d577377023c23d"
+    },
+    {
+      "path": "policy_seed45.pt",
+      "sha256": "24662e5006cc40ca389100b3a2ed19ca15710cba3cdec13d1b9dd79e28da3573"
+    },
+    {
+      "path": "policy_seed46.pt",
+      "sha256": "7e8461a5a1045c42ec60089c5b16ef1e33df111848adaa932591df1901787ffb"
+    },
+    {
+      "path": "training_summary.json",
+      "sha256": "0646611e5c90f14610e78c4c74cb46850296558e0598b45fc07bd073b2f100c2"
+    }
+  ]
+}

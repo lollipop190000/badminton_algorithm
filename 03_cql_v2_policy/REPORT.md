@@ -60,6 +60,7 @@ python run.py cql-evaluate
 공통 마스크가 허용하는 전역 타구/구역 조합은 68개다. 5개 seed의 test 추천에서 support 위반은 모두 0이었다. 원자료에 목표가 기록된 표본에서 행동 일치율은 9.796~10.707%였으며, 보조 FQE의 적격 시작 상태 평균 return은 0.2725~0.2931이었다. 짧은 연결 시험의 진단 수치이며 전략의 승률이나 우열을 나타내지 않는다. 전체 test replay의 비용 차감·잔여량과 가중치 합을 대조했고, 저장 모델 5개의 adapter 추천 64개씩 총 320개가 진단 파일과 완전히 일치하였다. 연구 테스트 117개와 저장소 규칙 테스트 6개가 통과하였다.
 
 근거: [데이터 RUN](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/RUN.json), [공통 계약](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/dataset_contract.json), [전체 감사표](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/dataset_audit.json), [학습 RUN](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/RUN.json), [5개 모델과 학습 지표](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/training_summary.json), [보조 진단](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/diagnostics.json).
+
 ### M0_v2와 M3_v2의 독립 본 학습
 
 11번의 `20261104-integrated-v2-kinggoddowon` 비용표와 종료 lookup의 입력 12개, 출력 37개의 해시를 확인한 뒤 두 비용을 독립적으로 연결하였다. `cost_status=validated`는 이 비용표의 전수 키·성분·대칭·전달 계산 검사를 통과했다는 뜻이다. 비용 자체의 생리학적 타당성을 입증한 상태 표시는 아니다. 비용 집계표의 최종 적합에는 train+validation 특징이 사용되었고 test는 사용되지 않았다. CQL의 행동 지원, 예산 척도와 평가 환경의 종료확률·상대 분포는 train으로만 정하였다.
@@ -86,3 +87,11 @@ python run.py cql-evaluate
 공통 평가에서는 train으로 적합한 strict M0 종료 모형과 train의 상대 타구/구역 분포를 고정한다. **M0_v2와 M3_v2 각각에서 수학적 전략을 다시 계산하고, 그 비용으로 학습한 CQL과 비교한다.** 각 모형 안에서 16개 예산 조합과 두 초기 타구 차례의 32조건, 조건당 20,000회의 공통 난수를 적용한다. 초기 상태는 적격 train 랠리 3,392개의 4번째 타구 직전 분포에서 추출하고 처음 타구하는 선수를 평가 대상으로 정한다. 계속 전이의 양측 비용과 자연 종료의 마지막 스윙은 모든 정책에서 동일하게 처리한다. 추가로 상대 분포 temperature 0.75/1.25, 전체 비용 배수 0.9/1.1의 24조건을 평가한다.
 
 이 비교는 수학적 전략을 계산한 동일한 추정 환경 안의 비교다. CQL 학습 seed 변동과 조건부 Monte Carlo 오차를 구분하고, 환경·비용 추정의 불확실성이 Monte Carlo 구간에 포함되지 않음을 명시한다. 목표 구역에 도착한다는 가정과 마지막 타구의 미상 구역 가중 분할 가정을 공유한다. 새 보조 FQE는 이 상태·보상·종료 규칙으로 계산하며 기존 07 OPE와 연결하지 않는다.
+| 비용 | 데이터 실행 | 본 학습 | 보조 진단 |
+|---|---|---|---|
+| M0_v2 | [replay와 비용](results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/RUN.json) | [alpha와 5개 seed](results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/training_summary.json) | [보조 FQE](results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/diagnostics/20261104-full-fqe/diagnostics.json) |
+| M3_v2 | [replay와 비용](results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/RUN.json) | [alpha와 5개 seed](results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/training_summary.json) | [보조 FQE](results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/diagnostics/20261104-full-fqe/diagnostics.json) |
+
+두 비용의 10개 저장 모델에서 seed별 64개씩 총 640개 adapter 추천을 진단 파일과 대조해 완전 일치를 확인하였다. 두 replay 전체 1,051,089행의 비용 차감·잔여량·행동 마스크·상태 인코딩·보상을 대조하였다. 학습 배열의 종료 다음 상태는 bootstrap을 하지 않으므로 0으로 저장하며, 별도 행 기록에는 종료 후 잔여량을 보존한다. test 추천의 공통 마스크 위반은 0이었다. FQE의 시작 상태 평균 return은 M0에서 0.6820~0.7020, M3에서 0.6676~0.6847이며, 함수 근사값 일부는 보상 범위 [-1,1] 밖에 있다. 이 진단을 확률로 변환하거나 승률 비교를 대신하는 근거로 사용하지 않는다. [전수 대조와 모델 재현 검사](results/runs/20261104-integrated-cql-verification-codex/RUN.json)에 코드와 표를 보존하였다.
+
+M0의 첫 160구간 수치 검사는 80→160 차이 0.033786으로 기준 0.02를 통과하지 못했다. 해당 시도에서 정책 rollout은 수행하지 않았다. [실패 기록](results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/20261104-common-model-comparison/RUN.json)과 큰 격자 해시를 보존하고 별도 비교 ID에서 320구간 정밀화를 진행한다. 기본 비교와 민감도 결과는 수치 검증이 끝난 뒤 보고한다.

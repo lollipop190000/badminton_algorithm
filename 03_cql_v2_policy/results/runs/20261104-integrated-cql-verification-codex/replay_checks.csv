@@ -1,0 +1,7 @@
+model,split,expanded_rows,effective_weight,minimum_remaining,maximum_budget_accounting_error,mask_violations,encoding_and_reward_checks
+M0,train,359176,233712.0,0.0,0.0,0,True
+M0,val,80605,53695.0,0.0,0.0,0,True
+M0,test,85993,55546.0,0.0,0.0,0,True
+M3,train,358958,233704.0,0.0,0.0,0,True
+M3,val,80422,53628.0,0.0,0.0,0,True
+M3,test,85935,55552.0,0.0,0.0,0,True

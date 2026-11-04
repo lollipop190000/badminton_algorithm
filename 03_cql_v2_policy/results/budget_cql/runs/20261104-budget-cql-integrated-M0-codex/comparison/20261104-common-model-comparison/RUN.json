@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104-common-model-comparison",
+  "status": "failed",
+  "code_commit": "88877a3991e42cd0fb4628fbc971f918d6248387",
+  "command": "python run.py budget-cql-compare --run-id 20261104-budget-cql-integrated-M0-codex --training-id 20261104-full-5seeds --comparison-id 20261104-common-model-comparison --grids-only",
+  "config": {
+    "path": "config.json",
+    "sha256": "75b06cbfea876d0d49dba3aeaebdcebf9705f0bd4b5e03f6dc9a9533f56d1ddd"
+  },
+  "inputs": [
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\RUN.json",
+      "sha256": "dd289321dc0b7dc4f4b56e22e7800d6f50c922a20443fb646c5c48c427af31ad"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\costs.npz",
+      "sha256": "22deb9d2c71fecc9ed616dc129f1905ff976200d7692930d4a8c1e6dba414af1"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\training\\20261104-full-5seeds\\RUN.json",
+      "sha256": "e1aa38b607415e2b4f51c238bfefa2a6bda5cc2fd019a82f7a78d197e4bd0fdc"
+    }
+  ],
+  "source_sha256": {
+    "scripts\\compare_integrated_cql.py": "650dbdd9537d904493868f217e1b380d8475261e9c6208b9f6cf8124ab5f5225",
+    "src\\budget_policy_comparison.py": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4",
+    "src\\energy_strategy.py": "9913e0ad0366a67c75d97acd92e7cded3ca0ad5ab745f240634f6958e6b07ef8",
+    "src\\budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src\\cql_model.py": "feb8c8d5f62fa935f520878bfad241b2081df0fbdf44e6f0fabe4b3852c09b69",
+    "src\\fatigue_baseline.py": "209a80428ae8bbad53230f029023a2e95c1514c911f5087208fe044121e9afd1",
+    "src\\build_fatigue_transition.py": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b",
+    "src\\fit_fatigue_terminal.py": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e"
+  },
+  "metrics": {
+    "grid_intervals": 160,
+    "max_refinement_difference": 0.033785988223704044,
+    "tolerance": 0.02,
+    "policy_comparison_conditions": 0
+  },
+  "omitted_large_artifacts": [
+    {
+      "path": "grids/integrated_A.npy",
+      "bytes": 3397517440,
+      "sha256": "2e49e6a417b04145ef9d39502000e0db66c1d493e337f5ce685f0d30d7eac52b"
+    }
+  ],
+  "limitations": [
+    "Failed grid refinement; no policy win comparison was executed. Retained as a numerical diagnostic, not a completed comparison."
+  ],
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "75b06cbfea876d0d49dba3aeaebdcebf9705f0bd4b5e03f6dc9a9533f56d1ddd"
+    },
+    {
+      "path": "initial_distribution.csv",
+      "sha256": "15c43d5472aef772547f0c77365efee3bb3998316977ddc506990f06e53e92c5"
+    },
+    {
+      "path": "grids/grid_status.json",
+      "sha256": "eec676cd7bd2432074ff99dc141044a13b7fc44074ef89ad8ffc94cf4eedc657"
+    },
+    {
+      "path": "grids/integrated_A.json",
+      "sha256": "5f4ec5172455c689fc8a35a88d60c0b8fb084634987f30cbb44d226486eed311"
+    }
+  ],
+  "seed": 20261104,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.2",
+    "device": "cpu"
+  },
+  "split": "Train-fitted environment and train initial states; numerical grid check failed before policy rollout"
+}

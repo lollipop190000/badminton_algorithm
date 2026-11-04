@@ -1,0 +1,4 @@
+seed,alpha,best_epoch,epochs,validation_td_loss,checkpoint
+42,0.1,5,17,0.295045410020277,candidate_seed42_alpha0p1.pt
+42,0.25,5,17,0.3106910681279279,candidate_seed42_alpha0p25.pt
+42,0.5,5,17,0.3662028588363276,candidate_seed42_alpha0p5.pt
