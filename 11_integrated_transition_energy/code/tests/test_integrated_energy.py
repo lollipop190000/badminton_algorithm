@@ -49,16 +49,37 @@ class IntegratedArtifactTests(unittest.TestCase):
             if json.loads(p.read_text())['status']=='completed':runs.append(p.parent)
         if not runs:raise RuntimeError('No completed topic 11 run; do not silently skip artifact checks')
         cls.out=sorted(runs)[-1]
-        cls.run=json.loads((cls.out/'RUN.json').read_text())
+        cls.run_metadata=json.loads((cls.out/'RUN.json').read_text())
 
     def test_hashes_and_01_10_unchanged(self):
-        for output in self.run['outputs']:
+        for output in self.run_metadata['outputs']:
             self.assertEqual(digest(self.out/output['path']),output['sha256'])
         protected=json.loads((self.out/'protected_01_10_hashes.json').read_text())
         self.assertTrue(protected['unchanged'])
         for name,h in protected['sha256'].items():self.assertEqual(digest(ROOT/name),h)
+        for source in self.run_metadata['inputs']+[self.run_metadata['config']]:
+            self.assertEqual(digest(ROOT/source['path']),source['sha256'])
         for name,h in json.loads((self.out/'executed_source_hashes.json').read_text()).items():
-            self.assertEqual(digest(ROOT/name),h)
+            # Runtime source/config must match the scientific run. Validation
+            # tests may evolve after a run; do not require old Git objects in
+            # GitHub Actions' shallow checkout to validate retained artifacts.
+            if '/tests/' not in name:self.assertEqual(digest(ROOT/name),h)
+
+    def test_frozen_models_selected_by_validation_and_fixed_beta(self):
+        model=json.loads((self.out/'transfer_models.json').read_text())
+        for kind,key in [('distance','distance_model_id'),('kinematics','kinematic_model_id')]:
+            grid=pd.read_csv(self.out/f'{kind}_validation_grid.csv')
+            winner=grid.sort_values(['match_macro_rmse','mae','model_id']).iloc[0].model_id
+            self.assertEqual(model[key],winner)
+        selected=json.loads((self.out/'selected_aggregation.json').read_text())
+        grid=pd.read_csv(self.out/'aggregation_validation_grid.csv')
+        winner=grid.sort_values(['score','chain','tau']).iloc[0]
+        self.assertEqual(selected['chain'],winner.chain)
+        self.assertEqual(selected['tau'],winner.tau)
+        self.assertEqual(model['beta'],[0,1,.25,.6234])
+        old=json.loads((ROOT/'10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/normalization.json').read_text())
+        np.testing.assert_array_equal(model['normalization']['mu_train'],old['mu_train'])
+        self.assertAlmostEqual(model['normalization']['denominator'],1+np.array(model['beta'])@old['mu_train'])
 
     def test_match_splits_and_no_test_fit(self):
         manifest=pd.read_csv(self.out/'bfmd_match_split_manifest.csv')
