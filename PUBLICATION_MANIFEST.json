@@ -3427,6 +3427,251 @@
       "sha256": "e015fedc0e3ee9e1aadbe55949f1b0421c4c3959d1f5605c43b9b30705ad5ddc"
     },
     {
+      "path": "11_integrated_transition_energy/code/configs/integrated_energy.json",
+      "bytes": 725,
+      "sha256": "6880c57312cbc776b1a81f26383a51e518afafcd73564b7d1017636d1faf3735"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/src/integrated_energy/__init__.py",
+      "bytes": 76,
+      "sha256": "b50fa95a9294a719a820a738f29943eda7c2313fd374e2c00374d4a190f73428"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/src/integrated_energy/aggregate.py",
+      "bytes": 9777,
+      "sha256": "beafc3ec28a4ec8e8cbbffab51934dad895352b9afbf4268d2514f165674445e"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/src/integrated_energy/data.py",
+      "bytes": 7337,
+      "sha256": "a74516206267dd3d251192437539b82bacfcb79a2b90f178dae625442bb49d64"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/src/integrated_energy/models.py",
+      "bytes": 5462,
+      "sha256": "923dd346b81790f387e2bebccfc1c88a7cb00d515011feed9cf2ff8c6a588176"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/src/integrated_energy/pipeline.py",
+      "bytes": 9884,
+      "sha256": "4092198b455e99b2abd05fd16c0a0e7df81aa51e08307473ea485fdb1f535083"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/src/integrated_energy/training.py",
+      "bytes": 7495,
+      "sha256": "1fcf86e4e1bbb98d287cca0233702dd0cdda178bbf7c61e04bad25d69ba9f79c"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/src/integrated_energy/verification.py",
+      "bytes": 6674,
+      "sha256": "9fc3d99fdad27f380a775153a7d625ea0411e11343b7efa86b68a2c3169a5938"
+    },
+    {
+      "path": "11_integrated_transition_energy/code/tests/test_integrated_energy.py",
+      "bytes": 7230,
+      "sha256": "90e32cdcd3233e0a44cc95b2cb1b5d4542d8b569946c9a5599414ef713a0281b"
+    },
+    {
+      "path": "11_integrated_transition_energy/REPORT.md",
+      "bytes": 18322,
+      "sha256": "4486b5d900d5c555d4578bc398176584532b7ece935213db1201c4b018846e3d"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/aggregation_parameters.parquet",
+      "bytes": 5296121,
+      "sha256": "636c5ea77c20136281e737631b07b74ce5e3c7f3d4a63d8a0885d9d6f8078be1"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/aggregation_test_metrics.csv",
+      "bytes": 254,
+      "sha256": "5194ea552a5b21dcf45b45e254529a7877a94837dae8fcb54b88e5116b5fe7ee"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/aggregation_validation_grid.csv",
+      "bytes": 5191,
+      "sha256": "3ac60d5b1f85b672f03c678d1ec11136f07958b1173e275dc3a275c6960d2139"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/bfmd_match_split_manifest.csv",
+      "bytes": 3011,
+      "sha256": "b12e8a5d039e98ea364b3193eb4a6c141f9da5ac543366cfc4fb885cb81702ad"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/bootstrap_draws.json",
+      "bytes": 275692,
+      "sha256": "99d7e39e140f044422e33aa661a9f75efd363e1344954b1ed422436b2c05e2fc"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/bootstrap_transfer_models.json",
+      "bytes": 274952,
+      "sha256": "11452c09394b801aea7a72b0112075aba1373ed85d46592fbb9e275030dfa8c6"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M0_v2.parquet",
+      "bytes": 16960581,
+      "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M3_v2.parquet",
+      "bytes": 17015567,
+      "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/complete_table_audit.json",
+      "bytes": 1627,
+      "sha256": "af9cc447ebf02add19c49813ff165df4d046e648b59e621421c727cb956f2874"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/distance_test_by_bin.csv",
+      "bytes": 7242,
+      "sha256": "5743d83d9a34c3be95f9f249beb97385828325e12fc5c83246c5f1c38dfedcaf"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/distance_test_metrics.csv",
+      "bytes": 1407,
+      "sha256": "0400e9fbd6ca02fe2bae4aabe6d3dbb7aacc1d92c431de821cdec8c428df4ca4"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/distance_test_predictions.parquet",
+      "bytes": 145582,
+      "sha256": "ec818dc13991cb421dbc3e2997a5141c416203a486690714b9f5171c0aada67d"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/distance_train_leave_match_out.csv",
+      "bytes": 3769,
+      "sha256": "b2236a2cb68c35f3d356782a06f50508ceb024e85f9bb8ecdc628c3e72b47efa"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/distance_validation_grid.csv",
+      "bytes": 1332,
+      "sha256": "85f5d71f403448a1bbb37d2c50ee896fc2483fc25b25c7a9865f42813591f25e"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/domain_compatibility.json",
+      "bytes": 795,
+      "sha256": "02108e2f139484009dda934d63e0de9bdf8d4e37a3d7ce5b458f2f4e76aa5993"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/domain_covariate_comparison.csv",
+      "bytes": 846,
+      "sha256": "b158a10d2746649fb89562bec72f3d2287820f78db957bb85416ac1be55fb87e"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/executed_source_hashes.json",
+      "bytes": 1292,
+      "sha256": "684f0d10f45a4169da3dde06de75c2b21112901a37055aab4970f5c394a0028f"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/kinematic_component_test_metrics.csv",
+      "bytes": 2876,
+      "sha256": "98254e1f1acf90d5d7d03f482dff07bc521e309bbc3a3e21128953f8c7870f6f"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/kinematics_test_metrics_J_per_kg.csv",
+      "bytes": 2106,
+      "sha256": "b6990388989627fd66cb91d65ec3f8e4a51a840913cfb6e5535730f9e4204f76"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/kinematics_test_predictions.parquet",
+      "bytes": 34298,
+      "sha256": "cca65c68627c6ec51ebb40c773ea47a90b448231bac8af34ca4e947f06aa5663"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/kinematics_validation_grid.csv",
+      "bytes": 2060,
+      "sha256": "dd1b80bbee6c1b2abc4cef1244550f1e0bb2e7c60e3fc2a5829db5b94fa1ed43"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/noise_distance_strata.csv",
+      "bytes": 536,
+      "sha256": "20d28ee855705803d7ddfe761a80bf78e5112d06a4e96fac4d15525167a5fbab"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/normalization.json",
+      "bytes": 381,
+      "sha256": "04b067bc9fd271d94f3376f39434cdfe0d9e9bbfaa2d4baa087ea5293b36c341"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/old_new_distribution.csv",
+      "bytes": 3080,
+      "sha256": "8d2fcbf290d3546d16095ebaa062f05419fdc2528328cbea9ef59f44970740d5"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/old_new_strata.csv",
+      "bytes": 3909,
+      "sha256": "80a094d8729fed2406aa51a26646683052ca81112f8e71614cb9791effb545fe"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/protected_01_10_hashes.json",
+      "bytes": 85623,
+      "sha256": "be6789d01a89b2dd54e596d0fdec9530d8350115c4024d8b4e1fb120b71999b7"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/RUN.json",
+      "bytes": 13025,
+      "sha256": "874e4d1a097fe79d2c27c081c04489bd5e18196d39b8b38a4aa06f76ef5894f7"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/selected_aggregation.json",
+      "bytes": 652,
+      "sha256": "7db7ac95a7931b7b261509d0849648228cb910678dc14986b058b041bff33b9a"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shot_costs.csv",
+      "bytes": 2111,
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shuttleset_event_costs.parquet",
+      "bytes": 5064742,
+      "sha256": "f136a0d6cfb2a300175a3383fe26f9e6d1af342336817432d46ac5f857f3f7fb"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shuttleset_input_audit.json",
+      "bytes": 2661,
+      "sha256": "8b81bbf5354d53ae1438cf7699539aee479a56b6a51a4502382cdc49e4bfa88c"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shuttleset_terminal_costs.parquet",
+      "bytes": 89166,
+      "sha256": "fc4d77ecfb4ae51c9566efb67c474fb71c8d009631acecc3f014063bcbc42f41"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/terminal_lookup.parquet",
+      "bytes": 56432,
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/test_match_bootstrap_metrics.csv",
+      "bytes": 18384,
+      "sha256": "845f9838d0b549facb2e6b78a9f52fbf5eca8ffde8b2c5b5cc91222e320769bc"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/tracking_filter_sensitivity.csv",
+      "bytes": 500,
+      "sha256": "9397dc00cb8522cdfc34a36d216a6e57558d0541be38cb479d414d530d015e07"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/tracking_noise_audit.json",
+      "bytes": 590,
+      "sha256": "1b08d0f5e186c206891b344435574b1b404aad62bb0c960418789c23800bff73"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/transfer_models.json",
+      "bytes": 3938,
+      "sha256": "a4342aef6f8e616d4312410b93ee13bbfd4dad801fdbd70d58df4d9cf9943361"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/transition_changes.parquet",
+      "bytes": 19282852,
+      "sha256": "6a5b89eb626427f379f2add1da7dcc49f35d512d10c7ea688d446f7132447274"
+    },
+    {
+      "path": "11_integrated_transition_energy/results/validation/20261104-publication/VERIFICATION.json",
+      "bytes": 972,
+      "sha256": "8a7f80d193470b5afee9d50d94ec7437972f450cbf19454285373e01fa53dbaf"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4605,
       "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
@@ -3448,8 +3693,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6017,
-      "sha256": "eb5915bcaf116878719ac7bc80a4a389efeea9248f3d43475d4b1dbb1b973fd1"
+      "bytes": 6674,
+      "sha256": "94637815fb96613ac66a23cfae3807efd7e2e98a971b22f2e6f63121610cb6d4"
     },
     {
       "path": "requirements-ci.txt",
@@ -3463,8 +3708,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 6119,
-      "sha256": "88b99e70f6af9041b32ceafcd485b4b8194e813554e1837ec2884d659b70170f"
+      "bytes": 6182,
+      "sha256": "dc2d6549096c57eb3f676d784ce26ab0b7e3e33a0713ecb0a378d9408da9aaf0"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -3487,5 +3732,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1092557722
+  "uploaded_content_bytes": 1157297579
 }

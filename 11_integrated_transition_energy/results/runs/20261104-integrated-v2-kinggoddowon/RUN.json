@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104-integrated-v2-kinggoddowon",
+  "status": "completed",
+  "code_commit": "537fca98f49f3e25b5387cfca7e21b2d6eaaac0a",
+  "command": "python run.py integrated-energy --run-id 20261104-integrated-v2-kinggoddowon",
+  "seed": 20261104,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "pyarrow": "26.0.1"
+    }
+  },
+  "inputs": [
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/motion_features.parquet",
+      "bytes": 4167849,
+      "sha256": "870175c133c48762b6e6c020c0388b255f52d7f9a3aafd378ec2f10969ab880f"
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/match_split_manifest.csv",
+      "bytes": 3024,
+      "sha256": "b583d9a722f4023d830a9fca015b48fec4e43ce4724f1c8abf03df4e34e57bc3"
+    },
+    {
+      "path": "08_bfmd_kinematics/results/bfmd_zago/filter_threshold_sensitivity.parquet",
+      "bytes": 8836280,
+      "sha256": "c3f9a4522407d26496d29ae16fef23cc4fba2b5247aced48a660bc8c62fdeb72"
+    },
+    {
+      "path": "01_data_16zone/results/splits/train.csv",
+      "bytes": 20950636,
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path": "01_data_16zone/results/splits/validation.csv",
+      "bytes": 5088890,
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3"
+    },
+    {
+      "path": "01_data_16zone/results/splits/test.csv",
+      "bytes": 4803295,
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/normalization.json",
+      "bytes": 251,
+      "sha256": "e6c1b9a9db3e27c5e0135ce8b8076aa91857c1ef31576ab5842f2ab25342ae93"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/shot_costs.csv",
+      "bytes": 2111,
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/terminal_lookup.parquet",
+      "bytes": 84746,
+      "sha256": "8455f44436e46d6b38407dac9094571ca2e1621a6b46484f66276d751c64c427"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M0.parquet",
+      "bytes": 9688439,
+      "sha256": "04d609ec843e74a29941fb99cd6a24a06fcc73a273c754d569998c374e5ede97"
+    },
+    {
+      "path": "10_transition_energy/results/runs/20261014-complete-c-v2-kinggoddowon/C_M3.parquet",
+      "bytes": 9700663,
+      "sha256": "75177201dd7e120fb620af991a09b1984fc52489705a05c074cc54bccf50fb5e"
+    },
+    {
+      "path": "04_markov_parity/results/markov_parity/transition_costs.parquet",
+      "bytes": 2828481,
+      "sha256": "048d535d4225c5df3042740cfb362dfb0a195f1d1ab812893b98f4935017ff0b"
+    }
+  ],
+  "config": {
+    "path": "11_integrated_transition_energy/code/configs/integrated_energy.json",
+    "bytes": 725,
+    "sha256": "6880c57312cbc776b1a81f26383a51e518afafcd73564b7d1017636d1faf3735"
+  },
+  "split": {
+    "BFMD": "unchanged 8/2/2; train only transfer fit; validation selects; test evaluates",
+    "ShuttleSet": "unchanged 01 splits; train selects hierarchy via validation; train+validation final aggregation"
+  },
+  "metrics": {
+    "BFMD_rows": {
+      "test": 946,
+      "train": 5035,
+      "validation": 1225
+    },
+    "ShuttleSet_player_events": {
+      "test": 12298,
+      "train": 53394,
+      "validation": 13404
+    },
+    "selected_distance": "excess_gamma_ridge_0.0",
+    "selected_kinematics": "correction_ridge_0.01_shot_1",
+    "selected_aggregation": {
+      "chain": "zone_pair_exact",
+      "keys": [
+        [],
+        [
+          "role"
+        ],
+        [
+          "role",
+          "shot_type"
+        ],
+        [
+          "z3",
+          "role",
+          "shot_type"
+        ],
+        [
+          "z3",
+          "shot_target_zone",
+          "role",
+          "shot_type"
+        ],
+        [
+          "state_i",
+          "state_j",
+          "role",
+          "shot_type"
+        ]
+      ],
+      "tau": 2.0,
+      "minimum": 1,
+      "selection": "validation macro-match standardized RMSE on transferred event pseudo-labels",
+      "symmetry": "pool parity/player by role; exact group retains ShuttleSet i,j,shot",
+      "support": "observed ShuttleSet state events; all movement targets are transferred estimates"
+    },
+    "table_audit": {
+      "M0": {
+        "rows": 2097152,
+        "missing_duplicate_keys": 0,
+        "sliding": true,
+        "parity": true,
+        "AB_exchange_symmetric": true,
+        "nonnegative_finite": true,
+        "legacy_loader_compatible": true,
+        "shot_assignment": true,
+        "n_exact_supported": 80000,
+        "support_fraction": 0.03814697265625,
+        "all_movement_costs_estimated": true,
+        "spearman_total_to_old10": 0.7360656444856765,
+        "delta_mean": 5.174893435737082,
+        "delta_median": 3.7654295160891316,
+        "mean_ratio": 1.1980596048603673,
+        "median_ratio": 1.1233829155393231,
+        "old_AB_movement_mean_difference": 5.899922216201503e-05,
+        "bytes": 16960581,
+        "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+      },
+      "M3": {
+        "rows": 2097152,
+        "missing_duplicate_keys": 0,
+        "sliding": true,
+        "parity": true,
+        "AB_exchange_symmetric": true,
+        "nonnegative_finite": true,
+        "legacy_loader_compatible": true,
+        "shot_assignment": true,
+        "n_exact_supported": 80000,
+        "support_fraction": 0.03814697265625,
+        "all_movement_costs_estimated": true,
+        "spearman_total_to_old10": 0.6927615954253311,
+        "delta_mean": 5.656201845296213,
+        "delta_median": 4.210750215619967,
+        "mean_ratio": 1.2487935574286093,
+        "median_ratio": 1.145748207822797,
+        "old_AB_movement_mean_difference": 9.452532066234198e-05,
+        "bytes": 17015567,
+        "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad"
+      },
+      "terminal": {
+        "rows": 131072,
+        "outgoing_movement_zero": true,
+        "convention": "incoming movement charged on preceding continuing transition only"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "path": "C_M0_v2.parquet",
+      "bytes": 16960581,
+      "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+    },
+    {
+      "path": "C_M3_v2.parquet",
+      "bytes": 17015567,
+      "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad"
+    },
+    {
+      "path": "aggregation_parameters.parquet",
+      "bytes": 5296121,
+      "sha256": "636c5ea77c20136281e737631b07b74ce5e3c7f3d4a63d8a0885d9d6f8078be1"
+    },
+    {
+      "path": "aggregation_test_metrics.csv",
+      "bytes": 254,
+      "sha256": "5194ea552a5b21dcf45b45e254529a7877a94837dae8fcb54b88e5116b5fe7ee"
+    },
+    {
+      "path": "aggregation_validation_grid.csv",
+      "bytes": 5191,
+      "sha256": "3ac60d5b1f85b672f03c678d1ec11136f07958b1173e275dc3a275c6960d2139"
+    },
+    {
+      "path": "bfmd_match_split_manifest.csv",
+      "bytes": 3011,
+      "sha256": "b12e8a5d039e98ea364b3193eb4a6c141f9da5ac543366cfc4fb885cb81702ad"
+    },
+    {
+      "path": "bootstrap_draws.json",
+      "bytes": 275692,
+      "sha256": "99d7e39e140f044422e33aa661a9f75efd363e1344954b1ed422436b2c05e2fc"
+    },
+    {
+      "path": "bootstrap_transfer_models.json",
+      "bytes": 274952,
+      "sha256": "11452c09394b801aea7a72b0112075aba1373ed85d46592fbb9e275030dfa8c6"
+    },
+    {
+      "path": "complete_table_audit.json",
+      "bytes": 1627,
+      "sha256": "af9cc447ebf02add19c49813ff165df4d046e648b59e621421c727cb956f2874"
+    },
+    {
+      "path": "distance_test_by_bin.csv",
+      "bytes": 7242,
+      "sha256": "5743d83d9a34c3be95f9f249beb97385828325e12fc5c83246c5f1c38dfedcaf"
+    },
+    {
+      "path": "distance_test_metrics.csv",
+      "bytes": 1407,
+      "sha256": "0400e9fbd6ca02fe2bae4aabe6d3dbb7aacc1d92c431de821cdec8c428df4ca4"
+    },
+    {
+      "path": "distance_test_predictions.parquet",
+      "bytes": 145582,
+      "sha256": "ec818dc13991cb421dbc3e2997a5141c416203a486690714b9f5171c0aada67d"
+    },
+    {
+      "path": "distance_train_leave_match_out.csv",
+      "bytes": 3769,
+      "sha256": "b2236a2cb68c35f3d356782a06f50508ceb024e85f9bb8ecdc628c3e72b47efa"
+    },
+    {
+      "path": "distance_validation_grid.csv",
+      "bytes": 1332,
+      "sha256": "85f5d71f403448a1bbb37d2c50ee896fc2483fc25b25c7a9865f42813591f25e"
+    },
+    {
+      "path": "domain_compatibility.json",
+      "bytes": 795,
+      "sha256": "02108e2f139484009dda934d63e0de9bdf8d4e37a3d7ce5b458f2f4e76aa5993"
+    },
+    {
+      "path": "domain_covariate_comparison.csv",
+      "bytes": 846,
+      "sha256": "b158a10d2746649fb89562bec72f3d2287820f78db957bb85416ac1be55fb87e"
+    },
+    {
+      "path": "executed_source_hashes.json",
+      "bytes": 1292,
+      "sha256": "684f0d10f45a4169da3dde06de75c2b21112901a37055aab4970f5c394a0028f"
+    },
+    {
+      "path": "kinematic_component_test_metrics.csv",
+      "bytes": 2876,
+      "sha256": "98254e1f1acf90d5d7d03f482dff07bc521e309bbc3a3e21128953f8c7870f6f"
+    },
+    {
+      "path": "kinematics_test_metrics_J_per_kg.csv",
+      "bytes": 2106,
+      "sha256": "b6990388989627fd66cb91d65ec3f8e4a51a840913cfb6e5535730f9e4204f76"
+    },
+    {
+      "path": "kinematics_test_predictions.parquet",
+      "bytes": 34298,
+      "sha256": "cca65c68627c6ec51ebb40c773ea47a90b448231bac8af34ca4e947f06aa5663"
+    },
+    {
+      "path": "kinematics_validation_grid.csv",
+      "bytes": 2060,
+      "sha256": "dd1b80bbee6c1b2abc4cef1244550f1e0bb2e7c60e3fc2a5829db5b94fa1ed43"
+    },
+    {
+      "path": "noise_distance_strata.csv",
+      "bytes": 536,
+      "sha256": "20d28ee855705803d7ddfe761a80bf78e5112d06a4e96fac4d15525167a5fbab"
+    },
+    {
+      "path": "normalization.json",
+      "bytes": 381,
+      "sha256": "04b067bc9fd271d94f3376f39434cdfe0d9e9bbfaa2d4baa087ea5293b36c341"
+    },
+    {
+      "path": "old_new_distribution.csv",
+      "bytes": 3080,
+      "sha256": "8d2fcbf290d3546d16095ebaa062f05419fdc2528328cbea9ef59f44970740d5"
+    },
+    {
+      "path": "old_new_strata.csv",
+      "bytes": 3909,
+      "sha256": "80a094d8729fed2406aa51a26646683052ca81112f8e71614cb9791effb545fe"
+    },
+    {
+      "path": "protected_01_10_hashes.json",
+      "bytes": 85623,
+      "sha256": "be6789d01a89b2dd54e596d0fdec9530d8350115c4024d8b4e1fb120b71999b7"
+    },
+    {
+      "path": "selected_aggregation.json",
+      "bytes": 652,
+      "sha256": "7db7ac95a7931b7b261509d0849648228cb910678dc14986b058b041bff33b9a"
+    },
+    {
+      "path": "shot_costs.csv",
+      "bytes": 2111,
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path": "shuttleset_event_costs.parquet",
+      "bytes": 5064742,
+      "sha256": "f136a0d6cfb2a300175a3383fe26f9e6d1af342336817432d46ac5f857f3f7fb"
+    },
+    {
+      "path": "shuttleset_input_audit.json",
+      "bytes": 2661,
+      "sha256": "8b81bbf5354d53ae1438cf7699539aee479a56b6a51a4502382cdc49e4bfa88c"
+    },
+    {
+      "path": "shuttleset_terminal_costs.parquet",
+      "bytes": 89166,
+      "sha256": "fc4d77ecfb4ae51c9566efb67c474fb71c8d009631acecc3f014063bcbc42f41"
+    },
+    {
+      "path": "terminal_lookup.parquet",
+      "bytes": 56432,
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    },
+    {
+      "path": "test_match_bootstrap_metrics.csv",
+      "bytes": 18384,
+      "sha256": "845f9838d0b549facb2e6b78a9f52fbf5eca8ffde8b2c5b5cc91222e320769bc"
+    },
+    {
+      "path": "tracking_filter_sensitivity.csv",
+      "bytes": 500,
+      "sha256": "9397dc00cb8522cdfc34a36d216a6e57558d0541be38cb479d414d530d015e07"
+    },
+    {
+      "path": "tracking_noise_audit.json",
+      "bytes": 590,
+      "sha256": "1b08d0f5e186c206891b344435574b1b404aad62bb0c960418789c23800bff73"
+    },
+    {
+      "path": "transfer_models.json",
+      "bytes": 3938,
+      "sha256": "a4342aef6f8e616d4312410b93ee13bbfd4dad801fdbd70d58df4d9cf9943361"
+    },
+    {
+      "path": "transition_changes.parquet",
+      "bytes": 19282852,
+      "sha256": "6a5b89eb626427f379f2add1da7dcc49f35d512d10c7ea688d446f7132447274"
+    }
+  ],
+  "limitations": [
+    "L and X are tracking pseudo-labels, not independent ground truth or metabolic measurements",
+    "Only two BFMD test matches; player identities overlap source splits",
+    "Raw versus smoothed endpoints differ; excess flooring affects Gamma fit only",
+    "No target-domain path ground truth; residual tracking and frame-rate/domain uncertainty",
+    "Beta and shot costs remain fixed uncalibrated hypotheses",
+    "Bootstrap fixes selected models and source normalization; excludes tracking/domain/beta/shot and model-selection uncertainty"
+  ]
+}
