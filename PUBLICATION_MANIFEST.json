@@ -1626,6 +1626,11 @@
       "sha256": "2ac3b66c60f74334be43a1c80bec1a0ab99a8a7cf6bc698edef2cba0902a1ac1"
     },
     {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/20261104-common-model-refined/failure.log",
+      "bytes": 8138,
+      "sha256": "5ec860c7e95791b3d43ac058ccb7b050a766a20d31a0ec4be7151d33e3bf92e3"
+    },
+    {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/20261104-common-model-refined/initial_distribution.csv",
       "bytes": 43233,
       "sha256": "15c43d5472aef772547f0c77365efee3bb3998316977ddc506990f06e53e92c5"
@@ -5136,5 +5141,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1311607312
+  "uploaded_content_bytes": 1311615450
 }
