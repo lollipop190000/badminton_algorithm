@@ -1,0 +1,14 @@
+{
+  "seed": 20261104,
+  "energy_per_meter": 19.985,
+  "beta": [0, 1, 0.25, 0.6234],
+  "distance_ridge_grid": [0.0, 0.01, 0.1],
+  "kinematics_ridge_grid": [0.0, 0.01, 0.1],
+  "tau_grid": [0.5, 1, 2, 5, 10, 20, 50, 100],
+  "bootstrap_replicates": 100,
+  "selection": "minimum validation match-macro RMSE; no test-based selection",
+  "final_transfer_fit": "train only; evaluated and deployed models identical",
+  "final_aggregation_fit": "ShuttleSet train+validation; test excluded",
+  "feature_contract": "raw endpoint d in meters; outgoing hit interval dt in seconds; role; optional mapped shot",
+  "fps_policy": "reuse pinned 01 frame/30 convention and BFMD 30fps; actual ShuttleSet video fps not independently reverified"
+}
