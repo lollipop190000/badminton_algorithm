@@ -47,6 +47,7 @@ COMMANDS={
  'ope':['-m','src.evaluate_ope'],
  'ope-report':['scripts/report_ope.py'],
  'transition-energy':['-m','src.transition_energy.pipeline'],
+ 'integrated-energy':['-m','src.integrated_energy.pipeline'],
  'bfmd-download':['-m','bfmd_zago.download_bfmd'],
  'bfmd':['-m','bfmd_zago.bfmd_zago_pipeline'],
  'cost-transfer-summary':['scripts/summarize_bfmd_excess_distance.py'],

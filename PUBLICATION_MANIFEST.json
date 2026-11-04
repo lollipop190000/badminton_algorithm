@@ -127,6 +127,22 @@
       "tests": [
         "test_bfmd_zago.py"
       ]
+    },
+    "11_integrated_transition_energy": {
+      "title": "BFMD 거리·운동학 전달과 통합 전이 비용 v2",
+      "code": [
+        "src/integrated_energy/__init__.py",
+        "src/integrated_energy/aggregate.py",
+        "src/integrated_energy/data.py",
+        "src/integrated_energy/models.py",
+        "src/integrated_energy/pipeline.py",
+        "src/integrated_energy/training.py",
+        "src/integrated_energy/verification.py",
+        "configs/integrated_energy.json"
+      ],
+      "tests": [
+        "test_integrated_energy.py"
+      ]
     }
   },
   "schema_version": 1,
