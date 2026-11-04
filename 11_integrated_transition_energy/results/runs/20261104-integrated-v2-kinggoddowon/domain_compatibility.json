@@ -1,0 +1,15 @@
+{
+  "n": 79096,
+  "outside_train_range_n": 241,
+  "feature_fallback_n": 56,
+  "compatible": {
+    "distance": "m; same-player raw endpoints over consecutive hits",
+    "time": "outgoing frame difference/30 s, pinned 01 convention",
+    "role": "current hitter vs next hitter; no player identity predictor",
+    "states": "01/04 ShuttleSet 16-zone keys only; no BFMD shuttle reconstruction"
+  },
+  "unresolved": "bbox ground proxy vs ShuttleSet manual annotations; frame-rate and tracking domain shift",
+  "density_reweighting": "not fitted: target-domain metabolic/motion labels unavailable; source-only fixed transfer evaluated",
+  "bounds": "train min/max clipping of regression covariates; additive raw d preserved",
+  "missing_rule": "train-only median for invalid d/dt, explicit row flag"
+}

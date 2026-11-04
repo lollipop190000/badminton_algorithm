@@ -1,0 +1,14 @@
+{
+  "n": 7206,
+  "input_d": "unfiltered endpoint displacement; compatible with ShuttleSet annotations",
+  "target_L": "08 bw3 smoothed speed integral; tracking pseudo-label",
+  "n_L_below_raw_d": 289,
+  "n_L_below_smoothed_d": 17,
+  "raw_smoothed_endpoint_MAE": 0.05271161402865318,
+  "identifiable_noise_fraction": null,
+  "unavailable": [
+    "stationary ground-truth intervals",
+    "saved frame trajectories for temporal decimation"
+  ],
+  "conclusion": "filter dependence and endpoint inconsistency demonstrate measurement sensitivity; actual motion/noise decomposition unidentified"
+}

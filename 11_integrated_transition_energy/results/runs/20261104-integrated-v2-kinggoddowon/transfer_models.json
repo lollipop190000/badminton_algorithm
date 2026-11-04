@@ -1,0 +1,131 @@
+{
+  "distance_model_id": "excess_gamma_ridge_0.0",
+  "distance": {
+    "kind": "excess_gamma",
+    "ridge": 0.0,
+    "contract": {
+      "d": {
+        "median": 0.9843983737048343,
+        "low": 0.006820130372209366,
+        "high": 5.234790676411743
+      },
+      "dt": {
+        "median": 0.8666666666666667,
+        "low": 0.26666666666666666,
+        "high": 2.9
+      }
+    },
+    "n_train": 5035,
+    "training_matches": [
+      "KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F",
+      "PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF",
+      "PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF",
+      "VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF",
+      "VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F",
+      "YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF",
+      "YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F",
+      "YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF"
+    ],
+    "feature_names": [
+      "intercept",
+      "log_d_plus_0.1",
+      "log_interval_seconds",
+      "hitter"
+    ],
+    "coef": [
+      -0.3951835209257929,
+      -0.4480012083617564,
+      1.8932931317779178,
+      -0.10940131517502406
+    ],
+    "n_nonpositive_excess_floored": 202
+  },
+  "kinematic_model_id": "correction_ridge_0.01_shot_1",
+  "kinematic": {
+    "kind": "correction",
+    "ridge": 0.01,
+    "shot": true,
+    "contract": {
+      "d": {
+        "median": 0.9843983737048343,
+        "low": 0.006820130372209366,
+        "high": 5.234790676411743
+      },
+      "dt": {
+        "median": 0.8666666666666667,
+        "low": 0.26666666666666666,
+        "high": 2.9
+      }
+    },
+    "feature_names": [
+      "intercept",
+      "log_d_plus_0.1",
+      "log_interval_seconds",
+      "hitter",
+      "shot=drive",
+      "shot=drop",
+      "shot=hairpin",
+      "shot=high_clear",
+      "shot=push",
+      "shot=smash",
+      "shot=under_clear"
+    ],
+    "coef": {
+      "correction_m": [
+        0.3947634810470211,
+        0.8509313717834528,
+        0.36678316926793203,
+        -0.10638408628106139,
+        -0.07362274636606231,
+        0.11172864195528082,
+        -0.04745657756597104,
+        0.1655523178950973,
+        0.08175841479599923,
+        0.1849713132926426,
+        0.23778150083069638
+      ]
+    },
+    "training_matches": [
+      "KAPAL-API-Indonesia-Open-2025-Anders-Antonsen-DEN-3-vs.-Chou-Tien-Chen-TPE-6-F",
+      "PETRONAS-Malaysia-Open-2025-Kodai-Naraok-JPN-8-vs.-Anders-Antonsen-DEN-2-SF",
+      "PETRONAS-Malaysia-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-7-SF",
+      "VICTOR-China-Open-2025-Chou-Tien-Chen-TPE-6-vs.-Shi-Yu-Qi-CHN-3-SF",
+      "VICTOR-China-Open-2025-Shi-Yu-Qi-CHN-3-vs.-Wang-Zheng-Xing-CHN-F",
+      "YONEX-All-England-Open-2025-Lee-Chia-Hao-TPE-vs.-Alex-Lanier-FRA-SF",
+      "YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Lee-Chia-Hao-TPE-F",
+      "YONEX-All-England-Open-2025-Shi-Yu-Qi-CHN-1-vs.-Li-Shi-Feng-CHN-6-SF"
+    ],
+    "n_train": 5035
+  },
+  "selection": "validation match macro RMSE; test never tunes",
+  "feature_omissions": {
+    "previous_turn_angle": "not recoverable exactly from retained BFMD interval scalars",
+    "start_row": "optional feature omitted to avoid missing/outside-zone measurement mismatch",
+    "observed_path_acceleration": "targets only; excluded from inputs"
+  },
+  "beta": [
+    0,
+    1,
+    0.25,
+    0.6234
+  ],
+  "normalization": {
+    "v0_train_mps": 3.0492896829408895,
+    "mu_train": [
+      0.9999999999999998,
+      0.739487939259869,
+      0.7091954250915617,
+      0.3226523749202833
+    ],
+    "n_train": 5035,
+    "normalization_population": "fully_observed_mid_rally_train_players_only",
+    "beta": [
+      0.0,
+      1.0,
+      0.25,
+      0.6234
+    ],
+    "denominator": 2.117928286058064,
+    "preserved_10_normalization": true
+  }
+}

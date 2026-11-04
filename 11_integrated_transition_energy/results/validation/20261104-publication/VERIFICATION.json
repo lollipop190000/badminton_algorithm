@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "calculation_run_id": "20261104-integrated-v2-kinggoddowon",
+  "calculation_code_commit": "537fca98f49f3e25b5387cfca7e21b2d6eaaac0a",
+  "scientific_calculation_repeated": false,
+  "executed_commit_source_hashes_verified": 9,
+  "protected_files_unchanged_from_origin_main": 579,
+  "checks": [
+    {
+      "command": "python run.py test",
+      "passed": true,
+      "tests": 109,
+      "log": "research_tests.log"
+    },
+    {
+      "command": "python -m unittest discover -s tools/tests -v",
+      "passed": true,
+      "tests": 6,
+      "log": "repository_rules_tests.log"
+    }
+  ],
+  "test_changes_after_calculation": "Rename unittest self.run metadata to self.run_metadata; validate current production sources without requiring Git history in shallow CI; add input/config hashes and validation-selection/fixed-beta checks.",
+  "scope": "Local executed checks. Remote CI statuses belong to the PR, not this record.",
+  "published_code_commit": "d040a82973b1879f3b1286c5d9c81f7bf7c37cf4",
+  "published_and_local_code_tree_sha": "5482ec6aab5fc2f9db3f2d5792ab6f1de1f9fcbf"
+}

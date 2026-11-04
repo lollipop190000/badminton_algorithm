@@ -1,0 +1,11 @@
+{
+  "11_integrated_transition_energy/code/configs/integrated_energy.json": "6880c57312cbc776b1a81f26383a51e518afafcd73564b7d1017636d1faf3735",
+  "11_integrated_transition_energy/code/tests/test_integrated_energy.py": "72289cc9897d52176b8862a2b7ea56b9327f1de3675aec1776b81f05a5cffd1b",
+  "11_integrated_transition_energy/code/src/integrated_energy/data.py": "a74516206267dd3d251192437539b82bacfcb79a2b90f178dae625442bb49d64",
+  "11_integrated_transition_energy/code/src/integrated_energy/verification.py": "9fc3d99fdad27f380a775153a7d625ea0411e11343b7efa86b68a2c3169a5938",
+  "11_integrated_transition_energy/code/src/integrated_energy/training.py": "1fcf86e4e1bbb98d287cca0233702dd0cdda178bbf7c61e04bad25d69ba9f79c",
+  "11_integrated_transition_energy/code/src/integrated_energy/models.py": "923dd346b81790f387e2bebccfc1c88a7cb00d515011feed9cf2ff8c6a588176",
+  "11_integrated_transition_energy/code/src/integrated_energy/pipeline.py": "4092198b455e99b2abd05fd16c0a0e7df81aa51e08307473ea485fdb1f535083",
+  "11_integrated_transition_energy/code/src/integrated_energy/aggregate.py": "beafc3ec28a4ec8e8cbbffab51934dad895352b9afbf4268d2514f165674445e",
+  "11_integrated_transition_energy/code/src/integrated_energy/__init__.py": "b50fa95a9294a719a820a738f29943eda7c2313fd374e2c00374d4a190f73428"
+}
