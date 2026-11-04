@@ -143,6 +143,15 @@
       "tests": [
         "test_integrated_energy.py"
       ]
+    },
+    "12_integrated_stamina_refit": {
+      "title": "통합 타구별 소모량과 고정 Q 승패 재적합",
+      "code": [
+        "src/integrated_stamina_refit.py"
+      ],
+      "tests": [
+        "test_integrated_stamina_refit.py"
+      ]
     }
   },
   "schema_version": 1,
