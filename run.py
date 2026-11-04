@@ -14,6 +14,7 @@ SEEDS={
  '02_gru_probability/results/gru':'outputs/gru',
  '02_gru_probability/results/frozen_hidden':'outputs/cql',
  '03_cql_v2_policy/results/cql_v2':'outputs/cql_v2',
+ '03_cql_v2_policy/results/budget_cql':'outputs/budget_cql',
  '04_markov_parity/results/markov_parity':'outputs/markov_parity',
  '05_energy_budget/results/fatigue_terminal':'outputs/fatigue_terminal',
  '05_energy_budget/results/markov_parity_pooled':'outputs/markov_parity_pooled',
@@ -38,6 +39,9 @@ COMMANDS={
  'cql-build':['-m','src.build_cql_dataset'],
  'cql-train':['-m','src.train_cql'],
  'cql-evaluate':['-m','src.evaluate_cql'],
+ 'budget-cql-build':['-m','src.build_budget_cql'],
+ 'budget-cql-train':['-m','src.train_budget_cql'],
+ 'budget-cql-evaluate':['-m','src.evaluate_budget_cql'],
  'markov':['-m','src.estimate_parity_markov'],
  'fatigue':['scripts/run_fatigue_pipeline.py'],
  'energy-strategy':['scripts/run_energy_strategy.py'],
@@ -88,10 +92,18 @@ def prepare():
  return RUNTIME
 
 
-def sync_results():
+def sync_results(budget_cql_run=None):
  """Publish small newly executed outputs; preserve huge grids in runtime."""
  omitted=[]
+ if budget_cql_run and (ROOT/'runtime_omitted_artifacts.json').exists():
+  old=json.loads((ROOT/'runtime_omitted_artifacts.json').read_text(encoding='utf-8'))
+  prefix='outputs/budget_cql/runs/'+budget_cql_run+'/'
+  omitted=[x for x in old if not x['path'].replace('\\','/').startswith(prefix)]
  for result_root,runtime_root in SEEDS.items():
+  if budget_cql_run:
+   if runtime_root!='outputs/budget_cql':continue
+   result_root+='/runs/'+budget_cql_run
+   runtime_root+='/runs/'+budget_cql_run
   if runtime_root.startswith('raw/'):continue
   nested=[Path(other) for other in SEEDS.values() if Path(runtime_root) in Path(other).parents]
   for source in sorted((RUNTIME/runtime_root).rglob('*')):
@@ -111,7 +123,15 @@ def sync_results():
 def main():
  p=argparse.ArgumentParser(description=__doc__)
  p.add_argument('stage',choices=['prepare','sync-results','exec']+list(COMMANDS));args,rest=p.parse_known_args()
- if args.stage=='sync-results':sync_results();return
+ if args.stage=='sync-results':
+  sync_parser=argparse.ArgumentParser()
+  sync_parser.add_argument('--budget-cql-run')
+  sync_args=sync_parser.parse_args(rest)
+  if sync_args.budget_cql_run and (Path(sync_args.budget_cql_run).name!=sync_args.budget_cql_run or sync_args.budget_cql_run in ('.','..')):
+   sync_parser.error('Run ID must be a directory name')
+  if sync_args.budget_cql_run and not (RUNTIME/'outputs/budget_cql/runs'/sync_args.budget_cql_run/'RUN.json').exists():
+   sync_parser.error('Completed dataset run does not exist')
+  sync_results(sync_args.budget_cql_run);return
  runtime=prepare()
  if args.stage=='prepare':print('Prepared '+str(runtime));return
  cmd=rest if args.stage=='exec' else COMMANDS[args.stage]+rest

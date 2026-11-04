@@ -831,9 +831,29 @@
       "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
     },
     {
+      "path": "03_cql_v2_policy/code/BUDGET_CQL_HANDOFF.md",
+      "bytes": 7029,
+      "sha256": "c4c80f9a8a7550fd2039088adabc01ac153a388efeb41377415dbfd01a6d9988"
+    },
+    {
+      "path": "03_cql_v2_policy/code/configs/budget_cql.json",
+      "bytes": 527,
+      "sha256": "f43e084f71b1051b184e7ac913855d6e279bd51e4c5b7e3edee2ff35e31b9555"
+    },
+    {
       "path": "03_cql_v2_policy/code/configs/cql_config_v2.yaml",
       "bytes": 1179,
       "sha256": "5f375a1aca3e496cdb2966c644f7eff665888e2b420af958ccd519a118c3e9c8"
+    },
+    {
+      "path": "03_cql_v2_policy/code/src/budget_cql_contract.py",
+      "bytes": 11333,
+      "sha256": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e"
+    },
+    {
+      "path": "03_cql_v2_policy/code/src/build_budget_cql.py",
+      "bytes": 15612,
+      "sha256": "83932d4dfb203b5c1a09671fffbfe5ec4937bcac16ace55206988024a93fb5df"
     },
     {
       "path": "03_cql_v2_policy/code/src/build_cql_dataset.py",
@@ -846,14 +866,29 @@
       "sha256": "feb8c8d5f62fa935f520878bfad241b2081df0fbdf44e6f0fabe4b3852c09b69"
     },
     {
+      "path": "03_cql_v2_policy/code/src/evaluate_budget_cql.py",
+      "bytes": 9522,
+      "sha256": "b6d4f28fa03a3b08e89a594f23d4b32a82a972223ddcc8cd4767d6b9e11426c8"
+    },
+    {
       "path": "03_cql_v2_policy/code/src/evaluate_cql.py",
       "bytes": 29096,
       "sha256": "ad34c49cb0d9bc7409a9ee5d844ef07d11bd17f3c8fecee700d199a94e97c7eb"
     },
     {
+      "path": "03_cql_v2_policy/code/src/train_budget_cql.py",
+      "bytes": 11690,
+      "sha256": "3c91aa0d6452e83cfe042366357cd33b53daaefde5903312db3b158e893a9eac"
+    },
+    {
       "path": "03_cql_v2_policy/code/src/train_cql.py",
       "bytes": 20366,
       "sha256": "ced410f784237d10cece898eea278236888aa2775a7304cb3dc8f4a30be7f7ec"
+    },
+    {
+      "path": "03_cql_v2_policy/code/tests/test_budget_cql.py",
+      "bytes": 10833,
+      "sha256": "046a018898235a4b6bbc723f9e75cff00e2a3ae1bce9f88bf209ea8d70e4e1c6"
     },
     {
       "path": "03_cql_v2_policy/code/tests/test_cql_v2_pipeline.py",
@@ -862,8 +897,8 @@
     },
     {
       "path": "03_cql_v2_policy/REPORT.md",
-      "bytes": 2532,
-      "sha256": "177ecca8f9f55ac04a8e3800ee9e6d17c31bded15d2df852c744a60868f4b237"
+      "bytes": 4189,
+      "sha256": "4f624b5ed83f648be940d5d658d665aeebfe2b24960af06f4e71abcba1e79b28"
     },
     {
       "path": "03_cql_v2_policy/results/cql_v2/data/action_distribution.csv",
@@ -3421,6 +3456,11 @@
       "sha256": "4a3f5227a2bde389a5269e42aed04620f4e0322f0bc7ef5fff851f4289599821"
     },
     {
+      "path": "docs/budget_cql_progress.md",
+      "bytes": 2508,
+      "sha256": "e572c26aac38a2f124cd7a9a79cca6445a8ebaa9bd5abb812d1b861c3961bb0f"
+    },
+    {
       "path": "docs/templates/REPORT.md",
       "bytes": 958,
       "sha256": "04a6c5633a2c5f72266a7dfbead92bd228e0e5d4c57beb4a49ae3cc0a26e6a9a"
@@ -3432,8 +3472,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6017,
-      "sha256": "eb5915bcaf116878719ac7bc80a4a389efeea9248f3d43475d4b1dbb1b973fd1"
+      "bytes": 6476,
+      "sha256": "e7ab8d06fce96b3c8149b04c020ad8ddf9598f3022f287eec94879a21c65d85c"
     },
     {
       "path": "requirements-ci.txt",
@@ -3447,8 +3487,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 6119,
-      "sha256": "88b99e70f6af9041b32ceafcd485b4b8194e813554e1837ec2884d659b70170f"
+      "bytes": 7358,
+      "sha256": "4cfb9f1c384ebe76bd64a3e5a2e45775d7952261923e91893102cdbb21ae2c45"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -3471,5 +3511,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1092557722
+  "uploaded_content_bytes": 1092630131
 }
