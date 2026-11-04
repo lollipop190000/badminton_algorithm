@@ -1,0 +1,49 @@
+{
+  "M0": {
+    "rows": 2097152,
+    "missing_duplicate_keys": 0,
+    "sliding": true,
+    "parity": true,
+    "AB_exchange_symmetric": true,
+    "nonnegative_finite": true,
+    "legacy_loader_compatible": true,
+    "shot_assignment": true,
+    "n_exact_supported": 80000,
+    "support_fraction": 0.03814697265625,
+    "all_movement_costs_estimated": true,
+    "spearman_total_to_old10": 0.7360656444856765,
+    "delta_mean": 5.174893435737082,
+    "delta_median": 3.7654295160891316,
+    "mean_ratio": 1.1980596048603673,
+    "median_ratio": 1.1233829155393231,
+    "old_AB_movement_mean_difference": 5.899922216201503e-05,
+    "bytes": 16960581,
+    "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+  },
+  "M3": {
+    "rows": 2097152,
+    "missing_duplicate_keys": 0,
+    "sliding": true,
+    "parity": true,
+    "AB_exchange_symmetric": true,
+    "nonnegative_finite": true,
+    "legacy_loader_compatible": true,
+    "shot_assignment": true,
+    "n_exact_supported": 80000,
+    "support_fraction": 0.03814697265625,
+    "all_movement_costs_estimated": true,
+    "spearman_total_to_old10": 0.6927615954253311,
+    "delta_mean": 5.656201845296213,
+    "delta_median": 4.210750215619967,
+    "mean_ratio": 1.2487935574286093,
+    "median_ratio": 1.145748207822797,
+    "old_AB_movement_mean_difference": 9.452532066234198e-05,
+    "bytes": 17015567,
+    "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad"
+  },
+  "terminal": {
+    "rows": 131072,
+    "outgoing_movement_zero": true,
+    "convention": "incoming movement charged on preceding continuing transition only"
+  }
+}

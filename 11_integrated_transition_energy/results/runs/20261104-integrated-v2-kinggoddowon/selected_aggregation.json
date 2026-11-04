@@ -1,0 +1,35 @@
+{
+  "chain": "zone_pair_exact",
+  "keys": [
+    [],
+    [
+      "role"
+    ],
+    [
+      "role",
+      "shot_type"
+    ],
+    [
+      "z3",
+      "role",
+      "shot_type"
+    ],
+    [
+      "z3",
+      "shot_target_zone",
+      "role",
+      "shot_type"
+    ],
+    [
+      "state_i",
+      "state_j",
+      "role",
+      "shot_type"
+    ]
+  ],
+  "tau": 2.0,
+  "minimum": 1,
+  "selection": "validation macro-match standardized RMSE on transferred event pseudo-labels",
+  "symmetry": "pool parity/player by role; exact group retains ShuttleSet i,j,shot",
+  "support": "observed ShuttleSet state events; all movement targets are transferred estimates"
+}

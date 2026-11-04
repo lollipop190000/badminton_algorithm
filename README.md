@@ -2,7 +2,7 @@
 
 팀 공동 작업은 [기여 규칙](CONTRIBUTING.md)을 먼저 확인하세요. 개인 브랜치에서 PR을 만들고, 다른 팀원 1명 승인과 자동 검사 통과 후 Squash merge합니다. [연구 보고서 양식](docs/templates/REPORT.md) · [실험 기록 양식](docs/templates/RUN.json) · [Issue 만들기](https://github.com/lollipop190000/badminton_algorithm/issues/new/choose)
 
-연구 요청을 관련 주제별 **10개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
+연구 요청을 관련 주제별 **11개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
 
 | 폴더 | 원인·과정·결과 |
 |---|---|
@@ -16,6 +16,7 @@
 | 08_bfmd_kinematics | [BFMD 이동시간·접선/법선 가속도·운동학 특징](08_bfmd_kinematics/REPORT.md) |
 | 09_cost_transfer_method | [Markov 이동비용 C_ij 전달 추정 방법(BFMD → ShuttleSet 사건별 적용)](09_cost_transfer_method/REPORT.md) |
 | 10_transition_energy | [셔틀 상태 복원·전체 전이별 양 선수 C](10_transition_energy/REPORT.md) |
+| 11_integrated_transition_energy | [BFMD 거리·운동학 전달 학습과 M0/M3 v2 전체 비용](11_integrated_transition_energy/REPORT.md) |
 
 ## 실행
 
@@ -50,3 +51,5 @@ GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률�
 전체 전이 비용 재현: `python run.py transition-energy --download-missing --run-id <새로운-run-id>`. M0·M3 각 2,097,152행을 제공하며, 셔틀 높이·착지 상태와 타구 대사비용의 추정 한계는 [10번 보고서](10_transition_energy/REPORT.md)에 기록했다.
 
 예산 CQL은 [03 연결 문서](03_cql_v2_policy/code/BUDGET_CQL_HANDOFF.md)를 따른다. `budget-cql-build`, `budget-cql-train`, `budget-cql-evaluate`로 같은 구역·예산 상태에서 실제 경기 기록을 학습한다. 9·10 비용 통합은 별도 작업이며 새 비용표를 받은 뒤 새 run에서 replay와 모델을 갱신한다. `python run.py sync-results --budget-cql-run <run-id>`는 해당 CQL 실행만 결과 폴더로 모은다.
+
+거리 전달을 실제 학습한 통합 비용은 `python run.py integrated-energy --run-id <새로운-run-id>`로 재현한다. 저장된 01/08/10 입력을 재사용하며, 별도 11번 폴더의 M0·M3 v2 비용표가 각각 2,097,152행이다. 미관측 경기 거리 MAE/RMSE 0.266/0.409m, 고정 beta의 M3 전달, 원 비용 대비 분포·순위 및 추정 한계는 [11번 보고서](11_integrated_transition_energy/REPORT.md)를 참조한다. 기존 01~10 비용·정책·모델은 보존한다.
