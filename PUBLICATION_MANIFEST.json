@@ -952,8 +952,8 @@
     },
     {
       "path": "03_cql_v2_policy/REPORT.md",
-      "bytes": 16039,
-      "sha256": "436f523bc42c064556199c22aa74ea64b3454b3dc6f0b0e6c5bd8b9e4936b2ea"
+      "bytes": 16551,
+      "sha256": "10e790a42e963e5ec8bfa150da8898dbf0f810a147347c8df973b337c7748714"
     },
     {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
@@ -2369,6 +2369,26 @@
       "path": "03_cql_v2_policy/results/runs/20261104-integrated-cql-verification-codex/verification_script.py",
       "bytes": 5194,
       "sha256": "1ca321c3250e089f1cb54fe68ab8f893825f7d43a87e87129c5db2c05d415f4a"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261105-complete-grid-storage-codex/archive_script.py",
+      "bytes": 3607,
+      "sha256": "739ef7eb8e369e0ee318debb47f8f5b8a3da67d5757646c4ba03f08baadc5326"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261105-complete-grid-storage-codex/archives.json",
+      "bytes": 719,
+      "sha256": "befc9f56626de2cc79bf7fc9f27a8759df473a3e0e374c625a08551dc67e51fc"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261105-complete-grid-storage-codex/RESTORE.md",
+      "bytes": 478,
+      "sha256": "3b7e2681841dbd2497bb87dd8facb7f84027766aadea6a3c167feabaa896280f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261105-complete-grid-storage-codex/RUN.json",
+      "bytes": 1637,
+      "sha256": "9b05ce0beddc1fe7fd83ab9485eaa471b534d8c925078facb8859e80003fa8f4"
     },
     {
       "path": "03_cql_v2_policy/results/runs/20261105-grid-storage-recovery-codex/archive_script.py",
@@ -5087,8 +5107,8 @@
     },
     {
       "path": "docs/integrated_cql_progress.md",
-      "bytes": 6930,
-      "sha256": "0a7304d3b3c6a21d93d798b5125ce7e7f07e540c11c4dc4855044fa7109028c9"
+      "bytes": 7383,
+      "sha256": "2e3eb1ba53c1e4dade2bd795e6c95344ea105dd72737b65f82f6a7668b9d6ef4"
     },
     {
       "path": "docs/templates/REPORT.md",
@@ -5141,5 +5161,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1311615450
+  "uploaded_content_bytes": 1311622856
 }

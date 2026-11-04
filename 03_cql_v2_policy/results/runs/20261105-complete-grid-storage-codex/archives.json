@@ -1,0 +1,12 @@
+[
+  {
+    "original": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy",
+    "original_bytes": 13505790080,
+    "original_sha256": "4655025359463fb0afc07aadfc11e5f12655312895f10de3a354a4f3f653f6ff",
+    "archive": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy.gz",
+    "archive_bytes": 6517146783,
+    "archive_sha256": "933c1ec335a6be7b9b864809babdfd45bf24856aa7334c456be35eaeba168705",
+    "complete_array": true,
+    "scientific_use": "completed valid M0 comparison grid; byte-exact lossless archive"
+  }
+]
