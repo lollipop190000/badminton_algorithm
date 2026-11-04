@@ -1,0 +1,32 @@
+{
+  "strokes": 63410,
+  "rallies": 5888,
+  "matches": 91,
+  "fit_rows": {
+    "train": 3392,
+    "validation": 753,
+    "test": 816
+  },
+  "reproduced_topic11_intervals": 79096,
+  "topic11_max_abs_error_J_per_kg": {
+    "M0": 4.263256414560601e-14,
+    "M3": 4.263256414560601e-14
+  },
+  "max_projected_gradient": {
+    "no_fatigue": 2.7244992493952905e-12,
+    "old_distance": 7.301282718914815e-10,
+    "M0": 4.5453209348160395e-09,
+    "M3": 3.495703088932183e-10
+  },
+  "fallback_intervals": {
+    "A": 35,
+    "B": 37
+  },
+  "outside_range_intervals": {
+    "A": 173,
+    "B": 176
+  },
+  "unsupported_shot_intervals": 5812,
+  "max_heldout_terminal_mass_error": 1.3877787807814457e-17,
+  "q_source_unchanged": true
+}

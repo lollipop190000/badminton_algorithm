@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104-common-model-coarse160",
+  "status": "failed",
+  "code_commit": "dc6b8d6f52413f5269e46b685b5344cc11f49b81",
+  "seed": 20261104,
+  "command": "python run.py budget-cql-compare --run-id 20261104-budget-cql-integrated-M3-codex --training-id 20261104-full-5seeds --comparison-id 20261104-common-model-coarse160 --grid-intervals 160 --max-grid-intervals 160 --grids-only",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.2",
+    "device": "cpu"
+  },
+  "split": "Train-fitted environment and train initial states; failed refinement before policy rollout",
+  "config": {
+    "path": "config.json",
+    "sha256": "937cc2890405f36ddbf84f61d1fec8a79e29948d1166b0a1b4d00d68f5d920d8"
+  },
+  "inputs": [
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\RUN.json",
+      "sha256": "a93c28f4a3c064e0d1b0175840473b8796a836b131a046335ff4a838af33e5b5"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\costs.npz",
+      "sha256": "bcfb856d5dc2406d249477e270d27fdf0c67a5e92f1055d7b61b3e228009626e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\training\\20261104-full-5seeds\\RUN.json",
+      "sha256": "a94c5b45f5a4a1179acc0da65d851d62c6ac5375ddb5d73683dcb72cccc30436"
+    }
+  ],
+  "source_sha256": {
+    "scripts\\compare_integrated_cql.py": "3731a544170603853674c357ac202538b4a902887e6f9a11331d28a59f468c5f",
+    "src\\budget_policy_comparison.py": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4",
+    "src\\energy_strategy.py": "9913e0ad0366a67c75d97acd92e7cded3ca0ad5ab745f240634f6958e6b07ef8",
+    "src\\budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src\\cql_model.py": "feb8c8d5f62fa935f520878bfad241b2081df0fbdf44e6f0fabe4b3852c09b69",
+    "src\\fatigue_baseline.py": "209a80428ae8bbad53230f029023a2e95c1514c911f5087208fe044121e9afd1",
+    "src\\build_fatigue_transition.py": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b",
+    "src\\fit_fatigue_terminal.py": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e"
+  },
+  "metrics": {
+    "grid_intervals": 160,
+    "max_refinement_difference": 0.04010327096954536,
+    "tolerance": 0.02,
+    "policy_comparison_conditions": 0
+  },
+  "omitted_large_artifacts": [
+    {
+      "path": "grids/integrated_A.npy",
+      "bytes": 3397517440,
+      "sha256": "aaa0d6df7258d4c218c65832a13298972176a66cdf72d4616e643813896b93b5"
+    }
+  ],
+  "limitations": [
+    "Failed numerical validation; no policy rollout was executed"
+  ],
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "937cc2890405f36ddbf84f61d1fec8a79e29948d1166b0a1b4d00d68f5d920d8"
+    },
+    {
+      "path": "initial_distribution.csv",
+      "sha256": "15c43d5472aef772547f0c77365efee3bb3998316977ddc506990f06e53e92c5"
+    },
+    {
+      "path": "grids/grid_status.json",
+      "sha256": "a1f1791cb168578933a03926d23f6201b0a8816041874b3f4afd7e21db1f5992"
+    },
+    {
+      "path": "grids/integrated_A.json",
+      "sha256": "2c035f1c9943dbb633c9f30520f40ebee3ace6cc2c5a1e6aff98185d193bc6de"
+    }
+  ]
+}

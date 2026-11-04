@@ -95,3 +95,5 @@ python run.py cql-evaluate
 두 비용의 10개 저장 모델에서 seed별 64개씩 총 640개 adapter 추천을 진단 파일과 대조해 완전 일치를 확인하였다. 두 replay 전체 1,051,089행의 비용 차감·잔여량·행동 마스크·상태 인코딩·보상을 대조하였다. 학습 배열의 종료 다음 상태는 bootstrap을 하지 않으므로 0으로 저장하며, 별도 행 기록에는 종료 후 잔여량을 보존한다. test 추천의 공통 마스크 위반은 0이었다. FQE의 시작 상태 평균 return은 M0에서 0.6820~0.7020, M3에서 0.6676~0.6847이며, 함수 근사값 일부는 보상 범위 [-1,1] 밖에 있다. 이 진단을 확률로 변환하거나 승률 비교를 대신하는 근거로 사용하지 않는다. [전수 대조와 모델 재현 검사](results/runs/20261104-integrated-cql-verification-codex/RUN.json)에 코드와 표를 보존하였다.
 
 M0의 첫 160구간 수치 검사는 80→160 차이 0.033786으로 기준 0.02를 통과하지 못했다. 해당 시도에서 정책 rollout은 수행하지 않았다. [실패 기록](results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/20261104-common-model-comparison/RUN.json)과 큰 격자 해시를 보존하고 별도 비교 ID에서 320구간 정밀화를 진행한다. 기본 비교와 민감도 결과는 수치 검증이 끝난 뒤 보고한다.
+
+M3의 80→160 차이도 0.040103으로 기준을 넘었다. [M3 수치 검사 기록](results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/20261104-common-model-coarse160/RUN.json)을 별도로 보존하고 같은 0.02 기준을 유지하여 정밀화한다. 두 시도 모두 정책 비교 조건 수는 0이며, 실패한 정밀도 검사를 통과한 비교 결과로 취급하지 않는다.
