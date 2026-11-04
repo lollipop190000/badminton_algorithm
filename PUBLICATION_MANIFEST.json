@@ -847,9 +847,29 @@
       "sha256": "c577883a7bd940f02b3e4dfb7b6efba6b35aa0a3f5de6aa814ac9d9280ccb029"
     },
     {
+      "path": "03_cql_v2_policy/code/BUDGET_CQL_HANDOFF.md",
+      "bytes": 7029,
+      "sha256": "c4c80f9a8a7550fd2039088adabc01ac153a388efeb41377415dbfd01a6d9988"
+    },
+    {
+      "path": "03_cql_v2_policy/code/configs/budget_cql.json",
+      "bytes": 527,
+      "sha256": "f43e084f71b1051b184e7ac913855d6e279bd51e4c5b7e3edee2ff35e31b9555"
+    },
+    {
       "path": "03_cql_v2_policy/code/configs/cql_config_v2.yaml",
       "bytes": 1179,
       "sha256": "5f375a1aca3e496cdb2966c644f7eff665888e2b420af958ccd519a118c3e9c8"
+    },
+    {
+      "path": "03_cql_v2_policy/code/src/budget_cql_contract.py",
+      "bytes": 11333,
+      "sha256": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e"
+    },
+    {
+      "path": "03_cql_v2_policy/code/src/build_budget_cql.py",
+      "bytes": 15612,
+      "sha256": "83932d4dfb203b5c1a09671fffbfe5ec4937bcac16ace55206988024a93fb5df"
     },
     {
       "path": "03_cql_v2_policy/code/src/build_cql_dataset.py",
@@ -862,14 +882,29 @@
       "sha256": "feb8c8d5f62fa935f520878bfad241b2081df0fbdf44e6f0fabe4b3852c09b69"
     },
     {
+      "path": "03_cql_v2_policy/code/src/evaluate_budget_cql.py",
+      "bytes": 9522,
+      "sha256": "b6d4f28fa03a3b08e89a594f23d4b32a82a972223ddcc8cd4767d6b9e11426c8"
+    },
+    {
       "path": "03_cql_v2_policy/code/src/evaluate_cql.py",
       "bytes": 29096,
       "sha256": "ad34c49cb0d9bc7409a9ee5d844ef07d11bd17f3c8fecee700d199a94e97c7eb"
     },
     {
+      "path": "03_cql_v2_policy/code/src/train_budget_cql.py",
+      "bytes": 11690,
+      "sha256": "3c91aa0d6452e83cfe042366357cd33b53daaefde5903312db3b158e893a9eac"
+    },
+    {
       "path": "03_cql_v2_policy/code/src/train_cql.py",
       "bytes": 20366,
       "sha256": "ced410f784237d10cece898eea278236888aa2775a7304cb3dc8f4a30be7f7ec"
+    },
+    {
+      "path": "03_cql_v2_policy/code/tests/test_budget_cql.py",
+      "bytes": 10833,
+      "sha256": "046a018898235a4b6bbc723f9e75cff00e2a3ae1bce9f88bf209ea8d70e4e1c6"
     },
     {
       "path": "03_cql_v2_policy/code/tests/test_cql_v2_pipeline.py",
@@ -878,8 +913,263 @@
     },
     {
       "path": "03_cql_v2_policy/REPORT.md",
-      "bytes": 2532,
-      "sha256": "177ecca8f9f55ac04a8e3800ee9e6d17c31bded15d2df852c744a60868f4b237"
+      "bytes": 6439,
+      "sha256": "903afb31c7a5052e1d7c31ba8c5d136cd226b4adb70647eada71cf2c1152c579"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/common_mask.npy",
+      "bytes": 524416,
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/config.json",
+      "bytes": 612,
+      "sha256": "c6783b6b0cb29e5cb9909c97a0938ef220b69ac51cf4af2a33f395d33c64972e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/costs.npz",
+      "bytes": 90459,
+      "sha256": "d0a1da78ef5139ce78f05ce589bf09bdd9d9ed148f1536ed9c6f29800f5b51a2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/dataset_audit.json",
+      "bytes": 2004,
+      "sha256": "aac123f53e5c9a7090c967eb7fa0980f1043f834356614b0ddbe8ffa6b150032"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/dataset_contract.json",
+      "bytes": 3473,
+      "sha256": "191683ac44e5e8c00c68f3ce24955e7f1fe0a226ba57ae255981fe1e1034b687"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/config.json",
+      "bytes": 45,
+      "sha256": "1a03af579b170a85a994b647a0a14c9cee53dab7261b6623289aba5b5b903c3e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/diagnostics.json",
+      "bytes": 4309,
+      "sha256": "1846dd8e0d3a83172b60672e3a7bc9d1ea8014738f488777670ab19886ac6895"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_history_seed42.csv",
+      "bytes": 66,
+      "sha256": "20a9c98e3678b54a22955a90e9ac746e63082d73e8f1148e8b4eb23b822d5556"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_history_seed43.csv",
+      "bytes": 66,
+      "sha256": "310c47b6e8eeed74387136044dfbb8fc133f04bbce59e3ba24cce03953260670"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_history_seed44.csv",
+      "bytes": 66,
+      "sha256": "dfeae113cd02d9b220ac257d1872b2136c2ae7d8eb0937824cffbfa6f9f157d2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_history_seed45.csv",
+      "bytes": 66,
+      "sha256": "2f7f05ca8d5fc957593367c78b9edf650d5ed8adaa8b60107886b0c42ac0e41d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_history_seed46.csv",
+      "bytes": 65,
+      "sha256": "a7c1071c85c68e88237c50ddf7a466fe6f02967e107d3b5e13dc7b335b6db8b0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_seed42.pt",
+      "bytes": 162425,
+      "sha256": "9da41d496f171dffe7d0ebf33512ffd67589d26f4718075ec1cf5f5871090089"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_seed43.pt",
+      "bytes": 162425,
+      "sha256": "32ebc7cb677ecbf2e9f5a565726400976a21ad082dc3e096dd22e393dcee93f4"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_seed44.pt",
+      "bytes": 162425,
+      "sha256": "f7aa1fb4655cbcd269861fd51f7c7578b6936038611adb3c3f7bff887f8a8ca9"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_seed45.pt",
+      "bytes": 162425,
+      "sha256": "1abb9860e0c223f86466421e21f715260c6b8adb4af82bcc811022608f02141b"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/fqe_seed46.pt",
+      "bytes": 162425,
+      "sha256": "e064900ca31859c92e63b557bfbecbea5820baaa25953cd8deffc2e822b8f97b"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/predictions_seed42.parquet",
+      "bytes": 1288949,
+      "sha256": "7a631d6611c1d8fbaf1394369ec4280ecaf8b9febbd94b01310dbf2fe5b347ea"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/predictions_seed43.parquet",
+      "bytes": 1285991,
+      "sha256": "29dad05557286eaf97916ed1bf557e3be23abca58a8e26a47c498d40499e90a0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/predictions_seed44.parquet",
+      "bytes": 1283603,
+      "sha256": "262addb5bb5477d7a3c90315f69407a1cb3b15dbcc381a9c00ec580168cb2871"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/predictions_seed45.parquet",
+      "bytes": 1287244,
+      "sha256": "a5681f5272c310b46caca76d5b996334364bbf0ded9e8c45a74ab11ff316401e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/predictions_seed46.parquet",
+      "bytes": 1267559,
+      "sha256": "36358b660fbb3f0a6f1103c7f1a2eb8ec6c774e1d72e1f8161c674166f9c23f4"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/RUN.json",
+      "bytes": 9492,
+      "sha256": "99e83928d2d5867b68d5353afcb7e7d8342e68ff9eebc2ad56bde1254b297711"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/replay_test.npz",
+      "bytes": 897195,
+      "sha256": "dd14f554fed9b0721e44173aef130486d27a433a2a21e62b4bf8014f0bf637d0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/replay_train.npz",
+      "bytes": 3754853,
+      "sha256": "73c6e12639e1851335d5c4c6b6a01ea378ae669e8a22e0521935f37d5961323f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/replay_val.npz",
+      "bytes": 866030,
+      "sha256": "e83d9549dc6fa894a2418e0a45e9f13e26e0322dac9fc52349d7a4b26df59427"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/rows_test.parquet",
+      "bytes": 1027724,
+      "sha256": "5214696acea06a135aebe768d6883228529d03b46ff5e89e9d152c7adb22c922"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/rows_train.parquet",
+      "bytes": 4034542,
+      "sha256": "cd6d350c30876ecdb9d148fef9575c1193bdbb08ace79e77225b7d04fa6da95b"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/rows_val.parquet",
+      "bytes": 992198,
+      "sha256": "74f50efe4af1967bf676eaaf63c5f1a88d0986980efeadfea6ec4b1613441c17"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/RUN.json",
+      "bytes": 6570,
+      "sha256": "aeed4911692c77a7eb63c349f16ec3244f9c5f028e482a3b8195a0253766307c"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/support.npz",
+      "bytes": 159544,
+      "sha256": "7a1e683b234340dd02ba08d2a517e98983a63c878c36cbfd535895d7062a18c9"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/alpha_sweep.csv",
+      "bytes": 121,
+      "sha256": "5fcc626af09722987b58ee469d243a85528163cff04e2f1ddc9407dd7e4066d8"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed42_alpha0p5.csv",
+      "bytes": 550,
+      "sha256": "09bc784ea4fbaf8c9473928c490d9c84da6168fa514e4a450ba9cc3b08460f18"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed42_alpha0p5.pt",
+      "bytes": 163117,
+      "sha256": "7fddfc2378ce33fc1f80a9c841c3c57d9a52654e06c6254ae24c6c2d6d65eb61"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed43_alpha0p5.csv",
+      "bytes": 549,
+      "sha256": "d73fee0d8c2066bb7a16c72c0ad21e9188490d9c0e1beca028201c4228c3aa59"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed43_alpha0p5.pt",
+      "bytes": 163117,
+      "sha256": "53ce36232eae7c0f9339909ef07785c9e6ffe9d077670beeb479651365384bd1"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed44_alpha0p5.csv",
+      "bytes": 545,
+      "sha256": "96d23a3deaf16b18f7a8ee1322685926e20baf2dd12e10033e3fa2739c433730"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed44_alpha0p5.pt",
+      "bytes": 163117,
+      "sha256": "770d9fef0968f624bc3822f5999ee0499dbee282ba1ecbd158c80f408b9efedf"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed45_alpha0p5.csv",
+      "bytes": 548,
+      "sha256": "4d075c49929222a93e28d8f56179d7189ceaa9c4bb4970b98d21cbdd31867c46"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed45_alpha0p5.pt",
+      "bytes": 163117,
+      "sha256": "1e3bffd89e9db131c97752c84a739b20099da5ac1f130f79a9be2a834f193845"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed46_alpha0p5.csv",
+      "bytes": 547,
+      "sha256": "4cbe2412094c2901437714ce861b38591d7693bcc7e8c9dafa29aaeca8ef5be0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/candidate_seed46_alpha0p5.pt",
+      "bytes": 163117,
+      "sha256": "aecbca370d566a255a88517104dbb02319793dcc743641ba1f980272c470a73e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/config.json",
+      "bytes": 590,
+      "sha256": "0d4292c92f2799504e501ad32f838fb0ce036df55f9511427b1924554abea212"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/policy_contract.json",
+      "bytes": 3473,
+      "sha256": "191683ac44e5e8c00c68f3ce24955e7f1fe0a226ba57ae255981fe1e1034b687"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/policy_seed42.pt",
+      "bytes": 162909,
+      "sha256": "ffa9cd4fd230e5746fe74f2e7b8ae00d29feacafc54bf4e2afe7d88c31bf960e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/policy_seed43.pt",
+      "bytes": 162909,
+      "sha256": "21e9e20970be24fcc679e5513ab4f55aea3d6cc8d5415628764542d9e78f2411"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/policy_seed44.pt",
+      "bytes": 162909,
+      "sha256": "73c8982e67dc8b0efed8cf909c4def6aa4df84828ff3f36105a6fb9861747ec6"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/policy_seed45.pt",
+      "bytes": 162909,
+      "sha256": "e02fb67f99afae60acfc2b5f03c210a7ef059af89852b106551c6ee3b8623efa"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/policy_seed46.pt",
+      "bytes": 162909,
+      "sha256": "079e6531c795f41384780b0a2717fb64233a38c43dfaea7edaee62468dc71feb"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/RUN.json",
+      "bytes": 6493,
+      "sha256": "731a8aa19fbb7e6691a66a134b5e4a08b6546456555ec66e7e115589ca15f9ae"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/training_summary.json",
+      "bytes": 1616,
+      "sha256": "350a7e26282103e02d2cd14b7bed8c690a3cfb5b60eb63d9961905c0fbaccea1"
     },
     {
       "path": "03_cql_v2_policy/results/cql_v2/data/action_distribution.csv",
@@ -3468,13 +3758,13 @@
     },
     {
       "path": "11_integrated_transition_energy/code/tests/test_integrated_energy.py",
-      "bytes": 7230,
-      "sha256": "90e32cdcd3233e0a44cc95b2cb1b5d4542d8b569946c9a5599414ef713a0281b"
+      "bytes": 9651,
+      "sha256": "08ac67e151f583e549a1cea972c1ee9b2a1dc06641ae62fb94f671e182bc8168"
     },
     {
       "path": "11_integrated_transition_energy/REPORT.md",
-      "bytes": 18526,
-      "sha256": "e629b68ce15d20b24f255b813422c360d2b72738a73a07cce534783ae6ab0cc5"
+      "bytes": 19191,
+      "sha256": "c5c26438e69b95e81ef6b6a665d7dcb34a827a1b54ceb78ea34f592e5780d51e"
     },
     {
       "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/aggregation_parameters.parquet",
@@ -3692,6 +3982,11 @@
       "sha256": "4a3f5227a2bde389a5269e42aed04620f4e0322f0bc7ef5fff851f4289599821"
     },
     {
+      "path": "docs/budget_cql_progress.md",
+      "bytes": 3101,
+      "sha256": "23cc03f6672c30cdb0e7b666de0601b25c44779adeff04d29ab85ae0d2620e88"
+    },
+    {
       "path": "docs/templates/REPORT.md",
       "bytes": 958,
       "sha256": "04a6c5633a2c5f72266a7dfbead92bd228e0e5d4c57beb4a49ae3cc0a26e6a9a"
@@ -3703,8 +3998,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6674,
-      "sha256": "94637815fb96613ac66a23cfae3807efd7e2e98a971b22f2e6f63121610cb6d4"
+      "bytes": 7133,
+      "sha256": "68de65beb9881c470b98795a3b290a742510b25e1a683df3d426f38b4231a3e0"
     },
     {
       "path": "requirements-ci.txt",
@@ -3718,8 +4013,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 6182,
-      "sha256": "dc2d6549096c57eb3f676d784ce26ab0b7e3e33a0713ecb0a378d9408da9aaf0"
+      "bytes": 7421,
+      "sha256": "be1e56cee28b559981b54d647f964c67cfa8f5dbeac05f579cd5151fae0a2d8f"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -3742,5 +4037,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1157315414
+  "uploaded_content_bytes": 1178638180
 }

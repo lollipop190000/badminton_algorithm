@@ -36,3 +36,25 @@ python run.py cql-evaluate
 선택 alpha=0.5, best epoch=5. [test 지표](results/cql_v2/metrics/cql_metrics.json), [추천](results/cql_v2/predictions/cql_test_recommendations.csv), [checkpoint](results/cql_v2/model/best_cql_model.pt). Z0·전역 저지원 추천은 0이며 문맥 backoff가 사용되는 상태가 존재한다. Q는 승률이 아니라 학습된 할인 return이다. 실제 행동과의 일치율은 정책의 우월성 검증이 아니므로 07 OPE를 별도로 수행했다.
 
 결과를 다시 만들면 `.runtime/outputs` 또는 `.runtime/data`에 저장된다. 검토 후 `python run.py sync-results`로 주제별 `results/`를 갱신한다. 대용량 원자료·예산 격자 제외 기준과 완전한 Parquet 보존 여부는 루트 [PUBLICATION_MANIFEST.json](../PUBLICATION_MANIFEST.json)에 기록했다.
+
+### 공통 상태를 사용하는 예산 CQL 확장
+
+우리 예산 전략과 같은 정보로 학습하는 별도 CQL 경로를 추가하였다. 입력은 최근 세 구역의 one-hot 48개, A/B 타구 차례 1개, 학습 비용 p90으로 정규화한 양측 남은 예산 2개로 51차원이다. 기존 107차원 CQL v2와 checkpoint는 보존한다. 행동은 고정된 128개 타구/구역 슬롯이며, 05와 같은 학습 자료 기반 support 마스크를 사용한다. 보상은 승패 +/-1, 동시 소진 0, gamma=1이다.
+
+세 구역이 확보되는 4번째 타구 직전에 예산을 부여하고 이후의 비용을 반영한다. 같은 선수의 다음 차례까지 양측 비용을 차감하며, 자연 종료는 관측 승패와 마지막 스윙만, 계속 전이는 이동과 스윙을 부과한 뒤 예산 소진을 판정한다. 목표가 Z0인 종료 타구에는 관측된 목표 의도가 없으므로 학습 자료의 계속 타구 구역 분포로 가중 분할하고 이를 관측 행동과 구별하였다. 목표가 기록된 마지막 타구는 해당 구역을 보존한다.
+
+9·10 통합 비용은 다른 팀원의 담당이다. 이 확장은 완전한 계속/종료 비용표를 받는 입력 계약, 실제 기록 replay, CQL 학습, 고정 정책 adapter, 보조 FQE 진단을 제공한다. 비용·마스크 해시가 바뀌면 새 replay와 재학습이 필요하다. 입력 형식, 실행 명령, 정책 호출 방법은 [연결 문서](code/BUDGET_CQL_HANDOFF.md)에 정리하였다. 통합 비용으로 학습한 최종 모델과 조건별 20,000회 전략 비교는 통합 비용을 받은 이후의 단계다.
+
+기준 비용 연결 실행은 `20261104-budget-cql-reference-v3-codex`이다. 기존 10/M0를 provisional 입력으로 사용하고 alpha=0.5, seed 42..46, 각 2 epoch의 CQL 및 2 epoch의 FQE로 실행 경로를 확인하였다. alpha 탐색이나 충분한 최종 학습을 수행한 결과로 해석하지 않는다. 코드 기준 commit은 `537ff7ddaf4d85e0bcb19b3298bae46f10ad75dd`이며 개발 중의 v1/v2 실행은 게시하지 않았다.
+
+| 연결 시험 항목 | train | validation | test |
+|---|---:|---:|---:|
+| 원자료 랠리 수 | 4,035 | 876 | 966 |
+| 4타구 이후 적격 랠리 수 | 3,392 | 753 | 816 |
+| replay 행 수, 목표 가중 분할 포함 | 360,170 | 80,773 | 86,835 |
+| 원 결정/예산 조합의 가중치 합 | 234,959 | 53,748 | 56,116 |
+| 목표 미상 종료 가중치 비중 | 7.379% | 6.984% | 7.591% |
+
+공통 마스크가 허용하는 전역 타구/구역 조합은 68개다. 5개 seed의 test 추천에서 support 위반은 모두 0이었다. 원자료에 목표가 기록된 표본에서 행동 일치율은 9.796~10.707%였으며, 보조 FQE의 적격 시작 상태 평균 return은 0.2725~0.2931이었다. 짧은 연결 시험의 진단 수치이며 전략의 승률이나 우열을 나타내지 않는다. 전체 test replay의 비용 차감·잔여량과 가중치 합을 대조했고, 저장 모델 5개의 adapter 추천 64개씩 총 320개가 진단 파일과 완전히 일치하였다. 연구 테스트 117개와 저장소 규칙 테스트 6개가 통과하였다.
+
+근거: [데이터 RUN](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/RUN.json), [공통 계약](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/dataset_contract.json), [전체 감사표](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/dataset_audit.json), [학습 RUN](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/RUN.json), [5개 모델과 학습 지표](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/training/20261104-connection-5seeds/training_summary.json), [보조 진단](results/budget_cql/runs/20261104-budget-cql-reference-v3-codex/diagnostics/20261104-fqe-connection/diagnostics.json).

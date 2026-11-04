@@ -50,4 +50,6 @@ GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률�
 
 전체 전이 비용 재현: `python run.py transition-energy --download-missing --run-id <새로운-run-id>`. M0·M3 각 2,097,152행을 제공하며, 셔틀 높이·착지 상태와 타구 대사비용의 추정 한계는 [10번 보고서](10_transition_energy/REPORT.md)에 기록했다.
 
+예산 CQL은 [03 연결 문서](03_cql_v2_policy/code/BUDGET_CQL_HANDOFF.md)를 따른다. `budget-cql-build`, `budget-cql-train`, `budget-cql-evaluate`로 같은 구역·예산 상태에서 실제 경기 기록을 학습한다. 9·10 비용 통합은 별도 작업이며 새 비용표를 받은 뒤 새 run에서 replay와 모델을 갱신한다. `python run.py sync-results --budget-cql-run <run-id>`는 해당 CQL 실행만 결과 폴더로 모은다.
+
 거리 전달을 실제 학습한 통합 비용은 `python run.py integrated-energy --run-id <새로운-run-id>`로 재현한다. 저장된 01/08/10 입력을 재사용하며, 별도 11번 폴더의 M0·M3 v2 비용표가 각각 2,097,152행이다. 미관측 경기 거리 MAE/RMSE 0.266/0.409m, 고정 beta의 M3 전달, 원 비용 대비 분포·순위 및 추정 한계는 [11번 보고서](11_integrated_transition_energy/REPORT.md)를 참조한다. 기존 01~10 비용·정책·모델은 보존한다.

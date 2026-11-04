@@ -1,5 +1,6 @@
 import json
 import unittest
+import tempfile
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -9,6 +10,48 @@ from src.transition_energy.adapter import pre_shot_consumption
 
 ROOT=Path(__file__).resolve().parents[2]
 RESULTS=ROOT/'11_integrated_transition_energy/results/runs'
+
+
+def verify_protected_files(root, protected, current_inventory):
+    """Keep run-time scientific artifacts fixed while REPORTs document new work.
+
+    Historical report hashes remain in the immutable run record. Current reports
+    are independently covered by publication hashes and repository link checks.
+    This exception never changes the expected hashes of inputs/models/code.
+    """
+    for name, historical_hash in protected.items():
+        expected=historical_hash
+        if Path(name).name=='REPORT.md':
+            if name not in current_inventory:
+                raise AssertionError('Report absent from current inventory: '+name)
+            expected=current_inventory[name]
+        if digest(root/name)!=expected:
+            raise AssertionError('Protected file hash mismatch: '+name)
+
+
+class PreservationScopeTests(unittest.TestCase):
+    def test_report_update_uses_current_inventory_without_rewriting_historical_hash(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);report=root/'03_cql_v2_policy/REPORT.md';report.parent.mkdir()
+            report.write_text('old report');old=digest(report)
+            protected={str(report.relative_to(root)):old}
+            report.write_text('updated report for a new experiment')
+            verify_protected_files(root,protected,{str(report.relative_to(root)):digest(report)})
+            self.assertEqual(protected[str(report.relative_to(root))],old)
+
+    def test_unregistered_report_edit_is_rejected(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);report=root/'REPORT.md';report.write_text('old')
+            old=digest(report);report.write_text('changed')
+            with self.assertRaises(AssertionError):
+                verify_protected_files(root,{'REPORT.md':old},{'REPORT.md':old})
+
+    def test_original_artifact_change_still_fails_even_with_new_inventory(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);artifact=root/'model.pt';artifact.write_bytes(b'original')
+            old=digest(artifact);artifact.write_bytes(b'changed')
+            with self.assertRaises(AssertionError):
+                verify_protected_files(root,{'model.pt':old},{'model.pt':digest(artifact)})
 
 
 class TransferContractTests(unittest.TestCase):
@@ -56,7 +99,9 @@ class IntegratedArtifactTests(unittest.TestCase):
             self.assertEqual(digest(self.out/output['path']),output['sha256'])
         protected=json.loads((self.out/'protected_01_10_hashes.json').read_text())
         self.assertTrue(protected['unchanged'])
-        for name,h in protected['sha256'].items():self.assertEqual(digest(ROOT/name),h)
+        manifest=json.loads((ROOT/'PUBLICATION_MANIFEST.json').read_text(encoding='utf-8'))
+        inventory={item['path']:item['sha256'] for item in manifest['file_inventory']}
+        verify_protected_files(ROOT,protected['sha256'],inventory)
         for source in self.run_metadata['inputs']+[self.run_metadata['config']]:
             self.assertEqual(digest(ROOT/source['path']),source['sha256'])
         for name,h in json.loads((self.out/'executed_source_hashes.json').read_text()).items():

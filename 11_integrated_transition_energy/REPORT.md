@@ -146,6 +146,8 @@ M3 선택 보정량 방식의 test MAE/RMSE는 **8.757878/14.129764 J/kg**, bias
 
 ### 추적 잡음·물리적 타당성 및 남은 한계
 
+후속 CQL 브랜치와 병합할 때 보존 검사의 범위를 구분하였다. 원 데이터·모델·실행 코드 및 입력·출력은 기존 실행의 해시로 계속 검사하며, 후속 실험을 설명하기 위해 갱신되는 REPORT.md는 현재 게시 manifest의 해시로 검사한다. 과거 `protected_01_10_hashes.json`, RUN.json과 게시 검증 기록은 수정하지 않았다. 보고서 갱신 허용, 미등록 문서 변경 거부, 원 모델 변경 거부를 각각 회귀 테스트로 확인한다. 이는 검증 코드의 호환성 수정이며 과거 실험을 다시 실행하거나 과학적 감사를 갱신한 결과가 아니다.
+
 08의 bw3 경로 평균은 1.664939m, raw 적분은 1.900689m로 차이 0.235750m다. bw5/bw8/SG 필터에서도 경로 평균이 달라진다. 동일 표본의 원 endpoint d와 bw3 target 간 L<d는 289/7,206건(4.01%)인 반면 평활 endpoint 기준으로는 17건이다. 원/평활 endpoint 거리 MAE 0.052712m이므로 09의 약 0.24%와 다른 정의를 구분해야 한다. 실제 이동과 잡음의 비중을 식별할 정지 정답구간·보존 프레임 궤적에 대한 temporal decimation 입력은 이번 실행에서 확보되지 않았다. [잡음 감사](results/runs/20261104-integrated-v2-kinggoddowon/tracking_noise_audit.json) · [필터 민감도](results/runs/20261104-integrated-v2-kinggoddowon/tracking_filter_sensitivity.csv) · [거리별 잡음 진단](results/runs/20261104-integrated-v2-kinggoddowon/noise_distance_strata.csv).
 
 새 모형의 근거는 소스 경기 분리 예측 개선, 물리적으로 비음수인 초과거리, 일관된 M3 보정량, 셔틀 높이 복원에 의존하지 않는 target 상태 인코딩이다. 그러나 두 데이터 도메인의 측정 차이·fps 오차·추적 잔차는 해결되지 않았다. 19.985를 추적 경로에 곱하는 적합성, 가감속/곡률 중복, beta 및 C_shot의 대사 적합성도 검증하지 않았다. 따라서 **BFMD 추적량을 설명하는 전달 추정의 개선**까지 결론으로 삼는다. M3의 실제 대사 우월성·피로 효과·실제 승률 효과는 주장하지 않는다.
