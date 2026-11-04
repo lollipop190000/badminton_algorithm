@@ -3981,6 +3981,66 @@
       "sha256": "c45d10d8f6fd95c7ee6a35c20986bd3daf3e20b2495e7a280b45a50e4a5be306"
     },
     {
+      "path": "12_integrated_stamina_refit/code/src/integrated_stamina_refit.py",
+      "bytes": 18113,
+      "sha256": "ce4beefd8ceba12b050f8a51d955b3c3cc6521784d034b9ba5183a06a2a51756"
+    },
+    {
+      "path": "12_integrated_stamina_refit/code/tests/test_integrated_stamina_refit.py",
+      "bytes": 2148,
+      "sha256": "38adb8b45895677e4a821ef371a2c0c91ad666bc4ac85e795c0255648d552fd7"
+    },
+    {
+      "path": "12_integrated_stamina_refit/REPORT.md",
+      "bytes": 4216,
+      "sha256": "b70dc1b2b6f1edd683b3f61673a5b9437d92bb7a371c4c8998e66f3525cf7332"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/audit.json",
+      "bytes": 753,
+      "sha256": "deae3fe62373403c82cf2a7ef6a519b362fffe4d86fe90eaddbfca5695185b89"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "bytes": 2113,
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/conditional_predictions.parquet",
+      "bytes": 656318,
+      "sha256": "d2e2a61e39e921b7344abbfdfe2fc27f46dd04347767cc0d5c6437af1e993979"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "bytes": 696,
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/heldout_terminal_masses.parquet",
+      "bytes": 110546,
+      "sha256": "99a59bdfd304dee15b9608f323eb7b2c828fe0fe21411334ddc3de7955a37b98"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/metrics.csv",
+      "bytes": 1137,
+      "sha256": "b0c154f2535ad225b13e3bae78b44fd18e6ac194d96c6b09f562841a950d5ee7"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/pre_shot_load.parquet",
+      "bytes": 7133329,
+      "sha256": "cee56e60dabc045ec38d5f1b6c0c312fc247194b043481d8ba58dc3dbb5fbaee"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "bytes": 5683,
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65"
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/test_paired_intervals.csv",
+      "bytes": 402,
+      "sha256": "b2b64ed61d64f2e9669e55fe8a70b1d1d5a33089f098fdd8726cd2ad5d486f09"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4605,
       "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
@@ -4007,8 +4067,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7133,
-      "sha256": "68de65beb9881c470b98795a3b290a742510b25e1a683df3d426f38b4231a3e0"
+      "bytes": 7265,
+      "sha256": "a49e74b7e86933aff249574824a652bb2908bc72b76cf04ac942023379eb99e4"
     },
     {
       "path": "requirements-ci.txt",
@@ -4046,5 +4106,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1178638180
+  "uploaded_content_bytes": 1186573766
 }

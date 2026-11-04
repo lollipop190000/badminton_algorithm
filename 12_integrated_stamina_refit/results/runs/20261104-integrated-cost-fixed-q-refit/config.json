@@ -1,0 +1,23 @@
+{
+  "d_star_J_per_kg": 838.8778414562917,
+  "shot_order": [
+    "defensive_shot",
+    "drive",
+    "drop",
+    "hairpin",
+    "high_clear",
+    "push",
+    "smash",
+    "under_clear"
+  ],
+  "movement_models": [
+    "M0_v2",
+    "M3_v2"
+  ],
+  "ridge": 0.0,
+  "slope_constraints": "beta,gamma >= 0; no cross-shot constraints",
+  "anchor": "zero observed load at first annotated shot; within-rally accumulation only",
+  "interval": "previous hitter shot cost + two movement costs on arrival; current shot cost excluded",
+  "unsupported_prior_shot": "no shot charge; M0 movement for M3 sensitivity",
+  "q": "existing baseline_train unchanged; no transition or policy refit"
+}
