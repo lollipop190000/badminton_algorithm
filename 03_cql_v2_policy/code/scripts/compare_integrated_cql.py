@@ -47,7 +47,26 @@ def grid_queries(grid,dist,budgets):
     return np.array(values)
 
 
-def prepare_grids(system,kernel,contract,dist,out,args,source_hashes):
+def load_coarse_grid(out,source_hashes,kernel_hashes,fingerprint,domain):
+    """Reuse numeric work only when the solver, model, data and costs still match."""
+    directory=out/'grids'
+    status=json.loads((directory/'grid_status.json').read_text())
+    old_sources=status['execution_source_sha256']
+    verify_grid_cache(directory,old_sources)
+    def dependencies(sources):
+        return {k.replace('\\','/'):v for k,v in sources.items()
+                if k.replace('\\','/')!='scripts/compare_integrated_cql.py'}
+    config=json.loads((out/'config.json').read_text())
+    if (dependencies(old_sources)!=dependencies(source_hashes) or
+        config['kernel_input_sha256']!=kernel_hashes or status['cost_fingerprint']!=fingerprint):
+        raise ValueError('Coarse grid dependencies changed')
+    grid=StrategyGrid.load(directory/'integrated_A')
+    if grid.budget_a!=domain or grid.budget_b!=domain or grid.focal!='A' or grid.mode!='energy':
+        raise ValueError('Coarse grid domain or objective changed')
+    return grid
+
+
+def prepare_grids(system,kernel,contract,dist,out,args,source_hashes,kernel_hashes):
     domain=float(contract['budget_scale']);symmetric=player_symmetric(system,kernel)
     if not symmetric:
         raise ValueError('Expected audited player-exchange symmetry; separate B solve must be added before comparison')
@@ -57,8 +76,14 @@ def prepare_grids(system,kernel,contract,dist,out,args,source_hashes):
         d=verify_grid_cache(directory,source_hashes);grid=StrategyGrid.load(directory/'integrated_A')
         if d['cost_fingerprint']!=contract['cost_fingerprint']:raise ValueError('Grid cost version mismatch')
         return grid,SwappedGrid(grid),d
-    n=args.grid_intervals//2
-    coarse=solve_strategy(system,domain,domain,'A',intervals=n,progress=lambda s:print(s,flush=True))
+    if args.coarse_comparison_id:
+        coarse=load_coarse_grid(out.parent/args.coarse_comparison_id,source_hashes,kernel_hashes,
+                               contract['cost_fingerprint'],domain)
+        n=coarse.values.shape[0]-1
+        if n>=args.max_grid_intervals:raise ValueError('Refinement limit must exceed coarse grid')
+    else:
+        n=args.grid_intervals//2
+        coarse=solve_strategy(system,domain,domain,'A',intervals=n,progress=lambda s:print(s,flush=True))
     while True:
         n=min(n*2,args.max_grid_intervals)
         fine=solve_strategy(system,domain,domain,'A',intervals=n,progress=lambda s:print(s,flush=True))
@@ -96,12 +121,13 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--run-id',required=True);p.add_argument('--training-id',required=True)
     p.add_argument('--comparison-id',required=True);p.add_argument('--samples',type=int,default=20000)
+    p.add_argument('--coarse-comparison-id',help='Reuse a verified grid from an earlier comparison as coarse grid')
     p.add_argument('--seed',type=int,default=20261104)
     p.add_argument('--grid-intervals',type=int,default=40);p.add_argument('--max-grid-intervals',type=int,default=160)
     p.add_argument('--resume',action='store_true');p.add_argument('--grids-only',action='store_true')
     p.add_argument('--no-sensitivity',action='store_true')
     args=p.parse_args()
-    for v in (args.run_id,args.training_id,args.comparison_id):
+    for v in (args.run_id,args.training_id,args.comparison_id,*([args.coarse_comparison_id] if args.coarse_comparison_id else [])):
         if Path(v).name!=v or v in ('.','..'):p.error('IDs must be directory names')
     if args.samples<2 or args.grid_intervals<4 or args.max_grid_intervals<args.grid_intervals:
         p.error('Invalid sample/grid limits')
@@ -131,12 +157,16 @@ def main():
         initial_states='TRAIN fourth-hit distribution conditional on initial parity; focal is initial hitter',
         validation='successive-grid and exact-cost Monte Carlo; same-model numerical checks only',
         sensitivity_interpretation='policies trained under this run cost model are frozen; opponent temperature transforms the entire joint shot/destination distribution')
+    if args.coarse_comparison_id:
+        coarse=out.parent/args.coarse_comparison_id
+        settings['coarse_grid_provenance']={str(f.relative_to(run)):digest(f) for f in
+            (coarse/'config.json',coarse/'grids/grid_status.json')}
     if (out/'config.json').exists() and json.loads((out/'config.json').read_text())!=settings:
         raise ValueError('Incomplete run configuration changed')
     write_json(out/'config.json',settings)
     system,nominal=load_common_system(ROOT,run)
     dist=initial_distribution();dist.to_csv(out/'initial_distribution.csv',index=False)
-    grid_a,grid_b,grid_status=prepare_grids(system,nominal,contract,dist,out,args,source_hashes)
+    grid_a,grid_b,grid_status=prepare_grids(system,nominal,contract,dist,out,args,source_hashes,settings['kernel_input_sha256'])
     require_numerical_grid(grid_status)
     if args.grids_only:return
     _,static_a=solve_no_energy(system,'A');_,static_b=solve_no_energy(system,'B')

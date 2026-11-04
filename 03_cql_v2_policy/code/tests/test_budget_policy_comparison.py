@@ -11,6 +11,32 @@ from src.budget_policy_comparison import Kernel, paired_difference, rollout,Ener
 
 
 class CommonEnvironmentTests(unittest.TestCase):
+    def test_refinement_reuses_only_matching_coarse_grid_dependencies(self):
+        from scripts.compare_integrated_cql import load_coarse_grid
+        from src.energy_strategy import StrategyGrid
+        from src.budget_cql_contract import digest
+        with tempfile.TemporaryDirectory() as tmp:
+            out=Path(tmp);g=out/'grids';g.mkdir()
+            StrategyGrid(np.zeros((5,5,2,2)),20.,20.,'A','energy').save(g/'integrated_A')
+            sources={'scripts/compare_integrated_cql.py':'old-entry','src/energy_strategy.py':'same-solver'}
+            status=dict(cost_fingerprint='cost',execution_source_sha256=sources,
+                grid_file_sha256={n:digest(g/n) for n in ('integrated_A.npy','integrated_A.json')})
+            (g/'grid_status.json').write_text(json.dumps(status))
+            (out/'config.json').write_text(json.dumps(dict(kernel_input_sha256={'train':'same-data'})))
+            current=dict(sources);current['scripts/compare_integrated_cql.py']='new-entry'
+            grid=load_coarse_grid(out,current,{'train':'same-data'},'cost',20.)
+            self.assertEqual(grid.values.shape[0],5)
+            grid.values._mmap.close()
+            for changed in ('source','data','cost','domain','file'):
+                with self.subTest(changed=changed):
+                    s=dict(current);data={'train':'same-data'};cost='cost';domain=20.
+                    if changed=='source':s['src/energy_strategy.py']='changed'
+                    if changed=='data':data['train']='changed'
+                    if changed=='cost':cost='changed'
+                    if changed=='domain':domain=30.
+                    if changed=='file':(g/'integrated_A.json').write_text('{}')
+                    with self.assertRaises(ValueError):load_coarse_grid(out,s,data,cost,domain)
+
     def kernel(self):
         c=costs();p=np.zeros((2,4096,8,3));p[:]=[.2,.3,.5]
         joint=np.zeros((2,4096,128));joint[:,:,0]=1.
