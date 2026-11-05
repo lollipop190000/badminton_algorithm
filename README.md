@@ -2,7 +2,7 @@
 
 팀 공동 작업은 [기여 규칙](CONTRIBUTING.md)을 먼저 확인하세요. 개인 브랜치에서 PR을 만들고, 다른 팀원 1명 승인과 자동 검사 통과 후 Squash merge합니다. [연구 보고서 양식](docs/templates/REPORT.md) · [실험 기록 양식](docs/templates/RUN.json) · [Issue 만들기](https://github.com/lollipop190000/badminton_algorithm/issues/new/choose)
 
-연구 요청을 관련 주제별 **12개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
+연구 요청을 관련 주제별 **13개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
 
 | 폴더 | 원인·과정·결과 |
 |---|---|
@@ -18,6 +18,7 @@
 | 10_transition_energy | [셔틀 상태 복원·전체 전이별 양 선수 C](10_transition_energy/REPORT.md) |
 | 11_integrated_transition_energy | [BFMD 거리·운동학 전달 학습과 M0/M3 v2 전체 비용](11_integrated_transition_energy/REPORT.md) |
 | 12_integrated_stamina_refit | [통합 타구별 소모량과 고정 Q 승패 재적합](12_integrated_stamina_refit/REPORT.md) |
+| 13_structural_fatigue_model | [구조적 체력 모형: 종료 위험·승패 2단계, 합·차 부하, 길이 통제, 경기 누적·회복](13_structural_fatigue_model/REPORT.md) |
 
 ## 실행
 

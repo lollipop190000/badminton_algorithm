@@ -152,6 +152,20 @@
       "tests": [
         "test_integrated_stamina_refit.py"
       ]
+    },
+    "13_structural_fatigue_model": {
+      "title": "구조적 체력 모형: 종료 위험·승패 2단계와 경기 누적 부하",
+      "code": [
+        "src/structural_fatigue/__init__.py",
+        "src/structural_fatigue/data.py",
+        "src/structural_fatigue/model.py",
+        "src/structural_fatigue/pipeline.py",
+        "scripts/run_structural_fatigue.py",
+        "configs/structural_fatigue.json"
+      ],
+      "tests": [
+        "test_structural_fatigue.py"
+      ]
     }
   },
   "schema_version": 1,
@@ -4041,6 +4055,121 @@
       "sha256": "b2b64ed61d64f2e9669e55fe8a70b1d1d5a33089f098fdd8726cd2ad5d486f09"
     },
     {
+      "path": "13_structural_fatigue_model/code/configs/structural_fatigue.json",
+      "bytes": 872,
+      "sha256": "9f51bd60a4bffc35be39057a32fb4a2b691cf18e9b1bd0af5ed9e7e9293c3a36"
+    },
+    {
+      "path": "13_structural_fatigue_model/code/scripts/run_structural_fatigue.py",
+      "bytes": 689,
+      "sha256": "3e1b84938586aed12e9bb3e1e538a0c6d2cdbacec94f622fc429ede8f129fb0d"
+    },
+    {
+      "path": "13_structural_fatigue_model/code/src/structural_fatigue/__init__.py",
+      "bytes": 92,
+      "sha256": "2719ca57668d0e6e980a9f253973611b7ee89cf0e6741aed65ccf09c4958ed2e"
+    },
+    {
+      "path": "13_structural_fatigue_model/code/src/structural_fatigue/data.py",
+      "bytes": 8218,
+      "sha256": "d904af90b0c1a9a5056f629ced25cce5ed711006ff1a1aee4505d74884c9c06e"
+    },
+    {
+      "path": "13_structural_fatigue_model/code/src/structural_fatigue/model.py",
+      "bytes": 11713,
+      "sha256": "7ba2e0067b2a80686a9c390eca02a94c6a11c1186ea613c8a8346011de0a8bb7"
+    },
+    {
+      "path": "13_structural_fatigue_model/code/src/structural_fatigue/pipeline.py",
+      "bytes": 32174,
+      "sha256": "6c9894a241f56cdcc736ab511544d6ce0c9e0f8f6255ffe4325417544d6997e9"
+    },
+    {
+      "path": "13_structural_fatigue_model/code/tests/test_structural_fatigue.py",
+      "bytes": 7857,
+      "sha256": "4b4df337748323cb1a0c91288477899a12595b0bdccfe8e4fa6e6a70fccb586b"
+    },
+    {
+      "path": "13_structural_fatigue_model/REPORT.md",
+      "bytes": 13541,
+      "sha256": "0b4e350fe83e15a801bcd726304ba4a9e56b24d71601ad9e7ea7689b7bd11608"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/audit.json",
+      "bytes": 5535,
+      "sha256": "19680a63bed38e6c2852e7bcb1acec3dc5b7123b6b626eacf787a765c0534897"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/calibration_by_stroke.csv",
+      "bytes": 3855,
+      "sha256": "8d395bee950e77e9411dcc2b3c3bdb487b41636b8b1badab10f7c3a4eb067668"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/coefficient_intervals.csv",
+      "bytes": 3598,
+      "sha256": "0506b4d69d99d6f45760e628fd656544622dc24f9b62174d12a9bf65fbcb22a9"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/config.json",
+      "bytes": 1319,
+      "sha256": "36a1935947519fea09bddf4b08376a7a31b951955e015e94cef747648c016939"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/decision_predictions.csv",
+      "bytes": 9622831,
+      "sha256": "45ccef1d886d4eba028f698bd5d31c891c2fe7dd2ddfabf4620dd2476ef0a00a"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/figure_structural_fatigue.png",
+      "bytes": 147385,
+      "sha256": "a7bda3d9a53f56af20e57efc12095789be6431761706cb96c488054cb93ceda0"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/marginal_effects.csv",
+      "bytes": 3054,
+      "sha256": "48c3074278b543b4d04f80065de7c23a93e9edf6edfe4022c20053a83322abbd"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/metrics.csv",
+      "bytes": 3919,
+      "sha256": "250df51d0fee485849507c93372de0e7789d5b66001865466491a1d17f6ebbe5"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/model_development.json",
+      "bytes": 2181,
+      "sha256": "a81aa04a9e011d697631b7c17e8bc92b9c825406e9ea445e67856718c3e0c845"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/model_final.json",
+      "bytes": 2260,
+      "sha256": "fdbb42c5d54996f511982e26d1de2e5314a1aed94576d6ebb16e3184fa1ab305"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/rally_loads.csv",
+      "bytes": 593026,
+      "sha256": "f230ce6e3379a23aafbb2574a9fbcbcb3bf49130c29b7605f65a225cc705b675"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/RUN.json",
+      "bytes": 8758,
+      "sha256": "9a21d910bdc3e7a62aff28f3ecf20c9778999387a7e24c20b5951ed267edf33e"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/selection_grid.csv",
+      "bytes": 36690,
+      "sha256": "f9f788c94e4382bfc3d7ae78b097919cdd593d391f773a10b95c1f34469e54ae"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/test_paired_intervals.csv",
+      "bytes": 5951,
+      "sha256": "a62299b03c35618010612e88c140b6162e41d4cd36cfd8fe7eacb9f8f131ab7a"
+    },
+    {
+      "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/variant_coefficients.csv",
+      "bytes": 7885,
+      "sha256": "b67d0fc191f16c2786b7347b1237df4a52fa624d55965a376e8e76284f2258ed"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4605,
       "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
@@ -4067,8 +4196,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7265,
-      "sha256": "a49e74b7e86933aff249574824a652bb2908bc72b76cf04ac942023379eb99e4"
+      "bytes": 7451,
+      "sha256": "e827bf7109129bce02665cf11b22a5e01b515ee142d02c66d0d2a2d8f2c287d5"
     },
     {
       "path": "requirements-ci.txt",
@@ -4106,5 +4235,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1186573766
+  "uploaded_content_bytes": 1197097355
 }

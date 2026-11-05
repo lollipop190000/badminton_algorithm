@@ -1,0 +1,60 @@
+{
+  "model": "structural_fatigue_v1",
+  "tau_s": null,
+  "impute_missing_rallies": true,
+  "hazard": {
+    "ridge": 0.001,
+    "coefficients": {
+      "shot_0": 0.043851504599809486,
+      "shot_1": 0.009971890137509647,
+      "shot_2": -0.025204553846342192,
+      "shot_3": -0.0009555042187735464,
+      "shot_4": -0.051368825816331155,
+      "shot_5": -0.02410554129728444,
+      "shot_6": 0.0018731625003406088,
+      "shot_7": -0.027384083608322226,
+      "len_log4": 0.009322576913764877,
+      "len_hinge8": 0.08210704943025161,
+      "len_hinge16": -0.2028766680603898,
+      "S_rally": 0.02468863533367353,
+      "Delta_rally": 0.05455322818155567,
+      "S_match": -0.014091729053168899,
+      "Delta_match": -0.03488679869731199,
+      "set2": 0.21074859009664457,
+      "set3": 0.3041253199886336
+    }
+  },
+  "split": {
+    "ridge": 1.0,
+    "coefficients": {
+      "shot_0": 0.00029804960107424283,
+      "shot_1": -9.816845289100667e-05,
+      "shot_2": -8.763082943333742e-06,
+      "shot_3": -9.371929950852424e-06,
+      "shot_4": 5.083833204196634e-05,
+      "shot_5": -0.0006686767222730389,
+      "shot_6": 0.0001020724724195634,
+      "shot_7": -0.00022056769135978655,
+      "len_log4": -0.0010276331895833343,
+      "len_hinge8": -0.002814243270437886,
+      "len_hinge16": -0.004896819537188945,
+      "S_rally": -0.00010748609084302698,
+      "Delta_rally": -0.010181320242831296,
+      "S_match": -0.0003813181919823397,
+      "Delta_match": 0.006317220722176266,
+      "set2": 0.004148167943867468,
+      "set3": -0.01804211436469177
+    }
+  },
+  "meta": {
+    "scope": "train+validation",
+    "baseline": "05_energy_budget/results/fatigue_terminal/baseline_final.npz",
+    "load_model": "topic 11 M0_v2 via topic 12 attach_costs",
+    "mean_rally_load_J_per_kg": 407.1025197632434
+  },
+  "features": {
+    "rally_unit_J_per_kg": 100.0,
+    "match_unit_J_per_kg": 1000.0,
+    "definitions": "length     log(k/4), max(log(k/8), 0), max(log(k/16), 0)        k = stroke number\n    rally      S = (D_H + D_R) / 2 / 100,  Delta = (D_H - D_R) / 100   within-rally loads, J/kg\n    match      S = (G_H + G_R) / 2 / 1000, Delta = (G_H - G_R) / 1000  earlier-rally loads, J/kg\n    set        indicators for the second and third set"
+  }
+}

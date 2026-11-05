@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "run_id": "20261105-structural-fatigue-m0v2-claude",
+  "status": "completed",
+  "seed": 20261105,
+  "code_commit": "651b8a8e4c0135dfdcc14d5928642774f8f0fa35",
+  "command": "python 13_structural_fatigue_model/code/scripts/run_structural_fatigue.py --run-id 20261105-structural-fatigue-m0v2-claude",
+  "environment": {
+    "python": "3.13.16",
+    "system": "Linux",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "pyarrow": "not installed"
+    },
+    "dirty_code_tree": false
+  },
+  "inputs": [
+    {
+      "path": "01_data_16zone/results/processed/merged_elite_QF_SF_F.csv",
+      "sha256": "abc0129e17a1b8520aec6184b9f499bfed2a1750492f6b5e8ed86251157653e9",
+      "bytes": 30493466
+    },
+    {
+      "path": "01_data_16zone/results/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+      "bytes": 20950636
+    },
+    {
+      "path": "01_data_16zone/results/splits/validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3",
+      "bytes": 5088890
+    },
+    {
+      "path": "01_data_16zone/results/splits/test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c",
+      "bytes": 4803295
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/transfer_models.json",
+      "sha256": "a4342aef6f8e616d4312410b93ee13bbfd4dad801fdbd70d58df4d9cf9943361",
+      "bytes": 3938
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shot_costs.csv",
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796",
+      "bytes": 2111
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db",
+      "bytes": 7667667
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/baseline_final.npz",
+      "sha256": "89f02764a9fad8ef036624ea2bc251b1a554a972b42365b13d48c3bdaea675a0",
+      "bytes": 7800811
+    },
+    {
+      "path": "05_energy_budget/results/fatigue_terminal/baseline_selection.json",
+      "sha256": "af960c36454fadc63bba82abf6a10efc434cbc8ca72e766d3a014e1d28b43716",
+      "bytes": 265
+    }
+  ],
+  "config": {
+    "path": "13_structural_fatigue_model/results/runs/20261105-structural-fatigue-m0v2-claude/config.json",
+    "sha256": "36a1935947519fea09bddf4b08376a7a31b951955e015e94cef747648c016939",
+    "bytes": 1319
+  },
+  "split": {
+    "train": "fit coefficients; cross-fitted baseline offsets (5 match folds, 05 rule)",
+    "validation": "select recovery tau and per-stage ridge for every variant",
+    "test": "frozen evaluation once; paired match bootstrap with fits fixed"
+  },
+  "metrics": {
+    "offset_only_validation_hazard_log_loss": 0.31932696523440096,
+    "offset_only_validation_split_log_loss": 0.5382761469536365,
+    "offset_only_validation_combined_log_loss_per_decision": 0.37422632032800635,
+    "offset_only_test_hazard_log_loss": 0.34201729359829874,
+    "offset_only_test_split_log_loss": 0.5614563819144655,
+    "offset_only_test_combined_log_loss_per_decision": 0.40784321423654635,
+    "shot_validation_hazard_log_loss": 0.3193270565077977,
+    "shot_validation_split_log_loss": 0.5380584725000832,
+    "shot_validation_combined_log_loss_per_decision": 0.3742042107530317,
+    "shot_test_hazard_log_loss": 0.34201721695017406,
+    "shot_test_split_log_loss": 0.5612241735239404,
+    "shot_test_combined_log_loss_per_decision": 0.4078159131564292,
+    "rally_unadjusted_validation_hazard_log_loss": 0.31933055460820803,
+    "rally_unadjusted_validation_split_log_loss": 0.5377533307407372,
+    "rally_unadjusted_validation_combined_log_loss_per_decision": 0.37417658712178997,
+    "rally_unadjusted_test_hazard_log_loss": 0.34201155101575387,
+    "rally_unadjusted_test_split_log_loss": 0.5610811155489759,
+    "rally_unadjusted_test_combined_log_loss_per_decision": 0.4077934749077028,
+    "length_validation_hazard_log_loss": 0.3193313737464513,
+    "length_validation_split_log_loss": 0.5382700383541305,
+    "length_validation_combined_log_loss_per_decision": 0.3742301058175146,
+    "length_test_hazard_log_loss": 0.3420076997987992,
+    "length_test_split_log_loss": 0.5614758317307869,
+    "length_test_combined_log_loss_per_decision": 0.4078359007603397,
+    "rally_validation_hazard_log_loss": 0.3193349177972504,
+    "rally_validation_split_log_loss": 0.5380897618517462,
+    "rally_validation_combined_log_loss_per_decision": 0.3742152632766443,
+    "rally_test_hazard_log_loss": 0.34200241085354904,
+    "rally_test_split_log_loss": 0.5612452742062475,
+    "rally_test_combined_log_loss_per_decision": 0.4078035809329021,
+    "match_validation_hazard_log_loss": 0.3186637358316215,
+    "match_validation_split_log_loss": 0.5382578862649509,
+    "match_validation_combined_log_loss_per_decision": 0.3735612284982215,
+    "match_test_hazard_log_loss": 0.3418749190812025,
+    "match_test_split_log_loss": 0.5615694086651398,
+    "match_test_combined_log_loss_per_decision": 0.4077140911315982,
+    "full_validation_hazard_log_loss": 0.31884520875381306,
+    "full_validation_split_log_loss": 0.5381995370106468,
+    "full_validation_combined_log_loss_per_decision": 0.3737367503180847,
+    "full_test_hazard_log_loss": 0.3418711516722664,
+    "full_test_split_log_loss": 0.561647018844547,
+    "full_test_combined_log_loss_per_decision": 0.4077194228471443,
+    "full_no_imputation_validation_hazard_log_loss": 0.3188730862826702,
+    "full_no_imputation_validation_split_log_loss": 0.5382455047157099,
+    "full_no_imputation_validation_combined_log_loss_per_decision": 0.373769316141932,
+    "full_no_imputation_test_hazard_log_loss": 0.34217312756442425,
+    "full_no_imputation_test_split_log_loss": 0.5616003893995478,
+    "full_no_imputation_test_combined_log_loss_per_decision": 0.40801593183885404
+  },
+  "outputs": [
+    {
+      "path": "audit.json",
+      "sha256": "19680a63bed38e6c2852e7bcb1acec3dc5b7123b6b626eacf787a765c0534897",
+      "bytes": 5535
+    },
+    {
+      "path": "calibration_by_stroke.csv",
+      "sha256": "8d395bee950e77e9411dcc2b3c3bdb487b41636b8b1badab10f7c3a4eb067668",
+      "bytes": 3855
+    },
+    {
+      "path": "coefficient_intervals.csv",
+      "sha256": "0506b4d69d99d6f45760e628fd656544622dc24f9b62174d12a9bf65fbcb22a9",
+      "bytes": 3598
+    },
+    {
+      "path": "config.json",
+      "sha256": "36a1935947519fea09bddf4b08376a7a31b951955e015e94cef747648c016939",
+      "bytes": 1319
+    },
+    {
+      "path": "decision_predictions.csv",
+      "sha256": "45ccef1d886d4eba028f698bd5d31c891c2fe7dd2ddfabf4620dd2476ef0a00a",
+      "bytes": 9622831
+    },
+    {
+      "path": "figure_structural_fatigue.png",
+      "sha256": "a7bda3d9a53f56af20e57efc12095789be6431761706cb96c488054cb93ceda0",
+      "bytes": 147385
+    },
+    {
+      "path": "marginal_effects.csv",
+      "sha256": "48c3074278b543b4d04f80065de7c23a93e9edf6edfe4022c20053a83322abbd",
+      "bytes": 3054
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "250df51d0fee485849507c93372de0e7789d5b66001865466491a1d17f6ebbe5",
+      "bytes": 3919
+    },
+    {
+      "path": "model_development.json",
+      "sha256": "a81aa04a9e011d697631b7c17e8bc92b9c825406e9ea445e67856718c3e0c845",
+      "bytes": 2181
+    },
+    {
+      "path": "model_final.json",
+      "sha256": "fdbb42c5d54996f511982e26d1de2e5314a1aed94576d6ebb16e3184fa1ab305",
+      "bytes": 2260
+    },
+    {
+      "path": "rally_loads.csv",
+      "sha256": "f230ce6e3379a23aafbb2574a9fbcbcb3bf49130c29b7605f65a225cc705b675",
+      "bytes": 593026
+    },
+    {
+      "path": "selection_grid.csv",
+      "sha256": "f9f788c94e4382bfc3d7ae78b097919cdd593d391f773a10b95c1f34469e54ae",
+      "bytes": 36690
+    },
+    {
+      "path": "test_paired_intervals.csv",
+      "sha256": "a62299b03c35618010612e88c140b6162e41d4cd36cfd8fe7eacb9f8f131ab7a",
+      "bytes": 5951
+    },
+    {
+      "path": "variant_coefficients.csv",
+      "sha256": "b67d0fc191f16c2786b7347b1237df4a52fa624d55965a376e8e76284f2258ed",
+      "bytes": 7885
+    }
+  ],
+  "limitations": [
+    "Loads are topic 11 movement and shot cost proxies, not measured metabolic energy or remaining capacity",
+    "Associations from observational elite matches; not causal effects of fatigue",
+    "Missing rallies are imputed with the train mean load for both players; missing rallies after the last observed rally of a set are not detected",
+    "Q destination mix given continuation is the frozen baseline; fatigue enters only through end and win/loss",
+    "The test split was evaluated in earlier topics (05, 12)"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "model": "structural_fatigue_v1",
+  "tau_s": null,
+  "impute_missing_rallies": true,
+  "hazard": {
+    "ridge": 0.001,
+    "coefficients": {
+      "shot_0": 0.03674376023978849,
+      "shot_1": -0.0020895826204320716,
+      "shot_2": -0.04693195007985245,
+      "shot_3": -0.006166164681093738,
+      "shot_4": -0.06608583861979792,
+      "shot_5": -0.034138290796082146,
+      "shot_6": -0.00636429450267359,
+      "shot_7": -0.04074171423444953,
+      "len_log4": -0.048060566366281476,
+      "len_hinge8": 0.06019887244861901,
+      "len_hinge16": -0.2042309944832422,
+      "S_rally": 0.04064226019130945,
+      "Delta_rally": 0.06345747654555961,
+      "S_match": -0.014242912248580505,
+      "Delta_match": -0.02020690841514799,
+      "set2": 0.19922818365964398,
+      "set3": 0.3421903748410376
+    }
+  },
+  "split": {
+    "ridge": 1.0,
+    "coefficients": {
+      "shot_0": 0.00062203162359438,
+      "shot_1": 4.583619449713933e-05,
+      "shot_2": 0.00022817422645049853,
+      "shot_3": 0.00013005830960536428,
+      "shot_4": 0.00020448859497006568,
+      "shot_5": -0.0003033505828148404,
+      "shot_6": 0.0001795937741674496,
+      "shot_7": -0.00019680290834614875,
+      "len_log4": 0.0014625204785251053,
+      "len_hinge8": -0.0014983374608722468,
+      "len_hinge16": -0.014121682100067883,
+      "S_rally": -8.33952159690612e-05,
+      "Delta_rally": -0.012140783615479553,
+      "S_match": -0.00032950966561125174,
+      "Delta_match": 0.006941719913343321,
+      "set2": 0.010991015836931975,
+      "set3": -0.02525451832605008
+    }
+  },
+  "meta": {
+    "scope": "train",
+    "baseline": "05_energy_budget/results/fatigue_terminal/baseline_train.npz",
+    "mean_rally_load_J_per_kg": 399.2477748690387
+  },
+  "features": {
+    "rally_unit_J_per_kg": 100.0,
+    "match_unit_J_per_kg": 1000.0,
+    "definitions": "length     log(k/4), max(log(k/8), 0), max(log(k/16), 0)        k = stroke number\n    rally      S = (D_H + D_R) / 2 / 100,  Delta = (D_H - D_R) / 100   within-rally loads, J/kg\n    match      S = (G_H + G_R) / 2 / 1000, Delta = (G_H - G_R) / 1000  earlier-rally loads, J/kg\n    set        indicators for the second and third set"
+  }
+}

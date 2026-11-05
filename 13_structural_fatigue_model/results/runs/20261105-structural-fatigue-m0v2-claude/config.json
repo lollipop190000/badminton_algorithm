@@ -1,0 +1,57 @@
+{
+  "seed": 20261105,
+  "load_model": "topic 11 M0_v2 movement + topic 11 shot cost, accumulated with topic 12 attach_costs",
+  "primary_variant": "full",
+  "variants": [
+    "offset_only",
+    "shot",
+    "rally_unadjusted",
+    "length",
+    "rally",
+    "match",
+    "full"
+  ],
+  "tau_grid_s": [
+    30,
+    60,
+    120,
+    300,
+    600,
+    1200,
+    null
+  ],
+  "ridge_grid": [
+    0.0,
+    0.0001,
+    0.001,
+    0.01,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0
+  ],
+  "offset_folds": 5,
+  "offset_seed": 42,
+  "test_references": [
+    "offset_only",
+    "shot",
+    "length"
+  ],
+  "test_bootstrap": 1000,
+  "coefficient_bootstrap": 200,
+  "missing_rally_imputation": "train mean rally load for both players, evenly spaced in the clock gap; sensitivity without imputation",
+  "notes": "tau null means no recovery. Ridge applies to every coefficient of a stage, including shot intercepts, on train-standardised feature columns; ridge is chosen per stage and tau is shared.",
+  "resolved": {
+    "baseline_order": 3,
+    "baseline_alphas": [
+      50.0,
+      200.0,
+      1000.0
+    ],
+    "outcome_hazard": "terminal decision (rally ends at this shot)",
+    "outcome_split": "hitter wins the rally | terminal",
+    "fit_rows": "not chronology-uncertain; terminal rows need a recorded winner"
+  }
+}
