@@ -197,7 +197,8 @@ def plot_summary(path, calib, effects, primary):
     import matplotlib.pyplot as plt
     plt.rcParams.update({'font.size': 9, 'axes.edgecolor': '#b5b4ae', 'axes.labelcolor': '#0b0b0b',
                          'xtick.color': '#52514e', 'ytick.color': '#52514e'})
-    fig, axes = plt.subplots(1, 3, figsize=(12.5, 3.9), gridspec_kw=dict(width_ratios=[1.2, 1, 1]))
+    fig = plt.figure(figsize=(12.5, 4.1))
+    axes = [fig.add_axes([.055, .15, .27, .74]), fig.add_axes([.53, .15, .2, .74]), fig.add_axes([.775, .15, .2, .74])]
     test = calib[calib.split.eq('test')]
     x = np.arange(len(test))
     ax = axes[0]
@@ -212,8 +213,8 @@ def plot_summary(path, calib, effects, primary):
     ax.set_title('Test: termination by rally length', loc='left', fontsize=10)
     ax.legend(frameon=False, fontsize=8)
     dev = effects[effects.model.eq('development')]
-    for ax, stage, title in ((axes[1], 'hazard', 'Effect on P(end), pp'),
-                             (axes[2], 'split', 'Effect on P(hitter wins | end), pp')):
+    for ax, stage, title in ((axes[1], 'hazard', 'Change in P(end)'),
+                             (axes[2], 'split', 'Change in P(hitter wins | end)')):
         d = dev[dev.stage.eq(stage)].reset_index(drop=True)
         y = np.arange(len(d))[::-1]
         ax.axvline(0, color='#b5b4ae', lw=1)
@@ -222,12 +223,11 @@ def plot_summary(path, calib, effects, primary):
                     markeredgecolor='white', markeredgewidth=1.5)
         ax.set_yticks(y, [EFFECT_LABELS[p] for p in d.perturbation] if stage == 'hazard' else [''] * len(d))
         ax.set_title(title, loc='left', fontsize=10)
-        ax.set_xlabel('average change, percentage points (95% match bootstrap)')
+        ax.set_xlabel('percentage points, 95% match bootstrap')
     for ax in axes:
         ax.spines[['top', 'right']].set_visible(False)
         ax.grid(axis='y' if ax is axes[0] else 'x', color='#e6e5e0', lw=.8)
         ax.set_axisbelow(True)
-    fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor='#fcfcfb')
     plt.close(fig)
 
