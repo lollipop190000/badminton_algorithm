@@ -1,0 +1,25 @@
+{
+  "grid_intervals": 400,
+  "max_refinement_difference": 0.017951797515338597,
+  "bellman_residual": 0.0,
+  "coarse_intervals": 200,
+  "grid_storage": "mean_value_only_float64",
+  "passed": true,
+  "player_B": "exact exchange of budgets and parity after tensor symmetry checks",
+  "cost_fingerprint": "9e8a1dc4c389f412d4dd28fcb2525dfb5c218da8a57a276c8eaf1c48ec80bb93",
+  "execution_source_sha256": {
+    "scripts\\compare_integrated_cql.py": "c550453ccd340082b9c5cbe10e2d921e86e2fae081c0f7934db9ce300a6fb855",
+    "src\\budget_policy_comparison.py": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4",
+    "src\\energy_strategy.py": "9913e0ad0366a67c75d97acd92e7cded3ca0ad5ab745f240634f6958e6b07ef8",
+    "src\\budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src\\cql_model.py": "feb8c8d5f62fa935f520878bfad241b2081df0fbdf44e6f0fabe4b3852c09b69",
+    "src\\fatigue_baseline.py": "209a80428ae8bbad53230f029023a2e95c1514c911f5087208fe044121e9afd1",
+    "src\\build_fatigue_transition.py": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b",
+    "src\\fit_fatigue_terminal.py": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e",
+    "src\\budget_value_grid.py": "841eb0dbbe218e043fb7f5e42e7c3f0998ec12603f87fce749067b449944e07d"
+  },
+  "grid_file_sha256": {
+    "integrated_A.npy": "eb87ee7b86a8e999d2c2698cc6d433c6af793377057340e05d4550e787de6be8",
+    "integrated_A.json": "94e85f787f7640504836f34f1bfbad3707c4f4d4a86a3ea89fc2d0ea6d4d8d1d"
+  }
+}

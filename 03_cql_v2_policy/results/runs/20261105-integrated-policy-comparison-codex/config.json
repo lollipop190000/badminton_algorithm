@@ -1,0 +1,20 @@
+{
+  "m0": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex",
+  "m3": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex",
+  "comparison_id": "20261104-common-model-comparison",
+  "m0_comparison_id": "20261104-common-model-refined",
+  "m3_comparison_id": "20261105-common-model-resolution400",
+  "condition_weighting": "equal",
+  "cql_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "draw_value": 0.5,
+  "nominal_conditions": 32,
+  "sensitivity_conditions_per_perturbation": 6,
+  "mc_interval": "paired trial-wise CQL seed mean; sum independent condition variances",
+  "training_variation": "SD and range across the five seed-level condition means"
+}
