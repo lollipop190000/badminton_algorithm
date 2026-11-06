@@ -1,0 +1,614 @@
+{
+  "schema_version": 1,
+  "run_id": "20261105-integrated-policy-comparison-codex",
+  "status": "completed",
+  "seed": 0,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1",
+    "device": "cpu"
+  },
+  "command": "python summarize_integrated_comparison.py --m0 .runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex --m3 .runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex --m0-comparison-id 20261104-common-model-refined --m3-comparison-id 20261105-common-model-resolution400 --out 03_cql_v2_policy/results/runs/20261105-integrated-policy-comparison-codex",
+  "split": "Summary of frozen train-fitted environment comparisons; diagnostic support on held-out test replay; no refitting",
+  "code_commit": "34e5feb5d977945926608c86ebe36f5809d94d05",
+  "inputs": [
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_000.npz",
+      "sha256": "af136f01539b6acd08917ee7a72609df31e6a1ca97e090512dbd3eca66742f94"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_001.npz",
+      "sha256": "1fddb5f4c4f22646eab29a8c5f52476085cf6885bef5d7127a6c66eaed3bf7ff"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_002.npz",
+      "sha256": "a978f1b36e75147fde570f2ecf7a22b3a4b89b55f222a3eb484e995eed716d5f"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_003.npz",
+      "sha256": "600bd0d81f2d1b01bc3f62c907813931dc68dcc6fb942ecb6acb1651d7eeab8a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_004.npz",
+      "sha256": "4e70a18d8fe938ed01e9cb0f26564efef39e9f2405bda066de6e49b2e62c5e40"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_005.npz",
+      "sha256": "e65b866ea6797b5e0369c71cccecf4dc6c84a9a0743df504e62139e97d162407"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_006.npz",
+      "sha256": "beff6b48d4b479b73fb42d8d267934112b0a34f67ad8374d58c84ca4c9e4628b"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_007.npz",
+      "sha256": "78600b5857a517d215dd37d7fdf168dc462ad73db2614ef6e055d291e4443872"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_008.npz",
+      "sha256": "575d78f5610b5541e7376d056aa62ea6c1ed685e7bbeddd5b202c3c3ca1df75a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_009.npz",
+      "sha256": "3eedfe0f94b86f3847dd2a6dd5d8f6b54339b5a6b3a96c64f3b5c041f9a5cd0d"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_010.npz",
+      "sha256": "18454e45cddd1cdb21b7ef1c07d9ac3adbbdec23eecd23fccf667acbe0f2edbf"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_011.npz",
+      "sha256": "a7b2e72016ac39a2e41a0407a6da96957577c76ba230d7743b29fa828e131481"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_012.npz",
+      "sha256": "1ee6c36fc1e894a23b84cd9766e5df28dd76b2b0efeb61386b11a9ffc0aac5a6"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_013.npz",
+      "sha256": "37fbe11cc37b2f57b6bd026c71d5fa8b7a9bf5c21a302eb7d946dd67431b7079"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_014.npz",
+      "sha256": "86fd242940c95f67e7b5be0e66e7089c41c8dd40e1de7797855994dad2bc8d60"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_015.npz",
+      "sha256": "cf68b17c24c8636e29168b8a983a5c89423cdaec5afd61e857fdffb0cd5b8119"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_016.npz",
+      "sha256": "90561137cff1532fbd3ac4f8be84c7304ee14bd785f8b70e559c43f710307c2b"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_017.npz",
+      "sha256": "d4fff94441ce929128afd9e890cb5b6094b4eb9771e46c4fca18d9d3717e1e15"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_018.npz",
+      "sha256": "f8c0327653aaadfcbc416bbc5439b41d7c867ecff7c0f57d7b4f9b01911c36f9"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_019.npz",
+      "sha256": "b9490d294eaaaa8232f242999426f7705229ba17a88cb16a781637abbead3021"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_020.npz",
+      "sha256": "e1e1f0dd3f631c8316e5a12b8cf0396121ab4169ce0a250ea0362b1095af3bae"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_021.npz",
+      "sha256": "8feb78cf2d315e304b00681b8eb82c605d64c2f1e97232a6e8d56952148f5be7"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_022.npz",
+      "sha256": "1ed6f2d5a9ea291a86869002573f15139030ccb4ace690c55bc7b12f475ed535"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_023.npz",
+      "sha256": "ca9b4c5691fe35c3262558cb4bd631a6febac06009b5246999cf3722209a1f5e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_024.npz",
+      "sha256": "f2a2093ae132ca679c5c7be203173c4ff8703ed40b1bf55f13f1aee49193568e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_025.npz",
+      "sha256": "d998d4661785694dd9819193825842d829aee6e253278ececa0019f4c46325f8"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_026.npz",
+      "sha256": "0faf60e642ebd389611e1e4c0d2901a0f47c46aa29714e849adb03d9e06d4871"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_027.npz",
+      "sha256": "f8f2f3ae36fdad6c14db7aed5298a6c66664908c0bb13291fe16268174cccc56"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_028.npz",
+      "sha256": "89ce73324a370b316517785766d14ad6429bb145ee5e2505e4f943d91d9de76e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_029.npz",
+      "sha256": "875232397bacb9a465f4aecb10e0d8a07d48e5f85296f6f251013f58dcd04c67"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_030.npz",
+      "sha256": "c2cabd1a63efdb1fc0141e3b4f3f40408921eebe1f1c9687f9296c523c5e1a2f"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_031.npz",
+      "sha256": "7b22d923d922937633037715994b8aa7684a79cd2a7c400d260da84722b0d3fe"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_032.npz",
+      "sha256": "3960b55e9e09d8a2086c518236fe1133a25929140307d263617bccdb3810d2b1"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_033.npz",
+      "sha256": "056c0805711df4fd221449a09f137f0b1561f1499df7c3e1c2bb9002d91d4cbf"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_034.npz",
+      "sha256": "a06758529ed53f1c6fdfc9f860aab9d46a9e0de4a0eca08861d3949ea33df461"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_035.npz",
+      "sha256": "122ee56ea31f6f0bf90ebd5849673ab74bea9aab5b0a52b940ee3b95273e2112"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_036.npz",
+      "sha256": "ee00c6883d5cafce1b92c5d3d29947e02a29198de2be8de744ce35b6eb110de0"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_037.npz",
+      "sha256": "b825729b8adde8e19f2e44c032cb256ccfb31e975b5750aa59c7c76d6529d77d"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_038.npz",
+      "sha256": "2deedc81f4ed783434001e1de8d23d03d414ead9ea8bc4f828f7cf51b00060ad"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_039.npz",
+      "sha256": "89bb7732368a5fd1e49faa0a699b7eeb54c36aea6262c8659e8b146d89f2389e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_040.npz",
+      "sha256": "3310d11b215ea8837603e41de1a3eb6651bb7dd1e787521984ba0250e9308050"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_041.npz",
+      "sha256": "6e991d9238e2322457c37f1294bc288f1246718ca0c283052163d1639f881af2"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_042.npz",
+      "sha256": "60f735ab09cce2376d01d714400a39e9825a510f27d1332b36de6c5386bcd33c"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_043.npz",
+      "sha256": "2c09fbe94771bfcdf2afff3f1c4fb194d88b7802159eec7e076f654815ea8fd3"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_044.npz",
+      "sha256": "a796e91a74ab69ce2a24755f7f83d52456d481fc3ae22586f4f573b561a70e29"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_045.npz",
+      "sha256": "3d376e50c086454233cc2927bf0dc3a85b4519e484d9ea1334dae26b83a909d5"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_046.npz",
+      "sha256": "85794c0ab231f52f40c435a6f633e83996243060aae2f48d1b1378b43ec3a385"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_047.npz",
+      "sha256": "cceac86f86fca0af0a1ff6aad58c632db7b09e50d182b1bc6a77edcfbafb56ae"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_048.npz",
+      "sha256": "062f593543b38e0aa06e28ab23ea5bbdc6795f8efb1dfbcba298c72bbc752a9a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_049.npz",
+      "sha256": "ebe4e8403e7b7fa031ccf731c7d5942979bd2af510170f30f33f08204f72a80a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_050.npz",
+      "sha256": "dbce6498d5819eab84e0334f17338960c00b68a57531a48d6ef27bffe405c937"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_051.npz",
+      "sha256": "89ed4c9128618989b6e5437b78c8d3afeaef79621119e0964539e080b95e642c"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_052.npz",
+      "sha256": "8d0def7e41abc8d72a6e9c5023f810852d94fdd3cb71c9f19b04153b6586fdda"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_053.npz",
+      "sha256": "36a820b999705a95ea2656af0373b804dc2b8c17eacd1920cd9d13b200e38b4a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_054.npz",
+      "sha256": "37de119006bdba033b2a25605265acf5a7db69328fcd1fce5aa0a7ed778179a8"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\paired_episodes\\condition_055.npz",
+      "sha256": "01f01dce9fe63a538b2f3c4b0bb5c79983dc03a14c2c0fa5fd4e19bc1115040b"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\diagnostics\\20261104-full-fqe\\predictions_seed42.parquet",
+      "sha256": "be4999c18a808a385f434be7d53e2b6f7fd8bf4bebe51f8b599ef1bdb63be12f"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\diagnostics\\20261104-full-fqe\\predictions_seed43.parquet",
+      "sha256": "490798455036126c0f20ccf47a7d25803901a0c9e27b4b803c7a2dde4e1fcddd"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\diagnostics\\20261104-full-fqe\\predictions_seed44.parquet",
+      "sha256": "71eaad356b2e77ed231aa9c918974a51af1d3f5c5c84aa551a0562c737f57cf6"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\diagnostics\\20261104-full-fqe\\predictions_seed45.parquet",
+      "sha256": "6c77587122e570211419e0892511e0a15ae5cab88a6b8af0d9494bb3d9fec107"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\diagnostics\\20261104-full-fqe\\predictions_seed46.parquet",
+      "sha256": "87d28da4b0679c0fc93848f7528eb40a8471d98e53eb1926e2471375829f152b"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\RUN.json",
+      "sha256": "e4060fa1dda74bad47f843228d39ed178acefcfebb586cb83138cad55a26555f"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\config.json",
+      "sha256": "32e45dc665ded987122b47248839036f959c671bee8758a556cd938b9a198dfc"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\metrics.csv",
+      "sha256": "d14c79a4b8b1c9dfd360a61992ec4191b526337f6a50669feead07ee821dad65"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\numeric_validation.csv",
+      "sha256": "5f5869e2dfe469c629451d460ec1d98ef957a5d970f6b2ee33cd2e91f46840f6"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\training\\20261104-full-5seeds\\training_summary.json",
+      "sha256": "0646611e5c90f14610e78c4c74cb46850296558e0598b45fc07bd073b2f100c2"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\diagnostics\\20261104-full-fqe\\diagnostics.json",
+      "sha256": "f9d8f416a5bef0403d33654e1b021e036fe4a4547d40925eb22076dd2219f122"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_000.npz",
+      "sha256": "a1b3a2afa75c379fd5d6688c926be0fc015787e3321b1b02584354d4fd01759a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_001.npz",
+      "sha256": "933d1955f347619b52eb4389d384268c0998029e1c2c27f30cac111cea35ea50"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_002.npz",
+      "sha256": "117f6318b7d0a4c9129dccc15612e63ed4a61520f6a1244c8c5c4f7ef82fdb18"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_003.npz",
+      "sha256": "b061c2e481679394f01e642a5ac6dd09295d5c65d55d1a90d1b443d8e7daf723"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_004.npz",
+      "sha256": "f83e130c4d8bbe3441679044d1f6a7695d1ed7f48dc7d1e3eca4f5fe6f08c31b"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_005.npz",
+      "sha256": "a05750b01ea7185398e932279c10a0a7be3fd1567d93a3c7d841d91b2d560899"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_006.npz",
+      "sha256": "4779f11668d451108792ec2e6ec5033f048a5c1ff34b17b6a09f05033a547e5d"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_007.npz",
+      "sha256": "efbb8943bcf077d468f4fdc818e05e8394d3b64ad727000d759aa0b8a61b0afb"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_008.npz",
+      "sha256": "0447302e6dd2097d4e9277cb224c13c45d5e03cbadea9bcf1c0aa892d43d6357"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_009.npz",
+      "sha256": "a6516ab27d475dbd40cae558565f5a75069c9ae399c7eb4dcc3e5d8366e0c683"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_010.npz",
+      "sha256": "10be224a849788c2d6aeba8388d2e4c3808b2610aacf8bb58ec57d647479b4dd"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_011.npz",
+      "sha256": "46650726bc194c9302ceb634dbed0fbe766b04dfaeb86756f04c28c1b71c5261"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_012.npz",
+      "sha256": "125697df8e91a959c27ae3947d52ddff8606170d1c15d182992eb22a222ec54c"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_013.npz",
+      "sha256": "473ecb0d30901176d31080dc08c231cd08ebacfd8c7d3c47e8638f4a8935b64c"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_014.npz",
+      "sha256": "1be526d864d16de37f6def96bc518b3fea8216e3a9784a7407024d12c1ef08e9"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_015.npz",
+      "sha256": "74a61e8b5fbe7394630bf6037ce929c95d389a6b0e76bc930759698f42fdcf5e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_016.npz",
+      "sha256": "bac3b7f1ad0e4e94169c66158fd9869a107fb24eb0eaa974ac56d31da1139b43"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_017.npz",
+      "sha256": "f98038806c7febc98f997688ca6f7b75c41f151290e1cf6c0026c97ddb78d150"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_018.npz",
+      "sha256": "67c53babe46dea1488c0c3cecaf564e3c494ed53cf3745cb4b218b5de329f90b"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_019.npz",
+      "sha256": "5f4d59e4b1d354668f93ecbde17323d3f8f5065d5cd84a5e6c224605921baadb"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_020.npz",
+      "sha256": "5aa829e0b85f544aec80115921dd56d9fc0ebb98547a36d3e024afe63744d301"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_021.npz",
+      "sha256": "f7386caa0c13779c35dabe06b2c27cdb899f4508cbcd68e7a1cc2a3c397822da"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_022.npz",
+      "sha256": "460d829a03c47a2182ba83e7ded21212d42954535af995127dbf2df7dec8cc9f"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_023.npz",
+      "sha256": "d6a9ff3de8564188e259b66d1357a25929f987b022ad1e96de53e3e1751f0b8e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_024.npz",
+      "sha256": "aec6f6ebae1eab4ca0c0f92fec16f172201e36a71aed5b5793b40c2784af0860"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_025.npz",
+      "sha256": "e4bee700afdc4c22ff7b192f3e84467bea4271b0fe71508ab4ec96c28996a984"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_026.npz",
+      "sha256": "4e3aec02f8327c882030fc9d4a64b5bb4a95dd3d2df6e5ff4c0a6aec3f621fca"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_027.npz",
+      "sha256": "3a0563a9bc600af5ff0fe37281776e72ab94ff394be460493cf2114f868a2ec2"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_028.npz",
+      "sha256": "9f67defae62614cd5a17b9a14fa615085c7ba4f9364d2fc2c27d5025b4a35ad5"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_029.npz",
+      "sha256": "a2dbd24d25bd1e0112322ed9cf681427faffb2b7b9385ffa4424ce8f42e16b1f"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_030.npz",
+      "sha256": "89be753667a060d28ce2f27c5e2977e2652b103e9089679edafceaa506a6e518"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_031.npz",
+      "sha256": "fed0300966f8947892172e20096d40a105a7d995cda0d3bc26f7538bbfee8773"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_032.npz",
+      "sha256": "d33c04939d5ac2c41e48bf0d8539bf1cd8b2f2d3900a1e89f4e57112fd9815d0"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_033.npz",
+      "sha256": "388510e0a42f58ea65f8b39aeaf4e6907d0ecd3c1e1081b2b2cb762aea59a920"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_034.npz",
+      "sha256": "ac914ab8934c0000917b8aafe91dda5956648b213bb2a426d50ee1530cd64741"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_035.npz",
+      "sha256": "32e54774a70a851e860ca8d9a7919f72a9d6bc72c30f08eb1605895df4af2a41"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_036.npz",
+      "sha256": "9be2afec2048c2442f28611095405613327bf0c8f56abd6715d11eaf1fe61958"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_037.npz",
+      "sha256": "b8316ce3ef0c8bd8d8eee0ccb9324d453941affb8d5e70d338feb19c6e84ac7a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_038.npz",
+      "sha256": "6cf3dff384e71c0dc43aa96abf37eba32cb9cf813e91f271b10a0e6381c3097e"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_039.npz",
+      "sha256": "aee962b01eb406be1428725da56ac66cf8c3408ffca84d73d17c539c1aec2562"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_040.npz",
+      "sha256": "638a91d4e60480bea6b6beff679e95a3d02e76584d73acd5452260fd79669542"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_041.npz",
+      "sha256": "1a518f66231929158eab949fdaa4228a33095a8f06c75c92c8043914a277becf"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_042.npz",
+      "sha256": "04171d47746605aeb01ea6192053cb1887982e31e2bc029823d08cbe309dbb8c"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_043.npz",
+      "sha256": "ddf118ddbb44e0f116e3a99264613737c84852c4b910f15dc1d113132e6f7dc0"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_044.npz",
+      "sha256": "ef46ee654fffa50ec84fe0ae2c02ddb6e4f49432aa559fceb278d600e4ee67eb"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_045.npz",
+      "sha256": "50f9b68001e0d3972385e0a0c2f1162546c4c506df96e019b517aad64344395c"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_046.npz",
+      "sha256": "4a85e0759de041f97ad08463c53c7d7530e309da034ab3aa8bd772694419c145"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_047.npz",
+      "sha256": "2edf526770c28c257ce490b4c9d902f5290a3d16cd40b24103865acd5e45db59"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_048.npz",
+      "sha256": "c4b3a917721c16d363e407e5333e7f6a42c290cf28f3c0d8c36c021d42669af5"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_049.npz",
+      "sha256": "ac1466a4302cee4d18f7637126c8913621f94fb6d2ff6e4b1873d45f82f50e1d"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_050.npz",
+      "sha256": "ede9432592dd80120bd4c1686f6a6271ed4a2f8dd98704ad45cb3d5f8c97f403"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_051.npz",
+      "sha256": "48af88eed39f5d0089f83fb33bffebefcfa6249b2cb6cd10b57bf179e15c5460"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_052.npz",
+      "sha256": "8d911bc84dbf3a2b79fe57cb5aa6a50b113f7523689bd38f1fc5788f8dfee3b4"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_053.npz",
+      "sha256": "c1dbdd662599a89d4a43b021ec38e7919a94c19996617da18d8cee314c4bb2bf"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_054.npz",
+      "sha256": "83dde54c6fbc5a9e61414f3e1f387d3aaf0f765164027c2c5725bdf0c54c2ec9"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\paired_episodes\\condition_055.npz",
+      "sha256": "743e5d074ba96e3c30d53543b94b1eea0d31fb205e4a35a161f835c3e49179c9"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\diagnostics\\20261104-full-fqe\\predictions_seed42.parquet",
+      "sha256": "9438d2aec98eb279b3a861cf4abc0d7186ae9fd5d870ecc4adf2bb12d2cd9e0a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\diagnostics\\20261104-full-fqe\\predictions_seed43.parquet",
+      "sha256": "f7bea27b41fde72425c8d2202d82a715bb61c8120d458e7c2b99a0311992ef70"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\diagnostics\\20261104-full-fqe\\predictions_seed44.parquet",
+      "sha256": "7b2d70576598428500e19d47d1a21e6373402e6fec671752855f872033477390"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\diagnostics\\20261104-full-fqe\\predictions_seed45.parquet",
+      "sha256": "2bd29f191e28cf05fe29d065854c380a9602ce8d0198b9acc58b2620eb715f58"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\diagnostics\\20261104-full-fqe\\predictions_seed46.parquet",
+      "sha256": "03d4b1e0969284a54eaa71dd27aa4038ca86ae5ce62eb1fa9eeca009d08931c6"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\RUN.json",
+      "sha256": "8993ee4de2aceef7806884e7e12a580fed6452142d1823cca4f8b929a1eb4eeb"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\config.json",
+      "sha256": "81901317502943cb4df5dcb577096de20008f66c80489096cbf053b88793eebd"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\metrics.csv",
+      "sha256": "7ddd1d0baaf6f752b839d0f59ae03cbc47ec1e913eba7e86b8bc456ef8d26d0a"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261105-common-model-resolution400\\numeric_validation.csv",
+      "sha256": "029c4f99f58252a74399529ee27318694a44f8e40c5979c39fe9ed1817f9ad11"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\dataset_contract.json",
+      "sha256": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\training\\20261104-full-5seeds\\training_summary.json",
+      "sha256": "360e8e6d9df711244d356cfe719ea41fd416f3e0fd3e1a1bb18b87656e37e4b7"
+    },
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\diagnostics\\20261104-full-fqe\\diagnostics.json",
+      "sha256": "9ef13e9011b1911220a8a1d6df061b9d23efecc6b1b36cfb36b783a5d68ef46f"
+    }
+  ],
+  "source_sha256": "5223ae63f6393d862ef6834c13c03086fcdb780daf61f49ec32beac20ecb7362",
+  "methods": {
+    "aggregation": "equal weights across conditions; CQL average across 5 training seeds",
+    "sensitivity_reference": "nominal_matched uses the same six budget/parity conditions as every perturbation; nominal uses all 32",
+    "mc_interval": "paired outcomes averaged across seeds per trial; independent condition variances summed",
+    "seed_variation": "SD and range of per-seed condition-mean values; separate from Monte Carlo interval",
+    "support": "weighted test-replay recommendation counts at the selected train backoff context; not rollout occupancy"
+  },
+  "config": {
+    "path": "config.json",
+    "sha256": "5c8c525518c2c3c2c293ff189127d5d4ee029d4cfcf9d7569a470d79c4cb24a3"
+  },
+  "metrics": {
+    "cost_models": 2,
+    "conditions_per_model": 56,
+    "samples_per_policy_condition": 20000
+  },
+  "limitations": [
+    "same fitted model, no real match evaluation",
+    "MC intervals exclude fitted-model uncertainty",
+    "M0/M3 independently scaled budgets; quantile scenarios are compared, not identical physical budgets"
+  ],
+  "outputs": [
+    {
+      "path": "aggregate_comparison.csv",
+      "sha256": "96f3013437269906ce87e7a4a9921936ef546e7610bb284c4c46ee95e26aee3a"
+    },
+    {
+      "path": "budget_difference.png",
+      "sha256": "e62835e7e1eb55b949dcd16eff77e18a2ce59fa14cf4ebf7882a72d00cecbd24"
+    },
+    {
+      "path": "condition_comparison.csv",
+      "sha256": "2722e4694237f1800fc656bc48d0fca3d1dea17b8eb592030558834650c63170"
+    },
+    {
+      "path": "config.json",
+      "sha256": "5c8c525518c2c3c2c293ff189127d5d4ee029d4cfcf9d7569a470d79c4cb24a3"
+    },
+    {
+      "path": "model_comparison.png",
+      "sha256": "602cd3a4251274cd1fb2e7e112736a19b939ec87836e898e99dc9e635cb6db3d"
+    },
+    {
+      "path": "policy_metrics.csv",
+      "sha256": "58b68155f30b2269d0bc0b784b60ac73d5c6042e9e7eb6995a727c80c2357f14"
+    },
+    {
+      "path": "recommendation_support.csv",
+      "sha256": "101da33246abba3afbca5256735e11a8176e3ac251ef40897f7c5a805d1edc46"
+    }
+  ]
+}

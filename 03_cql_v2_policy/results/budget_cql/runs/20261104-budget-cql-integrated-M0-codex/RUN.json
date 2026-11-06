@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "run_id": "20261104-budget-cql-integrated-M0-codex",
+  "status": "completed",
+  "code_commit": "121376980d7b95f58e9fab9fb6e15f13c2b21d4f",
+  "command": "python run.py budget-cql-build --run-id 20261104-budget-cql-integrated-M0-codex --cost-table ../11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M0_v2.parquet --terminal-table ../11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/terminal_lookup.parquet --cost-status validated --cost-id topic11-integrated-M0-v2",
+  "seed": 42,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "created_at": "2026-11-04T06:46:03.372266+00:00"
+  },
+  "inputs": [
+    {
+      "path": "data\\splits\\train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path": "data\\splits\\validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3"
+    },
+    {
+      "path": "data\\splits\\test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+    },
+    {
+      "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\github_publish\\11_integrated_transition_energy\\results\\runs\\20261104-integrated-v2-kinggoddowon\\C_M0_v2.parquet",
+      "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+    },
+    {
+      "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\github_publish\\11_integrated_transition_energy\\results\\runs\\20261104-integrated-v2-kinggoddowon\\terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "c6783b6b0cb29e5cb9909c97a0938ef220b69ac51cf4af2a33f395d33c64972e"
+  },
+  "split": "existing match-level train/val/test; all fitted preprocessing and quantiles train-only",
+  "metrics": {
+    "train": {
+      "eligible_rallies": 3392,
+      "excluded_rallies": {
+        "uncertain_chronology": 27
+      },
+      "omitted": {
+        "unsupported_logged_action": 8039,
+        "terminal_no_compatible_target": 74
+      },
+      "terminal_unknown_zone_events": 1999,
+      "expanded_rows": 359176,
+      "terminal_marginalized_weight_fraction": 0.07422383103991237,
+      "effective_source_scenario_rows": 233712.0,
+      "end_reasons_weighted": {
+        "budget_A": 25040.0,
+        "budget_B": 24767.0,
+        "budget_both": 4302.0,
+        "continue": 135254.0,
+        "natural": 44349.0
+      },
+      "raw_rallies": 4035,
+      "raw_rallies_without_eligible_events": 616
+    },
+    "val": {
+      "eligible_rallies": 753,
+      "excluded_rallies": {
+        "uncertain_chronology": 4
+      },
+      "omitted": {
+        "unsupported_logged_action": 1772,
+        "terminal_no_compatible_target": 57
+      },
+      "terminal_unknown_zone_events": 473,
+      "expanded_rows": 80605,
+      "terminal_marginalized_weight_fraction": 0.06937331222646428,
+      "effective_source_scenario_rows": 53695.0,
+      "end_reasons_weighted": {
+        "budget_A": 5925.0,
+        "budget_B": 5955.0,
+        "budget_both": 1091.0,
+        "continue": 31489.0,
+        "natural": 9235.0
+      },
+      "raw_rallies": 876,
+      "raw_rallies_without_eligible_events": 119
+    },
+    "test": {
+      "eligible_rallies": 816,
+      "excluded_rallies": {
+        "uncertain_chronology": 2
+      },
+      "omitted": {
+        "unsupported_logged_action": 1872,
+        "terminal_no_compatible_target": 47
+      },
+      "terminal_unknown_zone_events": 467,
+      "expanded_rows": 85993,
+      "terminal_marginalized_weight_fraction": 0.07600907356065244,
+      "effective_source_scenario_rows": 55546.0,
+      "end_reasons_weighted": {
+        "budget_A": 5953.0,
+        "budget_B": 5740.0,
+        "budget_both": 1024.0,
+        "continue": 31848.0,
+        "natural": 10981.0
+      },
+      "raw_rallies": 966,
+      "raw_rallies_without_eligible_events": 148
+    }
+  },
+  "source_sha256": {
+    "src\\budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src\\build_budget_cql.py": "83932d4dfb203b5c1a09671fffbfe5ec4937bcac16ace55206988024a93fb5df",
+    "src\\evaluate_budget_cql.py": "b6d4f28fa03a3b08e89a594f23d4b32a82a972223ddcc8cd4767d6b9e11426c8",
+    "src\\train_budget_cql.py": "3c91aa0d6452e83cfe042366357cd33b53daaefde5903312db3b158e893a9eac"
+  },
+  "stage": "dataset_only",
+  "cost_status": "validated",
+  "limitations": [
+    "resource proxy, no observed physiological budget",
+    "achieved zone treated as controllable",
+    "unknown terminal intentions fractionally completed under zone-independent outcome assumption",
+    "budgets begin at first eligible middle-rally state; no service/opening costs"
+  ],
+  "outputs": [
+    {
+      "path": "common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "config.json",
+      "sha256": "c6783b6b0cb29e5cb9909c97a0938ef220b69ac51cf4af2a33f395d33c64972e"
+    },
+    {
+      "path": "costs.npz",
+      "sha256": "22deb9d2c71fecc9ed616dc129f1905ff976200d7692930d4a8c1e6dba414af1"
+    },
+    {
+      "path": "dataset_audit.json",
+      "sha256": "f5e56c1e15889ef241564c9fd046ce755f1e456f667e5307d27e2dd1894312db"
+    },
+    {
+      "path": "dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path": "replay_test.npz",
+      "sha256": "db9437fc69d902961e512f5a8dd0dd20b87a6c27d1bec164c1cc78e5fecb494d"
+    },
+    {
+      "path": "replay_train.npz",
+      "sha256": "b602093e8eb51007d41bbf89e2d321910d1346eed8d6280a64795a03945013e4"
+    },
+    {
+      "path": "replay_val.npz",
+      "sha256": "b1d412cf87fc4e34eb95716bc52ab1dd76e99b2e0df95ce35d89dce92d4a9aa3"
+    },
+    {
+      "path": "rows_test.parquet",
+      "sha256": "56a063931cbf4a6f4e12a6c4846014b4ddf5c2e63f6773816ddc7db59f9dbb27"
+    },
+    {
+      "path": "rows_train.parquet",
+      "sha256": "6c5d505eaf97d0753a1d0bf4cfdf5aed2825ce715db900a61c0aca9f995eaa96"
+    },
+    {
+      "path": "rows_val.parquet",
+      "sha256": "68183212e890391e0272b2c199a35fdfb680f0097b8e5eacf9d569734c0d80ed"
+    },
+    {
+      "path": "support.npz",
+      "sha256": "7a1e683b234340dd02ba08d2a517e98983a63c878c36cbfd535895d7062a18c9"
+    }
+  ]
+}

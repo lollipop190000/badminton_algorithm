@@ -1,0 +1,39 @@
+{
+  "samples": 20000,
+  "seed": 20261104,
+  "grid_intervals": 320,
+  "max_grid_intervals": 320,
+  "sensitivity": true,
+  "cost_fingerprint": "5e65adf8831f485e85067a65a8e2aa26c378ecaceaa7fd73d30c2c3d60753a93",
+  "training_run_sha256": "e1aa38b607415e2b4f51c238bfefa2a6bda5cc2fd019a82f7a78d197e4bd0fdc",
+  "terminal_cost_provenance": [
+    {
+      "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\github_publish\\11_integrated_transition_energy\\results\\runs\\20261104-integrated-v2-kinggoddowon\\terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    }
+  ],
+  "execution_source_sha256": {
+    "scripts\\compare_integrated_cql.py": "3731a544170603853674c357ac202538b4a902887e6f9a11331d28a59f468c5f",
+    "src\\budget_policy_comparison.py": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4",
+    "src\\energy_strategy.py": "9913e0ad0366a67c75d97acd92e7cded3ca0ad5ab745f240634f6958e6b07ef8",
+    "src\\budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src\\cql_model.py": "feb8c8d5f62fa935f520878bfad241b2081df0fbdf44e6f0fabe4b3852c09b69",
+    "src\\fatigue_baseline.py": "209a80428ae8bbad53230f029023a2e95c1514c911f5087208fe044121e9afd1",
+    "src\\build_fatigue_transition.py": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b",
+    "src\\fit_fatigue_terminal.py": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e"
+  },
+  "kernel_input_sha256": {
+    "outputs\\fatigue_terminal\\baseline_train.npz": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db",
+    "data\\splits\\train.csv": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+    "outputs\\fatigue_terminal\\models\\strict_development\\model.json": "82ebc068cc299d9c52a66d659a8be6571e4ebfd833c21c75c4dbe43510e72d0a",
+    "outputs\\fatigue_terminal\\models\\strict_development\\parameters.npz": "f4e62e1365423b87454cbb8801bdf643b7627c8a2cd071fd2973e5f9fd50085c"
+  },
+  "kernel": "train-fitted strict M0 hazards and train pi*T; identical environment for all controllers",
+  "initial_states": "TRAIN fourth-hit distribution conditional on initial parity; focal is initial hitter",
+  "validation": "successive-grid and exact-cost Monte Carlo; same-model numerical checks only",
+  "sensitivity_interpretation": "policies trained under this run cost model are frozen; opponent temperature transforms the entire joint shot/destination distribution",
+  "coarse_grid_provenance": {
+    "comparison\\20261104-common-model-comparison\\config.json": "75b06cbfea876d0d49dba3aeaebdcebf9705f0bd4b5e03f6dc9a9533f56d1ddd",
+    "comparison\\20261104-common-model-comparison\\grids\\grid_status.json": "eec676cd7bd2432074ff99dc141044a13b7fc44074ef89ad8ffc94cf4eedc657"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "cost_status": "validated",
+  "policies": [
+    {
+      "seed": 42,
+      "expanded_rows": 85993,
+      "effective_rows": 55546.0,
+      "observed_zone_weight_fraction": 0.9239909264393475,
+      "observed_action_agreement": 0.050892370041306215,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.8589372038841248,
+        1.4304115772247314
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.6905369830412725,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -1.4130340814590454,
+        1.6499340534210205
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 43,
+      "expanded_rows": 85993,
+      "effective_rows": 55546.0,
+      "observed_zone_weight_fraction": 0.9239909264393475,
+      "observed_action_agreement": 0.0527433559348453,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.7153599858283997,
+        1.412307620048523
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.6820488171297869,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -1.389021396636963,
+        1.7010363340377808
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 44,
+      "expanded_rows": 85993,
+      "effective_rows": 55546.0,
+      "observed_zone_weight_fraction": 0.9239909264393475,
+      "observed_action_agreement": 0.050911854103343465,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.8440930247306824,
+        1.414359450340271
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.6833872346792461,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -1.433066725730896,
+        1.6481224298477173
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 45,
+      "expanded_rows": 85993,
+      "effective_rows": 55546.0,
+      "observed_zone_weight_fraction": 0.9239909264393475,
+      "observed_action_agreement": 0.051418439716312055,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.8543444871902466,
+        1.3432844877243042
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.7020037291654556,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -1.4261257648468018,
+        1.6256694793701172
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    },
+    {
+      "seed": 46,
+      "expanded_rows": 85993,
+      "effective_rows": 55546.0,
+      "observed_zone_weight_fraction": 0.9239909264393475,
+      "observed_action_agreement": 0.056776556776556776,
+      "unsupported_recommendations": 0,
+      "cql_q_range": [
+        -0.7594501972198486,
+        1.342961311340332
+      ],
+      "interpretation": "agreement and Q are diagnostics, not strategy quality or measured match win probability",
+      "auxiliary_FQE_return_at_supported_starts": 0.6823681678310363,
+      "FQE_start_effective_rows": 12592.0,
+      "FQE_value_range": [
+        -1.3251185417175293,
+        1.710455060005188
+      ],
+      "FQE_limit": "train-fitted function approximation under target-completion and logged-opponent assumptions; support bias unresolved"
+    }
+  ],
+  "final_integrated_strategy_comparison": "not_run; external integrated costs and strategy required",
+  "fqe_epochs": 30,
+  "profile": "final_cost_training"
+}

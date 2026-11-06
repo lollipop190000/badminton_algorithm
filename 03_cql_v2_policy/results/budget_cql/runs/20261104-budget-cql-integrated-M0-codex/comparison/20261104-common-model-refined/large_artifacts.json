@@ -1,0 +1,10 @@
+{
+  "artifacts": [
+    {
+      "path": "grids\\integrated_A.npy",
+      "bytes": 13505790080,
+      "sha256": "4655025359463fb0afc07aadfc11e5f12655312895f10de3a354a4f3f653f6ff"
+    }
+  ],
+  "recreate": "rerun compare with a new comparison ID and the same arguments"
+}

@@ -1,0 +1,131 @@
+{
+  "contract_version": "budget-cql-v1",
+  "cost_fingerprint": "9e8a1dc4c389f412d4dd28fcb2525dfb5c218da8a57a276c8eaf1c48ec80bb93",
+  "cost_status": "validated",
+  "cost_model": "topic11-integrated-M3-v2",
+  "mask_sha256": "3d5ba4797b5df09aafafc9d1460702a1f9f2d5cf80525c518207fb4e34ac89a5",
+  "budget_scale": 826.1299019813538,
+  "budget_grid": [
+    [
+      103.51499652862549,
+      103.51499652862549
+    ],
+    [
+      103.51499652862549,
+      255.61065405607224
+    ],
+    [
+      103.51499652862549,
+      488.315083861351
+    ],
+    [
+      103.51499652862549,
+      826.1299019813538
+    ],
+    [
+      255.61065405607224,
+      103.51499652862549
+    ],
+    [
+      255.61065405607224,
+      255.61065405607224
+    ],
+    [
+      255.61065405607224,
+      488.315083861351
+    ],
+    [
+      255.61065405607224,
+      826.1299019813538
+    ],
+    [
+      488.315083861351,
+      103.51499652862549
+    ],
+    [
+      488.315083861351,
+      255.61065405607224
+    ],
+    [
+      488.315083861351,
+      488.315083861351
+    ],
+    [
+      488.315083861351,
+      826.1299019813538
+    ],
+    [
+      826.1299019813538,
+      103.51499652862549
+    ],
+    [
+      826.1299019813538,
+      255.61065405607224
+    ],
+    [
+      826.1299019813538,
+      488.315083861351
+    ],
+    [
+      826.1299019813538,
+      826.1299019813538
+    ]
+  ],
+  "budget_audit": {
+    "budget_anchor": "first_eligible_mid_rally_state",
+    "quantiles": [
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ],
+    "values_J_per_kg": [
+      103.51499652862549,
+      255.61065405607224,
+      488.315083861351,
+      826.1299019813538
+    ],
+    "training_player_suffixes": 6784,
+    "zero_cost_suffixes": 376,
+    "excluded_rallies": {
+      "uncertain_chronology": 27
+    }
+  },
+  "state_dimension": 51,
+  "state_features": "three zone one-hots (48), fixed-A parity (1), remaining A/B divided by train p90 (2)",
+  "action_encoding": "shot_index*16+zone-1; MID_RALLY_ACTIONS order",
+  "shots": [
+    "defensive_shot",
+    "drive",
+    "drop",
+    "hairpin",
+    "high_clear",
+    "push",
+    "smash",
+    "under_clear"
+  ],
+  "termination": "natural winner first; otherwise outgoing costs then <=0 exhaustion; both=draw",
+  "unknown_terminal_target": "fractional completion from train-only continuing-zone counts at one common backoff order per history/shot",
+  "provenance_inputs": [
+    {
+      "path": "data\\splits\\train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path": "data\\splits\\validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3"
+    },
+    {
+      "path": "data\\splits\\test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+    },
+    {
+      "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\github_publish\\11_integrated_transition_energy\\results\\runs\\20261104-integrated-v2-kinggoddowon\\C_M3_v2.parquet",
+      "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad"
+    },
+    {
+      "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\github_publish\\11_integrated_transition_energy\\results\\runs\\20261104-integrated-v2-kinggoddowon\\terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    }
+  ]
+}

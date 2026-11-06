@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "run_id": "20261105-complete-grid-storage-codex",
+  "status": "completed",
+  "code_commit": "fe5330a17774c0dd87d93f69b013f81ad8091c71",
+  "command": "python .runtime/archive_completed_grid.py",
+  "seed": 0,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "device": "cpu"
+  },
+  "inputs": [
+    {
+      "path": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy",
+      "sha256": "4655025359463fb0afc07aadfc11e5f12655312895f10de3a354a4f3f653f6ff"
+    }
+  ],
+  "config": {
+    "path": "archive_script.py",
+    "sha256": "739ef7eb8e369e0ee318debb47f8f5b8a3da67d5757646c4ba03f08baadc5326"
+  },
+  "split": "Storage-only recovery; no fitting, policy changes or scientific output changes",
+  "metrics": {
+    "archives": 1,
+    "all_decompressed_hashes_verified": true,
+    "freed_bytes": 6988643297
+  },
+  "limitations": [
+    "The completed M0 grid is losslessly archived; numerical contents and completed results are unchanged. Restore before grid reuse; models and replay remain unchanged."
+  ],
+  "outputs": [
+    {
+      "path": "archives.json",
+      "sha256": "befc9f56626de2cc79bf7fc9f27a8759df473a3e0e374c625a08551dc67e51fc"
+    },
+    {
+      "path": "archive_script.py",
+      "sha256": "739ef7eb8e369e0ee318debb47f8f5b8a3da67d5757646c4ba03f08baadc5326"
+    },
+    {
+      "path": "RESTORE.md",
+      "sha256": "3b7e2681841dbd2497bb87dd8facb7f84027766aadea6a3c167feabaa896280f"
+    }
+  ]
+}

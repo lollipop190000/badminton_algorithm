@@ -1,0 +1,32 @@
+[
+  {
+    "original": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy",
+    "original_bytes": 2147483776,
+    "original_sha256": "99d537903aa99abb373277d46bc14a9182a70d07a9130e47c5568945909884ec",
+    "archive": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-refined\\grids\\integrated_A.npy.gz",
+    "archive_bytes": 846031130,
+    "archive_sha256": "83d95e620fec6106682c56d7598e37832ab2e03739e4ea08b06b95dc58d00423",
+    "complete_array": false,
+    "scientific_use": "incomplete failed write, not a usable grid"
+  },
+  {
+    "original": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-comparison\\grids\\integrated_A.npy",
+    "original_bytes": 3397517440,
+    "original_sha256": "2e49e6a417b04145ef9d39502000e0db66c1d493e337f5ce685f0d30d7eac52b",
+    "archive": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M0-codex\\comparison\\20261104-common-model-comparison\\grids\\integrated_A.npy.gz",
+    "archive_bytes": 1673822866,
+    "archive_sha256": "8c5128933a49102657f2cadf561d86678a10bb1439a7855fd6b9084030593ef6",
+    "complete_array": true,
+    "scientific_use": "failed numerical diagnostic"
+  },
+  {
+    "original": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-coarse160\\grids\\integrated_A.npy",
+    "original_bytes": 3397517440,
+    "original_sha256": "aaa0d6df7258d4c218c65832a13298972176a66cdf72d4616e643813896b93b5",
+    "archive": ".runtime\\outputs\\budget_cql\\runs\\20261104-budget-cql-integrated-M3-codex\\comparison\\20261104-common-model-coarse160\\grids\\integrated_A.npy.gz",
+    "archive_bytes": 1698086409,
+    "archive_sha256": "e1567a59dbf2345ca21abbe63dbbe2a39b0d9dd7e59033dfa721278e21f6d898",
+    "complete_array": true,
+    "scientific_use": "failed numerical diagnostic"
+  }
+]
