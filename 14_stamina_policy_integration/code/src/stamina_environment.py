@@ -168,7 +168,7 @@ def build_environments(runtime, model_id):
 
 
 def rollout(kernel, policy, states, parity, total_a, total_b, opening_a, opening_b, seed,
-            max_steps=10000):
+            max_steps=10000, trace=None):
     """Pair draws by trial and hit, and retain signed terminal balances."""
     i = np.asarray(states, dtype=int).copy()
     n = len(i)
@@ -206,6 +206,8 @@ def rollout(kernel, policy, states, parity, total_a, total_b, opening_a, opening
         if not steps.any():
             first[:] = actions
         out = kernel.step(ii, rr, aa, bb, actions, terminal_u, da[ids], db[ids])
+        if trace is not None:
+            trace(ids, ii, rr, aa, bb, actions, da[ids], db[ids], out)
         i[ids], r[ids] = out['i'], out['r']
         da[ids] += out['cost_a']
         db[ids] += out['cost_b']

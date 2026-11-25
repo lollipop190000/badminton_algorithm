@@ -5,12 +5,15 @@ import inspect
 import itertools
 import json
 from pathlib import Path
+import re
 
+import numba
 import numpy as np
 import pandas as pd
 import torch
 
-from src.budget_policy_comparison import paired_difference
+from src.budget_policy_comparison import BehaviorPolicy, NoEnergyPolicy, paired_difference, player_symmetric
+from src.energy_strategy import solve_no_energy
 from src.ledger import load_ledger, source_files
 from src.stamina_environment import FROZEN_DATASETS, REFIT, TOPIC, build_environments, rollout
 from src.stamina_historical import HISTORICAL_RUNS, TRAINING, finish_run, load_historical, new_run, write_json
@@ -104,7 +107,7 @@ def frozen_cql(policy, device):
 
 
 def compare(model, runtime, out, args):
-    _, _, environments, components = build_environments(runtime, model)
+    system, strict, environments, components = build_environments(runtime, model)
     kernel = environments['C']
     cost_run = runtime / 'outputs/budget_cql/runs' / FROZEN_DATASETS[model]
     contract = json.loads((cost_run / 'dataset_contract.json').read_text(encoding='utf-8'))
@@ -127,19 +130,28 @@ def compare(model, runtime, out, args):
                  zero_slope_error=float(np.max(np.abs(c0-environments['C0'].hazards_at(i,r,z,0.,0.)))))
     if max(v for key, v in audit.items() if key != 'model') > 1e-12:
         raise ValueError('Stamina probability audit failed')
+    if args.bellman_run and not player_symmetric(system, strict):
+        raise ValueError('Grid reuse requires an exact player-exchange symmetry')
 
     inputs = [*source_files(runtime.parent, model).values(), REFIT / 'RUN.json', REFIT / 'config.json', REFIT / 'coefficients.csv',
               runtime / 'outputs/fatigue_terminal/baseline_train.npz', cost_run / 'costs.npz', cost_run / 'common_mask.npy']
-    _, _, historical, grid = load_historical(runtime, model, load_verified_grid=False)
-    if grid.budget_a != contract['budget_scale'] or grid.budget_b != contract['budget_scale']:
-        raise ValueError('Historical grid and contract domains differ')
-    train = cost_run / 'training' / TRAINING
-    inputs += [train / 'training_summary.json', *(train / f'policy_seed{s}.pt' for s in range(42, 47)),
-               cost_run / 'comparison' / HISTORICAL_RUNS[model] / 'grids/grid_status.json']
+    if args.stage == 'frozen':
+        _, _, historical, grid = load_historical(runtime, model, load_verified_grid=False)
+        if grid.budget_a != contract['budget_scale'] or grid.budget_b != contract['budget_scale']:
+            raise ValueError('Historical grid and contract domains differ')
+        train = cost_run / 'training' / TRAINING
+        inputs += [train / 'training_summary.json', *(train / f'policy_seed{s}.pt' for s in range(42, 47)),
+                   cost_run / 'comparison' / HISTORICAL_RUNS[model] / 'grids/grid_status.json']
+        for policy in POLICY_GROUPS['frozen']:
+            for focal in ('A', 'B'):
+                historical[focal][policy] = frozen_cql(historical[focal][policy], args.device)
+    else:
+        historical = {focal: dict(behavior=BehaviorPolicy(strict), no_energy=NoEnergyPolicy(solve_no_energy(system, focal)[1]))
+                      for focal in ('A', 'B')}
     new_policies = {}
     if args.stage == 'updated':
         from src.stamina_cql import StaminaCQLPolicy
-        source = TOPIC / 'results/runs' / f'20261125-stamina-cql-{model[:2].lower()}-training'
+        source = TOPIC / 'results/runs' / args.cql_runs[model]
         inputs.append(source / 'RUN.json')
         for seed in range(42, 47):
             checkpoint = source / f'stamina_cql_policy_seed{seed}.pt'
@@ -173,30 +185,36 @@ def compare(model, runtime, out, args):
             policies = {name: lift(policy) for name, policy in old.items() if name in ('no_energy', 'behavior')}
             if args.stage == 'frozen':
                 policies['energy'] = lift(old['energy'])
-                policies.update({name: frozen_cql(old[name], args.device) for name in POLICY_GROUPS['frozen']})
+                policies.update({name: old[name] for name in POLICY_GROUPS['frozen']})
             if args.stage == 'updated':
                 policies.update(new_policies)
             grid_model = None
             if args.bellman_run:
-                from src.stamina_bellman import StaminaBellmanPolicy, StaminaValueGrid
-                path = runtime / 'outputs/stamina_bellman_grids' / args.bellman_run
-                aq, bq = (qa, qb) if focal == 'A' else (qb, qa)
-                stem = path / f'{model}_C_p{aq}_p{bq}_A'
-                if stem.with_suffix('.npy').is_file() and stem.with_suffix('.json').is_file():
-                    stored = StaminaValueGrid.load(stem)
-                    grid_model = stored if focal == 'A' else _swap_grid(stored)
+                from src.stamina_bellman import StaminaBellmanPolicy
+                from src.stamina_bellman_validate import load_validated_grid
+                for run_id in args.bellman_run:
+                    try:
+                        grid_model = load_validated_grid(run_id, model, qa, qb, parity, total_a=ta, total_b=tb)
+                    except FileNotFoundError:
+                        continue
                     policies['bellman53'] = lift(StaminaBellmanPolicy(kernel, grid_model))
-                    inputs.append(stem.with_suffix('.json'))
+                    validation = TOPIC / 'results/runs' / run_id
+                    inputs.extend([validation / 'stamina_bellman_validation.csv',
+                                   validation / 'stamina_bellman_grid_artifacts.json'])
+                    break
+            if args.stage == 'bellman' and grid_model is None:
+                raise ValueError(f'Missing validated grid for {model} p{qa}:p{qb}, focal {focal}')
             previous = {}
             for name in args.environments:
-                environment = environments[name.rstrip('n')]
+                environment = environments[name.rstrip('nz')]
                 if name.endswith('n'):
                     environment = replace(environment, exhaust=False)
+                scenario_openings = np.zeros_like(openings) if name == 'Az' else openings
                 outcomes = {}
                 for policy_name, policy in policies.items():
                     if (args.policies and policy_name not in args.policies) or (policy_name == 'bellman53' and name != 'C'):
                         continue
-                    result = rollout(environment, policy, histories, parity, ta, tb, *openings, sample_seed+1)
+                    result = rollout(environment, policy, histories, parity, ta, tb, *scenario_openings, sample_seed+1)
                     outcomes[policy_name], summary = summarize(result, focal)
                     entry = dict(**base, environment=name, policy=policy_name)
                     metric_rows.append(dict(**entry, **summary))
@@ -230,23 +248,19 @@ def compare(model, runtime, out, args):
     return inputs, len(metric_rows), len(grid_rows)
 
 
-def _swap_grid(grid):
-    from src.budget_policy_comparison import SwappedGrid
-    return SwappedGrid(grid)
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run-id', required=True)
     parser.add_argument('--historical-run', default='20261125-historical-reproduction-codex')
     parser.add_argument('--model', action='append', choices=tuple(FROZEN_DATASETS))
-    parser.add_argument('--stage', choices=('frozen', 'updated'), default='frozen')
+    parser.add_argument('--stage', choices=('frozen', 'updated', 'bellman'), default='frozen')
     parser.add_argument('--cohort', choices=('domain', 'all', 'common'), default='domain')
-    parser.add_argument('--environments', nargs='+', choices=('A', 'B', 'C', 'C0', 'C0n', 'Cn'),
+    parser.add_argument('--environments', nargs='+', choices=('A', 'B', 'C', 'C0', 'C0n', 'Cn', 'Az'),
                         default=['A', 'B', 'C', 'C0'])
     parser.add_argument('--pair', action='append', choices=[f'{a}:{b}' for a,b in OPTIONS])
     parser.add_argument('--policy', action='append')
-    parser.add_argument('--bellman-run')
+    parser.add_argument('--bellman-run', action='append')
+    parser.add_argument('--cql-training', action='append', metavar='MODEL=RUN_ID')
     parser.add_argument('--samples', type=int, default=20000)
     parser.add_argument('--seed', type=int, default=SEED)
     parser.add_argument('--device', choices=('cpu','cuda'), default='cpu')
@@ -254,14 +268,25 @@ def main():
     args.pairs = [tuple(map(int, p.split(':'))) for p in args.pair] if args.pair else OPTIONS
     args.policies = args.policy
     args.model = args.model or list(FROZEN_DATASETS)
+    args.cql_runs = {model: f'20261125-stamina-cql-{model[:2].lower()}-training' for model in FROZEN_DATASETS}
+    for value in args.cql_training or []:
+        model, sep, run_id = value.partition('=')
+        if not sep or model not in FROZEN_DATASETS or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,90}', run_id):
+            parser.error('--cql-training requires a valid MODEL=RUN_ID')
+        args.cql_runs[model] = run_id
     if (args.samples < 2 or (args.stage == 'frozen' and args.cohort == 'all')
             or (any(e.endswith('n') for e in args.environments)
                 and (not args.policies or not set(args.policies) <= {'behavior', 'no_energy'}))):
         parser.error('Frozen policies need their historical domain. No-exhaustion runs use static/behavior policies.')
+    if 'Az' in args.environments and args.stage == 'frozen' and any(90 in p for p in args.pairs):
+        parser.error('With zero opening cost the p90 budget exceeds the historical frozen domain.')
+    if args.stage == 'bellman' and (not args.bellman_run or args.environments != ['C']):
+        parser.error('Bellman evaluation requires validated grid runs and environment C.')
     historical = TOPIC / 'results/runs' / args.historical_run / 'RUN.json'
     if json.loads(historical.read_text(encoding='utf-8'))['status'] != 'completed':
         raise ValueError('Run historical reproduction before evaluation')
     torch.set_num_threads(min(4, torch.get_num_threads()))
+    numba.set_num_threads(min(4, numba.get_num_threads()))
     out = new_run(args.run_id)
     write_json(out / 'config.json', vars(args))
     inputs, metrics = [historical], {}
@@ -281,7 +306,7 @@ def main():
                    [Path(__file__), Path(inspect.getfile(rollout)), Path(inspect.getfile(load_ledger))], metrics,
                    'Outcome variation conditions on the fitted environment and cost estimates. Eligibility and '
                    'frozen domain restrict the represented train fourth-hit distribution. Bellman rows depend on '
-                   'available grids and are subject to separate refinement checks.', status=status)
+                   'available grids and are subject to separate refinement checks.', status=status, device=args.device)
 
 
 if __name__ == '__main__':

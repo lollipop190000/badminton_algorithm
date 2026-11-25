@@ -48,6 +48,7 @@ COMMANDS={
  'stamina-historical':['-m','src.stamina_historical'],
  'stamina-bellman-validate':['-m','src.stamina_bellman_validate'],
  'stamina-policy-compare':['-m','src.stamina_policy_compare'],
+ 'stamina-tactics':['-m','src.stamina_tactics'],
  'markov':['-m','src.estimate_parity_markov'],
  'fatigue':['scripts/run_fatigue_pipeline.py'],
  'energy-strategy':['scripts/run_energy_strategy.py'],

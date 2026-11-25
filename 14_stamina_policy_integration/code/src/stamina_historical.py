@@ -41,14 +41,14 @@ def record(path, key='path'):
             'sha256': digest(path)}
 
 
-def finish_run(out, command, seed, inputs, sources, metrics, limits, status='completed'):
+def finish_run(out, command, seed, inputs, sources, metrics, limits, status='completed', device='CPU'):
     config = out / 'config.json'
     files = sorted(p for p in out.rglob('*') if p.is_file() and p.name != 'RUN.json')
     commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip()
     write_json(out / 'RUN.json', dict(schema_version=1, run_id=out.name, status=status,
                code_commit=commit, command=command, seed=seed,
                environment=dict(python=platform.python_version(), numpy=np.__version__, pandas=pd.__version__,
-                                torch=str(torch.__version__), device='CPU'),
+                                torch=str(torch.__version__), device=device),
                inputs=[record(p, 'path_or_source') for p in dict.fromkeys(inputs)], config=record(config),
                executed_source_hashes=[record(p) for p in dict.fromkeys(sources)],
                split='Match-level split held fixed. Evaluation entries are fourth hits from training matches.',

@@ -183,6 +183,7 @@ def source_files(root, model_id):
         raise ValueError(f'Unknown cost model {model_id!r}')
     file_names = {
         'pre_shot': f'{REFIT}/pre_shot_load.parquet', 'shot': f'{ENERGY}/shot_costs.csv',
+        'refit_run': f'{REFIT}/RUN.json',
         'continuing': f'{ENERGY}/C_{model_id}.parquet', 'terminal': f'{ENERGY}/terminal_lookup.parquet',
         'legacy': f'{CQL.format(mode=model_id.split("_")[0])}/dataset_contract.json',
         **{s: f'01_data_16zone/results/splits/{s}.csv' for s in SPLITS},
@@ -197,13 +198,21 @@ def load_ledger(root, model_id, costs=None):
     files = source_files(root, model_id)
     old = json.loads(files['legacy'].read_text(encoding='utf-8'))
     hashes = {key: digest(files[key]) for key in ('continuing', 'terminal', *SPLITS)}
-    if set(hashes.values()) != {row['sha256'] for row in old['provenance_inputs']}:
+    expected = {Path(row['path'].replace('\\', '/')).name: row['sha256'] for row in old['provenance_inputs']}
+    if {files[key].name: value for key, value in hashes.items()} != expected:
         raise ValueError('Published inputs differ from the historical budget run')
     if costs is None:
         costs = CostBundle.from_tables(files['continuing'], files['terminal'], 'validated', old['cost_model'])
     if costs.metadata['fingerprint'] != old['cost_fingerprint']:
         raise ValueError('Cost bundle differs from the historical budget run')
 
+    refit = json.loads(files['refit_run'].read_text(encoding='utf-8'))
+    for key, kind in [('pre_shot', 'outputs'), ('shot', 'inputs')]:
+        path = files[key]
+        expected = next(row['sha256'] for row in refit[kind]
+                        if Path(row['path'].replace('\\', '/')).name == path.name)
+        if digest(path) != expected:
+            raise ValueError(f'Published {path.name} differs from the fixed-Q refit run')
     shot_cost = pd.read_csv(files['shot'], float_precision='round_trip').set_index('s').C_shot_J_per_kg
     records = event_costs(pd.read_parquet(files['pre_shot']), shot_cost, model_id)
     markov_events = []
@@ -226,6 +235,24 @@ def load_ledger(root, model_id, costs=None):
 def sample_costs(totals, prefix):
     values = totals[[f'{prefix}_{p}' for p in PLAYERS]].to_numpy().ravel()
     return np.sort(values[np.isfinite(values) & (values > 0)])
+
+
+def short_rally_sensitivity(ledger):
+    records = ledger.records[ledger.records.split.eq('train')]
+    duration = records.groupby(RALLY_COLUMNS, sort=False).frame_num.diff()
+    valid = np.isfinite(records.frame_num) & (records.stroke_no.eq(1) | duration.gt(0))
+    valid_frames = records.assign(valid=valid).groupby(RALLY_COLUMNS).valid.all()
+    train = ledger.totals[ledger.totals.split.eq('train')].join(valid_frames, on=RALLY_COLUMNS)
+    candidates = train[train.entry_status.eq('candidate')]
+    short = train[train.entry_status.eq('before_fourth')]
+    short_valid = short[short.valid]
+    positive = np.concatenate([sample_costs(candidates, 'state_total'), sample_costs(short_valid, 'event_total')])
+    alternative = np.quantile(positive, np.array(PERCENTILES) / 100)
+    return pd.DataFrame(dict(percentile=PERCENTILES, hybrid_candidate_only=ledger.budgets,
+                             hybrid_including_valid_short=alternative, valid_short_rallies=len(short_valid),
+                             excluded_short_uncertain_frames=len(short) - len(short_valid),
+                             short_player_totals_used=len(sample_costs(short_valid, 'event_total')),
+                             positive_player_totals=len(positive)))
 
 
 def write_figures(out, ledgers):
@@ -303,9 +330,18 @@ def run(root, run_id):
                                       mean_absolute_difference=diff.abs().mean()))
     pd.DataFrame(summaries).to_csv(out / 'ledger_cost_comparison.csv', index=False)
     pd.DataFrame(coverage).to_csv(out / 'ledger_coverage.csv', index=False)
+    pd.concat([short_rally_sensitivity(data).assign(model_id=model) for model, data in ledgers.items()],
+              ignore_index=True).to_csv(out / 'ledger_short_rally_sensitivity.csv', index=False)
     write_figures(out, ledgers)
     source = root / '14_stamina_policy_integration/code/src/ledger.py'
-    record = dict(run_id=run_id, schema_version=1, status='completed',
+    config = out / 'ledger_config.json'
+    write_json(config, dict(models=MODELS, percentiles=PERCENTILES, start_hit=4,
+                           accounting='frozen recorded opening costs + policy state costs; final swing only',
+                           event_reference='full frozen cost record + recognized final swing',
+                           unknown_swing='unavailable shot costs flagged; no added shot-cost charge',
+                           opening_eligibility='both residual budgets > 0; common cohort uses p25/p25',
+                           budget_sensitivity='add chronological short training rallies with complete event costs'))
+    record = dict(run_id=run_id, schema_version=1, status='completed', seed=0,
                   code_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(),
                   source=entry(source, root), command=f'python run.py stamina-ledger --run-id {run_id}',
                   environment=dict(python=sys.version, pandas=pd.__version__, numpy=np.__version__,
@@ -313,13 +349,13 @@ def run(root, run_id):
                   inputs=[entry(file, root) for file in inputs],
                   outputs=[entry(file, out) for file in sorted(out.iterdir())],
                   split='published match split; positive TRAIN values determine budgets',
-                  config=dict(models=MODELS, percentiles=PERCENTILES, start_hit=4,
-                              accounting='frozen recorded opening costs + policy state costs; final swing only',
-                              event_reference='full frozen cost record + recognized final swing',
-                              unknown_swing='unavailable shot costs flagged; no added shot-cost charge',
-                              opening_eligibility='both residual budgets > 0; common cohort uses p25/p25'),
+                  config=entry(config, out),
                   metrics=dict(train_budgets={model: data.budgets.tolist() for model, data in ledgers.items()},
-                               entry_counts=coverage))
+                               entry_counts=coverage),
+                  limitations=['Rally-start cost proxy resets at first observation',
+                               'Unmeasured service swing receives no added charge',
+                               'Primary budget fits the strategy-entry training cohort',
+                               'Event movement is estimated between observed positions'])
     write_json(out / 'RUN.json', record)
     print(f'Wrote budget ledger to {out}', flush=True)
     return out
