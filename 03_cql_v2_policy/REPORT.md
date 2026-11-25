@@ -199,3 +199,5 @@ python run.py budget-cql-compare --run-id 20261104-budget-cql-integrated-M0-code
 ```
 
 M3_v2는 해당 M3 run과 400구간을 사용한다. 결과는 `specialist_aggregate.json`, `specialist_paired.csv`, 기존 `metrics.csv`, paired episode archive 및 검증 RUN에 기록한다. 현재는 구현 및 수치 불변성 검증 단계이며 새로운 승리 가치 결과는 아직 없다. 가상의 특화형 상대와 기존 추정 환경 내 비교이며 실제 선수의 특성이나 경기 승률을 실측한 것은 아니다.
+
+RunPod 성능 측정 전용 (정식 결과 아님): `python run.py exec scripts/benchmark_smash.py --out /workspace/pilot.json --intervals 16 --samples 500`. 작은 격자 및 기존 5개 체크포인트 로딩·양측 역할 전환·모의 랠리의 실제 시간을 기록한다.
