@@ -253,7 +253,7 @@ def main():
     parser.add_argument('--run-id', required=True)
     parser.add_argument('--historical-run', default='20261125-historical-reproduction-codex')
     parser.add_argument('--model', action='append', choices=tuple(FROZEN_DATASETS))
-    parser.add_argument('--stage', choices=('frozen', 'updated', 'bellman'), default='frozen')
+    parser.add_argument('--stage', choices=('frozen', 'updated', 'bellman', 'reference'), default='frozen')
     parser.add_argument('--cohort', choices=('domain', 'all', 'common'), default='domain')
     parser.add_argument('--environments', nargs='+', choices=('A', 'B', 'C', 'C0', 'C0n', 'Cn', 'Az'),
                         default=['A', 'B', 'C', 'C0'])
