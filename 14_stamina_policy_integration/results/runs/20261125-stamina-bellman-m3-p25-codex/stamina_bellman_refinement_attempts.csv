@@ -1,0 +1,2 @@
+model_id,p_A,p_B,coarse_intervals,intervals,target_step,max_refinement_A,max_refinement_exchanged_B,residual,seconds
+M3_v2,25,25,80x80,159x159,1.25,0.035028080447763676,0.0018848342513642091,0.0,316.12248319992796

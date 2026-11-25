@@ -1,0 +1,19 @@
+[
+  {
+    "model_id": "M0_v2",
+    "p_A": 25,
+    "p_B": 25,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-m0-p25-codex/M0_v2_C_p25_p25_A.npy",
+        "sha256": "7eaf0aa054ae44641f1b54d7048a11e37c8c2b131da6032e0c5ff616bb394fde",
+        "bytes": 419430528
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-m0-p25-codex/M0_v2_C_p25_p25_A.json",
+        "sha256": "9c81b0af72f87586f0a00956458359f130117add6bdce99cddad2b84c3a1a3e6",
+        "bytes": 161
+      }
+    ]
+  }
+]

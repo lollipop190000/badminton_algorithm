@@ -1,0 +1,3 @@
+model,condition,parity,focal,qa,qb,budget_A,budget_B,cohort,candidates,eligible,sampled_population,above_frozen_scale
+M0_v2,0,0,B,25,25,195.32247849050242,195.32247849050242,domain,1713,1679,1679,0
+M0_v2,1,1,A,25,25,195.32247849050242,195.32247849050242,domain,1679,1653,1653,0

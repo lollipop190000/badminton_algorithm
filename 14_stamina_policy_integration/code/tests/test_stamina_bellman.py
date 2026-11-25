@@ -4,6 +4,7 @@ import unittest
 import numpy as np
 
 from src.stamina_bellman import StaminaBellmanPolicy, solve_value_grid
+from src.stamina_bellman_validate import BoundaryExactPolicy
 
 
 def tiny_kernel(cost_a=0., cost_b=0., self_slope=.5, opp_slope=.25, terminal=.4):
@@ -55,6 +56,15 @@ class StaminaBellmanTest(unittest.TestCase):
         grid = solve_value_grid(kernel, 4., 8., intervals=(5, 5))
         scores = StaminaBellmanPolicy(kernel, grid).action_values([0], [1], [2.4], [4.8])
         np.testing.assert_allclose(grid.query(1, 2.4, 4.8), scores[0], atol=1e-10, rtol=0.)
+
+    def test_positive_successor_at_exhaustion_edge_preserves_next_natural_finish(self):
+        kernel = tiny_kernel(.65, .2, self_slope=0., opp_slope=0.)
+        grid = solve_value_grid(kernel, 1., 2., intervals=2)
+        policy = BoundaryExactPolicy(kernel, grid)
+        # A survives its continuing hit with 0.15 left. B can lose by natural
+        # termination, and a continuing B hit exhausts A. Both cases count.
+        values = policy.action_values([0], [1], [.8], [1.2])
+        self.assertAlmostEqual(values[0, 0], .2 + .6 * .2)
 
 
 if __name__ == '__main__':

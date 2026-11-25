@@ -1,0 +1,18 @@
+{
+  "models": [
+    "M0_v2",
+    "M3_v2"
+  ],
+  "percentiles": [
+    25,
+    50,
+    75,
+    90
+  ],
+  "start_hit": 4,
+  "accounting": "frozen recorded opening costs + policy state costs; final swing only",
+  "event_reference": "full frozen cost record + recognized final swing",
+  "unknown_swing": "unavailable shot costs flagged; no added shot-cost charge",
+  "opening_eligibility": "both residual budgets > 0; common cohort uses p25/p25",
+  "budget_sensitivity": "add chronological short training rallies with complete event costs"
+}

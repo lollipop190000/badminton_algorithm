@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-stamina-cql-m3-replay",
+  "status": "completed",
+  "code_commit": "d8b86c7290135de507078c329dc37f174e957bb5",
+  "command": "python run.py exec -m src.stamina_cql build --model M3_v2 --ledger-id 20261125-opening-cost-ledger-codex --run-id 20261125-stamina-cql-m3-replay",
+  "seed": null,
+  "environment": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "source_sha256": {
+    "path": "14_stamina_policy_integration/code/src/stamina_cql.py",
+    "sha256": "850af73fa0d0d004d5478f4a59de8757fc7a36ef1f71ada86817a787de1a7d7f"
+  },
+  "inputs": [
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/RUN.json",
+      "sha256": "c457d3e156808af9b7f6ddc4d7150b9b733cd83869b069217a903a6432be3832"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_events.parquet",
+      "sha256": "b7a56d5fbce10738108e02667daaed7d6270ee1cb694a7663e29cfd0c2847645"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_budget_table.csv",
+      "sha256": "12d0a91854f9c83576f2367bb6d5fff7e2ba57f26dfa4941ffc00fa20a06e468"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/RUN.json",
+      "sha256": "a93c28f4a3c064e0d1b0175840473b8796a836b131a046335ff4a838af33e5b5"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/dataset_contract.json",
+      "sha256": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/support.npz",
+      "sha256": "7a1e683b234340dd02ba08d2a517e98983a63c878c36cbfd535895d7062a18c9"
+    }
+  ],
+  "config": {
+    "path": "stamina_cql_dataset_contract.json",
+    "sha256": "5871ee8773edaf3e4a7ca763d2d96af028bebda674ad444576ff2c8667a8611a"
+  },
+  "split": "Existing match-level splits; train costs set budget quantiles, scales, and action support.",
+  "metrics": {
+    "train": {
+      "chronological_rallies": 3392,
+      "omitted_rallies": {},
+      "opening_excluded_scenarios": 334,
+      "unsupported_state": 0,
+      "unsupported_logged_action": 7611,
+      "terminal_no_compatible_target": 72,
+      "terminal_unknown_zone_events": 1978,
+      "expanded_rows": 333769,
+      "effective_source_scenario_rows": 216608.00008629728,
+      "end_reasons_weighted": {
+        "budget_A": 25494.0,
+        "budget_B": 24960.0,
+        "budget_both": 3182.0,
+        "continue": 121932.0,
+        "natural": 41040.00008629728
+      }
+    },
+    "validation": {
+      "chronological_rallies": 753,
+      "omitted_rallies": {},
+      "opening_excluded_scenarios": 43,
+      "unsupported_state": 0,
+      "unsupported_logged_action": 1666,
+      "terminal_no_compatible_target": 50,
+      "terminal_unknown_zone_events": 468,
+      "expanded_rows": 74953,
+      "effective_source_scenario_rows": 49835.00002033077,
+      "end_reasons_weighted": {
+        "budget_A": 6131.0,
+        "budget_B": 6006.0,
+        "budget_both": 776.0,
+        "continue": 28454.0,
+        "natural": 8468.000020330772
+      }
+    },
+    "test": {
+      "chronological_rallies": 816,
+      "omitted_rallies": {},
+      "opening_excluded_scenarios": 12,
+      "unsupported_state": 0,
+      "unsupported_logged_action": 1781,
+      "terminal_no_compatible_target": 47,
+      "terminal_unknown_zone_events": 465,
+      "expanded_rows": 82212,
+      "effective_source_scenario_rows": 52945.00001579337,
+      "end_reasons_weighted": {
+        "budget_A": 6329.0,
+        "budget_B": 5829.0,
+        "budget_both": 715.0,
+        "continue": 29665.0,
+        "natural": 10407.000015793368
+      }
+    }
+  },
+  "limitations": [
+    "Replay contains logged outcomes and imputed target weights only where terminal targets are unobserved.",
+    "Scenarios with zero or negative opening residual budgets have no eligible policy transition."
+  ],
+  "outputs": [
+    {
+      "path": "stamina_cql_dataset_audit.json",
+      "sha256": "d033df6ad6e92801b7af648c103e5d3aeeb5955ddb681256b09f666cd889a596"
+    },
+    {
+      "path": "stamina_cql_dataset_contract.json",
+      "sha256": "5871ee8773edaf3e4a7ca763d2d96af028bebda674ad444576ff2c8667a8611a"
+    },
+    {
+      "path": "stamina_cql_replay_test.npz",
+      "sha256": "07f0cd3aed37213407bc0a9f0443fd230dc7bfc16d5778c300d30808bfb247c6"
+    },
+    {
+      "path": "stamina_cql_replay_train.npz",
+      "sha256": "a01d712e23d6c6104943430c836fbb3fdfffb0fdc311c4bd037bec97eb2c0e3c"
+    },
+    {
+      "path": "stamina_cql_replay_validation.npz",
+      "sha256": "a4bff683f31b87861cfc7ba91cd3975d419ac462144d7c65d9a4416e26fdfe22"
+    },
+    {
+      "path": "stamina_cql_rows_test.parquet",
+      "sha256": "f6e48817bd465ae16092b0dc6b7ad0b93a5ae72d1125e253a1cb3feeff9403e8"
+    },
+    {
+      "path": "stamina_cql_rows_train.parquet",
+      "sha256": "daeb117cb2ceefb25dbbba5bf6bf7dae5f93a608fab9bb3dd87cdabd6ab7a910"
+    },
+    {
+      "path": "stamina_cql_rows_validation.parquet",
+      "sha256": "1c46cfc27b26deb16a1d7735a004ea1d9267547ea99bb39104ba9cdfb78355df"
+    }
+  ]
+}

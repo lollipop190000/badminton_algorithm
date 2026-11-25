@@ -1,0 +1,105 @@
+{
+  "contract_version": "stamina-cql-53-v1",
+  "cost_model": "M3_v2",
+  "cost_status": "validated",
+  "cost_fingerprint": "9e8a1dc4c389f412d4dd28fcb2525dfb5c218da8a57a276c8eaf1c48ec80bb93",
+  "mask_sha256": "3d5ba4797b5df09aafafc9d1460702a1f9f2d5cf80525c518207fb4e34ac89a5",
+  "budget_scale": 923.4659954650158,
+  "spent_scale": 923.4659954650158,
+  "budgets": [
+    197.52774784421774,
+    353.9675190394225,
+    591.2650916598923,
+    923.4659954650158
+  ],
+  "budget_grid": [
+    [
+      197.52774784421774,
+      197.52774784421774
+    ],
+    [
+      197.52774784421774,
+      353.9675190394225
+    ],
+    [
+      197.52774784421774,
+      591.2650916598923
+    ],
+    [
+      197.52774784421774,
+      923.4659954650158
+    ],
+    [
+      353.9675190394225,
+      197.52774784421774
+    ],
+    [
+      353.9675190394225,
+      353.9675190394225
+    ],
+    [
+      353.9675190394225,
+      591.2650916598923
+    ],
+    [
+      353.9675190394225,
+      923.4659954650158
+    ],
+    [
+      591.2650916598923,
+      197.52774784421774
+    ],
+    [
+      591.2650916598923,
+      353.9675190394225
+    ],
+    [
+      591.2650916598923,
+      591.2650916598923
+    ],
+    [
+      591.2650916598923,
+      923.4659954650158
+    ],
+    [
+      923.4659954650158,
+      197.52774784421774
+    ],
+    [
+      923.4659954650158,
+      353.9675190394225
+    ],
+    [
+      923.4659954650158,
+      591.2650916598923
+    ],
+    [
+      923.4659954650158,
+      923.4659954650158
+    ]
+  ],
+  "state_dimension": 53,
+  "actions": 128,
+  "shots": [
+    "defensive_shot",
+    "drive",
+    "drop",
+    "hairpin",
+    "high_clear",
+    "push",
+    "smash",
+    "under_clear"
+  ],
+  "state_features": [
+    "three 16-zone one-hot blocks",
+    "absolute-A turn indicator",
+    "remaining A",
+    "remaining B",
+    "spent A",
+    "spent B"
+  ],
+  "normalization": "Normalize remaining and spent amounts by train positive total-cost p90, without clipping",
+  "action_encoding": "shot_index*16+zone-1; MID_RALLY_ACTIONS order",
+  "unknown_terminal_target": "fractional completion from train-only continuing-zone counts at one common backoff order per history/shot",
+  "termination": "Recorded final outcome first; continuing costs can end a rally at B-D <= 0; simultaneous exhaustion is a draw"
+}

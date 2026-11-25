@@ -202,15 +202,16 @@ def compare(model, runtime, out, args):
             if args.stage == 'updated':
                 policies.update(new_policies)
             grid_model = None
+            bellman_policy = None
             if args.bellman_run:
-                from src.stamina_bellman import StaminaBellmanPolicy
-                from src.stamina_bellman_validate import load_validated_grid
+                from src.stamina_bellman_validate import load_validated_grid, policy_for_grid
                 for run_id in args.bellman_run:
                     try:
                         grid_model = load_validated_grid(run_id, model, qa, qb, parity, total_a=ta, total_b=tb)
                     except FileNotFoundError:
                         continue
-                    policies['bellman53'] = lift(StaminaBellmanPolicy(kernel, grid_model))
+                    bellman_policy = policy_for_grid(kernel, grid_model)
+                    policies['bellman53'] = lift(bellman_policy)
                     validation = TOPIC / 'results/runs' / run_id
                     inputs.extend([validation / 'stamina_bellman_validation.csv',
                                    validation / 'stamina_bellman_grid_artifacts.json'])
@@ -243,11 +244,19 @@ def compare(model, runtime, out, args):
                         support_rows.append(dict(**entry, shot=action//16, zone=action%16+1,
                                                  recommendations=result['recommendations'][action]))
                     if policy_name == 'bellman53':
-                        expected = float(grid_model.query(parity*4096+histories, ta-openings[0], tb-openings[1]).mean())
-                        excess = max(0., abs(expected-summary['model_win_value'])-1.96*summary['mc_se'])
+                        if grid_model.query_mode == 'bilinear':
+                            expected = float(grid_model.query(parity*4096+histories, ta-openings[0], tb-openings[1]).mean())
+                        else:
+                            scores = bellman_policy.action_values(
+                                histories, np.full(len(histories), parity), ta-openings[0], tb-openings[1])
+                            expected = float(np.max(np.where(kernel.masks[histories], scores, -np.inf), axis=1).mean())
+                        error = abs(expected-summary['model_win_value'])
+                        excess = max(0., error-1.96*summary['mc_se'])
                         grid_rows.append(dict(**entry, grid_value=expected, mc_excess=excess,
+                                              mc_absolute_error=error,
+                                              query_mode=grid_model.query_mode,
                                               bellman_residual=grid_model.max_residual,
-                                              passes_mc=excess <= .02 and grid_model.max_residual <= 1e-10))
+                                              passes_mc=error <= .02 and grid_model.max_residual <= 1e-10))
                     for earlier, other_outcomes in outcomes_by_environment.items():
                         if earlier == name:
                             break
@@ -265,6 +274,8 @@ def compare(model, runtime, out, args):
                     pd.DataFrame(rows).to_csv(directory / f'{label}.csv', index=False)
             print(f'{model} p{qa}:p{qb} focal {focal}: eligible {counts["sampled_population"]}/{counts["candidates"]}, '
                   f'{len(metric_rows)} policy-condition rows', flush=True)
+    if args.stage == 'bellman' and (not grid_rows or not all(row['passes_mc'] for row in grid_rows)):
+        raise RuntimeError(f'Bellman comparison failed the exact-cost agreement check for {model}')
     return inputs, len(metric_rows), len(grid_rows)
 
 

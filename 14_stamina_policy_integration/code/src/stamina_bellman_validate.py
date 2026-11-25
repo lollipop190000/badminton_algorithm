@@ -16,7 +16,9 @@ from time import perf_counter
 import numba
 import numpy as np
 import pandas as pd
+from scipy.special import expit
 
+from src import stamina_bellman, stamina_environment
 from src.budget_policy_comparison import SwappedGrid, player_symmetric
 from src.stamina_bellman import StaminaBellmanPolicy, StaminaValueGrid, solve_value_grid
 from src.stamina_environment import FROZEN_DATASETS, REFIT, REPO, TOPIC, build_environments, rollout
@@ -45,12 +47,70 @@ def _cohort(opening, a, b, parity):
     return (initial.state_i.to_numpy(int), a - initial.opening_A.to_numpy(float), b - initial.opening_B.to_numpy(float))
 
 
-def _entry_values(grid, kernel, cohort, parity, query_mode):
+class BoundaryExactPolicy(StaminaBellmanPolicy):
+    """When a positive successor must end on its next hit, evaluate it directly."""
+
+    def __init__(self, kernel, grid):
+        super().__init__(kernel, grid)
+        self.min_a = kernel.costs.cost_a.min(axis=(-2, -1))
+        self.min_b = kernel.costs.cost_b.min(axis=(-2, -1))
+
+    def _last_hit(self, i, r, a, b):
+        kernel, grid = self.kernel, self.grid
+        cost_a = kernel.costs.cost_a[r, i]
+        cost_b = kernel.costs.cost_b[r, i]
+        exhausted_a, exhausted_b = a[:, None, None] <= cost_a, b[:, None, None] <= cost_b
+        focal_a = grid.focal == 'A'
+        controlled = (r == 1) == focal_a
+        payoff = np.where(exhausted_a & exhausted_b, .5, ~exhausted_a if focal_a else ~exhausted_b)
+        da, db = grid.budget_a - a, grid.budget_b - b
+        own, other = np.where(r == 1, da, db), np.where(r == 1, db, da)
+        logit = kernel.log_odds[r, i] - own[:, None] * kernel.self_slope + other[:, None] * kernel.opp_slope
+        terminal = kernel.terminal_mass[r, i]
+        win = terminal * expit(np.where(controlled, 1., -1.)[:, None] * logit)
+        scores = (win[:, :, None] + (1. - terminal[:, :, None]) * payoff).reshape(len(i), -1)
+        return np.where(controlled, np.where(kernel.masks[i], scores, -np.inf).max(axis=-1),
+                        (kernel.joint[r, i] * scores).sum(axis=-1))
+
+    def action_values(self, i, r, a, b):
+        kernel, grid = self.kernel, self.grid
+        i, r, a, b = np.broadcast_arrays(i, r, a, b)
+        values = super().action_values(i, r, a, b)
+        ca, cb = kernel.costs.cost_a[r, i], kernel.costs.cost_b[r, i]
+        aa, bb = a[:, None, None] - ca, b[:, None, None] - cb
+        zones, histories = ca.shape[-1], kernel.joint.shape[1]
+        successor = (i % (zones**2))[:, None, None] * zones + np.arange(zones)
+        turn = (1 - r)[:, None, None]
+        # The min includes unsupported edges, making this a sufficient condition
+        # even when the next turn uses the unmasked fixed opponent distribution.
+        exactly_terminal = ((aa > 0.) & (bb > 0.) &
+                            ((aa <= self.min_a[turn, successor]) | (bb <= self.min_b[turn, successor])))
+        trials, shots, targets = np.where(exactly_terminal)
+        for start in range(0, len(trials), 512):
+            selection = slice(start, start + 512)
+            j, shot, target = trials[selection], shots[selection], targets[selection]
+            next_i, next_r = successor[j, 0, target], turn[j, 0, 0]
+            next_a, next_b = aa[j, shot, target], bb[j, shot, target]
+            exact = self._last_hit(next_i, next_r, next_a, next_b)
+            raw = grid.query(next_r * histories + next_i, next_a, next_b)[..., 0]
+            values[j, shot * zones + target] += (1. - kernel.terminal_mass[r[j], i[j], shot]) * (exact - raw)
+        return values
+
+
+def policy_for_grid(kernel, grid, query_mode=None):
+    mode = query_mode or getattr(grid, 'query_mode', 'bilinear')
+    cls = BoundaryExactPolicy if mode == 'exact-boundary' else StaminaBellmanPolicy
+    return cls(kernel, grid)
+
+
+def entry_values(grid, kernel, cohort, parity, query_mode=None):
+    """Return bound-mode and raw bilinear values for matched focal-turn entries."""
     i, a, b = cohort
+    query_mode = query_mode or getattr(grid, 'query_mode', 'bilinear')
     bilinear = grid.query(i + parity * 4096, a, b)[..., 0]
     if query_mode == 'bilinear':
         return bilinear, bilinear
-    policy = StaminaBellmanPolicy(kernel, grid)
+    policy = policy_for_grid(kernel, grid, query_mode)
     values = np.empty(len(i))
     for start in range(0, len(i), 256):
         idx = slice(start, start + 256)
@@ -61,7 +121,7 @@ def _entry_values(grid, kernel, cohort, parity, query_mode):
 
 def _queries(grid, kernel, cohort, parity, query_mode):
     i, a, b = cohort
-    values, bilinear = _entry_values(grid, kernel, cohort, parity, query_mode)
+    values, bilinear = entry_values(grid, kernel, cohort, parity, query_mode)
     rows = [dict(query='eligible_mean', state_i=None, remaining_A=None, remaining_B=None,
                  value=float(values.mean()), raw_bilinear_value=float(bilinear.mean()), openings=len(i))]
     histories, count = np.unique(i, return_counts=True)
@@ -92,11 +152,11 @@ def _independent_residual(grid, kernel, seed):
 def _mc(grid, kernel, cohort, parity, samples, seed, query_mode):
     i, a, b = cohort
     idx = np.random.default_rng(seed).integers(len(i), size=samples)
-    policy = StaminaBellmanPolicy(kernel, grid)
+    policy = policy_for_grid(kernel, grid, query_mode)
     result = rollout(kernel, lambda i, r, a, b, da, db, u: policy(i, r, a, b, u), i[idx], parity,
                      grid.budget_a, grid.budget_b, grid.budget_a - a[idx], grid.budget_b - b[idx], seed+1)
     win = result['outcome_A'] if parity == 1 else 1. - result['outcome_A']
-    prediction, bilinear = _entry_values(grid, kernel, cohort, parity, query_mode)
+    prediction, bilinear = entry_values(grid, kernel, cohort, parity, query_mode)
     prediction, bilinear = prediction[idx], bilinear[idx]
     difference = win - prediction
     se = float(difference.std(ddof=1) / np.sqrt(samples))
@@ -118,8 +178,22 @@ def _grid_digest(path, modified_ns, size):
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
+def _verify_output_bindings(run_path, names):
+    meta_path = run_path / 'RUN.json'
+    if not meta_path.is_file():
+        return  # Active batches also emit independently checked directions.
+    metadata = json.loads(meta_path.read_text(encoding='utf-8'))
+    outputs = {record['path']: record['sha256'] for record in metadata['outputs']}
+    for name in names:
+        path = run_path / name
+        stat = path.stat()
+        if outputs.get(name) != _grid_digest(path, stat.st_mtime_ns, stat.st_size):
+            raise ValueError(f'Validation output checksum differs: {name}')
+
+
 def _load_grid_artifact(run_id, model_id, p_focal, p_other, environment):
     run_path = TOPIC / 'results/runs' / run_id
+    _verify_output_bindings(run_path, ('stamina_bellman_grid_artifacts.json',))
     artifacts = json.loads((run_path / 'stamina_bellman_grid_artifacts.json').read_text(encoding='utf-8'))
     selected = [x for x in artifacts if x['model_id'] == model_id and x['p_A'] == p_focal and x['p_B'] == p_other]
     if len(selected) != 1:
@@ -149,6 +223,7 @@ def load_validated_grid(run_id, model_id, p_A, p_B, parity, *, total_a=None, tot
             p_A not in (25, 50, 75, 90) or p_B not in (25, 50, 75, 90)):
         raise ValueError('Invalid grid selection')
     run_path = TOPIC / 'results/runs' / run_id
+    _verify_output_bindings(run_path, ('stamina_bellman_validation.csv',))
     checks = pd.read_csv(run_path / 'stamina_bellman_validation.csv')
     selected = checks.loc[(checks.model_id == model_id) & (checks.parity == parity) &
                           (checks.p_A == p_A) & (checks.p_B == p_B)]
@@ -161,7 +236,7 @@ def load_validated_grid(run_id, model_id, p_A, p_B, parity, *, total_a=None, tot
             check.grid_residual <= 1e-10 and
             check.sampled_residual <= 1e-10 and check.max_query_difference <= .02 and
             abs(check.exact_cost_minus_grid) <= .02):
-        raise ValueError(f'Numerical checks failed for {model_id} p{p_A}:p{p_B} parity-{parity} in {run_id}')
+        raise FileNotFoundError(f'No passing result for {model_id} p{p_A}:p{p_B} parity-{parity} in {run_id}')
     p_focal, p_other = (p_A, p_B) if parity == 1 else (p_B, p_A)
     grid, artifact, _ = _load_grid_artifact(run_id, model_id, p_focal, p_other, environment)
     current = grid if parity == 1 else SwappedGrid(grid)
@@ -169,20 +244,21 @@ def load_validated_grid(run_id, model_id, p_A, p_B, parity, *, total_a=None, tot
             total_b is not None and current.budget_b != total_b):
         _close(grid)
         raise ValueError('Grid metadata differs from the requested objective or total budgets')
+    current.query_mode = check.get('query_mode', 'bilinear')
     return current
 
 
-def _solve_levels(kernel, a, b, entries, stem, args, reused_grid=None):
+def _solve_levels(kernel, a, b, entries, stem, args, reused):
     levels, attempts = [], []
     for refinement in range(args.max_refinements + 1):
         step = args.coarse_step if refinement == 0 else args.fine_step / 2**(refinement-1)
         intervals = (max(2, math.ceil(a / step)), max(2, math.ceil(b / step)))
         temp = stem.with_suffix('.npy.partial')
         start = perf_counter()
-        if refinement == 1 and reused_grid is not None:
-            grid = reused_grid
+        if refinement in reused:
+            grid = reused[refinement]
             if grid.values.shape[:2] != (intervals[0] + 1, intervals[1] + 1) or (grid.budget_a, grid.budget_b) != (a, b):
-                raise ValueError('Reused fine grid differs from the requested resolution or total budgets')
+                raise ValueError('Reused grid differs from the requested resolution or total budgets')
         else:
             grid = solve_value_grid(kernel, a, b, intervals=intervals, storage_path=temp)
         checks = [_queries(grid, kernel, entries[0], 1, args.query_mode),
@@ -203,7 +279,8 @@ def _solve_levels(kernel, a, b, entries, stem, args, reused_grid=None):
                 return grid, levels[-2:], attempts
             print(f'  {intervals[0]}x{intervals[1]} maximum query change {max(changes):.5f}; refining', flush=True)
         _close(grid)
-        temp.unlink()
+        if refinement not in reused:
+            temp.unlink()
 
 
 def run(args):
@@ -211,9 +288,10 @@ def run(args):
         raise ValueError('Invalid run ID')
     if not 0 < args.fine_step < args.coarse_step or args.samples < 2 or args.max_refinements < 1:
         raise ValueError('Require a finer second grid and at least two rollouts')
-    if args.reuse_fine_run and (args.max_refinements != 1 or
-                              not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,90}', args.reuse_fine_run)):
-        raise ValueError('A reused grid requires a valid source run and one refinement')
+    reuse_runs = {level: label for level, label in enumerate((args.reuse_coarse_run, args.reuse_fine_run)) if label}
+    if (args.reuse_fine_run and args.max_refinements != 1 or
+            any(not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,90}', label) for label in reuse_runs.values())):
+        raise ValueError('Reuse requires valid source runs and a reused fine grid requires one refinement')
     runtime = REPO / '.runtime'
     out = TOPIC / 'results/runs' / args.run_id
     grid_dir = runtime / 'outputs/stamina_bellman_grids' / args.run_id
@@ -226,18 +304,23 @@ def run(args):
     config_path = out / 'stamina_bellman_config.json'
     _json(config_path, vars(args))
     rows, query_rows, grid_records, binding_paths, all_attempts = [], [], [], [], []
-    source = [Path(__file__), Path(__file__).with_name('stamina_bellman.py'), Path(__file__).with_name('stamina_environment.py')]
+    source = [Path(__file__), Path(stamina_bellman.__file__), Path(stamina_environment.__file__)]
     sources = [_record(path, REPO) for path in source]
     commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip()
-    if args.reuse_fine_run:
-        reused_run = TOPIC / 'results/runs' / args.reuse_fine_run
+    original_inputs = []
+    for label in sorted(set(reuse_runs.values())):
+        reused_run = TOPIC / 'results/runs' / label
         reused_meta = json.loads((reused_run / 'RUN.json').read_text(encoding='utf-8'))
         for actual in sources[1:]:
             name = Path(actual['path']).name
             relevant = [record for record in reused_meta['execution_sources'] if Path(record['path']).name == name]
             if len(relevant) != 1 or relevant[0]['sha256'] != actual['sha256']:
-                raise ValueError(f'Reused fine grid implementation differs: {name}')
+                raise ValueError(f'Reused grid implementation differs: {name}')
         binding_paths.extend(reused_run / name for name in ('RUN.json', 'stamina_bellman_grid_artifacts.json'))
+        original_inputs.append({item['path']: item['sha256'] for item in reused_meta['inputs']})
+    common_inputs = [ledger_run / name for name in ('ledger_opening.parquet', 'ledger_budget_table.csv')]
+    common_inputs += [REFIT / name for name in ('coefficients.csv', 'config.json')]
+    common_inputs.append(runtime / 'outputs/fatigue_terminal/baseline_train.npz')
     for model_id in args.cost:
         system, strict, environments, _ = build_environments(runtime, model_id)
         kernel = environments[args.environment]
@@ -247,7 +330,12 @@ def run(args):
             raise ValueError('Grid sharing requires player-exchange symmetry')
         openings, budgets = _load_inputs(ledger_run, model_id)
         dataset = runtime / 'outputs/budget_cql/runs' / FROZEN_DATASETS[model_id]
-        binding_paths.extend(dataset / name for name in ('costs.npz', 'common_mask.npy', 'dataset_contract.json'))
+        model_inputs = [dataset / name for name in ('costs.npz', 'common_mask.npy', 'dataset_contract.json')]
+        binding_paths.extend(model_inputs)
+        for path in (*common_inputs, *model_inputs) if original_inputs else ():
+            actual = _record(path, REPO)
+            if any(originals.get(actual['path']) != actual['sha256'] for originals in original_inputs):
+                raise ValueError(f'Reused grid input differs: {actual["path"]}')
         for p_a, p_b in args.pair:
             # One A grid supports A who hits first for (p_a,p_b) and B who hits
             # first for the exchanged pair (p_b,p_a).
@@ -255,13 +343,14 @@ def run(args):
             entries = (_cohort(openings, a, b, 1), _cohort(openings, b, a, 0))
             stem = grid_dir / f'{model_id}_{args.environment}_p{p_a}_p{p_b}_A'
             print(f'{stem.name}: {len(entries[0][0])} A / {len(entries[1][0])} exchanged B openings', flush=True)
-            reused_grid = None
-            if args.reuse_fine_run:
-                reused_grid, _, entry = _load_grid_artifact(args.reuse_fine_run, model_id, p_a, p_b, args.environment)
-            grid, levels, attempts = _solve_levels(kernel, a, b, entries, stem, args, reused_grid)
+            saved = {level: _load_grid_artifact(label, model_id, p_a, p_b, args.environment)
+                     for level, label in reuse_runs.items()}
+            reused = {level: artifact[0] for level, artifact in saved.items()}
+            grid, levels, attempts = _solve_levels(kernel, a, b, entries, stem, args, reused)
             all_attempts.extend(dict(model_id=model_id, p_A=p_a, p_B=p_b, **attempt) for attempt in attempts)
             swapped = SwappedGrid(grid)
             if args.reuse_fine_run:
+                entry = saved[1][2]
                 grid_ref = entry['files']
                 original = entry.get('source_run', args.reuse_fine_run)
             else:
@@ -298,9 +387,7 @@ def run(args):
             pd.DataFrame(all_attempts).to_csv(out / 'stamina_bellman_refinement_attempts.csv', index=False)
             _json(out / 'stamina_bellman_grid_artifacts.json', grid_records)
     passed = all(row['passed'] for row in rows)
-    inputs = [ledger_run / name for name in ('ledger_opening.parquet', 'ledger_budget_table.csv')]
-    inputs += [REFIT / name for name in ('coefficients.csv', 'config.json')]
-    inputs += [runtime / 'outputs/fatigue_terminal/baseline_train.npz', *binding_paths]
+    inputs = [*common_inputs, *binding_paths]
     _json(out / 'RUN.json', dict(schema_version=1, run_id=args.run_id, status='completed' if passed else 'failed',
           code_commit=commit, command=shlex.join(['python', 'run.py', 'stamina-bellman-validate', *sys.argv[1:]]),
           seed=args.seed, environment=dict(python=sys.version, numpy=np.__version__, numba=numba.__version__,
@@ -313,6 +400,7 @@ def run(args):
           limitations=['The validation samples from observed train openings for the specified pairs only.',
                        'Paired Monte Carlo intervals condition on the fitted model.',
                        'Exact-step mode computes immediate termination and exhaustion directly at the query, then interpolates only continuing values. Both definitions are retained.',
+                       'Exact-boundary mode additionally computes the successor exactly when every continuing edge must exhaust a player; Monte Carlo uses the corresponding action scores.',
                        'Full float64 arrays remain local. Grid metadata records their byte count and SHA256.']))
     return passed
 
@@ -323,7 +411,8 @@ def main():
     parser.add_argument('--ledger-run', default='20261125-opening-cost-ledger-codex')
     parser.add_argument('--cost', nargs='+', choices=tuple(FROZEN_DATASETS), default=list(FROZEN_DATASETS))
     parser.add_argument('--environment', choices=('C', 'C0'), default='C')
-    parser.add_argument('--query-mode', choices=('bilinear', 'exact-step'), default='bilinear')
+    parser.add_argument('--query-mode', choices=('bilinear', 'exact-step', 'exact-boundary'), default='bilinear')
+    parser.add_argument('--reuse-coarse-run')
     parser.add_argument('--reuse-fine-run')
     parser.add_argument('--pair', nargs=2, type=int, choices=(25, 50, 75, 90), action='append')
     parser.add_argument('--coarse-step', type=float, default=5.)

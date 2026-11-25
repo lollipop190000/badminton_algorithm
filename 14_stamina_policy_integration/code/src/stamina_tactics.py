@@ -14,7 +14,7 @@ import pandas as pd
 from src.estimate_markov_q import MID_RALLY_ACTIONS
 from src.ledger import load_ledger, source_files
 from src.stamina_bellman import StaminaBellmanPolicy
-from src.stamina_bellman_validate import load_validated_grid
+from src.stamina_bellman_validate import load_validated_grid, policy_for_grid
 from src.stamina_environment import FROZEN_DATASETS, REFIT, REPO, REASONS, TOPIC, build_environments, rollout
 from src.stamina_historical import finish_run, load_historical, new_run, source_snapshot, write_json
 from src.stamina_policy_compare import lift
@@ -24,26 +24,37 @@ def label(action):
     return f'{MID_RALLY_ACTIONS[action//16]} Z{action%16+1}'
 
 
-def compare_tactics(runtime, model, grid_runs, seed):
+def first_validated_grid(run_ids, model, total, environment):
+    for run_id in run_ids:
+        try:
+            grid = load_validated_grid(run_id, model, 25, 25, 1, environment=environment, total_a=total, total_b=total)
+        except FileNotFoundError:
+            continue
+        return grid, TOPIC / 'results/runs' / run_id
+    raise FileNotFoundError(f'No validated {environment} p25:p25 grid provided for {model}')
+
+
+def compare_tactics(runtime, model, grid_runs, seed, no_slope_runs):
     _, _, env, _ = build_environments(runtime, model)
     historical, _, controllers, legacy_grid = load_historical(runtime, model)
-    grid_run = next((run for run in grid_runs if (runtime / 'outputs/stamina_bellman_grids' / run /
-                     f'{model}_C_p25_p25_A.npy').is_file()), None)
-    if grid_run is None:
-        raise FileNotFoundError(f'No p25:p25 grid provided for {model}')
-    new_path = runtime / 'outputs/stamina_bellman_grids' / grid_run / f'{model}_C_p25_p25_A'
-    validation_path = TOPIC / 'results/runs' / grid_run / 'stamina_bellman_validation.csv'
     ledger = load_ledger(runtime, model, env['C'].costs)
     total = ledger.budgets[0]
-    grid = load_validated_grid(grid_run, model, 25, 25, 1, total_a=total, total_b=total)
+    grid, validation = first_validated_grid(grid_runs, model, total, 'C')
     eligible = ledger.opening.query('split == "train" and parity == 1').copy()
     eligible = eligible.loc[eligible.opening_A.lt(total) & eligible.opening_B.lt(total)]
     h = eligible.state_i.to_numpy(int)
     r = np.ones(len(h), dtype=int)
     ba, bb = total - eligible.opening_A.to_numpy(), total - eligible.opening_B.to_numpy()
     old = controllers['A']['energy']
-    new = StaminaBellmanPolicy(env['C'], grid)
+    new = policy_for_grid(env['C'], grid)
     old_value = StaminaBellmanPolicy(env['A'], legacy_grid)
+    diagnostic_paths = []
+    neutral = None
+    if no_slope_runs:
+        neutral_grid, neutral_source = first_validated_grid(no_slope_runs, model, total, 'C0')
+        neutral = policy_for_grid(env['C0'], neutral_grid)
+        diagnostic_paths.extend([neutral_source / 'stamina_bellman_validation.csv',
+                                 neutral_source / 'stamina_bellman_grid_artifacts.json'])
     old_best, new_best = old(h, r, ba, bb, None), new(h, r, ba, bb, None)
     scores_new = new.action_values(h, r, ba, bb)
     scores_old = old_value.action_values(h, r, ba, bb)
@@ -80,6 +91,28 @@ def compare_tactics(runtime, model, grid_runs, seed):
                                     strict_terminal_win=env['A'].hazards_at(h[sample], 1, action//16, row.opening_A, row.opening_B)[1],
                                     stamina_terminal_win=env['C'].hazards_at(h[sample], 1, action//16, row.opening_A, row.opening_B)[1],
                                     support=int(env['C'].counts[h[sample], action])))
+    # Hold one player's load constant. Use the other player's observed range
+    # within the same history while keeping D + b equal to the scenario total.
+    load_rows = []
+    repeated = next((k for k in ranked if np.count_nonzero(h == h[k]) >= 3), None)
+    if repeated is not None:
+        context = eligible.loc[eligible.state_i.eq(h[repeated])]
+        given = eligible.iloc[repeated]
+        for player in ('A','B'):
+            levels = context[f'opening_{player}'].quantile([.25, .5, .75]).unique()
+            for level in levels:
+                da = level if player == 'A' else given.opening_A
+                db = level if player == 'B' else given.opening_B
+                hs, rs = np.array([h[repeated]]), np.array([1])
+                remains = [np.array([total-da]), np.array([total-db])]
+                base = dict(model=model, state=int(h[repeated]), varied_player=player, same_history_n=len(context),
+                            D_A=da, D_B=db, remaining_A=remains[0][0], remaining_B=remains[1][0], total=total)
+                for name, policy in [('C',new), ('C0',neutral)]:
+                    if policy is None:
+                        continue
+                    action = policy(hs, rs, *remains, None)[0]
+                    values = policy.action_values(hs, rs, *remains)
+                    load_rows.append(dict(**base, environment=name, recommendation=label(action), value=values[0, action]))
     chosen = eligible.iloc[picks[0]]
     opening = ledger.records.loc[ledger.records.rally_id.eq(chosen.rally_id) & ledger.records.stroke_no.lt(4)]
     timeline = []
@@ -100,9 +133,10 @@ def compare_tactics(runtime, model, grid_runs, seed):
 
         rollout(env['A' if name == 'strict_frozen' else 'C'], lift(policy), [h[picks[0]]], 1, total, total,
                 [chosen.opening_A], [chosen.opening_B], seed=seed, trace=trace)
-    return examples_rows, action_rows, timeline, [validation_path, new_path.with_suffix('.json'),
-                                                  historical / 'grids/grid_status.json',
-                                                  *source_files(REPO, model).values()]
+    return examples_rows, action_rows, timeline, load_rows, [validation / 'stamina_bellman_validation.csv',
+                                                             validation / 'stamina_bellman_grid_artifacts.json',
+                                                             historical / 'grids/grid_status.json', *diagnostic_paths,
+                                                             *source_files(REPO, model).values()]
 
 
 def draw_timeline(table, out):
@@ -126,6 +160,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run-id', required=True)
     parser.add_argument('--bellman-run', action='append', required=True)
+    parser.add_argument('--no-slope-run', action='append', default=[])
     parser.add_argument('--seed', type=int, default=20261125)
     args = parser.parse_args()
     numba.set_num_threads(min(4, numba.get_num_threads()))
@@ -134,17 +169,21 @@ def main():
     sources = [Path(__file__), Path(__file__).with_name('stamina_environment.py'),
                Path(__file__).with_name('stamina_bellman.py')]
     snapshot = source_snapshot(sources)
-    examples, actions, traces, inputs = [], [], [], [REFIT / 'config.json', REFIT / 'coefficients.csv']
+    examples, actions, traces, loads, inputs = [], [], [], [], [REFIT / 'config.json', REFIT / 'coefficients.csv']
     for model in FROZEN_DATASETS:
-        sample, values, paths, sources = compare_tactics(Path.cwd(), model, args.bellman_run, args.seed)
+        sample, values, paths, diagnostics, model_sources = compare_tactics(Path.cwd(), model, args.bellman_run,
+                                                                           args.seed, args.no_slope_run)
         examples.extend(sample)
         actions.extend(values)
         traces.extend(paths)
-        inputs.extend(sources)
+        loads.extend(diagnostics)
+        inputs.extend(model_sources)
     pd.DataFrame(examples).to_csv(out / 'representative_recommendations.csv', index=False)
     pd.DataFrame(actions).to_csv(out / 'representative_action_values.csv', index=False)
     table = pd.DataFrame(traces)
     table.to_csv(out / 'representative_paths.csv', index=False)
+    if loads:
+        pd.DataFrame(loads).to_csv(out / 'representative_load_sensitivity.csv', index=False)
     draw_timeline(table, out)
     finish_run(out, 'python run.py stamina-tactics ' + ' '.join(sys.argv[1:]), args.seed, inputs,
                sources, dict(observed_openings=len(examples), action_values=len(actions)),

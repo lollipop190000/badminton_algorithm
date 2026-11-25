@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 from contextlib import ExitStack
+import inspect
 from itertools import combinations
 import json
 from pathlib import Path
@@ -17,8 +18,8 @@ import pandas as pd
 from src.budget_cql_contract import digest
 from src.budget_policy_comparison import paired_difference
 from src.estimate_markov_q import MID_RALLY_ACTIONS
-from src.stamina_environment import REFIT, TOPIC, build_environments
-from src.stamina_historical import finish_run, new_run, write_json
+from src.stamina_environment import FROZEN_DATASETS, REFIT, TOPIC, build_environments
+from src.stamina_historical import finish_run, new_run, source_snapshot, write_json
 from src.stamina_policy_compare import POLICY_GROUPS, SEED
 
 
@@ -121,7 +122,8 @@ def aggregate_case_data(metrics, raw):
                     contrasts.append(dict(**base, environment=environment, policy=first, comparator=second,
                                           **paired_difference(series[first], series[second])))
                 environment_series[environment] = series
-            for first, second in [('B', 'A'), ('C', 'B'), ('C', 'C0'), ('Cn', 'C'), ('C0n', 'C0')]:
+            for first, second in [('A', 'Az'), ('B', 'A'), ('C', 'B'), ('C', 'C0'),
+                                  ('Cn', 'C0n'), ('Cn', 'C'), ('C0n', 'C0')]:
                 if first in environment_series and second in environment_series:
                     x, y = environment_series[first], environment_series[second]
                     for policy in sorted(x.keys() & y.keys()):
@@ -237,9 +239,11 @@ def write_plots(out, summary, pairs, action, curves):
             continue
         active_policies = [p for p in policy_order if p in set(values.policy)]
         policy_y = {name: k for k, name in enumerate(active_policies)}
-        fig, axes = plt.subplots(1, len(envs), figsize=(3.0*len(envs)+1.5, 4.0), sharey=True, sharex=True,
+        columns = min(2 if len(envs) <= 4 else 3, len(envs))
+        rows = (len(envs) + columns - 1) // columns
+        fig, axes = plt.subplots(rows, columns, figsize=(3.5*columns+1.5, rows*3.2), sharey=True, sharex=True,
                                  squeeze=False, layout='constrained')
-        for env, ax in zip(envs, axes[0]):
+        for env, ax in zip(envs, axes.flat):
             panel = values[values.environment.eq(env)]
             for row in panel.itertuples(index=False):
                 y = policy_y[row.policy]
@@ -247,9 +251,12 @@ def write_plots(out, summary, pairs, action, curves):
                 ax.annotate(f'n={row.conditions}', (row.model_win_value, y), xytext=(0, 6),
                             textcoords='offset points', ha='center', fontsize=7)
             ax.set(title=f'Environment {env}', xlim=(0., 1.), xticks=np.linspace(0, 1, 5),
-                   yticks=range(len(active_policies)), yticklabels=[LABELS[p] for p in active_policies])
+                   ylim=(-.4, len(active_policies)-.6), yticks=range(len(active_policies)),
+                   yticklabels=[LABELS[p] for p in active_policies])
             ax.set_axisbelow(True)
             ax.grid(axis='x', alpha=.2)
+        for axis in list(axes.flat)[len(envs):]:
+            axis.set_visible(False)
         axes[0, 0].invert_yaxis()
         fig.supxlabel('Model win value (95% Monte Carlo interval)')
         fig.suptitle(f'{model} · {cohort} cohort · n denotes the number of conditions')
@@ -338,8 +345,10 @@ def main():
     args = parser.parse_args()
     root = TOPIC / 'results/runs'
     run_names = [*args.evaluation_run, args.ledger_run]
-    if any(Path(name).name != name or name in ('', '.', '..') for name in run_names):
-        parser.error('Use run directory names')
+    if len(set(run_names)) != len(run_names) or any(Path(name).name != name or name in ('', '.', '..') for name in run_names):
+        parser.error('Use distinct run directory names')
+    sources = [Path(__file__), Path(inspect.getfile(build_environments)), Path(inspect.getfile(paired_difference))]
+    snapshot = source_snapshot(sources)
     metrics, recommendations, raw, inputs = read_evaluations([root / name for name in args.evaluation_run])
     ledger_root = root / args.ledger_run
     record = json.loads((ledger_root / 'RUN.json').read_text(encoding='utf-8'))
@@ -351,7 +360,9 @@ def main():
     summary = condition_means(conditions)
     pair_summary = paired_condition_means(pairs)
     action = action_means(recommendations, conditions)
-    curves = response_curves(Path.cwd(), ledger_path, summary.model.unique())
+    models = summary.model.unique()
+    inputs += [Path.cwd() / 'outputs/budget_cql/runs' / FROZEN_DATASETS[model] / 'common_mask.npy' for model in models]
+    curves = response_curves(Path.cwd(), ledger_path, models)
 
     out = new_run(args.run_id)
     write_json(out / 'config.json', vars(args))
@@ -362,10 +373,11 @@ def main():
         frame.to_csv(out / f'stamina_{name}.csv', index=False)
     write_plots(out, summary, pairs, action, curves)
     finish_run(out, 'python run.py exec -m src.stamina_figures ' + ' '.join(sys.argv[1:]), SEED,
-               inputs, [Path(__file__)], dict(condition_policy_rows=len(conditions), paired_rows=len(pairs)),
+               inputs, sources, dict(condition_policy_rows=len(conditions), paired_rows=len(pairs),
+                                    environment_paired_rows=len(env_pairs)),
                ['Unobserved heatmap cells have no estimate.', 'Condition-means use equal weighting and report case count.',
                 'Monte Carlo intervals condition on the fitted model. CQL training seed variation is separate.',
-                'Fixed-Q response curves hold the other load at its observed median for each shot.'])
+                'Fixed-Q response curves hold the other load at its observed median for each shot.'], snapshot=snapshot)
     print(f'Wrote policy summaries and figures to {out}', flush=True)
 
 

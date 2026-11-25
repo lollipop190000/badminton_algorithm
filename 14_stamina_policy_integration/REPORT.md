@@ -29,7 +29,7 @@
 | C | 고정 Q와 양측 누적 소모량의 타구별 계수 | 비용을 소모한 뒤 달라지는 종료 득점·실점 비율 |
 | C0 | C의 절편, 기울기 0 | C와 같은 절편을 기준으로 한 누적 소모량 항의 효과 |
 
-관측 확률질량의 $\pi(u\mid s)$를 제거하여 $p_T=(W_0+L_0)/\pi(u\mid s)$와 $p_C=\sum_j Q_j/\pi(u\mid s)$를 얻었다. 종료했을 때 타구자가 득점할 확률은 $\sigma(\log(W_0/L_0)+a_u-\beta_uD_H/D_*+\gamma_uD_R/D_*)$이다. $W_0$와 $L_0$는 현재 타구자 기준이다. $p_T$에 이 조건부 확률과 그 여확률을 곱하여 득점·실점 질량을 얻는다. 고정 상대의 타구·구획 분포는 세 환경에서 동일하다. 행동 후보는 기존 학습 자료의 지원 마스크를 사용한다. 행위자가 선택한 구획에 정상적으로 도달하는 조건부 모형이다.
+관측 확률질량의 $\pi(u\mid s)$를 제거하여 $p_T=(W_0+L_0)/\pi(u\mid s)$와 $p_C=\sum_j Q_j/\pi(u\mid s)$를 얻었다. 종료했을 때 타구자가 득점할 확률은 $\sigma(\log(W_0/L_0)+a_u-\beta_uD_H/D_*+\gamma_uD_R/D_*)$이다. $W_0$와 $L_0$는 현재 타구자 기준이다. 여기서 실점은 타구자의 패배로 랠리가 끝난 전체 사건을 뜻한다. $p_T$에 조건부 득점확률과 그 여확률을 곱하여 득점·실점 질량을 얻는다. 고정 상대의 타구·구획 분포는 세 환경에서 동일하다. 행동 후보는 기존 학습 자료의 지원 마스크를 사용한다. 행위자가 선택한 구획에 정상적으로 도달하는 조건부 모형이다.
 
 Bellman 계산은 총예산을 각 조건에 고정한다. $D_p=B_p-b_p$이므로 양측 잔여 예산만 격자로 계산한다. 전략 선수는 지원된 타구와 목표 구획 중 즉시 득점 가치와 계속 가치의 합을 최대화하고, 상대 차례에는 경험 분포로 평균한다. CQL은 같은 격자 상태의 공간 및 차례 정보에 잔여량과 누적량을 각각 두 개씩 더한 53차원 입력을 쓴다. 자연 종료의 보상은 관측 승패이며, 계속 전이에서 소진된 뒤의 실제 기록은 잘라낸다. 순차적으로 이어지는 동일 선수의 다음 차례를 연결하고, 종료 목표 구획이 미상인 경우 기존 학습 분포로 분할한다. 후보 alpha는 0.1, 0.25, 0.5이고 최종 seed는 42–46이다.
 
@@ -40,6 +40,7 @@ Bellman 계산은 총예산을 각 조건에 고정한다. $D_p=B_p-b_p$이므�
 ```powershell
 python run.py prepare
 python run.py stamina-ledger --run-id OPENING_RUN
+python run.py stamina-refit-audit --run-id REFIT_AUDIT
 python run.py stamina-historical --run-id HISTORICAL_RUN
 python run.py stamina-policy-compare --run-id FROZEN_RUN --historical-run HISTORICAL_RUN
 python run.py stamina-bellman-validate --run-id GRID_RUN --ledger-run OPENING_RUN --pair 25 25
@@ -74,6 +75,12 @@ python run.py stamina-tactics --run-id TACTICS_RUN --bellman-run GRID_RUN
 ### 기준 정책 검증
 
 기존 기본 32조건과 8개 정책의 모형 승리 가치를 M0_v2와 M3_v2 시행 자료에서 재집계하였다. 두 비용의 총 512개 정책·조건 집계가 기존 표와 일치했다. 각 비용에서 시작 타구자가 다른 기본 두 조건을 선택하여 정책별 20,000회씩 재실행했다. 비교한 640,000개 시행의 승패, 길이, 비용이 보존 결과와 일치했다. [기준 재현 실행](results/runs/20261125-historical-reproduction-codex/RUN.json)
+
+### 첫 세 타구 비용과 소진 판정의 민감도
+
+동등 예산 p25, p50, p90과 각 시작 차례를 합해 비용 모형별 6조건을 비교했다. 공통 적격 학습 시작 상태에서 조건·정책별 20,000회를 시행했다. strict 환경 A에서 총예산을 고정하고 첫 세 타구 비용을 차감하니 지원 제한 경험 정책의 평균 가치가 M0_v2에서 50.68%에서 43.73%로, M3_v2에서 50.99%에서 44.65%로 낮아졌다. 이는 같은 출발 구획의 잔여 예산이 줄어든 효과다.
+
+고정 Q와 양측 소모량을 사용한 C에서는 소진 즉시 패배를 적용할 때 예산 미고려 전략이 M0_v2 51.07%, M3_v2 51.60%였다. 소진 판정을 제거하고 비용 누적을 계속하니 각각 69.19%, 69.34%로 높아졌다. 이 비교에는 두 환경 모두에서 행동을 정의할 수 있는 예산 미고려 전략과 지원 제한 경험 정책을 사용했다. [공통 시작 상태 민감도 실행](results/runs/20261125-opening-and-exhaustion-sensitivity-codex/RUN.json)
 
 ### 해석 범위
 
