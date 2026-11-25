@@ -43,6 +43,12 @@ python run.py stamina-ledger --run-id OPENING_RUN
 python run.py stamina-historical --run-id HISTORICAL_RUN
 python run.py stamina-policy-compare --run-id FROZEN_RUN --historical-run HISTORICAL_RUN
 python run.py stamina-bellman-validate --run-id GRID_RUN --ledger-run OPENING_RUN --pair 25 25
+python run.py stamina-cql build --model M0_v2 --ledger-id OPENING_RUN --run-id REPLAY_M0
+python run.py stamina-cql train --dataset-id REPLAY_M0 --run-id FIT_M0
+python run.py stamina-cql build --model M3_v2 --ledger-id OPENING_RUN --run-id REPLAY_M3
+python run.py stamina-cql train --dataset-id REPLAY_M3 --run-id FIT_M3
+python run.py stamina-policy-compare --stage updated --historical-run HISTORICAL_RUN --cql-training M0_v2=FIT_M0 --cql-training M3_v2=FIT_M3 --run-id CQL_RUN
+python run.py stamina-policy-compare --stage bellman --historical-run HISTORICAL_RUN --bellman-run GRID_RUN --pair 25:25 --environments C --run-id BELLMAN_RUN
 python run.py stamina-tactics --run-id TACTICS_RUN --bellman-run GRID_RUN
 ```
 

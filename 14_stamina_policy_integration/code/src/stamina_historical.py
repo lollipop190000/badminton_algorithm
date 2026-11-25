@@ -41,16 +41,21 @@ def record(path, key='path'):
             'sha256': digest(path)}
 
 
-def finish_run(out, command, seed, inputs, sources, metrics, limits, status='completed', device='CPU'):
+def source_snapshot(sources):
+    commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip()
+    return commit, [record(p) for p in dict.fromkeys(sources)]
+
+
+def finish_run(out, command, seed, inputs, sources, metrics, limits, status='completed', device='CPU', snapshot=None):
     config = out / 'config.json'
     files = sorted(p for p in out.rglob('*') if p.is_file() and p.name != 'RUN.json')
-    commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip()
+    commit, source_hashes = snapshot or source_snapshot(sources)
     write_json(out / 'RUN.json', dict(schema_version=1, run_id=out.name, status=status,
                code_commit=commit, command=command, seed=seed,
                environment=dict(python=platform.python_version(), numpy=np.__version__, pandas=pd.__version__,
                                 torch=str(torch.__version__), device=device),
                inputs=[record(p, 'path_or_source') for p in dict.fromkeys(inputs)], config=record(config),
-               executed_source_hashes=[record(p) for p in dict.fromkeys(sources)],
+               executed_source_hashes=source_hashes,
                split='Match-level split held fixed. Evaluation entries are fourth hits from training matches.',
                metrics=metrics, outputs=[dict(path=p.relative_to(out).as_posix(), sha256=digest(p)) for p in files],
                limitations=limits))
@@ -122,8 +127,13 @@ def reproduce(runtime, model, distribution, selected_cases, rerun_samples):
                                                rtol=0, atol=1e-10)
                 checks.append(dict(model=model, condition=condition, parity=row.parity, policy=row.policy,
                                    checked_trials=count, mismatches=0))
-    return result, checks, [directory / 'config.json', directory / 'metrics.csv', directory / 'grids/grid_status.json',
-                            *archives]
+    run = directory.parents[1]
+    training = run / 'training' / TRAINING
+    paths = [directory / 'config.json', directory / 'metrics.csv', directory / 'grids/grid_status.json',
+             run / 'costs.npz', run / 'common_mask.npy', runtime / 'data/splits/train.csv',
+             runtime / 'outputs/fatigue_terminal/baseline_train.npz', training / 'RUN.json',
+             *(training / f'policy_seed{s}.pt' for s in range(42, 47)), *archives]
+    return result, checks, paths
 
 
 def main():
@@ -135,6 +145,8 @@ def main():
     if args.rerun_samples < 1:
         parser.error('At least one independently rerun trial is required')
     torch.set_num_threads(min(4, torch.get_num_threads()))
+    sources = [Path(__file__), Path(inspect.getfile(rollout)), Path(inspect.getfile(initial_distribution))]
+    snapshot = source_snapshot(sources)
     out = new_run(args.run_id)
     cases = [10, 11]
     write_json(out / 'config.json', dict(models=list(HISTORICAL_RUNS), cases_independently_rerun=cases,
@@ -149,11 +161,11 @@ def main():
         pd.DataFrame(results).to_csv(out / 'historical_reaggregation.csv', index=False)
         pd.DataFrame(reruns).to_csv(out / 'historical_reruns.csv', index=False)
         print(f'{model}: verified {len(metrics)} archived rows and {len(checks)} independent rollout checks', flush=True)
-    sources = [Path(__file__), Path(inspect.getfile(rollout)), Path(inspect.getfile(initial_distribution))]
     finish_run(out, f'python run.py stamina-historical --run-id {out.name} --rerun-samples {args.rerun_samples}',
                20261104, inputs, sources, dict(archived_condition_policy_rows=len(results),
                                               independently_rerun_policy_rows=len(reruns)),
-               'Reaggregation covers all nominal conditions. Independent reruns cover one condition per initial hitter.')
+               'Reaggregation covers all nominal conditions. Independent reruns cover one condition per initial hitter.',
+               snapshot=snapshot)
 
 
 if __name__ == '__main__':

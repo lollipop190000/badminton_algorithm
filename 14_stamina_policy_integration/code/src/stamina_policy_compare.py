@@ -12,11 +12,14 @@ import numpy as np
 import pandas as pd
 import torch
 
+from src.budget_cql_contract import digest
 from src.budget_policy_comparison import BehaviorPolicy, NoEnergyPolicy, paired_difference, player_symmetric
 from src.energy_strategy import solve_no_energy
 from src.ledger import load_ledger, source_files
 from src.stamina_environment import FROZEN_DATASETS, REFIT, TOPIC, build_environments, rollout
-from src.stamina_historical import HISTORICAL_RUNS, TRAINING, finish_run, load_historical, new_run, write_json
+from src.stamina_frozen_energy import FrozenEnergyPolicy
+from src.stamina_historical import HISTORICAL_RUNS, TRAINING, finish_run, load_historical, new_run, source_snapshot, write_json
+from src.stamina_paired_rollout import rollout_environments
 
 
 QUANTILES = (25, 50, 75, 90)
@@ -136,7 +139,7 @@ def compare(model, runtime, out, args):
     inputs = [*source_files(runtime.parent, model).values(), REFIT / 'RUN.json', REFIT / 'config.json', REFIT / 'coefficients.csv',
               runtime / 'outputs/fatigue_terminal/baseline_train.npz', cost_run / 'costs.npz', cost_run / 'common_mask.npy']
     if args.stage == 'frozen':
-        _, _, historical, grid = load_historical(runtime, model, load_verified_grid=False)
+        _, _, historical, grid = load_historical(runtime, model)
         if grid.budget_a != contract['budget_scale'] or grid.budget_b != contract['budget_scale']:
             raise ValueError('Historical grid and contract domains differ')
         train = cost_run / 'training' / TRAINING
@@ -145,6 +148,9 @@ def compare(model, runtime, out, args):
         for policy in POLICY_GROUPS['frozen']:
             for focal in ('A', 'B'):
                 historical[focal][policy] = frozen_cql(historical[focal][policy], args.device)
+        for focal in ('A', 'B'):
+            old_energy = historical[focal]['energy']
+            historical[focal]['energy'] = FrozenEnergyPolicy(old_energy.system, old_energy.grid)
     else:
         historical = {focal: dict(behavior=BehaviorPolicy(strict), no_energy=NoEnergyPolicy(solve_no_energy(system, focal)[1]))
                       for focal in ('A', 'B')}
@@ -152,9 +158,16 @@ def compare(model, runtime, out, args):
     if args.stage == 'updated':
         from src.stamina_cql import StaminaCQLPolicy
         source = TOPIC / 'results/runs' / args.cql_runs[model]
-        inputs.append(source / 'RUN.json')
+        run_record = source / 'RUN.json'
+        training = json.loads(run_record.read_text(encoding='utf-8'))
+        if training['status'] != 'completed':
+            raise ValueError('53-feature CQL training did not complete')
+        output_hashes = {item['path']: item['sha256'] for item in training['outputs']}
+        inputs.append(run_record)
         for seed in range(42, 47):
             checkpoint = source / f'stamina_cql_policy_seed{seed}.pt'
+            if digest(checkpoint) != output_hashes[checkpoint.name]:
+                raise ValueError(f'53-feature CQL checkpoint hash mismatch: {checkpoint.name}')
             new_policies[f'cql53_seed{seed}'] = StaminaCQLPolicy(checkpoint, kernel.masks,
                                                                kernel.costs.metadata['fingerprint'], args.device)
             inputs.append(checkpoint)
@@ -204,17 +217,22 @@ def compare(model, runtime, out, args):
                     break
             if args.stage == 'bellman' and grid_model is None:
                 raise ValueError(f'Missing validated grid for {model} p{qa}:p{qb}, focal {focal}')
-            previous = {}
-            for name in args.environments:
-                environment = environments[name.rstrip('nz')]
-                if name.endswith('n'):
-                    environment = replace(environment, exhaust=False)
-                scenario_openings = np.zeros_like(openings) if name == 'Az' else openings
-                outcomes = {}
-                for policy_name, policy in policies.items():
-                    if (args.policies and policy_name not in args.policies) or (policy_name == 'bellman53' and name != 'C'):
-                        continue
-                    result = rollout(environment, policy, histories, parity, ta, tb, *scenario_openings, sample_seed+1)
+            outcomes_by_environment = {name: {} for name in args.environments}
+            for policy_name, policy in policies.items():
+                if args.policies and policy_name not in args.policies:
+                    continue
+                names = [name for name in args.environments if policy_name != 'bellman53' or name == 'C']
+                compatible = {name: environments[name] for name in names if name in environments}
+                results = rollout_environments(compatible, policy, histories, parity, ta, tb, *openings, sample_seed+1) if compatible else {}
+                for name in names:
+                    if name not in results:
+                        environment = environments[name.rstrip('nz')]
+                        if name.endswith('n'):
+                            environment = replace(environment, exhaust=False)
+                        scenario_openings = np.zeros_like(openings) if name == 'Az' else openings
+                        results[name] = rollout(environment, policy, histories, parity, ta, tb, *scenario_openings, sample_seed+1)
+                    result = results[name]
+                    outcomes = outcomes_by_environment[name]
                     outcomes[policy_name], summary = summarize(result, focal)
                     entry = dict(**base, environment=name, policy=policy_name)
                     metric_rows.append(dict(**entry, **summary))
@@ -230,13 +248,15 @@ def compare(model, runtime, out, args):
                         grid_rows.append(dict(**entry, grid_value=expected, mc_excess=excess,
                                               bellman_residual=grid_model.max_residual,
                                               passes_mc=excess <= .02 and grid_model.max_residual <= 1e-10))
-                    for earlier, other_outcomes in previous.items():
+                    for earlier, other_outcomes in outcomes_by_environment.items():
+                        if earlier == name:
+                            break
                         if policy_name in other_outcomes:
                             env_rows.append(dict(**entry, comparator=earlier,
                                                  **paired_difference(outcomes[policy_name], other_outcomes[policy_name])))
+            for name, outcomes in outcomes_by_environment.items():
                 for first, second, metrics in interval_pairs(outcomes):
                     pair_rows.append(dict(**base, environment=name, policy=first, comparator=second, **metrics))
-                previous[name] = outcomes
             np.savez_compressed(directory / f'condition_{case_id:02d}.npz', **arrays)
             tables = dict(policy_metrics=metric_rows, paired_policy=pair_rows, paired_environment=env_rows,
                           evaluation_domain=count_rows, recommendations=support_rows, grid_mc=grid_rows)
@@ -282,6 +302,15 @@ def main():
         parser.error('With zero opening cost the p90 budget exceeds the historical frozen domain.')
     if args.stage == 'bellman' and (not args.bellman_run or args.environments != ['C']):
         parser.error('Bellman evaluation requires validated grid runs and environment C.')
+    available = {'behavior', 'no_energy'}
+    if args.stage == 'frozen':
+        available.update(['energy', *POLICY_GROUPS['frozen']])
+    if args.stage == 'updated':
+        available.update(POLICY_GROUPS['updated'])
+    if args.bellman_run:
+        available.add('bellman53')
+    if args.policies and not set(args.policies) <= available:
+        parser.error('Requested policy is unavailable at this stage.')
     historical = TOPIC / 'results/runs' / args.historical_run / 'RUN.json'
     if json.loads(historical.read_text(encoding='utf-8'))['status'] != 'completed':
         raise ValueError('Run historical reproduction before evaluation')
@@ -289,24 +318,31 @@ def main():
     numba.set_num_threads(min(4, numba.get_num_threads()))
     out = new_run(args.run_id)
     write_json(out / 'config.json', vars(args))
+    sources = [Path(__file__), Path(inspect.getfile(rollout)), Path(inspect.getfile(load_ledger)),
+               Path(inspect.getfile(FrozenEnergyPolicy)), Path(inspect.getfile(rollout_environments)),
+               Path(inspect.getfile(load_historical))]
+    snapshot = source_snapshot(sources)
     inputs, metrics = [historical], {}
     status = 'completed'
     try:
         for model in args.model:
             paths, count, grid_count = compare(model, Path.cwd(), out, args)
+            if not count:
+                raise ValueError(f'No policy-condition rows for {model}')
             inputs.extend(paths)
             metrics[model] = dict(policy_condition_rows=count, bellman_mc_conditions=grid_count)
-    except Exception as error:
+    except BaseException as error:
         status = 'failed'
         write_json(out / 'error.json', dict(type=type(error).__name__, message=str(error)))
         raise
     finally:
         import sys
         finish_run(out, 'python run.py stamina-policy-compare ' + ' '.join(sys.argv[1:]), args.seed, inputs,
-                   [Path(__file__), Path(inspect.getfile(rollout)), Path(inspect.getfile(load_ledger))], metrics,
+                   sources, metrics,
                    'Outcome variation conditions on the fitted environment and cost estimates. Eligibility and '
                    'frozen domain restrict the represented train fourth-hit distribution. Bellman rows depend on '
-                   'available grids and are subject to separate refinement checks.', status=status, device=args.device)
+                   'available grids and are subject to separate refinement checks.', status=status, device=args.device,
+                   snapshot=snapshot)
 
 
 if __name__ == '__main__':

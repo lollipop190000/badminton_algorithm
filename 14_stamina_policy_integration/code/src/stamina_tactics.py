@@ -16,7 +16,7 @@ from src.ledger import load_ledger, source_files
 from src.stamina_bellman import StaminaBellmanPolicy
 from src.stamina_bellman_validate import load_validated_grid
 from src.stamina_environment import FROZEN_DATASETS, REFIT, REPO, REASONS, TOPIC, build_environments, rollout
-from src.stamina_historical import finish_run, load_historical, new_run, write_json
+from src.stamina_historical import finish_run, load_historical, new_run, source_snapshot, write_json
 from src.stamina_policy_compare import lift
 
 
@@ -26,7 +26,7 @@ def label(action):
 
 def compare_tactics(runtime, model, grid_runs, seed):
     _, _, env, _ = build_environments(runtime, model)
-    _, _, controllers, legacy_grid = load_historical(runtime, model, load_verified_grid=False)
+    historical, _, controllers, legacy_grid = load_historical(runtime, model)
     grid_run = next((run for run in grid_runs if (runtime / 'outputs/stamina_bellman_grids' / run /
                      f'{model}_C_p25_p25_A.npy').is_file()), None)
     if grid_run is None:
@@ -100,7 +100,9 @@ def compare_tactics(runtime, model, grid_runs, seed):
 
         rollout(env['A' if name == 'strict_frozen' else 'C'], lift(policy), [h[picks[0]]], 1, total, total,
                 [chosen.opening_A], [chosen.opening_B], seed=seed, trace=trace)
-    return examples_rows, action_rows, timeline, [validation_path, new_path.with_suffix('.json'), *source_files(REPO, model).values()]
+    return examples_rows, action_rows, timeline, [validation_path, new_path.with_suffix('.json'),
+                                                  historical / 'grids/grid_status.json',
+                                                  *source_files(REPO, model).values()]
 
 
 def draw_timeline(table, out):
@@ -129,6 +131,9 @@ def main():
     numba.set_num_threads(min(4, numba.get_num_threads()))
     out = new_run(args.run_id)
     write_json(out / 'config.json', vars(args))
+    sources = [Path(__file__), Path(__file__).with_name('stamina_environment.py'),
+               Path(__file__).with_name('stamina_bellman.py')]
+    snapshot = source_snapshot(sources)
     examples, actions, traces, inputs = [], [], [], [REFIT / 'config.json', REFIT / 'coefficients.csv']
     for model in FROZEN_DATASETS:
         sample, values, paths, sources = compare_tactics(Path.cwd(), model, args.bellman_run, args.seed)
@@ -142,9 +147,10 @@ def main():
     table.to_csv(out / 'representative_paths.csv', index=False)
     draw_timeline(table, out)
     finish_run(out, 'python run.py stamina-tactics ' + ' '.join(sys.argv[1:]), args.seed, inputs,
-               [Path(__file__)], dict(observed_openings=len(examples), action_values=len(actions)),
+               sources, dict(observed_openings=len(examples), action_values=len(actions)),
                'Examples maximize recommendation change in selected p25/p25 training openings. Shaded hits '
-               'are observed; subsequent trajectories are paired samples from their respective fitted environments.')
+               'are observed; subsequent trajectories are paired samples from their respective fitted environments.',
+               snapshot=snapshot)
 
 
 if __name__ == '__main__':
