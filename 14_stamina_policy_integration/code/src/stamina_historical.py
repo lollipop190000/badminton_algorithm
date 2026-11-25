@@ -12,7 +12,7 @@ import pandas as pd
 import torch
 
 from scripts.compare_integrated_cql import initial_distribution, load_grid
-from src.budget_cql_contract import digest, verify_training
+from src.budget_cql_contract import digest, verify_dataset, verify_training
 from src.budget_policy_comparison import (BehaviorPolicy, CQLPolicy, EnergyPolicy, NoEnergyPolicy,
                                           SwappedGrid, load_common_system, player_symmetric, rollout)
 from src.energy_strategy import solve_no_energy
@@ -63,10 +63,14 @@ def load_historical(runtime, model, load_verified_grid=True):
     directory = run / 'comparison' / HISTORICAL_RUNS[model]
     system, strict = load_common_system(runtime, run)
     training = run / 'training' / TRAINING
+    verify_dataset(run)
     verify_training(training, run)
     if not player_symmetric(system, strict):
         raise ValueError('Historical grid requires the audited A/B exchange')
     settings = json.loads((directory / 'config.json').read_text(encoding='utf-8'))
+    for file, sha in settings['kernel_input_sha256'].items():
+        if digest(runtime / file.replace('\\', '/')) != sha:
+            raise ValueError(f'Historical kernel input hash mismatch: {file}')
     grids = directory / 'grids'
     if load_verified_grid:
         require_numerical_grid(verify_grid_cache(grids, settings['execution_source_sha256']))

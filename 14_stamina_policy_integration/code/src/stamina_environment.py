@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from scipy.special import expit
 
-from src.budget_cql_contract import CostBundle
+from src.budget_cql_contract import CostBundle, digest
 from src.budget_policy_comparison import load_common_system
 
 
@@ -132,6 +132,15 @@ class StaminaKernel:
 def build_environments(runtime, model_id):
     dataset = runtime / 'outputs/budget_cql/runs' / FROZEN_DATASETS[model_id]
     system, strict = load_common_system(runtime, dataset)
+    metadata = json.loads((REFIT / 'RUN.json').read_text(encoding='utf-8'))
+    baseline = '05_energy_budget/results/fatigue_terminal/baseline_train.npz'
+    expected = {row['path']: row['sha256'] for row in metadata['inputs']}
+    if digest(runtime / 'outputs/fatigue_terminal/baseline_train.npz') != expected[baseline]:
+        raise ValueError('Runtime Q differs from the fitted Q in topic 12')
+    expected = {row['path']: row['sha256'] for row in metadata['outputs']}
+    for file in ('config.json', 'coefficients.csv'):
+        if digest(REFIT / file) != expected[file]:
+            raise ValueError(f'Fixed-Q parameter hash mismatch: {file}')
     components = condition_markov(system.transition.baseline.probability)
     np.testing.assert_allclose(components.joint, strict.joint, atol=1e-12, rtol=0)
     config = json.loads((REFIT / 'config.json').read_text(encoding='utf-8'))

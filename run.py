@@ -46,6 +46,7 @@ COMMANDS={
  'stamina-ledger':['-m','src.ledger'],
  'stamina-cql':['-m','src.stamina_cql'],
  'stamina-historical':['-m','src.stamina_historical'],
+ 'stamina-bellman-validate':['-m','src.stamina_bellman_validate'],
  'stamina-policy-compare':['-m','src.stamina_policy_compare'],
  'markov':['-m','src.estimate_parity_markov'],
  'fatigue':['scripts/run_fatigue_pipeline.py'],
