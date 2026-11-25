@@ -1,0 +1,6 @@
+seed,alpha,best_epoch,epochs,validation_td_loss,history,checkpoint
+42,0.1,4,16,0.30698412153652166,stamina_cql_seed42_alpha0p1.csv,stamina_cql_policy_seed42.pt
+43,0.1,5,17,0.30374590955331393,stamina_cql_seed43_alpha0p1.csv,stamina_cql_policy_seed43.pt
+44,0.1,5,17,0.30331920073241037,stamina_cql_seed44_alpha0p1.csv,stamina_cql_policy_seed44.pt
+45,0.1,4,16,0.3071939890146843,stamina_cql_seed45_alpha0p1.csv,stamina_cql_policy_seed45.pt
+46,0.1,5,17,0.3117435967947969,stamina_cql_seed46_alpha0p1.csv,stamina_cql_policy_seed46.pt

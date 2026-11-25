@@ -1,0 +1,240 @@
+[
+  {
+    "model_id": "M0_v2",
+    "p_A": 25,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p25_p90_A.npy",
+        "sha256": "438c49961f36dca30722ea93beba78d8387a7dfedccae251f7f2505995010aa0",
+        "bytes": 491716736
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p25_p90_A.json",
+        "sha256": "cc02c945e1b860983d04ecbfe5abc35f5d33743522bbdbdd43392e9e3e398573",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 90,
+    "p_B": 25,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p90_p25_A.npy",
+        "sha256": "b2cb390ab53e23fc1929495be344df74b78670aba911b57f4c10c1325872f3c6",
+        "bytes": 491716736
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p90_p25_A.json",
+        "sha256": "fe318803f3f45c3eb7d4e6f43da5d5e9c5cfc0b69f83cd4f43c657fd27500850",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 50,
+    "p_B": 75,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p50_p75_A.npy",
+        "sha256": "c0eb9f92f6aae3e833b1f6a3947d903260e846c4f62dcde9c0a7da887eed8e73",
+        "bytes": 549060736
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p50_p75_A.json",
+        "sha256": "5fdb740a8d40513a65fe26fa94513d360ecf34634e1dc2cf7b9806aa4566c1c6",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 75,
+    "p_B": 50,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p75_p50_A.npy",
+        "sha256": "029b4ba385683d209c1e573b88b61db4f289baaff218334a45ea3e28ec68d6fd",
+        "bytes": 549060736
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p75_p50_A.json",
+        "sha256": "99e6bf6beb7b586702d39d58e24bcc20681705e3767699af3d401da622835a3e",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 50,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p50_p90_A.npy",
+        "sha256": "a970d844f8fc506e4b37cd49350c2c6d64c9a5203d74efc80703e4bcb1acc528",
+        "bytes": 851509376
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p50_p90_A.json",
+        "sha256": "5dfc60d355ef4da357b50f1d34e519ac28189eb5b91250348122201fa3a13085",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 90,
+    "p_B": 50,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p90_p50_A.npy",
+        "sha256": "44c1e2daab46782b8aab2bd3de59fcdf6dc4d7fcdb6d005464050d447763863b",
+        "bytes": 851509376
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p90_p50_A.json",
+        "sha256": "53c111471a89bd72879c212e1323338874e8e26272b8cd2cc764e9d14f058f87",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 75,
+    "p_B": 75,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p75_p75_A.npy",
+        "sha256": "88085e55553313cf473244ca47933befee17e0f2c733f935829934253782b012",
+        "bytes": 912523392
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M0_v2_C_p75_p75_A.json",
+        "sha256": "388a454f4450f637fdd27ef8ae5e3f6525cbabb2dbb3f87d0c67ab8d5886dd23",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 25,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p25_p90_A.npy",
+        "sha256": "08b3ce50b3b02783541565d78e7a9102e00f4bda750ed220b65d8950b5cc2230",
+        "bytes": 1969422464
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p25_p90_A.json",
+        "sha256": "0fad25ad0f8b3eb3b6b638d5993d4255b1d78b419d2e06565c0a876e0b92c1d8",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 90,
+    "p_B": 25,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p90_p25_A.npy",
+        "sha256": "9b89e635d488459b1da7fe50959b0b3919686616ebcaf3b0a07c57c33bc53401",
+        "bytes": 499777664
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p90_p25_A.json",
+        "sha256": "93674b853985d3d8097b77e64ec61bcf20746d77f48b92a8b78d9cf4a052070b",
+        "bytes": 160
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 50,
+    "p_B": 75,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p50_p75_A.npy",
+        "sha256": "37a8d2883fd2be3db8d060e34a2fe95513fec594d7353d4ac11696841d6deb03",
+        "bytes": 566231168
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p50_p75_A.json",
+        "sha256": "6a975656aea04bcdc9fba3d6877285b0c84d97d2bb0d4af69ef80085e03049f9",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 75,
+    "p_B": 50,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p75_p50_A.npy",
+        "sha256": "a264bd91611255360727a67211c8a6f5559e5aa5df3be7d2cbe94d61bd82d14b",
+        "bytes": 566231168
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p75_p50_A.json",
+        "sha256": "3395037e0ffeb046dc824811ec519b20cbcf68d94809842c2c5f6cda2d67fe80",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 50,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p50_p90_A.npy",
+        "sha256": "7fed61a20ea6d88cbf80d26ebd10c935e19505ed983fdcc03369407d9912ccba",
+        "bytes": 877658240
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p50_p90_A.json",
+        "sha256": "2cc9838eb1670e2ddf71c21bddd8799c44e04e35b0d34b5b38efc27876c79218",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 90,
+    "p_B": 50,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p90_p50_A.npy",
+        "sha256": "19bae04bc0693351259e8461b4c563e4edbc10c21b0a2d85ce0f86683613f698",
+        "bytes": 877658240
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p90_p50_A.json",
+        "sha256": "1c821c7865b9feb9b78ec8aea4abfb3d223ea0de3998ed19eb390d0a8950e833",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 75,
+    "p_B": 75,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p75_p75_A.npy",
+        "sha256": "baf71721a4925556984629461fa757e76a81750e0628dbbe679138695cd394de",
+        "bytes": 943718528
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier2-codex/M3_v2_C_p75_p75_A.json",
+        "sha256": "4aa0b0fc44940e6c3d3c56f3c3e77f2a865ffe7c8c067ccc94fda81a2d9580c0",
+        "bytes": 159
+      }
+    ]
+  }
+]

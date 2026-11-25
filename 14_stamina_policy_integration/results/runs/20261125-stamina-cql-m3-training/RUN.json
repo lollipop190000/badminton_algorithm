@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-stamina-cql-m3-training",
+  "status": "completed",
+  "code_commit": "d4be8d471248a5a95b3cd148f7b1b23d726803fb",
+  "command": "python run.py exec -m src.stamina_cql train --dataset-id 20261125-stamina-cql-m3-replay --run-id 20261125-stamina-cql-m3-training --device cuda --threads 2",
+  "seed": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "environment": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "torch": "2.9.1+cu128",
+    "device": "cuda",
+    "torch_threads": 2
+  },
+  "source_sha256": {
+    "path": "14_stamina_policy_integration/code/src/stamina_cql.py",
+    "sha256": "850af73fa0d0d004d5478f4a59de8757fc7a36ef1f71ada86817a787de1a7d7f"
+  },
+  "inputs": [
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/RUN.json",
+      "sha256": "e97c8ed0379fa2be6be76cbedf2ed3fc60ffe64c018d3709672e8343ba4faad5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_dataset_contract.json",
+      "sha256": "5871ee8773edaf3e4a7ca763d2d96af028bebda674ad444576ff2c8667a8611a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_replay_train.npz",
+      "sha256": "a01d712e23d6c6104943430c836fbb3fdfffb0fdc311c4bd037bec97eb2c0e3c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_replay_validation.npz",
+      "sha256": "a4bff683f31b87861cfc7ba91cd3975d419ac462144d7c65d9a4416e26fdfe22"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "03_cql_v2_policy/code/configs/budget_cql.json",
+      "sha256": "f43e084f71b1051b184e7ac913855d6e279bd51e4c5b7e3edee2ff35e31b9555"
+    }
+  ],
+  "config": {
+    "path": "stamina_cql_training_config.json",
+    "sha256": "e80881d2384c8c8ec61c3f23f29c9928af6b700db8b7a33c7186811cfd6db121"
+  },
+  "split": "Train gradient updates and validation epoch/alpha selection; the test replay is never opened.",
+  "metrics": {
+    "selected_alpha": 0.1,
+    "alpha_sweep": [
+      {
+        "seed": 42,
+        "alpha": 0.1,
+        "best_epoch": 4,
+        "epochs": 16,
+        "validation_td_loss": 0.309980622556752,
+        "history": "stamina_cql_seed42_alpha0p1.csv"
+      },
+      {
+        "seed": 42,
+        "alpha": 0.25,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.3256850336037537,
+        "history": "stamina_cql_seed42_alpha0p25.csv"
+      },
+      {
+        "seed": 42,
+        "alpha": 0.5,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.3818141051036613,
+        "history": "stamina_cql_seed42_alpha0p5.csv"
+      }
+    ],
+    "policies": [
+      {
+        "seed": 42,
+        "alpha": 0.1,
+        "best_epoch": 4,
+        "epochs": 16,
+        "validation_td_loss": 0.309980622556752,
+        "history": "stamina_cql_seed42_alpha0p1.csv",
+        "checkpoint": "stamina_cql_policy_seed42.pt"
+      },
+      {
+        "seed": 43,
+        "alpha": 0.1,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.3066254873768552,
+        "history": "stamina_cql_seed43_alpha0p1.csv",
+        "checkpoint": "stamina_cql_policy_seed43.pt"
+      },
+      {
+        "seed": 44,
+        "alpha": 0.1,
+        "best_epoch": 4,
+        "epochs": 16,
+        "validation_td_loss": 0.3082231147285898,
+        "history": "stamina_cql_seed44_alpha0p1.csv",
+        "checkpoint": "stamina_cql_policy_seed44.pt"
+      },
+      {
+        "seed": 45,
+        "alpha": 0.1,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.3088806207252676,
+        "history": "stamina_cql_seed45_alpha0p1.csv",
+        "checkpoint": "stamina_cql_policy_seed45.pt"
+      },
+      {
+        "seed": 46,
+        "alpha": 0.1,
+        "best_epoch": 5,
+        "epochs": 17,
+        "validation_td_loss": 0.3110423962668973,
+        "history": "stamina_cql_seed46_alpha0p1.csv",
+        "checkpoint": "stamina_cql_policy_seed46.pt"
+      }
+    ],
+    "state_dimension": 53,
+    "train_rows": 333769,
+    "validation_rows": 74953,
+    "selection": "minimum weighted validation TD loss",
+    "test_data_used_in_selection": false,
+    "device": "cuda"
+  },
+  "limitations": [
+    "Validation TD loss is the offline tuning criterion. Policy values come from separate simulations."
+  ],
+  "outputs": [
+    {
+      "path": "stamina_cql_alpha_sweep.csv",
+      "sha256": "6162a6878ba99d64c811a96a3aed8467d264c074495247d10324699ecce99a3f"
+    },
+    {
+      "path": "stamina_cql_policies.csv",
+      "sha256": "31bbefb2dfba0d1e3c4684826bc1d02f49c3a1e47cbb293e4cf20cff962b2fad"
+    },
+    {
+      "path": "stamina_cql_policy_seed42.pt",
+      "sha256": "af93e6bafec3f3b550245771c04fcd3ecbee3ad2f156b80fb509ca682ef489a9"
+    },
+    {
+      "path": "stamina_cql_policy_seed43.pt",
+      "sha256": "ef215620606f078cd568020870ab6464cd798fbb5f556a5e8e5a3643dfbf66e8"
+    },
+    {
+      "path": "stamina_cql_policy_seed44.pt",
+      "sha256": "d0d3fd44d5264a89184ff0ffb60254afb9f5f7eb5b491909539832b72f59678c"
+    },
+    {
+      "path": "stamina_cql_policy_seed45.pt",
+      "sha256": "b301a82e45065dbf1a2f862e873e822db698fd9a698ab59324daa6ddd931ac08"
+    },
+    {
+      "path": "stamina_cql_policy_seed46.pt",
+      "sha256": "ddc1d58b2287b1892076e814f7ff4b70071f5b0c14ea596c0d135ddad6cdf0c3"
+    },
+    {
+      "path": "stamina_cql_seed42_alpha0p1.csv",
+      "sha256": "0f61ad31ad424568e418e76bcda916669449fdf9911fe3d977d2e4919c69716e"
+    },
+    {
+      "path": "stamina_cql_seed42_alpha0p25.csv",
+      "sha256": "bb801079e82fba8ec4e4391aee41d2b0d9b63588ae473d919a543767fb8d46c0"
+    },
+    {
+      "path": "stamina_cql_seed42_alpha0p5.csv",
+      "sha256": "b931ef41bd184d8a778308eff8623f59227514b53942004ef73631c8bd19c0ba"
+    },
+    {
+      "path": "stamina_cql_seed43_alpha0p1.csv",
+      "sha256": "22443a33e1d4855b22754f01aadf39439deaf780ae175213bef1fe0870a32760"
+    },
+    {
+      "path": "stamina_cql_seed44_alpha0p1.csv",
+      "sha256": "9e0571f329e953a6cf2a6df1bcb65c1ba9fe6ef973e1be7ebe767c09c682d17c"
+    },
+    {
+      "path": "stamina_cql_seed45_alpha0p1.csv",
+      "sha256": "147f044472909a4026dafe63b13ddea94394690b41a39b4fb31e85104dfb0bc5"
+    },
+    {
+      "path": "stamina_cql_seed46_alpha0p1.csv",
+      "sha256": "6b7d4a5d86f6df614c3110620fb6836c5068f41563f9229901763bfd6ad76b1f"
+    },
+    {
+      "path": "stamina_cql_training_config.json",
+      "sha256": "e80881d2384c8c8ec61c3f23f29c9928af6b700db8b7a33c7186811cfd6db121"
+    },
+    {
+      "path": "stamina_cql_training_summary.json",
+      "sha256": "492bcdac2f75784fdd352cef59ce0c5aa0f7612d0ed80bd4511c27d8d689c017"
+    }
+  ]
+}

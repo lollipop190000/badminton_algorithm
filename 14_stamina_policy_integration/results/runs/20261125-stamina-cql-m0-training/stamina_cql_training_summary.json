@@ -1,0 +1,82 @@
+{
+  "selected_alpha": 0.1,
+  "alpha_sweep": [
+    {
+      "seed": 42,
+      "alpha": 0.1,
+      "best_epoch": 4,
+      "epochs": 16,
+      "validation_td_loss": 0.30698412153652166,
+      "history": "stamina_cql_seed42_alpha0p1.csv"
+    },
+    {
+      "seed": 42,
+      "alpha": 0.25,
+      "best_epoch": 4,
+      "epochs": 16,
+      "validation_td_loss": 0.3211442738987263,
+      "history": "stamina_cql_seed42_alpha0p25.csv"
+    },
+    {
+      "seed": 42,
+      "alpha": 0.5,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.37414185183409826,
+      "history": "stamina_cql_seed42_alpha0p5.csv"
+    }
+  ],
+  "policies": [
+    {
+      "seed": 42,
+      "alpha": 0.1,
+      "best_epoch": 4,
+      "epochs": 16,
+      "validation_td_loss": 0.30698412153652166,
+      "history": "stamina_cql_seed42_alpha0p1.csv",
+      "checkpoint": "stamina_cql_policy_seed42.pt"
+    },
+    {
+      "seed": 43,
+      "alpha": 0.1,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.30374590955331393,
+      "history": "stamina_cql_seed43_alpha0p1.csv",
+      "checkpoint": "stamina_cql_policy_seed43.pt"
+    },
+    {
+      "seed": 44,
+      "alpha": 0.1,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.30331920073241037,
+      "history": "stamina_cql_seed44_alpha0p1.csv",
+      "checkpoint": "stamina_cql_policy_seed44.pt"
+    },
+    {
+      "seed": 45,
+      "alpha": 0.1,
+      "best_epoch": 4,
+      "epochs": 16,
+      "validation_td_loss": 0.3071939890146843,
+      "history": "stamina_cql_seed45_alpha0p1.csv",
+      "checkpoint": "stamina_cql_policy_seed45.pt"
+    },
+    {
+      "seed": 46,
+      "alpha": 0.1,
+      "best_epoch": 5,
+      "epochs": 17,
+      "validation_td_loss": 0.3117435967947969,
+      "history": "stamina_cql_seed46_alpha0p1.csv",
+      "checkpoint": "stamina_cql_policy_seed46.pt"
+    }
+  ],
+  "state_dimension": 53,
+  "train_rows": 334999,
+  "validation_rows": 75134,
+  "selection": "minimum weighted validation TD loss",
+  "test_data_used_in_selection": false,
+  "device": "cuda"
+}

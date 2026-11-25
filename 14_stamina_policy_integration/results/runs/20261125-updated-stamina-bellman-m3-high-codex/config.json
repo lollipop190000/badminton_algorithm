@@ -1,0 +1,59 @@
+{
+  "run_id": "20261125-updated-stamina-bellman-m3-high-codex",
+  "historical_run": "20261125-historical-reproduction-codex",
+  "model": [
+    "M3_v2"
+  ],
+  "stage": "bellman",
+  "cohort": "domain",
+  "environments": [
+    "C"
+  ],
+  "pair": [
+    "50:90",
+    "90:50",
+    "75:75",
+    "75:90",
+    "90:75"
+  ],
+  "policy": [
+    "bellman53"
+  ],
+  "bellman_run": [
+    "20261125-stamina-bellman-tier2-codex",
+    "20261125-stamina-bellman-tier3-codex"
+  ],
+  "cql_training": null,
+  "samples": 20000,
+  "seed": 20261125,
+  "device": "cpu",
+  "pairs": [
+    [
+      50,
+      90
+    ],
+    [
+      90,
+      50
+    ],
+    [
+      75,
+      75
+    ],
+    [
+      75,
+      90
+    ],
+    [
+      90,
+      75
+    ]
+  ],
+  "policies": [
+    "bellman53"
+  ],
+  "cql_runs": {
+    "M0_v2": "20261125-stamina-cql-m0-training",
+    "M3_v2": "20261125-stamina-cql-m3-training"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "run_id": "20261125-updated-stamina-cql-paired-codex",
+  "historical_run": "20261125-historical-reproduction-codex",
+  "model": [
+    "M0_v2",
+    "M3_v2"
+  ],
+  "stage": "updated",
+  "cohort": "domain",
+  "environments": [
+    "A",
+    "B",
+    "C",
+    "C0"
+  ],
+  "pair": null,
+  "policy": null,
+  "bellman_run": null,
+  "cql_training": null,
+  "samples": 20000,
+  "seed": 20261125,
+  "device": "cuda",
+  "pairs": [
+    [
+      25,
+      25
+    ],
+    [
+      25,
+      50
+    ],
+    [
+      25,
+      75
+    ],
+    [
+      25,
+      90
+    ],
+    [
+      50,
+      25
+    ],
+    [
+      50,
+      50
+    ],
+    [
+      50,
+      75
+    ],
+    [
+      50,
+      90
+    ],
+    [
+      75,
+      25
+    ],
+    [
+      75,
+      50
+    ],
+    [
+      75,
+      75
+    ],
+    [
+      75,
+      90
+    ],
+    [
+      90,
+      25
+    ],
+    [
+      90,
+      50
+    ],
+    [
+      90,
+      75
+    ],
+    [
+      90,
+      90
+    ]
+  ],
+  "policies": null,
+  "cql_runs": {
+    "M0_v2": "20261125-stamina-cql-m0-training",
+    "M3_v2": "20261125-stamina-cql-m3-training"
+  }
+}

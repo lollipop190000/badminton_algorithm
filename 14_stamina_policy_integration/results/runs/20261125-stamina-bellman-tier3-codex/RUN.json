@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-stamina-bellman-tier3-codex",
+  "status": "completed",
+  "code_commit": "9ae36a3941e9243528f5beb46b26d45ff3959155",
+  "command": "python run.py stamina-bellman-validate --run-id 20261125-stamina-bellman-tier3-codex --coarse-step 10 --fine-step 5 --max-refinements 2 --threads 4 --pair 75 90 --pair 90 75 --pair 90 90",
+  "seed": 1984,
+  "environment": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.4.4",
+    "numba": "0.65.1",
+    "created_at": "2026-11-25T05:54:46.294409+00:00"
+  },
+  "inputs": [
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_opening.parquet",
+      "sha256": "1165bd54a1ad0fbcf979413ee78a4660a4d627a89e8bacf4683f73bf7925b7cf",
+      "bytes": 233104
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_budget_table.csv",
+      "sha256": "12d0a91854f9c83576f2367bb6d5fff7e2ba57f26dfa4941ffc00fa20a06e468",
+      "bytes": 1872
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5",
+      "bytes": 2113
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588",
+      "bytes": 696
+    },
+    {
+      "path": ".runtime/outputs/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db",
+      "bytes": 7667667
+    },
+    {
+      "path": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/costs.npz",
+      "sha256": "22deb9d2c71fecc9ed616dc129f1905ff976200d7692930d4a8c1e6dba414af1",
+      "bytes": 531837
+    },
+    {
+      "path": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277",
+      "bytes": 524416
+    },
+    {
+      "path": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c",
+      "bytes": 3480
+    },
+    {
+      "path": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/costs.npz",
+      "sha256": "bcfb856d5dc2406d249477e270d27fdf0c67a5e92f1055d7b61b3e228009626e",
+      "bytes": 531667
+    },
+    {
+      "path": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277",
+      "bytes": 524416
+    },
+    {
+      "path": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/dataset_contract.json",
+      "sha256": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f",
+      "bytes": 3471
+    }
+  ],
+  "config": {
+    "path": "stamina_bellman_config.json",
+    "sha256": "d0b906251e57ca4a41386931f522338a60a11543a49200c62cbcf4ab842d94d0",
+    "bytes": 433
+  },
+  "execution_sources": [
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_bellman_validate.py",
+      "sha256": "3e214303a1f8b420045cf28024e1f72f69c61e5c8263d9519a7408e7bb491c4a",
+      "bytes": 16406
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_bellman.py",
+      "sha256": "ae3efb6ea6a61bc2668267df5dff41ccd265e996e694f3cf8ba58beffe7ae401",
+      "bytes": 11104
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_environment.py",
+      "sha256": "d503e9384c3a02d736f379cc37b9abd8f0854996783d4efad535faa07e5d35e5",
+      "bytes": 11526
+    }
+  ],
+  "split": "Train fourth-hit entries with positive remaining budgets; selected total-budget pairs",
+  "metrics": {
+    "conditions": 12,
+    "passing_conditions": 12
+  },
+  "outputs": [
+    {
+      "path": "stamina_bellman_config.json",
+      "sha256": "d0b906251e57ca4a41386931f522338a60a11543a49200c62cbcf4ab842d94d0",
+      "bytes": 433
+    },
+    {
+      "path": "stamina_bellman_grid_artifacts.json",
+      "sha256": "37deb7a487214f390531ec873be13747a987619d73dbd0ec7fdd63f3020064d9",
+      "bytes": 3551
+    },
+    {
+      "path": "stamina_bellman_grid_queries.csv",
+      "sha256": "a78876930f4b668d6e0c7b6b83cb5fcea97288d1706d64dcc2b0164bd8edba19",
+      "bytes": 6789
+    },
+    {
+      "path": "stamina_bellman_refinement_attempts.csv",
+      "sha256": "b3164979210df16f7276567f3f8af116bbd3a06a09a6519ed8efb0d76acd87ac",
+      "bytes": 706
+    },
+    {
+      "path": "stamina_bellman_validation.csv",
+      "sha256": "ae2ba0884b10736e978c0bbdfea22c7d0a8dea426f247524d5d96d3736199a08",
+      "bytes": 4443
+    }
+  ],
+  "limitations": [
+    "The validation samples from observed train openings for the specified pairs only.",
+    "Paired Monte Carlo intervals condition on the fitted model.",
+    "Full float64 arrays remain local. Grid metadata records their byte count and SHA256."
+  ]
+}

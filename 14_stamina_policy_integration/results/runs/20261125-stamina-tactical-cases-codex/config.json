@@ -1,0 +1,9 @@
+{
+  "run_id": "20261125-stamina-tactical-cases-codex",
+  "bellman_run": [
+    "20261125-stamina-bellman-m0-p25-codex",
+    "20261125-stamina-bellman-m3-p25-boundary-codex"
+  ],
+  "no_slope_run": [],
+  "seed": 20261125
+}

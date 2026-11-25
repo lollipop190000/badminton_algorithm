@@ -1,0 +1,4 @@
+seed,alpha,best_epoch,epochs,validation_td_loss,history
+42,0.1,4,16,0.309980622556752,stamina_cql_seed42_alpha0p1.csv
+42,0.25,5,17,0.3256850336037537,stamina_cql_seed42_alpha0p25.csv
+42,0.5,5,17,0.3818141051036613,stamina_cql_seed42_alpha0p5.csv

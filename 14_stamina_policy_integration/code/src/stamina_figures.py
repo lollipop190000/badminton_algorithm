@@ -358,6 +358,9 @@ def main():
                Path.cwd() / 'outputs/fatigue_terminal/baseline_train.npz']
     conditions, pairs, env_pairs = aggregate_case_data(metrics, raw)
     summary = condition_means(conditions)
+    cohort_keys = [*CASES, 'environment']
+    bellman_cases = conditions.loc[conditions.policy.eq('bellman53'), cohort_keys].drop_duplicates()
+    matched = condition_means(conditions.merge(bellman_cases, on=cohort_keys, validate='many_to_one'))
     pair_summary = paired_condition_means(pairs)
     action = action_means(recommendations, conditions)
     models = summary.model.unique()
@@ -367,7 +370,8 @@ def main():
     out = new_run(args.run_id)
     write_json(out / 'config.json', vars(args))
     for name, frame in [('conditions', conditions), ('paired_cases', pairs), ('summary', summary),
-                        ('paired_summary', pair_summary), ('environment_paired_cases', env_pairs),
+                        ('paired_summary', pair_summary), ('bellman_matched_summary', matched),
+                        ('environment_paired_cases', env_pairs),
                         ('environment_paired_summary', paired_condition_means(env_pairs, False)),
                         ('recommendations', action), ('fixed_q_response', curves)]:
         frame.to_csv(out / f'stamina_{name}.csv', index=False)

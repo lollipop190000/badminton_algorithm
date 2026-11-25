@@ -1,0 +1,23 @@
+{
+  "run_id": "20261125-stamina-bellman-m3-c0-refined-codex",
+  "ledger_run": "20261125-opening-cost-ledger-codex",
+  "cost": [
+    "M3_v2"
+  ],
+  "environment": "C0",
+  "query_mode": "exact-boundary",
+  "reuse_coarse_run": "20261125-stamina-bellman-c0-p25-codex",
+  "reuse_fine_run": null,
+  "pair": [
+    [
+      25,
+      25
+    ]
+  ],
+  "coarse_step": 2.5,
+  "fine_step": 1.25,
+  "max_refinements": 1,
+  "samples": 20000,
+  "threads": 6,
+  "seed": 1984
+}

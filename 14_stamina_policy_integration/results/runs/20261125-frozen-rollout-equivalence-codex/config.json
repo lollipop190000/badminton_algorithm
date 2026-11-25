@@ -1,0 +1,15 @@
+{
+  "run_id": "20261125-frozen-rollout-equivalence-codex",
+  "before_run": "20261125-frozen-stamina-paired-codex",
+  "after_run": "20261125-frozen-stamina-paired-full-codex",
+  "checks": [
+    "seed",
+    "samples",
+    "model",
+    "cohort",
+    "stage",
+    "environments",
+    "pairs"
+  ],
+  "after_run_manifest_available": false
+}

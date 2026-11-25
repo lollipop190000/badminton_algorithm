@@ -1,0 +1,8 @@
+{
+  "model": "M3_v2",
+  "probability_error": 0.0,
+  "fixed_q_error": 5.551115123125783e-17,
+  "terminal_split_error": 5.551115123125783e-17,
+  "exchange_error": 2.220446049250313e-16,
+  "zero_slope_error": 0.0
+}
