@@ -47,8 +47,14 @@ def fixed_load_slope_comparison(runtime, grid_runs, no_slope_runs):
             turn = np.full(len(entry), parity, dtype=int)
             a, b = total-entry.opening_A.to_numpy(), total-entry.opening_B.to_numpy()
             result = {}
+            method = None
             for environment, candidates in [('C', grid_runs), ('C0', no_slope_runs)]:
                 grid, binding = first_validated_grid(candidates, model, total, environment, parity)
+                storage = grid if parity == 1 else grid.grid
+                grid_method = (grid.query_mode, storage.values.shape)
+                if method is not None and method != grid_method:
+                    raise ValueError(f'Slope comparison requires the same grid and query method for {model}, focal {focal}')
+                method = grid_method
                 policy = policy_for_grid(env[environment], grid)
                 result[environment] = policy(history, turn, a, b, None), policy.action_values(history, turn, a, b)
                 inputs.extend([binding/'stamina_bellman_validation.csv', binding/'stamina_bellman_grid_artifacts.json'])
