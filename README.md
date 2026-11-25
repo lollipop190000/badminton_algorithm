@@ -2,7 +2,7 @@
 
 팀 공동 작업은 [기여 규칙](CONTRIBUTING.md)을 먼저 확인하세요. 개인 브랜치에서 PR을 만들고, 다른 팀원 1명 승인과 자동 검사 통과 후 Squash merge합니다. [연구 보고서 양식](docs/templates/REPORT.md) · [실험 기록 양식](docs/templates/RUN.json) · [Issue 만들기](https://github.com/lollipop190000/badminton_algorithm/issues/new/choose)
 
-연구 요청을 관련 주제별 **12개 폴더**로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
+연구 요청을 관련 주제별로 묶었다. 각 폴더는 `code/`, `results/`, 원인·과정·결과를 설명하는 `REPORT.md`로 구성된다. 현재 기준은 **16구획, CQL v2, 프레임 감사 이후 OPE/누적에너지, BFMD 재구현**이다.
 
 | 폴더 | 원인·과정·결과 |
 |---|---|
@@ -18,6 +18,7 @@
 | 10_transition_energy | [셔틀 상태 복원·전체 전이별 양 선수 C](10_transition_energy/REPORT.md) |
 | 11_integrated_transition_energy | [BFMD 거리·운동학 전달 학습과 M0/M3 v2 전체 비용](11_integrated_transition_energy/REPORT.md) |
 | 12_integrated_stamina_refit | [통합 타구별 소모량과 고정 Q 승패 재적합](12_integrated_stamina_refit/REPORT.md) |
+| 14_stamina_policy_integration | [첫 타구부터의 소모량과 체력 의존 전술 정책](14_stamina_policy_integration/REPORT.md) |
 
 ## 실행
 
@@ -56,3 +57,5 @@ GRU는 관측 history에서의 승리확률 기준모형이다. CQL Q는 승률�
 통합 비용별 비교는 두 모형 모두 기본 32조건과 민감도 24조건, 정책 8개, 조건당 20,000회를 완료하였다. 기본 조건의 모형 승리 가치에서 우리 전략/CQL 5 seed 평균은 M0_v2 69.5534%/58.8707%, M3_v2 69.8279%/59.3493%였다. 격자 및 정확 비용 Monte Carlo 검사를 통과했으며, 같은 추정 환경 안의 비교다. [전체 요약과 그림](03_cql_v2_policy/results/runs/20261105-integrated-policy-comparison-codex/RUN.json), 비용·소진·불확실성과 재현 명령은 03 보고서에 보존하였다.
 
 거리 전달을 실제 학습한 통합 비용은 `python run.py integrated-energy --run-id <새로운-run-id>`로 재현한다. 저장된 01/08/10 입력을 재사용하며, 별도 11번 폴더의 M0·M3 v2 비용표가 각각 2,097,152행이다. 미관측 경기 거리 MAE/RMSE 0.266/0.409m, 고정 beta의 M3 전달, 원 비용 대비 분포·순위 및 추정 한계는 [11번 보고서](11_integrated_transition_energy/REPORT.md)를 참조한다. 기존 01~10 비용·정책·모델은 보존한다.
+
+첫 세 타구의 소모량을 차감한 뒤 네 번째 타구부터 정책을 적용하는 실험은 [14번 보고서](14_stamina_policy_integration/REPORT.md)에 있다. M0_v2와 M3_v2 모두 기본 32조건과 20,000회 시행을 사용했다. 보고서에서 고정 Q 종료확률, 예산 제한, 동결 정책과 재최적화 정책의 차이 및 수치 검증을 확인할 수 있다.

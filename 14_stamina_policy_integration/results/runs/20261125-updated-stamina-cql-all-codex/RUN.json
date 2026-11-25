@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-updated-stamina-cql-all-codex",
+  "status": "completed",
+  "code_commit": "d4be8d471248a5a95b3cd148f7b1b23d726803fb",
+  "command": "python run.py stamina-policy-compare --stage updated --cohort all --environments C --run-id 20261125-updated-stamina-cql-all-codex --samples 20000 --seed 20261125 --device cuda",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.4",
+    "pandas": "3.0.1",
+    "torch": "2.9.1+cu128",
+    "device": "cuda"
+  },
+  "inputs": [
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-historical-reproduction-codex/RUN.json",
+      "sha256": "53e6fb93940f48e6ffcd370d2f1d86bc794f371644cd5ac677259bdd74403f6d"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/pre_shot_load.parquet",
+      "sha256": "cee56e60dabc045ec38d5f1b6c0c312fc247194b043481d8ba58dc3dbb5fbaee"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shot_costs.csv",
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M0_v2.parquet",
+      "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    },
+    {
+      "path_or_source": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5"
+    },
+    {
+      "path_or_source": ".runtime/outputs/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/costs.npz",
+      "sha256": "22deb9d2c71fecc9ed616dc129f1905ff976200d7692930d4a8c1e6dba414af1"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/RUN.json",
+      "sha256": "c148623237b9608e95cc53608caa48f1a39aedeab4f38f8ef5740641cf43c706"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed42.pt",
+      "sha256": "14885825b6438a8a895733d950f40a6d5c2c21a13447a455c987821cccdc1471"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed43.pt",
+      "sha256": "547ed9474488c383d4a945e078b9042ebd18a7c03dc9152c41c31729d1288a57"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed44.pt",
+      "sha256": "f9199926eb9ac2f7171491bfd7c1807193871c0463810a6eb0c544a63528931a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed45.pt",
+      "sha256": "daeb369420d309e95c57fff1d4c78f2ed137f977215686fbad8781ec86882b38"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed46.pt",
+      "sha256": "e2424afa84c9db9970674a56ba41f00152ec6077a40a1eec1de21506ce4a1f99"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M3_v2.parquet",
+      "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad"
+    },
+    {
+      "path_or_source": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/dataset_contract.json",
+      "sha256": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/costs.npz",
+      "sha256": "bcfb856d5dc2406d249477e270d27fdf0c67a5e92f1055d7b61b3e228009626e"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/RUN.json",
+      "sha256": "140a9c3831dfa0dfc1889ac5e9ff80bde18e3126bff74d82dfa9c31d85676af1"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed42.pt",
+      "sha256": "af93e6bafec3f3b550245771c04fcd3ecbee3ad2f156b80fb509ca682ef489a9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed43.pt",
+      "sha256": "ef215620606f078cd568020870ab6464cd798fbb5f556a5e8e5a3643dfbf66e8"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed44.pt",
+      "sha256": "d0d3fd44d5264a89184ff0ffb60254afb9f5f7eb5b491909539832b72f59678c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed45.pt",
+      "sha256": "b301a82e45065dbf1a2f862e873e822db698fd9a698ab59324daa6ddd931ac08"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed46.pt",
+      "sha256": "ddc1d58b2287b1892076e814f7ff4b70071f5b0c14ea596c0d135ddad6cdf0c3"
+    }
+  ],
+  "config": {
+    "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/config.json",
+    "sha256": "606cee306d96757a0a0dacabd076349e332f9b3a5d96d476c740ec99f873b6c6"
+  },
+  "executed_source_hashes": [
+    {
+      "path": ".runtime/src/stamina_policy_compare.py",
+      "sha256": "624998ddf41bbb252bb5a59e6371c90eb60be6b4c0585d9eb69bce39e2738009"
+    },
+    {
+      "path": ".runtime/src/stamina_environment.py",
+      "sha256": "d503e9384c3a02d736f379cc37b9abd8f0854996783d4efad535faa07e5d35e5"
+    },
+    {
+      "path": ".runtime/src/ledger.py",
+      "sha256": "af66df5bcdb83bebd1f676678d7c0cab120d5099a226bced26d2673fda532e1c"
+    },
+    {
+      "path": ".runtime/src/stamina_frozen_energy.py",
+      "sha256": "823345bd50fba9dfae0506f24aca4aa8c547ca786383146439091752d5ee45f8"
+    },
+    {
+      "path": ".runtime/src/stamina_paired_rollout.py",
+      "sha256": "4a83ce99a7cf13e2ae1166ff8e904e8456f7b0f207fa4bce98572ac3f812281c"
+    },
+    {
+      "path": ".runtime/src/stamina_historical.py",
+      "sha256": "9f12b69cce3e6a96c3d70766d29338f97d4d2fe49f3f72c2ab68da96e5a3ebdd"
+    }
+  ],
+  "split": "Match-level split held fixed. Evaluation entries are fourth hits from training matches.",
+  "metrics": {
+    "M0_v2": {
+      "policy_condition_rows": 224,
+      "bellman_mc_conditions": 0
+    },
+    "M3_v2": {
+      "policy_condition_rows": 224,
+      "bellman_mc_conditions": 0
+    }
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "606cee306d96757a0a0dacabd076349e332f9b3a5d96d476c740ec99f873b6c6"
+    },
+    {
+      "path": "M0_v2/condition_00.npz",
+      "sha256": "3b3c2827761485d604fa8f342591da0bcc0453d9cbfa35810dc81fc38538ab97"
+    },
+    {
+      "path": "M0_v2/condition_01.npz",
+      "sha256": "2ab1071285a50c93e9e9e20c7703166a2146b5638ede86098f3c6a7b437ea801"
+    },
+    {
+      "path": "M0_v2/condition_02.npz",
+      "sha256": "3e1e3d7f873f844943f2742ea2d2a5cbbd4da14f5b759ea13eec4d6fa087018c"
+    },
+    {
+      "path": "M0_v2/condition_03.npz",
+      "sha256": "8f0c7500925dbae3625f1935725f63310a3228f8199a759e447153b1c2f68c3f"
+    },
+    {
+      "path": "M0_v2/condition_04.npz",
+      "sha256": "52b84c468f3a28dd6256bb2262ea465cac902b8a42e9e75a81d57dad6e8e43fc"
+    },
+    {
+      "path": "M0_v2/condition_05.npz",
+      "sha256": "4b1f84298c4cc35e937aae6e3c928a88b8fcf9dd5f09b14ab463a9d9efaef9e9"
+    },
+    {
+      "path": "M0_v2/condition_06.npz",
+      "sha256": "dc6feaa47f022cb268cf1f9a2b73b7769237553576a32e6a2732ddee603f37d1"
+    },
+    {
+      "path": "M0_v2/condition_07.npz",
+      "sha256": "ba6a905d68cf89d8474e5a44663afbe4075f2092bbb13af12815483b83c95dc5"
+    },
+    {
+      "path": "M0_v2/condition_08.npz",
+      "sha256": "532f7f18c91cfc2f10c436a4c2e9913aed576ca95c2514d3620721040d391d0f"
+    },
+    {
+      "path": "M0_v2/condition_09.npz",
+      "sha256": "6000fed4e51ea168ac2f6bfd37296fe09c12cdc1abc60bb63ced862f46d5c974"
+    },
+    {
+      "path": "M0_v2/condition_10.npz",
+      "sha256": "e3ce92d312c6d7748ab89a9c01eebe860d3324496e1948f96c1bd8d8c285b5bd"
+    },
+    {
+      "path": "M0_v2/condition_11.npz",
+      "sha256": "c8806dc2e9864d07deebdd4a776eee931163d5980c909e123415ea6696ae96d7"
+    },
+    {
+      "path": "M0_v2/condition_12.npz",
+      "sha256": "238ef3ae9b541060e9ce3edb10456fd1aaef29ca4cb2adfa3a30a8d5cf306a7c"
+    },
+    {
+      "path": "M0_v2/condition_13.npz",
+      "sha256": "2427f999b96fa9643fe298c77d2d9bba7405ab031c003423f475272d1c5f3991"
+    },
+    {
+      "path": "M0_v2/condition_14.npz",
+      "sha256": "56ef807f33e2336867d4501eb35f515f0c0097cc0b2ae13075e2151f11e997eb"
+    },
+    {
+      "path": "M0_v2/condition_15.npz",
+      "sha256": "1c30b20bc520a1a398af50a4762bedc49309e8035f53dae49a4db9e6324f8d2d"
+    },
+    {
+      "path": "M0_v2/condition_16.npz",
+      "sha256": "d8798377c1548de0333e56b23643f169d8dce2d0ba2aa7f5b320ae2d7a6d1eec"
+    },
+    {
+      "path": "M0_v2/condition_17.npz",
+      "sha256": "cb9d573bcb78729e6b88488e35050f3cb2d6a5f71b1bdc48f027dd959f80f1ad"
+    },
+    {
+      "path": "M0_v2/condition_18.npz",
+      "sha256": "fe1c05509e76866c14bad7004ff8de2d4dfe0f0c45fa22c050c7fc5c993d5d70"
+    },
+    {
+      "path": "M0_v2/condition_19.npz",
+      "sha256": "1a330ce66ebf59d49830167df1943e139d5c2238d7124d460dc8e43143d92a17"
+    },
+    {
+      "path": "M0_v2/condition_20.npz",
+      "sha256": "de8d5c752aae2c4b76f4fa02da4ee1c9a82c118214ee8a3aca3428cb3b8e180d"
+    },
+    {
+      "path": "M0_v2/condition_21.npz",
+      "sha256": "e0db7ded83b020dc1cf28d60b3d88486b0867dc677e84f210e258d3fdfb2b93f"
+    },
+    {
+      "path": "M0_v2/condition_22.npz",
+      "sha256": "cdc9774089eaae6320a26630c32af71b7ad1e20848b4e71371fe0b97551dfad1"
+    },
+    {
+      "path": "M0_v2/condition_23.npz",
+      "sha256": "b7220409979cb8155cf83ba8389647c9391823895ec898703f0e4e9fd9d532fe"
+    },
+    {
+      "path": "M0_v2/condition_24.npz",
+      "sha256": "b75730fb4eeee7287085f80d014fd2fd780ff68403d93b58a113d12372cd8710"
+    },
+    {
+      "path": "M0_v2/condition_25.npz",
+      "sha256": "85bd6996ba206d179f6bb45d6e258907e8bfb3fb1a91a3d1a73b38392069d5ae"
+    },
+    {
+      "path": "M0_v2/condition_26.npz",
+      "sha256": "01961f0073af511c80b1713657c767e2d3a5fc1f122b48dd9c17bdbe3aa9adaf"
+    },
+    {
+      "path": "M0_v2/condition_27.npz",
+      "sha256": "46adda012d118b32fe981242943f695b954dd16a6d47dee8532c68e4a016946f"
+    },
+    {
+      "path": "M0_v2/condition_28.npz",
+      "sha256": "9a3fc3e2dc7cf9fb38eeb2e57664992c818cfe12de1654bbea53ee85188e1788"
+    },
+    {
+      "path": "M0_v2/condition_29.npz",
+      "sha256": "a135cef332776d309130c39d832ba39f4a1586be7d983d5061a62fbe41f65e55"
+    },
+    {
+      "path": "M0_v2/condition_30.npz",
+      "sha256": "550bf157678e1526b328005f884d08bfb3954bdc3ef61a132500d6d45b021625"
+    },
+    {
+      "path": "M0_v2/condition_31.npz",
+      "sha256": "c5fe3c98fa11e0f1fd9f196a901a274669c66b81912f8beb2c40dc7795e8d505"
+    },
+    {
+      "path": "M0_v2/evaluation_domain.csv",
+      "sha256": "d390723edbca253aba74a7e2156c3dc6b7c8a7c02928d1b14db0ae2df0a68cba"
+    },
+    {
+      "path": "M0_v2/paired_policy.csv",
+      "sha256": "b342aff6ce3b11c26256a6e92698006d8094d2972d4cb9c1ce28705bfe2ae28a"
+    },
+    {
+      "path": "M0_v2/policy_metrics.csv",
+      "sha256": "5cc2cab7a8dd1dd6a6fea9bfc0a66f57cba68851a5956425fafc57b77c4eb3ef"
+    },
+    {
+      "path": "M0_v2/probability_audit.json",
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "M0_v2/recommendations.csv",
+      "sha256": "65470921e30f31161f5ec5223db2d0fddc932c73ebe9698429006ad3afcd2a35"
+    },
+    {
+      "path": "M3_v2/condition_00.npz",
+      "sha256": "c9a3f2714d0bd82017106506f2e97a8e11e15cb959eb3a5a73bba48ca982d464"
+    },
+    {
+      "path": "M3_v2/condition_01.npz",
+      "sha256": "5629ebfbd8325e19be7483c0b01a11a5c074e492e6eae7cbc531022d351c3358"
+    },
+    {
+      "path": "M3_v2/condition_02.npz",
+      "sha256": "8fcf3ee0c521ae6cf96820fbcbfc919e642bbfc2cf7a65e5cc774dcdebb85a81"
+    },
+    {
+      "path": "M3_v2/condition_03.npz",
+      "sha256": "89644067ffc1896ca04c068d9ddd7ef2deeebc48d9ef3880759879a2d7b499fb"
+    },
+    {
+      "path": "M3_v2/condition_04.npz",
+      "sha256": "c233a12016efc691faac3b0278fd637e12bfc07de8c41752b44ed44032a7a778"
+    },
+    {
+      "path": "M3_v2/condition_05.npz",
+      "sha256": "03e42ef9fedd7237a7623d0f61796ace2a93a2aa005efecbae8692896afa3529"
+    },
+    {
+      "path": "M3_v2/condition_06.npz",
+      "sha256": "575b6a498ca877d77dd91fcc3839a17abb95d29422fef9348a4facbf5ecc0a9e"
+    },
+    {
+      "path": "M3_v2/condition_07.npz",
+      "sha256": "2c4d636c618033bca5fd69cda8d74aa621f4df0c32f84c4dfb12e1b6aa92767a"
+    },
+    {
+      "path": "M3_v2/condition_08.npz",
+      "sha256": "282f3e7abc4004ae3f137b9b6c51ffcfe88fbcdbfa9f98cec80365f33cb2cbc7"
+    },
+    {
+      "path": "M3_v2/condition_09.npz",
+      "sha256": "28f6ecfe94ff69e15b8686eb61e3cd2e0e483a5a2b94f9c8de083ce9ee7b72ad"
+    },
+    {
+      "path": "M3_v2/condition_10.npz",
+      "sha256": "8955089cdd3110484a702ebdd3ecbb50aec58a0489ac0509a42683973670f406"
+    },
+    {
+      "path": "M3_v2/condition_11.npz",
+      "sha256": "dd60588e72d7581cdd20c30dd11cc515c3298b427188c9f967d2782ee52c29d7"
+    },
+    {
+      "path": "M3_v2/condition_12.npz",
+      "sha256": "81f0ad0e484be9b6275302fac70983ba8a616c467600e09256c9cf7a21816206"
+    },
+    {
+      "path": "M3_v2/condition_13.npz",
+      "sha256": "3310e3bb742c676c7a37514fb996526c0cc7cb8b08bee1f02873cf2495736d85"
+    },
+    {
+      "path": "M3_v2/condition_14.npz",
+      "sha256": "dc94990b47d9e2781194dedbfaa5f65d6dccc3ed931b3e94a13c979fbe3e403c"
+    },
+    {
+      "path": "M3_v2/condition_15.npz",
+      "sha256": "889b345e626b782ffdc9fe0d444db3459acb7b15541eacd4af70fee314d77d97"
+    },
+    {
+      "path": "M3_v2/condition_16.npz",
+      "sha256": "74507deab75f5c0e35a3b1cac495c649218aff3fa62663c6d115bbc79862eeca"
+    },
+    {
+      "path": "M3_v2/condition_17.npz",
+      "sha256": "7a6fb44df4926231dacd3c8a2c636bdcbf8342acbadd91a94c8dd755912d5d7c"
+    },
+    {
+      "path": "M3_v2/condition_18.npz",
+      "sha256": "763814da9ea200518116651f423db5ab0216395a7c2ecf46dcdc9ce354a58469"
+    },
+    {
+      "path": "M3_v2/condition_19.npz",
+      "sha256": "e056b602458d41fd86c51305d6a1f0dab2b4dfa65906024adf28a91715cbf4f7"
+    },
+    {
+      "path": "M3_v2/condition_20.npz",
+      "sha256": "f0f25dc4c20d54a42a418cde7f4ee214c6e1a67da63ae6d42d1b22ff5d05c7bb"
+    },
+    {
+      "path": "M3_v2/condition_21.npz",
+      "sha256": "74337411ca522d6c0acc4933b74ad34ccee95a7e66349f5386c8c96a18a0f4bb"
+    },
+    {
+      "path": "M3_v2/condition_22.npz",
+      "sha256": "e480771ca4a60e124803d91f4c0f8473f495635241789d24243aa99836ab54f9"
+    },
+    {
+      "path": "M3_v2/condition_23.npz",
+      "sha256": "d3905106b8a0d0e8b3f390507dbdd87c5ab68a2fe0ad26f5f79d2eaf43bd03ab"
+    },
+    {
+      "path": "M3_v2/condition_24.npz",
+      "sha256": "1ec46635b0c4a577f614b36f6f6cc7173d762357fedf349f612a98c3389105b7"
+    },
+    {
+      "path": "M3_v2/condition_25.npz",
+      "sha256": "5a415c41c2169de66b672ba3b787e6e750fb66e8a01e18b2f8d60b3bb0348652"
+    },
+    {
+      "path": "M3_v2/condition_26.npz",
+      "sha256": "b00c59e51b94555f0b97100f5f54d8be21c1ca65743261ab72738dcae2f22b97"
+    },
+    {
+      "path": "M3_v2/condition_27.npz",
+      "sha256": "959ee3a1a334b71320071d233abd6aa37006105b96d431bd497a5966f0b0f2b6"
+    },
+    {
+      "path": "M3_v2/condition_28.npz",
+      "sha256": "ef26e48b9c4487f1851573682ade74673818adb972e8ce4959f9d10d12c15acc"
+    },
+    {
+      "path": "M3_v2/condition_29.npz",
+      "sha256": "c5ae0b48c07650a4ab568fc44b7149c0efdbd1c24e3edcd16fb3b639f1b36efa"
+    },
+    {
+      "path": "M3_v2/condition_30.npz",
+      "sha256": "802d6963009891121c92a5c1e13937702e0f0dace1dd9c99b0dad5ae38429760"
+    },
+    {
+      "path": "M3_v2/condition_31.npz",
+      "sha256": "7cf1f5e229436310a8738a382996f59e324874f679e9bcba5165c6a80e0678ef"
+    },
+    {
+      "path": "M3_v2/evaluation_domain.csv",
+      "sha256": "029d7b38e8898f29d48b86b0241f9517d47576ad2d9d406364e6cd5ad548a766"
+    },
+    {
+      "path": "M3_v2/paired_policy.csv",
+      "sha256": "1db1037cd86693a6c6c11f12b29db123f9884400b52bb046dbb52e352e8f003e"
+    },
+    {
+      "path": "M3_v2/policy_metrics.csv",
+      "sha256": "dc6c3836787c4f218b0e2a5584143a903c1442fba1cc551f4ec5a145d8abb1e9"
+    },
+    {
+      "path": "M3_v2/probability_audit.json",
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "M3_v2/recommendations.csv",
+      "sha256": "2031a6d2eb47cf37b791d2d8f92af65beb0ecd59874f6a6541ca79b6adc48a7e"
+    }
+  ],
+  "limitations": "Outcome variation conditions on the fitted environment and cost estimates. Eligibility and frozen domain restrict the represented train fourth-hit distribution. Bellman rows depend on available grids and are subject to separate refinement checks."
+}

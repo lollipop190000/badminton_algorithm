@@ -1,0 +1,104 @@
+[
+  {
+    "model_id": "M0_v2",
+    "p_A": 75,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M0_v2_C_p75_p90_A.npy",
+        "sha256": "ed23102a47609c8c4bfc9a8305a262a96663844433674dd7cf987adfd43e3c9b",
+        "bytes": 1415184512
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M0_v2_C_p75_p90_A.json",
+        "sha256": "fb5146ee8d625841899b0910f00d709fa503623a944817a4c12c440260425040",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 90,
+    "p_B": 75,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M0_v2_C_p90_p75_A.npy",
+        "sha256": "2285312213bdbcffff1f1ed3437a50e16be59c45fa5515d68909ff5eab99efa9",
+        "bytes": 1415184512
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M0_v2_C_p90_p75_A.json",
+        "sha256": "162da8459038c7d92d883f656b32648cc595aa93c0cbc569b4142069da949535",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M0_v2",
+    "p_A": 90,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M0_v2_C_p90_p90_A.npy",
+        "sha256": "8847133b3cc44fdb66fd776fb12e48441822e21646bd14baf90d51e563381326",
+        "bytes": 2194735232
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M0_v2_C_p90_p90_A.json",
+        "sha256": "cc27813fb5144384e7acc15bc0594fe140fd773f6515e52280b95d24ebd48d92",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 75,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M3_v2_C_p75_p90_A.npy",
+        "sha256": "30ae096e134f4e3b9a59ea65e3da4d0710042cf33c795d2aaf408f9233e55544",
+        "bytes": 1462763648
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M3_v2_C_p75_p90_A.json",
+        "sha256": "33458551b57fc5e8538060daf228a888f88fd794453da1548e87d9fdb10af6d5",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 90,
+    "p_B": 75,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M3_v2_C_p90_p75_A.npy",
+        "sha256": "778e369210826bc14b83e4a78db279b8ab00fab0af80459ee7be51901cb11f36",
+        "bytes": 1462763648
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M3_v2_C_p90_p75_A.json",
+        "sha256": "c4cad97db36b12b07741c81955780fd1890df9cb929f8af8d774ee652765acb5",
+        "bytes": 159
+      }
+    ]
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 90,
+    "p_B": 90,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M3_v2_C_p90_p90_A.npy",
+        "sha256": "5e86d056024128ddaf17e86831c81173345b29ea9990bd7c0a5cbdcc0b990823",
+        "bytes": 2267283584
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier3-codex/M3_v2_C_p90_p90_A.json",
+        "sha256": "7253869c1d9a8e713fd197f9b238788a2fe2b9dbe88e05b195ad24082362eb74",
+        "bytes": 159
+      }
+    ]
+  }
+]

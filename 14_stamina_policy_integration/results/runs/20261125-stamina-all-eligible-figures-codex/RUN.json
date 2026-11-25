@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-stamina-all-eligible-figures-codex",
+  "status": "completed",
+  "code_commit": "38e259337def97a9a353851babeecd44d381f7cf",
+  "command": "python run.py exec -m src.stamina_figures --run-id 20261125-stamina-all-eligible-figures-codex --evaluation-run 20261125-updated-stamina-cql-all-codex --evaluation-run 20261125-updated-stamina-bellman-m0-all-codex --evaluation-run 20261125-updated-stamina-bellman-m3-all-codex",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.4",
+    "pandas": "3.0.1",
+    "torch": "2.9.1+cpu",
+    "device": "CPU"
+  },
+  "inputs": [
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/RUN.json",
+      "sha256": "eb37bf016ffb56667155554640c34960372e8d48cd8ee19efff69145aa1ce6e8"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/config.json",
+      "sha256": "606cee306d96757a0a0dacabd076349e332f9b3a5d96d476c740ec99f873b6c6"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/policy_metrics.csv",
+      "sha256": "5cc2cab7a8dd1dd6a6fea9bfc0a66f57cba68851a5956425fafc57b77c4eb3ef"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/recommendations.csv",
+      "sha256": "65470921e30f31161f5ec5223db2d0fddc932c73ebe9698429006ad3afcd2a35"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_00.npz",
+      "sha256": "3b3c2827761485d604fa8f342591da0bcc0453d9cbfa35810dc81fc38538ab97"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_01.npz",
+      "sha256": "2ab1071285a50c93e9e9e20c7703166a2146b5638ede86098f3c6a7b437ea801"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_02.npz",
+      "sha256": "3e1e3d7f873f844943f2742ea2d2a5cbbd4da14f5b759ea13eec4d6fa087018c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_03.npz",
+      "sha256": "8f0c7500925dbae3625f1935725f63310a3228f8199a759e447153b1c2f68c3f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_04.npz",
+      "sha256": "52b84c468f3a28dd6256bb2262ea465cac902b8a42e9e75a81d57dad6e8e43fc"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_05.npz",
+      "sha256": "4b1f84298c4cc35e937aae6e3c928a88b8fcf9dd5f09b14ab463a9d9efaef9e9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_06.npz",
+      "sha256": "dc6feaa47f022cb268cf1f9a2b73b7769237553576a32e6a2732ddee603f37d1"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_07.npz",
+      "sha256": "ba6a905d68cf89d8474e5a44663afbe4075f2092bbb13af12815483b83c95dc5"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_08.npz",
+      "sha256": "532f7f18c91cfc2f10c436a4c2e9913aed576ca95c2514d3620721040d391d0f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_09.npz",
+      "sha256": "6000fed4e51ea168ac2f6bfd37296fe09c12cdc1abc60bb63ced862f46d5c974"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_10.npz",
+      "sha256": "e3ce92d312c6d7748ab89a9c01eebe860d3324496e1948f96c1bd8d8c285b5bd"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_11.npz",
+      "sha256": "c8806dc2e9864d07deebdd4a776eee931163d5980c909e123415ea6696ae96d7"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_12.npz",
+      "sha256": "238ef3ae9b541060e9ce3edb10456fd1aaef29ca4cb2adfa3a30a8d5cf306a7c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_13.npz",
+      "sha256": "2427f999b96fa9643fe298c77d2d9bba7405ab031c003423f475272d1c5f3991"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_14.npz",
+      "sha256": "56ef807f33e2336867d4501eb35f515f0c0097cc0b2ae13075e2151f11e997eb"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_15.npz",
+      "sha256": "1c30b20bc520a1a398af50a4762bedc49309e8035f53dae49a4db9e6324f8d2d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_16.npz",
+      "sha256": "d8798377c1548de0333e56b23643f169d8dce2d0ba2aa7f5b320ae2d7a6d1eec"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_17.npz",
+      "sha256": "cb9d573bcb78729e6b88488e35050f3cb2d6a5f71b1bdc48f027dd959f80f1ad"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_18.npz",
+      "sha256": "fe1c05509e76866c14bad7004ff8de2d4dfe0f0c45fa22c050c7fc5c993d5d70"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_19.npz",
+      "sha256": "1a330ce66ebf59d49830167df1943e139d5c2238d7124d460dc8e43143d92a17"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_20.npz",
+      "sha256": "de8d5c752aae2c4b76f4fa02da4ee1c9a82c118214ee8a3aca3428cb3b8e180d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_21.npz",
+      "sha256": "e0db7ded83b020dc1cf28d60b3d88486b0867dc677e84f210e258d3fdfb2b93f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_22.npz",
+      "sha256": "cdc9774089eaae6320a26630c32af71b7ad1e20848b4e71371fe0b97551dfad1"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_23.npz",
+      "sha256": "b7220409979cb8155cf83ba8389647c9391823895ec898703f0e4e9fd9d532fe"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_24.npz",
+      "sha256": "b75730fb4eeee7287085f80d014fd2fd780ff68403d93b58a113d12372cd8710"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_25.npz",
+      "sha256": "85bd6996ba206d179f6bb45d6e258907e8bfb3fb1a91a3d1a73b38392069d5ae"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_26.npz",
+      "sha256": "01961f0073af511c80b1713657c767e2d3a5fc1f122b48dd9c17bdbe3aa9adaf"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_27.npz",
+      "sha256": "46adda012d118b32fe981242943f695b954dd16a6d47dee8532c68e4a016946f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_28.npz",
+      "sha256": "9a3fc3e2dc7cf9fb38eeb2e57664992c818cfe12de1654bbea53ee85188e1788"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_29.npz",
+      "sha256": "a135cef332776d309130c39d832ba39f4a1586be7d983d5061a62fbe41f65e55"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_30.npz",
+      "sha256": "550bf157678e1526b328005f884d08bfb3954bdc3ef61a132500d6d45b021625"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_31.npz",
+      "sha256": "c5fe3c98fa11e0f1fd9f196a901a274669c66b81912f8beb2c40dc7795e8d505"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/policy_metrics.csv",
+      "sha256": "dc6c3836787c4f218b0e2a5584143a903c1442fba1cc551f4ec5a145d8abb1e9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/recommendations.csv",
+      "sha256": "2031a6d2eb47cf37b791d2d8f92af65beb0ecd59874f6a6541ca79b6adc48a7e"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_00.npz",
+      "sha256": "c9a3f2714d0bd82017106506f2e97a8e11e15cb959eb3a5a73bba48ca982d464"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_01.npz",
+      "sha256": "5629ebfbd8325e19be7483c0b01a11a5c074e492e6eae7cbc531022d351c3358"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_02.npz",
+      "sha256": "8fcf3ee0c521ae6cf96820fbcbfc919e642bbfc2cf7a65e5cc774dcdebb85a81"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_03.npz",
+      "sha256": "89644067ffc1896ca04c068d9ddd7ef2deeebc48d9ef3880759879a2d7b499fb"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_04.npz",
+      "sha256": "c233a12016efc691faac3b0278fd637e12bfc07de8c41752b44ed44032a7a778"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_05.npz",
+      "sha256": "03e42ef9fedd7237a7623d0f61796ace2a93a2aa005efecbae8692896afa3529"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_06.npz",
+      "sha256": "575b6a498ca877d77dd91fcc3839a17abb95d29422fef9348a4facbf5ecc0a9e"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_07.npz",
+      "sha256": "2c4d636c618033bca5fd69cda8d74aa621f4df0c32f84c4dfb12e1b6aa92767a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_08.npz",
+      "sha256": "282f3e7abc4004ae3f137b9b6c51ffcfe88fbcdbfa9f98cec80365f33cb2cbc7"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_09.npz",
+      "sha256": "28f6ecfe94ff69e15b8686eb61e3cd2e0e483a5a2b94f9c8de083ce9ee7b72ad"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_10.npz",
+      "sha256": "8955089cdd3110484a702ebdd3ecbb50aec58a0489ac0509a42683973670f406"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_11.npz",
+      "sha256": "dd60588e72d7581cdd20c30dd11cc515c3298b427188c9f967d2782ee52c29d7"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_12.npz",
+      "sha256": "81f0ad0e484be9b6275302fac70983ba8a616c467600e09256c9cf7a21816206"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_13.npz",
+      "sha256": "3310e3bb742c676c7a37514fb996526c0cc7cb8b08bee1f02873cf2495736d85"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_14.npz",
+      "sha256": "dc94990b47d9e2781194dedbfaa5f65d6dccc3ed931b3e94a13c979fbe3e403c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_15.npz",
+      "sha256": "889b345e626b782ffdc9fe0d444db3459acb7b15541eacd4af70fee314d77d97"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_16.npz",
+      "sha256": "74507deab75f5c0e35a3b1cac495c649218aff3fa62663c6d115bbc79862eeca"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_17.npz",
+      "sha256": "7a6fb44df4926231dacd3c8a2c636bdcbf8342acbadd91a94c8dd755912d5d7c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_18.npz",
+      "sha256": "763814da9ea200518116651f423db5ab0216395a7c2ecf46dcdc9ce354a58469"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_19.npz",
+      "sha256": "e056b602458d41fd86c51305d6a1f0dab2b4dfa65906024adf28a91715cbf4f7"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_20.npz",
+      "sha256": "f0f25dc4c20d54a42a418cde7f4ee214c6e1a67da63ae6d42d1b22ff5d05c7bb"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_21.npz",
+      "sha256": "74337411ca522d6c0acc4933b74ad34ccee95a7e66349f5386c8c96a18a0f4bb"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_22.npz",
+      "sha256": "e480771ca4a60e124803d91f4c0f8473f495635241789d24243aa99836ab54f9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_23.npz",
+      "sha256": "d3905106b8a0d0e8b3f390507dbdd87c5ab68a2fe0ad26f5f79d2eaf43bd03ab"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_24.npz",
+      "sha256": "1ec46635b0c4a577f614b36f6f6cc7173d762357fedf349f612a98c3389105b7"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_25.npz",
+      "sha256": "5a415c41c2169de66b672ba3b787e6e750fb66e8a01e18b2f8d60b3bb0348652"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_26.npz",
+      "sha256": "b00c59e51b94555f0b97100f5f54d8be21c1ca65743261ab72738dcae2f22b97"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_27.npz",
+      "sha256": "959ee3a1a334b71320071d233abd6aa37006105b96d431bd497a5966f0b0f2b6"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_28.npz",
+      "sha256": "ef26e48b9c4487f1851573682ade74673818adb972e8ce4959f9d10d12c15acc"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_29.npz",
+      "sha256": "c5ae0b48c07650a4ab568fc44b7149c0efdbd1c24e3edcd16fb3b639f1b36efa"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_30.npz",
+      "sha256": "802d6963009891121c92a5c1e13937702e0f0dace1dd9c99b0dad5ae38429760"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_31.npz",
+      "sha256": "7cf1f5e229436310a8738a382996f59e324874f679e9bcba5165c6a80e0678ef"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/RUN.json",
+      "sha256": "21d81d635935ec086a015a5aac6acf30ff57755ac4d153ca62373909ea8a6cac"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/config.json",
+      "sha256": "1fee637440bcc48f1aba840d7b8c4bada0965c822852fcfe1336262e6ba43986"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/policy_metrics.csv",
+      "sha256": "9844199575d6444bad0fff68f9e0fe55c8874424102ce692e79aa1b39e4c507c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/recommendations.csv",
+      "sha256": "1372ddff983c7d156d578ce0eaa2256de44e0d3685fdf5e2766ad987793c8f88"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_00.npz",
+      "sha256": "14c73f73268f1bf7dff6278f2993a23d59adc303ce88ba114dacb14740da9d46"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_01.npz",
+      "sha256": "03c2067fe49b47518426aae8f17f70070905582d832276e73311060cb1f23afc"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_02.npz",
+      "sha256": "7491546cd33512cc5a11ad80a4471d53ebdc1164341ac0430e4becee3cadd7d5"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_03.npz",
+      "sha256": "bbbf323b9fbd85f217e70212715452d096cc1ca93b5caa579d0ae0736de9297e"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_04.npz",
+      "sha256": "1525de033db3a638189f773dcde8998ccb87a336cb35e9952f18a9eb4c2b8ccd"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_05.npz",
+      "sha256": "9f5894264148bb2e46929f72d3c8cf99eee71fddb937376e73e7ae75bda354e0"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_06.npz",
+      "sha256": "07acd24194fb98feefc637ab8301e3a8e70b393bb0864fa0e850fe8f7ec27ab9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_07.npz",
+      "sha256": "e3f0570702de5ce732ce05f60f891a301134de354ff0d5af7dbd7866c3ae9f1d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_08.npz",
+      "sha256": "5ebe65ee2760993763e5ee12d525c127f23282ebe3df41021b963769f94b70cf"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_09.npz",
+      "sha256": "3daf3357bd01c9a85aa8740e5765af3c008f1a3c2a189228d34d1276da50b87a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_10.npz",
+      "sha256": "823dd23495529a5299de6bfe537e9f03fd7cf0c1f6cbb846fbc183aea840de7d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_11.npz",
+      "sha256": "16eb296c445fe5e78cc523eae2ea9f03f19a308745b742126d2c589e8bfbb4eb"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_12.npz",
+      "sha256": "df3b64d3f74a049092a057c767acdaccf9e300821f7ad4b4d72d426d98f1e369"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_13.npz",
+      "sha256": "7deb9fb4242dc227fb09ca5a2f54d876a3490a1c3b9ec350b3bc0d072d1ac7a9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_14.npz",
+      "sha256": "58bbe0ffc5756fcc630d465a993e444950bb1009994d51e119ba74186c782c50"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_15.npz",
+      "sha256": "6e29977041a1e8a7b69328d3250f5b512745fdc375598959fd2b36f029931054"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_16.npz",
+      "sha256": "536402888eee2801615d01a9f460c2a8192da395a859e63217c308d010a2706d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_17.npz",
+      "sha256": "41ce3b804cf436bf62f24e83c35f4299dcb04415b6a59da608ae2fb5312da0a1"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_18.npz",
+      "sha256": "b33b3b1490c675ffb1fd250a775360493890253bd1f8f3045baa4bf5ba31be4e"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_19.npz",
+      "sha256": "620293e0f2de5e36d8dfe41f53d660603aa53e3685fcb484e355c0fbdf6c31b9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_20.npz",
+      "sha256": "6dcccc9c78b6828ff865e102cccae52c6c897df15b72b3745fa46e6005f44f34"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_21.npz",
+      "sha256": "61c815701411bc7b7e873bd99e9ba5ee0582c47b4c9c7b913ab85ff4ad166e3f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_22.npz",
+      "sha256": "775e8514a342990a3905a5cdaa927aa43bbf8873d3a9a1e4ce9500a4e84b70f7"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_23.npz",
+      "sha256": "8e2bc7825aa3d3676b2d625c6798805bc2bf8a8b07a5202427f506d006459d3b"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_24.npz",
+      "sha256": "f7a8883e1ddaa2cae12f081e8b32d4926cdf63ff036e457a16ed7cb8accc871d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_25.npz",
+      "sha256": "748238703616f94f924c5e84c7bcd52a0ba97836662bf7c3c0cd43724632a552"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_26.npz",
+      "sha256": "f443cc4c276f47d4ef6d88f49b1e2a07fb7ffb6e5b32d13601e1c6331040652e"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_27.npz",
+      "sha256": "edb49e53d658081a8fb8f0dedd31d0f6f9772c2e789ec9c0fbaa2e0be71f1654"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_28.npz",
+      "sha256": "1ddb420b7071eb86c5fc54142971e45d31acb3628be3204d9f5b903106a7d046"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_29.npz",
+      "sha256": "bb153c03f4e5b4e1fdf45344d49769e9052cab6bdb735d323bb9019063d0308d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_30.npz",
+      "sha256": "8b5af78ed667d158d96391c13b2a9eb4d4149170464de056907829aef2e27076"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_31.npz",
+      "sha256": "a88aea2efb09a22bdf8d7f45bfd50e7c636f277d0bb35885a0fab189e5328a03"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/RUN.json",
+      "sha256": "0fb82fe60f9bb65d5435e91367dc52c0e5b1c07e9b7404cc480d07b62e2d5440"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/config.json",
+      "sha256": "fa153f5107fbeb3df697e2ad3b0062c7be6e506aeedb09465245f502d443e108"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/policy_metrics.csv",
+      "sha256": "bce1207cfeab0f2dcd481dc202bf8b8f192a4e28ef9323f079d97a21a5f5be4e"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/recommendations.csv",
+      "sha256": "9bc1fcf92769aca6d8603136bd8069c88922b3476eb2a1e372062cf5a1e3bcfc"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_00.npz",
+      "sha256": "441cea6f2560b39f38f28f903d245d52cc71a4da5fadb0ab9cb2afabcd1b4f13"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_01.npz",
+      "sha256": "2a6957d287ed0360ae602ed6030519f21999fae8137d3a8337a0b9c50f16dd71"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_02.npz",
+      "sha256": "1860b57300ebb607b2b1dbd8a8c108f1ebdebd6dd270e3000149efda2aebf2b0"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_03.npz",
+      "sha256": "2ef1c50e64d8a40efb3b8124bc1d936740dbf3638e3d3473123d47a2e0bf2fec"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_04.npz",
+      "sha256": "b9e8b193ef940e34dcb88156b257a8023df04e7521f593f56a7539d448998f9d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_05.npz",
+      "sha256": "4656c1d8cd6433327e73c30a8a8cea7b5e5c28e7dc4079166e48cbf8e6a5bb2e"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_06.npz",
+      "sha256": "9187dd424cfbe37e9865ad43ad88a16146ce94f5480a164d30f26da64f1fae07"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_07.npz",
+      "sha256": "5a4d1d89025e1bdb0bfd4e1b1b67d7a1315571111dd3be91375c902278546bee"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_08.npz",
+      "sha256": "dbce63f7d00b9704b69664df79238778610d5706a59be384483a5539815e635a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_09.npz",
+      "sha256": "3582303583696f4b3df682df56eb93c3ff2cd0040f8dc9b4882c0be8d85f0eae"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_10.npz",
+      "sha256": "ed170f31742e4af0c5da93307f166211aafbca22d660bb1835767f2eeffc8382"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_11.npz",
+      "sha256": "37186a5cc0c5ee1e249a5f62145c03ba5f65cc9430e0105935e8436262d77724"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_12.npz",
+      "sha256": "9b6146af301a64df07f5b66416b177fe3763c75db91f13410adb8e2f9dc0abfe"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_13.npz",
+      "sha256": "55bcab8247773b11d626c02ef0883ea501089af53ac2048994b57238f94a57e3"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_14.npz",
+      "sha256": "0f723c0a6287f0b55d7008c6b45e851b22a08d3e1f69de2883884b845a649bba"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_15.npz",
+      "sha256": "5793e9a94bc134ebb9b2c5e07d0e4ef470efd840fce47d0920a005581741b9af"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_16.npz",
+      "sha256": "83f082e817b50886a4ae443581fbb68c7704ac8da7d488d870c7960c1ded188f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_17.npz",
+      "sha256": "7c5b7b9445e5bb4d7389ed824850ad1a3730292fa1c2d561595fffdd19a7710c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_18.npz",
+      "sha256": "bafcd316c441c0c40fcbb7398c40bdd0f3c3597fb545360075a806176f3f7d06"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_19.npz",
+      "sha256": "99f8eb3d03cba8f48cae12187cbe7280122af999c56aab19ef6b0fd3c46aeea8"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_20.npz",
+      "sha256": "bacf3a748abc49404e104e603c2d927d52c4f9a8cc30f250eecdd8f505557764"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_21.npz",
+      "sha256": "3da51b12e613d1e2e2eaf29cf6b5fffaca9d0d5a9e1540a1c0a5e08c7d649b6d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_22.npz",
+      "sha256": "8ad76af96405e445c63f468bb9487bfb5919053f8ac90aa4e03aa05bb4d8dad4"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_23.npz",
+      "sha256": "9344072b80e9d15f247ab2c49af1313e38f241d1b000cceaaf14024e0e6b607c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_24.npz",
+      "sha256": "27abaa20237646199fe22fffaf21021d8f7ca5d9e3a2dec507ebb5aabcab1196"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_25.npz",
+      "sha256": "60faca3f2f364cd1ebdf3428eed5cf6bb902c5a2f578c4a73b6ca0a2d2eecc4a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_26.npz",
+      "sha256": "be8525d85d06038c67b0cb9fae826f9eccbb6b452ddbf1da69d8230422266512"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_27.npz",
+      "sha256": "eba0ea9f2551dbe7456a8c859e27103648ce4d92c5de5de45eb9bfe406af15b4"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_28.npz",
+      "sha256": "02cf61260a2d5c0c7c01fa8c83fed65a7ebe4423ebf55bc2f49e7cd640af90f8"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_29.npz",
+      "sha256": "78876ce3f3bca87f9e96145d7f53f906954450e71701093afed8937766722625"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_30.npz",
+      "sha256": "d450de7bf7c66b445f1cd858fa64e3f9ecf34e9a3e7284b106000d54b142f0a5"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_31.npz",
+      "sha256": "29e0e8e70a904773a6fa32783de61f058b26004ba37d5fd8a1451e9459ac3e41"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/RUN.json",
+      "sha256": "037b5a2a34a95c15f26b114984748b8b83a31cdf6c65cf3f6e80f0ae17b95059"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_events.parquet",
+      "sha256": "b7a56d5fbce10738108e02667daaed7d6270ee1cb694a7663e29cfd0c2847645"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5"
+    },
+    {
+      "path_or_source": ".runtime/outputs/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    }
+  ],
+  "config": {
+    "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/config.json",
+    "sha256": "08fb53c3dfe62e104b11394507d77afe114ce08f7d4f8d40079eb4fbb05689dc"
+  },
+  "executed_source_hashes": [
+    {
+      "path": ".runtime/src/stamina_figures.py",
+      "sha256": "657dc6709b5000915128affff6cce599ae4af49eeda06a7a7a4152eee59ac519"
+    },
+    {
+      "path": ".runtime/src/stamina_environment.py",
+      "sha256": "d503e9384c3a02d736f379cc37b9abd8f0854996783d4efad535faa07e5d35e5"
+    },
+    {
+      "path": ".runtime/src/budget_policy_comparison.py",
+      "sha256": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4"
+    }
+  ],
+  "split": "Match-level split held fixed. Evaluation entries are fourth hits from training matches.",
+  "metrics": {
+    "condition_policy_rows": 576,
+    "paired_rows": 2304,
+    "environment_paired_rows": 0
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "08fb53c3dfe62e104b11394507d77afe114ce08f7d4f8d40079eb4fbb05689dc"
+    },
+    {
+      "path": "stamina_bellman_matched_summary.csv",
+      "sha256": "55751a36022883ad9c48852315500ce79d983d6ef8ca8a9b8b20179c1eb7f340"
+    },
+    {
+      "path": "stamina_conditional_win_M0_v2.png",
+      "sha256": "114a42fbf9429c2fa30ebb61615ce953a512d69bf0d876ec89d976b03cdb40cd"
+    },
+    {
+      "path": "stamina_conditional_win_M3_v2.png",
+      "sha256": "96008e07a6411d17d44da98d565c0ffcdaeb770945a8b54ea8551ac746239c42"
+    },
+    {
+      "path": "stamina_conditions.csv",
+      "sha256": "0b8a1fe690d5278a1989c21e35afc9a902f569e8fa8ae43dd7d790947e7c0f80"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_all_C.png",
+      "sha256": "1d87ece68ec13c6326e8ec49c79598bc16f36316f0cf56e278d4b090dfc4aeea"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_all_C.png",
+      "sha256": "f2050cb995c58ed7ac51cbda64872b172326e84694404b12980b3b152df6ee37"
+    },
+    {
+      "path": "stamina_environment_paired_cases.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "stamina_environment_paired_summary.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "stamina_fixed_q_response.csv",
+      "sha256": "b2a7df52c2ec12e9bfbb8d245c30abf9d7ff4094704ecb0d69f46b44786454e1"
+    },
+    {
+      "path": "stamina_heatmap_M0_v2_all_bellman53_updated_mean.png",
+      "sha256": "fd53eedfed168c25bf61163f58d842bcb060a2e074e446be7e2a7c127c742ab5"
+    },
+    {
+      "path": "stamina_heatmap_M3_v2_all_bellman53_updated_mean.png",
+      "sha256": "79738b94275ad2e3bc23e6c974fe3c16b35913e5ecf5ecc2415e983da3d6192a"
+    },
+    {
+      "path": "stamina_paired_cases.csv",
+      "sha256": "63a786f34b5c8e06523f0b1211ebb277c6320c09bcfa90a9e32f77d0a51eac2e"
+    },
+    {
+      "path": "stamina_paired_summary.csv",
+      "sha256": "c86e131613af7dcac315d755fbde4e4ff9717556e94a9663b14040622abeb667"
+    },
+    {
+      "path": "stamina_recommendations.csv",
+      "sha256": "3a2ab57b3151110601c048a5d695a09e6adba2608fe3a1b4ddc1a1ff6a0a0bcd"
+    },
+    {
+      "path": "stamina_recommendations_M0_v2_all.png",
+      "sha256": "49061fb351954a27bd3b530d058737e5f827ea3d12882ec7edadcde133ab06b5"
+    },
+    {
+      "path": "stamina_recommendations_M3_v2_all.png",
+      "sha256": "53faeb8db1006636b7bad139bf1946c35ec3a9bdfc8a5ebe30140cd09d8721d8"
+    },
+    {
+      "path": "stamina_summary.csv",
+      "sha256": "55751a36022883ad9c48852315500ce79d983d6ef8ca8a9b8b20179c1eb7f340"
+    },
+    {
+      "path": "stamina_win_value_M0_v2_all.png",
+      "sha256": "98086aa4f7c76ce012258d7289c9e690dc733375c9198338bfde3f7f805801db"
+    },
+    {
+      "path": "stamina_win_value_M3_v2_all.png",
+      "sha256": "07cd58073036d505da36c576133ad4d5f4f82c0f9e974138ac78b9b9b5f9126d"
+    }
+  ],
+  "limitations": [
+    "Unobserved heatmap cells have no estimate.",
+    "Condition-means use equal weighting and report case count.",
+    "Monte Carlo intervals condition on the fitted model. CQL training seed variation is separate.",
+    "Fixed-Q response curves hold the other load at its observed median for each shot."
+  ]
+}

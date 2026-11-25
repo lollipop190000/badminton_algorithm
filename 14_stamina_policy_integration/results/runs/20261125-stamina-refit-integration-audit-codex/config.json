@@ -1,0 +1,11 @@
+{
+  "models": [
+    "M0_v2",
+    "M3_v2"
+  ],
+  "splits": [
+    "validation",
+    "test"
+  ],
+  "diagnostic": "archived predictions and unweighted held-out binary outcomes"
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-stamina-tactical-fixed-load-matched-codex",
+  "status": "completed",
+  "code_commit": "38e259337def97a9a353851babeecd44d381f7cf",
+  "command": "python run.py stamina-tactics --run-id 20261125-stamina-tactical-fixed-load-matched-codex --only-slope --bellman-run 20261125-stamina-bellman-m0-p25-codex --bellman-run 20261125-stamina-bellman-m3-p25-boundary-codex --no-slope-run 20261125-stamina-bellman-m3-c0-refined-codex --no-slope-run 20261125-stamina-bellman-c0-p25-codex",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.4",
+    "pandas": "3.0.1",
+    "torch": "2.9.1+cpu",
+    "device": "CPU"
+  },
+  "inputs": [
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/pre_shot_load.parquet",
+      "sha256": "cee56e60dabc045ec38d5f1b6c0c312fc247194b043481d8ba58dc3dbb5fbaee"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shot_costs.csv",
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M0_v2.parquet",
+      "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    },
+    {
+      "path_or_source": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_validation.csv",
+      "sha256": "66cf6d8485c6fd9e0f8a038536d0919cfd48c4f0398fc275f8760c166c5bb554"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "a4b27aa00eed89af77c54fffbb8417d078783782cebbdc7082ddcf1fbb7b4801"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/stamina_bellman_validation.csv",
+      "sha256": "48d490899b9b694182cdf95ad9dfdfa91efb1a2819eec432f201300166c0aec3"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "cf99c3d55c5b8ecc266c3353c8db2dd4e65c64376862973bc96325df7917d979"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M3_v2.parquet",
+      "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad"
+    },
+    {
+      "path_or_source": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/dataset_contract.json",
+      "sha256": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/stamina_bellman_validation.csv",
+      "sha256": "5b625958f2650925b31164ad92693b556a91d911847ee5b327a2ccb12583f862"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "d2c526ea4c100aab6ba157871e2c4985590a486038f1cdbf223ca7b3245c4d5f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/stamina_bellman_validation.csv",
+      "sha256": "66bcae79bf2a901494d53437610952638a7fabe4f4ec4dda4f2c6f2f6256e8f5"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "1c1b0d886d3fd24ca881dc9437cc5ab19b218c6d29eb668529fc61dd5d228d4e"
+    }
+  ],
+  "config": {
+    "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-matched-codex/config.json",
+    "sha256": "571f3f16da123105c484ee956a172e3b85505e890fcfa303f8e787a8f7f1409f"
+  },
+  "executed_source_hashes": [
+    {
+      "path": ".runtime/src/stamina_tactics.py",
+      "sha256": "d2d752372ee889af855542f156514665eb7548398dd0c6c6f219d26275080b2c"
+    },
+    {
+      "path": ".runtime/src/stamina_environment.py",
+      "sha256": "d503e9384c3a02d736f379cc37b9abd8f0854996783d4efad535faa07e5d35e5"
+    },
+    {
+      "path": ".runtime/src/stamina_bellman.py",
+      "sha256": "ae3efb6ea6a61bc2668267df5dff41ccd265e996e694f3cf8ba58beffe7ae401"
+    }
+  ],
+  "split": "Match-level split held fixed. Evaluation entries are fourth hits from training matches.",
+  "metrics": {
+    "observed_openings": 6642,
+    "changed_recommendations": 129
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "571f3f16da123105c484ee956a172e3b85505e890fcfa303f8e787a8f7f1409f"
+    },
+    {
+      "path": "fixed_load_slope_comparison.csv",
+      "sha256": "50c0d997ab253c6c44c8795b608fd35015c10118daa014686ce6429d79b6d587"
+    },
+    {
+      "path": "fixed_load_slope_summary.csv",
+      "sha256": "3f95b27f96c28a61b966806df78780f1a82352d2523bcb235ff3b356541ba70b"
+    }
+  ],
+  "limitations": "Same actual train openings, costs and total budgets; only fitted slopes are toggled. Values come from validated numerical grids, and small action margins can be discretization-sensitive."
+}

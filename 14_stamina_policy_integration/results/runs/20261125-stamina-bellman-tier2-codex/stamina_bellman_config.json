@@ -1,0 +1,44 @@
+{
+  "run_id": "20261125-stamina-bellman-tier2-codex",
+  "ledger_run": "20261125-opening-cost-ledger-codex",
+  "cost": [
+    "M0_v2",
+    "M3_v2"
+  ],
+  "pair": [
+    [
+      25,
+      90
+    ],
+    [
+      90,
+      25
+    ],
+    [
+      50,
+      75
+    ],
+    [
+      75,
+      50
+    ],
+    [
+      50,
+      90
+    ],
+    [
+      90,
+      50
+    ],
+    [
+      75,
+      75
+    ]
+  ],
+  "coarse_step": 10.0,
+  "fine_step": 5.0,
+  "max_refinements": 2,
+  "samples": 20000,
+  "threads": 6,
+  "seed": 1984
+}

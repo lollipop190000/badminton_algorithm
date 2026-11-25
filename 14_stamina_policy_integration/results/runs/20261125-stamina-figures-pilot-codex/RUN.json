@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-stamina-figures-pilot-codex",
+  "status": "completed",
+  "code_commit": "5c0519ca3db5f918bdba51f4bec1a7de13b68553",
+  "command": "python run.py exec -m src.stamina_figures --run-id 20261125-stamina-figures-pilot-codex --evaluation-run 20261125-frozen-stamina-paired-pilot",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.4",
+    "pandas": "3.0.1",
+    "torch": "2.9.1+cpu",
+    "device": "CPU"
+  },
+  "inputs": [
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/RUN.json",
+      "sha256": "12d64a146a620394892d94ec1460273742246313e47a106b662634988e225f2c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/config.json",
+      "sha256": "d5ceb510150b4d9695f2b0dd06a14943c05be2b99bf042459b5e36338abf5013"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/policy_metrics.csv",
+      "sha256": "ef4a5a7b039c6c8a006928ddf3ee9097b82e37fddd7dacd397d80ba4a43b0551"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/recommendations.csv",
+      "sha256": "f282c3c2bd6d8de903860bd50b6d1c368c0cde3051327ad4817272b7e63b5e56"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/condition_00.npz",
+      "sha256": "155f7f36643e42bd5157460d1e6442f7763d29e69f8ba9cce3a9db821a5a49e2"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/condition_01.npz",
+      "sha256": "1967c05f065cbef50a936f6d567444e68a77dc4942f5f5ff4cb3c5cc7eb1352a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/policy_metrics.csv",
+      "sha256": "06f97d6a43d2bc34238b08a1ecdd9db3ba37bd63c8ad9ffe93b672a80328aaae"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/recommendations.csv",
+      "sha256": "2120321eb5ea357a23fe4dacc99f084be3724b484049426ba7470b12073076a5"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/condition_00.npz",
+      "sha256": "4a79db661feaac1cd60bdc32bab5135ce2fb6426952c239b55df03721c123eba"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/condition_01.npz",
+      "sha256": "e69a5f8c24f6c731647362abec5862532f05dad72ecefec845963493ad3ef376"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/RUN.json",
+      "sha256": "037b5a2a34a95c15f26b114984748b8b83a31cdf6c65cf3f6e80f0ae17b95059"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_events.parquet",
+      "sha256": "b7a56d5fbce10738108e02667daaed7d6270ee1cb694a7663e29cfd0c2847645"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5"
+    }
+  ],
+  "config": {
+    "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/config.json",
+    "sha256": "05082730b572e45e48b30af053abc4f350f43ce59982ed035204c24395ab484a"
+  },
+  "executed_source_hashes": [
+    {
+      "path": ".runtime/src/stamina_figures.py",
+      "sha256": "fa7505e4a0375840e4d51975a3e595ec51829c76d7c547a82025c777c8ad8704"
+    }
+  ],
+  "split": "Match-level split held fixed. Evaluation entries are fourth hits from training matches.",
+  "metrics": {
+    "condition_policy_rows": 144,
+    "paired_rows": 576
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "05082730b572e45e48b30af053abc4f350f43ce59982ed035204c24395ab484a"
+    },
+    {
+      "path": "stamina_conditional_win_M0_v2.png",
+      "sha256": "114a42fbf9429c2fa30ebb61615ce953a512d69bf0d876ec89d976b03cdb40cd"
+    },
+    {
+      "path": "stamina_conditional_win_M3_v2.png",
+      "sha256": "96008e07a6411d17d44da98d565c0ffcdaeb770945a8b54ea8551ac746239c42"
+    },
+    {
+      "path": "stamina_conditions.csv",
+      "sha256": "48af2df16d5f0b89f0c7af6a4fce3d63f75aae149bc33cdd919c5354b9e18ab1"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_domain_A.png",
+      "sha256": "cdef80bcd023a8bba09212329414f3a3fe368c2bf4e97aa492dc748080edc4f7"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_domain_B.png",
+      "sha256": "b374d97669ea51230c48f2c50c37d29742b9c996bf093e035f80aa4f2943c827"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_domain_C.png",
+      "sha256": "1cbbf58d09b180eba3b5d01251d2efed48662021dcdceaf268f341c6e69314e6"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_domain_C0.png",
+      "sha256": "4edd9cdd9eeff9218983ed76eec971478d5729d66cd242c4b2f8a933b0147cdc"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_domain_A.png",
+      "sha256": "1d2e92b4ea26b203e5b45023bc898e66f4d70044eb8f56bed6399e783f25b6b0"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_domain_B.png",
+      "sha256": "8fc3ae8f376bc885bd11585a6bf3f4131326469d9fa2f79ced10a18814aa79ea"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_domain_C.png",
+      "sha256": "56b108ffd62d540c454523c077c031c6c2c74303a545296a27ee6a9ecc702b8f"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_domain_C0.png",
+      "sha256": "7cb54ca84d37bcef7e424fc62ee90d42c3fea80891cb19bf39b35137b4b7af78"
+    },
+    {
+      "path": "stamina_fixed_q_response.csv",
+      "sha256": "b2a7df52c2ec12e9bfbb8d245c30abf9d7ff4094704ecb0d69f46b44786454e1"
+    },
+    {
+      "path": "stamina_heatmap_M0_v2_domain_energy_frozen_mean.png",
+      "sha256": "3b83053a335bfe4afb9e7308a8582de7e75c979a4f118fbfd8af175c3bdfd16b"
+    },
+    {
+      "path": "stamina_heatmap_M3_v2_domain_energy_frozen_mean.png",
+      "sha256": "93025a87925c95f81d30e49f4ea9d12b2088921c9edeae49bbc3f583fd0a0395"
+    },
+    {
+      "path": "stamina_paired_cases.csv",
+      "sha256": "3b45222fd77a2cb1f1e19b01e49fb6f71093bc46791498b11fabc1f7f6af75fc"
+    },
+    {
+      "path": "stamina_paired_summary.csv",
+      "sha256": "b5ac1ddee137f23278fadaa335a2994a1206ad2f1d58b0b5d86b85d4c1b42df8"
+    },
+    {
+      "path": "stamina_recommendations.csv",
+      "sha256": "522171bff324655b8c98c87cd66c9141be557135e0c953a32754e2e331b09fe3"
+    },
+    {
+      "path": "stamina_recommendations_M0_v2_domain.png",
+      "sha256": "6c98e33b0dc1d9ade2a3d0e22cfe2108c2155440de49cdb767dea6a101cb2e02"
+    },
+    {
+      "path": "stamina_recommendations_M3_v2_domain.png",
+      "sha256": "01356e24f4fd35a07acdd18301e77458f9b337b420a82e1f65b1b5c2583d3ca0"
+    },
+    {
+      "path": "stamina_summary.csv",
+      "sha256": "914b5e35f55436559b22b0649f0f5ba08f8543514950e5954f0df6736d6ffb87"
+    },
+    {
+      "path": "stamina_win_value_M0_v2_domain.png",
+      "sha256": "a1ae0198a90cee0470845cf136c48bd1a50f01115433acc3e6187c7d592d9403"
+    },
+    {
+      "path": "stamina_win_value_M3_v2_domain.png",
+      "sha256": "df6be3429ab543ed5ff6047da06a6352b17118f7b39ee0b0d81881a2ece1f47c"
+    }
+  ],
+  "limitations": [
+    "Unobserved heatmap cells have no estimate.",
+    "Condition-means use equal weighting and report case count.",
+    "Monte Carlo intervals condition on the fitted model. CQL training seed variation is separate.",
+    "Fixed-Q response curves hold the other load at its observed median for each shot."
+  ]
+}

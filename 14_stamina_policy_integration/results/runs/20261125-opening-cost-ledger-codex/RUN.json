@@ -1,0 +1,317 @@
+{
+  "run_id": "20261125-opening-cost-ledger-codex",
+  "schema_version": 1,
+  "status": "completed",
+  "seed": 0,
+  "code_commit": "d8b86c7290135de507078c329dc37f174e957bb5",
+  "source": {
+    "path": "14_stamina_policy_integration/code/src/ledger.py",
+    "sha256": "af66df5bcdb83bebd1f676678d7c0cab120d5099a226bced26d2673fda532e1c",
+    "bytes": 21877
+  },
+  "command": "python run.py stamina-ledger --run-id 20261125-opening-cost-ledger-codex",
+  "environment": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "pandas": "3.0.1",
+    "numpy": "2.4.4",
+    "created_at": "2026-11-25T05:14:54.460547+00:00"
+  },
+  "inputs": [
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/pre_shot_load.parquet",
+      "sha256": "cee56e60dabc045ec38d5f1b6c0c312fc247194b043481d8ba58dc3dbb5fbaee",
+      "bytes": 7133329
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shot_costs.csv",
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796",
+      "bytes": 2111
+    },
+    {
+      "path": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65",
+      "bytes": 5683
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M0_v2.parquet",
+      "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0",
+      "bytes": 16960581
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987",
+      "bytes": 56432
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c",
+      "bytes": 3480
+    },
+    {
+      "path": "01_data_16zone/results/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc",
+      "bytes": 20950636
+    },
+    {
+      "path": "01_data_16zone/results/splits/validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3",
+      "bytes": 5088890
+    },
+    {
+      "path": "01_data_16zone/results/splits/test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c",
+      "bytes": 4803295
+    },
+    {
+      "path": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M3_v2.parquet",
+      "sha256": "0f82a7016bace6703007ac7011c4383db4837264f026f9bec8b4cc4083dd2dad",
+      "bytes": 17015567
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/dataset_contract.json",
+      "sha256": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f",
+      "bytes": 3471
+    }
+  ],
+  "outputs": [
+    {
+      "path": "ledger_budget_distributions.png",
+      "sha256": "f2ef43c5b5429e7b12bc843047314102f5d3eecc64d2330948783c5d74913f46",
+      "bytes": 80405
+    },
+    {
+      "path": "ledger_budget_table.csv",
+      "sha256": "12d0a91854f9c83576f2367bb6d5fff7e2ba57f26dfa4941ffc00fa20a06e468",
+      "bytes": 1872
+    },
+    {
+      "path": "ledger_config.json",
+      "sha256": "647c9b857f73f3d287b22635532ca74ffb6d9da5eb87ae8c1155f9aef4471bac",
+      "bytes": 555
+    },
+    {
+      "path": "ledger_cost_comparison.csv",
+      "sha256": "ea323f54de39020f6efb1dba3773c7fb8aed8f4a4ba196afa94cd729d2d36355",
+      "bytes": 1585
+    },
+    {
+      "path": "ledger_coverage.csv",
+      "sha256": "410e977824221e6809c65d72b649833f018be550a809b549459950dc603b070e",
+      "bytes": 955
+    },
+    {
+      "path": "ledger_cumulative_load.png",
+      "sha256": "2d12b6aa7042393fc9d9205a9232b96ce55557cf8d8b56caa2ef8710a48bb2d4",
+      "bytes": 136066
+    },
+    {
+      "path": "ledger_eligibility.csv",
+      "sha256": "ce8cf87561ce61eb6f73e49ee8e34b20dcb59f76bb74c2c59989eb538459b381",
+      "bytes": 15984
+    },
+    {
+      "path": "ledger_events.parquet",
+      "sha256": "b7a56d5fbce10738108e02667daaed7d6270ee1cb694a7663e29cfd0c2847645",
+      "bytes": 11795504
+    },
+    {
+      "path": "ledger_load_by_hit.csv",
+      "sha256": "f45258f689fc22e4a89d82da389c34a3810948b4ab98284cf09e08100a1a0367",
+      "bytes": 8400
+    },
+    {
+      "path": "ledger_opening.parquet",
+      "sha256": "1165bd54a1ad0fbcf979413ee78a4660a4d627a89e8bacf4683f73bf7925b7cf",
+      "bytes": 233104
+    },
+    {
+      "path": "ledger_records.parquet",
+      "sha256": "17c143197f4cc801506ae1d053f3e90cfd16f3b32a40b9b452309f0436f05b52",
+      "bytes": 15425477
+    },
+    {
+      "path": "ledger_short_rally_sensitivity.csv",
+      "sha256": "ec3e5674d4c189d149444c1f14916594039b65a9a63498cf77c8987d16ac4d03",
+      "bytes": 674
+    },
+    {
+      "path": "ledger_totals.parquet",
+      "sha256": "f9086bad383173733f6e8338cc079a391d536158a5b156767af92c1c22845e11",
+      "bytes": 944235
+    }
+  ],
+  "split": "published match split; positive TRAIN values determine budgets",
+  "config": {
+    "path": "ledger_config.json",
+    "sha256": "647c9b857f73f3d287b22635532ca74ffb6d9da5eb87ae8c1155f9aef4471bac",
+    "bytes": 555
+  },
+  "metrics": {
+    "train_budgets": {
+      "M0_v2": [
+        195.32247849050242,
+        348.25612593448403,
+        582.9577358051683,
+        906.0553342430029
+      ],
+      "M3_v2": [
+        197.52774784421774,
+        353.9675190394225,
+        591.2650916598923,
+        923.4659954650158
+      ]
+    },
+    "entry_counts": [
+      {
+        "model_id": "M0_v2",
+        "split": "test",
+        "entry_status": "candidate",
+        "rallies": 816
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "test",
+        "entry_status": "before_fourth",
+        "rallies": 131
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "test",
+        "entry_status": "no_supported_markov_suffix",
+        "rallies": 18
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "test",
+        "entry_status": "incomplete_or_uncertain_suffix",
+        "rallies": 2
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "train",
+        "entry_status": "candidate",
+        "rallies": 3392
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "train",
+        "entry_status": "before_fourth",
+        "rallies": 539
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "train",
+        "entry_status": "no_supported_markov_suffix",
+        "rallies": 84
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "train",
+        "entry_status": "incomplete_or_uncertain_suffix",
+        "rallies": 27
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "validation",
+        "entry_status": "candidate",
+        "rallies": 753
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "validation",
+        "entry_status": "before_fourth",
+        "rallies": 111
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "validation",
+        "entry_status": "no_supported_markov_suffix",
+        "rallies": 11
+      },
+      {
+        "model_id": "M0_v2",
+        "split": "validation",
+        "entry_status": "incomplete_or_uncertain_suffix",
+        "rallies": 4
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "test",
+        "entry_status": "candidate",
+        "rallies": 816
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "test",
+        "entry_status": "before_fourth",
+        "rallies": 131
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "test",
+        "entry_status": "no_supported_markov_suffix",
+        "rallies": 18
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "test",
+        "entry_status": "incomplete_or_uncertain_suffix",
+        "rallies": 2
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "train",
+        "entry_status": "candidate",
+        "rallies": 3392
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "train",
+        "entry_status": "before_fourth",
+        "rallies": 539
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "train",
+        "entry_status": "no_supported_markov_suffix",
+        "rallies": 84
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "train",
+        "entry_status": "incomplete_or_uncertain_suffix",
+        "rallies": 27
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "validation",
+        "entry_status": "candidate",
+        "rallies": 753
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "validation",
+        "entry_status": "before_fourth",
+        "rallies": 111
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "validation",
+        "entry_status": "no_supported_markov_suffix",
+        "rallies": 11
+      },
+      {
+        "model_id": "M3_v2",
+        "split": "validation",
+        "entry_status": "incomplete_or_uncertain_suffix",
+        "rallies": 4
+      }
+    ]
+  },
+  "limitations": [
+    "Rally-start cost proxy resets at first observation",
+    "Unmeasured service swing receives no added charge",
+    "Primary budget fits the strategy-entry training cohort",
+    "Event movement is estimated between observed positions"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "models": [
+    "M0_v2",
+    "M3_v2"
+  ],
+  "cases_independently_rerun": [
+    10,
+    11
+  ],
+  "independently_verified_trials": 20000
+}

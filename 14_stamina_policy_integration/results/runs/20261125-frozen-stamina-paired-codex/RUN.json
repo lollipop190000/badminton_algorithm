@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-frozen-stamina-paired-codex",
+  "status": "failed",
+  "code_commit": "5c0519ca3db5f918bdba51f4bec1a7de13b68553",
+  "command": "python run.py stamina-policy-compare --run-id 20261125-frozen-stamina-paired-codex",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "device": "CPU"
+  },
+  "inputs": [
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-historical-reproduction-codex/RUN.json",
+      "sha256": "53e6fb93940f48e6ffcd370d2f1d86bc794f371644cd5ac677259bdd74403f6d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/RUN.json",
+      "sha256": "037b5a2a34a95c15f26b114984748b8b83a31cdf6c65cf3f6e80f0ae17b95059"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "8334d20d6aac36b490ba31728e9cd9b86d3f45fe85bbcb607f6f284188a03d63"
+  },
+  "split": "Train match fourth-hit entries within the frozen domain.",
+  "metrics": {
+    "completed_archives": 10,
+    "complete_table_rows": 320
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "8334d20d6aac36b490ba31728e9cd9b86d3f45fe85bbcb607f6f284188a03d63"
+    },
+    {
+      "path": "interrupted.json",
+      "sha256": "26ec24dffd31e2d7ae5daccd88f3bdbc2d3bcca6327c3516fe30884baac06ce4"
+    },
+    {
+      "path": "M0_v2/condition_00.npz",
+      "sha256": "56a4bee64c4a71428e15e65f33ea92a61654d9f9785df87f4c68aa03cd25b8a9"
+    },
+    {
+      "path": "M0_v2/condition_01.npz",
+      "sha256": "41acf4d449b1d3dff7d6d5f9b9cf72379f5fd41d3a3840bbe86c9ab2574ffe06"
+    },
+    {
+      "path": "M0_v2/condition_02.npz",
+      "sha256": "8c8994fc66bb68c8861e72bab05cae16d4f9c332673350ad364cac97fdbfb960"
+    },
+    {
+      "path": "M0_v2/condition_03.npz",
+      "sha256": "87fe2f21d3d51bf4cf595dfa65b4139f02f90bb97f8451a42a660026ca53a888"
+    },
+    {
+      "path": "M0_v2/condition_04.npz",
+      "sha256": "6bd1472233004ed72a856cb042f2423ed8a4b1d7c38d811b51ef8bd2cafd18d0"
+    },
+    {
+      "path": "M0_v2/condition_05.npz",
+      "sha256": "f48ee547b86ae4f23e982b2a3cee9c4547932350e1773aaf0a6bff5ad98dee65"
+    },
+    {
+      "path": "M0_v2/condition_06.npz",
+      "sha256": "ad7199222b849e0bb54ee7ffc55cdd7ce7210dd7dcb40eba4c9e6f78e0a7cf28"
+    },
+    {
+      "path": "M0_v2/condition_07.npz",
+      "sha256": "68b9c863558db28ec91f562f594aa98c523212669a63aae579ced8906428b549"
+    },
+    {
+      "path": "M0_v2/condition_08.npz",
+      "sha256": "0a56fc0b5876b4cd58d8b5a8b9ec597be1604756b401868e366d560654e0436d"
+    },
+    {
+      "path": "M0_v2/condition_09.npz",
+      "sha256": "a0a201535de433f2ac6fdee56500bba4a1e4b42f9bb17230e28225d43cdeee81"
+    },
+    {
+      "path": "M0_v2/evaluation_domain.csv",
+      "sha256": "400e8560a95933cab12c7293adb71bc90d0f705fdb660b6ed6eec40d1dbd10b4"
+    },
+    {
+      "path": "M0_v2/paired_environment.csv",
+      "sha256": "56aef99bf790bfbe0f9e04c61cac6576731f98cfad11a9c69b7742d2a52669fe"
+    },
+    {
+      "path": "M0_v2/paired_policy.csv",
+      "sha256": "6a85a0ca53ce72cb68e3c1ec0717e6e6a1ce9dd8d1c9b84fae2a496ff8ada85b"
+    },
+    {
+      "path": "M0_v2/policy_metrics.csv",
+      "sha256": "d8d07f768c2530ced8fc518b3f99f282d992bc9f3519712644acc62455627b49"
+    },
+    {
+      "path": "M0_v2/probability_audit.json",
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "M0_v2/recommendations.csv",
+      "sha256": "372d507cfdb9e3d264510505ed128856b5ab585d5aa2dbce387e19884fcaefbf"
+    }
+  ],
+  "limitations": "The no-cache rollout was interrupted for performance. Only completed condition files are present. This study uses the separate shared-path rerun."
+}

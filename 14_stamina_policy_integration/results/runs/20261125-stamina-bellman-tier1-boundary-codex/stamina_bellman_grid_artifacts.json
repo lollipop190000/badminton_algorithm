@@ -1,0 +1,38 @@
+[
+  {
+    "model_id": "M3_v2",
+    "p_A": 25,
+    "p_B": 50,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier1-codex/M3_v2_C_p25_p50_A.npy",
+        "sha256": "537eab630840f147a54b17708d5196354d97bcdc6a2870ac88ffe3448d5f31fe",
+        "bytes": 759103616
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier1-codex/M3_v2_C_p25_p50_A.json",
+        "sha256": "76507b51846443d8032c73f283157d0b9468c1b6d09793fb0e35fccbc9976c45",
+        "bytes": 160
+      }
+    ],
+    "source_run": "20261125-stamina-bellman-tier1-codex"
+  },
+  {
+    "model_id": "M3_v2",
+    "p_A": 25,
+    "p_B": 75,
+    "files": [
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier1-codex/M3_v2_C_p25_p75_A.npy",
+        "sha256": "158182eae864758507424c55692d3571d2341b6c8b451b6d03edb91f156a869c",
+        "bytes": 1263403136
+      },
+      {
+        "path": ".runtime/outputs/stamina_bellman_grids/20261125-stamina-bellman-tier1-codex/M3_v2_C_p25_p75_A.json",
+        "sha256": "608d347ca5300864b896508763158d1f81d6e6333af35d7445a162e1a5a9b274",
+        "bytes": 160
+      }
+    ],
+    "source_run": "20261125-stamina-bellman-tier1-codex"
+  }
+]

@@ -1,0 +1,3 @@
+model,condition,parity,focal,qa,qb,budget_A,budget_B,cohort,environment,policy,grid_value,mc_excess,mc_absolute_error,query_mode,bellman_residual,passes_mc
+M0_v2,0,0,B,25,25,195.32247849050242,195.32247849050242,domain,C,bellman53,0.6903668912465004,0.0018044944674775595,0.006991891246500459,bilinear,0.0,True
+M0_v2,1,1,A,25,25,195.32247849050242,195.32247849050242,domain,C,bellman53,0.6717211929590495,0.0,0.003696192959049549,bilinear,0.0,True

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-frozen-rollout-equivalence-codex",
+  "status": "completed",
+  "code_commit": "d4be8d471248a5a95b3cd148f7b1b23d726803fb",
+  "command": "python run.py exec -m src.stamina_archive_verify --run-id 20261125-frozen-rollout-equivalence-codex --before-run 20261125-frozen-stamina-paired-codex --after-run 20261125-frozen-stamina-paired-full-codex",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.4",
+    "pandas": "3.0.1",
+    "torch": "2.9.1+cpu",
+    "device": "CPU"
+  },
+  "inputs": [
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/RUN.json",
+      "sha256": "96756162a4660f01c54fce0d437bfd2f13ca4794f74fb1f04db288b61a8618bf"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/config.json",
+      "sha256": "8334d20d6aac36b490ba31728e9cd9b86d3f45fe85bbcb607f6f284188a03d63"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/config.json",
+      "sha256": "109ba90c49a09d0cfdb8e8f2691d7a46da5b08cb4124660ea2d368d1e30c0550"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_00.npz",
+      "sha256": "56a4bee64c4a71428e15e65f33ea92a61654d9f9785df87f4c68aa03cd25b8a9"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_00.npz",
+      "sha256": "683226e982d4d1934ccf61856f35a360ab77b1f690dc6ab9cf4951d8fa8bfc70"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_01.npz",
+      "sha256": "41acf4d449b1d3dff7d6d5f9b9cf72379f5fd41d3a3840bbe86c9ab2574ffe06"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_01.npz",
+      "sha256": "ec90a724d26d41fe672b3832366599d2eaa462bb8ab9328e00c1ffda9e3e4c42"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_02.npz",
+      "sha256": "8c8994fc66bb68c8861e72bab05cae16d4f9c332673350ad364cac97fdbfb960"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_02.npz",
+      "sha256": "a71de4bd41bee3de024dc4b5df5963d6293d1c0cef99cfe749bcec4bd9c2ca3f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_03.npz",
+      "sha256": "87fe2f21d3d51bf4cf595dfa65b4139f02f90bb97f8451a42a660026ca53a888"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_03.npz",
+      "sha256": "f94b5a1bbb78a7f7ffddddf884bde1b47b067d8bd9a5f32d5c6985edd99a964d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_04.npz",
+      "sha256": "6bd1472233004ed72a856cb042f2423ed8a4b1d7c38d811b51ef8bd2cafd18d0"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_04.npz",
+      "sha256": "04d8cbfb4bd5214031f2265cf04cf17478f931d823a1cd9444bbf88ea0cb6342"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_05.npz",
+      "sha256": "f48ee547b86ae4f23e982b2a3cee9c4547932350e1773aaf0a6bff5ad98dee65"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_05.npz",
+      "sha256": "e91c6a15198a87323b303d7fe5f99c5bc8af5b9dbfc56b0cffbe1079ec28b5d2"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_06.npz",
+      "sha256": "ad7199222b849e0bb54ee7ffc55cdd7ce7210dd7dcb40eba4c9e6f78e0a7cf28"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_06.npz",
+      "sha256": "f2ad399976d0d8314f251e530d1cdece54402c1a210472d11acf9c420d13d34a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_07.npz",
+      "sha256": "68b9c863558db28ec91f562f594aa98c523212669a63aae579ced8906428b549"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_07.npz",
+      "sha256": "97d7420983a5a276c48b15489763fd4d01cdf0d29733b19152d4080b225ad765"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_08.npz",
+      "sha256": "0a56fc0b5876b4cd58d8b5a8b9ec597be1604756b401868e366d560654e0436d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_08.npz",
+      "sha256": "5ba73a1c17acb006edce5877d921f78cbcbb993e3cfde05a27db4b95c05f5349"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_09.npz",
+      "sha256": "a0a201535de433f2ac6fdee56500bba4a1e4b42f9bb17230e28225d43cdeee81"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_09.npz",
+      "sha256": "86f382aee5ffb595f941bae13b24e2ad45932460fabdb6d51a5b32fc478a0a94"
+    }
+  ],
+  "config": {
+    "path": "14_stamina_policy_integration/results/runs/20261125-frozen-rollout-equivalence-codex/config.json",
+    "sha256": "65bdb92dee2a5e2e20380d5beb5c00db33e0d9ae27499a3386d2c1fff3575811"
+  },
+  "executed_source_hashes": [
+    {
+      "path": ".runtime/src/stamina_archive_verify.py",
+      "sha256": "fa44df5da724901bf4cfd429c8b54fba170108f560e1f6ff98497fa9e97fb017"
+    }
+  ],
+  "split": "Match-level split held fixed. Evaluation entries are fourth hits from training matches.",
+  "metrics": {
+    "conditions": 10,
+    "opening_trials": 200000,
+    "individual_outcomes": 6400000,
+    "mismatched_arrays": 0
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "65bdb92dee2a5e2e20380d5beb5c00db33e0d9ae27499a3386d2c1fff3575811"
+    },
+    {
+      "path": "stamina_rollout_equivalence.csv",
+      "sha256": "7d2e03022756300fdb077332e477d8aff30bdec95a3743120f08fe35fac1257f"
+    }
+  ],
+  "limitations": [
+    "Checks available overlapping archives only; no simulation was rerun.",
+    "Arrays compare trial identities, pre-shot loads, outcome, cause and first action with identical dtypes."
+  ]
+}

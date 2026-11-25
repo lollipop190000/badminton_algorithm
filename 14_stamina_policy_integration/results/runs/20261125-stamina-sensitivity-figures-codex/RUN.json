@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-stamina-sensitivity-figures-codex",
+  "status": "completed",
+  "code_commit": "8fc264243f43fbd47868f41cf97ad00f7cb701f5",
+  "command": "python run.py exec -m src.stamina_figures --run-id 20261125-stamina-sensitivity-figures-codex --evaluation-run 20261125-opening-and-exhaustion-sensitivity-codex",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.4",
+    "pandas": "3.0.1",
+    "torch": "2.9.1+cpu",
+    "device": "CPU"
+  },
+  "inputs": [
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/RUN.json",
+      "sha256": "00f04e76bce75bc8d6f06cd53db9d7f219128c2c560dd1f656e97857e7f5e3ae"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/config.json",
+      "sha256": "7c0ead8a426d745f5fd3fdc2f01fd4b6d33055fb867d4682c4c9148608990628"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/policy_metrics.csv",
+      "sha256": "8408c9161565f0877c738fc56107dffcee937d255061a1cdda94eef50cf1938f"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/recommendations.csv",
+      "sha256": "24a2707faee2474d97a3ce8336566514ea0ae80782372dc91d975592908b3a9c"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_00.npz",
+      "sha256": "a034397fd54d95bc5b8339b473223a134d551afb6af1d0fe0cf5ff4e90f4f058"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_01.npz",
+      "sha256": "beb29c4a6f2456dc2047b446e06900e5f965be1c33305a358a793a6b95154bab"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_10.npz",
+      "sha256": "b991959df9c32bee887abfe8bfdb6d6ca52cfc0082ae0d0330ddc06872ea8557"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_11.npz",
+      "sha256": "3b2d496faa3f81fabe9bcccc62aaaf6a8847a9740b031372f2bbfa6f81e00c13"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_30.npz",
+      "sha256": "5027782a42b8ecb1d405085e0d3f38fc3c6364a26c09e238a380ffdd3e6a225b"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_31.npz",
+      "sha256": "0c84e8d45b60995b799a2ec4f4c8f5a3537d966aa33929a2acccd72f8dbb1257"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/policy_metrics.csv",
+      "sha256": "912066f36b66cdb56079ef65bbd6c81939de42633a6a5cd36bc0d9e48b713cd0"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/recommendations.csv",
+      "sha256": "9fbbbe0124989e9ac38779fe7a0f522863b7077b53654377bc577a176a4c1fd0"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_00.npz",
+      "sha256": "d3450107cb5edc156dbd6fc59f911a19c34edf0917b7e697f4645b11b23f32df"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_01.npz",
+      "sha256": "398118095547867ce1afd5fd1cca3fce0d317c9cb9752e054b3aede84e015007"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_10.npz",
+      "sha256": "040d88d68233e7c330da1b0dff4136e96d90eb1333e7c67316745c6bf1386897"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_11.npz",
+      "sha256": "a580fbb31a554762a785a0cf49b1961a1cc90a6f85d8528c37daa38214d9bac8"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_30.npz",
+      "sha256": "0ffe6a1bf16cfba5ab69ba28c655e7429f323501287c049c0faf8f01c5da2647"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_31.npz",
+      "sha256": "6694f452a0fdb550c8011c6c7984efc3604d268cd71e8f24c57f4736016033f5"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/RUN.json",
+      "sha256": "037b5a2a34a95c15f26b114984748b8b83a31cdf6c65cf3f6e80f0ae17b95059"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_events.parquet",
+      "sha256": "b7a56d5fbce10738108e02667daaed7d6270ee1cb694a7663e29cfd0c2847645"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5"
+    },
+    {
+      "path_or_source": ".runtime/outputs/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    }
+  ],
+  "config": {
+    "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/config.json",
+    "sha256": "427322588e1f05ca2d5f039aa840cace7f6d66fbe6a40c0cf72b5126f58f189c"
+  },
+  "executed_source_hashes": [
+    {
+      "path": ".runtime/src/stamina_figures.py",
+      "sha256": "539f6681331415b90beb621238c55ad2b4dce8994296c7f385c662fc9e2bbe0a"
+    },
+    {
+      "path": ".runtime/src/stamina_environment.py",
+      "sha256": "d503e9384c3a02d736f379cc37b9abd8f0854996783d4efad535faa07e5d35e5"
+    },
+    {
+      "path": ".runtime/src/budget_policy_comparison.py",
+      "sha256": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4"
+    }
+  ],
+  "split": "Match-level split held fixed. Evaluation entries are fourth hits from training matches.",
+  "metrics": {
+    "condition_policy_rows": 144,
+    "paired_rows": 72,
+    "environment_paired_rows": 120
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "427322588e1f05ca2d5f039aa840cace7f6d66fbe6a40c0cf72b5126f58f189c"
+    },
+    {
+      "path": "stamina_conditional_win_M0_v2.png",
+      "sha256": "114a42fbf9429c2fa30ebb61615ce953a512d69bf0d876ec89d976b03cdb40cd"
+    },
+    {
+      "path": "stamina_conditional_win_M3_v2.png",
+      "sha256": "96008e07a6411d17d44da98d565c0ffcdaeb770945a8b54ea8551ac746239c42"
+    },
+    {
+      "path": "stamina_conditions.csv",
+      "sha256": "ae01784008a4b317f2573dc721512b7515f226df2c34fcad3a554d50f022a2e3"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_common_A.png",
+      "sha256": "9fe7f64c72d0d17a0cc7e8adfe74522333dcc14b963ea7052fb878dd3ad48b17"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_common_Az.png",
+      "sha256": "a45aaf7a93530fd5dce8f01fef80ccc86615a7f4be8058dd63661a5d95235559"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_common_C.png",
+      "sha256": "cd792a9815157b280bdd52084f4c6382244986c9032f0f0026b525d414ab6a9b"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_common_C0.png",
+      "sha256": "afe00358ff47b0d6cc771e62d15930e5938323b727cbfb9d4a5d09fdde4d26e3"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_common_C0n.png",
+      "sha256": "a2db3f8a273f1c0aa5ddd4f0c9f13ec6c316bf2bb4b5ad4c5a04d6e8fe233578"
+    },
+    {
+      "path": "stamina_end_causes_M0_v2_common_Cn.png",
+      "sha256": "03815976386697b6952404ab07f7b11d43e0db3ce6c0adbbc9bedc00e8aadc39"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_common_A.png",
+      "sha256": "ee06f364dcf2fd157b3b6e44021000289a2100af1621373ba86c79117d94215a"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_common_Az.png",
+      "sha256": "004fac6e1e5cb2e090f44dacc5073c0e5cbb21e4a6a199bf0e63fec32ae11c49"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_common_C.png",
+      "sha256": "3059e99f906bfd28b2c917ed4126c11e5744e3cb89aa330ce7acebd216779a05"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_common_C0.png",
+      "sha256": "287035408cc8170566ba7b8e4162817e45e60b163b565d40118dfd69ab5109a5"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_common_C0n.png",
+      "sha256": "e4fbacc374b4c8f46d70312eadf38478019b1ace23ff86fb9c6aeb2643781de4"
+    },
+    {
+      "path": "stamina_end_causes_M3_v2_common_Cn.png",
+      "sha256": "f3b22c67199813f38ddd89a59984808c5c70cf1b92bc718a5f0d4a6dd53abc73"
+    },
+    {
+      "path": "stamina_environment_paired_cases.csv",
+      "sha256": "5442e350840bd8b46a13851038ab6f50a4d3df493628406bf96f0b9d01721b6a"
+    },
+    {
+      "path": "stamina_environment_paired_summary.csv",
+      "sha256": "f438b180236d1b28e2963daaeeee4a29b73923f223e769b586e5f02c136d8352"
+    },
+    {
+      "path": "stamina_fixed_q_response.csv",
+      "sha256": "b2a7df52c2ec12e9bfbb8d245c30abf9d7ff4094704ecb0d69f46b44786454e1"
+    },
+    {
+      "path": "stamina_paired_cases.csv",
+      "sha256": "77d25d95eb933a34fb31c08d891ff955d75e5347a65b940af3f3487a9cc1c473"
+    },
+    {
+      "path": "stamina_paired_summary.csv",
+      "sha256": "01c3a6eed2909e6e8c30205fcf9c9b3f4b08f349ef2e521faec4c5c067ccca7f"
+    },
+    {
+      "path": "stamina_recommendations.csv",
+      "sha256": "3b8fee40c36a1bce44401ba0fafb6a9621a2b685208874535c08651abe7fd177"
+    },
+    {
+      "path": "stamina_recommendations_M0_v2_common.png",
+      "sha256": "d8712782b2df65c8ce3b0c52ab952d3312a69bf6c1e6eb6a562814108178e8b0"
+    },
+    {
+      "path": "stamina_recommendations_M3_v2_common.png",
+      "sha256": "a3a9ae16c906b65d33096abec4f60855ee06efed665a77d4bb3e799be97509e9"
+    },
+    {
+      "path": "stamina_summary.csv",
+      "sha256": "bcf1009e76f13d5d090f4abffe154c3dd8e70019ab7d0d16f3f210dfe2e98f04"
+    },
+    {
+      "path": "stamina_win_value_M0_v2_common.png",
+      "sha256": "935f1cb7edab8f0364d7a4fda600a10c599b53740c58acc74b608bedb9496bed"
+    },
+    {
+      "path": "stamina_win_value_M3_v2_common.png",
+      "sha256": "9e2a80780e0fbab79f180cb658a027f84d5d9e48af5943d8340efbe366e37b7c"
+    }
+  ],
+  "limitations": [
+    "Unobserved heatmap cells have no estimate.",
+    "Condition-means use equal weighting and report case count.",
+    "Monte Carlo intervals condition on the fitted model. CQL training seed variation is separate.",
+    "Fixed-Q response curves hold the other load at its observed median for each shot."
+  ]
+}

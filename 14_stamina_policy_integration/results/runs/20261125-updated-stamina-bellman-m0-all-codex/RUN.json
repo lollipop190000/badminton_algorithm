@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-updated-stamina-bellman-m0-all-codex",
+  "status": "completed",
+  "code_commit": "d4be8d471248a5a95b3cd148f7b1b23d726803fb",
+  "command": "python run.py stamina-policy-compare --stage bellman --model M0_v2 --cohort all --run-id 20261125-updated-stamina-bellman-m0-all-codex --bellman-run 20261125-stamina-bellman-m0-p25-codex --bellman-run 20261125-stamina-bellman-tier1-codex --bellman-run 20261125-stamina-bellman-tier2-codex --bellman-run 20261125-stamina-bellman-tier3-codex --policy bellman53 --environments C",
+  "seed": 20261125,
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.4.4",
+    "pandas": "3.0.1",
+    "torch": "2.9.1+cpu",
+    "device": "cpu"
+  },
+  "inputs": [
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-historical-reproduction-codex/RUN.json",
+      "sha256": "53e6fb93940f48e6ffcd370d2f1d86bc794f371644cd5ac677259bdd74403f6d"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/pre_shot_load.parquet",
+      "sha256": "cee56e60dabc045ec38d5f1b6c0c312fc247194b043481d8ba58dc3dbb5fbaee"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/shot_costs.csv",
+      "sha256": "9b4f1a9cebd91c890127d8cf27eb1df7a37b9103118aed47e80ae575ae501796"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/RUN.json",
+      "sha256": "2e9dbf2fd43c85dc117e2978158a29fda43d558c0629852c8bcd7bdc5ccf9f65"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/C_M0_v2.parquet",
+      "sha256": "611808b619d69560cf1a9a5aa60500c88768be75e41c14a155cd54dc547b8fa0"
+    },
+    {
+      "path_or_source": "11_integrated_transition_energy/results/runs/20261104-integrated-v2-kinggoddowon/terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    },
+    {
+      "path_or_source": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/validation.csv",
+      "sha256": "36297a5ca55d0481e286386b7fa7f0755cf7d6693b49b43952f7cd4ad720c7b3"
+    },
+    {
+      "path_or_source": "01_data_16zone/results/splits/test.csv",
+      "sha256": "ced8a328b9d66c382cea434a2471f76a184a1859407569feb6d31d1b25ff411c"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/config.json",
+      "sha256": "b12bdbd7100ca054dcbb830a736759ed6377c0799dec9e2b56647592f2bbe588"
+    },
+    {
+      "path_or_source": "12_integrated_stamina_refit/results/runs/20261104-integrated-cost-fixed-q-refit/coefficients.csv",
+      "sha256": "186c0b31e26a9ca89f62cdb70ad1eab6e0a2db83845fd826cd75e07f9d9e5dd5"
+    },
+    {
+      "path_or_source": ".runtime/outputs/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/costs.npz",
+      "sha256": "22deb9d2c71fecc9ed616dc129f1905ff976200d7692930d4a8c1e6dba414af1"
+    },
+    {
+      "path_or_source": ".runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_validation.csv",
+      "sha256": "66cf6d8485c6fd9e0f8a038536d0919cfd48c4f0398fc275f8760c166c5bb554"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "a4b27aa00eed89af77c54fffbb8417d078783782cebbdc7082ddcf1fbb7b4801"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/stamina_bellman_validation.csv",
+      "sha256": "77cb93d3351f72d597f504b50ac2e3aa5483d5da0ca96af8eeca4a56c8bf8a2a"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "b31d51870c8604b4f4d34570125ed358e7e27401d7a207d970f3684cd585a993"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/stamina_bellman_validation.csv",
+      "sha256": "3c0fb08340bc4e8d03e09339c267fa762e7b6ad7286b6dca999c839532bd50ac"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "a37c5cd41cd88e1bab1c2c12f9ccb355e526d4a4831a0c652ea624fe8af9fc30"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/stamina_bellman_validation.csv",
+      "sha256": "8c811064201b65435f686453b41104deb91ef6596a25dfb8c059cc0381ef485d"
+    },
+    {
+      "path_or_source": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/stamina_bellman_grid_artifacts.json",
+      "sha256": "764b6120a89439af8af8fbf8acf9b8128af62390d9d66c1d905b9e32d60039ab"
+    }
+  ],
+  "config": {
+    "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/config.json",
+    "sha256": "1fee637440bcc48f1aba840d7b8c4bada0965c822852fcfe1336262e6ba43986"
+  },
+  "executed_source_hashes": [
+    {
+      "path": ".runtime/src/stamina_policy_compare.py",
+      "sha256": "624998ddf41bbb252bb5a59e6371c90eb60be6b4c0585d9eb69bce39e2738009"
+    },
+    {
+      "path": ".runtime/src/stamina_environment.py",
+      "sha256": "d503e9384c3a02d736f379cc37b9abd8f0854996783d4efad535faa07e5d35e5"
+    },
+    {
+      "path": ".runtime/src/ledger.py",
+      "sha256": "af66df5bcdb83bebd1f676678d7c0cab120d5099a226bced26d2673fda532e1c"
+    },
+    {
+      "path": ".runtime/src/stamina_frozen_energy.py",
+      "sha256": "823345bd50fba9dfae0506f24aca4aa8c547ca786383146439091752d5ee45f8"
+    },
+    {
+      "path": ".runtime/src/stamina_paired_rollout.py",
+      "sha256": "4a83ce99a7cf13e2ae1166ff8e904e8456f7b0f207fa4bce98572ac3f812281c"
+    },
+    {
+      "path": ".runtime/src/stamina_historical.py",
+      "sha256": "9f12b69cce3e6a96c3d70766d29338f97d4d2fe49f3f72c2ab68da96e5a3ebdd"
+    }
+  ],
+  "split": "Match-level split held fixed. Evaluation entries are fourth hits from training matches.",
+  "metrics": {
+    "M0_v2": {
+      "policy_condition_rows": 32,
+      "bellman_mc_conditions": 32
+    }
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "1fee637440bcc48f1aba840d7b8c4bada0965c822852fcfe1336262e6ba43986"
+    },
+    {
+      "path": "M0_v2/condition_00.npz",
+      "sha256": "14c73f73268f1bf7dff6278f2993a23d59adc303ce88ba114dacb14740da9d46"
+    },
+    {
+      "path": "M0_v2/condition_01.npz",
+      "sha256": "03c2067fe49b47518426aae8f17f70070905582d832276e73311060cb1f23afc"
+    },
+    {
+      "path": "M0_v2/condition_02.npz",
+      "sha256": "7491546cd33512cc5a11ad80a4471d53ebdc1164341ac0430e4becee3cadd7d5"
+    },
+    {
+      "path": "M0_v2/condition_03.npz",
+      "sha256": "bbbf323b9fbd85f217e70212715452d096cc1ca93b5caa579d0ae0736de9297e"
+    },
+    {
+      "path": "M0_v2/condition_04.npz",
+      "sha256": "1525de033db3a638189f773dcde8998ccb87a336cb35e9952f18a9eb4c2b8ccd"
+    },
+    {
+      "path": "M0_v2/condition_05.npz",
+      "sha256": "9f5894264148bb2e46929f72d3c8cf99eee71fddb937376e73e7ae75bda354e0"
+    },
+    {
+      "path": "M0_v2/condition_06.npz",
+      "sha256": "07acd24194fb98feefc637ab8301e3a8e70b393bb0864fa0e850fe8f7ec27ab9"
+    },
+    {
+      "path": "M0_v2/condition_07.npz",
+      "sha256": "e3f0570702de5ce732ce05f60f891a301134de354ff0d5af7dbd7866c3ae9f1d"
+    },
+    {
+      "path": "M0_v2/condition_08.npz",
+      "sha256": "5ebe65ee2760993763e5ee12d525c127f23282ebe3df41021b963769f94b70cf"
+    },
+    {
+      "path": "M0_v2/condition_09.npz",
+      "sha256": "3daf3357bd01c9a85aa8740e5765af3c008f1a3c2a189228d34d1276da50b87a"
+    },
+    {
+      "path": "M0_v2/condition_10.npz",
+      "sha256": "823dd23495529a5299de6bfe537e9f03fd7cf0c1f6cbb846fbc183aea840de7d"
+    },
+    {
+      "path": "M0_v2/condition_11.npz",
+      "sha256": "16eb296c445fe5e78cc523eae2ea9f03f19a308745b742126d2c589e8bfbb4eb"
+    },
+    {
+      "path": "M0_v2/condition_12.npz",
+      "sha256": "df3b64d3f74a049092a057c767acdaccf9e300821f7ad4b4d72d426d98f1e369"
+    },
+    {
+      "path": "M0_v2/condition_13.npz",
+      "sha256": "7deb9fb4242dc227fb09ca5a2f54d876a3490a1c3b9ec350b3bc0d072d1ac7a9"
+    },
+    {
+      "path": "M0_v2/condition_14.npz",
+      "sha256": "58bbe0ffc5756fcc630d465a993e444950bb1009994d51e119ba74186c782c50"
+    },
+    {
+      "path": "M0_v2/condition_15.npz",
+      "sha256": "6e29977041a1e8a7b69328d3250f5b512745fdc375598959fd2b36f029931054"
+    },
+    {
+      "path": "M0_v2/condition_16.npz",
+      "sha256": "536402888eee2801615d01a9f460c2a8192da395a859e63217c308d010a2706d"
+    },
+    {
+      "path": "M0_v2/condition_17.npz",
+      "sha256": "41ce3b804cf436bf62f24e83c35f4299dcb04415b6a59da608ae2fb5312da0a1"
+    },
+    {
+      "path": "M0_v2/condition_18.npz",
+      "sha256": "b33b3b1490c675ffb1fd250a775360493890253bd1f8f3045baa4bf5ba31be4e"
+    },
+    {
+      "path": "M0_v2/condition_19.npz",
+      "sha256": "620293e0f2de5e36d8dfe41f53d660603aa53e3685fcb484e355c0fbdf6c31b9"
+    },
+    {
+      "path": "M0_v2/condition_20.npz",
+      "sha256": "6dcccc9c78b6828ff865e102cccae52c6c897df15b72b3745fa46e6005f44f34"
+    },
+    {
+      "path": "M0_v2/condition_21.npz",
+      "sha256": "61c815701411bc7b7e873bd99e9ba5ee0582c47b4c9c7b913ab85ff4ad166e3f"
+    },
+    {
+      "path": "M0_v2/condition_22.npz",
+      "sha256": "775e8514a342990a3905a5cdaa927aa43bbf8873d3a9a1e4ce9500a4e84b70f7"
+    },
+    {
+      "path": "M0_v2/condition_23.npz",
+      "sha256": "8e2bc7825aa3d3676b2d625c6798805bc2bf8a8b07a5202427f506d006459d3b"
+    },
+    {
+      "path": "M0_v2/condition_24.npz",
+      "sha256": "f7a8883e1ddaa2cae12f081e8b32d4926cdf63ff036e457a16ed7cb8accc871d"
+    },
+    {
+      "path": "M0_v2/condition_25.npz",
+      "sha256": "748238703616f94f924c5e84c7bcd52a0ba97836662bf7c3c0cd43724632a552"
+    },
+    {
+      "path": "M0_v2/condition_26.npz",
+      "sha256": "f443cc4c276f47d4ef6d88f49b1e2a07fb7ffb6e5b32d13601e1c6331040652e"
+    },
+    {
+      "path": "M0_v2/condition_27.npz",
+      "sha256": "edb49e53d658081a8fb8f0dedd31d0f6f9772c2e789ec9c0fbaa2e0be71f1654"
+    },
+    {
+      "path": "M0_v2/condition_28.npz",
+      "sha256": "1ddb420b7071eb86c5fc54142971e45d31acb3628be3204d9f5b903106a7d046"
+    },
+    {
+      "path": "M0_v2/condition_29.npz",
+      "sha256": "bb153c03f4e5b4e1fdf45344d49769e9052cab6bdb735d323bb9019063d0308d"
+    },
+    {
+      "path": "M0_v2/condition_30.npz",
+      "sha256": "8b5af78ed667d158d96391c13b2a9eb4d4149170464de056907829aef2e27076"
+    },
+    {
+      "path": "M0_v2/condition_31.npz",
+      "sha256": "a88aea2efb09a22bdf8d7f45bfd50e7c636f277d0bb35885a0fab189e5328a03"
+    },
+    {
+      "path": "M0_v2/evaluation_domain.csv",
+      "sha256": "d390723edbca253aba74a7e2156c3dc6b7c8a7c02928d1b14db0ae2df0a68cba"
+    },
+    {
+      "path": "M0_v2/grid_mc.csv",
+      "sha256": "75eb6325424094d6c5c7026b18481f71959d6fc0181ed6a1b1b5a9c96a3ab094"
+    },
+    {
+      "path": "M0_v2/policy_metrics.csv",
+      "sha256": "9844199575d6444bad0fff68f9e0fe55c8874424102ce692e79aa1b39e4c507c"
+    },
+    {
+      "path": "M0_v2/probability_audit.json",
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "M0_v2/recommendations.csv",
+      "sha256": "1372ddff983c7d156d578ce0eaa2256de44e0d3685fdf5e2766ad987793c8f88"
+    }
+  ],
+  "limitations": "Outcome variation conditions on the fitted environment and cost estimates. Eligibility and frozen domain restrict the represented train fourth-hit distribution. Bellman rows depend on available grids and are subject to separate refinement checks."
+}

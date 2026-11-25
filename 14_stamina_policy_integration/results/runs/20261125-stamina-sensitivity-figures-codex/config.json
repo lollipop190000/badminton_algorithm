@@ -1,0 +1,7 @@
+{
+  "run_id": "20261125-stamina-sensitivity-figures-codex",
+  "evaluation_run": [
+    "20261125-opening-and-exhaustion-sensitivity-codex"
+  ],
+  "ledger_run": "20261125-opening-cost-ledger-codex"
+}

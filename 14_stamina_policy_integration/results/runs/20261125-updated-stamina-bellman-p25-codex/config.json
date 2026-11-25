@@ -1,0 +1,40 @@
+{
+  "run_id": "20261125-updated-stamina-bellman-p25-codex",
+  "historical_run": "20261125-historical-reproduction-codex",
+  "model": [
+    "M0_v2",
+    "M3_v2"
+  ],
+  "stage": "bellman",
+  "cohort": "domain",
+  "environments": [
+    "C"
+  ],
+  "pair": [
+    "25:25"
+  ],
+  "policy": [
+    "bellman53"
+  ],
+  "bellman_run": [
+    "20261125-stamina-bellman-m0-p25-codex",
+    "20261125-stamina-bellman-m3-p25-boundary-codex"
+  ],
+  "cql_training": null,
+  "samples": 20000,
+  "seed": 20261125,
+  "device": "cpu",
+  "pairs": [
+    [
+      25,
+      25
+    ]
+  ],
+  "policies": [
+    "bellman53"
+  ],
+  "cql_runs": {
+    "M0_v2": "20261125-stamina-cql-m0-training",
+    "M3_v2": "20261125-stamina-cql-m3-training"
+  }
+}

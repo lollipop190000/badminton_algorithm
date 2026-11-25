@@ -152,6 +152,32 @@
       "tests": [
         "test_integrated_stamina_refit.py"
       ]
+    },
+    "14_stamina_policy_integration": {
+      "title": "첫 타구부터의 소모량과 체력 의존 전술 정책",
+      "code": [
+        "src/ledger.py",
+        "src/stamina_archive_verify.py",
+        "src/stamina_bellman.py",
+        "src/stamina_bellman_validate.py",
+        "src/stamina_cql.py",
+        "src/stamina_environment.py",
+        "src/stamina_figures.py",
+        "src/stamina_frozen_energy.py",
+        "src/stamina_historical.py",
+        "src/stamina_paired_rollout.py",
+        "src/stamina_policy_compare.py",
+        "src/stamina_refit_audit.py",
+        "src/stamina_tactics.py"
+      ],
+      "tests": [
+        "test_ledger.py",
+        "test_stamina_bellman.py",
+        "test_stamina_cql.py",
+        "test_stamina_environment.py",
+        "test_stamina_paired_rollout.py",
+        "test_stamina_policy_compare.py"
+      ]
     }
   },
   "schema_version": 1,
@@ -5461,6 +5487,3961 @@
       "sha256": "b2b64ed61d64f2e9669e55fe8a70b1d1d5a33089f098fdd8726cd2ad5d486f09"
     },
     {
+      "path": "14_stamina_policy_integration/code/src/ledger.py",
+      "bytes": 21877,
+      "sha256": "af66df5bcdb83bebd1f676678d7c0cab120d5099a226bced26d2673fda532e1c"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_archive_verify.py",
+      "bytes": 5232,
+      "sha256": "fa44df5da724901bf4cfd429c8b54fba170108f560e1f6ff98497fa9e97fb017"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_bellman.py",
+      "bytes": 11104,
+      "sha256": "ae3efb6ea6a61bc2668267df5dff41ccd265e996e694f3cf8ba58beffe7ae401"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_bellman_validate.py",
+      "bytes": 25863,
+      "sha256": "e099e9ee1625cecca2eed43d39eecfa5fa410f6f9f3fe1faa54331147efc4cc7"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_cql.py",
+      "bytes": 23751,
+      "sha256": "850af73fa0d0d004d5478f4a59de8757fc7a36ef1f71ada86817a787de1a7d7f"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_environment.py",
+      "bytes": 11526,
+      "sha256": "d503e9384c3a02d736f379cc37b9abd8f0854996783d4efad535faa07e5d35e5"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_figures.py",
+      "bytes": 24038,
+      "sha256": "657dc6709b5000915128affff6cce599ae4af49eeda06a7a7a4152eee59ac519"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_frozen_energy.py",
+      "bytes": 3411,
+      "sha256": "823345bd50fba9dfae0506f24aca4aa8c547ca786383146439091752d5ee45f8"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_historical.py",
+      "bytes": 9355,
+      "sha256": "9f12b69cce3e6a96c3d70766d29338f97d4d2fe49f3f72c2ab68da96e5a3ebdd"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_paired_rollout.py",
+      "bytes": 5345,
+      "sha256": "4a83ce99a7cf13e2ae1166ff8e904e8456f7b0f207fa4bce98572ac3f812281c"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_policy_compare.py",
+      "bytes": 21464,
+      "sha256": "624998ddf41bbb252bb5a59e6371c90eb60be6b4c0585d9eb69bce39e2738009"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_refit_audit.py",
+      "bytes": 4487,
+      "sha256": "ea9ec0d434b0bb7cb4c7c712c164a9433032ccd6d5bac49ee7b9d7149fdfa1ea"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/src/stamina_tactics.py",
+      "bytes": 15181,
+      "sha256": "d2d752372ee889af855542f156514665eb7548398dd0c6c6f219d26275080b2c"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/tests/test_ledger.py",
+      "bytes": 3107,
+      "sha256": "625ccbf176a31d6e5ffc5af69191611190eb6778f1df70a3c5eca17a7e80c968"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/tests/test_stamina_bellman.py",
+      "bytes": 3720,
+      "sha256": "86211ade9a89d2e4c67c80659212a1847752a0ae34ec07da0d7688fb77941012"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/tests/test_stamina_cql.py",
+      "bytes": 3000,
+      "sha256": "7ab8608337002f2c5778d2c475b07354351292c1814f38b8439f5f033ed358bf"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/tests/test_stamina_environment.py",
+      "bytes": 2836,
+      "sha256": "768fc03a01148408ff68f4f20dc12a747cdd405a437908f0d1270697dc0d0b04"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/tests/test_stamina_paired_rollout.py",
+      "bytes": 1818,
+      "sha256": "49d6a84a2017d3cbd7b456f7d6ca1ae1a75799bd2bfb81aa0c6184c750845b8d"
+    },
+    {
+      "path": "14_stamina_policy_integration/code/tests/test_stamina_policy_compare.py",
+      "bytes": 1424,
+      "sha256": "db04a1e6fabed75595e9333e12091425cfd6ede336961d1546b733a86209339a"
+    },
+    {
+      "path": "14_stamina_policy_integration/REPORT.md",
+      "bytes": 20996,
+      "sha256": "44dc0c8767a550460ee84cde10284a45b61af6ec1bbb405c6d3673e184b5d809"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-rollout-equivalence-codex/config.json",
+      "bytes": 350,
+      "sha256": "65bdb92dee2a5e2e20380d5beb5c00db33e0d9ae27499a3386d2c1fff3575811"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-rollout-equivalence-codex/RUN.json",
+      "bytes": 7057,
+      "sha256": "6bb3fce84decd1c53e24004fc776195c683480eb4648c5e472ffe9e8d880d078"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-rollout-equivalence-codex/stamina_rollout_equivalence.csv",
+      "bytes": 1807,
+      "sha256": "7d2e03022756300fdb077332e477d8aff30bdec95a3743120f08fe35fac1257f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/config.json",
+      "bytes": 1018,
+      "sha256": "8334d20d6aac36b490ba31728e9cd9b86d3f45fe85bbcb607f6f284188a03d63"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/interrupted.json",
+      "bytes": 152,
+      "sha256": "26ec24dffd31e2d7ae5daccd88f3bdbc2d3bcca6327c3516fe30884baac06ce4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_00.npz",
+      "bytes": 1167953,
+      "sha256": "56a4bee64c4a71428e15e65f33ea92a61654d9f9785df87f4c68aa03cd25b8a9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_01.npz",
+      "bytes": 1143255,
+      "sha256": "41acf4d449b1d3dff7d6d5f9b9cf72379f5fd41d3a3840bbe86c9ab2574ffe06"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_02.npz",
+      "bytes": 1000103,
+      "sha256": "8c8994fc66bb68c8861e72bab05cae16d4f9c332673350ad364cac97fdbfb960"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_03.npz",
+      "bytes": 944098,
+      "sha256": "87fe2f21d3d51bf4cf595dfa65b4139f02f90bb97f8451a42a660026ca53a888"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_04.npz",
+      "bytes": 984312,
+      "sha256": "6bd1472233004ed72a856cb042f2423ed8a4b1d7c38d811b51ef8bd2cafd18d0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_05.npz",
+      "bytes": 924500,
+      "sha256": "f48ee547b86ae4f23e982b2a3cee9c4547932350e1773aaf0a6bff5ad98dee65"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_06.npz",
+      "bytes": 961022,
+      "sha256": "ad7199222b849e0bb54ee7ffc55cdd7ce7210dd7dcb40eba4c9e6f78e0a7cf28"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_07.npz",
+      "bytes": 862904,
+      "sha256": "68b9c863558db28ec91f562f594aa98c523212669a63aae579ced8906428b549"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_08.npz",
+      "bytes": 965939,
+      "sha256": "0a56fc0b5876b4cd58d8b5a8b9ec597be1604756b401868e366d560654e0436d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/condition_09.npz",
+      "bytes": 1009287,
+      "sha256": "a0a201535de433f2ac6fdee56500bba4a1e4b42f9bb17230e28225d43cdeee81"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 928,
+      "sha256": "400e8560a95933cab12c7293adb71bc90d0f705fdb660b6ed6eec40d1dbd10b4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/paired_environment.csv",
+      "bytes": 72872,
+      "sha256": "56aef99bf790bfbe0f9e04c61cac6576731f98cfad11a9c69b7742d2a52669fe"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/paired_policy.csv",
+      "bytes": 57680,
+      "sha256": "6a85a0ca53ce72cb68e3c1ec0717e6e6a1ce9dd8d1c9b84fae2a496ff8ada85b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/policy_metrics.csv",
+      "bytes": 105660,
+      "sha256": "d8d07f768c2530ced8fc518b3f99f282d992bc9f3519712644acc62455627b49"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/M0_v2/recommendations.csv",
+      "bytes": 893252,
+      "sha256": "372d507cfdb9e3d264510505ed128856b5ab585d5aa2dbce387e19884fcaefbf"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-codex/RUN.json",
+      "bytes": 3794,
+      "sha256": "96756162a4660f01c54fce0d437bfd2f13ca4794f74fb1f04db288b61a8618bf"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/config.json",
+      "bytes": 1170,
+      "sha256": "109ba90c49a09d0cfdb8e8f2691d7a46da5b08cb4124660ea2d368d1e30c0550"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_00.npz",
+      "bytes": 1167953,
+      "sha256": "683226e982d4d1934ccf61856f35a360ab77b1f690dc6ab9cf4951d8fa8bfc70"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_01.npz",
+      "bytes": 1143255,
+      "sha256": "ec90a724d26d41fe672b3832366599d2eaa462bb8ab9328e00c1ffda9e3e4c42"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_02.npz",
+      "bytes": 1000103,
+      "sha256": "a71de4bd41bee3de024dc4b5df5963d6293d1c0cef99cfe749bcec4bd9c2ca3f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_03.npz",
+      "bytes": 944098,
+      "sha256": "f94b5a1bbb78a7f7ffddddf884bde1b47b067d8bd9a5f32d5c6985edd99a964d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_04.npz",
+      "bytes": 984312,
+      "sha256": "04d8cbfb4bd5214031f2265cf04cf17478f931d823a1cd9444bbf88ea0cb6342"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_05.npz",
+      "bytes": 924500,
+      "sha256": "e91c6a15198a87323b303d7fe5f99c5bc8af5b9dbfc56b0cffbe1079ec28b5d2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_06.npz",
+      "bytes": 961022,
+      "sha256": "f2ad399976d0d8314f251e530d1cdece54402c1a210472d11acf9c420d13d34a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_07.npz",
+      "bytes": 862904,
+      "sha256": "97d7420983a5a276c48b15489763fd4d01cdf0d29733b19152d4080b225ad765"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_08.npz",
+      "bytes": 965939,
+      "sha256": "5ba73a1c17acb006edce5877d921f78cbcbb993e3cfde05a27db4b95c05f5349"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_09.npz",
+      "bytes": 1009287,
+      "sha256": "86f382aee5ffb595f941bae13b24e2ad45932460fabdb6d51a5b32fc478a0a94"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_10.npz",
+      "bytes": 1121993,
+      "sha256": "d5e4cc7087f466ab7757761ff4bb3d07dc4c3184baa98acb6c08ca88e6dde638"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_11.npz",
+      "bytes": 1106872,
+      "sha256": "7a8e275dd1bfc8b09ecd1d0b5488f9309bf5e96e0ed795db89f40cdc3404b96c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_12.npz",
+      "bytes": 1016590,
+      "sha256": "3047baee4570371e1791fa7d09dcde3538512afc1ae9f8824ee9c1be225efca2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_13.npz",
+      "bytes": 982064,
+      "sha256": "52e7cb80cb08adc81fb602972c20f3f5b7928504a3035f13b5891ed74dd71335"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_14.npz",
+      "bytes": 997715,
+      "sha256": "b85877abf807479876a81134562002cbaa4cd305967dbb27fcc95eadb5497f93"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_15.npz",
+      "bytes": 914236,
+      "sha256": "48bab5c82af90b2a89b0de79430b578a30710f4be85bd9d11d0f8e52b3c77d48"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_16.npz",
+      "bytes": 951036,
+      "sha256": "ad1e379de524bc159225b106e84bcbdef6cf265ef1d89798dd7a5e841c0bd996"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_17.npz",
+      "bytes": 1007613,
+      "sha256": "14593743769c23bb160ba6c1d203c2303d978f49c07acafb3d2d1f4d815d8dd6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_18.npz",
+      "bytes": 1000436,
+      "sha256": "3ebf802b4f422d536db6a93c04a4c47d2534c61c8912af230c22fa4534f613a3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_19.npz",
+      "bytes": 1031660,
+      "sha256": "3920e2b696158cb7a7a67a60ab46f3828842fccffa36987f24f946156cde8749"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_20.npz",
+      "bytes": 1054024,
+      "sha256": "6e3046798868dfb1702f18d9411b083b58c861fd1371873acfcccdcc4096de54"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_21.npz",
+      "bytes": 1046289,
+      "sha256": "ea759cdd93e87630bb5ad2277488de1b27834400ade9d9b3b230cb09ccfd33ec"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_22.npz",
+      "bytes": 1002382,
+      "sha256": "50cc3b1209407c7330f662aa76c76673da02feede931502dfc1082be1d5789c1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_23.npz",
+      "bytes": 946129,
+      "sha256": "5062aa748df4f71cb8e8edd2575d32f1b12a94d2e576e0a95388d5612773b83f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_24.npz",
+      "bytes": 884528,
+      "sha256": "789eb6c69082353471723831b06f5f2b0d7124efb0d0feb419275e63aea2d6d4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_25.npz",
+      "bytes": 982231,
+      "sha256": "05499ad8ce8564f5c50c70f0892d30f49a07b74c78f0d1da7cf542f40cefb8b3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_26.npz",
+      "bytes": 937488,
+      "sha256": "21ffff833adb6c6a8e037043d569de243bb0075c28f0e1bf749cbc01b76ef6d9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_27.npz",
+      "bytes": 1013471,
+      "sha256": "9cb1a3e96fb55b32439f867ee91d7fcff265bafd7c20085fda0d30f173ac4dfb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_28.npz",
+      "bytes": 964796,
+      "sha256": "db971ab049161f8ba6208907cea6c3066793a0c250772e605a39a7653b7e3477"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_29.npz",
+      "bytes": 1004353,
+      "sha256": "bd5501963fa970826a76c9b3adeddc194c36d015e0607cd0620592c70c4aa478"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_30.npz",
+      "bytes": 970569,
+      "sha256": "aec90343ae1985e789da71bf3035ec65c06d90f58531374df4f96fb8c5230a6d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/condition_31.npz",
+      "bytes": 959686,
+      "sha256": "bd4e4df6209502896392f78837fd96db18cf8194a158737830234e7db129c836"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 2723,
+      "sha256": "100f641709c4b35a31b27c94c923d36004442483ac76898c468814d854fbbadc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/paired_environment.csv",
+      "bytes": 232343,
+      "sha256": "bee19311b23b16fb222e8db0a5ebe5d97e4e6339ecfc626f17d51fb5e45f2147"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/paired_policy.csv",
+      "bytes": 183473,
+      "sha256": "8ffa023e74647d5e88b36a8f252d647d711202dfd6d91204406f467bfc0d9dba"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/policy_metrics.csv",
+      "bytes": 335923,
+      "sha256": "be9c9f1f86160f9c24e8e98ff82d5e3ba7ce56dd1ab370d7fe6a0a8f1f03f1d6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M0_v2/recommendations.csv",
+      "bytes": 3078510,
+      "sha256": "8ed118bf46805c5fbaf687db2ab856def556cb7a1d861e72a2192a3d0bc52260"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_00.npz",
+      "bytes": 1185876,
+      "sha256": "ad07b83f30cd790c29415e6be9124945616749a9f7d01ae128d135da127e6972"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_01.npz",
+      "bytes": 1155319,
+      "sha256": "aa9b2520d193bf4a626a919d4ae206117eeefa63d091fdb65e4f677a6aeeebc0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_02.npz",
+      "bytes": 1001559,
+      "sha256": "25b51429696020cddba09f3bc862b79deef2d15bc8303070ea6f3d2d6f7ab1bc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_03.npz",
+      "bytes": 953418,
+      "sha256": "a25540863640972d50b5d7ce29df9da693318342205274e8ba0d5ac69ad5511e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_04.npz",
+      "bytes": 985026,
+      "sha256": "6a60debbf3160b421fefaecc823492e16230adf13ca8e40f0e6b030d8f32112b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_05.npz",
+      "bytes": 933168,
+      "sha256": "a4bbcef8bd0d22ec30e9ce426034ea25f20c064b00839bca03184e10c613b89b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_06.npz",
+      "bytes": 960479,
+      "sha256": "0e9ac254b3781957ac2c61b195a9dde89d9976e6e25e973dc17be4be732b6dfb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_07.npz",
+      "bytes": 870689,
+      "sha256": "8925bbc949da981684126dc583930f4a1ab73e46b3380ece2e7043759d608277"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_08.npz",
+      "bytes": 979475,
+      "sha256": "942a3669fa9baf13866c76c9fc6db452c334314f38b9a7e1d449ccbfb32c2946"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_09.npz",
+      "bytes": 1021859,
+      "sha256": "6640f9610c8ea14fecceb73721f831e784c33d45fb15111456e6aaa55bc9d3ca"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_10.npz",
+      "bytes": 1130212,
+      "sha256": "bb04552c905db413fcc7acf66cc2dc0d751b83a0b67e4572cd9ce018b02e7838"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_11.npz",
+      "bytes": 1122784,
+      "sha256": "4c4db1820a8746487c6db68fb0655717adddbc61c996ca6d27ea2463e661495b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_12.npz",
+      "bytes": 1022147,
+      "sha256": "203e10f12818e87d0a0e992e8d940d69c56c91f3bc6994e4ee26d26919b2e1e2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_13.npz",
+      "bytes": 990173,
+      "sha256": "9ec911377558ddd6ad6231aca5c4bb206e9da5cc2643963c21124c46c11a84d6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_14.npz",
+      "bytes": 1004239,
+      "sha256": "2c60ebe5ecfeb5b4b258e06be125be5fba0f08b19e18bfcb8fad2718e65055be"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_15.npz",
+      "bytes": 920545,
+      "sha256": "c74e0718e746306e34f783ce29466240c8913ed9a37891bbe2bead987b796f84"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_16.npz",
+      "bytes": 970890,
+      "sha256": "000f4333c4b8968fae0ee28df7a02adbaab156cde21aedd253e63b611ffbf014"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_17.npz",
+      "bytes": 1010248,
+      "sha256": "d99d0ba7341c3198d6eabb1b6b87beaceec3cd7698c55c19c32ea72f76bbcfd3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_18.npz",
+      "bytes": 1010816,
+      "sha256": "29071e20d1dc7ab758cee24992bd8ca011e22b5d788410e2330118846aa4b5c1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_19.npz",
+      "bytes": 1046729,
+      "sha256": "8674dfe0ef0d072f1a1cf646df75bfd842a8a80c29628a2e94a0cf31fc69f40c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_20.npz",
+      "bytes": 1059415,
+      "sha256": "bd6b5a8e75847fe7a49eab3613f8043b5fb7d2165c0ee5280438d07822e341e4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_21.npz",
+      "bytes": 1063592,
+      "sha256": "aab29a4978a8e52c1502fb6328efe09a92ea0734b861192af9c8f1fc62063e38"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_22.npz",
+      "bytes": 1003561,
+      "sha256": "75fdf6758628ed25e3f65f905fd7539ddf1313ecf7ffac87241dd5da870349c8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_23.npz",
+      "bytes": 954396,
+      "sha256": "7ccdf3fb5ac0c3fbe76290678fcd462c369aba8db17af3555703e5653bb1fdf5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_24.npz",
+      "bytes": 909557,
+      "sha256": "af80e39f5fcf51aed0a07ce808d0be2e9f4827286440aeb61589b5d3c75ace71"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_25.npz",
+      "bytes": 971478,
+      "sha256": "8c1aa8c8794b2960ec168e48adfb33522e4639eda399f64599cfb3075aed8d38"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_26.npz",
+      "bytes": 954475,
+      "sha256": "a8c23a3802124576b2483f01c9d9eefd84476af215efe38bc37d9206bdb6c222"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_27.npz",
+      "bytes": 1018206,
+      "sha256": "ab8189739999dbf5667e43c5b2aea0ad0db116b928a3336960155e657631026b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_28.npz",
+      "bytes": 967511,
+      "sha256": "150c9774cadf4fd57e769e79449c1e750e1d442315428f6e95bd4da919413fd0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_29.npz",
+      "bytes": 1026994,
+      "sha256": "1eeb617f3b194e544d5a4dc7510fd555b6067b526f5f479d21c2d243eb89161c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_30.npz",
+      "bytes": 964137,
+      "sha256": "8f5ed89dfc3c4a5327a3c6c365122508b972597d03b3ce1a7f978c0eb5a75277"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/condition_31.npz",
+      "bytes": 976454,
+      "sha256": "d72f633e3b9a343141fcc8fb5f46eac733d3563c7809dd9d5bef14ef8ef4c2e5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 2711,
+      "sha256": "02d1d9b1b44f5126622a4466bbb3943c2c43717a1201c6e9a0ba2bc34922b36b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/paired_environment.csv",
+      "bytes": 231494,
+      "sha256": "54035bbfc51aa8a78807dc7007b057cd203008b54c6c56fd98b2ed1991fc3db6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/paired_policy.csv",
+      "bytes": 182585,
+      "sha256": "ff68b2b4b5fc8fa15542fb02c4d1e476ef062e88375920834921e8dbf4b81105"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/policy_metrics.csv",
+      "bytes": 335429,
+      "sha256": "104b1b982e5cdcb6fec7d8165fa612d256c03bf56e1ec8533656da9b2e117414"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/M3_v2/recommendations.csv",
+      "bytes": 3154766,
+      "sha256": "791ce08062029dcd8cabe6145dd6972701299373d1f3c13c7f5168c1d404c084"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-full-codex/RUN.json",
+      "bytes": 20565,
+      "sha256": "cc7aba68355db24b8b91233a21101823f0005b5d9c739a8248d0940c14709360"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/config.json",
+      "bytes": 491,
+      "sha256": "d5ceb510150b4d9695f2b0dd06a14943c05be2b99bf042459b5e36338abf5013"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/condition_00.npz",
+      "bytes": 44099,
+      "sha256": "155f7f36643e42bd5157460d1e6442f7763d29e69f8ba9cce3a9db821a5a49e2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/condition_01.npz",
+      "bytes": 43342,
+      "sha256": "1967c05f065cbef50a936f6d567444e68a77dc4942f5f5ff4cb3c5cc7eb1352a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/evaluation_domain.csv",
+      "bytes": 281,
+      "sha256": "e1408f416b0bdcd1421759a0ae2cec6323a2fe93197a44cf1959aae75c7b4283"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/paired_environment.csv",
+      "bytes": 13661,
+      "sha256": "a18d016420004dc3d276d1ed93a7be0a4c93a3760c2a739908cf3fcc6db1fefc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/paired_policy.csv",
+      "bytes": 11691,
+      "sha256": "604b44e73d5ac8d66a05431340d22d8ddec3e63f785f2d5c240cb3159eaeef9a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/policy_metrics.csv",
+      "bytes": 22564,
+      "sha256": "ef4a5a7b039c6c8a006928ddf3ee9097b82e37fddd7dacd397d80ba4a43b0551"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M0_v2/recommendations.csv",
+      "bytes": 159236,
+      "sha256": "f282c3c2bd6d8de903860bd50b6d1c368c0cde3051327ad4817272b7e63b5e56"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/condition_00.npz",
+      "bytes": 44127,
+      "sha256": "4a79db661feaac1cd60bdc32bab5135ce2fb6426952c239b55df03721c123eba"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/condition_01.npz",
+      "bytes": 43740,
+      "sha256": "e69a5f8c24f6c731647362abec5862532f05dad72ecefec845963493ad3ef376"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/evaluation_domain.csv",
+      "bytes": 281,
+      "sha256": "b774da7393f12c7137e0fb4afe66b87c5cafe8cde6be30e25cdf1e04f7d94a59"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/paired_environment.csv",
+      "bytes": 13799,
+      "sha256": "b515c18295b4c3a920a6825f97f669ae35cfff47f918d38d067b79a3600aa128"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/paired_policy.csv",
+      "bytes": 11771,
+      "sha256": "a3de8205ae7a328a1d81575651bd0ff2cbfda42eb85057ae960227141e5207f8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/policy_metrics.csv",
+      "bytes": 22713,
+      "sha256": "06f97d6a43d2bc34238b08a1ecdd9db3ba37bd63c8ad9ffe93b672a80328aaae"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/M3_v2/recommendations.csv",
+      "bytes": 168275,
+      "sha256": "2120321eb5ea357a23fe4dacc99f084be3724b484049426ba7470b12073076a5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-frozen-stamina-paired-pilot/RUN.json",
+      "bytes": 11710,
+      "sha256": "12d64a146a620394892d94ec1460273742246313e47a106b662634988e225f2c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-historical-reproduction-codex/config.json",
+      "bytes": 153,
+      "sha256": "a443ab70a3b3cec2f2aa80477695fa7c9adba6ba852d1c3f4b28553600805d39"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-historical-reproduction-codex/historical_reaggregation.csv",
+      "bytes": 20285,
+      "sha256": "3befe800296e29c9b25d90be52b02b1323112078e25def790fe2aa09bbd55a2a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-historical-reproduction-codex/historical_reruns.csv",
+      "bytes": 1021,
+      "sha256": "c994b9adfb2e50529955dd0c3a68e3c0ea2feeb83f7ec4ecca9e4fd657fecd7b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-historical-reproduction-codex/RUN.json",
+      "bytes": 21320,
+      "sha256": "53e6fb93940f48e6ffcd370d2f1d86bc794f371644cd5ac677259bdd74403f6d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/config.json",
+      "bytes": 852,
+      "sha256": "7c0ead8a426d745f5fd3fdc2f01fd4b6d33055fb867d4682c4c9148608990628"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_00.npz",
+      "bytes": 602496,
+      "sha256": "a034397fd54d95bc5b8339b473223a134d551afb6af1d0fe0cf5ff4e90f4f058"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_01.npz",
+      "bytes": 600441,
+      "sha256": "beb29c4a6f2456dc2047b446e06900e5f965be1c33305a358a793a6b95154bab"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_10.npz",
+      "bytes": 599010,
+      "sha256": "b991959df9c32bee887abfe8bfdb6d6ca52cfc0082ae0d0330ddc06872ea8557"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_11.npz",
+      "bytes": 596455,
+      "sha256": "3b2d496faa3f81fabe9bcccc62aaaf6a8847a9740b031372f2bbfa6f81e00c13"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_30.npz",
+      "bytes": 575411,
+      "sha256": "5027782a42b8ecb1d405085e0d3f38fc3c6364a26c09e238a380ffdd3e6a225b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/condition_31.npz",
+      "bytes": 573913,
+      "sha256": "0c84e8d45b60995b799a2ec4f4c8f5a3537d966aa33929a2acccd72f8dbb1257"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 603,
+      "sha256": "5f4b2673a1a23e215bf8aa59b57d79191ac14b0bc95b6e1c1f8d1ffb681838b2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/paired_environment.csv",
+      "bytes": 27254,
+      "sha256": "b7a421db81f3be4722df7bb2b90125e5c17d37f4f7f5c1bb33206b0343d5d5a8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/paired_policy.csv",
+      "bytes": 5727,
+      "sha256": "d683ce97ac61e7f4aa95112ee92c5b4776aa9baceed78a68c3adf31601230f05"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/policy_metrics.csv",
+      "bytes": 24113,
+      "sha256": "8408c9161565f0877c738fc56107dffcee937d255061a1cdda94eef50cf1938f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M0_v2/recommendations.csv",
+      "bytes": 256371,
+      "sha256": "24a2707faee2474d97a3ce8336566514ea0ae80782372dc91d975592908b3a9c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_00.npz",
+      "bytes": 605123,
+      "sha256": "d3450107cb5edc156dbd6fc59f911a19c34edf0917b7e697f4645b11b23f32df"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_01.npz",
+      "bytes": 602050,
+      "sha256": "398118095547867ce1afd5fd1cca3fce0d317c9cb9752e054b3aede84e015007"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_10.npz",
+      "bytes": 600200,
+      "sha256": "040d88d68233e7c330da1b0dff4136e96d90eb1333e7c67316745c6bf1386897"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_11.npz",
+      "bytes": 597326,
+      "sha256": "a580fbb31a554762a785a0cf49b1961a1cc90a6f85d8528c37daa38214d9bac8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_30.npz",
+      "bytes": 577793,
+      "sha256": "0ffe6a1bf16cfba5ab69ba28c655e7429f323501287c049c0faf8f01c5da2647"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/condition_31.npz",
+      "bytes": 573825,
+      "sha256": "6694f452a0fdb550c8011c6c7984efc3604d268cd71e8f24c57f4736016033f5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 599,
+      "sha256": "88f516bad4529b995546f9fbcf79f2820a7f3c1e41540b214bfa0ad20ae3c89e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/paired_environment.csv",
+      "bytes": 27155,
+      "sha256": "2ceb8f5dd9403703988ae0706d4ac0a9b28a987e92d8f7e4edb3f7fb1d4c4b67"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/paired_policy.csv",
+      "bytes": 5720,
+      "sha256": "f9845313c0bc419165ddba443cc5ae1bf97339e740aa03ecbe8ac8ca7af98ad4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/policy_metrics.csv",
+      "bytes": 24045,
+      "sha256": "912066f36b66cdb56079ef65bbd6c81939de42633a6a5cd36bc0d9e48b713cd0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/M3_v2/recommendations.csv",
+      "bytes": 254367,
+      "sha256": "9fbbbe0124989e9ac38779fe7a0f522863b7077b53654377bc577a176a4c1fd0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-and-exhaustion-sensitivity-codex/RUN.json",
+      "bytes": 9476,
+      "sha256": "00f04e76bce75bc8d6f06cd53db9d7f219128c2c560dd1f656e97857e7f5e3ae"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_budget_distributions.png",
+      "bytes": 80405,
+      "sha256": "f2ef43c5b5429e7b12bc843047314102f5d3eecc64d2330948783c5d74913f46"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_budget_table.csv",
+      "bytes": 1872,
+      "sha256": "12d0a91854f9c83576f2367bb6d5fff7e2ba57f26dfa4941ffc00fa20a06e468"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_config.json",
+      "bytes": 555,
+      "sha256": "647c9b857f73f3d287b22635532ca74ffb6d9da5eb87ae8c1155f9aef4471bac"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_cost_comparison.csv",
+      "bytes": 1585,
+      "sha256": "ea323f54de39020f6efb1dba3773c7fb8aed8f4a4ba196afa94cd729d2d36355"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_coverage.csv",
+      "bytes": 955,
+      "sha256": "410e977824221e6809c65d72b649833f018be550a809b549459950dc603b070e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_cumulative_load.png",
+      "bytes": 136066,
+      "sha256": "2d12b6aa7042393fc9d9205a9232b96ce55557cf8d8b56caa2ef8710a48bb2d4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_eligibility.csv",
+      "bytes": 15984,
+      "sha256": "ce8cf87561ce61eb6f73e49ee8e34b20dcb59f76bb74c2c59989eb538459b381"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_events.parquet",
+      "bytes": 11795504,
+      "sha256": "b7a56d5fbce10738108e02667daaed7d6270ee1cb694a7663e29cfd0c2847645"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_load_by_hit.csv",
+      "bytes": 8400,
+      "sha256": "f45258f689fc22e4a89d82da389c34a3810948b4ab98284cf09e08100a1a0367"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_opening.parquet",
+      "bytes": 233104,
+      "sha256": "1165bd54a1ad0fbcf979413ee78a4660a4d627a89e8bacf4683f73bf7925b7cf"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_records.parquet",
+      "bytes": 15425477,
+      "sha256": "17c143197f4cc801506ae1d053f3e90cfd16f3b32a40b9b452309f0436f05b52"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_short_rally_sensitivity.csv",
+      "bytes": 674,
+      "sha256": "ec3e5674d4c189d149444c1f14916594039b65a9a63498cf77c8987d16ac4d03"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/ledger_totals.parquet",
+      "bytes": 944235,
+      "sha256": "f9086bad383173733f6e8338cc079a391d536158a5b156767af92c1c22845e11"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-opening-cost-ledger-codex/RUN.json",
+      "bytes": 9783,
+      "sha256": "037b5a2a34a95c15f26b114984748b8b83a31cdf6c65cf3f6e80f0ae17b95059"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/config.json",
+      "bytes": 303,
+      "sha256": "08fb53c3dfe62e104b11394507d77afe114ce08f7d4f8d40079eb4fbb05689dc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/RUN.json",
+      "bytes": 40053,
+      "sha256": "d557758d0c5cbcb9afa27ddc748382675b0826403f4d3abab093bdddab0d20c0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_bellman_matched_summary.csv",
+      "bytes": 6662,
+      "sha256": "55751a36022883ad9c48852315500ce79d983d6ef8ca8a9b8b20179c1eb7f340"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_conditional_win_M0_v2.png",
+      "bytes": 136975,
+      "sha256": "114a42fbf9429c2fa30ebb61615ce953a512d69bf0d876ec89d976b03cdb40cd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_conditional_win_M3_v2.png",
+      "bytes": 135542,
+      "sha256": "96008e07a6411d17d44da98d565c0ffcdaeb770945a8b54ea8551ac746239c42"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_conditions.csv",
+      "bytes": 173547,
+      "sha256": "0b8a1fe690d5278a1989c21e35afc9a902f569e8fa8ae43dd7d790947e7c0f80"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_end_causes_M0_v2_all_C.png",
+      "bytes": 40575,
+      "sha256": "1d87ece68ec13c6326e8ec49c79598bc16f36316f0cf56e278d4b090dfc4aeea"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_end_causes_M3_v2_all_C.png",
+      "bytes": 40514,
+      "sha256": "f2050cb995c58ed7ac51cbda64872b172326e84694404b12980b3b152df6ee37"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_environment_paired_cases.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_environment_paired_summary.csv",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_fixed_q_response.csv",
+      "bytes": 181571,
+      "sha256": "b2a7df52c2ec12e9bfbb8d245c30abf9d7ff4094704ecb0d69f46b44786454e1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_heatmap_M0_v2_all_bellman53_updated_mean.png",
+      "bytes": 84975,
+      "sha256": "fd53eedfed168c25bf61163f58d842bcb060a2e074e446be7e2a7c127c742ab5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_heatmap_M3_v2_all_bellman53_updated_mean.png",
+      "bytes": 83802,
+      "sha256": "79738b94275ad2e3bc23e6c974fe3c16b35913e5ecf5ecc2415e983da3d6192a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_paired_cases.csv",
+      "bytes": 405635,
+      "sha256": "63a786f34b5c8e06523f0b1211ebb277c6320c09bcfa90a9e32f77d0a51eac2e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_paired_summary.csv",
+      "bytes": 8961,
+      "sha256": "c86e131613af7dcac315d755fbde4e4ff9717556e94a9663b14040622abeb667"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_recommendations.csv",
+      "bytes": 57880,
+      "sha256": "3a2ab57b3151110601c048a5d695a09e6adba2608fe3a1b4ddc1a1ff6a0a0bcd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_recommendations_M0_v2_all.png",
+      "bytes": 105341,
+      "sha256": "49061fb351954a27bd3b530d058737e5f827ea3d12882ec7edadcde133ab06b5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_recommendations_M3_v2_all.png",
+      "bytes": 105374,
+      "sha256": "53faeb8db1006636b7bad139bf1946c35ec3a9bdfc8a5ebe30140cd09d8721d8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_summary.csv",
+      "bytes": 6662,
+      "sha256": "55751a36022883ad9c48852315500ce79d983d6ef8ca8a9b8b20179c1eb7f340"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_win_value_M0_v2_all.png",
+      "bytes": 45482,
+      "sha256": "98086aa4f7c76ce012258d7289c9e690dc733375c9198338bfde3f7f805801db"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-all-eligible-figures-codex/stamina_win_value_M3_v2_all.png",
+      "bytes": 45439,
+      "sha256": "07cd58073036d505da36c576133ad4d5f4f82c0f9e974138ac78b9b9b5f9126d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/RUN.json",
+      "bytes": 5270,
+      "sha256": "f6db9943355f1fff0d3d2005c0d0b047cdae98bb61c63c29d13c637b5b8b8ca7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/stamina_bellman_config.json",
+      "bytes": 363,
+      "sha256": "00c55355221e0b83773b0d95a6707d65f4bc46f5f5e2c810b647defab7b91bed"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 1193,
+      "sha256": "cf99c3d55c5b8ecc266c3353c8db2dd4e65c64376862973bc96325df7917d979"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 2274,
+      "sha256": "8e9e28ade460c50853300d65b96fdff73c019bdf1efe5058cfc0db5f8b195fb0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 487,
+      "sha256": "2a10c9510b6575caecc49fc213a45599e5434113d7eba9685aeeee791125d62d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-c0-p25-codex/stamina_bellman_validation.csv",
+      "bytes": 1676,
+      "sha256": "48d490899b9b694182cdf95ad9dfdfa91efb1a2819eec432f201300166c0aec3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/RUN.json",
+      "bytes": 4273,
+      "sha256": "23d3271d7bdf8cb5af1cf41dfd1febc9fa5d7a5a09d7d51de310d74419b427d5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_config.json",
+      "bytes": 300,
+      "sha256": "c1b13d16c66df0c4be2cb3f74698f853b8075a721f024c24b06b03f98aa58e3f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 597,
+      "sha256": "a4b27aa00eed89af77c54fffbb8417d078783782cebbdc7082ddcf1fbb7b4801"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 1197,
+      "sha256": "3155545c6a686663aee1d4ef9712eef54ebf47e784a6561b962d21c4d4395f31"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m0-p25-codex/stamina_bellman_validation.csv",
+      "bytes": 946,
+      "sha256": "66cf6d8485c6fd9e0f8a038536d0919cfd48c4f0398fc275f8760c166c5bb554"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-boundary-codex/RUN.json",
+      "bytes": 5497,
+      "sha256": "ad36de0fe8f6ce4097a5d9257296c6cdcc703144b665a18ad0ff66663c4791fd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-boundary-codex/stamina_bellman_config.json",
+      "bytes": 453,
+      "sha256": "883a8b5bb8970634cf2978105bb58b95c8d92d022c372d38971c338632b01172"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-boundary-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 659,
+      "sha256": "4fe31893db4278a61ef3f716e32cd83e39ea252fdccbd0f40e899e103d07bb61"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-boundary-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 1818,
+      "sha256": "91efcd6a906fe78f2dd0019d465a0d2ffaca5f23e19d889ed256538d7c13f4f4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-boundary-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 303,
+      "sha256": "9e31b435cdc1ff33f76a3cb3998e023a7a7fd3e7837985bbbf4fa6fbbb1fb169"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-boundary-codex/stamina_bellman_validation.csv",
+      "bytes": 1154,
+      "sha256": "3ad0763d52dce4266383864c40eab816c627e897a70c19f154327e6414c34cbc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/RUN.json",
+      "bytes": 5451,
+      "sha256": "5b5e2221d2d327822e9d51516b2c51e834df4feb836d1af33fb50077cc4802b0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/stamina_bellman_config.json",
+      "bytes": 482,
+      "sha256": "41f395d3bd8153050fea37bc9dccfdf85abd38304abc2229e7e7eb80c99ef1ac"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 681,
+      "sha256": "1c1b0d886d3fd24ca881dc9437cc5ab19b218c6d29eb668529fc61dd5d228d4e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 1825,
+      "sha256": "a4f5022cbfded00f3648b3a5e0a3a4bda47459520f2bde7a87713b0a2bdb609a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 309,
+      "sha256": "97e0d4ba574b7a88368d398103534c2ddb36a8369ae06771db442122c0c4d2e8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-c0-refined-codex/stamina_bellman_validation.csv",
+      "bytes": 1181,
+      "sha256": "66bcae79bf2a901494d53437610952638a7fabe4f4ec4dda4f2c6f2f6256e8f5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/RUN.json",
+      "bytes": 5487,
+      "sha256": "d08bd9192035ebe1a1545fb163f527054d74361f18beb87320b069d980455e6d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/stamina_bellman_config.json",
+      "bytes": 454,
+      "sha256": "5dc9e2d4756d905de8001e680b12f640300d212d9b549bbda978f445afcdcdd0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 658,
+      "sha256": "d2c526ea4c100aab6ba157871e2c4985590a486038f1cdbf223ca7b3245c4d5f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 1853,
+      "sha256": "5e5e274f9d75c539b7d02a0d21b8bb58775073bcff2e3f3929d2f5a7502aa985"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 311,
+      "sha256": "f9b3b864c1442f1c6b0d36de2e01645fca2178253703ff206be78031466f32f7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-boundary-codex/stamina_bellman_validation.csv",
+      "bytes": 1157,
+      "sha256": "5b625958f2650925b31164ad92693b556a91d911847ee5b327a2ccb12583f862"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-codex/RUN.json",
+      "bytes": 4560,
+      "sha256": "4b327bf945f15970b027afc7f724235f6a38872291fd234de7c2af275ed70502"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-codex/stamina_bellman_config.json",
+      "bytes": 325,
+      "sha256": "f4f1e2f4938d62d5601de54f85cc227c9c61df921886914747d6d3dfaa0a9d2c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 598,
+      "sha256": "e1b58c49c55b1a6e989b34cf8e9a8e51c77eccbd19d08b1924d0d1bbba402d57"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 1198,
+      "sha256": "ed7f60f3b328431f37fdd3eefae521ff3d277783226686294e6a77fb7027116a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 216,
+      "sha256": "17cbcef11548913949a1b543dd8c80fc72b99c6f500e1f97481e75bc76d41a99"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-codex/stamina_bellman_validation.csv",
+      "bytes": 957,
+      "sha256": "b0a3fc5e35a2c6f69440d44090bb236a44a1c0876fb4adce32a3e09f31ad9e33"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-exact-codex/RUN.json",
+      "bytes": 5302,
+      "sha256": "0cfd7d4185c495e6a509127606de7cebfe492aedc1409beb175677954f680edf"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-exact-codex/stamina_bellman_config.json",
+      "bytes": 447,
+      "sha256": "40588c9a04e565ff719e5f42918f81e2b321a08212644a8f4c35cfbd70cda7cc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-exact-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 658,
+      "sha256": "d2c526ea4c100aab6ba157871e2c4985590a486038f1cdbf223ca7b3245c4d5f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-exact-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 1844,
+      "sha256": "b38179ee8d9fc9fc9f55c5ae24bda0ad5a03d15cd0d53da372a298e473428c1b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-exact-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 310,
+      "sha256": "76d1abadde299ed474cc5ce74dcb9e548b18993b48e73a671e2395b625a7dceb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-exact-codex/stamina_bellman_validation.csv",
+      "bytes": 1151,
+      "sha256": "63edc6aa21701d2813d90da9e47911a9dd8b26fc42ae7970cf2a6d249e25f045"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-p90-boundary-codex/RUN.json",
+      "bytes": 4913,
+      "sha256": "c4d0b5b1a3627bd90971a217d198657de27fba8d1fc31e3062bec016557b534f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-p90-boundary-codex/stamina_bellman_config.json",
+      "bytes": 452,
+      "sha256": "e58038d6c4104108b036c6a0228da20264c90074c71052b2726a3736fa53b091"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-p90-boundary-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 696,
+      "sha256": "a5540436f078a7973b5aab727c3cd024f6d6b13a41c56a86cb306fffd89ab822"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-p90-boundary-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 1881,
+      "sha256": "341730bf8ee3885fb39677ab1809ee24630fb5a5ac363e290e0c38f090da65ac"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-p90-boundary-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 303,
+      "sha256": "72caa6c507f823b8be9de80bdd552bc2d9b63d0bc71e8118ab16415b55587684"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-m3-p25-p90-boundary-codex/stamina_bellman_validation.csv",
+      "bytes": 1178,
+      "sha256": "e16bc66c356fd0f42770a6a3ea9ee97005f7b0e899e1cfbaaba1fadf7ef417bc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-pilot-codex/RUN.json",
+      "bytes": 5271,
+      "sha256": "7fea7144f909e89863076e87b865268f525be4606655017191e922fb67295f8f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-pilot-codex/stamina_bellman_config.json",
+      "bytes": 313,
+      "sha256": "fb9f2417196d2e214631ef918d0c4694122cd933b16f92498c9bed15c0df7d10"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-pilot-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 1185,
+      "sha256": "604e08c879aa624e8015b43ccdd723a5019d085b91af0252ba66c2ad9226d9c0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-pilot-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 2291,
+      "sha256": "94014e3f10d93fb7f73d0623498b334c751b8b60d43cb0aa492352df2b0a864d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-pilot-codex/stamina_bellman_solver_before_float64.txt",
+      "bytes": 10908,
+      "sha256": "98e07cf8aacfa3f7203b7b8b010ea8ea2b0a65945849d48bc20cea2015eb3071"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-pilot-codex/stamina_bellman_validation.csv",
+      "bytes": 1641,
+      "sha256": "52fac958c7326c508d7376d7548238dae031092fc188007e31c2ea90ad169977"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-boundary-codex/RUN.json",
+      "bytes": 5455,
+      "sha256": "8bee1e0d1b0503d5b19b8b4a1f28e1b27c23771140d6877224cc480a0d6bec82"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-boundary-codex/stamina_bellman_config.json",
+      "bytes": 487,
+      "sha256": "ef1ad038777871527516f6410ea4ca1b2df2d5d8be044e480be2fb7ef743363b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-boundary-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 1304,
+      "sha256": "ca040f7d3f1c6a3d849b264e2a5e69e710d6f3a669f55734f59b1f8bbd77dcc7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-boundary-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 3606,
+      "sha256": "7bdd2c4b9ce791f7b172c58c633f57304cda7eed9e9370228b93b91b7801cde5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-boundary-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 447,
+      "sha256": "7e4b4480978685f7ebed06cb91112de6116cc777f132bc27bd377f082a52805d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-boundary-codex/stamina_bellman_validation.csv",
+      "bytes": 1963,
+      "sha256": "9629c8de6e6f37ceeb1f083fc55b0fd2d00175e58c55ed4029e8e347ea6e6b76"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/RUN.json",
+      "bytes": 5320,
+      "sha256": "7de198872d6537d8bbb380ee6b680feb32f56c464fb57eea107c50c7c828a21c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/stamina_bellman_config.json",
+      "bytes": 482,
+      "sha256": "57d6dcd818310b33b75d17f19ca57d1b9f3dcdf378e1421debb8cce58607bf03"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 5906,
+      "sha256": "b31d51870c8604b4f4d34570125ed358e7e27401d7a207d970f3684cd585a993"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 11067,
+      "sha256": "9fabaa0e7efd4c54549cadd99d9a233c11022b1164f34c0fd329dc7e466ee8e4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 1235,
+      "sha256": "0052423479093e1b60d5c675864f44af90a0281025ddf62b4f37b091f9b7283e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier1-codex/stamina_bellman_validation.csv",
+      "bytes": 7151,
+      "sha256": "77cb93d3351f72d597f504b50ac2e3aa5483d5da0ca96af8eeca4a56c8bf8a2a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/RUN.json",
+      "bytes": 5346,
+      "sha256": "26e537decbaf29497c05a55fbf1d9feb98b3aac2d8728f13a4e5ea211fc7d876"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/stamina_bellman_config.json",
+      "bytes": 554,
+      "sha256": "7872b24e608ae6c6e953e2dd4c465820b025e8e85b0e5bc215168028d695b3e4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 8266,
+      "sha256": "7b66c83b75183a00034f01566c43ade0e011224931b8e5dec53f5a3a4941b31c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 15443,
+      "sha256": "a0e81e755d0620a2d98af369f26e96dc864a7124f848876e6a1310ffd66862a5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 1540,
+      "sha256": "1ff97c7e9adb114680e57f338be36a5d806bd2429dd6d678a1fc711c27ecbd20"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier2-codex/stamina_bellman_validation.csv",
+      "bytes": 9949,
+      "sha256": "42d7651497dd42ab67e3c8de0074747ad5be623059bf77abdc6a3cb5d81e0fa0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/RUN.json",
+      "bytes": 5295,
+      "sha256": "74450aafe95f26575f91b65fb3f09bffb880724e9f6f32e0957b1230959074cc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/stamina_bellman_config.json",
+      "bytes": 433,
+      "sha256": "d0b906251e57ca4a41386931f522338a60a11543a49200c62cbcf4ab842d94d0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/stamina_bellman_grid_artifacts.json",
+      "bytes": 3551,
+      "sha256": "37deb7a487214f390531ec873be13747a987619d73dbd0ec7fdd63f3020064d9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/stamina_bellman_grid_queries.csv",
+      "bytes": 6789,
+      "sha256": "a78876930f4b668d6e0c7b6b83cb5fcea97288d1706d64dcc2b0164bd8edba19"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/stamina_bellman_refinement_attempts.csv",
+      "bytes": 706,
+      "sha256": "b3164979210df16f7276567f3f8af116bbd3a06a09a6519ed8efb0d76acd87ac"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-bellman-tier3-codex/stamina_bellman_validation.csv",
+      "bytes": 4443,
+      "sha256": "ae2ba0884b10736e978c0bbdfea22c7d0a8dea426f247524d5d96d3736199a08"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/RUN.json",
+      "bytes": 5647,
+      "sha256": "0cdcdf40f244c41e60c7db07aef122ac82e05c17ec03587a399a4848ec0f2076"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_dataset_audit.json",
+      "bytes": 1659,
+      "sha256": "8855f4baaae5d1185a6b1a86bf74a0d82c287d809f5f929eef23d325f584e69b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_dataset_contract.json",
+      "bytes": 2394,
+      "sha256": "e607bdac69ab65fefb4dcf61f76b908bd44d628c6434bdae3739657a11a690fd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_replay_test.npz",
+      "bytes": 2119955,
+      "sha256": "3d58610371767a5e23e8ff94df86c469c9e662cee5e5f48f92472f89ff389538"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_replay_train.npz",
+      "bytes": 9116837,
+      "sha256": "ed5d01f61936b30624aa331c9f5a01389470523df0fe3052a6abbbba8efe9a96"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_replay_validation.npz",
+      "bytes": 1993109,
+      "sha256": "ffa0eadc6cb412bf416d822508ca41d21cbd401b4548f35f7c12743e51946e89"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_rows_test.parquet",
+      "bytes": 1913751,
+      "sha256": "fae58ce3a41a9e32c2c5afd3d52e2ee2d2df48a109527c9136a93e045c4cf227"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_rows_train.parquet",
+      "bytes": 9316293,
+      "sha256": "970e1ba847f9c39302c42b68fc6483f5c763cd7cb246584eb83ed70315d14c2b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-replay/stamina_cql_rows_validation.parquet",
+      "bytes": 1905723,
+      "sha256": "9a15a112d692c316e4559121129454d399352b327db391c4e429917812040063"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/RUN.json",
+      "bytes": 7156,
+      "sha256": "c148623237b9608e95cc53608caa48f1a39aedeab4f38f8ef5740641cf43c706"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_alpha_sweep.csv",
+      "bytes": 253,
+      "sha256": "be2b85cc3e0f745cc194f7ab7edb53eee2ad63e4d4b354fd90f6b4b4113da557"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policies.csv",
+      "bytes": 536,
+      "sha256": "4973d82419a6b78f979e5267fa40d236374b175bc5336e1bbb13256d494d8ed0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed42.pt",
+      "bytes": 164653,
+      "sha256": "14885825b6438a8a895733d950f40a6d5c2c21a13447a455c987821cccdc1471"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed43.pt",
+      "bytes": 164653,
+      "sha256": "547ed9474488c383d4a945e078b9042ebd18a7c03dc9152c41c31729d1288a57"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed44.pt",
+      "bytes": 164653,
+      "sha256": "f9199926eb9ac2f7171491bfd7c1807193871c0463810a6eb0c544a63528931a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed45.pt",
+      "bytes": 164653,
+      "sha256": "daeb369420d309e95c57fff1d4c78f2ed137f977215686fbad8781ec86882b38"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_policy_seed46.pt",
+      "bytes": 164653,
+      "sha256": "e2424afa84c9db9970674a56ba41f00152ec6077a40a1eec1de21506ce4a1f99"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_seed42_alpha0p1.csv",
+      "bytes": 3055,
+      "sha256": "8532696e15fb5ce3f0558bc9d572cc8883324c6dad66e3babce45430bce77bcc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_seed42_alpha0p25.csv",
+      "bytes": 3066,
+      "sha256": "127a3fb9859b22ca976a03833f3fc4fe17d67c66eb71c98f0bc13e99ee8c352b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_seed42_alpha0p5.csv",
+      "bytes": 3206,
+      "sha256": "76a51f7f9bc3abb070fa80b5306e55893d92cd1b4926c07a130b05be77be868b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_seed43_alpha0p1.csv",
+      "bytes": 3264,
+      "sha256": "25e22b14062764212b2b86c13b6d83328f7b3ad88388a1f14e46567f3d6ab256"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_seed44_alpha0p1.csv",
+      "bytes": 3256,
+      "sha256": "509042978283a839b124ecedc3e61da7ef713acad0a01bb6144378aa398c2910"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_seed45_alpha0p1.csv",
+      "bytes": 3085,
+      "sha256": "7dfd13f965bdb6efcca3781d7a67e717347d47a6ad63229115b21989446103c0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_seed46_alpha0p1.csv",
+      "bytes": 3254,
+      "sha256": "700cb3ceb09110ae620c87f530b78a9810ce3dd88955237d20861dcc6adc9d6c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_training_config.json",
+      "bytes": 638,
+      "sha256": "236498e27287a9acbc7486f5db2a007b40994ade4234b023afbc7e9ccbf99613"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m0-training/stamina_cql_training_summary.json",
+      "bytes": 2155,
+      "sha256": "7f29d56bcdb95e79b279edcbb3eb48133ac1155a4d83d02ab41ba55c61ea0077"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/RUN.json",
+      "bytes": 5648,
+      "sha256": "e97c8ed0379fa2be6be76cbedf2ed3fc60ffe64c018d3709672e8343ba4faad5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_dataset_audit.json",
+      "bytes": 1660,
+      "sha256": "d033df6ad6e92801b7af648c103e5d3aeeb5955ddb681256b09f666cd889a596"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_dataset_contract.json",
+      "bytes": 2385,
+      "sha256": "5871ee8773edaf3e4a7ca763d2d96af028bebda674ad444576ff2c8667a8611a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_replay_test.npz",
+      "bytes": 2121743,
+      "sha256": "07f0cd3aed37213407bc0a9f0443fd230dc7bfc16d5778c300d30808bfb247c6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_replay_train.npz",
+      "bytes": 9087951,
+      "sha256": "a01d712e23d6c6104943430c836fbb3fdfffb0fdc311c4bd037bec97eb2c0e3c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_replay_validation.npz",
+      "bytes": 1988006,
+      "sha256": "a4bff683f31b87861cfc7ba91cd3975d419ac462144d7c65d9a4416e26fdfe22"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_rows_test.parquet",
+      "bytes": 1918735,
+      "sha256": "f6e48817bd465ae16092b0dc6b7ad0b93a5ae72d1125e253a1cb3feeff9403e8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_rows_train.parquet",
+      "bytes": 9307896,
+      "sha256": "daeb117cb2ceefb25dbbba5bf6bf7dae5f93a608fab9bb3dd87cdabd6ab7a910"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-replay/stamina_cql_rows_validation.parquet",
+      "bytes": 1906798,
+      "sha256": "1c46cfc27b26deb16a1d7735a004ea1d9267547ea99bb39104ba9cdfb78355df"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/RUN.json",
+      "bytes": 7149,
+      "sha256": "140a9c3831dfa0dfc1889ac5e9ff80bde18e3126bff74d82dfa9c31d85676af1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_alpha_sweep.csv",
+      "bytes": 250,
+      "sha256": "6162a6878ba99d64c811a96a3aed8467d264c074495247d10324699ecce99a3f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policies.csv",
+      "bytes": 532,
+      "sha256": "31bbefb2dfba0d1e3c4684826bc1d02f49c3a1e47cbb293e4cf20cff962b2fad"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed42.pt",
+      "bytes": 164653,
+      "sha256": "af93e6bafec3f3b550245771c04fcd3ecbee3ad2f156b80fb509ca682ef489a9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed43.pt",
+      "bytes": 164653,
+      "sha256": "ef215620606f078cd568020870ab6464cd798fbb5f556a5e8e5a3643dfbf66e8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed44.pt",
+      "bytes": 164653,
+      "sha256": "d0d3fd44d5264a89184ff0ffb60254afb9f5f7eb5b491909539832b72f59678c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed45.pt",
+      "bytes": 164653,
+      "sha256": "b301a82e45065dbf1a2f862e873e822db698fd9a698ab59324daa6ddd931ac08"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_policy_seed46.pt",
+      "bytes": 164653,
+      "sha256": "ddc1d58b2287b1892076e814f7ff4b70071f5b0c14ea596c0d135ddad6cdf0c3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_seed42_alpha0p1.csv",
+      "bytes": 3065,
+      "sha256": "0f61ad31ad424568e418e76bcda916669449fdf9911fe3d977d2e4919c69716e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_seed42_alpha0p25.csv",
+      "bytes": 3253,
+      "sha256": "bb801079e82fba8ec4e4391aee41d2b0d9b63588ae473d919a543767fb8d46c0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_seed42_alpha0p5.csv",
+      "bytes": 3214,
+      "sha256": "b931ef41bd184d8a778308eff8623f59227514b53942004ef73631c8bd19c0ba"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_seed43_alpha0p1.csv",
+      "bytes": 3259,
+      "sha256": "22443a33e1d4855b22754f01aadf39439deaf780ae175213bef1fe0870a32760"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_seed44_alpha0p1.csv",
+      "bytes": 3070,
+      "sha256": "9e0571f329e953a6cf2a6df1bcb65c1ba9fe6ef973e1be7ebe767c09c682d17c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_seed45_alpha0p1.csv",
+      "bytes": 3251,
+      "sha256": "147f044472909a4026dafe63b13ddea94394690b41a39b4fb31e85104dfb0bc5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_seed46_alpha0p1.csv",
+      "bytes": 3261,
+      "sha256": "6b7d4a5d86f6df614c3110620fb6836c5068f41563f9229901763bfd6ad76b1f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_training_config.json",
+      "bytes": 638,
+      "sha256": "e80881d2384c8c8ec61c3f23f29c9928af6b700db8b7a33c7186811cfd6db121"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-cql-m3-training/stamina_cql_training_summary.json",
+      "bytes": 2148,
+      "sha256": "492bcdac2f75784fdd352cef59ce0c5aa0f7612d0ed80bd4511c27d8d689c017"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/config.json",
+      "bytes": 509,
+      "sha256": "94113d418ce3445e05f66baa30afb90babba0d3634837a2fdf3c7dbff1b647f1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/RUN.json",
+      "bytes": 61589,
+      "sha256": "e1121502d3a4b476a867ec909bdd30c7b18bfd83767595fa5e746317985a4000"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_bellman_matched_summary.csv",
+      "bytes": 11727,
+      "sha256": "d16b079c62160d22cbdd145bdfc21adae2be7c8bd43254892d70b0c60dfc6858"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_conditional_win_M0_v2.png",
+      "bytes": 136975,
+      "sha256": "114a42fbf9429c2fa30ebb61615ce953a512d69bf0d876ec89d976b03cdb40cd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_conditional_win_M3_v2.png",
+      "bytes": 135542,
+      "sha256": "96008e07a6411d17d44da98d565c0ffcdaeb770945a8b54ea8551ac746239c42"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_conditions.csv",
+      "bytes": 1186041,
+      "sha256": "801a89cdff5f2a11bb8219eee471758d8c8ac4d470ba8ff39c52bdcb1e5be7be"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M0_v2_domain_A.png",
+      "bytes": 44982,
+      "sha256": "79a65c9ae08ba7bacfd8665e33e3404dbb5c71debc77cafe41631f587f0629d3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M0_v2_domain_B.png",
+      "bytes": 44949,
+      "sha256": "14f1a33be18b3e31cfe35e1cbcd800d6137edbe68735c3e9c9acefd4fef9d865"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M0_v2_domain_C.png",
+      "bytes": 48652,
+      "sha256": "d1608646cd93a04c8822f95f4f014f783245cac4437531beff4e8082c286d41b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M0_v2_domain_C0.png",
+      "bytes": 45519,
+      "sha256": "a83f16edbed7775a14f9da63faea54366c5a53923960c416881fadc7fd52819f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M3_v2_domain_A.png",
+      "bytes": 44908,
+      "sha256": "e3323822f7b17e0a74260f9972d9f8ed38321f5a61b042a62ce4cf099c6ee888"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M3_v2_domain_B.png",
+      "bytes": 44903,
+      "sha256": "703a8c96c2f6087d8f96d1679dfc95d4277345996cd55b41e701ac884f2adfe3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M3_v2_domain_C.png",
+      "bytes": 48536,
+      "sha256": "dceaf8b790b4f60ec67dc801481805d9311d5c12fbd1958c2405ed0f899852df"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_end_causes_M3_v2_domain_C0.png",
+      "bytes": 45321,
+      "sha256": "c02e35f08c837675d3eef29114f725ef61444af82f3df776a394640ab86b3a28"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_environment_paired_cases.csv",
+      "bytes": 486452,
+      "sha256": "8feb4d701f480c43c924fd2c34796d9fb7f5e80e419a31cd8f29778383484064"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_environment_paired_summary.csv",
+      "bytes": 10428,
+      "sha256": "c839c7a5129671460f907798313f32b8d1684bebe27d0994bd9c62f02d90860f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_fixed_q_response.csv",
+      "bytes": 181571,
+      "sha256": "b2a7df52c2ec12e9bfbb8d245c30abf9d7ff4094704ecb0d69f46b44786454e1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M0_v2_domain_bellman53_energy.png",
+      "bytes": 81585,
+      "sha256": "e3bb8bc652c606dbc64545a91617300e8c4c72c5480e781643c01af698a9c53c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M0_v2_domain_bellman53_updated_mean.png",
+      "bytes": 83914,
+      "sha256": "3d11ae2cc95294deb3c01c787790d141a0b6678a2d130edf9039779c3ce918b2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M0_v2_domain_energy_frozen_mean.png",
+      "bytes": 82861,
+      "sha256": "6b07dae6b44751450e6d2316369532accc91504898a80857c0b80f5930a4a6c1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M0_v2_domain_updated_mean_frozen_mean.png",
+      "bytes": 81054,
+      "sha256": "857917614b49f2b93b8af2d7f1e23a4c893f17cd6c5196e1ee522600f0f940f2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M3_v2_domain_bellman53_energy.png",
+      "bytes": 81873,
+      "sha256": "b8e2538f5ada021f8008ca4a879f2e72cc2072f1c203b3ba7a03fb99810986a5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M3_v2_domain_bellman53_updated_mean.png",
+      "bytes": 85655,
+      "sha256": "1810fb55eb26ef33e944873486289308629531bcd9cc050826e39fc28171124e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M3_v2_domain_energy_frozen_mean.png",
+      "bytes": 84926,
+      "sha256": "9929ccb9c4a961c1ba8c015c301687219f54f1cff2bd85e6acf8deda544dce77"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_heatmap_M3_v2_domain_updated_mean_frozen_mean.png",
+      "bytes": 87489,
+      "sha256": "846f70ed500a878902cfb798b51278c4ff5066d9a9ff989d19fa090c8676527a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_paired_cases.csv",
+      "bytes": 4973728,
+      "sha256": "2cc8fc6d69eece1f471da3981b961d0bebb1cc065e65d2265523d423285e0ced"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_paired_summary.csv",
+      "bytes": 110042,
+      "sha256": "1bfc8bd71c91b28548e837b66e380160a3f3ea003c82038deca7e704b2b1e365"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_recommendations.csv",
+      "bytes": 421271,
+      "sha256": "30347325e395078000634d13b54d3b30b8447249c9d9a9777c16300bae1a19ae"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_recommendations_M0_v2_domain.png",
+      "bytes": 120760,
+      "sha256": "d6f3a8922bb7647bf67b112cce3d8b0c161eb247cfe1b6dc50435cf43893b513"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_recommendations_M3_v2_domain.png",
+      "bytes": 120040,
+      "sha256": "cc6a31f9c02abd742559ec4c7eacfabcdd11edb76fc284e45e78f76e981473b7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_summary.csv",
+      "bytes": 43720,
+      "sha256": "e4c14e36bc659cb1d11e378315b500cb655f6f7b760f950aadda900071d5614e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_win_value_M0_v2_domain.png",
+      "bytes": 99188,
+      "sha256": "de3a665f60e01015f548e285d3670e8702bb1a6d30bc8776a681357f351d7629"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-domain-figures-codex/stamina_win_value_M3_v2_domain.png",
+      "bytes": 99223,
+      "sha256": "6d5fedf37beb74b0665a3b67b60683f4adcf58d5382e597dfb02e4c2247ab2c9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/config.json",
+      "bytes": 186,
+      "sha256": "05082730b572e45e48b30af053abc4f350f43ce59982ed035204c24395ab484a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/RUN.json",
+      "bytes": 8322,
+      "sha256": "f703925c83c5055f384eb735f3e9138ea770213e42d25cfa5ee6e7b77a52bfe1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_conditional_win_M0_v2.png",
+      "bytes": 136975,
+      "sha256": "114a42fbf9429c2fa30ebb61615ce953a512d69bf0d876ec89d976b03cdb40cd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_conditional_win_M3_v2.png",
+      "bytes": 135542,
+      "sha256": "96008e07a6411d17d44da98d565c0ffcdaeb770945a8b54ea8551ac746239c42"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_conditions.csv",
+      "bytes": 46313,
+      "sha256": "48af2df16d5f0b89f0c7af6a4fce3d63f75aae149bc33cdd919c5354b9e18ab1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M0_v2_domain_A.png",
+      "bytes": 39619,
+      "sha256": "cdef80bcd023a8bba09212329414f3a3fe368c2bf4e97aa492dc748080edc4f7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M0_v2_domain_B.png",
+      "bytes": 39585,
+      "sha256": "b374d97669ea51230c48f2c50c37d29742b9c996bf093e035f80aa4f2943c827"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M0_v2_domain_C.png",
+      "bytes": 39665,
+      "sha256": "1cbbf58d09b180eba3b5d01251d2efed48662021dcdceaf268f341c6e69314e6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M0_v2_domain_C0.png",
+      "bytes": 40113,
+      "sha256": "4edd9cdd9eeff9218983ed76eec971478d5729d66cd242c4b2f8a933b0147cdc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M3_v2_domain_A.png",
+      "bytes": 39557,
+      "sha256": "1d2e92b4ea26b203e5b45023bc898e66f4d70044eb8f56bed6399e783f25b6b0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M3_v2_domain_B.png",
+      "bytes": 39552,
+      "sha256": "8fc3ae8f376bc885bd11585a6bf3f4131326469d9fa2f79ced10a18814aa79ea"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M3_v2_domain_C.png",
+      "bytes": 39554,
+      "sha256": "56b108ffd62d540c454523c077c031c6c2c74303a545296a27ee6a9ecc702b8f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_end_causes_M3_v2_domain_C0.png",
+      "bytes": 39941,
+      "sha256": "7cb54ca84d37bcef7e424fc62ee90d42c3fea80891cb19bf39b35137b4b7af78"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_fixed_q_response.csv",
+      "bytes": 181571,
+      "sha256": "b2a7df52c2ec12e9bfbb8d245c30abf9d7ff4094704ecb0d69f46b44786454e1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_heatmap_M0_v2_domain_energy_frozen_mean.png",
+      "bytes": 57715,
+      "sha256": "3b83053a335bfe4afb9e7308a8582de7e75c979a4f118fbfd8af175c3bdfd16b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_heatmap_M3_v2_domain_energy_frozen_mean.png",
+      "bytes": 56998,
+      "sha256": "93025a87925c95f81d30e49f4ea9d12b2088921c9edeae49bbc3f583fd0a0395"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_paired_cases.csv",
+      "bytes": 100841,
+      "sha256": "3b45222fd77a2cb1f1e19b01e49fb6f71093bc46791498b11fabc1f7f6af75fc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_paired_summary.csv",
+      "bytes": 33411,
+      "sha256": "b5ac1ddee137f23278fadaa335a2994a1206ad2f1d58b0b5d86b85d4c1b42df8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_recommendations.csv",
+      "bytes": 156242,
+      "sha256": "522171bff324655b8c98c87cd66c9141be557135e0c953a32754e2e331b09fe3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_recommendations_M0_v2_domain.png",
+      "bytes": 229525,
+      "sha256": "6c98e33b0dc1d9ade2a3d0e22cfe2108c2155440de49cdb767dea6a101cb2e02"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_recommendations_M3_v2_domain.png",
+      "bytes": 224842,
+      "sha256": "01356e24f4fd35a07acdd18301e77458f9b337b420a82e1f65b1b5c2583d3ca0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_summary.csv",
+      "bytes": 23151,
+      "sha256": "914b5e35f55436559b22b0649f0f5ba08f8543514950e5954f0df6736d6ffb87"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_win_value_M0_v2_domain.png",
+      "bytes": 100478,
+      "sha256": "a1ae0198a90cee0470845cf136c48bd1a50f01115433acc3e6187c7d592d9403"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-figures-pilot-codex/stamina_win_value_M3_v2_domain.png",
+      "bytes": 100881,
+      "sha256": "df6be3429ab543ed5ff6047da06a6352b17118f7b39ee0b0d81881a2ece1f47c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-refit-integration-audit-codex/config.json",
+      "bytes": 186,
+      "sha256": "d0ce48b733018a0036a787c71c4a69bc3c973acc637ccf5dda67a328c97afb1d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-refit-integration-audit-codex/refit_heldout_loss.csv",
+      "bytes": 379,
+      "sha256": "7b8605ac5c53954c1c3f7696cd58f140b037e861ab4d4cf2f06d7e747b5c3c2c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-refit-integration-audit-codex/refit_integration_audit.csv",
+      "bytes": 275,
+      "sha256": "1690ad51c8720f7865f014cd8a239e816c9bbbeaef7a858d2c81257667261bfc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-refit-integration-audit-codex/refit_load_correlation.csv",
+      "bytes": 3999,
+      "sha256": "07b3400b06e761a767f93e7b11e99f9795b23730269499b17e0ed6eb5c1b86ac"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-refit-integration-audit-codex/RUN.json",
+      "bytes": 3125,
+      "sha256": "2705e46daf24214274c1635a7b38f82e97f6f051727108a7309d101a771e5a83"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/config.json",
+      "bytes": 205,
+      "sha256": "427322588e1f05ca2d5f039aa840cace7f6d66fbe6a40c0cf72b5126f58f189c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/RUN.json",
+      "bytes": 11986,
+      "sha256": "07703d33c3a5515062187a8cefc8b039707126a4e48591656cdc3c379d3a3966"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_conditional_win_M0_v2.png",
+      "bytes": 136975,
+      "sha256": "114a42fbf9429c2fa30ebb61615ce953a512d69bf0d876ec89d976b03cdb40cd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_conditional_win_M3_v2.png",
+      "bytes": 135542,
+      "sha256": "96008e07a6411d17d44da98d565c0ffcdaeb770945a8b54ea8551ac746239c42"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_conditions.csv",
+      "bytes": 43557,
+      "sha256": "ae01784008a4b317f2573dc721512b7515f226df2c34fcad3a554d50f022a2e3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M0_v2_common_A.png",
+      "bytes": 32721,
+      "sha256": "9fe7f64c72d0d17a0cc7e8adfe74522333dcc14b963ea7052fb878dd3ad48b17"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M0_v2_common_Az.png",
+      "bytes": 32923,
+      "sha256": "a45aaf7a93530fd5dce8f01fef80ccc86615a7f4be8058dd63661a5d95235559"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M0_v2_common_C.png",
+      "bytes": 32772,
+      "sha256": "cd792a9815157b280bdd52084f4c6382244986c9032f0f0026b525d414ab6a9b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M0_v2_common_C0.png",
+      "bytes": 33238,
+      "sha256": "afe00358ff47b0d6cc771e62d15930e5938323b727cbfb9d4a5d09fdde4d26e3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M0_v2_common_C0n.png",
+      "bytes": 33085,
+      "sha256": "a2db3f8a273f1c0aa5ddd4f0c9f13ec6c316bf2bb4b5ad4c5a04d6e8fe233578"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M0_v2_common_Cn.png",
+      "bytes": 32788,
+      "sha256": "03815976386697b6952404ab07f7b11d43e0db3ce6c0adbbc9bedc00e8aadc39"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M3_v2_common_A.png",
+      "bytes": 32626,
+      "sha256": "ee06f364dcf2fd157b3b6e44021000289a2100af1621373ba86c79117d94215a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M3_v2_common_Az.png",
+      "bytes": 32806,
+      "sha256": "004fac6e1e5cb2e090f44dacc5073c0e5cbb21e4a6a199bf0e63fec32ae11c49"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M3_v2_common_C.png",
+      "bytes": 32619,
+      "sha256": "3059e99f906bfd28b2c917ed4126c11e5744e3cb89aa330ce7acebd216779a05"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M3_v2_common_C0.png",
+      "bytes": 33062,
+      "sha256": "287035408cc8170566ba7b8e4162817e45e60b163b565d40118dfd69ab5109a5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M3_v2_common_C0n.png",
+      "bytes": 32991,
+      "sha256": "e4fbacc374b4c8f46d70312eadf38478019b1ace23ff86fb9c6aeb2643781de4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_end_causes_M3_v2_common_Cn.png",
+      "bytes": 32636,
+      "sha256": "f3b22c67199813f38ddd89a59984808c5c70cf1b92bc718a5f0d4a6dd53abc73"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_environment_paired_cases.csv",
+      "bytes": 20123,
+      "sha256": "5442e350840bd8b46a13851038ab6f50a4d3df493628406bf96f0b9d01721b6a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_environment_paired_summary.csv",
+      "bytes": 2402,
+      "sha256": "f438b180236d1b28e2963daaeeee4a29b73923f223e769b586e5f02c136d8352"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_fixed_q_response.csv",
+      "bytes": 181571,
+      "sha256": "b2a7df52c2ec12e9bfbb8d245c30abf9d7ff4094704ecb0d69f46b44786454e1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_paired_cases.csv",
+      "bytes": 12540,
+      "sha256": "77d25d95eb933a34fb31c08d891ff955d75e5347a65b940af3f3487a9cc1c473"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_paired_summary.csv",
+      "bytes": 1561,
+      "sha256": "01c3a6eed2909e6e8c30205fcf9c9b3f4b08f349ef2e521faec4c5c067ccca7f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_recommendations.csv",
+      "bytes": 58889,
+      "sha256": "3b8fee40c36a1bce44401ba0fafb6a9621a2b685208874535c08651abe7fd177"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_recommendations_M0_v2_common.png",
+      "bytes": 91847,
+      "sha256": "d8712782b2df65c8ce3b0c52ab952d3312a69bf6c1e6eb6a562814108178e8b0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_recommendations_M3_v2_common.png",
+      "bytes": 91630,
+      "sha256": "a3a9ae16c906b65d33096abec4f60855ee06efed665a77d4bb3e799be97509e9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_summary.csv",
+      "bytes": 8876,
+      "sha256": "bcf1009e76f13d5d090f4abffe154c3dd8e70019ab7d0d16f3f210dfe2e98f04"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_win_value_M0_v2_common.png",
+      "bytes": 55012,
+      "sha256": "935f1cb7edab8f0364d7a4fda600a10c599b53740c58acc74b608bedb9496bed"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-sensitivity-figures-codex/stamina_win_value_M3_v2_common.png",
+      "bytes": 54991,
+      "sha256": "9e2a80780e0fbab79f180cb658a027f84d5d9e48af5943d8340efbe366e37b7c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-cases-codex/config.json",
+      "bytes": 229,
+      "sha256": "7141a931c7cfff8bf7f4f29555889edb152ac0453698f1e1bfde2ee3456ddf06"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-cases-codex/representative_action_values.csv",
+      "bytes": 132390,
+      "sha256": "1b04c8537526c60c9ae59a1b171fc15e397239271fdb1c2abbbb6c2fb8baefca"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-cases-codex/representative_load_sensitivity.csv",
+      "bytes": 1767,
+      "sha256": "23ef45dd788c55f3742b883f787148399b131c88d1562a2163feb87577c6d758"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-cases-codex/representative_paths.csv",
+      "bytes": 1992,
+      "sha256": "8438a5d71a29e3c1bf77fa4178972e3a53f034ea4e566ac14c37de89a138cdea"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-cases-codex/representative_rally.png",
+      "bytes": 118908,
+      "sha256": "4c90c320c573bdc18cb39b6e93a09f257bcc65c460a8eeefcb13b3a254c41dec"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-cases-codex/representative_recommendations.csv",
+      "bytes": 5790,
+      "sha256": "cdd414b0ec0fe71a1751038e084eae9d8fd52057c2c819c7d7564a39952a8a1e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-cases-codex/RUN.json",
+      "bytes": 6821,
+      "sha256": "7109f359af70f45d3c61d3f9cba3781b06575300b688f1a9889e88c7239184a5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-codex/config.json",
+      "bytes": 359,
+      "sha256": "47506b230cf54079d180530d5c84cb90c2d2ba816fd53f8b1b70445352f349f4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-codex/fixed_load_slope_comparison.csv",
+      "bytes": 1658913,
+      "sha256": "00c31bac5ecaafce823bfb13fc71ace06d32098f4c1f3f4fc16ffe8e9357aae5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-codex/fixed_load_slope_summary.csv",
+      "bytes": 96,
+      "sha256": "3ed4841ff058450edb6f4e734bbeee58a70fa1c320a9141050648c16a36fe8f1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-codex/RUN.json",
+      "bytes": 7175,
+      "sha256": "4d963cfae25428e88b339d272068b58b135381ce19d0a84f6b066f03c7b5fa08"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-matched-codex/config.json",
+      "bytes": 367,
+      "sha256": "571f3f16da123105c484ee956a172e3b85505e890fcfa303f8e787a8f7f1409f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-matched-codex/fixed_load_slope_comparison.csv",
+      "bytes": 1658851,
+      "sha256": "50c0d997ab253c6c44c8795b608fd35015c10118daa014686ce6429d79b6d587"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-matched-codex/fixed_load_slope_summary.csv",
+      "bytes": 95,
+      "sha256": "3f95b27f96c28a61b966806df78780f1a82352d2523bcb235ff3b356541ba70b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-fixed-load-matched-codex/RUN.json",
+      "bytes": 6995,
+      "sha256": "937216e8b6e78e68912b6409fe488dd59cea3d1ef613457a37db7a7399cc5318"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-slope-cases-codex/config.json",
+      "bytes": 337,
+      "sha256": "a8331715a7db499e78c75bc1b9aa469dfd211fe69468dd9db8aba77ae7e976cc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-slope-cases-codex/representative_action_values.csv",
+      "bytes": 132390,
+      "sha256": "1b04c8537526c60c9ae59a1b171fc15e397239271fdb1c2abbbb6c2fb8baefca"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-slope-cases-codex/representative_load_sensitivity.csv",
+      "bytes": 3435,
+      "sha256": "3fc373bf3f7b2753b89368a03d4f28eb7928c90459e5ed54017c52ac9d256f37"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-slope-cases-codex/representative_paths.csv",
+      "bytes": 1992,
+      "sha256": "8438a5d71a29e3c1bf77fa4178972e3a53f034ea4e566ac14c37de89a138cdea"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-slope-cases-codex/representative_rally.png",
+      "bytes": 118908,
+      "sha256": "4c90c320c573bdc18cb39b6e93a09f257bcc65c460a8eeefcb13b3a254c41dec"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-slope-cases-codex/representative_recommendations.csv",
+      "bytes": 5790,
+      "sha256": "cdd414b0ec0fe71a1751038e084eae9d8fd52057c2c819c7d7564a39952a8a1e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-stamina-tactical-slope-cases-codex/RUN.json",
+      "bytes": 7932,
+      "sha256": "548c1f52ece6aa8754e767e403283fa19b98a45ee2a7c97f20e9cfcec5904f39"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/config.json",
+      "bytes": 1347,
+      "sha256": "1fee637440bcc48f1aba840d7b8c4bada0965c822852fcfe1336262e6ba43986"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_00.npz",
+      "bytes": 347418,
+      "sha256": "14c73f73268f1bf7dff6278f2993a23d59adc303ce88ba114dacb14740da9d46"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_01.npz",
+      "bytes": 346934,
+      "sha256": "03c2067fe49b47518426aae8f17f70070905582d832276e73311060cb1f23afc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_02.npz",
+      "bytes": 339932,
+      "sha256": "7491546cd33512cc5a11ad80a4471d53ebdc1164341ac0430e4becee3cadd7d5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_03.npz",
+      "bytes": 334847,
+      "sha256": "bbbf323b9fbd85f217e70212715452d096cc1ca93b5caa579d0ae0736de9297e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_04.npz",
+      "bytes": 340221,
+      "sha256": "1525de033db3a638189f773dcde8998ccb87a336cb35e9952f18a9eb4c2b8ccd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_05.npz",
+      "bytes": 335412,
+      "sha256": "9f5894264148bb2e46929f72d3c8cf99eee71fddb937376e73e7ae75bda354e0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_06.npz",
+      "bytes": 339720,
+      "sha256": "07acd24194fb98feefc637ab8301e3a8e70b393bb0864fa0e850fe8f7ec27ab9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_07.npz",
+      "bytes": 334784,
+      "sha256": "e3f0570702de5ce732ce05f60f891a301134de354ff0d5af7dbd7866c3ae9f1d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_08.npz",
+      "bytes": 335979,
+      "sha256": "5ebe65ee2760993763e5ee12d525c127f23282ebe3df41021b963769f94b70cf"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_09.npz",
+      "bytes": 338587,
+      "sha256": "3daf3357bd01c9a85aa8740e5765af3c008f1a3c2a189228d34d1276da50b87a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_10.npz",
+      "bytes": 342566,
+      "sha256": "823dd23495529a5299de6bfe537e9f03fd7cf0c1f6cbb846fbc183aea840de7d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_11.npz",
+      "bytes": 340397,
+      "sha256": "16eb296c445fe5e78cc523eae2ea9f03f19a308745b742126d2c589e8bfbb4eb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_12.npz",
+      "bytes": 339643,
+      "sha256": "df3b64d3f74a049092a057c767acdaccf9e300821f7ad4b4d72d426d98f1e369"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_13.npz",
+      "bytes": 333933,
+      "sha256": "7deb9fb4242dc227fb09ca5a2f54d876a3490a1c3b9ec350b3bc0d072d1ac7a9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_14.npz",
+      "bytes": 339611,
+      "sha256": "58bbe0ffc5756fcc630d465a993e444950bb1009994d51e119ba74186c782c50"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_15.npz",
+      "bytes": 333255,
+      "sha256": "6e29977041a1e8a7b69328d3250f5b512745fdc375598959fd2b36f029931054"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_16.npz",
+      "bytes": 336624,
+      "sha256": "536402888eee2801615d01a9f460c2a8192da395a859e63217c308d010a2706d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_17.npz",
+      "bytes": 337790,
+      "sha256": "41ce3b804cf436bf62f24e83c35f4299dcb04415b6a59da608ae2fb5312da0a1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_18.npz",
+      "bytes": 335243,
+      "sha256": "b33b3b1490c675ffb1fd250a775360493890253bd1f8f3045baa4bf5ba31be4e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_19.npz",
+      "bytes": 338343,
+      "sha256": "620293e0f2de5e36d8dfe41f53d660603aa53e3685fcb484e355c0fbdf6c31b9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_20.npz",
+      "bytes": 340680,
+      "sha256": "6dcccc9c78b6828ff865e102cccae52c6c897df15b72b3745fa46e6005f44f34"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_21.npz",
+      "bytes": 339564,
+      "sha256": "61c815701411bc7b7e873bd99e9ba5ee0582c47b4c9c7b913ab85ff4ad166e3f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_22.npz",
+      "bytes": 341242,
+      "sha256": "775e8514a342990a3905a5cdaa927aa43bbf8873d3a9a1e4ce9500a4e84b70f7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_23.npz",
+      "bytes": 337672,
+      "sha256": "8e2bc7825aa3d3676b2d625c6798805bc2bf8a8b07a5202427f506d006459d3b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_24.npz",
+      "bytes": 336295,
+      "sha256": "f7a8883e1ddaa2cae12f081e8b32d4926cdf63ff036e457a16ed7cb8accc871d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_25.npz",
+      "bytes": 338354,
+      "sha256": "748238703616f94f924c5e84c7bcd52a0ba97836662bf7c3c0cd43724632a552"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_26.npz",
+      "bytes": 334547,
+      "sha256": "f443cc4c276f47d4ef6d88f49b1e2a07fb7ffb6e5b32d13601e1c6331040652e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_27.npz",
+      "bytes": 338096,
+      "sha256": "edb49e53d658081a8fb8f0dedd31d0f6f9772c2e789ec9c0fbaa2e0be71f1654"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_28.npz",
+      "bytes": 339159,
+      "sha256": "1ddb420b7071eb86c5fc54142971e45d31acb3628be3204d9f5b903106a7d046"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_29.npz",
+      "bytes": 339992,
+      "sha256": "bb153c03f4e5b4e1fdf45344d49769e9052cab6bdb735d323bb9019063d0308d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_30.npz",
+      "bytes": 340377,
+      "sha256": "8b5af78ed667d158d96391c13b2a9eb4d4149170464de056907829aef2e27076"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/condition_31.npz",
+      "bytes": 338700,
+      "sha256": "a88aea2efb09a22bdf8d7f45bfd50e7c636f277d0bb35885a0fab189e5328a03"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 2605,
+      "sha256": "d390723edbca253aba74a7e2156c3dc6b7c8a7c02928d1b14db0ae2df0a68cba"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/grid_mc.csv",
+      "bytes": 4592,
+      "sha256": "75eb6325424094d6c5c7026b18481f71959d6fc0181ed6a1b1b5a9c96a3ab094"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/policy_metrics.csv",
+      "bytes": 10681,
+      "sha256": "9844199575d6444bad0fff68f9e0fe55c8874424102ce692e79aa1b39e4c507c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/M0_v2/recommendations.csv",
+      "bytes": 126449,
+      "sha256": "1372ddff983c7d156d578ce0eaa2256de44e0d3685fdf5e2766ad987793c8f88"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-all-codex/RUN.json",
+      "bytes": 12807,
+      "sha256": "21d81d635935ec086a015a5aac6acf30ff57755ac4d153ca62373909ea8a6cac"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/config.json",
+      "bytes": 1346,
+      "sha256": "8dd86b47595ebc7c64a893c1484d9c69a3d6cdf836a778e842382a323fdeaddc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_00.npz",
+      "bytes": 347418,
+      "sha256": "14c73f73268f1bf7dff6278f2993a23d59adc303ce88ba114dacb14740da9d46"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_01.npz",
+      "bytes": 346934,
+      "sha256": "03c2067fe49b47518426aae8f17f70070905582d832276e73311060cb1f23afc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_02.npz",
+      "bytes": 339932,
+      "sha256": "7491546cd33512cc5a11ad80a4471d53ebdc1164341ac0430e4becee3cadd7d5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_03.npz",
+      "bytes": 334847,
+      "sha256": "bbbf323b9fbd85f217e70212715452d096cc1ca93b5caa579d0ae0736de9297e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_04.npz",
+      "bytes": 340221,
+      "sha256": "1525de033db3a638189f773dcde8998ccb87a336cb35e9952f18a9eb4c2b8ccd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_05.npz",
+      "bytes": 335412,
+      "sha256": "9f5894264148bb2e46929f72d3c8cf99eee71fddb937376e73e7ae75bda354e0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_06.npz",
+      "bytes": 326133,
+      "sha256": "4b2df97024c815a0377b5a36e092c89894989a06da7c84c7149838b41a1cb210"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_07.npz",
+      "bytes": 306201,
+      "sha256": "001d1616f1b0b8c1fc3d69e01be4479a365cae9a834acf88f26fc89f7203118b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_08.npz",
+      "bytes": 335979,
+      "sha256": "5ebe65ee2760993763e5ee12d525c127f23282ebe3df41021b963769f94b70cf"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_09.npz",
+      "bytes": 338587,
+      "sha256": "3daf3357bd01c9a85aa8740e5765af3c008f1a3c2a189228d34d1276da50b87a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_10.npz",
+      "bytes": 342566,
+      "sha256": "823dd23495529a5299de6bfe537e9f03fd7cf0c1f6cbb846fbc183aea840de7d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_11.npz",
+      "bytes": 340397,
+      "sha256": "16eb296c445fe5e78cc523eae2ea9f03f19a308745b742126d2c589e8bfbb4eb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_12.npz",
+      "bytes": 339643,
+      "sha256": "df3b64d3f74a049092a057c767acdaccf9e300821f7ad4b4d72d426d98f1e369"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_13.npz",
+      "bytes": 333933,
+      "sha256": "7deb9fb4242dc227fb09ca5a2f54d876a3490a1c3b9ec350b3bc0d072d1ac7a9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_14.npz",
+      "bytes": 325069,
+      "sha256": "5dbe8d7d11eeb81ed4107128ccfa3bcc3177efd980448ed58bdaa6051fc80026"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_15.npz",
+      "bytes": 303861,
+      "sha256": "a7cc45eb89433d8d01434074660354a5b95a27f7893314e741bfa578778a16fc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_16.npz",
+      "bytes": 336624,
+      "sha256": "536402888eee2801615d01a9f460c2a8192da395a859e63217c308d010a2706d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_17.npz",
+      "bytes": 337790,
+      "sha256": "41ce3b804cf436bf62f24e83c35f4299dcb04415b6a59da608ae2fb5312da0a1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_18.npz",
+      "bytes": 335243,
+      "sha256": "b33b3b1490c675ffb1fd250a775360493890253bd1f8f3045baa4bf5ba31be4e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_19.npz",
+      "bytes": 338343,
+      "sha256": "620293e0f2de5e36d8dfe41f53d660603aa53e3685fcb484e355c0fbdf6c31b9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_20.npz",
+      "bytes": 340680,
+      "sha256": "6dcccc9c78b6828ff865e102cccae52c6c897df15b72b3745fa46e6005f44f34"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_21.npz",
+      "bytes": 339564,
+      "sha256": "61c815701411bc7b7e873bd99e9ba5ee0582c47b4c9c7b913ab85ff4ad166e3f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_22.npz",
+      "bytes": 326779,
+      "sha256": "69bc57431c8310b9b2ce12b75aa49a5e2fa81d4d0074bc5b5b5fd1dc5c855f8e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_23.npz",
+      "bytes": 308546,
+      "sha256": "935b84d24dfb9d3e8c17bbbc0eb4db4949deeb002f21ccbb1a7397403893c825"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_24.npz",
+      "bytes": 308948,
+      "sha256": "b88c5801800f81e5d28506a162ca8978690b6b379ec87ba5032070b7898b7b0c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_25.npz",
+      "bytes": 324793,
+      "sha256": "666ed3d7cb3d8c7e8c41b984219f613765717f6aa5743f32c68231b15af2156a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_26.npz",
+      "bytes": 306528,
+      "sha256": "59e04ea2fea59bfef46602f03295c570ef649e0b0b7e2d3458240ec146a554ce"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_27.npz",
+      "bytes": 323485,
+      "sha256": "ec98e0146116d3c74bea8e07d3c750c5785b8594bb0c252c13e3ba440148b459"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_28.npz",
+      "bytes": 310601,
+      "sha256": "48c63e3d8bbdff975dd45bcb04087d41c98301ce9a292e23d4aa3f2a8ead32a3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_29.npz",
+      "bytes": 325278,
+      "sha256": "8ec6d37720c2eefa097b45e4a8dec6d4c03f9759624a20a5032a0eb1d5b78ff7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_30.npz",
+      "bytes": 308727,
+      "sha256": "302937b106e2cb5b7acb5073ea0d3999d8879ef22c9c5241232915853cb290d9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/condition_31.npz",
+      "bytes": 308041,
+      "sha256": "1747e3ae1f7768c3ad279e5339d006a735bdfc023c6363f3477d7e9640014597"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 2723,
+      "sha256": "100f641709c4b35a31b27c94c923d36004442483ac76898c468814d854fbbadc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/grid_mc.csv",
+      "bytes": 4703,
+      "sha256": "61c40ad68a6ac0a849fe528c1ef7fdcab36c310a7425432932f70fc46b939bb3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/policy_metrics.csv",
+      "bytes": 10796,
+      "sha256": "08d1551668b8ddfad9591ed5c0e55ba34b4060ea4fac4878a4b09dccdb9e820e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/M0_v2/recommendations.csv",
+      "bytes": 130564,
+      "sha256": "7c22e43704a77d80772d9fd20335011c44ddfae10435f9a47687c6dd9c49019b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m0-codex/RUN.json",
+      "bytes": 12782,
+      "sha256": "6014487231080a4534e23d8d0d4beef9ea1e01b8e8a2303ed412175a0d0001de"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/config.json",
+      "bytes": 1469,
+      "sha256": "fa153f5107fbeb3df697e2ad3b0062c7be6e506aeedb09465245f502d443e108"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_00.npz",
+      "bytes": 347121,
+      "sha256": "441cea6f2560b39f38f28f903d245d52cc71a4da5fadb0ab9cb2afabcd1b4f13"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_01.npz",
+      "bytes": 346072,
+      "sha256": "2a6957d287ed0360ae602ed6030519f21999fae8137d3a8337a0b9c50f16dd71"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_02.npz",
+      "bytes": 340046,
+      "sha256": "1860b57300ebb607b2b1dbd8a8c108f1ebdebd6dd270e3000149efda2aebf2b0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_03.npz",
+      "bytes": 334742,
+      "sha256": "2ef1c50e64d8a40efb3b8124bc1d936740dbf3638e3d3473123d47a2e0bf2fec"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_04.npz",
+      "bytes": 340218,
+      "sha256": "b9e8b193ef940e34dcb88156b257a8023df04e7521f593f56a7539d448998f9d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_05.npz",
+      "bytes": 334766,
+      "sha256": "4656c1d8cd6433327e73c30a8a8cea7b5e5c28e7dc4079166e48cbf8e6a5bb2e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_06.npz",
+      "bytes": 339595,
+      "sha256": "9187dd424cfbe37e9865ad43ad88a16146ce94f5480a164d30f26da64f1fae07"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_07.npz",
+      "bytes": 334375,
+      "sha256": "5a4d1d89025e1bdb0bfd4e1b1b67d7a1315571111dd3be91375c902278546bee"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_08.npz",
+      "bytes": 336084,
+      "sha256": "dbce63f7d00b9704b69664df79238778610d5706a59be384483a5539815e635a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_09.npz",
+      "bytes": 338759,
+      "sha256": "3582303583696f4b3df682df56eb93c3ff2cd0040f8dc9b4882c0be8d85f0eae"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_10.npz",
+      "bytes": 341993,
+      "sha256": "ed170f31742e4af0c5da93307f166211aafbca22d660bb1835767f2eeffc8382"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_11.npz",
+      "bytes": 340259,
+      "sha256": "37186a5cc0c5ee1e249a5f62145c03ba5f65cc9430e0105935e8436262d77724"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_12.npz",
+      "bytes": 339482,
+      "sha256": "9b6146af301a64df07f5b66416b177fe3763c75db91f13410adb8e2f9dc0abfe"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_13.npz",
+      "bytes": 333992,
+      "sha256": "55bcab8247773b11d626c02ef0883ea501089af53ac2048994b57238f94a57e3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_14.npz",
+      "bytes": 339465,
+      "sha256": "0f723c0a6287f0b55d7008c6b45e851b22a08d3e1f69de2883884b845a649bba"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_15.npz",
+      "bytes": 333342,
+      "sha256": "5793e9a94bc134ebb9b2c5e07d0e4ef470efd840fce47d0920a005581741b9af"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_16.npz",
+      "bytes": 335741,
+      "sha256": "83f082e817b50886a4ae443581fbb68c7704ac8da7d488d870c7960c1ded188f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_17.npz",
+      "bytes": 337586,
+      "sha256": "7c5b7b9445e5bb4d7389ed824850ad1a3730292fa1c2d561595fffdd19a7710c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_18.npz",
+      "bytes": 335268,
+      "sha256": "bafcd316c441c0c40fcbb7398c40bdd0f3c3597fb545360075a806176f3f7d06"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_19.npz",
+      "bytes": 338281,
+      "sha256": "99f8eb3d03cba8f48cae12187cbe7280122af999c56aab19ef6b0fd3c46aeea8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_20.npz",
+      "bytes": 340159,
+      "sha256": "bacf3a748abc49404e104e603c2d927d52c4f9a8cc30f250eecdd8f505557764"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_21.npz",
+      "bytes": 339168,
+      "sha256": "3da51b12e613d1e2e2eaf29cf6b5fffaca9d0d5a9e1540a1c0a5e08c7d649b6d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_22.npz",
+      "bytes": 341230,
+      "sha256": "8ad76af96405e445c63f468bb9487bfb5919053f8ac90aa4e03aa05bb4d8dad4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_23.npz",
+      "bytes": 337594,
+      "sha256": "9344072b80e9d15f247ab2c49af1313e38f241d1b000cceaaf14024e0e6b607c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_24.npz",
+      "bytes": 335825,
+      "sha256": "27abaa20237646199fe22fffaf21021d8f7ca5d9e3a2dec507ebb5aabcab1196"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_25.npz",
+      "bytes": 338708,
+      "sha256": "60faca3f2f364cd1ebdf3428eed5cf6bb902c5a2f578c4a73b6ca0a2d2eecc4a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_26.npz",
+      "bytes": 334624,
+      "sha256": "be8525d85d06038c67b0cb9fae826f9eccbb6b452ddbf1da69d8230422266512"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_27.npz",
+      "bytes": 338020,
+      "sha256": "eba0ea9f2551dbe7456a8c859e27103648ce4d92c5de5de45eb9bfe406af15b4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_28.npz",
+      "bytes": 339055,
+      "sha256": "02cf61260a2d5c0c7c01fa8c83fed65a7ebe4423ebf55bc2f49e7cd640af90f8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_29.npz",
+      "bytes": 339950,
+      "sha256": "78876ce3f3bca87f9e96145d7f53f906954450e71701093afed8937766722625"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_30.npz",
+      "bytes": 339968,
+      "sha256": "d450de7bf7c66b445f1cd858fa64e3f9ecf34e9a3e7284b106000d54b142f0a5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/condition_31.npz",
+      "bytes": 338501,
+      "sha256": "29e0e8e70a904773a6fa32783de61f058b26004ba37d5fd8a1451e9459ac3e41"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 2589,
+      "sha256": "029d7b38e8898f29d48b86b0241f9517d47576ad2d9d406364e6cd5ad548a766"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/grid_mc.csv",
+      "bytes": 4577,
+      "sha256": "ef13128ebfa7e61d90159ea692aa35a98fa5852d07d20d9223bc3671d8e67f9c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/policy_metrics.csv",
+      "bytes": 10705,
+      "sha256": "bce1207cfeab0f2dcd481dc202bf8b8f192a4e28ef9323f079d97a21a5f5be4e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/M3_v2/recommendations.csv",
+      "bytes": 128616,
+      "sha256": "9bc1fcf92769aca6d8603136bd8069c88922b3476eb2a1e372062cf5a1e3bcfc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-all-codex/RUN.json",
+      "bytes": 13967,
+      "sha256": "0fb82fe60f9bb65d5435e91367dc52c0e5b1c07e9b7404cc480d07b62e2d5440"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/config.json",
+      "bytes": 935,
+      "sha256": "0af3e8242d539a1c7de4ac562d0b3cf00f8276f3b1e981a5f00f2da39e7aa592"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_14.npz",
+      "bytes": 326267,
+      "sha256": "ab745dee813a91fae608ff319fe8187a0911cb50cf9a1a33a7f36ab3187d025e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_15.npz",
+      "bytes": 306487,
+      "sha256": "d2d4ebb9c2a4b68b8b111e157eaa4c6e4b478b6206ba2de5e3840426b48b76e3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_20.npz",
+      "bytes": 340159,
+      "sha256": "bacf3a748abc49404e104e603c2d927d52c4f9a8cc30f250eecdd8f505557764"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_21.npz",
+      "bytes": 339168,
+      "sha256": "3da51b12e613d1e2e2eaf29cf6b5fffaca9d0d5a9e1540a1c0a5e08c7d649b6d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_22.npz",
+      "bytes": 327574,
+      "sha256": "f2497e2533319de48448a23a784245b1b20ca80ead873b319a6d5c794c3ee2d7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_23.npz",
+      "bytes": 311202,
+      "sha256": "3143403821cf4cc07dd160338144c572e5196d67408e930e4f4f203154a86029"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_26.npz",
+      "bytes": 309687,
+      "sha256": "d8f788e0b53459865a67d974c170af6fccc19e11d756a357039f24a7379f090b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_27.npz",
+      "bytes": 323667,
+      "sha256": "532a4b7fe6fe75658eb34fb639fb65b6d715971b63185df590bdf55c53f5e30b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_28.npz",
+      "bytes": 313820,
+      "sha256": "960945242e38e71b966213f87309279c4500ea17df66827ed3ed6b8f25a60b98"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/condition_29.npz",
+      "bytes": 326623,
+      "sha256": "615dffb6d212117376e06991cd5e5f9a9f0282fbd63bd520daa69895cb8dbb03"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 935,
+      "sha256": "5ca8af4ae4aa34203ff305fdf6303f3336913b91ace62284926db9271a528ea0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/grid_mc.csv",
+      "bytes": 1547,
+      "sha256": "899372818ae6c02435458aca353e3dde97d623d296411d6fdcd671c512b21a85"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/policy_metrics.csv",
+      "bytes": 3598,
+      "sha256": "88a6f0e50d1410801f8ebeb14f1dc753cdfb8040add7c619837e35b68ec18b12"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/M3_v2/recommendations.csv",
+      "bytes": 41655,
+      "sha256": "734f11379e317ab7c7d25ab77dc612bec176fcc52227ab02229f0c6121041ade"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-high-codex/RUN.json",
+      "bytes": 8715,
+      "sha256": "a22d8464d4c873a73dd55a08ba314e6aba86cc0732a468995a9e49f9f83ffe9f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/config.json",
+      "bytes": 1048,
+      "sha256": "4f3c24ef3a00adf4086b60e19a09bfc744c433ef13316363ae3e9d103cd8a674"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_00.npz",
+      "bytes": 347121,
+      "sha256": "441cea6f2560b39f38f28f903d245d52cc71a4da5fadb0ab9cb2afabcd1b4f13"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_01.npz",
+      "bytes": 346072,
+      "sha256": "2a6957d287ed0360ae602ed6030519f21999fae8137d3a8337a0b9c50f16dd71"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_02.npz",
+      "bytes": 340046,
+      "sha256": "1860b57300ebb607b2b1dbd8a8c108f1ebdebd6dd270e3000149efda2aebf2b0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_03.npz",
+      "bytes": 334742,
+      "sha256": "2ef1c50e64d8a40efb3b8124bc1d936740dbf3638e3d3473123d47a2e0bf2fec"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_04.npz",
+      "bytes": 340218,
+      "sha256": "b9e8b193ef940e34dcb88156b257a8023df04e7521f593f56a7539d448998f9d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_05.npz",
+      "bytes": 334766,
+      "sha256": "4656c1d8cd6433327e73c30a8a8cea7b5e5c28e7dc4079166e48cbf8e6a5bb2e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_08.npz",
+      "bytes": 336084,
+      "sha256": "dbce63f7d00b9704b69664df79238778610d5706a59be384483a5539815e635a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_09.npz",
+      "bytes": 338759,
+      "sha256": "3582303583696f4b3df682df56eb93c3ff2cd0040f8dc9b4882c0be8d85f0eae"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_10.npz",
+      "bytes": 341993,
+      "sha256": "ed170f31742e4af0c5da93307f166211aafbca22d660bb1835767f2eeffc8382"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_11.npz",
+      "bytes": 340259,
+      "sha256": "37186a5cc0c5ee1e249a5f62145c03ba5f65cc9430e0105935e8436262d77724"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_16.npz",
+      "bytes": 335741,
+      "sha256": "83f082e817b50886a4ae443581fbb68c7704ac8da7d488d870c7960c1ded188f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/condition_17.npz",
+      "bytes": 337586,
+      "sha256": "7c5b7b9445e5bb4d7389ed824850ad1a3730292fa1c2d561595fffdd19a7710c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 1083,
+      "sha256": "1eaf7adb4e57a19a8fd8477f94d3628b0e6bb2cb9569e423997d8169466e8232"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/grid_mc.csv",
+      "bytes": 1868,
+      "sha256": "895d7faae1970f5d6d9b8a5765fa0d927a6d189fcfe377d13ad26abf3df381c1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/policy_metrics.csv",
+      "bytes": 4268,
+      "sha256": "f6e457d86b420ae74e05b7f8c91cbf0b3f5bdb2e154e036241e960809a731dce"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/M3_v2/recommendations.csv",
+      "bytes": 52267,
+      "sha256": "b67c4db22e0a0eda400fa45ae0c935e8e8d8302cd4576aacdfd586d6148421c5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-low-codex/RUN.json",
+      "bytes": 9594,
+      "sha256": "9ae993fddf501c3df3a17b91a176048b278cafd86a36cc9e56f0c6e715510999"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/config.json",
+      "bytes": 898,
+      "sha256": "e728d7f3a625acd22c85ab1ff928e575c867ac01eba5435858d91b49f02a8e02"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_06.npz",
+      "bytes": 327077,
+      "sha256": "b3bf34f9d4df4136c7b6f996f0b09389a7fba27e251857ba585a9c805f73099f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_07.npz",
+      "bytes": 308475,
+      "sha256": "2ffbc995156000df163e0ba8bfa5ef1a3c12fa6662c82a2159cd92f4f3f352ec"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_12.npz",
+      "bytes": 339482,
+      "sha256": "9b6146af301a64df07f5b66416b177fe3763c75db91f13410adb8e2f9dc0abfe"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_13.npz",
+      "bytes": 333992,
+      "sha256": "55bcab8247773b11d626c02ef0883ea501089af53ac2048994b57238f94a57e3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_18.npz",
+      "bytes": 335268,
+      "sha256": "bafcd316c441c0c40fcbb7398c40bdd0f3c3597fb545360075a806176f3f7d06"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_19.npz",
+      "bytes": 338281,
+      "sha256": "99f8eb3d03cba8f48cae12187cbe7280122af999c56aab19ef6b0fd3c46aeea8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_24.npz",
+      "bytes": 312020,
+      "sha256": "bfe25f6d3a5f61f31e97f8ffd9bcf33890e6c8afdd87cbd764bb89c04b0c4b8c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/condition_25.npz",
+      "bytes": 324770,
+      "sha256": "bbb93bd19ace84a11b7b2077b95ec246bc72a63638d175df84fad94648af8bbc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 768,
+      "sha256": "6b994689c61a074fd4ad265167aeeed1f4dc6ec3907483f7e2598472e3042b59"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/grid_mc.csv",
+      "bytes": 1268,
+      "sha256": "93629bf5258977e2cd123a5b65a342a58c8fb1ffc1ffb5acfd8965a8b6daafb7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/policy_metrics.csv",
+      "bytes": 2949,
+      "sha256": "2d146d0d9eff38d3f616df14fc40c3dca19726d5892499d4268a6c81cb9baab9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/M3_v2/recommendations.csv",
+      "bytes": 27699,
+      "sha256": "a7301923d672a3a2fcfd4e5d4a296b9c7d21facc3c37d79d0865c8819942cf0b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-mid-codex/RUN.json",
+      "bytes": 8459,
+      "sha256": "5b57ee763cb28aedc14c8d182448108f1bfd29c52b87066bd2aac0c791b5b785"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/config.json",
+      "bytes": 689,
+      "sha256": "e537e2797679e549db6b818e3ac9b46093acc2941e2a3574f38a927b0a82d5f9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/M3_v2/condition_30.npz",
+      "bytes": 312124,
+      "sha256": "8cd2fa367931abde70b5c6ee3ac0113a6ba4d0be017bda28eaaa420eac3e73dc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/M3_v2/condition_31.npz",
+      "bytes": 309799,
+      "sha256": "18c80fcd479c1ca4e621d517771683c49ed936f7d532028d48dd5a97cff78999"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 282,
+      "sha256": "eecd50eb478b0d391cf504b6cc93d2107eb0fc44cea6ba24b6f59c383cd0e3c1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/M3_v2/grid_mc.csv",
+      "bytes": 451,
+      "sha256": "3bc102235e4ff47d373f1530a68126354799191896b11e7c35b4fe241a58f067"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/M3_v2/policy_metrics.csv",
+      "bytes": 1017,
+      "sha256": "8d1def3138964961d5dc814e99fcdba87e1430aaf257c38e27a7044d9e8b4019"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/M3_v2/recommendations.csv",
+      "bytes": 11055,
+      "sha256": "1f89075f098422831baef33e183649654da6a0f131b91a64c0153ed13a3f6a95"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-m3-p90-codex/RUN.json",
+      "bytes": 7006,
+      "sha256": "6704013c8cc87e94b8613f3506e1c6a815387a12c867dc264e80034ee7ba86d8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/config.json",
+      "bytes": 756,
+      "sha256": "e311a663679632777d04425302c4ffb63a7db5977381f9f3d62de93598369675"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M0_v2/condition_00.npz",
+      "bytes": 347418,
+      "sha256": "14c73f73268f1bf7dff6278f2993a23d59adc303ce88ba114dacb14740da9d46"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M0_v2/condition_01.npz",
+      "bytes": 346934,
+      "sha256": "03c2067fe49b47518426aae8f17f70070905582d832276e73311060cb1f23afc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 281,
+      "sha256": "e1408f416b0bdcd1421759a0ae2cec6323a2fe93197a44cf1959aae75c7b4283"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M0_v2/grid_mc.csv",
+      "bytes": 451,
+      "sha256": "5f586ebfd1ebd7ad2b6b7b97bbe9162b73bc9fe93fd1adbd4a2384af84b174df"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M0_v2/policy_metrics.csv",
+      "bytes": 1001,
+      "sha256": "ea725c37fc5b247f8514867c69fddaf54e6827fa9595b523eab8f27fef217660"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M0_v2/recommendations.csv",
+      "bytes": 11555,
+      "sha256": "25793b324231a241ce35a8b6e631a1163495ed7640c3aa2965a41f2bd0913efd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M3_v2/condition_00.npz",
+      "bytes": 347121,
+      "sha256": "441cea6f2560b39f38f28f903d245d52cc71a4da5fadb0ab9cb2afabcd1b4f13"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M3_v2/condition_01.npz",
+      "bytes": 346072,
+      "sha256": "2a6957d287ed0360ae602ed6030519f21999fae8137d3a8337a0b9c50f16dd71"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 281,
+      "sha256": "b774da7393f12c7137e0fb4afe66b87c5cafe8cde6be30e25cdf1e04f7d94a59"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M3_v2/grid_mc.csv",
+      "bytes": 447,
+      "sha256": "1a9e0a6e66dbb7383229fcb11548a98a22edda1306a57f996e865b892e1acf5c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M3_v2/policy_metrics.csv",
+      "bytes": 1003,
+      "sha256": "8834b5601f10c2f06116a9d34385054b436f6735612df550ace68ff488da3dbc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/M3_v2/recommendations.csv",
+      "bytes": 11556,
+      "sha256": "68e9b6378ea50d6cf53f975d3ba1d09b35bb8f51a00f7cf0c5e7c680092bd27f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-bellman-p25-codex/RUN.json",
+      "bytes": 9512,
+      "sha256": "4a29731c0e14c25235b0277dca6aa7d5cad304bf0728b44a4484c3b5a8164927"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/config.json",
+      "bytes": 1135,
+      "sha256": "606cee306d96757a0a0dacabd076349e332f9b3a5d96d476c740ec99f873b6c6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_00.npz",
+      "bytes": 497594,
+      "sha256": "3b3c2827761485d604fa8f342591da0bcc0453d9cbfa35810dc81fc38538ab97"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_01.npz",
+      "bytes": 490899,
+      "sha256": "2ab1071285a50c93e9e9e20c7703166a2146b5638ede86098f3c6a7b437ea801"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_02.npz",
+      "bytes": 468514,
+      "sha256": "3e1e3d7f873f844943f2742ea2d2a5cbbd4da14f5b759ea13eec4d6fa087018c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_03.npz",
+      "bytes": 451764,
+      "sha256": "8f0c7500925dbae3625f1935725f63310a3228f8199a759e447153b1c2f68c3f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_04.npz",
+      "bytes": 465268,
+      "sha256": "52b84c468f3a28dd6256bb2262ea465cac902b8a42e9e75a81d57dad6e8e43fc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_05.npz",
+      "bytes": 447597,
+      "sha256": "4b1f84298c4cc35e937aae6e3c928a88b8fcf9dd5f09b14ab463a9d9efaef9e9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_06.npz",
+      "bytes": 462772,
+      "sha256": "dc6feaa47f022cb268cf1f9a2b73b7769237553576a32e6a2732ddee603f37d1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_07.npz",
+      "bytes": 444299,
+      "sha256": "ba6a905d68cf89d8474e5a44663afbe4075f2092bbb13af12815483b83c95dc5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_08.npz",
+      "bytes": 459181,
+      "sha256": "532f7f18c91cfc2f10c436a4c2e9913aed576ca95c2514d3620721040d391d0f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_09.npz",
+      "bytes": 471542,
+      "sha256": "6000fed4e51ea168ac2f6bfd37296fe09c12cdc1abc60bb63ced862f46d5c974"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_10.npz",
+      "bytes": 494349,
+      "sha256": "e3ce92d312c6d7748ab89a9c01eebe860d3324496e1948f96c1bd8d8c285b5bd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_11.npz",
+      "bytes": 490825,
+      "sha256": "c8806dc2e9864d07deebdd4a776eee931163d5980c909e123415ea6696ae96d7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_12.npz",
+      "bytes": 474439,
+      "sha256": "238ef3ae9b541060e9ce3edb10456fd1aaef29ca4cb2adfa3a30a8d5cf306a7c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_13.npz",
+      "bytes": 465547,
+      "sha256": "2427f999b96fa9643fe298c77d2d9bba7405ab031c003423f475272d1c5f3991"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_14.npz",
+      "bytes": 472783,
+      "sha256": "56ef807f33e2336867d4501eb35f515f0c0097cc0b2ae13075e2151f11e997eb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_15.npz",
+      "bytes": 458881,
+      "sha256": "1c30b20bc520a1a398af50a4762bedc49309e8035f53dae49a4db9e6324f8d2d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_16.npz",
+      "bytes": 455191,
+      "sha256": "d8798377c1548de0333e56b23643f169d8dce2d0ba2aa7f5b320ae2d7a6d1eec"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_17.npz",
+      "bytes": 468334,
+      "sha256": "cb9d573bcb78729e6b88488e35050f3cb2d6a5f71b1bdc48f027dd959f80f1ad"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_18.npz",
+      "bytes": 471044,
+      "sha256": "fe1c05509e76866c14bad7004ff8de2d4dfe0f0c45fa22c050c7fc5c993d5d70"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_19.npz",
+      "bytes": 476333,
+      "sha256": "1a330ce66ebf59d49830167df1943e139d5c2238d7124d460dc8e43143d92a17"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_20.npz",
+      "bytes": 479469,
+      "sha256": "de8d5c752aae2c4b76f4fa02da4ee1c9a82c118214ee8a3aca3428cb3b8e180d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_21.npz",
+      "bytes": 477420,
+      "sha256": "e0db7ded83b020dc1cf28d60b3d88486b0867dc677e84f210e258d3fdfb2b93f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_22.npz",
+      "bytes": 471622,
+      "sha256": "cdc9774089eaae6320a26630c32af71b7ad1e20848b4e71371fe0b97551dfad1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_23.npz",
+      "bytes": 464628,
+      "sha256": "b7220409979cb8155cf83ba8389647c9391823895ec898703f0e4e9fd9d532fe"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_24.npz",
+      "bytes": 450865,
+      "sha256": "b75730fb4eeee7287085f80d014fd2fd780ff68403d93b58a113d12372cd8710"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_25.npz",
+      "bytes": 463218,
+      "sha256": "85bd6996ba206d179f6bb45d6e258907e8bfb3fb1a91a3d1a73b38392069d5ae"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_26.npz",
+      "bytes": 463173,
+      "sha256": "01961f0073af511c80b1713657c767e2d3a5fc1f122b48dd9c17bdbe3aa9adaf"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_27.npz",
+      "bytes": 472803,
+      "sha256": "46adda012d118b32fe981242943f695b954dd16a6d47dee8532c68e4a016946f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_28.npz",
+      "bytes": 468436,
+      "sha256": "9a3fc3e2dc7cf9fb38eeb2e57664992c818cfe12de1654bbea53ee85188e1788"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_29.npz",
+      "bytes": 470731,
+      "sha256": "a135cef332776d309130c39d832ba39f4a1586be7d983d5061a62fbe41f65e55"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_30.npz",
+      "bytes": 466880,
+      "sha256": "550bf157678e1526b328005f884d08bfb3954bdc3ef61a132500d6d45b021625"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/condition_31.npz",
+      "bytes": 463722,
+      "sha256": "c5fe3c98fa11e0f1fd9f196a901a274669c66b81912f8beb2c40dc7795e8d505"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 2605,
+      "sha256": "d390723edbca253aba74a7e2156c3dc6b7c8a7c02928d1b14db0ae2df0a68cba"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/paired_policy.csv",
+      "bytes": 20715,
+      "sha256": "b342aff6ce3b11c26256a6e92698006d8094d2972d4cb9c1ce28705bfe2ae28a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/policy_metrics.csv",
+      "bytes": 73472,
+      "sha256": "5cc2cab7a8dd1dd6a6fea9bfc0a66f57cba68851a5956425fafc57b77c4eb3ef"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M0_v2/recommendations.csv",
+      "bytes": 619880,
+      "sha256": "65470921e30f31161f5ec5223db2d0fddc932c73ebe9698429006ad3afcd2a35"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_00.npz",
+      "bytes": 501866,
+      "sha256": "c9a3f2714d0bd82017106506f2e97a8e11e15cb959eb3a5a73bba48ca982d464"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_01.npz",
+      "bytes": 492224,
+      "sha256": "5629ebfbd8325e19be7483c0b01a11a5c074e492e6eae7cbc531022d351c3358"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_02.npz",
+      "bytes": 469514,
+      "sha256": "8fcf3ee0c521ae6cf96820fbcbfc919e642bbfc2cf7a65e5cc774dcdebb85a81"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_03.npz",
+      "bytes": 452065,
+      "sha256": "89644067ffc1896ca04c068d9ddd7ef2deeebc48d9ef3880759879a2d7b499fb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_04.npz",
+      "bytes": 465299,
+      "sha256": "c233a12016efc691faac3b0278fd637e12bfc07de8c41752b44ed44032a7a778"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_05.npz",
+      "bytes": 446564,
+      "sha256": "03e42ef9fedd7237a7623d0f61796ace2a93a2aa005efecbae8692896afa3529"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_06.npz",
+      "bytes": 462012,
+      "sha256": "575b6a498ca877d77dd91fcc3839a17abb95d29422fef9348a4facbf5ecc0a9e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_07.npz",
+      "bytes": 444201,
+      "sha256": "2c4d636c618033bca5fd69cda8d74aa621f4df0c32f84c4dfb12e1b6aa92767a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_08.npz",
+      "bytes": 461329,
+      "sha256": "282f3e7abc4004ae3f137b9b6c51ffcfe88fbcdbfa9f98cec80365f33cb2cbc7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_09.npz",
+      "bytes": 471826,
+      "sha256": "28f6ecfe94ff69e15b8686eb61e3cd2e0e483a5a2b94f9c8de083ce9ee7b72ad"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_10.npz",
+      "bytes": 497433,
+      "sha256": "8955089cdd3110484a702ebdd3ecbb50aec58a0489ac0509a42683973670f406"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_11.npz",
+      "bytes": 492938,
+      "sha256": "dd60588e72d7581cdd20c30dd11cc515c3298b427188c9f967d2782ee52c29d7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_12.npz",
+      "bytes": 475509,
+      "sha256": "81f0ad0e484be9b6275302fac70983ba8a616c467600e09256c9cf7a21816206"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_13.npz",
+      "bytes": 466107,
+      "sha256": "3310e3bb742c676c7a37514fb996526c0cc7cb8b08bee1f02873cf2495736d85"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_14.npz",
+      "bytes": 472694,
+      "sha256": "dc94990b47d9e2781194dedbfaa5f65d6dccc3ed931b3e94a13c979fbe3e403c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_15.npz",
+      "bytes": 459183,
+      "sha256": "889b345e626b782ffdc9fe0d444db3459acb7b15541eacd4af70fee314d77d97"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_16.npz",
+      "bytes": 457045,
+      "sha256": "74507deab75f5c0e35a3b1cac495c649218aff3fa62663c6d115bbc79862eeca"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_17.npz",
+      "bytes": 467337,
+      "sha256": "7a6fb44df4926231dacd3c8a2c636bdcbf8342acbadd91a94c8dd755912d5d7c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_18.npz",
+      "bytes": 471883,
+      "sha256": "763814da9ea200518116651f423db5ab0216395a7c2ecf46dcdc9ce354a58469"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_19.npz",
+      "bytes": 478352,
+      "sha256": "e056b602458d41fd86c51305d6a1f0dab2b4dfa65906024adf28a91715cbf4f7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_20.npz",
+      "bytes": 481615,
+      "sha256": "f0f25dc4c20d54a42a418cde7f4ee214c6e1a67da63ae6d42d1b22ff5d05c7bb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_21.npz",
+      "bytes": 480297,
+      "sha256": "74337411ca522d6c0acc4933b74ad34ccee95a7e66349f5386c8c96a18a0f4bb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_22.npz",
+      "bytes": 471766,
+      "sha256": "e480771ca4a60e124803d91f4c0f8473f495635241789d24243aa99836ab54f9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_23.npz",
+      "bytes": 466275,
+      "sha256": "d3905106b8a0d0e8b3f390507dbdd87c5ab68a2fe0ad26f5f79d2eaf43bd03ab"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_24.npz",
+      "bytes": 454353,
+      "sha256": "1ec46635b0c4a577f614b36f6f6cc7173d762357fedf349f612a98c3389105b7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_25.npz",
+      "bytes": 463437,
+      "sha256": "5a415c41c2169de66b672ba3b787e6e750fb66e8a01e18b2f8d60b3bb0348652"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_26.npz",
+      "bytes": 466155,
+      "sha256": "b00c59e51b94555f0b97100f5f54d8be21c1ca65743261ab72738dcae2f22b97"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_27.npz",
+      "bytes": 475308,
+      "sha256": "959ee3a1a334b71320071d233abd6aa37006105b96d431bd497a5966f0b0f2b6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_28.npz",
+      "bytes": 469829,
+      "sha256": "ef26e48b9c4487f1851573682ade74673818adb972e8ce4959f9d10d12c15acc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_29.npz",
+      "bytes": 474717,
+      "sha256": "c5ae0b48c07650a4ab568fc44b7149c0efdbd1c24e3edcd16fb3b639f1b36efa"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_30.npz",
+      "bytes": 466477,
+      "sha256": "802d6963009891121c92a5c1e13937702e0f0dace1dd9c99b0dad5ae38429760"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/condition_31.npz",
+      "bytes": 466562,
+      "sha256": "7cf1f5e229436310a8738a382996f59e324874f679e9bcba5165c6a80e0678ef"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 2589,
+      "sha256": "029d7b38e8898f29d48b86b0241f9517d47576ad2d9d406364e6cd5ad548a766"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/paired_policy.csv",
+      "bytes": 20709,
+      "sha256": "1db1037cd86693a6c6c11f12b29db123f9884400b52bb046dbb52e352e8f003e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/policy_metrics.csv",
+      "bytes": 73497,
+      "sha256": "dc6c3836787c4f218b0e2a5584143a903c1442fba1cc551f4ec5a145d8abb1e9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/M3_v2/recommendations.csv",
+      "bytes": 628232,
+      "sha256": "2031a6d2eb47cf37b791d2d8f92af65beb0ecd59874f6a6541ca79b6adc48a7e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-all-codex/RUN.json",
+      "bytes": 19593,
+      "sha256": "eb37bf016ffb56667155554640c34960372e8d48cd8ee19efff69145aa1ce6e8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/config.json",
+      "bytes": 1172,
+      "sha256": "697246257f6294100f469fcf5ba7a3f116787d12ade2e6e37f63b42e6cb18347"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_00.npz",
+      "bytes": 1038581,
+      "sha256": "64228e61a75615f25a82f4fc1607acbf81c2ae980283da8032d748171821a19b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_01.npz",
+      "bytes": 1013668,
+      "sha256": "7cc7cddee9e00dd776677920efd67cf83df1fc90c4355319b7448c31202ea4d2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_02.npz",
+      "bytes": 918380,
+      "sha256": "4b684eec5131b014873d7fc14acaafca869bc2c179286da7bd5046f22ec52d90"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_03.npz",
+      "bytes": 857875,
+      "sha256": "494d38c994fc866f9818550c0f8a9170caeba276d0cf54f9d5e8ed86c11b0323"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_04.npz",
+      "bytes": 903937,
+      "sha256": "48bd3ee41a92d44b4cf42f71cddfc34f6fa0e1424209208ec221f5c4a22715e9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_05.npz",
+      "bytes": 839433,
+      "sha256": "9872e9f6e69698066f225b5c946177de496cd2a498348691588b42d0f6eb8f0e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_06.npz",
+      "bytes": 880069,
+      "sha256": "ab8b4c99cb27f039db35661c2502f8da7a9e13e2b27f6a5de88091557921d3f0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_07.npz",
+      "bytes": 781305,
+      "sha256": "15f2ceb719938aeaaaf61785806c72a187f33c8b399d43f28b76315dd178bfe1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_08.npz",
+      "bytes": 883919,
+      "sha256": "c2710668114029ad793c80868f143d7717c0e9ef91b9956f6a830616f3628054"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_09.npz",
+      "bytes": 933672,
+      "sha256": "9268d81ffe7191093d7bb24adba11bb28a3118edf63015354d83bd7fb7934e1b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_10.npz",
+      "bytes": 1020283,
+      "sha256": "3f4bb3b315ef7d817d141ed1d941ccf4312060bca3c12f222af3df08c7b32157"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_11.npz",
+      "bytes": 1010692,
+      "sha256": "a12d2f9079197771a3e8830d0cce29c2ced75f10e2a02b3c72eb9bbd2878f1ed"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_12.npz",
+      "bytes": 940961,
+      "sha256": "d4eaa52cab26e0a56b82f1d88783054a3d89e790b8573f19f327c1b42d95f4b0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_13.npz",
+      "bytes": 908385,
+      "sha256": "f4d2452bbde7f0e1365aea4d806161ffc26438494be9300c3fbbf8e8ed4886d3"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_14.npz",
+      "bytes": 921495,
+      "sha256": "1c392fed08f547946adcb2be59f56050ccf1607e00560dc46106141e5852cc4a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_15.npz",
+      "bytes": 840679,
+      "sha256": "6e3bf37345b10e1ce5b7b9405c7fd661531e4e4576928cca48676674abc3491a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_16.npz",
+      "bytes": 865960,
+      "sha256": "e282d4bbc337f8a9a0026122232277f9e8476efda87da3a5bd8d6621b03c11e8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_17.npz",
+      "bytes": 923752,
+      "sha256": "9d27049911c932b5c447c4ebf5160d89af23ab809f04e4b4cdf76be6536bdf2a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_18.npz",
+      "bytes": 926074,
+      "sha256": "036c9994a25b56f2229376c9595824566e9e09d901c965401abd9ffde1c4bd0c"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_19.npz",
+      "bytes": 952667,
+      "sha256": "0df0f2a8cb2a12b5efef742589eb1bd4a77ab5b9148721abf6900a6b0fdfde30"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_20.npz",
+      "bytes": 961084,
+      "sha256": "b2decdb62185fee847247d9aa8904b9b297a9679dde41a33c3d55e485fc68e15"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_21.npz",
+      "bytes": 955372,
+      "sha256": "6bbad5b990beba48e6d478b1496b72e4e5a0d12343063ce294adc0e034b54e26"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_22.npz",
+      "bytes": 915926,
+      "sha256": "efafbf46a2d2014bc516c4e38f03c0ec8b5f221b7d93967d0706c354a1070f8e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_23.npz",
+      "bytes": 860844,
+      "sha256": "5d01cadcd01f624b53595f7ae94a6eda7851f6b116fdd70bf3f0b7591322bcdb"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_24.npz",
+      "bytes": 803162,
+      "sha256": "f886e36fe16014ce18efb3d8c43c917c6d410fef07bd7625928ffd2c56e20311"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_25.npz",
+      "bytes": 886230,
+      "sha256": "ce00d61ed21ce908b5560a1d93084180905b430800a35d60f32ef04813ab3d05"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_26.npz",
+      "bytes": 852013,
+      "sha256": "3269909bb2a6a7b48a53a27123e07422a64c18c556c5ba2dad6aea7e2817a0b7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_27.npz",
+      "bytes": 923415,
+      "sha256": "0bda4a8840c1b4dd107d90635ec34c33fd1097959abe7582cc496cc4082f4791"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_28.npz",
+      "bytes": 880248,
+      "sha256": "0ee6f639a17455e49dc85a7307e2e0f4906d82c233d74d2a8070856ce591fcb1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_29.npz",
+      "bytes": 914978,
+      "sha256": "5c2151e52b71e9b7b372472d1bebb3ea7faf41d346d39bb3246a1910ab740925"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_30.npz",
+      "bytes": 874488,
+      "sha256": "76f7ebaaaae4cca1b36a2c34cce8d62d3e83fc8c35a05f877865e5e1c6a169b0"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/condition_31.npz",
+      "bytes": 861461,
+      "sha256": "29fde05986056fad1cdb4a111422c0b6d5602c68ac7378183a5cbc9791813ace"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/evaluation_domain.csv",
+      "bytes": 2723,
+      "sha256": "100f641709c4b35a31b27c94c923d36004442483ac76898c468814d854fbbadc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/paired_environment.csv",
+      "bytes": 205925,
+      "sha256": "c65ae87626f607ff2e43d3c936e7306f3089f74417022a109435b1a7feea0020"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/paired_policy.csv",
+      "bytes": 84382,
+      "sha256": "564868c47efd2908f41d0d404c10a4833a80c305358c14549e271c6fd8b2cb0f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/policy_metrics.csv",
+      "bytes": 295973,
+      "sha256": "ab90dd77240a5bb3db86e4b583e0fe9cdb47b569359d2afe78f796a1218de4c2"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/probability_audit.json",
+      "bytes": 221,
+      "sha256": "992cdcc6e85500038a233827b7dfd168b52335c8a4058523c0fe9e98e65b1119"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M0_v2/recommendations.csv",
+      "bytes": 2562980,
+      "sha256": "5b3503382d08a790e21b770173b523d6265dcca3ccfd426c7a39b00f32f422e8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_00.npz",
+      "bytes": 1056407,
+      "sha256": "a2677fabe2624c65188d79a7edd9fd6fbab9e9cc42340903881b30ca5a229c5b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_01.npz",
+      "bytes": 1020669,
+      "sha256": "4152a3569a6b25840a1f640a26aa0b32f0ef38e4fdaf188a8b09a856141b3841"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_02.npz",
+      "bytes": 922380,
+      "sha256": "4c0cf6e8b3046c1bf4226550e826a509e3b78dba6d7b29c5f9c8c9e110aa447e"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_03.npz",
+      "bytes": 860880,
+      "sha256": "38aa169687cf7e3cab6434421f6e3aa10741e7c30c56b7fd5809eff5387199b1"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_04.npz",
+      "bytes": 904455,
+      "sha256": "9f50ab89522b370ec6402c637c26c10c1ee82b34487e36471c1d17686015773b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_05.npz",
+      "bytes": 838461,
+      "sha256": "26f7d72309cd35b1ad40db6c913972f446c710772beb0e99356421b8610311d9"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_06.npz",
+      "bytes": 877574,
+      "sha256": "0f062021bbf738cc72d8a32dc6e390de35345d83ca44fa7db6e846d6a4de0962"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_07.npz",
+      "bytes": 784332,
+      "sha256": "3331730766c55c64c0eb72cbfa217683e5347ac1c032e52e4e861ac5a76f9cfd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_08.npz",
+      "bytes": 893222,
+      "sha256": "44d0c5ba5332e7dbc6f5030264deeba671490effa6a2da84b2b589b26416f7ca"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_09.npz",
+      "bytes": 934840,
+      "sha256": "d80a6c3be356cb6ab91ed29265faad15ab0415ad88500eaf8fd414828b056064"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_10.npz",
+      "bytes": 1032662,
+      "sha256": "0b030fe062ef605710647652fbdc126fafa1bbfdbe62cdeb5ecc1a69ccab1ba8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_11.npz",
+      "bytes": 1018732,
+      "sha256": "9154763dab9778a5b6cb41a5111ba6294b790f006cfab23f0591a9e7cd6ee508"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_12.npz",
+      "bytes": 945169,
+      "sha256": "d226cd5007c7dce3f0bd74b09c0c34a9f21033c3a6a8ae56441264b04b2bb5f8"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_13.npz",
+      "bytes": 910593,
+      "sha256": "58a85b91e1b931a94aac5aa30988c33d3b1fc450b8ef4e0988f566b51b9e2b9b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_14.npz",
+      "bytes": 922476,
+      "sha256": "b5ae2759b56bffc84c339aadfeba04adc3bde6ca6198cc3e65f324b8d1c383e4"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_15.npz",
+      "bytes": 840557,
+      "sha256": "f1410073c4c9066090c7cb7f09c36c10e2f9188d985fcc6e22951719982d7524"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_16.npz",
+      "bytes": 877109,
+      "sha256": "cad0787c3d83ed0a9aa986445fa281e75e122e8c0451361351cfef0e5b4187ad"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_17.npz",
+      "bytes": 920794,
+      "sha256": "abf5926866baf9e3cd09f3ef4f56ed72b25e394f331c41e579711c43cb45bdf7"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_18.npz",
+      "bytes": 929101,
+      "sha256": "4625267d2af82b271279dd0e26c3f24c34f01c1e5527588b111a792dc1636cbe"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_19.npz",
+      "bytes": 960709,
+      "sha256": "4f354fd9cebcb82f97561ed7ba766f8903afef0a0090863511c2e7d06122af5f"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_20.npz",
+      "bytes": 969653,
+      "sha256": "15193ef995caf46eb8b7229b77a434be57707427d20f7a49ab5319cd012a1496"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_21.npz",
+      "bytes": 966526,
+      "sha256": "5e02438972ae9361071850bb356e342ca209766e564af1cb48ffc407c879908d"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_22.npz",
+      "bytes": 916969,
+      "sha256": "e158e5800863a93bccfc9fd301c7a0fe7a741288254de304bb7c04a665c4d9fc"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_23.npz",
+      "bytes": 868063,
+      "sha256": "09e11a62da7fe20ba455394027b55007305dab6c633f72d9305f036b00af7cc6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_24.npz",
+      "bytes": 817712,
+      "sha256": "d4462b9d148c4f9832b22c5885112622c6ffa0dc70d01cbb46a9f1830069910a"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_25.npz",
+      "bytes": 879397,
+      "sha256": "12ef02de4695c1d2d0c9da272bd01770b02a18415db91f40ded9738d7f4762ae"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_26.npz",
+      "bytes": 860449,
+      "sha256": "74420acd49bd57746d2c737ccfc1a473b65e293aee3ef869d9e5bce1aa414ec6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_27.npz",
+      "bytes": 930063,
+      "sha256": "14a85c24c34b9e5f0eab8bd0528dcfd666548fd2da13f01d0edf3a45ed89d345"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_28.npz",
+      "bytes": 878661,
+      "sha256": "93af8c2ac48d01aae4e9a6d1f69e420fcc8be276cef6d94e21ca771e54ba7c07"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_29.npz",
+      "bytes": 928654,
+      "sha256": "e513a6b8d8a460285f776733ae9bbd3aaffd1e31407a6766957d6a800743e4a5"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_30.npz",
+      "bytes": 872909,
+      "sha256": "6f102669e6ca6f491bedc31f92b42f1f88a747d91cb42f46dfc8b6bfdb2b629b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/condition_31.npz",
+      "bytes": 869510,
+      "sha256": "ce56db7c8a2804814c6ad2edcbf45c4263c0387f49be7b171ace3454e6563a41"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/evaluation_domain.csv",
+      "bytes": 2711,
+      "sha256": "02d1d9b1b44f5126622a4466bbb3943c2c43717a1201c6e9a0ba2bc34922b36b"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/paired_environment.csv",
+      "bytes": 205256,
+      "sha256": "2d84a4a76584d1eed7d12d80227261dec122825d35509410cb23757e13a50eb6"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/paired_policy.csv",
+      "bytes": 84009,
+      "sha256": "8a273d44b1fca30fe5ac5011cdb1ab344a9165a42703963773647f9c4763c2bd"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/policy_metrics.csv",
+      "bytes": 295493,
+      "sha256": "78fe116f80f0334f5879f096031e8b3fdc15af8674c580fa36e7b64b951d0124"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/probability_audit.json",
+      "bytes": 220,
+      "sha256": "df2a802897eae300574ddeb3fe6f8b1cc46c4052be56d6797c02e7a6f0f1f431"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/M3_v2/recommendations.csv",
+      "bytes": 2602066,
+      "sha256": "4810a99e4a8eb532fb86a20cff6530c97c707604ca2900b7a62f363eb5545465"
+    },
+    {
+      "path": "14_stamina_policy_integration/results/runs/20261125-updated-stamina-cql-paired-codex/RUN.json",
+      "bytes": 19904,
+      "sha256": "59f9588ca221bb12749eed2f3fccce0d5951ec952130e89a2bd506d1981bfce7"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 4605,
       "sha256": "0ce2627da4c793966340b27b936a53e39f40f3808064ab0072f5aeeaba3f1de8"
@@ -5492,8 +9473,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8031,
-      "sha256": "a0a656b11c070f8533f78ce75e260e81a2b083e48df539365cffbbfecfee1ad8"
+      "bytes": 8549,
+      "sha256": "1f33960e7e4a72fa4228562ebc0d4e11a245c9e521932a9137f84980b860a559"
     },
     {
       "path": "requirements-ci.txt",
@@ -5507,8 +9488,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 7483,
-      "sha256": "01eb7fca1154a652d20dfef3232ed6572f44621871395ba3b084c2c490d386bd"
+      "bytes": 7861,
+      "sha256": "a5cbad3befcc985254a57261bb316572bfcb846a09a615757097e09d4ead0848"
     },
     {
       "path": "tools/check_github_settings.py",
@@ -5531,5 +9512,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1391761821
+  "uploaded_content_bytes": 1725524509
 }

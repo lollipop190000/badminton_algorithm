@@ -1,0 +1,56 @@
+{
+  "train": {
+    "chronological_rallies": 3392,
+    "omitted_rallies": {},
+    "opening_excluded_scenarios": 240,
+    "unsupported_state": 0,
+    "unsupported_logged_action": 7617,
+    "terminal_no_compatible_target": 70,
+    "terminal_unknown_zone_events": 1980,
+    "expanded_rows": 334999,
+    "effective_source_scenario_rows": 217569.0000874959,
+    "end_reasons_weighted": {
+      "budget_A": 25640.0,
+      "budget_B": 25052.0,
+      "budget_both": 3563.0,
+      "continue": 122122.0,
+      "natural": 41192.00008749589
+    }
+  },
+  "validation": {
+    "chronological_rallies": 753,
+    "omitted_rallies": {},
+    "opening_excluded_scenarios": 35,
+    "unsupported_state": 0,
+    "unsupported_logged_action": 1674,
+    "terminal_no_compatible_target": 50,
+    "terminal_unknown_zone_events": 470,
+    "expanded_rows": 75134,
+    "effective_source_scenario_rows": 50036.00002047978,
+    "end_reasons_weighted": {
+      "budget_A": 6177.0,
+      "budget_B": 6027.0,
+      "budget_both": 817.0,
+      "continue": 28493.0,
+      "natural": 8522.000020479783
+    }
+  },
+  "test": {
+    "chronological_rallies": 816,
+    "omitted_rallies": {},
+    "opening_excluded_scenarios": 0,
+    "unsupported_state": 0,
+    "unsupported_logged_action": 1780,
+    "terminal_no_compatible_target": 50,
+    "terminal_unknown_zone_events": 461,
+    "expanded_rows": 82101,
+    "effective_source_scenario_rows": 52969.000016170554,
+    "end_reasons_weighted": {
+      "budget_A": 6296.0,
+      "budget_B": 5885.0,
+      "budget_both": 829.0,
+      "continue": 29558.0,
+      "natural": 10401.000016170554
+    }
+  }
+}
