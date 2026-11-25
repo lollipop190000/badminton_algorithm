@@ -24,14 +24,44 @@ def label(action):
     return f'{MID_RALLY_ACTIONS[action//16]} Z{action%16+1}'
 
 
-def first_validated_grid(run_ids, model, total, environment):
+def first_validated_grid(run_ids, model, total, environment, parity=1):
     for run_id in run_ids:
         try:
-            grid = load_validated_grid(run_id, model, 25, 25, 1, environment=environment, total_a=total, total_b=total)
+            grid = load_validated_grid(run_id, model, 25, 25, parity, environment=environment, total_a=total, total_b=total)
         except FileNotFoundError:
             continue
         return grid, TOPIC / 'results/runs' / run_id
     raise FileNotFoundError(f'No validated {environment} p25:p25 grid provided for {model}')
+
+
+def fixed_load_slope_comparison(runtime, grid_runs, no_slope_runs):
+    rows, inputs = [], []
+    for model in FROZEN_DATASETS:
+        _, _, env, _ = build_environments(runtime, model)
+        ledger = load_ledger(runtime, model, env['C'].costs)
+        total = ledger.budgets[0]
+        inputs.extend(source_files(REPO, model).values())
+        for parity, focal in enumerate(('B', 'A')):
+            entry = ledger.opening.query('split == "train" and parity == @parity and opening_A < @total and opening_B < @total')
+            history = entry.state_i.to_numpy(int)
+            turn = np.full(len(entry), parity, dtype=int)
+            a, b = total-entry.opening_A.to_numpy(), total-entry.opening_B.to_numpy()
+            result = {}
+            for environment, candidates in [('C', grid_runs), ('C0', no_slope_runs)]:
+                grid, binding = first_validated_grid(candidates, model, total, environment, parity)
+                policy = policy_for_grid(env[environment], grid)
+                result[environment] = policy(history, turn, a, b, None), policy.action_values(history, turn, a, b)
+                inputs.extend([binding/'stamina_bellman_validation.csv', binding/'stamina_bellman_grid_artifacts.json'])
+            c, value_c = result['C']
+            c0, value_c0 = result['C0']
+            idx = np.arange(len(entry))
+            table = entry[['match_id','set_id','rally_id','state_i','opening_A','opening_B']].copy()
+            table = table.assign(model=model, focal=focal, total_budget=total, remaining_A=a, remaining_B=b,
+                                 action_C=[label(k) for k in c], action_C0=[label(k) for k in c0],
+                                 changed=c != c0, C_value_of_C=value_c[idx,c], C_value_of_C0=value_c[idx,c0],
+                                 C0_value_of_C=value_c0[idx,c], C0_value_of_C0=value_c0[idx,c0])
+            rows.append(table)
+    return pd.concat(rows, ignore_index=True), inputs
 
 
 def compare_tactics(runtime, model, grid_runs, seed, no_slope_runs):
@@ -161,14 +191,29 @@ def main():
     parser.add_argument('--run-id', required=True)
     parser.add_argument('--bellman-run', action='append', required=True)
     parser.add_argument('--no-slope-run', action='append', default=[])
+    parser.add_argument('--only-slope', action='store_true', help='Inspect all matched p25 openings under C versus C0')
     parser.add_argument('--seed', type=int, default=20261125)
     args = parser.parse_args()
+    if args.only_slope and not args.no_slope_run:
+        parser.error('The C0 grid is required for a slope-only comparison')
     numba.set_num_threads(min(4, numba.get_num_threads()))
     out = new_run(args.run_id)
     write_json(out / 'config.json', vars(args))
     sources = [Path(__file__), Path(__file__).with_name('stamina_environment.py'),
                Path(__file__).with_name('stamina_bellman.py')]
     snapshot = source_snapshot(sources)
+    if args.only_slope:
+        table, grid_inputs = fixed_load_slope_comparison(Path.cwd(), args.bellman_run, args.no_slope_run)
+        table.to_csv(out / 'fixed_load_slope_comparison.csv', index=False)
+        summary = table.groupby(['model','focal']).changed.agg(['count','sum']).rename(columns={'sum':'changed'})
+        summary.to_csv(out / 'fixed_load_slope_summary.csv')
+        inputs = [REFIT / 'config.json', REFIT / 'coefficients.csv', *grid_inputs]
+        finish_run(out, 'python run.py stamina-tactics ' + ' '.join(sys.argv[1:]), args.seed, inputs, sources,
+                   dict(observed_openings=len(table), changed_recommendations=int(table.changed.sum())),
+                   'Same actual train openings, costs and total budgets; only fitted slopes are toggled. '
+                   'Values come from validated numerical grids, and small action margins can be discretization-sensitive.',
+                   snapshot=snapshot)
+        return
     examples, actions, traces, loads, inputs = [], [], [], [], [REFIT / 'config.json', REFIT / 'coefficients.csv']
     for model in FROZEN_DATASETS:
         sample, values, paths, diagnostics, model_sources = compare_tactics(Path.cwd(), model, args.bellman_run,
