@@ -871,9 +871,14 @@
       "sha256": "5f375a1aca3e496cdb2966c644f7eff665888e2b420af958ccd519a118c3e9c8"
     },
     {
+      "path": "03_cql_v2_policy/code/scripts/benchmark_smash.py",
+      "bytes": 3711,
+      "sha256": "9a2839245c85a3378a18193445ccd52e6102fd7f5bebe876c8d3cf6878d8447a"
+    },
+    {
       "path": "03_cql_v2_policy/code/scripts/compare_integrated_cql.py",
-      "bytes": 17195,
-      "sha256": "c550453ccd340082b9c5cbe10e2d921e86e2fae081c0f7934db9ce300a6fb855"
+      "bytes": 19607,
+      "sha256": "dc644a949a96d3269011ddedd68246dea70b10a7df509182a8b357e315c507c1"
     },
     {
       "path": "03_cql_v2_policy/code/scripts/summarize_integrated_comparison.py",
@@ -921,6 +926,11 @@
       "sha256": "ad34c49cb0d9bc7409a9ee5d844ef07d11bd17f3c8fecee700d199a94e97c7eb"
     },
     {
+      "path": "03_cql_v2_policy/code/src/opponent_profile.py",
+      "bytes": 3654,
+      "sha256": "3eb76873547e067576ecf37a7fe4509cbcfd42e59a209c1b089d76c8088d6638"
+    },
+    {
       "path": "03_cql_v2_policy/code/src/train_budget_cql.py",
       "bytes": 11690,
       "sha256": "3c91aa0d6452e83cfe042366357cd33b53daaefde5903312db3b158e893a9eac"
@@ -951,9 +961,14 @@
       "sha256": "4e6e8d1784d13fb631af0c26e0e5eef0e55e5e8d6abb97ba36d07d3d35c4c9c5"
     },
     {
+      "path": "03_cql_v2_policy/code/tests/test_opponent_profile.py",
+      "bytes": 3664,
+      "sha256": "5abf0ea3374ae73e4986f2bbd75ff70b5187df243bcab3abdd25cc70242e39d3"
+    },
+    {
       "path": "03_cql_v2_policy/REPORT.md",
-      "bytes": 21831,
-      "sha256": "db72e82a7f5a70e4209883436c967e4de7543066d24e5a783f932807c9386181"
+      "bytes": 24297,
+      "sha256": "3b9fc68626782978a1e2661add061a2ebaee2acc0edc83163c7139fbd3da5ace"
     },
     {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
@@ -5531,5 +5546,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1391761821
+  "uploaded_content_bytes": 1391777728
 }

@@ -22,6 +22,7 @@ from src.budget_policy_comparison import (Kernel,BehaviorPolicy,CQLPolicy,NoEner
     verify_grid_cache,require_numerical_grid)
 from src.energy_strategy import solve_strategy,solve_no_energy,StrategyGrid
 from src.budget_value_grid import solve_value_grid,ValueGrid,ensure_grid_space,required_grid_bytes
+from src.opponent_profile import PROFILE, specialize, verify_mirrored_roles
 
 
 def initial_distribution():
@@ -53,7 +54,7 @@ def load_grid(path):
     return ValueGrid.load(path) if meta.get('grid_storage')=='mean_value_only_float64' else StrategyGrid.load(path)
 
 
-def load_coarse_grid(out,source_hashes,kernel_hashes,fingerprint,domain):
+def load_coarse_grid(out,source_hashes,kernel_hashes,fingerprint,domain,profile=None):
     """Reuse numeric work only when the solver, model, data and costs still match."""
     directory=out/'grids'
     status=json.loads((directory/'grid_status.json').read_text())
@@ -64,7 +65,8 @@ def load_coarse_grid(out,source_hashes,kernel_hashes,fingerprint,domain):
                 if k.replace('\\','/')!='scripts/compare_integrated_cql.py'}
     config=json.loads((out/'config.json').read_text())
     if (dependencies(old_sources)!=dependencies(source_hashes) or
-        config['kernel_input_sha256']!=kernel_hashes or status['cost_fingerprint']!=fingerprint):
+        config['kernel_input_sha256']!=kernel_hashes or status['cost_fingerprint']!=fingerprint or
+        config.get('opponent_profile')!=profile):
         raise ValueError('Coarse grid dependencies changed')
     grid=load_grid(directory/'integrated_A')
     if grid.budget_a!=domain or grid.budget_b!=domain or grid.focal!='A' or grid.mode!='energy':
@@ -72,9 +74,9 @@ def load_coarse_grid(out,source_hashes,kernel_hashes,fingerprint,domain):
     return grid
 
 
-def prepare_grids(system,kernel,contract,dist,out,args,source_hashes,kernel_hashes):
+def prepare_grids(system,kernel,contract,dist,out,args,source_hashes,kernel_hashes,mirrored_roles=False):
     domain=float(contract['budget_scale']);symmetric=player_symmetric(system,kernel)
-    if not symmetric:
+    if not symmetric and not mirrored_roles:
         raise ValueError('Expected audited player-exchange symmetry; separate B solve must be added before comparison')
     directory=out/'grids';directory.mkdir(exist_ok=True)
     status=directory/'grid_status.json'
@@ -85,7 +87,7 @@ def prepare_grids(system,kernel,contract,dist,out,args,source_hashes,kernel_hash
     solve=solve_value_grid if args.mean_only_grid else solve_strategy
     if args.coarse_comparison_id:
         coarse=load_coarse_grid(out.parent/args.coarse_comparison_id,source_hashes,kernel_hashes,
-                               contract['cost_fingerprint'],domain)
+                               contract['cost_fingerprint'],domain,PROFILE if getattr(args,'smash_specialist',False) else None)
         n=coarse.values.shape[0]-1
         if n>=args.max_grid_intervals:raise ValueError('Refinement limit must exceed coarse grid')
     else:
@@ -120,7 +122,7 @@ def prepare_grids(system,kernel,contract,dist,out,args,source_hashes,kernel_hash
     fine.save(directory/'integrated_A')
     d=dict(grid_intervals=n,max_refinement_difference=difference,bellman_residual=fine.max_residual,
            coarse_intervals=coarse_n,grid_storage='mean_value_only_float64' if args.mean_only_grid else 'legacy_value_and_ambiguity_float64',
-           passed=passed,player_B='exact exchange of budgets and parity after tensor symmetry checks',
+           passed=passed,player_B='exact exchange of budgets and parity after tensor symmetry or mirrored-role checks',
            cost_fingerprint=contract['cost_fingerprint'],execution_source_sha256=source_hashes,
            grid_file_sha256={n:digest(directory/n) for n in ('integrated_A.npy','integrated_A.json')})
     write_json(status,d)
@@ -152,7 +154,11 @@ def main():
     p.add_argument('--grid-intervals',type=int,default=40);p.add_argument('--max-grid-intervals',type=int,default=160)
     p.add_argument('--resume',action='store_true');p.add_argument('--grids-only',action='store_true')
     p.add_argument('--no-sensitivity',action='store_true')
+    p.add_argument('--smash-specialist',action='store_true',help='Opponent only: smash preference and W/L odds both ×1.5')
+    p.add_argument('--cpu',action='store_true',help='Use CPU for existing CQL checkpoints')
     args=p.parse_args()
+    if args.smash_specialist:
+        args.no_sensitivity=True
     for v in (args.run_id,args.training_id,args.comparison_id,*([args.coarse_comparison_id] if args.coarse_comparison_id else [])):
         if Path(v).name!=v or v in ('.','..'):p.error('IDs must be directory names')
     if args.samples<2 or args.grid_intervals<4 or args.max_grid_intervals<args.grid_intervals:
@@ -171,7 +177,7 @@ def main():
                   *(ROOT/'outputs/fatigue_terminal/models/strict_development').glob('*')]
     execution_files=[Path(__file__),ROOT/'src/budget_policy_comparison.py',ROOT/'src/energy_strategy.py',
                      ROOT/'src/budget_cql_contract.py',ROOT/'src/cql_model.py',ROOT/'src/fatigue_baseline.py',
-                     ROOT/'src/build_fatigue_transition.py',ROOT/'src/fit_fatigue_terminal.py',ROOT/'src/budget_value_grid.py']
+                     ROOT/'src/build_fatigue_transition.py',ROOT/'src/fit_fatigue_terminal.py',ROOT/'src/budget_value_grid.py',ROOT/'src/opponent_profile.py']
     source_hashes={str(f.relative_to(ROOT)):digest(f) for f in execution_files}
     terminal_inputs=[p for p in contract['provenance_inputs'] if 'terminal' in p['path'].lower()]
     settings=dict(samples=args.samples,seed=args.seed,grid_intervals=args.grid_intervals,
@@ -183,6 +189,7 @@ def main():
         kernel='train-fitted strict M0 hazards and train pi*T; identical environment for all controllers',
         initial_states='TRAIN fourth-hit distribution conditional on initial parity; focal is initial hitter',
         validation='successive-grid and exact-cost Monte Carlo; same-model numerical checks only',
+        opponent_profile=PROFILE if args.smash_specialist else None,
         sensitivity_interpretation='policies trained under this run cost model are frozen; opponent temperature transforms the entire joint shot/destination distribution')
     if args.coarse_comparison_id:
         coarse=out.parent/args.coarse_comparison_id
@@ -192,28 +199,37 @@ def main():
         raise ValueError('Incomplete run configuration changed')
     write_json(out/'config.json',settings)
     system,nominal=load_common_system(ROOT,run)
+    if args.smash_specialist:
+        system_a,kernel_a=specialize(system,nominal,0)
+        system_b,kernel_b=specialize(system,nominal,1)
+        verify_mirrored_roles(system_a,kernel_a,system_b,kernel_b)
+    else:
+        system_a=system_b=system;kernel_a=kernel_b=nominal
     dist=initial_distribution();dist.to_csv(out/'initial_distribution.csv',index=False)
-    grid_a,grid_b,grid_status=prepare_grids(system,nominal,contract,dist,out,args,source_hashes,settings['kernel_input_sha256'])
+    grid_a,grid_b,grid_status=prepare_grids(system_a,kernel_a,contract,dist,out,args,source_hashes,settings['kernel_input_sha256'],mirrored_roles=args.smash_specialist)
     require_numerical_grid(grid_status)
     if args.grids_only:return
-    _,static_a=solve_no_energy(system,'A');_,static_b=solve_no_energy(system,'B')
-    device='cuda' if torch.cuda.is_available() else 'cpu'
+    device='cuda' if torch.cuda.is_available() and not args.cpu else 'cpu'
     torch.set_num_threads(min(4,torch.get_num_threads()))
-    controllers={'A':{'energy':EnergyPolicy(system,grid_a),'behavior':BehaviorPolicy(nominal),'no_energy':NoEnergyPolicy(static_a)},
-                 'B':{'energy':EnergyPolicy(system,grid_b),'behavior':BehaviorPolicy(nominal),'no_energy':NoEnergyPolicy(static_b)}}
+    controllers={'A':{'energy':EnergyPolicy(system_a,grid_a)},
+                 'B':{'energy':EnergyPolicy(system_b,grid_b)}}
+    if not args.smash_specialist:
+        _,static_a=solve_no_energy(system,'A');_,static_b=solve_no_energy(system,'B')
+        controllers['A'].update(behavior=BehaviorPolicy(nominal),no_energy=NoEnergyPolicy(static_a))
+        controllers['B'].update(behavior=BehaviorPolicy(nominal),no_energy=NoEnergyPolicy(static_b))
     checkpoints=[]
     for cp in trained['policies']:
         path=training/cp['checkpoint'];name='cql_seed'+str(cp['seed']);checkpoints.append(path)
         policy=CQLPolicy(path,nominal.masks,contract['cost_fingerprint'],device)
         for focal in ('A','B'):controllers[focal][name]=policy
     raw=out/'paired_episodes';raw.mkdir(exist_ok=True)
-    rows=[];differences=[];numeric=[]
+    rows=[];differences=[];numeric=[];specialist_paired=[]
     allcases=cases(contract,not args.no_sensitivity)
     for case_id,case in enumerate(allcases):
         focal='A' if case['parity']==1 else 'B'
         q=dist[dist.parity.eq(case['parity'])]
         initial=np.random.default_rng(args.seed+case_id*1000).choice(q.state.to_numpy(int),size=args.samples,p=q.probability)
-        kernel=nominal
+        kernel=kernel_a if focal=='A' else kernel_b
         if case['scenario']!='nominal':
             joint=nominal.joint**(1/case['temperature']);joint/=joint.sum(-1,keepdims=True)
             kernel=Kernel(nominal.costs,nominal.hazards,joint,nominal.masks,case['cost_multiplier'])
@@ -232,17 +248,32 @@ def main():
                                     mc_excess_95ci=excess,passed=excess<=.02))
             print(f'{case_id+1}/{len(allcases)} {case["scenario"]} {focal} {name}: value={row["model_win_value"]:.5f}',flush=True)
         np.savez_compressed(cache,**archive)
+        if args.smash_specialist:
+            cql=np.mean([x for name,x in outcomes.items() if name.startswith('cql_seed')],axis=0)
+            d=paired_difference(outcomes['energy'],cql)
+            specialist_paired.append(dict(condition=case_id, energy=float(outcomes['energy'].mean()),
+                                          cql=float(cql.mean()), **d))
         for name,x in outcomes.items():
             if name!='energy':differences.append(dict(condition=case_id,focal=focal,scenario=case['scenario'],
                 comparator=name,**paired_difference(outcomes['energy'],x)))
         pd.DataFrame(rows).to_csv(out/'metrics.csv',index=False)
         pd.DataFrame(differences).to_csv(out/'paired_differences.csv',index=False)
         pd.DataFrame(numeric).to_csv(out/'numeric_validation.csv',index=False)
+    if args.smash_specialist:
+        pd.DataFrame(specialist_paired).to_csv(out/'specialist_paired.csv',index=False)
+        paired_se=float(np.sqrt(sum(d['se']**2 for d in specialist_paired))/len(specialist_paired))
+        diff=float(np.mean([d['difference'] for d in specialist_paired]))
+        by_seed=pd.DataFrame(rows).query("policy.str.startswith('cql_seed')",engine='python').groupby('policy').model_win_value.mean()
+        write_json(out/'specialist_aggregate.json',dict(conditions=len(specialist_paired),
+            energy=float(np.mean([d['energy'] for d in specialist_paired])),
+            cql=float(np.mean([d['cql'] for d in specialist_paired])),difference=diff,
+            paired_mc_se=paired_se,ci_low=diff-1.96*paired_se,ci_high=diff+1.96*paired_se,
+            cql_seed_values={k:float(v) for k,v in by_seed.items()},cql_seed_sd=float(by_seed.std(ddof=1))))
     passed=grid_status['passed'] and all(x['passed'] for x in numeric) and args.samples>=20000
     write_json(out/'comparison_summary.json',dict(all_numerical_checks_passed=passed,grid=grid_status,
         conditions=len(allcases),policy_conditions=len(rows),samples_per_condition=args.samples,
         interpretation='same learned model; statistical intervals condition on fitted dynamics and costs',
-        costs=contract['cost_model'],model_selection_from_test=False))
+        costs=contract['cost_model'],model_selection_from_test=False,opponent_profile=settings['opponent_profile']))
     large=[dict(path=str(f.relative_to(out)),bytes=f.stat().st_size,sha256=digest(f))
            for f in out.rglob('*') if f.is_file() and f.stat().st_size>50_000_000]
     write_json(out/'large_artifacts.json',dict(artifacts=large,recreate='rerun compare with a new comparison ID and the same arguments'))
