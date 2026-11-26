@@ -1,0 +1,15 @@
+{
+  "opponent_profile": "smash_specialist",
+  "preference_weight": 1.5,
+  "terminal_win_loss_odds": 1.5,
+  "aggregation": "equal 32 budget/parity conditions; five CQL seeds equally weighted",
+  "baseline": {
+    "M0": "20261104-budget-cql-integrated-M0-codex/comparison/20261104-common-model-refined/metrics.csv",
+    "M3": "20261104-budget-cql-integrated-M3-codex/comparison/20261105-common-model-resolution400/metrics.csv"
+  },
+  "source_archives": [
+    "M0",
+    "M3"
+  ],
+  "publication": "full paired scientific runs plus summary"
+}

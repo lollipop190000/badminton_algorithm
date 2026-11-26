@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "run_id": "20261125-smash-specialist-comparison",
+  "status": "completed",
+  "code_commit": "66d8394d2a81b595e6b2ad7df606877eac4127d9",
+  "command": "python summarize_smash_results.py --archives <verified ZIP directory> --baseline <baseline CSV directory> --out <new summary run directory>",
+  "seed": 20261104,
+  "environment": {
+    "python": "3.13.9",
+    "analysis": "standard library"
+  },
+  "inputs": [
+    {
+      "path": "20261104-budget-cql-integrated-M0-codex/comparison/20261104-common-model-refined/metrics.csv",
+      "sha256": "d14c79a4b8b1c9dfd360a61992ec4191b526337f6a50669feead07ee821dad65"
+    },
+    {
+      "path": "badminton-M0.zip",
+      "sha256": "25648acf1fb3eb70a9154a0a62c3ec86b92f20a15cd52241fde7fa4463e64af6"
+    },
+    {
+      "path": "20261104-budget-cql-integrated-M3-codex/comparison/20261105-common-model-resolution400/metrics.csv",
+      "sha256": "7ddd1d0baaf6f752b839d0f59ae03cbc47ec1e913eba7e86b8bc456ef8d26d0a"
+    },
+    {
+      "path": "badminton-M3.zip",
+      "sha256": "3c90c59a6e7c7c3338be12bfedd5fecced8d961008a28ce11b994624b3f24638"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "925f7dc3e956d4cab77b23935ffcd170a5341ec5b4fe5b5ee05042c6da5a3992"
+  },
+  "split": "PR15 matched nominal test conditions; frozen train-fitted models, no new learning",
+  "metrics": {
+    "M0": {
+      "conditions": 32,
+      "energy": 0.68675,
+      "cql": 0.57759828125,
+      "difference": 0.10915171874999999,
+      "paired_mc_se": 0.00045205039610253473,
+      "ci_low": 0.10826569997363902,
+      "ci_high": 0.11003773752636095,
+      "cql_seed_values": {
+        "cql_seed42": 0.581271875,
+        "cql_seed43": 0.57984609375,
+        "cql_seed44": 0.57447890625,
+        "cql_seed45": 0.57329609375,
+        "cql_seed46": 0.5790984375
+      },
+      "cql_seed_sd": 0.003501347545067129
+    },
+    "M3": {
+      "conditions": 32,
+      "energy": 0.68940625,
+      "cql": 0.58226671875,
+      "difference": 0.10713953124999999,
+      "paired_mc_se": 0.000442540672476754,
+      "ci_low": 0.10627215153194555,
+      "ci_high": 0.10800691096805443,
+      "cql_seed_values": {
+        "cql_seed42": 0.58367265625,
+        "cql_seed43": 0.58058828125,
+        "cql_seed44": 0.5848625,
+        "cql_seed45": 0.58063359375,
+        "cql_seed46": 0.5815765625
+      },
+      "cql_seed_sd": 0.0019154180945816337
+    }
+  },
+  "outputs": [
+    {
+      "path": "archive_provenance.json",
+      "sha256": "6af0f34f387d5881fbaed199c3292a6ea74841e49edce863c6cbe13d50ca81b0"
+    },
+    {
+      "path": "config.json",
+      "sha256": "925f7dc3e956d4cab77b23935ffcd170a5341ec5b4fe5b5ee05042c6da5a3992"
+    },
+    {
+      "path": "strategy_behavior.csv",
+      "sha256": "9fbda4f491e40b33f577c98dddb5e29a2700700b64a8d062bb19f0c6fb564944"
+    }
+  ],
+  "limitations": [
+    "same estimated environment, not real-game win rates",
+    "archived trajectories contain aggregate costs, steps, exhaustion and outcomes, not action ids",
+    "large value arrays excluded by the original worker; reproducible from source command and recorded hashes"
+  ]
+}

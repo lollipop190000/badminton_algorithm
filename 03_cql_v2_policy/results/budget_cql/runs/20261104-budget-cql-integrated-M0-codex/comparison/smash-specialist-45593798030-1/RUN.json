@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "run_id": "smash-specialist-45593798030-1",
+  "status": "completed",
+  "code_commit": "66d8394d2a81b595e6b2ad7df606877eac4127d9",
+  "command": "python run.py budget-cql-compare --run-id 20261104-budget-cql-integrated-M0-codex --training-id 20261104-full-5seeds --comparison-id smash-specialist-45593798030-1 --grid-intervals 320 --max-grid-intervals 320 --mean-only-grid --smash-specialist --cpu",
+  "seed": 20261104,
+  "environment": {
+    "python": "3.12.16 (main, Nov 24 2026, 07:54:53) [GCC 12.2.0]",
+    "torch": "2.13.0+cpu",
+    "device": "cpu"
+  },
+  "inputs": [
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/RUN.json",
+      "sha256": "dd289321dc0b7dc4f4b56e22e7800d6f50c922a20443fb646c5c48c427af31ad"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/RUN.json",
+      "sha256": "e1aa38b607415e2b4f51c238bfefa2a6bda5cc2fd019a82f7a78d197e4bd0fdc"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/costs.npz",
+      "sha256": "22deb9d2c71fecc9ed616dc129f1905ff976200d7692930d4a8c1e6dba414af1"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed42.pt",
+      "sha256": "3b27acf9d41ae0cf8a6857c6e6bb1a91ce5bb181fdbae0cd0902cc1e1af404d1"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed43.pt",
+      "sha256": "483067713b5c595db5124d7a3d37f2858129e0a31452c7331225d0700de27027"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed44.pt",
+      "sha256": "dbd667af1ee1c37b2e93636f39868b57694767861083716579d577377023c23d"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed45.pt",
+      "sha256": "24662e5006cc40ca389100b3a2ed19ca15710cba3cdec13d1b9dd79e28da3573"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed46.pt",
+      "sha256": "7e8461a5a1045c42ec60089c5b16ef1e33df111848adaa932591df1901787ffb"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/fatigue_terminal/baseline_train.npz",
+      "sha256": "8b276c58f724d8fb189d8116280df65826ab1e68399018ec31b420d7407016db"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/data/splits/train.csv",
+      "sha256": "fb46c2827711708cb3b8dcbbe0c249152e2f4b4b8c0032d2b9010b3b3ce19ccc"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/fatigue_terminal/models/strict_development/model.json",
+      "sha256": "82ebc068cc299d9c52a66d659a8be6571e4ebfd833c21c75c4dbe43510e72d0a"
+    },
+    {
+      "path": "/tmp/badminton-research/.runtime/outputs/fatigue_terminal/models/strict_development/parameters.npz",
+      "sha256": "f4e62e1365423b87454cbb8801bdf643b7627c8a2cd071fd2973e5f9fd50085c"
+    },
+    {
+      "path": "C:\\Users\\lolli\\Documents\\R&E\\Code\\github_publish\\11_integrated_transition_energy\\results\\runs\\20261104-integrated-v2-kinggoddowon\\terminal_lookup.parquet",
+      "sha256": "737ee318e40f08ffbc792980fbac915b6b4370461d96c1542cc85259702a2987"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "3e7e29bac6042430e448b7e8bc9c00d114e724e2a3332df48aacfee961e6d503"
+  },
+  "split": "train-fitted comparison kernel and train initial distribution; frozen policies; no test tuning",
+  "metrics": {
+    "numerical_checks_passed": true,
+    "conditions": 32,
+    "policy_conditions": 192
+  },
+  "limitations": [
+    "achieved-zone control assumption",
+    "costs are proxies, not measured metabolism",
+    "same-model optimization comparison, not independent match evaluation",
+    "MC intervals exclude model and cost estimation uncertainty",
+    "cross-model energy accuracy has not been established"
+  ],
+  "source_sha256": {
+    "scripts/compare_integrated_cql.py": "dc644a949a96d3269011ddedd68246dea70b10a7df509182a8b357e315c507c1",
+    "src/budget_policy_comparison.py": "b0ea696149c547b0a9965286ab276b5a9977ab254236c88cecfa1c6024acb4e4",
+    "src/energy_strategy.py": "9913e0ad0366a67c75d97acd92e7cded3ca0ad5ab745f240634f6958e6b07ef8",
+    "src/budget_cql_contract.py": "e25582770cc887a38848aaee4d22c211848b389de7f22081bae551eef955000e",
+    "src/cql_model.py": "feb8c8d5f62fa935f520878bfad241b2081df0fbdf44e6f0fabe4b3852c09b69",
+    "src/fatigue_baseline.py": "209a80428ae8bbad53230f029023a2e95c1514c911f5087208fe044121e9afd1",
+    "src/build_fatigue_transition.py": "260975e056f5d09829740a886ea0b3ddcdcb48e293c89e800e21198104f28f6b",
+    "src/fit_fatigue_terminal.py": "42eb2f18539547ec6df48296121b644bc9fc6d0695444a9da16038432402a49e",
+    "src/budget_value_grid.py": "841eb0dbbe218e043fb7f5e42e7c3f0998ec12603f87fce749067b449944e07d",
+    "src/opponent_profile.py": "3eb76873547e067576ecf37a7fe4509cbcfd42e59a209c1b089d76c8088d6638"
+  },
+  "omitted_large_artifacts": [
+    {
+      "path": "grids/integrated_A.npy",
+      "bytes": 6752895104,
+      "sha256": "16c7fd363ddf4ad5bf6b42ae93f4c4f7bdf5dcbc8ff925f68f961523145ab574"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "comparison_summary.json",
+      "sha256": "18cdf66de38b613e18a86dc48a5e6c19157ab806825d1adf2aa111bf570d6b56"
+    },
+    {
+      "path": "config.json",
+      "sha256": "3e7e29bac6042430e448b7e8bc9c00d114e724e2a3332df48aacfee961e6d503"
+    },
+    {
+      "path": "grids/grid_status.json",
+      "sha256": "8e4851a7d2f5bbbdcd211021b1a37aca7030064752534a71d6847fdc17ca1834"
+    },
+    {
+      "path": "grids/integrated_A.json",
+      "sha256": "105b5c164cbee3346a15f2c7a849163fa60a814d5be7e595327cd89bc79f711e"
+    },
+    {
+      "path": "initial_distribution.csv",
+      "sha256": "bd8fd9f6850e7e0786b0d6b874af77bfe8bf9b513e2e9536d8ab5d46daa639a3"
+    },
+    {
+      "path": "large_artifacts.json",
+      "sha256": "2b280fb04d9daae678c9f12f663e57975ada3843fa22a31bbe99e6c9977cf2ec"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "29ff9788817510e23e5ff3f29250bdb8067fa1d21226f0f24bff5b5af278e7c7"
+    },
+    {
+      "path": "numeric_validation.csv",
+      "sha256": "511e465a3f9a726f86a46c9d0a59b8e8076799cc67b5937dfcd6e6702febc2ff"
+    },
+    {
+      "path": "paired_differences.csv",
+      "sha256": "9243ac296109e08a99cfbeade1440c44e677c2bbbd76387c512e52aec792d933"
+    },
+    {
+      "path": "paired_episodes/condition_000.npz",
+      "sha256": "1890584e6f1414ffbac0ac25eab4ee96bda46057c049753e1409a83e049d815a"
+    },
+    {
+      "path": "paired_episodes/condition_001.npz",
+      "sha256": "55105b8d652e4b841dff1805a2853faec7a01af6d54cc6162c7197da255cd4f8"
+    },
+    {
+      "path": "paired_episodes/condition_002.npz",
+      "sha256": "7c8c10d5fff3ea08175cc0b9a7a0076228208c72603b7dd670c041d203207c40"
+    },
+    {
+      "path": "paired_episodes/condition_003.npz",
+      "sha256": "12fc9aaa7e99e346ecf4ad66d2c0d92ac77ec2a6697e4f537b6c56a5ed8dd270"
+    },
+    {
+      "path": "paired_episodes/condition_004.npz",
+      "sha256": "5ce108ce94c418d6c9462b0bc170c62a431439b0e88d419be0ba68f03a5bca7e"
+    },
+    {
+      "path": "paired_episodes/condition_005.npz",
+      "sha256": "d37b475ac814bd64c4d9c8e2ba2a6fa5cfaa9e96cb49945650660d40225e2e69"
+    },
+    {
+      "path": "paired_episodes/condition_006.npz",
+      "sha256": "32093d4a43af65baf1ab99c67230d28a46ba93ad78b233efd93c6bbbd7475e42"
+    },
+    {
+      "path": "paired_episodes/condition_007.npz",
+      "sha256": "08e8959c9aab0a513de97072bb62743d69a0fd806571c7973c9b0d43e03aeb3a"
+    },
+    {
+      "path": "paired_episodes/condition_008.npz",
+      "sha256": "999bcffe3b4402446c3d73702fe062ec7e7404aafa54332235e176a9c6e0e053"
+    },
+    {
+      "path": "paired_episodes/condition_009.npz",
+      "sha256": "6ba90a89bc4d21b98e51cad17613318950b6f9ac271c424d0979eb34aa39a4f5"
+    },
+    {
+      "path": "paired_episodes/condition_010.npz",
+      "sha256": "dece70a89b8b56d7ceca63f603e6de70fe4b21f44671b4d6844f3ae26c3ae0c7"
+    },
+    {
+      "path": "paired_episodes/condition_011.npz",
+      "sha256": "90a17d1fe44f0f900afa807649234abdd2091cc14482b4223296d57826a28000"
+    },
+    {
+      "path": "paired_episodes/condition_012.npz",
+      "sha256": "ee51ac5c103646e8079f7b109756746d0918b9de987a03333c0ab95ef7a003e0"
+    },
+    {
+      "path": "paired_episodes/condition_013.npz",
+      "sha256": "f19a671b39438fddb8a4d208a26d745065b747429608ca5779e3e33d3a9caf24"
+    },
+    {
+      "path": "paired_episodes/condition_014.npz",
+      "sha256": "752197ea661e606a2ab0217f5ad9be1d4a7ba231e4bd6c738db6af69ea6838b4"
+    },
+    {
+      "path": "paired_episodes/condition_015.npz",
+      "sha256": "c99cfb954c9def7ae1c8e6a9d5d85a28c252d4c48c6878654e2afe6782325ca7"
+    },
+    {
+      "path": "paired_episodes/condition_016.npz",
+      "sha256": "3121f4b5d2e933ce1d9195b18e1b7205bbe1933a1034f598d3712281468fda54"
+    },
+    {
+      "path": "paired_episodes/condition_017.npz",
+      "sha256": "96a4eab202bca10b8b4cea388b441504b3f2c5af8aa16aee470a340d9a8a98fa"
+    },
+    {
+      "path": "paired_episodes/condition_018.npz",
+      "sha256": "d2f1fe65b6b63a841f381ab6bd0adb31a3cd98e418328626498fe254ab4b817f"
+    },
+    {
+      "path": "paired_episodes/condition_019.npz",
+      "sha256": "faf8741efd07365e624c03b06c565c8a14531d9bb6a0fbd9a26ac394b64456f9"
+    },
+    {
+      "path": "paired_episodes/condition_020.npz",
+      "sha256": "1c4500c1d3ce14ba7700470d5b7a47174750aa3e11ab493f2b684a83079ad36e"
+    },
+    {
+      "path": "paired_episodes/condition_021.npz",
+      "sha256": "a1c9606d38bd2c54bb9e283787bac83d23441f3ab8d4272dc162e417517bf7ab"
+    },
+    {
+      "path": "paired_episodes/condition_022.npz",
+      "sha256": "24a187c41515dc8542f06d59b6e792796064325d8aa9c10b8c01feaf87f9526c"
+    },
+    {
+      "path": "paired_episodes/condition_023.npz",
+      "sha256": "e25c41986f983f6ceff35d837cd71667d9408d8fb75c13dea58472776b67bcf7"
+    },
+    {
+      "path": "paired_episodes/condition_024.npz",
+      "sha256": "d23526c6a4c21990c48ed623e1f89eedb332bee03a6ff1a31bfa00ff7d9fc17f"
+    },
+    {
+      "path": "paired_episodes/condition_025.npz",
+      "sha256": "52f369c51246d56afa40384abeecc9734e22ab36ba3b91421ca74ad9dd327a84"
+    },
+    {
+      "path": "paired_episodes/condition_026.npz",
+      "sha256": "88c3a50bc6d122e8b201e6abefd414e9728f3379060bf5ce7e1fbed5bbc6dce0"
+    },
+    {
+      "path": "paired_episodes/condition_027.npz",
+      "sha256": "832655f3a1c8a8e101db66e271333b6bdb90868de02110a8d3de327e0e646897"
+    },
+    {
+      "path": "paired_episodes/condition_028.npz",
+      "sha256": "341f1a5b23d8e61394b8650f8ef9f6babe2fb609e608dc3cebd518a364f9739b"
+    },
+    {
+      "path": "paired_episodes/condition_029.npz",
+      "sha256": "4e438cf43ce41ede738cf25e92bd3e045ea16621e7604fee171db67d2056ae8d"
+    },
+    {
+      "path": "paired_episodes/condition_030.npz",
+      "sha256": "714d2f82d8c81147feed40d5c9a155b13bf191b4eca40294626165716f08b207"
+    },
+    {
+      "path": "paired_episodes/condition_031.npz",
+      "sha256": "fdf34ddbba36e5f9e98bb11eec85b2a61d4144738d8102f31837557720d91adc"
+    },
+    {
+      "path": "specialist_aggregate.json",
+      "sha256": "7c0e8863c7e69b44cc827b8934805aaa47b8dfda097a686eaa68287e228356e0"
+    },
+    {
+      "path": "specialist_paired.csv",
+      "sha256": "6048199201703dd8914f4a1e94cf80dd932f5d7170f67d3cfa0bdf34914308ad"
+    }
+  ]
+}

@@ -531,6 +531,11 @@
       "sha256": "ec1964212f81fd76c1df2cabf827fc4552f1b812ce11095a177280ac1fa459cc"
     },
     {
+      "path": ".github/workflows/smash-action-audit.yml",
+      "bytes": 1617,
+      "sha256": "e9c1483a797183c643da77cea232e770d59192c4ea4ee505a6698dbe8da31824"
+    },
+    {
       "path": ".github/workflows/validate.yml",
       "bytes": 1663,
       "sha256": "f436385d30c8372f6d097a08c1bcf3ef5793f12c65b0715cacb2d04002ab055f"
@@ -871,6 +876,11 @@
       "sha256": "5f375a1aca3e496cdb2966c644f7eff665888e2b420af958ccd519a118c3e9c8"
     },
     {
+      "path": "03_cql_v2_policy/code/scripts/audit_smash_actions.py",
+      "bytes": 6638,
+      "sha256": "bac4b61c06a280f1f0461c6978f608b0c7349d2f7c4fbda738d1684e3446150e"
+    },
+    {
       "path": "03_cql_v2_policy/code/scripts/benchmark_smash.py",
       "bytes": 3711,
       "sha256": "9a2839245c85a3378a18193445ccd52e6102fd7f5bebe876c8d3cf6878d8447a"
@@ -884,6 +894,11 @@
       "path": "03_cql_v2_policy/code/scripts/summarize_integrated_comparison.py",
       "bytes": 11879,
       "sha256": "5223ae63f6393d862ef6834c13c03086fcdb780daf61f49ec32beac20ecb7362"
+    },
+    {
+      "path": "03_cql_v2_policy/code/scripts/summarize_smash_results.py",
+      "bytes": 7776,
+      "sha256": "87a67c2d9b6f06a1c78e3ce55d2b03b57a5870f9a1b2687604015b51028e5a74"
     },
     {
       "path": "03_cql_v2_policy/code/src/budget_cql_contract.py",
@@ -967,8 +982,8 @@
     },
     {
       "path": "03_cql_v2_policy/REPORT.md",
-      "bytes": 24297,
-      "sha256": "3b9fc68626782978a1e2661add061a2ebaee2acc0edc83163c7139fbd3da5ace"
+      "bytes": 28169,
+      "sha256": "cb8788c145d6245de11267b59f4fb0ef21900e2121f6566b5748e4ac1a8fbea9"
     },
     {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
@@ -1329,6 +1344,226 @@
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/20261104-common-model-refined/RUN.json",
       "bytes": 15716,
       "sha256": "e4060fa1dda74bad47f843228d39ed178acefcfebb586cb83138cad55a26555f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/comparison_summary.json",
+      "bytes": 2196,
+      "sha256": "18cdf66de38b613e18a86dc48a5e6c19157ab806825d1adf2aa111bf570d6b56"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/config.json",
+      "bytes": 2895,
+      "sha256": "3e7e29bac6042430e448b7e8bc9c00d114e724e2a3332df48aacfee961e6d503"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/grids/grid_status.json",
+      "bytes": 1651,
+      "sha256": "8e4851a7d2f5bbbdcd211021b1a37aca7030064752534a71d6847fdc17ca1834"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/grids/integrated_A.json",
+      "bytes": 158,
+      "sha256": "105b5c164cbee3346a15f2c7a849163fa60a814d5be7e595327cd89bc79f711e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/initial_distribution.csv",
+      "bytes": 41863,
+      "sha256": "bd8fd9f6850e7e0786b0d6b874af77bfe8bf9b513e2e9536d8ab5d46daa639a3"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/large_artifacts.json",
+      "bytes": 266,
+      "sha256": "2b280fb04d9daae678c9f12f663e57975ada3843fa22a31bbe99e6c9977cf2ec"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/metrics.csv",
+      "bytes": 39495,
+      "sha256": "29ff9788817510e23e5ff3f29250bdb8067fa1d21226f0f24bff5b5af278e7c7"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/numeric_validation.csv",
+      "bytes": 1869,
+      "sha256": "511e465a3f9a726f86a46c9d0a59b8e8076799cc67b5937dfcd6e6702febc2ff"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_differences.csv",
+      "bytes": 14882,
+      "sha256": "9243ac296109e08a99cfbeade1440c44e677c2bbbd76387c512e52aec792d933"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_000.npz",
+      "bytes": 984551,
+      "sha256": "1890584e6f1414ffbac0ac25eab4ee96bda46057c049753e1409a83e049d815a"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_001.npz",
+      "bytes": 985469,
+      "sha256": "55105b8d652e4b841dff1805a2853faec7a01af6d54cc6162c7197da255cd4f8"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_002.npz",
+      "bytes": 954222,
+      "sha256": "7c8c10d5fff3ea08175cc0b9a7a0076228208c72603b7dd670c041d203207c40"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_003.npz",
+      "bytes": 979242,
+      "sha256": "12fc9aaa7e99e346ecf4ad66d2c0d92ac77ec2a6697e4f537b6c56a5ed8dd270"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_004.npz",
+      "bytes": 956487,
+      "sha256": "5ce108ce94c418d6c9462b0bc170c62a431439b0e88d419be0ba68f03a5bca7e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_005.npz",
+      "bytes": 969277,
+      "sha256": "d37b475ac814bd64c4d9c8e2ba2a6fa5cfaa9e96cb49945650660d40225e2e69"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_006.npz",
+      "bytes": 946431,
+      "sha256": "32093d4a43af65baf1ab99c67230d28a46ba93ad78b233efd93c6bbbd7475e42"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_007.npz",
+      "bytes": 965991,
+      "sha256": "08e8959c9aab0a513de97072bb62743d69a0fd806571c7973c9b0d43e03aeb3a"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_008.npz",
+      "bytes": 989230,
+      "sha256": "999bcffe3b4402446c3d73702fe062ec7e7404aafa54332235e176a9c6e0e053"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_009.npz",
+      "bytes": 979324,
+      "sha256": "6ba90a89bc4d21b98e51cad17613318950b6f9ac271c424d0979eb34aa39a4f5"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_010.npz",
+      "bytes": 1158240,
+      "sha256": "dece70a89b8b56d7ceca63f603e6de70fe4b21f44671b4d6844f3ae26c3ae0c7"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_011.npz",
+      "bytes": 1156071,
+      "sha256": "90a17d1fe44f0f900afa807649234abdd2091cc14482b4223296d57826a28000"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_012.npz",
+      "bytes": 1143126,
+      "sha256": "ee51ac5c103646e8079f7b109756746d0918b9de987a03333c0ab95ef7a003e0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_013.npz",
+      "bytes": 1120958,
+      "sha256": "f19a671b39438fddb8a4d208a26d745065b747429608ca5779e3e33d3a9caf24"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_014.npz",
+      "bytes": 1150904,
+      "sha256": "752197ea661e606a2ab0217f5ad9be1d4a7ba231e4bd6c738db6af69ea6838b4"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_015.npz",
+      "bytes": 1106264,
+      "sha256": "c99cfb954c9def7ae1c8e6a9d5d85a28c252d4c48c6878654e2afe6782325ca7"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_016.npz",
+      "bytes": 978030,
+      "sha256": "3121f4b5d2e933ce1d9195b18e1b7205bbe1933a1034f598d3712281468fda54"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_017.npz",
+      "bytes": 977108,
+      "sha256": "96a4eab202bca10b8b4cea388b441504b3f2c5af8aa16aee470a340d9a8a98fa"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_018.npz",
+      "bytes": 1119381,
+      "sha256": "d2f1fe65b6b63a841f381ab6bd0adb31a3cd98e418328626498fe254ab4b817f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_019.npz",
+      "bytes": 1153162,
+      "sha256": "faf8741efd07365e624c03b06c565c8a14531d9bb6a0fbd9a26ac394b64456f9"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_020.npz",
+      "bytes": 1188934,
+      "sha256": "1c4500c1d3ce14ba7700470d5b7a47174750aa3e11ab493f2b684a83079ad36e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_021.npz",
+      "bytes": 1194713,
+      "sha256": "a1c9606d38bd2c54bb9e283787bac83d23441f3ab8d4272dc162e417517bf7ab"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_022.npz",
+      "bytes": 1189788,
+      "sha256": "24a187c41515dc8542f06d59b6e792796064325d8aa9c10b8c01feaf87f9526c"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_023.npz",
+      "bytes": 1166375,
+      "sha256": "e25c41986f983f6ceff35d837cd71667d9408d8fb75c13dea58472776b67bcf7"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_024.npz",
+      "bytes": 977218,
+      "sha256": "d23526c6a4c21990c48ed623e1f89eedb332bee03a6ff1a31bfa00ff7d9fc17f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_025.npz",
+      "bytes": 972728,
+      "sha256": "52f369c51246d56afa40384abeecc9734e22ab36ba3b91421ca74ad9dd327a84"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_026.npz",
+      "bytes": 1108089,
+      "sha256": "88c3a50bc6d122e8b201e6abefd414e9728f3379060bf5ce7e1fbed5bbc6dce0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_027.npz",
+      "bytes": 1158951,
+      "sha256": "832655f3a1c8a8e101db66e271333b6bdb90868de02110a8d3de327e0e646897"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_028.npz",
+      "bytes": 1166917,
+      "sha256": "341f1a5b23d8e61394b8650f8ef9f6babe2fb609e608dc3cebd518a364f9739b"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_029.npz",
+      "bytes": 1201290,
+      "sha256": "4e438cf43ce41ede738cf25e92bd3e045ea16621e7604fee171db67d2056ae8d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_030.npz",
+      "bytes": 1205441,
+      "sha256": "714d2f82d8c81147feed40d5c9a155b13bf191b4eca40294626165716f08b207"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_031.npz",
+      "bytes": 1203265,
+      "sha256": "fdf34ddbba36e5f9e98bb11eec85b2a61d4144738d8102f31837557720d91adc"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/RUN.json",
+      "bytes": 11731,
+      "sha256": "5695634b15d77d3bd57957a26699350655c55ac7e64818cf2d419915a82228a2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/specialist_aggregate.json",
+      "bytes": 442,
+      "sha256": "7c0e8863c7e69b44cc827b8934805aaa47b8dfda097a686eaa68287e228356e0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/specialist_paired.csv",
+      "bytes": 3127,
+      "sha256": "6048199201703dd8914f4a1e94cf80dd932f5d7170f67d3cfa0bdf34914308ad"
     },
     {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/config.json",
@@ -1984,6 +2219,226 @@
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/20261105-common-model-resolution400/RUN.json",
       "bytes": 15791,
       "sha256": "8993ee4de2aceef7806884e7e12a580fed6452142d1823cca4f8b929a1eb4eeb"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/comparison_summary.json",
+      "bytes": 2197,
+      "sha256": "942967579e34bec1d83663526d40b312669df4633d511f45337c572e8aae021b"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/config.json",
+      "bytes": 2895,
+      "sha256": "3989bf379014ba73a09ef68506c2d8eb9e163c63647ac1c4c5d545cacd6a5307"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/grids/grid_status.json",
+      "bytes": 1652,
+      "sha256": "fe302a6b7727b2a58d844d50f68922edc9fcaf91a54f7e933f448add362d4de7"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/grids/integrated_A.json",
+      "bytes": 158,
+      "sha256": "94e85f787f7640504836f34f1bfbad3707c4f4d4a86a3ea89fc2d0ea6d4d8d1d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/initial_distribution.csv",
+      "bytes": 41863,
+      "sha256": "bd8fd9f6850e7e0786b0d6b874af77bfe8bf9b513e2e9536d8ab5d46daa639a3"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/large_artifacts.json",
+      "bytes": 267,
+      "sha256": "e57817f10108ab1e0fe0977585242bf43a311c5e50573996849fcca29e8d52a2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/metrics.csv",
+      "bytes": 39414,
+      "sha256": "d7b5858200ff7c207ecad56405d2688c715016dcc8eac2da494f7f4686f50eb3"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/numeric_validation.csv",
+      "bytes": 1866,
+      "sha256": "25f0979fc12d4db99b777d36b592041b40db17482e8b0f34c9af3ac6434074a7"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_differences.csv",
+      "bytes": 14890,
+      "sha256": "864ef3db3d6970ba52c27abadf3a1edbd349aae1349207f90cb3a2531583b576"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_000.npz",
+      "bytes": 968914,
+      "sha256": "91621bc20b65b4e6dfc6952258d0a47b81eabcb4ca44e46462257caa047028ff"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_001.npz",
+      "bytes": 982470,
+      "sha256": "87ae95fc78174a044678063dcd95e17f1df02fa61418a1b1e34563b680d6426d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_002.npz",
+      "bytes": 933657,
+      "sha256": "82d2956485a7384deeaad04e0959f84871b5b684d7f47644d773e0bfa38b737e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_003.npz",
+      "bytes": 991076,
+      "sha256": "fefce0cb0b814b8cc8b32165db876ac07352d023b39224d1eac06f3341b882fa"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_004.npz",
+      "bytes": 937665,
+      "sha256": "83828a29627528c5b76518a41e02076a3eaf29e039f803684f40543b07bf96d2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_005.npz",
+      "bytes": 977666,
+      "sha256": "a039ee220b670ba7db66a6c08e4e78cf4169b9166d9464dbf5d2df6511a929d9"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_006.npz",
+      "bytes": 933679,
+      "sha256": "1a4c90f1d81e7f04256c2bb7d17c33f30ce09c5b03920ce03f22ab1ffc39a224"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_007.npz",
+      "bytes": 974139,
+      "sha256": "dc14a7a8aaeccce849d0dfb5fa3fe3f3dd3fae2366c105e8b208b7d036d74fda"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_008.npz",
+      "bytes": 993946,
+      "sha256": "88dc4e5b23932241aa196726b32ebc20d32f7c9ce10826ce7a4885ae2cc637f3"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_009.npz",
+      "bytes": 972066,
+      "sha256": "b27492b35af4a412bb01338b9aa15b624dc0c576c494cffea2a6e3f354702d02"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_010.npz",
+      "bytes": 1164408,
+      "sha256": "0b21d0fef7818b6f851d9b00dbfcfb33c4d8510415dfabddf096f06596b3b24e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_011.npz",
+      "bytes": 1168640,
+      "sha256": "d59ad088f6b6f3c12314ce18e3450565231553ec092a2c3b97ddb0646529e150"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_012.npz",
+      "bytes": 1146197,
+      "sha256": "7050daa8f0d91348d4812221182b1ccca779ffedc03699f336b402e63211a6d5"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_013.npz",
+      "bytes": 1128686,
+      "sha256": "2cd36899a67560953a23bf30594ae544e557457e4803a8be108430a1d7929d28"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_014.npz",
+      "bytes": 1152533,
+      "sha256": "f48f28f5b350eca4947d9d6e1f8f03fa09354cb914f86931120e22e9440121e8"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_015.npz",
+      "bytes": 1111386,
+      "sha256": "28e5c3750bce5e73f2e6c7559641e1dfc6a33f5bf4a0d8058f2ca448673165b5"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_016.npz",
+      "bytes": 984109,
+      "sha256": "d4b919dde7098f755c2a0c241b7e7e332cfd0a51970fc15fe268c24ab0ceacd8"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_017.npz",
+      "bytes": 968677,
+      "sha256": "16c23c1d0709fb2b6c3668c27bd4fe52cdc4c6e2fcedffda3b90f6049aafb851"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_018.npz",
+      "bytes": 1123498,
+      "sha256": "4bad9137c63ed28a05cb134cc6800b95bed1c35bcf9bb1dccb50578fdb81d1be"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_019.npz",
+      "bytes": 1165249,
+      "sha256": "30ade28d4774e6f24baa8074d88e13257701e791efdb9013c5918f5cabc8c21d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_020.npz",
+      "bytes": 1193213,
+      "sha256": "03fc8cfa57decf854e55c79daae26c868a2f1699689e2699525054da1b0a9c6f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_021.npz",
+      "bytes": 1209460,
+      "sha256": "73f74176f8a202b3fbc056c1b20901b2fc78ba10d6a468bedfa1d93d6537098b"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_022.npz",
+      "bytes": 1193096,
+      "sha256": "31cf78c0419c82ec2cc51d3e744d9560f2d8e4997988435cdbb9a452e62eae04"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_023.npz",
+      "bytes": 1173275,
+      "sha256": "02d76d65bc679817dd244bb364dd011319ea6ac19791fe643a94e70dc5d09255"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_024.npz",
+      "bytes": 985768,
+      "sha256": "1fe955203d9179c84aa1e681db727df22eb7423200b098c1894ea3eeb9a9858d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_025.npz",
+      "bytes": 955853,
+      "sha256": "d35be7e2d978f9e637d3d5e80820eb2ee0ef5aebcaac4ec8a6c5004c1a43cb5c"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_026.npz",
+      "bytes": 1110408,
+      "sha256": "809e3e0d998df9a6bf0aea3f2a2aa9d5377bc88e894a8b59a693e6bc6cf6536d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_027.npz",
+      "bytes": 1172535,
+      "sha256": "1840298bd1e8f2c50c2ca7d136fee714554bbec519c22ac1ab33090844bff475"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_028.npz",
+      "bytes": 1169396,
+      "sha256": "a0624bfe098debf7e9ef8ed3c9774314ad5c98c1f75e67f126710839b01a39d4"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_029.npz",
+      "bytes": 1218854,
+      "sha256": "fb4cd9ba3f74c60f5efff61fc0b69b731ed7c515afd9c1120978d6fcbb1f32d3"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_030.npz",
+      "bytes": 1205090,
+      "sha256": "2e6169ca674d47927ef7d706b9fb42cb1f31c4fd2781f8cf67ce704c66ba5eb7"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/paired_episodes/condition_031.npz",
+      "bytes": 1215858,
+      "sha256": "0b8a808ac62b9a3988fae995e89940692110b999aef206b19301e6afd83bd764"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/RUN.json",
+      "bytes": 11732,
+      "sha256": "7788772e012f586e39fe264e5006f331ab2b3249adc12e16958575e514732caa"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/specialist_aggregate.json",
+      "bytes": 442,
+      "sha256": "e7a832d378668f9be3bbb3f2e44be847aa7a2c06f8d27c48045f1de2a5bd1cb6"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/specialist_paired.csv",
+      "bytes": 3131,
+      "sha256": "a55f25a127552cfa47207165bfe85959bb3113e8d56cf68ade4da6c2ce72a97b"
     },
     {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/config.json",
@@ -2794,6 +3249,26 @@
       "path": "03_cql_v2_policy/results/runs/20261105-integrated-policy-comparison-codex/RUN.json",
       "bytes": 40035,
       "sha256": "8b6df4781a20d0c99a1eb760a526cb3e418d4415665bb2cb672e64dddb774edd"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261125-smash-specialist-comparison/archive_provenance.json",
+      "bytes": 14467,
+      "sha256": "6af0f34f387d5881fbaed199c3292a6ea74841e49edce863c6cbe13d50ca81b0"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261125-smash-specialist-comparison/config.json",
+      "bytes": 539,
+      "sha256": "925f7dc3e956d4cab77b23935ffcd170a5341ec5b4fe5b5ee05042c6da5a3992"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261125-smash-specialist-comparison/RUN.json",
+      "bytes": 3106,
+      "sha256": "dad0b6ac1e4b395dfc0051c2b50ebffe48df262bdaf3fda1a2ddea2b72a1d3d9"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261125-smash-specialist-comparison/strategy_behavior.csv",
+      "bytes": 1158,
+      "sha256": "9fbda4f491e40b33f577c98dddb5e29a2700700b64a8d062bb19f0c6fb564944"
     },
     {
       "path": "04_markov_parity/code/DETAILS.md",
@@ -5546,5 +6021,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1391777728
+  "uploaded_content_bytes": 1461146627
 }
