@@ -1,8 +1,8 @@
 name: Smash specialist action audit
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: ['research/03-smash-specialist-comparison']
     paths:
       - '03_cql_v2_policy/code/scripts/audit_smash_actions.py'
       - '.github/workflows/smash-action-audit.yml'
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   actions:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/03-smash-specialist-comparison'
+    if: github.ref == 'refs/heads/research/03-smash-specialist-comparison'
     name: Initial-action diagnostic (${{ matrix.cost }})
     runs-on: ubuntu-latest
     timeout-minutes: 35
@@ -42,7 +42,7 @@ jobs:
           OMP_NUM_THREADS: '2'
           MKL_NUM_THREADS: '1'
         run: python run.py exec scripts/audit_smash_actions.py --cost ${{ matrix.cost }} --intervals ${{ matrix.intervals }} --out "${{ runner.temp }}/smash-${{ matrix.cost }}"
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         with:
           name: action-audit-${{ matrix.cost }}
           path: ${{ runner.temp }}/smash-${{ matrix.cost }}
