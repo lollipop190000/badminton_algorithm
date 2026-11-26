@@ -1,0 +1,587 @@
+{
+  "model": "M3",
+  "opponent_profile": {
+    "shot": "smash",
+    "preference_weight": 1.5,
+    "terminal_win_loss_odds": 1.5,
+    "terminal_mass": "fixed",
+    "applies_to": "opponent_only"
+  },
+  "scope": "weighted initial train-history states, 32 matching budget/parity conditions; no episode action logs",
+  "queries": 21904,
+  "fine_intervals": 100,
+  "levels": {
+    "50": {
+      "intervals": 50,
+      "regular_residual": 3.7470027081099033e-16,
+      "specialist_residual": 3.608224830031759e-16,
+      "action_changed": 0.16965496264594715,
+      "shot_changed": 0.06943674818601543,
+      "zone_changed": 0.16669052687868094,
+      "shot_shares": [
+        {
+          "shot": "defensive_shot",
+          "regular": 0.010980608644889476,
+          "specialist": 0.012234790918481708,
+          "change": 0.0012541822735922317
+        },
+        {
+          "shot": "drive",
+          "regular": 0.0182459562807901,
+          "specialist": 0.016647887071746133,
+          "change": -0.0015980692090439667
+        },
+        {
+          "shot": "drop",
+          "regular": 0.10111024521865714,
+          "specialist": 0.13086585275963203,
+          "change": 0.029755607540974893
+        },
+        {
+          "shot": "hairpin",
+          "regular": 0.18542712778329778,
+          "specialist": 0.2075582132673517,
+          "change": 0.022131085484053903
+        },
+        {
+          "shot": "high_clear",
+          "regular": 0.10886294529066402,
+          "specialist": 0.07045340400476076,
+          "change": -0.038409541285903265
+        },
+        {
+          "shot": "push",
+          "regular": 0.1931520126719049,
+          "specialist": 0.18715238626458727,
+          "change": -0.005999626407317632
+        },
+        {
+          "shot": "smash",
+          "regular": 0.2904981790616371,
+          "specialist": 0.29585251494457915,
+          "change": 0.005354335882942041
+        },
+        {
+          "shot": "under_clear",
+          "regular": 0.0917229250481646,
+          "specialist": 0.07923495076886386,
+          "change": -0.012487974279300734
+        }
+      ],
+      "zone_shares": [
+        {
+          "zone": 1,
+          "regular": 0.01766445596804314,
+          "specialist": 0.01012296657970945,
+          "change": -0.007541489388333692
+        },
+        {
+          "zone": 2,
+          "regular": 0.013602037566491329,
+          "specialist": 0.005390593409122753,
+          "change": -0.008211444157368575
+        },
+        {
+          "zone": 3,
+          "regular": 0.014408362791351007,
+          "specialist": 0.01394822794681876,
+          "change": -0.00046013484453224715
+        },
+        {
+          "zone": 4,
+          "regular": 0.18102495126258236,
+          "specialist": 0.14393813060063057,
+          "change": -0.03708682066195179
+        },
+        {
+          "zone": 5,
+          "regular": 0.06449446816847823,
+          "specialist": 0.06572426869536743,
+          "change": 0.001229800526889202
+        },
+        {
+          "zone": 6,
+          "regular": 0.10039772018064529,
+          "specialist": 0.09613116440963801,
+          "change": -0.004266555771007277
+        },
+        {
+          "zone": 7,
+          "regular": 0.22081315863312717,
+          "specialist": 0.1758646914757269,
+          "change": -0.04494846715740028
+        },
+        {
+          "zone": 8,
+          "regular": 0.054562850493042124,
+          "specialist": 0.05323717450585503,
+          "change": -0.0013256759871870943
+        },
+        {
+          "zone": 9,
+          "regular": 0.21094951431212638,
+          "specialist": 0.2584200145716736,
+          "change": 0.04747050025954719
+        },
+        {
+          "zone": 10,
+          "regular": 0.007767563810638401,
+          "specialist": 0.03387627484808555,
+          "change": 0.02610871103744715
+        },
+        {
+          "zone": 11,
+          "regular": 0.002799511287227579,
+          "specialist": 0.0040361895528257235,
+          "change": 0.0012366782655981443
+        },
+        {
+          "zone": 12,
+          "regular": 0.10137234899571573,
+          "specialist": 0.13111096319807844,
+          "change": 0.029738614202362706
+        },
+        {
+          "zone": 13,
+          "regular": 0.009494951891901847,
+          "specialist": 0.007514011029415598,
+          "change": -0.0019809408624862496
+        },
+        {
+          "zone": 14,
+          "regular": 0.0,
+          "specialist": 3.722453841572365e-05,
+          "change": 3.722453841572365e-05
+        },
+        {
+          "zone": 15,
+          "regular": 0.00038974939215132015,
+          "specialist": 0.00038974939215132015,
+          "change": 0.0
+        },
+        {
+          "zone": 16,
+          "regular": 0.0002583552464825093,
+          "specialist": 0.0002583552464825093,
+          "change": 0.0
+        }
+      ],
+      "shot_transitions": [
+        {
+          "from_shot": "high_clear",
+          "to_shot": "drop",
+          "share": 0.02943550476039481
+        },
+        {
+          "from_shot": "under_clear",
+          "to_shot": "hairpin",
+          "share": 0.010978022702057309
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "hairpin",
+          "share": 0.00649366100662453
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "smash",
+          "share": 0.00529258834884551
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "drive",
+          "share": 0.0027630255896210418
+        },
+        {
+          "from_shot": "drive",
+          "to_shot": "smash",
+          "share": 0.002528823918415285
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "hairpin",
+          "share": 0.002486427494335264
+        },
+        {
+          "from_shot": "drive",
+          "to_shot": "drop",
+          "share": 0.0024777895760514047
+        },
+        {
+          "from_shot": "drop",
+          "to_shot": "hairpin",
+          "share": 0.001658849730905485
+        },
+        {
+          "from_shot": "under_clear",
+          "to_shot": "push",
+          "share": 0.0010479696306873794
+        },
+        {
+          "from_shot": "drop",
+          "to_shot": "smash",
+          "share": 0.0006823738138128116
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "hairpin",
+          "share": 0.0006805267117898481
+        },
+        {
+          "from_shot": "under_clear",
+          "to_shot": "defensive_shot",
+          "share": 0.0005353227621728805
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "defensive_shot",
+          "share": 0.0004969899625433788
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "drop",
+          "share": 0.0003860551881053932
+        },
+        {
+          "from_shot": "drop",
+          "to_shot": "drive",
+          "share": 0.0003674429188975313
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "drive",
+          "share": 0.0002780757769041492
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "high_clear",
+          "share": 0.00025909408729169473
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "defensive_shot",
+          "share": 0.00012880820283666197
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "drop",
+          "share": 0.00012843878243206925
+        },
+        {
+          "from_shot": "hairpin",
+          "to_shot": "defensive_shot",
+          "share": 0.00011130419484257825
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "under_clear",
+          "share": 7.334081561766919e-05
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "push",
+          "share": 5.4728546409807356e-05
+        },
+        {
+          "from_shot": "hairpin",
+          "to_shot": "smash",
+          "share": 3.685511801113094e-05
+        },
+        {
+          "from_shot": "hairpin",
+          "to_shot": "drop",
+          "share": 3.648569760653824e-05
+        },
+        {
+          "from_shot": "defensive_shot",
+          "to_shot": "hairpin",
+          "share": 1.824284880326912e-05
+        }
+      ]
+    },
+    "100": {
+      "intervals": 100,
+      "regular_residual": 0.0,
+      "specialist_residual": 0.0,
+      "action_changed": 0.18149048616420627,
+      "shot_changed": 0.07761992081712665,
+      "zone_changed": 0.17926426101837645,
+      "shot_shares": [
+        {
+          "shot": "defensive_shot",
+          "regular": 0.009265552685955802,
+          "specialist": 0.010242767443857666,
+          "change": 0.0009772147579018634
+        },
+        {
+          "shot": "drive",
+          "regular": 0.020698114599946377,
+          "specialist": 0.017031356317019377,
+          "change": -0.0036667582829270004
+        },
+        {
+          "shot": "drop",
+          "regular": 0.10875121734888675,
+          "specialist": 0.14543285988414262,
+          "change": 0.03668164253525587
+        },
+        {
+          "shot": "hairpin",
+          "regular": 0.17805942896471325,
+          "specialist": 0.20382055886266104,
+          "change": 0.025761129897947793
+        },
+        {
+          "shot": "high_clear",
+          "regular": 0.10675061028250894,
+          "specialist": 0.06268191781864985,
+          "change": -0.0440686924638591
+        },
+        {
+          "shot": "push",
+          "regular": 0.19526693362289155,
+          "specialist": 0.18806106267213105,
+          "change": -0.007205870950760501
+        },
+        {
+          "shot": "smash",
+          "regular": 0.29099590786498963,
+          "specialist": 0.296703138022072,
+          "change": 0.005707230157082355
+        },
+        {
+          "shot": "under_clear",
+          "regular": 0.09021223463011256,
+          "specialist": 0.07602633897946784,
+          "change": -0.014185895650644723
+        }
+      ],
+      "zone_shares": [
+        {
+          "zone": 1,
+          "regular": 0.016204061051546058,
+          "specialist": 0.009347161999452737,
+          "change": -0.006856899052093321
+        },
+        {
+          "zone": 2,
+          "regular": 0.013476184726891405,
+          "specialist": 0.005535797358739723,
+          "change": -0.007940387368151683
+        },
+        {
+          "zone": 3,
+          "regular": 0.014241960629694031,
+          "specialist": 0.013781086944352598,
+          "change": -0.00046087368534143344
+        },
+        {
+          "zone": 4,
+          "regular": 0.17691985393899431,
+          "specialist": 0.1317123470208384,
+          "change": -0.04520750691815592
+        },
+        {
+          "zone": 5,
+          "regular": 0.07035849555669851,
+          "specialist": 0.07131650045356151,
+          "change": 0.0009580048968629989
+        },
+        {
+          "zone": 6,
+          "regular": 0.09993056634842576,
+          "specialist": 0.09612968672801958,
+          "change": -0.003800879620406178
+        },
+        {
+          "zone": 7,
+          "regular": 0.21901538509948268,
+          "specialist": 0.17104258174274162,
+          "change": -0.04797280335674106
+        },
+        {
+          "zone": 8,
+          "regular": 0.05607021612745257,
+          "specialist": 0.054278863989664305,
+          "change": -0.001791352137788263
+        },
+        {
+          "zone": 9,
+          "regular": 0.21971881587634662,
+          "specialist": 0.2721352903574785,
+          "change": 0.0524164744811319
+        },
+        {
+          "zone": 10,
+          "regular": 0.008909333628174273,
+          "specialist": 0.03418529501652732,
+          "change": 0.025275961388353044
+        },
+        {
+          "zone": 11,
+          "regular": 0.0031144421821428588,
+          "specialist": 0.005219247533227843,
+          "change": 0.002104805351084984
+        },
+        {
+          "zone": 12,
+          "regular": 0.09847460447678452,
+          "specialist": 0.13141171486864114,
+          "change": 0.03293711039185662
+        },
+        {
+          "zone": 13,
+          "regular": 0.0030121453259887325,
+          "specialist": 0.0028885090088163687,
+          "change": -0.00012363631717236378
+        },
+        {
+          "zone": 14,
+          "regular": 0.0,
+          "specialist": 0.0,
+          "change": 0.0
+        },
+        {
+          "zone": 15,
+          "regular": 0.0,
+          "specialist": 0.0,
+          "change": 0.0
+        },
+        {
+          "zone": 16,
+          "regular": 0.0005539350313807424,
+          "specialist": 0.0010159169779359537,
+          "change": 0.00046198194655521136
+        }
+      ],
+      "shot_transitions": [
+        {
+          "from_shot": "high_clear",
+          "to_shot": "drop",
+          "share": 0.03505262893467489
+        },
+        {
+          "from_shot": "under_clear",
+          "to_shot": "hairpin",
+          "share": 0.012361752019295397
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "hairpin",
+          "share": 0.008644328814409092
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "smash",
+          "share": 0.005128402709616086
+        },
+        {
+          "from_shot": "drive",
+          "to_shot": "drop",
+          "share": 0.0029602308938374406
+        },
+        {
+          "from_shot": "drive",
+          "to_shot": "smash",
+          "share": 0.002437240253994347
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "hairpin",
+          "share": 0.002158425636281012
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "hairpin",
+          "share": 0.0020419495557741367
+        },
+        {
+          "from_shot": "under_clear",
+          "to_shot": "push",
+          "share": 0.0016194086700622055
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "drive",
+          "share": 0.0014351330800065508
+        },
+        {
+          "from_shot": "drop",
+          "to_shot": "hairpin",
+          "share": 0.0006280146878075969
+        },
+        {
+          "from_shot": "drop",
+          "to_shot": "smash",
+          "share": 0.000626537006189226
+        },
+        {
+          "from_shot": "drop",
+          "to_shot": "drive",
+          "share": 0.00044373909775194214
+        },
+        {
+          "from_shot": "under_clear",
+          "to_shot": "defensive_shot",
+          "share": 0.00044336967734734953
+        },
+        {
+          "from_shot": "high_clear",
+          "to_shot": "defensive_shot",
+          "share": 0.00044189199572897863
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "under_clear",
+          "share": 0.00023863471606086936
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "drop",
+          "share": 0.00023863471606086936
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "push",
+          "share": 0.00016640216165697831
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "drop",
+          "share": 0.00012843878243206925
+        },
+        {
+          "from_shot": "drive",
+          "to_shot": "push",
+          "share": 0.00011167361524717096
+        },
+        {
+          "from_shot": "smash",
+          "to_shot": "high_clear",
+          "share": 0.00011130419484257823
+        },
+        {
+          "from_shot": "push",
+          "to_shot": "defensive_shot",
+          "share": 9.1953084825531e-05
+        },
+        {
+          "from_shot": "hairpin",
+          "to_shot": "smash",
+          "share": 7.334081561766919e-05
+        },
+        {
+          "from_shot": "drive",
+          "to_shot": "high_clear",
+          "share": 3.648569760653824e-05
+        }
+      ]
+    }
+  },
+  "refinement_agreement": {
+    "regular": 0.9330734634631921,
+    "specialist": 0.9289818065231474,
+    "changed_action_indicator": 0.9331490208012373
+  },
+  "limitation": "Coarse grid below full-run resolution; recommendation stability is diagnostic and not a proof of exact full-resolution action identity."
+}

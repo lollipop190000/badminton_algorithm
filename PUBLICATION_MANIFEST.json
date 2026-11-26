@@ -532,8 +532,8 @@
     },
     {
       "path": ".github/workflows/smash-action-audit.yml",
-      "bytes": 1617,
-      "sha256": "e9c1483a797183c643da77cea232e770d59192c4ea4ee505a6698dbe8da31824"
+      "bytes": 1563,
+      "sha256": "dfc2b94d1b01cc18e727c8e38426322f98ea597a68f16b03577189c93d6e0fa3"
     },
     {
       "path": ".github/workflows/validate.yml",
@@ -876,6 +876,11 @@
       "sha256": "5f375a1aca3e496cdb2966c644f7eff665888e2b420af958ccd519a118c3e9c8"
     },
     {
+      "path": "03_cql_v2_policy/code/scripts/audit_cql_initial_actions.py",
+      "bytes": 5735,
+      "sha256": "d9c56212361ab3321afb6d17fb8b10c1515afbc1ed27284b3f6eb8e32b7c1982"
+    },
+    {
       "path": "03_cql_v2_policy/code/scripts/audit_smash_actions.py",
       "bytes": 6638,
       "sha256": "bac4b61c06a280f1f0461c6978f608b0c7349d2f7c4fbda738d1684e3446150e"
@@ -982,8 +987,8 @@
     },
     {
       "path": "03_cql_v2_policy/REPORT.md",
-      "bytes": 28169,
-      "sha256": "cb8788c145d6245de11267b59f4fb0ef21900e2121f6566b5748e4ac1a8fbea9"
+      "bytes": 32875,
+      "sha256": "ed4a66f1cd9d07a44da998b8efb56fa5f3dfd54b28981878cf989f62047f99ae"
     },
     {
       "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
@@ -3269,6 +3274,81 @@
       "path": "03_cql_v2_policy/results/runs/20261125-smash-specialist-comparison/strategy_behavior.csv",
       "bytes": 1158,
       "sha256": "9fbda4f491e40b33f577c98dddb5e29a2700700b64a8d062bb19f0c6fb564944"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/config.json",
+      "bytes": 987,
+      "sha256": "5af55aed81fe2b06bfb932125c89ac3ba3d243e35efa290519b032c0992d893c"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/cql_initial_action_shares.json",
+      "bytes": 9550,
+      "sha256": "73dfdad3c92fbdf4aa0174809b5280bf87197fb45f0d949656ee4edc5d50703e"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M0/per_condition.csv",
+      "bytes": 3199,
+      "sha256": "d71c2d940c56cabd96d3c1cc1a82f59c70f1a1b90ff75663605851ab657d6070"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M0/shot_shares.csv",
+      "bytes": 590,
+      "sha256": "b542a39b961ab799def7ebfc05a36b02e201eff8793000f143567b471442c3d2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M0/shot_transitions.csv",
+      "bytes": 883,
+      "sha256": "ac58b0b92304bbc146ea5873fab366ba52b64976e9de44eb85458e69a2e2444f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M0/summary.json",
+      "bytes": 15796,
+      "sha256": "a3b270ea50ed27ec330030d8fd8b21948969a7ff9cfefc504ba64fee5416fd38"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M0/zone_shares.csv",
+      "bytes": 972,
+      "sha256": "1bd65df31dc13fd7237b01ca02b330b9be10b08c422c791b970df951ea33f2db"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M3/per_condition.csv",
+      "bytes": 3233,
+      "sha256": "56fbc341590c23375dc57e9aeb7e8f804e80a742cc4c898c211efef4e8effdca"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M3/shot_shares.csv",
+      "bytes": 592,
+      "sha256": "14c0eb31584a6e4736be6976d62f8dcdcc1be1600c6849e4866f6d0ecba1e68c"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M3/shot_transitions.csv",
+      "bytes": 923,
+      "sha256": "709d99d540065a445e8d94b33087de9cbbbbb74692ce5db801aa5dbd6e607e35"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M3/summary.json",
+      "bytes": 16005,
+      "sha256": "8648294f66920e06c6e788a7d953dc1a1e976ad190bf0c95424bbbd96d6638b4"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/M3/zone_shares.csv",
+      "bytes": 975,
+      "sha256": "ff0abdf1b18a4a257b1291707e722cd1fca3f08b453e781baeb0e1397d5dab9b"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/RUN.json",
+      "bytes": 9806,
+      "sha256": "05d4724898158d9dc7dee63a726b79e77164acffe7ac9e9baf7b387f23f4d0c2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/shot_comparison.csv",
+      "bytes": 1204,
+      "sha256": "c634723cf5e5868e97b1a43c0338e02161fde8cd2b6efc0a6f8021546e71ecd1"
+    },
+    {
+      "path": "03_cql_v2_policy/results/runs/20261126-smash-initial-action-audit/zone_comparison.csv",
+      "bytes": 2067,
+      "sha256": "9750915f485fc38306368f25a70aa9a4b15704bfa620af27ce6e3768759be530"
     },
     {
       "path": "04_markov_parity/code/DETAILS.md",
@@ -6021,5 +6101,5 @@
       "sha256": "be22f4a2d21ccff47ef06878ab9fa9ed3c4a129faf83f6a58f6f93f4f7393994"
     }
   ],
-  "uploaded_content_bytes": 1461146627
+  "uploaded_content_bytes": 1461223796
 }

@@ -1,0 +1,36 @@
+{
+  "workflow_run": 45730850151,
+  "code_commit": "816d9f3de71b174112df90ae638de8f748dcebe3",
+  "conditions": 32,
+  "queries_per_model": 21904,
+  "M0_intervals": [
+    40,
+    80
+  ],
+  "M3_intervals": [
+    50,
+    100
+  ],
+  "opponent_profile": {
+    "shot": "smash",
+    "preference_weight": 1.5,
+    "terminal_win_loss_odds": 1.5,
+    "terminal_mass": "fixed",
+    "applies_to": "opponent_only"
+  },
+  "scope": "weighted initial train-history states, 32 matching budget/parity conditions; no episode action logs",
+  "cql": {
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "checkpoint_ref": "816d9f3de71b174112df90ae638de8f748dcebe3",
+    "aggregation": "equal average across frozen seeds; same 32 conditions and train-history weights as the Bellman diagnostic",
+    "device": "cpu",
+    "shot_action": "masked argmax; no sampling or retraining",
+    "local_executed_script_sha256": "d9c56212361ab3321afb6d17fb8b10c1515afbc1ed27284b3f6eb8e32b7c1982"
+  }
+}

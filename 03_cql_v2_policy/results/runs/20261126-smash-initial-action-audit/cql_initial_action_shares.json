@@ -1,0 +1,210 @@
+{
+  "M0": {
+    "queries": 21904,
+    "conditions": 32,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "shot_shares": {
+      "defensive_shot": 0.012436277153268682,
+      "drive": 0.05104062902994048,
+      "drop": 0.018229747417272728,
+      "hairpin": 0.06287610039472981,
+      "high_clear": 0.0417795028696561,
+      "push": 0.20068161541544716,
+      "smash": 0.46567607889008633,
+      "under_clear": 0.14728004882954884
+    },
+    "shot_shares_by_seed": {
+      "42": {
+        "defensive_shot": 0.01535275345977377,
+        "drive": 0.04863927036253827,
+        "drop": 0.01740490553789798,
+        "hairpin": 0.06676028648943239,
+        "high_clear": 0.04390061704507322,
+        "push": 0.19272980861067115,
+        "smash": 0.4574036434239193,
+        "under_clear": 0.15780871507064342
+      },
+      "43": {
+        "defensive_shot": 0.014836325464765333,
+        "drive": 0.052865961325767354,
+        "drop": 0.022675752409402557,
+        "hairpin": 0.05648376053977927,
+        "high_clear": 0.034281289995189784,
+        "push": 0.19924063680080398,
+        "smash": 0.4640601862330533,
+        "under_clear": 0.15555608723119038
+      },
+      "44": {
+        "defensive_shot": 0.009238954416824884,
+        "drive": 0.06073480065379396,
+        "drop": 0.008807688690380918,
+        "hairpin": 0.042248894954915135,
+        "high_clear": 0.012420631112603282,
+        "push": 0.2331325250936348,
+        "smash": 0.5001988568306946,
+        "under_clear": 0.1332176482470997
+      },
+      "45": {
+        "defensive_shot": 0.014869627627708796,
+        "drive": 0.06158883543737613,
+        "drop": 0.012209724657499164,
+        "hairpin": 0.03962431509456825,
+        "high_clear": 0.03774209640255639,
+        "push": 0.1806552048988044,
+        "smash": 0.4757237228223589,
+        "under_clear": 0.1775864730590755
+      },
+      "46": {
+        "defensive_shot": 0.007883724797270618,
+        "drive": 0.03137427737022668,
+        "drop": 0.03005066579118301,
+        "hairpin": 0.109263244894954,
+        "high_clear": 0.08055287979285783,
+        "push": 0.19764990167332144,
+        "smash": 0.43099398514040554,
+        "under_clear": 0.11223132053973522
+      }
+    },
+    "zone_shares": [
+      0.07162015098776636,
+      0.0456405784584599,
+      0.023187041114664922,
+      0.113665540934036,
+      0.2733042777665823,
+      0.05043334534601346,
+      0.09055236651579993,
+      0.2300579259886578,
+      0.04696919025133299,
+      0.009722456188478282,
+      0.005948874562910346,
+      0.015305576301045959,
+      0.001949292399118585,
+      0.00046018047881748363,
+      0.005284417638720113,
+      0.015898785067556997
+    ],
+    "opponent_profile_in_policy": false
+  },
+  "M3": {
+    "queries": 21904,
+    "conditions": 32,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "shot_shares": {
+      "defensive_shot": 0.015625815984481574,
+      "drive": 0.05556176761318068,
+      "drop": 0.037114366385766824,
+      "hairpin": 0.04748006390190497,
+      "high_clear": 0.056163768585320815,
+      "push": 0.20652607873365322,
+      "smash": 0.42210400262225,
+      "under_clear": 0.15942413617339674
+    },
+    "shot_shares_by_seed": {
+      "42": {
+        "defensive_shot": 0.020052758883734437,
+        "drive": 0.04731493080799123,
+        "drop": 0.02028008281623123,
+        "hairpin": 0.038106008096998246,
+        "high_clear": 0.0639352634636762,
+        "push": 0.2568549324316992,
+        "smash": 0.4266614117700371,
+        "under_clear": 0.12679461172958942
+      },
+      "43": {
+        "defensive_shot": 0.009721395734610937,
+        "drive": 0.07395732394640163,
+        "drop": 0.03705744087447994,
+        "hairpin": 0.040679988227221964,
+        "high_clear": 0.06567505972441148,
+        "push": 0.21643282137749287,
+        "smash": 0.398255568599696,
+        "under_clear": 0.1582204015156442
+      },
+      "44": {
+        "defensive_shot": 0.010885841445805134,
+        "drive": 0.03572506099348097,
+        "drop": 0.018242653227760277,
+        "hairpin": 0.04776204901591429,
+        "high_clear": 0.030571146545335198,
+        "push": 0.21293858242351066,
+        "smash": 0.48665660017791246,
+        "under_clear": 0.15721806617022882
+      },
+      "45": {
+        "defensive_shot": 0.022916886145847817,
+        "drive": 0.045259627791121596,
+        "drop": 0.06283189163760639,
+        "hairpin": 0.04517983298372929,
+        "high_clear": 0.055973080291653605,
+        "push": 0.1755537046868889,
+        "smash": 0.40102578702189784,
+        "under_clear": 0.1912591894412091
+      },
+      "46": {
+        "defensive_shot": 0.014552197712409535,
+        "drive": 0.075551894526908,
+        "drop": 0.04715976337275626,
+        "hairpin": 0.06567244118566107,
+        "high_clear": 0.06466429290152764,
+        "push": 0.17085035274867436,
+        "smash": 0.3979206455417064,
+        "under_clear": 0.16362841201031214
+      }
+    },
+    "zone_shares": [
+      0.11896744954238325,
+      0.06364787394645413,
+      0.012312414837731095,
+      0.09987995792605438,
+      0.2665421611250048,
+      0.05423736938598052,
+      0.08159792882928649,
+      0.19213095423115295,
+      0.06091092291821389,
+      0.011674412760632398,
+      0.004147304691343505,
+      0.025323216777283074,
+      0.004286884758565734,
+      0.0005023835004503893,
+      0.0013278077602274733,
+      0.002510957009200051
+    ],
+    "opponent_profile_in_policy": false
+  },
+  "provenance": {
+    "commit": "816d9f3de71b174112df90ae638de8f748dcebe3",
+    "input_sha256": {
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/initial_distribution.csv": "bd8fd9f6850e7e0786b0d6b874af77bfe8bf9b513e2e9536d8ab5d46daa639a3",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/dataset_contract.json": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/training_summary.json": "0646611e5c90f14610e78c4c74cb46850296558e0598b45fc07bd073b2f100c2",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed42.pt": "3b27acf9d41ae0cf8a6857c6e6bb1a91ce5bb181fdbae0cd0902cc1e1af404d1",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed43.pt": "483067713b5c595db5124d7a3d37f2858129e0a31452c7331225d0700de27027",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed44.pt": "dbd667af1ee1c37b2e93636f39868b57694767861083716579d577377023c23d",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed45.pt": "24662e5006cc40ca389100b3a2ed19ca15710cba3cdec13d1b9dd79e28da3573",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed46.pt": "7e8461a5a1045c42ec60089c5b16ef1e33df111848adaa932591df1901787ffb",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/initial_distribution.csv": "bd8fd9f6850e7e0786b0d6b874af77bfe8bf9b513e2e9536d8ab5d46daa639a3",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/dataset_contract.json": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/training_summary.json": "360e8e6d9df711244d356cfe719ea41fd416f3e0fd3e1a1bb18b87656e37e4b7",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed42.pt": "35fc99510742c4909bf09f3331bf1c2c8597e392410611634d2c928954297f33",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed43.pt": "a41685cbb9878d22f68fc00acb50f6a07ae1c8cc2f09c8b8d04aaf1e9a4d278d",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed44.pt": "f34d9600bd87d1fb3ef93e30909901e05a3cc0ca01c6c84fa30f3941b477eae5",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed45.pt": "6c794a12af668b13f2085b12fa4440f88e21dd56904ac2b6987d5ad945a42d35",
+      "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed46.pt": "487e8fe16c26da107c654089f06b600011ecb95c3fb6bfc1dab25117cb0e2ca6"
+    },
+    "scope": "same weighted initial-state/budget queries as Bellman audit; frozen CQL argmax, pooled equally over five seeds"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "run_id": "20261126-smash-initial-action-audit",
+  "status": "completed",
+  "code_commit": "816d9f3de71b174112df90ae638de8f748dcebe3",
+  "command": "python run.py exec scripts/audit_smash_actions.py --cost M0 --intervals 80 --out <new-M0-output>; python run.py exec scripts/audit_smash_actions.py --cost M3 --intervals 100 --out <new-M3-output>; CQL: python run.py exec scripts/audit_cql_initial_actions.py",
+  "seed": null,
+  "environment": {
+    "runner": "GitHub-hosted Ubuntu",
+    "python": "3.12.16",
+    "numba_threads": 4,
+    "workflow_run": 45730850151,
+    "cql_local": {
+      "python": "3.13.9",
+      "torch": "2.14.1+cpu",
+      "numpy": "2.4.6",
+      "pandas": "3.0.3",
+      "device": "cpu"
+    }
+  },
+  "inputs": [
+    {
+      "path": "action-audit-M0.zip",
+      "sha256": "90d7c754c66b0c628f9b056928ddf700fbb72b2e1971a9f0ab1fcf588e0e57ac"
+    },
+    {
+      "path": "action-audit-M3.zip",
+      "sha256": "f82686433afb5d390a649ad0dc994275dfdc758add9e6369a2a35bcdeedf2e5c"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/comparison/smash-specialist-45593798030-1/initial_distribution.csv",
+      "sha256": "bd8fd9f6850e7e0786b0d6b874af77bfe8bf9b513e2e9536d8ab5d46daa639a3"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/dataset_contract.json",
+      "sha256": "fb1dc595e4c5b490eff4d2247a7578dce0bc5d74d21193949f9ad6d9ba37694c"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed42.pt",
+      "sha256": "3b27acf9d41ae0cf8a6857c6e6bb1a91ce5bb181fdbae0cd0902cc1e1af404d1"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed43.pt",
+      "sha256": "483067713b5c595db5124d7a3d37f2858129e0a31452c7331225d0700de27027"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed44.pt",
+      "sha256": "dbd667af1ee1c37b2e93636f39868b57694767861083716579d577377023c23d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed45.pt",
+      "sha256": "24662e5006cc40ca389100b3a2ed19ca15710cba3cdec13d1b9dd79e28da3573"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/policy_seed46.pt",
+      "sha256": "7e8461a5a1045c42ec60089c5b16ef1e33df111848adaa932591df1901787ffb"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M0-codex/training/20261104-full-5seeds/training_summary.json",
+      "sha256": "0646611e5c90f14610e78c4c74cb46850296558e0598b45fc07bd073b2f100c2"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/common_mask.npy",
+      "sha256": "7f5a13ecb5c398e6cee03986f5898ebbb563c75953ba2f7fd6cfa6dcb1b36277"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/comparison/smash-specialist-45593798030-1/initial_distribution.csv",
+      "sha256": "bd8fd9f6850e7e0786b0d6b874af77bfe8bf9b513e2e9536d8ab5d46daa639a3"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/dataset_contract.json",
+      "sha256": "31a8e6e3d4d713b0aea859e99b79cad7f36bd10521608a07b7748a96af0d474f"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed42.pt",
+      "sha256": "35fc99510742c4909bf09f3331bf1c2c8597e392410611634d2c928954297f33"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed43.pt",
+      "sha256": "a41685cbb9878d22f68fc00acb50f6a07ae1c8cc2f09c8b8d04aaf1e9a4d278d"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed44.pt",
+      "sha256": "f34d9600bd87d1fb3ef93e30909901e05a3cc0ca01c6c84fa30f3941b477eae5"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed45.pt",
+      "sha256": "6c794a12af668b13f2085b12fa4440f88e21dd56904ac2b6987d5ad945a42d35"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/policy_seed46.pt",
+      "sha256": "487e8fe16c26da107c654089f06b600011ecb95c3fb6bfc1dab25117cb0e2ca6"
+    },
+    {
+      "path": "03_cql_v2_policy/results/budget_cql/runs/20261104-budget-cql-integrated-M3-codex/training/20261104-full-5seeds/training_summary.json",
+      "sha256": "360e8e6d9df711244d356cfe719ea41fd416f3e0fd3e1a1bb18b87656e37e4b7"
+    }
+  ],
+  "config": {
+    "path": "config.json",
+    "sha256": "5af55aed81fe2b06bfb932125c89ac3ba3d243e35efa290519b032c0992d893c"
+  },
+  "split": "Train-history weighted initial states, same 32 budget/parity conditions as nominal comparison; no episode simulation or CQL retraining",
+  "metrics": {
+    "M0": {
+      "action_changed": 0.17524253318785993,
+      "shot_changed": 0.06387014768471629,
+      "zone_changed": 0.17113669702346246,
+      "regular_residual": 0.0,
+      "specialist_residual": 0.0,
+      "refinement_agreement": {
+        "regular": 0.8976727427196366,
+        "specialist": 0.8988031474270782,
+        "changed_action_indicator": 0.9309596507734186
+      },
+      "cql_shot_shares": {
+        "defensive_shot": 0.012436277153268682,
+        "drive": 0.05104062902994048,
+        "drop": 0.018229747417272728,
+        "hairpin": 0.06287610039472981,
+        "high_clear": 0.0417795028696561,
+        "push": 0.20068161541544716,
+        "smash": 0.46567607889008633,
+        "under_clear": 0.14728004882954884
+      }
+    },
+    "M3": {
+      "action_changed": 0.18149048616420627,
+      "shot_changed": 0.07761992081712665,
+      "zone_changed": 0.17926426101837645,
+      "regular_residual": 0.0,
+      "specialist_residual": 0.0,
+      "refinement_agreement": {
+        "regular": 0.9330734634631921,
+        "specialist": 0.9289818065231474,
+        "changed_action_indicator": 0.9331490208012373
+      },
+      "cql_shot_shares": {
+        "defensive_shot": 0.015625815984481574,
+        "drive": 0.05556176761318068,
+        "drop": 0.037114366385766824,
+        "hairpin": 0.04748006390190497,
+        "high_clear": 0.056163768585320815,
+        "push": 0.20652607873365322,
+        "smash": 0.42210400262225,
+        "under_clear": 0.15942413617339674
+      }
+    }
+  },
+  "outputs": [
+    {
+      "path": "config.json",
+      "sha256": "5af55aed81fe2b06bfb932125c89ac3ba3d243e35efa290519b032c0992d893c"
+    },
+    {
+      "path": "cql_initial_action_shares.json",
+      "sha256": "73dfdad3c92fbdf4aa0174809b5280bf87197fb45f0d949656ee4edc5d50703e"
+    },
+    {
+      "path": "M0/per_condition.csv",
+      "sha256": "d71c2d940c56cabd96d3c1cc1a82f59c70f1a1b90ff75663605851ab657d6070"
+    },
+    {
+      "path": "M0/shot_shares.csv",
+      "sha256": "b542a39b961ab799def7ebfc05a36b02e201eff8793000f143567b471442c3d2"
+    },
+    {
+      "path": "M0/shot_transitions.csv",
+      "sha256": "ac58b0b92304bbc146ea5873fab366ba52b64976e9de44eb85458e69a2e2444f"
+    },
+    {
+      "path": "M0/summary.json",
+      "sha256": "a3b270ea50ed27ec330030d8fd8b21948969a7ff9cfefc504ba64fee5416fd38"
+    },
+    {
+      "path": "M0/zone_shares.csv",
+      "sha256": "1bd65df31dc13fd7237b01ca02b330b9be10b08c422c791b970df951ea33f2db"
+    },
+    {
+      "path": "M3/per_condition.csv",
+      "sha256": "56fbc341590c23375dc57e9aeb7e8f804e80a742cc4c898c211efef4e8effdca"
+    },
+    {
+      "path": "M3/shot_shares.csv",
+      "sha256": "14c0eb31584a6e4736be6976d62f8dcdcc1be1600c6849e4866f6d0ecba1e68c"
+    },
+    {
+      "path": "M3/shot_transitions.csv",
+      "sha256": "709d99d540065a445e8d94b33087de9cbbbbb74692ce5db801aa5dbd6e607e35"
+    },
+    {
+      "path": "M3/summary.json",
+      "sha256": "8648294f66920e06c6e788a7d953dc1a1e976ad190bf0c95424bbbd96d6638b4"
+    },
+    {
+      "path": "M3/zone_shares.csv",
+      "sha256": "ff0abdf1b18a4a257b1291707e722cd1fca3f08b453e781baeb0e1397d5dab9b"
+    },
+    {
+      "path": "shot_comparison.csv",
+      "sha256": "c634723cf5e5868e97b1a43c0338e02161fde8cd2b6efc0a6f8021546e71ecd1"
+    },
+    {
+      "path": "zone_comparison.csv",
+      "sha256": "9750915f485fc38306368f25a70aa9a4b15704bfa620af27ce6e3768759be530"
+    }
+  ],
+  "limitations": [
+    "Diagnostic grids are one-quarter and one-eighth of full-run resolutions; exact full-grid recommendation identity is not guaranteed.",
+    "Initial-state recommendations only, not realized shot frequencies throughout simulated rallies.",
+    "CQL is frozen with no opponent-profile feature, so recommendation distributions are identical in the two opponent scenarios for identical inputs; realized rally distributions can differ."
+  ],
+  "local_cql_inference_source": {
+    "path": "03_cql_v2_policy/code/scripts/audit_cql_initial_actions.py",
+    "sha256": "d9c56212361ab3321afb6d17fb8b10c1515afbc1ed27284b3f6eb8e32b7c1982",
+    "note": "The source was executed locally before being committed. The code_commit identifies the exact Bellman workflow and CQL model/checkpoint source snapshot."
+  }
+}
